@@ -1,0 +1,9 @@
+# Claude session data
+.claude/
+
+# Temp files
+*.tmp
+*.bak
+
+# Photos folder (downloaded at runtime)
+photos/
