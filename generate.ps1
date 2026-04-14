@@ -291,13 +291,16 @@ function CopyResizedPhoto($srcFile, $destFile, $maxPx) {
 }
 
 $photos = @(
-    @{src="fpd_hockburn.jpg";    dest="photo1.jpg"; maxPx=1000},
-    @{src="feather_pecking.jpg"; dest="photo2.jpg"; maxPx=1000},
-    @{src="lame_broiler.jpg";    dest="photo3.jpg"; maxPx=1000},
-    @{src="tibial_td.png";       dest="photo4.png"; maxPx=1000},
-    @{src="broiler_house.jpg";   dest="photo5.jpg"; maxPx=1000},
-    @{src="broiler_flock.jpg";   dest="photo6.jpg"; maxPx=1000},
-    @{src="bumblefoot.jpg";      dest="photo7.jpg"; maxPx=1000}
+    @{src="fpd_hockburn.jpg";       dest="photo1.jpg";  maxPx=1000},
+    @{src="feather_pecking.jpg";    dest="photo2.jpg";  maxPx=1000},
+    @{src="lame_broiler.jpg";       dest="photo3.jpg";  maxPx=1000},
+    @{src="tibial_td.png";          dest="photo4.png";  maxPx=1000},
+    @{src="broiler_house.jpg";      dest="photo5.jpg";  maxPx=1000},
+    @{src="broiler_flock.jpg";      dest="photo6.jpg";  maxPx=1000},
+    @{src="bumblefoot.jpg";         dest="photo7.jpg";  maxPx=1000},
+    @{src="fpd_scoring_scale.jpg";  dest="photo8.jpg";  maxPx=1200},
+    @{src="splay_leg_broiler.jpg";  dest="photo9.jpg";  maxPx=1000},
+    @{src="cyanosis_chickens.jpg";  dest="photo10.jpg"; maxPx=1000}
 )
 
 foreach ($p in $photos) {
@@ -343,12 +346,13 @@ function ImgXml($caption) {
     return $xml
 }
 
-# Real photo XML — uses rId16..rId22 (photos 1-7)
-# Photo number maps: 1=fpd_hockburn, 2=feather_pecking, 3=lame_broiler,
-#                    4=tibial_td, 5=broiler_house, 6=broiler_flock, 7=bumblefoot
+# Real photo XML — uses rId16..rId25 (photos 1-10)
+# 1=fpd_hockburn  2=feather_pecking  3=lame_broiler  4=tibial_td(png)
+# 5=broiler_house 6=broiler_flock    7=bumblefoot
+# 8=fpd_scoring_scale  9=splay_leg_broiler  10=cyanosis_chickens
 function PhotoXml($photoNum, $caption, $credit) {
     $dest  = if ($photoNum -eq 4) { "photo4.png" } else { "photo$photoNum.jpg" }
-    $rId   = "rId$(15 + $photoNum)"   # rId16..rId22
+    $rId   = "rId$(15 + $photoNum)"   # rId16..rId25
     $docId = 100 + $photoNum
     # Max 6 inches wide (5486400 EMU); scale height proportionally
     $maxCx = 5486400
@@ -443,6 +447,12 @@ WriteFile "$tmpDir\word\_rels\document.xml.rels" @'
     Target="media/photo6.jpg"/>
   <Relationship Id="rId22" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/image"
     Target="media/photo7.jpg"/>
+  <Relationship Id="rId23" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/image"
+    Target="media/photo8.jpg"/>
+  <Relationship Id="rId24" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/image"
+    Target="media/photo9.jpg"/>
+  <Relationship Id="rId25" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/image"
+    Target="media/photo10.jpg"/>
 </Relationships>
 '@
 
@@ -620,7 +630,8 @@ $body += Body "Pick up at least 100 birds per barn, pulling from at least five d
 $body += H2 "What to Do When Scores Are High"
 $body += Body "Score 1 climbing above 20%: Your litter is getting away from you. Don't wait — look at ventilation rates, check every drinker for leaks, verify nipple height is right for bird size. Score 2 above 5%: This is chronic wet litter. You need a full ventilation and litter review, not just a spot fix. Bumblefoot: Comes from a skin wound getting infected with Staphylococcus aureus — find what's cutting birds' feet (sharp edges, rough flooring) and address it. Curled toes: Usually a riboflavin (Vitamin B2) shortage in the diet or an incubation temperature problem from the hatchery (Merck Veterinary Manual, 2022). Toe necrosis in new chicks: Most often high brooding temperature or dehydration on arrival. Keep ammonia below 25 ppm at bird level at all times — NFACC requires it, and your footpads will thank you (NFACC, 2016). Biotin in the diet should be 150 to 300 mcg per kg of complete feed to support skin integrity (Merck Veterinary Manual, 2022)."
 $body += ImgXml "Figure 1. Footpad Dermatitis Scoring Scale (Welfare Quality(r) 0-2). Score 0: healthy intact foot; Score 1: early surface erosion; Score 2: deep ulceration with necrotic tissue."
-$body += PhotoXml 1 "Photo 1. Real footpad dermatitis and hock burn on a commercial broiler. Note the dark necrotic tissue on the footpad (Score 2 FPD) and the discoloration on the hock joint." "Source: USDA Agricultural Research Service. Public Domain."
+$body += PhotoXml 8 "Photo 1. Visual scoring reference for footpad dermatitis (top row) and hock burn (bottom row) showing actual photographs of Score 0 (no lesion), Score 1 (mild superficial lesion), and Score 2 (severe ulceration) used in peer-reviewed welfare research." "Source: Vasdal et al. (2020), Animals, open access CC BY 4.0. Based on Welfare Quality(r) Protocol."
+$body += PhotoXml 1 "Photo 2. Footpad dermatitis and hock burn on a commercial broiler — field example. The dark necrotic tissue on the footpad is a Score 2 FPD lesion; the brown discoloration on the hock joint is a Score 1-2 hock burn. Both indicate chronic litter moisture problems." "Source: USDA Agricultural Research Service. Public Domain."
 
 # F — FEATHERS
 $body += H1 "F — Feathers"
@@ -650,6 +661,7 @@ $body += H2 "What to Do When Scores Are High"
 $body += Body "Gait Score 3+ in more than 5% of birds: This is serious and it's going to show up on your audit and your weights. Dig into your lighting program first — NFACC (2016) requires at least 6 consecutive hours of darkness per day, and this rest period is directly protective for leg health. Check your bedding depth (minimum 5 cm at placement) and your nutrition against your breed spec. Hock burn Score 2 above 5%: Same root cause as FPD — litter is too wet. The fix is the same: ventilation, drinker management, litter caking removal. Valgus or varus (crooked legs): If it's showing up in multiple birds symmetrically, it's nutritional or genetic. A single bird with one crooked leg is usually an injury. Tibial dyschondroplasia on post-mortem: Review your calcium to phosphorus ratio and Vitamin D3 levels with your nutritionist. Mycotoxin exposure can also cause this, so check your feed source. Swollen, hot joints in multiple birds: That's septic arthritis — get fresh birds to your vet for diagnosis before it spreads."
 $body += ImgXml "Figure 3. Bristol Gait Scoring Scale (Kestin et al., 1992). Score 0: normal fluid movement; Score 3: marked impairment, reluctant to walk; Score 5: unable to walk, requires immediate action."
 $body += PhotoXml 3 "Photo 3. A commercial broiler with significant leg impairment — consistent with Gait Score 3-4. The bird is resting on its hocks and unable to maintain normal standing posture, indicating pain and inability to access feed and water reliably." "Source: Glass Walls Project (Israel), CC BY-SA 4.0."
+$body += PhotoXml 9 "Photo 4. Splay-legged broilers — Gait Score 4-5. These birds cannot walk normally and are unable to reach feed and water. This level of impairment requires immediate humane euthanasia. Rapid growth genetics combined with poor flooring and lighting programs are primary risk factors." "Source: Glass Walls Project (Israel) / Wikimedia Commons, CC BY-SA 4.0."
 $body += PhotoXml 4 "Photo 4. Tibial dyschondroplasia (TD) seen on post-mortem examination. The white cartilaginous plug in the proximal tibial growth plate (centre) is the classic finding. TD indicates calcium:phosphorus imbalance or Vitamin D3 deficiency." "Source: Wikimedia Commons, CC BY 4.0."
 
 # A — ACTIVITY
@@ -693,6 +705,7 @@ $body += H2 "What to Do When You See Skin Problems"
 $body += Body "Cellulitis rate rising: This is a catching issue as much as a barn issue. Sit down with your catching crew and review how birds are being handled — wing grabs, overfilling crates, dragging birds across surfaces. Check the barn for anything that could scratch birds: broken slats, sharp wire ends, feeder edges. Review your E. coli vaccination program — Poulvac E. coli (Zoetis, licensed in Canada) is commonly used and can significantly reduce cellulitis rates when timed correctly (Zoetis, 2021). Breast blisters above 5%: Your lame birds are lying down too much. Fix the leg health problem first. Also look at litter quality — soft, dry litter is more forgiving on the breast. In breeders, make sure perches are available and birds are using them. Ammonia burns on ventral skin: Your litter moisture is above 35% and your ammonia is above 25 ppm. This is an urgent ventilation and litter management problem, not just a welfare issue — you are losing condemnation revenue at the plant. Cyanosis or jaundice in multiple birds: Do not wait. This is a same-day call to your poultry vet. Submit two or three fresh, chilled dead birds for post-mortem as soon as possible."
 $body += ImgXml "Figure 6. Key Skin Conditions in Commercial Broiler Production. A: Cellulitis — fibrinous plaque, total condemnation. B: Breast Blister over keel bone. C: Ammonia Burn on ventral skin. Sources: Opengart (2008); Elfadil et al. (1996)."
 $body += PhotoXml 7 "Photo 7. Bumblefoot (pododermatitis) in a rooster — showing advanced bacterial skin infection with the characteristic raised scab and surrounding tissue inflammation. In commercial broilers, any open skin wound is a potential entry point for E. coli and Staphylococcus aureus, leading to cellulitis and carcass condemnation." "Source: Sylvain Larrat / Wikimedia Commons, CC BY 4.0."
+$body += PhotoXml 10 "Photo 8. Chickens showing cyanosis — blue-purple skin discoloration indicating severely reduced oxygen delivery. In commercial flocks, cyanosis points to ascites (Pulmonary Hypertension Syndrome), respiratory disease, or acute ventilation failure. Multiple cyanotic birds is a same-day veterinary emergency." "Source: Otwarte Klatki (Open Cages) / Wikimedia Commons, CC BY 2.0."
 
 # JOURNALS
 $body += H1 "Where to Keep Learning"
