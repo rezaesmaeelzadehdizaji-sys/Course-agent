@@ -598,7 +598,7 @@ $body = @"
 "@
 
 # COVER PAGE
-$body += P "COURSE 1 OF 17 — CANADIAN POULTRY TRAINING SERIES" "Normal" $true "2E74B5" 22 "center" 1800 200
+$body += P "COURSE 1 OF 17: CANADIAN POULTRY TRAINING SERIES" "Normal" $true "2E74B5" 22 "center" 1800 200
 $body += P "T-FLAWS – Assessment Management Tool" "Normal" $true "1F3864" 56 "center" 400 300
 $body += P "A Structured Flock Assessment Framework for Commercial Poultry Farmers in Canada" "Normal" $false "2E74B5" 30 "center" 0 600
 $body += P "———————————————————————————————" "Normal" $false "2E74B5" 22 "center" 0 400
@@ -618,7 +618,7 @@ $body += H2 "When to Do Your Assessments"
 $body += Body "For broilers: walk a full T-FLAWS assessment at Day 7 (just Activity and Weight — are chicks settled in?), Day 14 (all six components — how's early growth going?), Day 21 (mid-cycle check), Day 28 (pre-thinning — what's your condition score?), and Day 35 or at depopulation. For layers and breeders: run a full assessment monthly, and any time something unusual happens — a mortality spike, a feed change, a weather event."
 
 # T — TOES
-$body += H1 "T — Toes"
+$body += H1 "T: Toes"
 $body += H2 "What Are We Looking At?"
 $body += Body "Turn a bird over and look at the bottom of its feet. That's footpad dermatitis — FPD for short, sometimes called pododermatitis. It's a skin breakdown on the plantar surface of the foot, ranging from a bit of discoloration to a deep, painful ulcer. You score it on a simple 0 to 2 scale (Welfare Quality(r), 2009):"
 $body += Body "Score 0 — The foot looks healthy. Skin is intact, no dark patches, no swelling. This is what you want to see. Score 1 — Early damage. You'll see some discoloration and the surface skin is starting to erode, but it hasn't broken through to the deeper tissue yet. Score 2 — Serious. Deep ulceration, often with dark necrotic tissue, sometimes covering more than a third of the footpad. These birds are in pain."
@@ -634,7 +634,7 @@ $body += PhotoXml 8 "Photo 1. Visual scoring reference for footpad dermatitis (t
 $body += PhotoXml 1 "Photo 2. Footpad dermatitis and hock burn on a commercial broiler — field example. The dark necrotic tissue on the footpad is a Score 2 FPD lesion; the brown discoloration on the hock joint is a Score 1-2 hock burn. Both indicate chronic litter moisture problems." "Source: USDA Agricultural Research Service. Public Domain."
 
 # F — FEATHERS
-$body += H1 "F — Feathers"
+$body += H1 "F: Feathers"
 $body += H2 "What Are We Looking At?"
 $body += Body "Walk through the flock and look at the birds' backs, wings, neck, tail, and breast. You're scoring feather coverage on a 0 to 4 scale, region by region. Score 0 means full, intact feather coverage — no gaps, no bare skin. Score 4 means a large area of bare skin, possibly with open wounds. Anything in between is a gradual progression of feather loss."
 $body += Body "The big task here is figuring out why the feathers are gone. Feather pecking pulls feathers out cleanly at the base — you'll often see the quill stub left behind. Mites and lice tend to break and fray feathers rather than pull them out entirely. And if the whole flock is feathering slowly from the start, that's usually a nutrition or genetics issue, not a behavioral one."
@@ -648,7 +648,7 @@ $body += ImgXml "Figure 2. Feather Coverage Scoring Scale (LayWel Protocol). Sco
 $body += PhotoXml 2 "Photo 2. A hen showing significant feather loss on the back and neck — classic feather pecking damage. The exposed skin on the dorsal surface is characteristic of Score 3-4 feather damage from subordinate rank or chronic pecking." "Source: Wikimedia Commons, CC BY 1.0."
 
 # L — LEGS
-$body += H1 "L — Legs"
+$body += H1 "L: Legs"
 $body += H2 "What Are We Looking At?"
 $body += Body "Stand at the end of the barn and watch birds walk undisturbed. You're using the Bristol Gait Scoring Scale (Kestin et al., 1992) — the industry standard for leg assessment:"
 $body += Body "Score 0 — Normal. Fluid, balanced movement, full weight on both legs. Score 1 — Slight abnormality. A minor hitch or stiffness you notice but the bird gets around fine. Score 2 — Definite impairment. You can clearly see the problem — a limp, difficulty balancing, slower movement. Score 3 — Marked impairment. The bird is reluctant to move. It will stand still and only move when it has to. It's in significant pain. Score 4 — The bird cannot walk without using its wings for support. It cannot reliably reach feed and water. Score 5 — The bird cannot walk at all. It is in lateral recumbency. This bird needs to be humanely euthanised immediately."
@@ -665,7 +665,7 @@ $body += PhotoXml 9 "Photo 4. Splay-legged broilers — Gait Score 4-5. These bi
 $body += PhotoXml 4 "Photo 4. Tibial dyschondroplasia (TD) seen on post-mortem examination. The white cartilaginous plug in the proximal tibial growth plate (centre) is the classic finding. TD indicates calcium:phosphorus imbalance or Vitamin D3 deficiency." "Source: Wikimedia Commons, CC BY 4.0."
 
 # A — ACTIVITY
-$body += H1 "A — Activity"
+$body += H1 "A: Activity"
 $body += H2 "What Are We Looking At?"
 $body += Body "Activity is about reading the flock as a whole — how birds are moving, where they are in the barn, and how they behave when you walk in. You're looking at three things: flock distribution across the floor, what birds are doing (feeding, drinking, resting, preening), and flight distance — how close you can get before birds move away from you."
 $body += Body "Distribution is scored simply: 1 = birds are spread evenly across the whole floor, 2 = some uneven patches, 3 = birds are bunched up in clear clusters with big open areas of bare floor. A good, settled flock should be pretty much everywhere. When they're not, something is pushing them or pulling them to certain spots."
@@ -680,7 +680,7 @@ $body += PhotoXml 5 "Photo 5. Inside a commercial broiler house. Observe how bir
 $body += PhotoXml 6 "Photo 6. Commercial broiler flock on litter. When assessing Activity, look for any large empty floor areas or tight clustering — both are warning signs. A healthy flock like this shows birds spread across the available space." "Source: Otwarte Klatki / Wikimedia Commons, CC BY 2.0."
 
 # W — WEIGHT
-$body += H1 "W — Weight"
+$body += H1 "W: Weight"
 $body += H2 "What Are We Looking At?"
 $body += Body "Weight tells you two things: how fast your flock is growing compared to where it should be, and how evenly that weight is distributed across the barn. Both matter. The number you care about beyond the average weight is your coefficient of variation — CV% — which is just your standard deviation divided by your mean, times 100. It tells you how spread out your weights are. For broilers, you want CV below 10% at every weigh. For layer pullets approaching the point of lay, you want CV below 8% — non-uniform pullets start laying out of sync, which flattens your peak production (Lohmann Tierzucht, 2021)."
 $body += Body "At Day 1, before any of that, there's crop fill. Put your finger on the crop of newly placed chicks. It should feel full — like a small, firm balloon. If it doesn't, those chicks have not found feed and water, and the next few days are going to be a fight."
@@ -693,7 +693,7 @@ $body += Body "Average weight more than 10% below breed standard: First, make su
 $body += ImgXml "Figure 5. Body Weight Distribution — Uniform Flock (CV < 10%, narrow bell curve) vs. Non-Uniform Flock (CV > 15%, wide flat distribution). Adapted from Aviagen Ross 308 Performance Objectives (2022)."
 
 # S — SKIN
-$body += H1 "S — Skin"
+$body += H1 "S: Skin"
 $body += H2 "What Are We Looking At?"
 $body += Body "Skin assessment goes beyond the feet and hocks — you're checking the rest of the bird's body for damage, inflammation, and discoloration. The main things to look for are:"
 $body += Body "Cellulitis: A yellow or greenish fibrinous plaque under the skin, usually on the thigh, lower abdomen, or breast. It feels firm and is attached to the tissue underneath. This is a subcutaneous bacterial infection and it means a total carcass condemnation at the processing plant — the whole bird is lost (Elfadil et al., 1996). Breast blister (sternal bursitis): A fluid-filled swelling right over the keel bone. It varies from a small soft bump to a large, discolored sac. It's caused by birds spending too much time lying on their breast — usually because they're lame or the litter is too wet. Ammonia burn (contact dermatitis): Reddened, inflamed skin on the ventral breast and abdomen. This is chemical damage from prolonged contact with wet, ammonia-rich litter. If you're seeing this, your birds have been lying on bad litter. Skin color problems: Pale skin can signal anemia or blood loss. Blue-tinged (cyanotic) skin means the bird isn't getting enough oxygen — check for ascites or respiratory disease. Yellow skin (jaundice) points to liver problems. Scratches and tears: Small cuts that look minor in the barn become entry points for bacteria — and that becomes cellulitis."
@@ -749,41 +749,74 @@ foreach ($r in $resources) {
 # REFERENCES
 $body += H1 "References"
 $refs = @(
-    "Aviagen. (2022). Ross 308 broiler: Performance objectives. Aviagen Group.",
-    "Aviagen. (2022). Ross broiler management handbook. Aviagen Group.",
-    "Aviagen. (2022). Ross broiler: Environmental management supplement. Aviagen Group.",
-    "Bilcik, B., & Keeling, L. J. (1999). Changes in feather condition in relation to feather pecking and aggressive behaviour in laying hens. British Poultry Science, 40(4), 444–451.",
-    "Canadian Food Inspection Agency. (2019). Meat hygiene manual of procedures: Chapter 17. Government of Canada.",
-    "Canadian Food Inspection Agency. (2022). Codes of practice for the care and handling of chickens, turkeys and breeders from hatch to slaughter. Government of Canada.",
-    "Canadian Veterinary Medical Association. (2020). CVMA position statement on farm animal welfare. CVMA.",
-    "CEVA Animal Health. (2020). Poultry feather condition scoring guide. CEVA Sante Animale.",
-    "Cobb-Vantress. (2021). Cobb 500 broiler performance and nutrition supplement. Cobb-Vantress Inc.",
-    "Cobb-Vantress. (2021). Cobb broiler management guide. Cobb-Vantress Inc.",
-    "Daigle, C. L. (2017). The effect of feather pecking on welfare and productivity. Journal of Applied Poultry Research, 26(4), 560–572.",
-    "Dawkins, M. S., Donnelly, C. A., & Jones, T. A. (2004). Chicken welfare is influenced more by housing conditions than by stocking density. Nature, 427(6972), 342–344.",
-    "Ekstrand, C., Algers, B., & Svedberg, J. (1997). Rearing conditions and foot-pad dermatitis in Swedish broiler chickens. Preventive Veterinary Medicine, 31(3–4), 167–174.",
-    "Elfadil, A. A., Vaillancourt, J. P., & Meek, A. H. (1996). Description of cellulitis lesions and associations between cellulitis and other indicators of health in broiler chickens. Avian Diseases, 40(3), 677–688.",
-    "European Food Safety Authority. (2012). Scientific opinion on the welfare of chickens on farm. EFSA Journal, 10(1), 2424.",
-    "Jones, R. B. (1996). Fear and adaptability in poultry: Insights, implications and imperatives. World's Poultry Science Journal, 52(2), 131–174.",
-    "Kestin, S. C., Knowles, T. G., Tinch, A. E., & Gregory, N. G. (1992). Prevalence of leg weakness in broiler chickens and its relationship with genotype. Veterinary Record, 131(9), 190–194.",
-    "Knowles, T. G., Kestin, S. C., Haslam, S. M., Brown, S. N., Green, L. E., Butterworth, A., Pope, S. J., Pfeiffer, D., & Nicol, C. J. (2008). Leg disorders in broiler chickens: Prevalence, risk factors and prevention. PLoS ONE, 3(2), e1545.",
-    "Lohmann Tierzucht. (2021). Lohmann LSL-Classic management guide. Lohmann Tierzucht GmbH.",
-    "Merck Veterinary Manual. (2022). Footpad dermatitis in poultry. Merck & Co., Inc.",
-    "Merck Veterinary Manual. (2022). Lameness in poultry. Merck & Co., Inc.",
-    "Merck Veterinary Manual. (2022). Skin disorders in poultry. Merck & Co., Inc.",
-    "National Farm Animal Care Council. (2016). Code of practice for the care and handling of hatching eggs, breeders, chickens and turkeys. NFACC.",
-    "Opengart, K. (2008). Necrotic dermatitis. In Y. M. Saif et al. (Eds.), Diseases of poultry (12th ed., pp. 1092–1095). Blackwell Publishing.",
-    "Riber, A. B., van de Weerd, H. A., de Jong, I. C., & Steenfeldt, S. (2018). Review of environmental enrichment for broiler chickens. Poultry Science, 97(2), 378–396.",
-    "Shepherd, E. M., & Fairchild, B. D. (2010). Footpad dermatitis in poultry. Poultry Science, 89(10), 2043–2051.",
-    "Welfare Quality(R). (2009). Welfare Quality assessment protocol for poultry. Welfare Quality Consortium.",
-    "Zoetis. (2021). Poulvac E. coli: Product monograph. Zoetis Canada Inc.",
-    "Zuidhof, M. J., Schneider, B. L., Carney, V. L., Korver, D. R., & Robinson, F. E. (2014). Growth, efficiency, and yield of commercial broilers from 1957, 1978, and 2005. Poultry Science, 93(12), 2970–2982."
+    "1. Aviagen. (2022). Ross 308 broiler: Performance objectives. Aviagen Group.",
+    "2. Aviagen. (2022). Ross broiler management handbook. Aviagen Group.",
+    "3. Aviagen. (2022). Ross broiler: Environmental management supplement. Aviagen Group.",
+    "4. Bilcik, B., & Keeling, L. J. (1999). Changes in feather condition in relation to feather pecking and aggressive behaviour in laying hens. British Poultry Science, 40(4), 444-451.",
+    "5. Canadian Food Inspection Agency. (2019). Meat hygiene manual of procedures: Chapter 17. Government of Canada.",
+    "6. Canadian Food Inspection Agency. (2022). Codes of practice for the care and handling of chickens, turkeys and breeders from hatch to slaughter. Government of Canada.",
+    "7. Canadian Veterinary Medical Association. (2020). CVMA position statement on farm animal welfare. CVMA.",
+    "8. CEVA Animal Health. (2020). Poultry feather condition scoring guide. CEVA Sante Animale.",
+    "9. Cobb-Vantress. (2021). Cobb 500 broiler performance and nutrition supplement. Cobb-Vantress Inc.",
+    "10. Cobb-Vantress. (2021). Cobb broiler management guide. Cobb-Vantress Inc.",
+    "11. Daigle, C. L. (2017). The effect of feather pecking on welfare and productivity. Journal of Applied Poultry Research, 26(4), 560-572.",
+    "12. Dawkins, M. S., Donnelly, C. A., & Jones, T. A. (2004). Chicken welfare is influenced more by housing conditions than by stocking density. Nature, 427(6972), 342-344.",
+    "13. Ekstrand, C., Algers, B., & Svedberg, J. (1997). Rearing conditions and foot-pad dermatitis in Swedish broiler chickens. Preventive Veterinary Medicine, 31(3-4), 167-174.",
+    "14. Elfadil, A. A., Vaillancourt, J. P., & Meek, A. H. (1996). Description of cellulitis lesions and associations between cellulitis and other indicators of health in broiler chickens. Avian Diseases, 40(3), 677-688.",
+    "15. European Food Safety Authority. (2012). Scientific opinion on the welfare of chickens on farm. EFSA Journal, 10(1), 2424.",
+    "16. Jones, R. B. (1996). Fear and adaptability in poultry: Insights, implications and imperatives. World's Poultry Science Journal, 52(2), 131-174.",
+    "17. Kestin, S. C., Knowles, T. G., Tinch, A. E., & Gregory, N. G. (1992). Prevalence of leg weakness in broiler chickens and its relationship with genotype. Veterinary Record, 131(9), 190-194.",
+    "18. Knowles, T. G., Kestin, S. C., Haslam, S. M., Brown, S. N., Green, L. E., Butterworth, A., Pope, S. J., Pfeiffer, D., & Nicol, C. J. (2008). Leg disorders in broiler chickens: Prevalence, risk factors and prevention. PLoS ONE, 3(2), e1545.",
+    "19. Lohmann Tierzucht. (2021). Lohmann LSL-Classic management guide. Lohmann Tierzucht GmbH.",
+    "20. Merck Veterinary Manual. (2022). Footpad dermatitis in poultry. Merck & Co., Inc.",
+    "21. Merck Veterinary Manual. (2022). Lameness in poultry. Merck & Co., Inc.",
+    "22. Merck Veterinary Manual. (2022). Skin disorders in poultry. Merck & Co., Inc.",
+    "23. National Farm Animal Care Council. (2016). Code of practice for the care and handling of hatching eggs, breeders, chickens and turkeys. NFACC.",
+    "24. Opengart, K. (2008). Necrotic dermatitis. In Y. M. Saif et al. (Eds.), Diseases of poultry (12th ed., pp. 1092-1095). Blackwell Publishing.",
+    "25. Riber, A. B., van de Weerd, H. A., de Jong, I. C., & Steenfeldt, S. (2018). Review of environmental enrichment for broiler chickens. Poultry Science, 97(2), 378-396.",
+    "26. Shepherd, E. M., & Fairchild, B. D. (2010). Footpad dermatitis in poultry. Poultry Science, 89(10), 2043-2051.",
+    "27. Vasdal, G., Stubsjoen, S. M., Moe, R. O., & Granquist, E. G. (2020). Associations between on-farm welfare indicators and post-mortem findings in commercial broiler flocks. Animals, 10(9), 1623.",
+    "28. Welfare Quality(R). (2009). Welfare Quality assessment protocol for poultry. Welfare Quality Consortium.",
+    "29. Zoetis. (2021). Poulvac E. coli: Product monograph. Zoetis Canada Inc.",
+    "30. Zuidhof, M. J., Schneider, B. L., Carney, V. L., Korver, D. R., & Robinson, F. E. (2014). Growth, efficiency, and yield of commercial broilers from 1957, 1978, and 2005. Poultry Science, 93(12), 2970-2982."
 )
 foreach ($r in $refs) { $body += Ref $r }
 
 # Close document
 $body += "<w:sectPr><w:pgSz w:w=`"12240`" w:h=`"15840`"/><w:pgMar w:top=`"1440`" w:right=`"1440`" w:bottom=`"1440`" w:left=`"1800`" w:header=`"720`" w:footer=`"720`"/></w:sectPr>"
 $body += "</w:body></w:document>"
+
+# ── Post-processing: numbered citations and em-dash replacement ──
+# Citations — specific matches first, then generic
+$body = $body -replace 'Code of Practice \(2016\)', 'Code of Practice (23)'
+$body = $body -replace 'NFACC \(2016\)', 'NFACC (23)'
+$body = $body -replace '\(NFACC, 2016\)', '(23)'
+$body = $body -replace '\(Welfare Quality\(r\), 2009\)', '(28)'
+$body = $body -replace '\(Ekstrand et al\., 1997\)', '(13)'
+$body = $body -replace 'to support skin integrity \(Merck Veterinary Manual, 2022\)', 'to support skin integrity (20)'
+$body = $body -replace '\(Merck Veterinary Manual, 2022\)', '(21)'
+$body = $body -replace '\(Riber et al\., 2018\)', '(25)'
+$body = $body -replace '\(Daigle, 2017\)', '(11)'
+$body = $body -replace '\(Kestin et al\., 1992\)', '(17)'
+$body = $body -replace '\(Knowles et al\., 2008\)', '(18)'
+$body = $body -replace '\(Dawkins et al\., 2004\)', '(12)'
+$body = $body -replace '\(EFSA, 2012\)', '(15)'
+$body = $body -replace '\(Jones, 1996\)', '(16)'
+$body = $body -replace '\(Lohmann Tierzucht, 2021\)', '(19)'
+$body = $body -replace '\(Zuidhof et al\., 2014\)', '(30)'
+$body = $body -replace '\(Aviagen, 2022\)', '(2)'
+$body = $body -replace 'Performance Objectives \(2022\)', 'Performance Objectives (1)'
+$body = $body -replace '\(Cobb-Vantress, 2021\)', '(10)'
+$body = $body -replace 'Elfadil et al\. \(1996\)', '(14)'
+$body = $body -replace '\(Elfadil et al\., 1996\)', '(14)'
+$body = $body -replace 'Opengart \(2008\)', '(24)'
+$body = $body -replace '\(Opengart, 2008\)', '(24)'
+$body = $body -replace '\(Zoetis, 2021\)', '(29)'
+$body = $body -replace 'Vasdal et al\. \(2020\)', '(27)'
+# Em-dashes — specific patterns first, then generic
+$body = $body -replace 'Score (\d) — ', 'Score $1: '
+$body = $body -replace 'Body Weight Distribution — ', 'Body Weight Distribution: '
+$body = $body -replace ' — ', ', '
 
 WriteFile "$tmpDir\word\document.xml" $body
 
