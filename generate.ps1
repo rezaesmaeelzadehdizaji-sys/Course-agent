@@ -261,6 +261,58 @@ CreateDiagram "$tmpDir\word\media\img6.png" "Key Skin Conditions in Commercial B
 
 Write-Host "Diagrams created." -ForegroundColor Green
 
+# ── REAL PHOTO PROCESSING ─────────────────────────────────────
+# Resize real clinical photos and copy into word/media
+Write-Host "Processing clinical photographs..." -ForegroundColor Cyan
+
+$photoSrc = "D:\Course agent\photos"
+$photoData = @{}   # name -> @{w=px; h=px}
+
+function CopyResizedPhoto($srcFile, $destFile, $maxPx) {
+    $src = [System.Drawing.Image]::FromFile($srcFile)
+    $ow = $src.Width; $oh = $src.Height
+    if ($ow -gt $oh) { $nw = $maxPx; $nh = [int]($oh * $maxPx / $ow) }
+    else              { $nh = $maxPx; $nw = [int]($ow * $maxPx / $oh) }
+    $bmp = New-Object System.Drawing.Bitmap($nw, $nh)
+    $g   = [System.Drawing.Graphics]::FromImage($bmp)
+    $g.InterpolationMode = [System.Drawing.Drawing2D.InterpolationMode]::HighQualityBicubic
+    $g.DrawImage($src, 0, 0, $nw, $nh)
+    $ext = [IO.Path]::GetExtension($destFile).ToLower()
+    if ($ext -eq ".png") {
+        $bmp.Save($destFile, [System.Drawing.Imaging.ImageFormat]::Png)
+    } else {
+        $enc = [System.Drawing.Imaging.ImageCodecInfo]::GetImageEncoders() | Where-Object { $_.MimeType -eq "image/jpeg" }
+        $params = New-Object System.Drawing.Imaging.EncoderParameters(1)
+        $params.Param[0] = New-Object System.Drawing.Imaging.EncoderParameter([System.Drawing.Imaging.Encoder]::Quality, 88L)
+        $bmp.Save($destFile, $enc, $params)
+    }
+    $g.Dispose(); $bmp.Dispose(); $src.Dispose()
+    return @{w=$nw; h=$nh}
+}
+
+$photos = @(
+    @{src="fpd_hockburn.jpg";    dest="photo1.jpg"; maxPx=1000},
+    @{src="feather_pecking.jpg"; dest="photo2.jpg"; maxPx=1000},
+    @{src="lame_broiler.jpg";    dest="photo3.jpg"; maxPx=1000},
+    @{src="tibial_td.png";       dest="photo4.png"; maxPx=1000},
+    @{src="broiler_house.jpg";   dest="photo5.jpg"; maxPx=1000},
+    @{src="broiler_flock.jpg";   dest="photo6.jpg"; maxPx=1000},
+    @{src="bumblefoot.jpg";      dest="photo7.jpg"; maxPx=1000}
+)
+
+foreach ($p in $photos) {
+    $srcPath  = Join-Path $photoSrc $p.src
+    $destPath = "$tmpDir\word\media\$($p.dest)"
+    if (Test-Path $srcPath) {
+        $dims = CopyResizedPhoto $srcPath $destPath $p.maxPx
+        $photoData[$p.dest] = $dims
+        Write-Host "  Photo $($p.dest) -> $($dims.w)x$($dims.h)" -ForegroundColor Gray
+    } else {
+        Write-Host "  MISSING: $($p.src)" -ForegroundColor Yellow
+    }
+}
+Write-Host "Photos ready." -ForegroundColor Green
+
 # ── DRAWING XML helper ────────────────────────────────────────
 $script:imgIdx = 0
 function ImgXml($caption) {
@@ -291,6 +343,45 @@ function ImgXml($caption) {
     return $xml
 }
 
+# Real photo XML — uses rId16..rId22 (photos 1-7)
+# Photo number maps: 1=fpd_hockburn, 2=feather_pecking, 3=lame_broiler,
+#                    4=tibial_td, 5=broiler_house, 6=broiler_flock, 7=bumblefoot
+function PhotoXml($photoNum, $caption, $credit) {
+    $dest  = if ($photoNum -eq 4) { "photo4.png" } else { "photo$photoNum.jpg" }
+    $rId   = "rId$(15 + $photoNum)"   # rId16..rId22
+    $docId = 100 + $photoNum
+    # Max 6 inches wide (5486400 EMU); scale height proportionally
+    $maxCx = 5486400
+    $dims  = $photoData[$dest]
+    if ($dims) {
+        $cx = $maxCx
+        $cy = [int]($maxCx * $dims.h / $dims.w)
+    } else {
+        $cx = $maxCx; $cy = 3657600   # fallback 4"
+    }
+    $xml = @"
+<w:p><w:pPr><w:jc w:val="center"/><w:spacing w:before="200" w:after="0"/></w:pPr><w:r><w:drawing>
+<wp:inline xmlns:wp="http://schemas.openxmlformats.org/drawingml/2006/wordprocessingDrawing" distT="0" distB="0" distL="0" distR="0">
+<wp:extent cx="$cx" cy="$cy"/>
+<wp:effectExtent l="0" t="0" r="0" b="0"/>
+<wp:docPr id="$docId" name="Photo$photoNum"/>
+<wp:cNvGraphicFramePr><a:graphicFrameLocks xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" noChangeAspect="1"/></wp:cNvGraphicFramePr>
+<a:graphic xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main">
+<a:graphicData uri="http://schemas.openxmlformats.org/drawingml/2006/picture">
+<pic:pic xmlns:pic="http://schemas.openxmlformats.org/drawingml/2006/picture">
+<pic:nvPicPr><pic:cNvPr id="$docId" name="$dest"/><pic:cNvPicPr><a:picLocks noChangeAspect="1"/></pic:cNvPicPr></pic:nvPicPr>
+<pic:blipFill>
+<a:blip r:embed="$rId" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships"/>
+<a:stretch><a:fillRect/></a:stretch>
+</pic:blipFill>
+<pic:spPr><a:xfrm><a:off x="0" y="0"/><a:ext cx="$cx" cy="$cy"/></a:xfrm><a:prstGeom prst="rect"><a:avLst/></a:prstGeom></pic:spPr>
+</pic:pic></a:graphicData></a:graphic></wp:inline></w:drawing></w:r></w:p>
+<w:p><w:pPr><w:jc w:val="center"/><w:spacing w:before="80" w:after="80"/></w:pPr><w:r><w:rPr><w:i/><w:color w:val="595959"/><w:sz w:val="20"/></w:rPr><w:t xml:space="preserve">$(esc $caption)</w:t></w:r></w:p>
+<w:p><w:pPr><w:jc w:val="center"/><w:spacing w:before="0" w:after="320"/></w:pPr><w:r><w:rPr><w:color w:val="888888"/><w:sz w:val="18"/></w:rPr><w:t xml:space="preserve">$(esc $credit)</w:t></w:r></w:p>
+"@
+    return $xml
+}
+
 # ── [Content_Types].xml ──────────────────────────────────────
 WriteFile "$tmpDir\[Content_Types].xml" @'
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
@@ -298,6 +389,8 @@ WriteFile "$tmpDir\[Content_Types].xml" @'
   <Default Extension="rels" ContentType="application/vnd.openxmlformats-package.relationships+xml"/>
   <Default Extension="xml"  ContentType="application/xml"/>
   <Default Extension="png"  ContentType="image/png"/>
+  <Default Extension="jpg"  ContentType="image/jpeg"/>
+  <Default Extension="jpeg" ContentType="image/jpeg"/>
   <Override PartName="/word/document.xml"
     ContentType="application/vnd.openxmlformats-officedocument.wordprocessingml.document.main+xml"/>
   <Override PartName="/word/styles.xml"
@@ -336,6 +429,20 @@ WriteFile "$tmpDir\word\_rels\document.xml.rels" @'
     Target="media/img5.png"/>
   <Relationship Id="rId8" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/image"
     Target="media/img6.png"/>
+  <Relationship Id="rId16" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/image"
+    Target="media/photo1.jpg"/>
+  <Relationship Id="rId17" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/image"
+    Target="media/photo2.jpg"/>
+  <Relationship Id="rId18" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/image"
+    Target="media/photo3.jpg"/>
+  <Relationship Id="rId19" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/image"
+    Target="media/photo4.png"/>
+  <Relationship Id="rId20" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/image"
+    Target="media/photo5.jpg"/>
+  <Relationship Id="rId21" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/image"
+    Target="media/photo6.jpg"/>
+  <Relationship Id="rId22" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/image"
+    Target="media/photo7.jpg"/>
 </Relationships>
 '@
 
@@ -513,6 +620,7 @@ $body += Body "Pick up at least 100 birds per barn, pulling from at least five d
 $body += H2 "What to Do When Scores Are High"
 $body += Body "Score 1 climbing above 20%: Your litter is getting away from you. Don't wait — look at ventilation rates, check every drinker for leaks, verify nipple height is right for bird size. Score 2 above 5%: This is chronic wet litter. You need a full ventilation and litter review, not just a spot fix. Bumblefoot: Comes from a skin wound getting infected with Staphylococcus aureus — find what's cutting birds' feet (sharp edges, rough flooring) and address it. Curled toes: Usually a riboflavin (Vitamin B2) shortage in the diet or an incubation temperature problem from the hatchery (Merck Veterinary Manual, 2022). Toe necrosis in new chicks: Most often high brooding temperature or dehydration on arrival. Keep ammonia below 25 ppm at bird level at all times — NFACC requires it, and your footpads will thank you (NFACC, 2016). Biotin in the diet should be 150 to 300 mcg per kg of complete feed to support skin integrity (Merck Veterinary Manual, 2022)."
 $body += ImgXml "Figure 1. Footpad Dermatitis Scoring Scale (Welfare Quality(r) 0-2). Score 0: healthy intact foot; Score 1: early surface erosion; Score 2: deep ulceration with necrotic tissue."
+$body += PhotoXml 1 "Photo 1. Real footpad dermatitis and hock burn on a commercial broiler. Note the dark necrotic tissue on the footpad (Score 2 FPD) and the discoloration on the hock joint." "Source: USDA Agricultural Research Service. Public Domain."
 
 # F — FEATHERS
 $body += H1 "F — Feathers"
@@ -526,6 +634,7 @@ $body += Body "Score at least 50 birds per barn, looking at each body region sep
 $body += H2 "What to Do When You See Feather Loss"
 $body += Body "Feather loss on back and vent area: Feather pecking is the most likely cause. Pull up your lighting program — drop below 10 lux for broilers, 20 lux for layers, and make sure light is uniform across the barn (NFACC, 2016). Add enrichment like pecking blocks or hanging cabbages. Check that every bird has fair access to feeders and drinkers. Broken or frayed feathers across both sides: Check for mites. Red mite infestations in particular can get severe fast. Deal with it promptly with approved acaricides and a sanitation plan. Stress bars (horizontal weak lines across the feather shaft): These tell you the flock went through a significant stress event sometime in the past — a disease challenge, a temperature extreme, a feed gap. The bars don't fix themselves, but they tell you to go back and look at your records. Sulfur amino acids (methionine and cysteine combined) need to be at breed-recommended levels — low SAA is one of the most common nutritional drivers of feather quality problems."
 $body += ImgXml "Figure 2. Feather Coverage Scoring Scale (LayWel Protocol). Score 0: full plumage; Score 2: moderate loss with bare skin visible; Score 4: large bare area, possible skin wound."
+$body += PhotoXml 2 "Photo 2. A hen showing significant feather loss on the back and neck — classic feather pecking damage. The exposed skin on the dorsal surface is characteristic of Score 3-4 feather damage from subordinate rank or chronic pecking." "Source: Wikimedia Commons, CC BY 1.0."
 
 # L — LEGS
 $body += H1 "L — Legs"
@@ -540,6 +649,8 @@ $body += Body "Watch at least 150 birds moving freely — don't chase them, just
 $body += H2 "What to Do When Scores Are High"
 $body += Body "Gait Score 3+ in more than 5% of birds: This is serious and it's going to show up on your audit and your weights. Dig into your lighting program first — NFACC (2016) requires at least 6 consecutive hours of darkness per day, and this rest period is directly protective for leg health. Check your bedding depth (minimum 5 cm at placement) and your nutrition against your breed spec. Hock burn Score 2 above 5%: Same root cause as FPD — litter is too wet. The fix is the same: ventilation, drinker management, litter caking removal. Valgus or varus (crooked legs): If it's showing up in multiple birds symmetrically, it's nutritional or genetic. A single bird with one crooked leg is usually an injury. Tibial dyschondroplasia on post-mortem: Review your calcium to phosphorus ratio and Vitamin D3 levels with your nutritionist. Mycotoxin exposure can also cause this, so check your feed source. Swollen, hot joints in multiple birds: That's septic arthritis — get fresh birds to your vet for diagnosis before it spreads."
 $body += ImgXml "Figure 3. Bristol Gait Scoring Scale (Kestin et al., 1992). Score 0: normal fluid movement; Score 3: marked impairment, reluctant to walk; Score 5: unable to walk, requires immediate action."
+$body += PhotoXml 3 "Photo 3. A commercial broiler with significant leg impairment — consistent with Gait Score 3-4. The bird is resting on its hocks and unable to maintain normal standing posture, indicating pain and inability to access feed and water reliably." "Source: Glass Walls Project (Israel), CC BY-SA 4.0."
+$body += PhotoXml 4 "Photo 4. Tibial dyschondroplasia (TD) seen on post-mortem examination. The white cartilaginous plug in the proximal tibial growth plate (centre) is the classic finding. TD indicates calcium:phosphorus imbalance or Vitamin D3 deficiency." "Source: Wikimedia Commons, CC BY 4.0."
 
 # A — ACTIVITY
 $body += H1 "A — Activity"
@@ -553,6 +664,8 @@ $body += Body "Before you open the barn door, stop and listen for 30 seconds. Qu
 $body += H2 "What to Do When Activity Looks Wrong"
 $body += Body "Birds clustering near heat sources or brooders: The barn is too cold, or there are cold spots near the walls. Map temperature at 30 cm off the floor across the full barn width — you want uniformity within 2 degrees C. Birds crowded in the center, walls empty: Usually overheating at the perimeter — check side curtain leakage or check if supplemental heat near walls is off. More than 70% of birds sitting during the light period: That's too many. Pain and illness make birds sit, and so does poor air quality. Check ammonia immediately — if it's above 10 ppm at nose height, open ventilation now. CO2 above 3,000 ppm will also cause lethargy (EFSA, 2012). Birds scattering hard when you enter (flight distance over 2 meters): Spend more time in the barn quietly. Daily calm walks reduce fear responses and make catch easier and less stressful for both birds and crew. Sudden piling or pile-up along a wall: Panic response. Look for a light failure, a sudden noise source, or evidence of a predator entry."
 $body += ImgXml "Figure 4. Flock Distribution Patterns. Left: birds spread evenly — healthy environment. Right: clustering with bare floor areas — temperature, air quality, or light gradient problem."
+$body += PhotoXml 5 "Photo 5. Inside a commercial broiler house. Observe how birds are distributed across the floor and the litter condition. Even distribution with active birds is a sign of a well-managed environment. Photo: USDA." "Source: USDA, Public Domain."
+$body += PhotoXml 6 "Photo 6. Commercial broiler flock on litter. When assessing Activity, look for any large empty floor areas or tight clustering — both are warning signs. A healthy flock like this shows birds spread across the available space." "Source: Otwarte Klatki / Wikimedia Commons, CC BY 2.0."
 
 # W — WEIGHT
 $body += H1 "W — Weight"
@@ -579,6 +692,7 @@ $body += Body "During weighing or handling, flip birds ventral-side up and exami
 $body += H2 "What to Do When You See Skin Problems"
 $body += Body "Cellulitis rate rising: This is a catching issue as much as a barn issue. Sit down with your catching crew and review how birds are being handled — wing grabs, overfilling crates, dragging birds across surfaces. Check the barn for anything that could scratch birds: broken slats, sharp wire ends, feeder edges. Review your E. coli vaccination program — Poulvac E. coli (Zoetis, licensed in Canada) is commonly used and can significantly reduce cellulitis rates when timed correctly (Zoetis, 2021). Breast blisters above 5%: Your lame birds are lying down too much. Fix the leg health problem first. Also look at litter quality — soft, dry litter is more forgiving on the breast. In breeders, make sure perches are available and birds are using them. Ammonia burns on ventral skin: Your litter moisture is above 35% and your ammonia is above 25 ppm. This is an urgent ventilation and litter management problem, not just a welfare issue — you are losing condemnation revenue at the plant. Cyanosis or jaundice in multiple birds: Do not wait. This is a same-day call to your poultry vet. Submit two or three fresh, chilled dead birds for post-mortem as soon as possible."
 $body += ImgXml "Figure 6. Key Skin Conditions in Commercial Broiler Production. A: Cellulitis — fibrinous plaque, total condemnation. B: Breast Blister over keel bone. C: Ammonia Burn on ventral skin. Sources: Opengart (2008); Elfadil et al. (1996)."
+$body += PhotoXml 7 "Photo 7. Bumblefoot (pododermatitis) in a rooster — showing advanced bacterial skin infection with the characteristic raised scab and surrounding tissue inflammation. In commercial broilers, any open skin wound is a potential entry point for E. coli and Staphylococcus aureus, leading to cellulitis and carcass condemnation." "Source: Sylvain Larrat / Wikimedia Commons, CC BY 4.0."
 
 # JOURNALS
 $body += H1 "Where to Keep Learning"

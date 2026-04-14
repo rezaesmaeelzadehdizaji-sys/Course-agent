@@ -5,5 +5,4 @@
 *.tmp
 *.bak
 
-# Photos folder (downloaded at runtime)
-photos/
+# No exclusions for photos — real clinical images are part of the project
