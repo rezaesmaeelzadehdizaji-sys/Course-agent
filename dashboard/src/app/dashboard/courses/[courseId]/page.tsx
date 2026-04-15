@@ -7,17 +7,18 @@ import SectionEditor from '@/components/SectionEditor'
 import DownloadButton from '@/components/DownloadButton'
 
 interface Props {
-  params: { courseId: string }
+  params: Promise<{ courseId: string }>
 }
 
 export default async function CourseDetailPage({ params }: Props) {
+  const { courseId } = await params
   const supabase = await createClient()
 
   const [courseRes, sectionsRes, introRes, journalRes] = await Promise.all([
-    supabase.from('courses').select('*').eq('id', params.courseId).single(),
-    supabase.from('sections').select('*').eq('course_id', params.courseId).order('sort_order'),
-    supabase.from('introductions').select('*').eq('course_id', params.courseId).single(),
-    supabase.from('journal_sections').select('*').eq('course_id', params.courseId).single(),
+    supabase.from('courses').select('*').eq('id', courseId).single(),
+    supabase.from('sections').select('*').eq('course_id', courseId).order('sort_order'),
+    supabase.from('introductions').select('*').eq('course_id', courseId).single(),
+    supabase.from('journal_sections').select('*').eq('course_id', courseId).single(),
   ])
 
   if (courseRes.error || !courseRes.data) notFound()

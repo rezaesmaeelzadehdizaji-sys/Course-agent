@@ -7,8 +7,9 @@ import type { DocCourseContent, DocReferences, Course, Section, Introduction, Jo
 
 export async function POST(
   _request: NextRequest,
-  { params }: { params: { courseId: string } }
+  { params }: { params: Promise<{ courseId: string }> }
 ) {
+  const { courseId } = await params
   const cookieStore = await cookies()
   const supabase = createServerClient(
     process.env.NEXT_PUBLIC_SUPABASE_URL!,
@@ -33,7 +34,7 @@ export async function POST(
     return new NextResponse('Unauthorized', { status: 401 })
   }
 
-  const courseId = params.courseId
+  // courseId already destructured from awaited params above
 
   // Fetch all course data in parallel
   const [courseRes, sectionsRes, introRes, journalRes, refsRes] = await Promise.all([
