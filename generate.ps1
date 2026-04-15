@@ -227,7 +227,7 @@ function CreateWeightDiagram($outFile) {
 # Generate the 6 images
 Write-Host "Generating diagrams..." -ForegroundColor Cyan
 
-CreateDiagram "$tmpDir\word\media\img1.png" "Footpad Dermatitis Scoring Scale (Welfare Quality(r))" @(
+CreateDiagram "$tmpDir\word\media\img1.png" "Footpad Dermatitis Scoring Scale (Welfare Quality®)" @(
     @{Score="0"; Label="Normal";   Desc="No lesion. Intact plantar skin. No discoloration."; BgColor="#C8E6C9"; Dark=$false},
     @{Score="1"; Label="Mild";     Desc="Superficial lesion. Mild discoloration. Surface erosion only."; BgColor="#FFF9C4"; Dark=$false},
     @{Score="2"; Label="Severe";   Desc="Deep ulceration. Necrosis. Affects >1/3 of footpad surface."; BgColor="#EF9A9A"; Dark=$false}
@@ -241,7 +241,7 @@ CreateDiagram "$tmpDir\word\media\img2.png" "Feather Coverage Scoring Scale (Lay
     @{Score="4"; Label="Severe";       Desc="Bare area >10 cm2 or open wound present."; BgColor="#C62828"; Dark=$true}
 )
 
-CreateDiagram "$tmpDir\word\media\img3.png" "Bristol Gait Scoring Scale (Kestin et al., 1992)" @(
+CreateDiagram "$tmpDir\word\media\img3.png" "Bristol Gait Scoring Scale" @(
     @{Score="0"; Label="Normal";       Desc="Normal gait. Full weight bearing. Fluid movement."; BgColor="#2E7D32"; Dark=$true},
     @{Score="1"; Label="Slight";       Desc="Minor gait abnormality. Slight limp or stiffness."; BgColor="#8BC34A"; Dark=$false},
     @{Score="2"; Label="Definite";     Desc="Definite gait abnormality. Noticeable difficulty walking."; BgColor="#FFF176"; Dark=$false},
@@ -315,6 +315,18 @@ foreach ($p in $photos) {
     }
 }
 Write-Host "Photos ready." -ForegroundColor Green
+
+# ── CPC LOGO ──────────────────────────────────────────────────
+$logoData = $null
+$logoSrc  = "D:\Course agent\logo.png"
+if (Test-Path $logoSrc) {
+    Write-Host "Processing logo..." -ForegroundColor Cyan
+    $logoData = CopyResizedPhoto $logoSrc "$tmpDir\word\media\logo.png" 500
+    Write-Host "  Logo -> $($logoData.w)x$($logoData.h)" -ForegroundColor Gray
+} else {
+    Write-Host "  INFO: logo.png not found -- cover will skip logo" -ForegroundColor Yellow
+    Write-Host "  Save the CPC logo as: D:\Course agent\logo.png" -ForegroundColor Yellow
+}
 
 # ── DRAWING XML helper ────────────────────────────────────────
 $script:imgIdx = 0
@@ -414,53 +426,39 @@ WriteFile "$tmpDir\_rels\.rels" @'
 '@
 
 # ── word/_rels/document.xml.rels ─────────────────────────────
-WriteFile "$tmpDir\word\_rels\document.xml.rels" @'
+$imgType = "http://schemas.openxmlformats.org/officeDocument/2006/relationships/image"
+$logoRel = if ($logoData) { "  <Relationship Id=`"rId9`" Type=`"$imgType`" Target=`"media/logo.png`"/>" } else { "" }
+WriteFile "$tmpDir\word\_rels\document.xml.rels" @"
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <Relationships xmlns="http://schemas.openxmlformats.org/package/2006/relationships">
-  <Relationship Id="rId1" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/styles"
-    Target="styles.xml"/>
-  <Relationship Id="rId2" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/settings"
-    Target="settings.xml"/>
-  <Relationship Id="rId3" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/image"
-    Target="media/img1.png"/>
-  <Relationship Id="rId4" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/image"
-    Target="media/img2.png"/>
-  <Relationship Id="rId5" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/image"
-    Target="media/img3.png"/>
-  <Relationship Id="rId6" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/image"
-    Target="media/img4.png"/>
-  <Relationship Id="rId7" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/image"
-    Target="media/img5.png"/>
-  <Relationship Id="rId8" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/image"
-    Target="media/img6.png"/>
-  <Relationship Id="rId16" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/image"
-    Target="media/photo1.jpg"/>
-  <Relationship Id="rId17" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/image"
-    Target="media/photo2.jpg"/>
-  <Relationship Id="rId18" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/image"
-    Target="media/photo3.jpg"/>
-  <Relationship Id="rId19" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/image"
-    Target="media/photo4.png"/>
-  <Relationship Id="rId20" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/image"
-    Target="media/photo5.jpg"/>
-  <Relationship Id="rId21" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/image"
-    Target="media/photo6.jpg"/>
-  <Relationship Id="rId22" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/image"
-    Target="media/photo7.jpg"/>
-  <Relationship Id="rId23" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/image"
-    Target="media/photo8.jpg"/>
-  <Relationship Id="rId24" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/image"
-    Target="media/photo9.jpg"/>
-  <Relationship Id="rId25" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/image"
-    Target="media/photo10.jpg"/>
+  <Relationship Id="rId1" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/styles" Target="styles.xml"/>
+  <Relationship Id="rId2" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/settings" Target="settings.xml"/>
+  <Relationship Id="rId3"  Type="$imgType" Target="media/img1.png"/>
+  <Relationship Id="rId4"  Type="$imgType" Target="media/img2.png"/>
+  <Relationship Id="rId5"  Type="$imgType" Target="media/img3.png"/>
+  <Relationship Id="rId6"  Type="$imgType" Target="media/img4.png"/>
+  <Relationship Id="rId7"  Type="$imgType" Target="media/img5.png"/>
+  <Relationship Id="rId8"  Type="$imgType" Target="media/img6.png"/>
+$logoRel
+  <Relationship Id="rId16" Type="$imgType" Target="media/photo1.jpg"/>
+  <Relationship Id="rId17" Type="$imgType" Target="media/photo2.jpg"/>
+  <Relationship Id="rId18" Type="$imgType" Target="media/photo3.jpg"/>
+  <Relationship Id="rId19" Type="$imgType" Target="media/photo4.png"/>
+  <Relationship Id="rId20" Type="$imgType" Target="media/photo5.jpg"/>
+  <Relationship Id="rId21" Type="$imgType" Target="media/photo6.jpg"/>
+  <Relationship Id="rId22" Type="$imgType" Target="media/photo7.jpg"/>
+  <Relationship Id="rId23" Type="$imgType" Target="media/photo8.jpg"/>
+  <Relationship Id="rId24" Type="$imgType" Target="media/photo9.jpg"/>
+  <Relationship Id="rId25" Type="$imgType" Target="media/photo10.jpg"/>
 </Relationships>
-'@
+"@
 
 # ── word/settings.xml ────────────────────────────────────────
 WriteFile "$tmpDir\word\settings.xml" @'
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <w:settings xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main">
   <w:defaultTabStop w:val="720"/>
+  <w:updateFields w:val="true"/>
 </w:settings>
 '@
 
@@ -517,6 +515,43 @@ WriteFile "$tmpDir\word\styles.xml" @'
     </w:pPr>
     <w:rPr>
       <w:rFonts w:ascii="Calibri" w:hAnsi="Calibri"/><w:sz w:val="22"/>
+    </w:rPr>
+  </w:style>
+  <w:style w:type="paragraph" w:styleId="TOCHeading">
+    <w:name w:val="TOC Heading"/>
+    <w:basedOn w:val="Normal"/>
+    <w:pPr>
+      <w:outlineLvl w:val="9"/>
+      <w:spacing w:before="480" w:after="280"/>
+    </w:pPr>
+    <w:rPr>
+      <w:rFonts w:ascii="Calibri Light" w:hAnsi="Calibri Light"/>
+      <w:b/><w:color w:val="1F3864"/><w:sz w:val="36"/>
+    </w:rPr>
+  </w:style>
+  <w:style w:type="paragraph" w:styleId="TOC1">
+    <w:name w:val="toc 1"/>
+    <w:basedOn w:val="Normal"/>
+    <w:pPr>
+      <w:spacing w:after="120"/>
+      <w:tabs><w:tab w:val="right" w:leader="dot" w:pos="9360"/></w:tabs>
+    </w:pPr>
+    <w:rPr>
+      <w:rFonts w:ascii="Calibri" w:hAnsi="Calibri"/>
+      <w:b/><w:color w:val="1F3864"/><w:sz w:val="24"/>
+    </w:rPr>
+  </w:style>
+  <w:style w:type="paragraph" w:styleId="TOC2">
+    <w:name w:val="toc 2"/>
+    <w:basedOn w:val="Normal"/>
+    <w:pPr>
+      <w:spacing w:after="80"/>
+      <w:ind w:left="440"/>
+      <w:tabs><w:tab w:val="right" w:leader="dot" w:pos="9360"/></w:tabs>
+    </w:pPr>
+    <w:rPr>
+      <w:rFonts w:ascii="Calibri" w:hAnsi="Calibri"/>
+      <w:sz w:val="22"/>
     </w:rPr>
   </w:style>
 </w:styles>
@@ -589,6 +624,31 @@ function Ref($text) {
     return "<w:p><w:pPr><w:pStyle w:val=`"Bibliography`"/></w:pPr><w:r><w:t xml:space=`"preserve`">$(esc $text)</w:t></w:r></w:p>"
 }
 
+function LogoXml {
+    if (-not $logoData) { return "" }
+    $maxCx = 1371600   # 1.5 inches wide in EMU
+    $cx = $maxCx
+    $cy = [int]($maxCx * $logoData.h / $logoData.w)
+    return @"
+<w:p><w:pPr><w:jc w:val="center"/><w:spacing w:before="300" w:after="300"/></w:pPr><w:r><w:drawing>
+<wp:inline xmlns:wp="http://schemas.openxmlformats.org/drawingml/2006/wordprocessingDrawing" distT="0" distB="0" distL="0" distR="0">
+<wp:extent cx="$cx" cy="$cy"/>
+<wp:effectExtent l="0" t="0" r="0" b="0"/>
+<wp:docPr id="200" name="CPCLogo"/>
+<wp:cNvGraphicFramePr><a:graphicFrameLocks xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main" noChangeAspect="1"/></wp:cNvGraphicFramePr>
+<a:graphic xmlns:a="http://schemas.openxmlformats.org/drawingml/2006/main">
+<a:graphicData uri="http://schemas.openxmlformats.org/drawingml/2006/picture">
+<pic:pic xmlns:pic="http://schemas.openxmlformats.org/drawingml/2006/picture">
+<pic:nvPicPr><pic:cNvPr id="200" name="logo.png"/><pic:cNvPicPr><a:picLocks noChangeAspect="1"/></pic:cNvPicPr></pic:nvPicPr>
+<pic:blipFill>
+<a:blip r:embed="rId9" xmlns:r="http://schemas.openxmlformats.org/officeDocument/2006/relationships"/>
+<a:stretch><a:fillRect/></a:stretch>
+</pic:blipFill>
+<pic:spPr><a:xfrm><a:off x="0" y="0"/><a:ext cx="$cx" cy="$cy"/></a:xfrm><a:prstGeom prst="rect"><a:avLst/></a:prstGeom></pic:spPr>
+</pic:pic></a:graphicData></a:graphic></wp:inline></w:drawing></w:r></w:p>
+"@
+}
+
 # ── Build document body ───────────────────────────────────────
 $body = @"
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
@@ -599,12 +659,24 @@ $body = @"
 
 # COVER PAGE
 $body += P "COURSE 1 OF 17: CANADIAN POULTRY TRAINING SERIES" "Normal" $true "2E74B5" 22 "center" 1800 200
-$body += P "T-FLAWS – Assessment Management Tool" "Normal" $true "1F3864" 56 "center" 400 300
+$body += LogoXml
+$body += P "T-FLAWS – Assessment Management Tool" "Normal" $true "1F3864" 56 "center" 200 200
 $body += P "A Structured Flock Assessment Framework for Commercial Poultry Farmers in Canada" "Normal" $false "2E74B5" 30 "center" 0 600
 $body += P "———————————————————————————————" "Normal" $false "2E74B5" 22 "center" 0 400
-$body += P "Canadian Poultry Training Series" "Normal" $true "595959" 24 "center" 0 120
-$body += P "April 2026  |  Version 1.0" "Normal" $false "595959" 22 "center" 0 800
-$body += P "This course has been developed for educational purposes for commercial poultry farmers in Canada. Content is drawn from peer-reviewed literature and industry management guides. Items marked [NEEDS SOURCE] require additional verification before publication." "Normal" $false "808080" 18 "center" 0 120
+$body += P "Canadian Poultry Training Series Course" "Normal" $true "595959" 24 "center" 0 120
+$body += P "Duration: 2 hours" "Normal" $false "595959" 22 "center" 0 120
+$body += P "April 2026" "Normal" $false "595959" 22 "center" 0 800
+$body += P "This course has been developed for educational purposes for commercial poultry farmers in Canada. Content is drawn from peer-reviewed scientific literature and industry management guides." "Normal" $false "808080" 18 "center" 0 120
+$body += "<w:p><w:pPr><w:pageBreakBefore/></w:pPr></w:p>"
+
+# TABLE OF CONTENTS
+$body += "<w:p><w:pPr><w:pStyle w:val=`"TOCHeading`"/></w:pPr><w:r><w:t>Table of Contents</w:t></w:r></w:p>"
+$body += "<w:p><w:pPr><w:pStyle w:val=`"TOC1`"/></w:pPr>"
+$body += "<w:r><w:rPr><w:noProof/></w:rPr><w:fldChar w:fldCharType=`"begin`" w:dirty=`"true`"/></w:r>"
+$body += "<w:r><w:rPr><w:noProof/></w:rPr><w:instrText xml:space=`"preserve`"> TOC \o `"1-2`" \h \z \u </w:instrText></w:r>"
+$body += "<w:r><w:rPr><w:noProof/></w:rPr><w:fldChar w:fldCharType=`"separate`"/></w:r>"
+$body += "<w:r><w:rPr><w:noProof/><w:color w:val=`"808080`"/><w:i/></w:rPr><w:t>[ Open in Word and select Update Field to generate the table of contents. ]</w:t></w:r>"
+$body += "<w:r><w:rPr><w:noProof/></w:rPr><w:fldChar w:fldCharType=`"end`"/></w:r></w:p>"
 $body += "<w:p><w:pPr><w:pageBreakBefore/></w:pPr></w:p>"
 
 # INTRODUCTION
@@ -786,33 +858,36 @@ foreach ($r in $refs) { $body += Ref $r }
 $body += "<w:sectPr><w:pgSz w:w=`"12240`" w:h=`"15840`"/><w:pgMar w:top=`"1440`" w:right=`"1440`" w:bottom=`"1440`" w:left=`"1800`" w:header=`"720`" w:footer=`"720`"/></w:sectPr>"
 $body += "</w:body></w:document>"
 
-# ── Post-processing: numbered citations and em-dash replacement ──
-# Citations — specific matches first, then generic
-$body = $body -replace 'Code of Practice \(2016\)', 'Code of Practice (23)'
-$body = $body -replace 'NFACC \(2016\)', 'NFACC (23)'
-$body = $body -replace '\(NFACC, 2016\)', '(23)'
-$body = $body -replace '\(Welfare Quality\(r\), 2009\)', '(28)'
-$body = $body -replace '\(Ekstrand et al\., 1997\)', '(13)'
-$body = $body -replace 'to support skin integrity \(Merck Veterinary Manual, 2022\)', 'to support skin integrity (20)'
-$body = $body -replace '\(Merck Veterinary Manual, 2022\)', '(21)'
-$body = $body -replace '\(Riber et al\., 2018\)', '(25)'
-$body = $body -replace '\(Daigle, 2017\)', '(11)'
-$body = $body -replace '\(Kestin et al\., 1992\)', '(17)'
-$body = $body -replace '\(Knowles et al\., 2008\)', '(18)'
-$body = $body -replace '\(Dawkins et al\., 2004\)', '(12)'
-$body = $body -replace '\(EFSA, 2012\)', '(15)'
-$body = $body -replace '\(Jones, 1996\)', '(16)'
-$body = $body -replace '\(Lohmann Tierzucht, 2021\)', '(19)'
-$body = $body -replace '\(Zuidhof et al\., 2014\)', '(30)'
-$body = $body -replace '\(Aviagen, 2022\)', '(2)'
-$body = $body -replace 'Performance Objectives \(2022\)', 'Performance Objectives (1)'
-$body = $body -replace '\(Cobb-Vantress, 2021\)', '(10)'
-$body = $body -replace 'Elfadil et al\. \(1996\)', '(14)'
-$body = $body -replace '\(Elfadil et al\., 1996\)', '(14)'
-$body = $body -replace 'Opengart \(2008\)', '(24)'
-$body = $body -replace '\(Opengart, 2008\)', '(24)'
-$body = $body -replace '\(Zoetis, 2021\)', '(29)'
-$body = $body -replace 'Vasdal et al\. \(2020\)', '(27)'
+# ── Post-processing: remove in-text citations, fix symbols, fix em-dashes ──
+# Remove parenthetical citations — space + (Author, Year) → nothing
+$body = $body -replace ' \(Welfare Quality\(r\), 2009\)', ''
+$body = $body -replace ' Code of Practice \(2016\)', ' Code of Practice'
+$body = $body -replace ' NFACC \(2016\)', ' NFACC'
+$body = $body -replace ' \(NFACC, 2016\)', ''
+$body = $body -replace ' \(Ekstrand et al\., 1997\)', ''
+$body = $body -replace 'to support skin integrity \(Merck Veterinary Manual, 2022\)', 'to support skin integrity'
+$body = $body -replace ' \(Merck Veterinary Manual, 2022\)', ''
+$body = $body -replace ' \(Riber et al\., 2018\)', ''
+$body = $body -replace ' \(Daigle, 2017\)', ''
+$body = $body -replace ' \(Kestin et al\., 1992\)', ''
+$body = $body -replace ' \(Knowles et al\., 2008\)', ''
+$body = $body -replace ' \(Dawkins et al\., 2004\)', ''
+$body = $body -replace ' \(EFSA, 2012\)', ''
+$body = $body -replace ' \(Jones, 1996\)', ''
+$body = $body -replace ' \(Lohmann Tierzucht, 2021\)', ''
+$body = $body -replace ' \(Zuidhof et al\., 2014\)', ''
+$body = $body -replace ' \(Aviagen, 2022\)', ''
+$body = $body -replace 'Performance Objectives \(2022\)', 'Performance Objectives'
+$body = $body -replace ' \(Cobb-Vantress, 2021\)', ''
+$body = $body -replace 'Elfadil et al\. \(1996\)', 'Elfadil et al.'
+$body = $body -replace ' \(Elfadil et al\., 1996\)', ''
+$body = $body -replace 'Opengart \(2008\)', 'Opengart'
+$body = $body -replace ' \(Opengart, 2008\)', ''
+$body = $body -replace ' \(Zoetis, 2021\)', ''
+$body = $body -replace 'Vasdal et al\. \(2020\)', 'Vasdal et al.'
+$body = $body -replace ' \(Shepherd &amp; Fairchild, 2010\)', ''
+# Fix trademark symbol throughout
+$body = $body -replace 'Welfare Quality\(r\)', 'Welfare Quality®'
 # Em-dashes — specific patterns first, then generic
 $body = $body -replace 'Score (\d) — ', 'Score $1: '
 $body = $body -replace 'Body Weight Distribution — ', 'Body Weight Distribution: '
