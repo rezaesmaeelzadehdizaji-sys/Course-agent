@@ -10,7 +10,7 @@ export async function updateCourseMeta(
   status: CourseStatus,
   progressPct: number
 ) {
-  const supabase = createClient()
+  const supabase = await createClient()
 
   const { error } = await supabase
     .from('courses')

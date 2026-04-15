@@ -1,6 +1,7 @@
-import { createServerClient } from '@supabase/ssr'
+import { createServerClient, type CookieOptions } from '@supabase/ssr'
 import { cookies } from 'next/headers'
 import { NextResponse, type NextRequest } from 'next/server'
+// Note: binary response uses global Response (broader BodyInit support than NextResponse)
 import { generateDocument } from '@/lib/doc-generator'
 import type { DocCourseContent, DocReferences, Course, Section, Introduction, JournalSection, Reference } from '@/lib/types'
 
@@ -8,14 +9,14 @@ export async function POST(
   _request: NextRequest,
   { params }: { params: { courseId: string } }
 ) {
-  const cookieStore = cookies()
+  const cookieStore = await cookies()
   const supabase = createServerClient(
     process.env.NEXT_PUBLIC_SUPABASE_URL!,
     process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
     {
       cookies: {
         getAll() { return cookieStore.getAll() },
-        setAll(cookiesToSet) {
+        setAll(cookiesToSet: { name: string; value: string; options?: CookieOptions }[]) {
           try {
             cookiesToSet.forEach(({ name, value, options }) =>
               cookieStore.set(name, value, options)
@@ -98,16 +99,23 @@ export async function POST(
 
   try {
     const buffer = await generateDocument(courseContent, docReferences)
+    // Extract a plain ArrayBuffer (Buffer uses ArrayBufferLike which may be SharedArrayBuffer)
+    const arrayBuffer = buffer.buffer.slice(
+      buffer.byteOffset,
+      buffer.byteOffset + buffer.byteLength
+    ) as ArrayBuffer
+    const DOCX_MIME = 'application/vnd.openxmlformats-officedocument.wordprocessingml.document'
+    const blob = new Blob([arrayBuffer], { type: DOCX_MIME })
 
     const slug = course.slug ?? `course-${String(course.course_number).padStart(2, '0')}`
     const filename = `${slug}.docx`
 
-    return new NextResponse(buffer, {
+    return new Response(blob, {
       status: 200,
       headers: {
-        'Content-Type': 'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
+        'Content-Type': DOCX_MIME,
         'Content-Disposition': `attachment; filename="${filename}"`,
-        'Content-Length': String(buffer.length),
+        'Content-Length': String(blob.size),
       },
     })
   } catch (err) {

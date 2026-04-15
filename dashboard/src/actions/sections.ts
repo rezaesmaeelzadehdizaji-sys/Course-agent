@@ -5,7 +5,7 @@ import { createClient } from '@/lib/supabase/server'
 import type { SectionSubsections, IntroSubsection, JournalEntry, Reference } from '@/lib/types'
 
 export async function updateSection(sectionId: string, subsections: SectionSubsections) {
-  const supabase = createClient()
+  const supabase = await createClient()
 
   const { data: section, error: fetchError } = await supabase
     .from('sections')
@@ -29,7 +29,7 @@ export async function updateIntroduction(
   introId: string,
   data: { title: string; paragraphs: string[]; subsections: IntroSubsection[] }
 ) {
-  const supabase = createClient()
+  const supabase = await createClient()
 
   const { data: intro, error: fetchError } = await supabase
     .from('introductions')
@@ -53,7 +53,7 @@ export async function updateJournalSection(
   journalId: string,
   data: { title: string; intro: string; journals: JournalEntry[]; institutional_resources: string[] }
 ) {
-  const supabase = createClient()
+  const supabase = await createClient()
 
   const { data: journal, error: fetchError } = await supabase
     .from('journal_sections')
@@ -74,7 +74,7 @@ export async function updateJournalSection(
 }
 
 export async function upsertReference(courseId: string, ref: Reference) {
-  const supabase = createClient()
+  const supabase = await createClient()
 
   // For new refs (temp id starts with 'new-'), insert; otherwise update
   if (ref.id.startsWith('new-')) {
@@ -98,7 +98,7 @@ export async function upsertReference(courseId: string, ref: Reference) {
 }
 
 export async function deleteReference(refId: string) {
-  const supabase = createClient()
+  const supabase = await createClient()
 
   const { error } = await supabase.from('references').delete().eq('id', refId)
   if (error) throw new Error(error.message)

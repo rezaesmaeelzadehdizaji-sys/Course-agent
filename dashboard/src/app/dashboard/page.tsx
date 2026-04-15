@@ -3,7 +3,7 @@ import CourseGrid from '@/components/CourseGrid'
 import type { Course } from '@/lib/types'
 
 export default async function DashboardPage() {
-  const supabase = createClient()
+  const supabase = await createClient()
 
   const { data: courses, error } = await supabase
     .from('courses')

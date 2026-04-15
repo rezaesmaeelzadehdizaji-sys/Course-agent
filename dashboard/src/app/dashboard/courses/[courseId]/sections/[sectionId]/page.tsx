@@ -12,7 +12,7 @@ interface Props {
 }
 
 export default async function SectionPage({ params }: Props) {
-  const supabase = createClient()
+  const supabase = await createClient()
 
   // Handle special section types
   if (params.sectionId === 'introduction') {

@@ -11,7 +11,7 @@ interface Props {
 }
 
 export default async function CourseDetailPage({ params }: Props) {
-  const supabase = createClient()
+  const supabase = await createClient()
 
   const [courseRes, sectionsRes, introRes, journalRes] = await Promise.all([
     supabase.from('courses').select('*').eq('id', params.courseId).single(),
