@@ -677,7 +677,6 @@ $body += "<w:r><w:rPr><w:noProof/></w:rPr><w:instrText xml:space=`"preserve`"> T
 $body += "<w:r><w:rPr><w:noProof/></w:rPr><w:fldChar w:fldCharType=`"separate`"/></w:r>"
 $body += "<w:r><w:rPr><w:noProof/><w:color w:val=`"808080`"/><w:i/></w:rPr><w:t>[ Open in Word and select Update Field to generate the table of contents. ]</w:t></w:r>"
 $body += "<w:r><w:rPr><w:noProof/></w:rPr><w:fldChar w:fldCharType=`"end`"/></w:r></w:p>"
-$body += "<w:p><w:pPr><w:pageBreakBefore/></w:pPr></w:p>"
 
 # INTRODUCTION
 $body += H1 "Introduction to T-FLAWS"
