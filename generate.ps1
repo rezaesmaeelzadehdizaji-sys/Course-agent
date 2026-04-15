@@ -666,7 +666,7 @@ $body += P "——————————————————————�
 $body += P "Canadian Poultry Training Series Course" "Normal" $true "595959" 24 "center" 0 120
 $body += P "Duration: 2 hours" "Normal" $false "595959" 22 "center" 0 120
 $body += P "April 2026" "Normal" $false "595959" 22 "center" 0 800
-$body += P "This course has been developed for educational purposes for commercial poultry farmers in Canada. Content is drawn from peer-reviewed scientific literature and industry management guides." "Normal" $false "808080" 18 "center" 0 120
+$body += P "This course has been developed for educational purposes for commercial poultry farmers in Canada. Content is drawn from the field experience of the Canadian Poultry Consultants (CPC) team, peer-reviewed scientific literature, and industry management guides." "Normal" $false "808080" 18 "center" 0 120
 $body += "<w:p><w:pPr><w:pageBreakBefore/></w:pPr></w:p>"
 
 # TABLE OF CONTENTS
