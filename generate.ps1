@@ -458,7 +458,6 @@ WriteFile "$tmpDir\word\settings.xml" @'
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <w:settings xmlns:w="http://schemas.openxmlformats.org/wordprocessingml/2006/main">
   <w:defaultTabStop w:val="720"/>
-  <w:updateFields w:val="true"/>
 </w:settings>
 '@
 
