@@ -671,7 +671,7 @@ $body += "<w:p><w:pPr><w:pageBreakBefore/></w:pPr></w:p>"
 # TABLE OF CONTENTS
 $body += "<w:p><w:pPr><w:pStyle w:val=`"TOCHeading`"/></w:pPr><w:r><w:t>Table of Contents</w:t></w:r></w:p>"
 $body += "<w:p><w:pPr><w:pStyle w:val=`"TOC1`"/></w:pPr>"
-$body += "<w:r><w:rPr><w:noProof/></w:rPr><w:fldChar w:fldCharType=`"begin`" w:dirty=`"true`"/></w:r>"
+$body += "<w:r><w:rPr><w:noProof/></w:rPr><w:fldChar w:fldCharType=`"begin`"/></w:r>"
 $body += "<w:r><w:rPr><w:noProof/></w:rPr><w:instrText xml:space=`"preserve`"> TOC \o `"1-2`" \h \z \u </w:instrText></w:r>"
 $body += "<w:r><w:rPr><w:noProof/></w:rPr><w:fldChar w:fldCharType=`"separate`"/></w:r>"
 $body += "<w:r><w:rPr><w:noProof/><w:color w:val=`"808080`"/><w:i/></w:rPr><w:t>[ Open in Word and select Update Field to generate the table of contents. ]</w:t></w:r>"
