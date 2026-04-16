@@ -87,7 +87,10 @@ return (
             </div>
 
             {mode === 'password' ? (
-              <form onSubmit={handlePassword} className="space-y-4">
+              <form onSubmit={handlePassword} autoComplete="off" className="space-y-4">
+                {/* Hidden honeypot fields to trick browser autofill */}
+                <input type="text" name="fake_user" autoComplete="username" style={{ position: 'absolute', opacity: 0, height: 0, width: 0, overflow: 'hidden', pointerEvents: 'none' }} aria-hidden="true" tabIndex={-1} />
+                <input type="password" name="fake_pass" autoComplete="current-password" style={{ position: 'absolute', opacity: 0, height: 0, width: 0, overflow: 'hidden', pointerEvents: 'none' }} aria-hidden="true" tabIndex={-1} />
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-1">Email</label>
                   <input
@@ -95,7 +98,12 @@ return (
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     required
+                    name="tflaws_signin_email"
+                    autoComplete="one-time-code"
+                    data-lpignore="true"
+                    data-1p-ignore="true"
                     className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[#2E74B5] focus:border-transparent"
+                    placeholder="you@example.com"
                   />
                 </div>
                 <div>
@@ -105,6 +113,10 @@ return (
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                     required
+                    name="tflaws_signin_pass"
+                    autoComplete="one-time-code"
+                    data-lpignore="true"
+                    data-1p-ignore="true"
                     placeholder="••••••••"
                     className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[#2E74B5] focus:border-transparent"
                   />
@@ -121,7 +133,9 @@ return (
                 </button>
               </form>
             ) : (
-              <form onSubmit={handleMagicLink} className="space-y-4">
+              <form onSubmit={handleMagicLink} autoComplete="off" className="space-y-4">
+                {/* Hidden honeypot field to trick browser autofill */}
+                <input type="text" name="fake_user_ml" autoComplete="username" style={{ position: 'absolute', opacity: 0, height: 0, width: 0, overflow: 'hidden', pointerEvents: 'none' }} aria-hidden="true" tabIndex={-1} />
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-1">Email address</label>
                   <input
@@ -129,7 +143,12 @@ return (
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     required
+                    name="tflaws_magic_email"
+                    autoComplete="one-time-code"
+                    data-lpignore="true"
+                    data-1p-ignore="true"
                     className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[#2E74B5] focus:border-transparent"
+                    placeholder="you@example.com"
                   />
                 </div>
                 {error && (

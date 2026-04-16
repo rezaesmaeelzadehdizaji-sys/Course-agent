@@ -95,6 +95,9 @@ export async function generateDocument(
     creator: courseContent.meta.organization,
     title: courseContent.meta.title,
     description: courseContent.meta.subtitle,
+    features: {
+      updateFields: true,
+    },
     styles: buildStyles(),
     numbering: buildNumbering(),
     sections: [
