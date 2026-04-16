@@ -1,35 +1,28 @@
-import { createServerClient, type CookieOptions } from '@supabase/ssr'
-import { cookies } from 'next/headers'
+import { createClient } from '@supabase/supabase-js'
 import { NextResponse, type NextRequest } from 'next/server'
 // Note: binary response uses global Response (broader BodyInit support than NextResponse)
 import { generateDocument } from '@/lib/doc-generator'
 import type { DocCourseContent, DocReferences, Course, Section, Introduction, JournalSection, Reference } from '@/lib/types'
 
 export async function POST(
-  _request: NextRequest,
+  request: NextRequest,
   { params }: { params: Promise<{ courseId: string }> }
 ) {
   const { courseId } = await params
-  const cookieStore = await cookies()
-  const supabase = createServerClient(
+
+  // Auth check via Bearer token sent from browser client
+  const authHeader = request.headers.get('Authorization')
+  const token = authHeader?.replace('Bearer ', '').trim()
+  if (!token) {
+    return new NextResponse('Unauthorized', { status: 401 })
+  }
+
+  const supabase = createClient(
     process.env.NEXT_PUBLIC_SUPABASE_URL!,
-    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
-    {
-      cookies: {
-        getAll() { return cookieStore.getAll() },
-        setAll(cookiesToSet: { name: string; value: string; options?: CookieOptions }[]) {
-          try {
-            cookiesToSet.forEach(({ name, value, options }) =>
-              cookieStore.set(name, value, options)
-            )
-          } catch {}
-        },
-      },
-    }
+    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
   )
 
-  // Auth check
-  const { data: { user } } = await supabase.auth.getUser()
+  const { data: { user } } = await supabase.auth.getUser(token)
   if (!user) {
     return new NextResponse('Unauthorized', { status: 401 })
   }

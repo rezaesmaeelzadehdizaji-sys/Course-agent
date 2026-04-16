@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import { createClient } from '@/lib/supabase/browser'
 
 interface Props {
   courseId: string
@@ -16,8 +17,15 @@ export default function DownloadButton({ courseId, courseNumber }: Props) {
     setError('')
 
     try {
+      const supabase = createClient()
+      const { data: { session } } = await supabase.auth.getSession()
+      if (!session) throw new Error('Not logged in — please refresh the page')
+
       const res = await fetch(`/api/courses/${courseId}/generate-docx`, {
         method: 'POST',
+        headers: {
+          'Authorization': `Bearer ${session.access_token}`,
+        },
       })
 
       if (!res.ok) {
