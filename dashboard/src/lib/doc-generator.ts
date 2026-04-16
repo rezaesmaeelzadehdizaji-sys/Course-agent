@@ -3,9 +3,6 @@
 // T-FLAWS Assessment Management Tool
 // ============================================================
 
-import fs from "fs";
-import path from "path";
-
 import {
   Document,
   Packer,
@@ -33,9 +30,11 @@ import type { DocCourseContent, DocReferences } from "./types";
 // IMAGE LOADING
 // ============================================================
 
-function loadImage(filename: string): Buffer | null {
+async function loadImageFromUrl(url: string): Promise<Buffer | null> {
   try {
-    return fs.readFileSync(path.join(process.cwd(), "public", "images", filename));
+    const res = await fetch(url);
+    if (!res.ok) return null;
+    return Buffer.from(await res.arrayBuffer());
   } catch {
     return null;
   }
@@ -70,11 +69,27 @@ const SECTION_PHOTOS: Record<string, Array<{ file: string; caption: string; ext:
 
 export async function generateDocument(
   courseContent: DocCourseContent,
-  references: DocReferences
+  references: DocReferences,
+  imageBaseUrl?: string
 ): Promise<Buffer> {
   const { referenceEntries, bibliographyOrder } = references;
 
-  const logoBuffer = loadImage("logo.png");
+  // Pre-load all images from CDN in parallel
+  const images = new Map<string, Buffer>();
+  if (imageBaseUrl) {
+    const allFiles = [
+      "logo.png",
+      ...Object.values(SECTION_PHOTOS).flat().map((p) => p.file),
+    ];
+    await Promise.all(
+      allFiles.map(async (file) => {
+        const buf = await loadImageFromUrl(`${imageBaseUrl}/images/${file}`);
+        if (buf) images.set(file, buf);
+      })
+    );
+  }
+
+  const logoBuffer = images.get("logo.png") ?? null;
 
   const doc = new Document({
     creator: courseContent.meta.organization,
@@ -87,7 +102,7 @@ export async function generateDocument(
       buildTocSection(courseContent.meta.title),
       buildIntroductionSection(courseContent.introduction, courseContent.meta.title),
       ...courseContent.sections.map((section, idx) =>
-        buildTflawsSection(section, idx + 1, courseContent.meta.title)
+        buildTflawsSection(section, idx + 1, courseContent.meta.title, images)
       ),
       buildJournalSection(courseContent.journalSection, courseContent.meta.title),
       buildBibliographySection(referenceEntries, bibliographyOrder, courseContent.meta.title),
@@ -551,7 +566,8 @@ function buildIntroductionSection(
 function buildTflawsSection(
   section: DocCourseContent["sections"][number],
   _figureNum: number,
-  courseTitle: string
+  courseTitle: string,
+  images: Map<string, Buffer>
 ) {
   const children: Paragraph[] = [
     new Paragraph({
@@ -594,7 +610,7 @@ function buildTflawsSection(
   subs.managementResponses.paragraphs.forEach((p) => children.push(renderParagraph(p)));
 
   const placeholder = subs.managementResponses.imagePlaceholder;
-  children.push(...buildScoringTableAndPhotos(section.id, placeholder.caption));
+  children.push(...buildScoringTableAndPhotos(section.id, placeholder.caption, images));
 
   children.push(new Paragraph({ children: [new PageBreak()] }));
 
@@ -730,7 +746,7 @@ function renderParagraph(text: string): Paragraph {
 // SCORING TABLES + PHOTO EMBEDDING PER SECTION
 // ============================================================
 
-function buildScoringTableAndPhotos(sectionId: string, figureCaption: string): Paragraph[] {
+function buildScoringTableAndPhotos(sectionId: string, figureCaption: string, images: Map<string, Buffer>): Paragraph[] {
   const elements: Paragraph[] = [];
 
   // Scoring table (Figure)
@@ -751,7 +767,7 @@ function buildScoringTableAndPhotos(sectionId: string, figureCaption: string): P
   // Photos
   const photos = SECTION_PHOTOS[sectionId] ?? [];
   for (const photo of photos) {
-    const buf = loadImage(photo.file);
+    const buf = images.get(photo.file) ?? null;
     if (!buf) continue;
     elements.push(
       new Paragraph({

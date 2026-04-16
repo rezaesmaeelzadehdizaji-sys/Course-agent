@@ -43,26 +43,9 @@ export async function POST(
   const course = courseRes.data as Course
   const slug = course.slug ?? `course-${String(course.course_number).padStart(2, '0')}`
 
-  // If a pre-built .docx exists as a static asset, fetch it from the CDN and return it.
-  // This completely bypasses doc generation for finalized courses.
-  // The file lives at public/docs/{slug}.docx and is served by Vercel's CDN.
   const origin = new URL(request.url).origin
-  const staticDocUrl = `${origin}/docs/${slug}.docx`
-  const staticRes = await fetch(staticDocUrl, { method: 'HEAD' })
-  if (staticRes.ok) {
-    const docRes = await fetch(staticDocUrl)
-    const docBuffer = Buffer.from(await docRes.arrayBuffer())
-    return new Response(docBuffer, {
-      status: 200,
-      headers: {
-        'Content-Type': DOCX_MIME,
-        'Content-Disposition': `attachment; filename="${slug}.docx"`,
-        'Content-Length': String(docBuffer.length),
-      },
-    })
-  }
 
-  // No static file — generate from DB content
+  // Generate from DB content
   const [sectionsRes, introRes, journalRes, refsRes] = await Promise.all([
     supabase.from('sections').select('*').eq('course_id', courseId).order('sort_order'),
     supabase.from('introductions').select('*').eq('course_id', courseId).single(),
@@ -115,7 +98,7 @@ export async function POST(
   })
 
   try {
-    const buffer = await generateDocument(courseContent, { referenceEntries, bibliographyOrder })
+    const buffer = await generateDocument(courseContent, { referenceEntries, bibliographyOrder }, origin)
     const arrayBuffer = buffer.buffer.slice(
       buffer.byteOffset,
       buffer.byteOffset + buffer.byteLength
