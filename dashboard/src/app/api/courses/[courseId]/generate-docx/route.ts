@@ -45,6 +45,23 @@ export async function POST(
 
   const origin = new URL(request.url).origin
 
+  // If a pre-built .docx exists as a static asset on the CDN, serve it directly.
+  // This bypasses generation entirely for finalized courses (e.g. T-FLAWS).
+  const staticDocUrl = `${origin}/docs/${slug}.docx`
+  const staticHead = await fetch(staticDocUrl, { method: 'HEAD' })
+  if (staticHead.ok) {
+    const docRes = await fetch(staticDocUrl)
+    const docBuffer = Buffer.from(await docRes.arrayBuffer())
+    return new Response(docBuffer, {
+      status: 200,
+      headers: {
+        'Content-Type': DOCX_MIME,
+        'Content-Disposition': `attachment; filename="${slug}.docx"`,
+        'Content-Length': String(docBuffer.length),
+      },
+    })
+  }
+
   // Generate from DB content
   const [sectionsRes, introRes, journalRes, refsRes] = await Promise.all([
     supabase.from('sections').select('*').eq('course_id', courseId).order('sort_order'),
