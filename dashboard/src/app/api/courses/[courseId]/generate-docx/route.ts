@@ -17,17 +17,21 @@ export async function POST(
     return new NextResponse('Unauthorized', { status: 401 })
   }
 
-  const supabase = createClient(
+  // Verify token with anon client
+  const anonClient = createClient(
     process.env.NEXT_PUBLIC_SUPABASE_URL!,
     process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
   )
-
-  const { data: { user } } = await supabase.auth.getUser(token)
+  const { data: { user } } = await anonClient.auth.getUser(token)
   if (!user) {
     return new NextResponse('Unauthorized', { status: 401 })
   }
 
-  // courseId already destructured from awaited params above
+  // Use service role client for data queries (bypasses RLS safely after auth check)
+  const supabase = createClient(
+    process.env.NEXT_PUBLIC_SUPABASE_URL!,
+    process.env.SUPABASE_SERVICE_ROLE_KEY!
+  )
 
   // Fetch all course data in parallel
   const [courseRes, sectionsRes, introRes, journalRes, refsRes] = await Promise.all([
