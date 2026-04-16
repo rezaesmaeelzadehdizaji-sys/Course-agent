@@ -3,25 +3,40 @@
 import { useState } from 'react'
 import { createClient } from '@/lib/supabase/browser'
 
+type Mode = 'password' | 'magic'
+
 export default function LoginPage() {
-  const [email, setEmail] = useState('')
+  const [mode, setMode] = useState<Mode>('password')
+  const [email, setEmail] = useState('reza.esmaeelzadehdizaji@gmail.com')
+  const [password, setPassword] = useState('')
   const [loading, setLoading] = useState(false)
   const [sent, setSent] = useState(false)
   const [error, setError] = useState('')
   const supabase = createClient()
 
+  async function handlePassword(e: React.FormEvent) {
+    e.preventDefault()
+    setLoading(true)
+    setError('')
+    const { error } = await supabase.auth.signInWithPassword({ email, password })
+    if (error) {
+      setError(error.message)
+    } else {
+      window.location.href = '/dashboard'
+    }
+    setLoading(false)
+  }
+
   async function handleMagicLink(e: React.FormEvent) {
     e.preventDefault()
     setLoading(true)
     setError('')
-
     const { error } = await supabase.auth.signInWithOtp({
       email,
       options: {
         emailRedirectTo: `${process.env.NEXT_PUBLIC_APP_URL}/auth/callback`,
       },
     })
-
     if (error) {
       setError(error.message)
     } else {
@@ -53,9 +68,7 @@ export default function LoginPage() {
           <div className="inline-block bg-[#1F3864] text-white text-xs font-semibold px-3 py-1 rounded-full mb-4 tracking-widest">
             COURSE 1 OF 17
           </div>
-          <h1 className="text-2xl font-bold text-[#1F3864] mb-1">
-            T-FLAWS Dashboard
-          </h1>
+          <h1 className="text-2xl font-bold text-[#1F3864] mb-1">T-FLAWS Dashboard</h1>
           <p className="text-sm text-gray-500">Canadian Poultry Training Series</p>
         </div>
 
@@ -66,38 +79,86 @@ export default function LoginPage() {
             <p className="text-sm text-gray-500">
               We sent a magic link to <strong>{email}</strong>. Click it to sign in.
             </p>
+            <button onClick={() => setSent(false)} className="mt-4 text-xs text-[#2E74B5] hover:underline">
+              Back
+            </button>
           </div>
         ) : (
           <>
-            <form onSubmit={handleMagicLink} className="space-y-4">
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">
-                  Email address
-                </label>
-                <input
-                  type="email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  required
-                  placeholder="your@email.com"
-                  className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[#2E74B5] focus:border-transparent"
-                />
-              </div>
-
-              {error && (
-                <p className="text-sm text-red-600 bg-red-50 border border-red-200 rounded px-3 py-2">
-                  {error}
-                </p>
-              )}
-
+            {/* Mode tabs */}
+            <div className="flex rounded-lg border border-gray-200 mb-6 overflow-hidden">
               <button
-                type="submit"
-                disabled={loading || !email}
-                className="w-full bg-[#1F3864] text-white font-medium py-2.5 rounded-lg text-sm hover:bg-[#2E74B5] transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                onClick={() => { setMode('password'); setError('') }}
+                className={`flex-1 py-2 text-sm font-medium transition-colors ${mode === 'password' ? 'bg-[#1F3864] text-white' : 'text-gray-500 hover:bg-gray-50'}`}
               >
-                {loading ? 'Sending…' : 'Send Magic Link'}
+                Password
               </button>
-            </form>
+              <button
+                onClick={() => { setMode('magic'); setError('') }}
+                className={`flex-1 py-2 text-sm font-medium transition-colors ${mode === 'magic' ? 'bg-[#1F3864] text-white' : 'text-gray-500 hover:bg-gray-50'}`}
+              >
+                Magic Link
+              </button>
+            </div>
+
+            {mode === 'password' ? (
+              <form onSubmit={handlePassword} className="space-y-4">
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-1">Email</label>
+                  <input
+                    type="email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    required
+                    className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[#2E74B5] focus:border-transparent"
+                  />
+                </div>
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-1">Password</label>
+                  <input
+                    type="password"
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                    required
+                    placeholder="••••••••"
+                    className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[#2E74B5] focus:border-transparent"
+                  />
+                </div>
+                {error && (
+                  <p className="text-sm text-red-600 bg-red-50 border border-red-200 rounded px-3 py-2">{error}</p>
+                )}
+                <button
+                  type="submit"
+                  disabled={loading || !email || !password}
+                  className="w-full bg-[#1F3864] text-white font-medium py-2.5 rounded-lg text-sm hover:bg-[#2E74B5] transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                >
+                  {loading ? 'Signing in…' : 'Sign In'}
+                </button>
+              </form>
+            ) : (
+              <form onSubmit={handleMagicLink} className="space-y-4">
+                <div>
+                  <label className="block text-sm font-medium text-gray-700 mb-1">Email address</label>
+                  <input
+                    type="email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    required
+                    className="w-full border border-gray-300 rounded-lg px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[#2E74B5] focus:border-transparent"
+                  />
+                </div>
+                {error && (
+                  <p className="text-sm text-red-600 bg-red-50 border border-red-200 rounded px-3 py-2">{error}</p>
+                )}
+                <button
+                  type="submit"
+                  disabled={loading || !email}
+                  className="w-full bg-[#1F3864] text-white font-medium py-2.5 rounded-lg text-sm hover:bg-[#2E74B5] transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                >
+                  {loading ? 'Sending…' : 'Send Magic Link'}
+                </button>
+              </form>
+            )}
 
             <div className="relative my-5">
               <div className="absolute inset-0 flex items-center">
