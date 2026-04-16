@@ -1,16 +1,17 @@
 // ============================================================
 // doc-generator.ts — Word Document Builder
 // T-FLAWS Assessment Management Tool
-// Ported from doc-generator.js — two changes only:
-//   1. Import from "docx" npm package (not CDN)
-//   2. Packer.toBuffer() instead of Packer.toBlob()
 // ============================================================
+
+import fs from "fs";
+import path from "path";
 
 import {
   Document,
   Packer,
   Paragraph,
   TextRun,
+  ImageRun,
   AlignmentType,
   PageBreak,
   TableOfContents,
@@ -29,6 +30,41 @@ import {
 import type { DocCourseContent, DocReferences } from "./types";
 
 // ============================================================
+// IMAGE LOADING
+// ============================================================
+
+function loadImage(filename: string): Buffer | null {
+  try {
+    return fs.readFileSync(path.join(process.cwd(), "public", "images", filename));
+  } catch {
+    return null;
+  }
+}
+
+// Photos embedded per section (T-FLAWS specific)
+const SECTION_PHOTOS: Record<string, Array<{ file: string; caption: string; ext: "jpg" | "png" }>> = {
+  toes: [
+    { file: "fpd_hockburn.jpg", caption: "Photo 1. Visual scoring reference for footpad dermatitis (top row) and hock burn (bottom row). Source: Vasdal et al., Animals, CC BY 4.0. Based on Welfare Quality® Protocol.", ext: "jpg" },
+  ],
+  feathers: [
+    { file: "feather_loss.jpg", caption: "Photo 2. A hen showing significant feather loss on the back and neck, classic feather pecking damage. Source: Wikimedia Commons, CC BY 1.0.", ext: "jpg" },
+  ],
+  legs: [
+    { file: "lame_broiler.jpg", caption: "Photo 3. A commercial broiler with significant leg impairment, consistent with Gait Score 3-4. Source: Glass Walls Project (Israel), CC BY-SA 4.0.", ext: "jpg" },
+    { file: "splay_leg_broiler.jpg", caption: "Photo 4. Splay-legged broilers, Gait Score 4-5. Requires immediate humane euthanasia. Source: Glass Walls Project (Israel), CC BY-SA 4.0.", ext: "jpg" },
+    { file: "tibial_td.png", caption: "Photo 5. Tibial dyschondroplasia (TD) seen on post-mortem examination. The white cartilaginous plug indicates calcium:phosphorus imbalance or Vitamin D3 deficiency. Source: Wikimedia Commons, CC BY 4.0.", ext: "png" },
+  ],
+  activity: [
+    { file: "broiler_house.jpg", caption: "Photo 6. Inside a commercial broiler house. Even distribution with active birds is a sign of a well-managed environment. Source: USDA, Public Domain.", ext: "jpg" },
+  ],
+  weight: [],
+  skin: [
+    { file: "bumblefoot.jpg", caption: "Photo 7. Bumblefoot (pododermatitis) in a rooster, showing advanced bacterial skin infection. Source: Sylvain Larrat / Wikimedia Commons, CC BY 4.0.", ext: "jpg" },
+    { file: "cyanosis_chickens.jpg", caption: "Photo 8. Chickens showing cyanosis. Multiple cyanotic birds is a same-day veterinary emergency. Source: Otwarte Klatki / Wikimedia Commons, CC BY 2.0.", ext: "jpg" },
+  ],
+};
+
+// ============================================================
 // MAIN EXPORT
 // ============================================================
 
@@ -38,15 +74,16 @@ export async function generateDocument(
 ): Promise<Buffer> {
   const { referenceEntries, bibliographyOrder } = references;
 
+  const logoBuffer = loadImage("logo.png");
+
   const doc = new Document({
     creator: courseContent.meta.organization,
     title: courseContent.meta.title,
     description: courseContent.meta.subtitle,
-    features: { updateFields: true },
     styles: buildStyles(),
     numbering: buildNumbering(),
     sections: [
-      buildCoverSection(courseContent.meta),
+      buildCoverSection(courseContent.meta, logoBuffer),
       buildTocSection(courseContent.meta.title),
       buildIntroductionSection(courseContent.introduction, courseContent.meta.title),
       ...courseContent.sections.map((section, idx) =>
@@ -356,7 +393,21 @@ function buildFooter() {
 // COVER PAGE SECTION
 // ============================================================
 
-function buildCoverSection(meta: DocCourseContent["meta"]) {
+function buildCoverSection(meta: DocCourseContent["meta"], logoBuffer: Buffer | null) {
+  const logoEl = logoBuffer
+    ? new Paragraph({
+        alignment: AlignmentType.CENTER,
+        spacing: { after: 200 },
+        children: [
+          new ImageRun({
+            data: logoBuffer,
+            transformation: { width: 110, height: 110 },
+            type: "png",
+          }),
+        ],
+      })
+    : spacer(200);
+
   return {
     properties: {
       titlePage: true,
@@ -369,9 +420,10 @@ function buildCoverSection(meta: DocCourseContent["meta"]) {
       first: new Footer({ children: [new Paragraph({ children: [] })] }),
     },
     children: [
-      spacer(1200),
+      spacer(800),
       new Paragraph({
         style: "CoverMeta",
+        alignment: AlignmentType.CENTER,
         children: [
           new TextRun({
             text: meta.courseNumber.toUpperCase(),
@@ -383,12 +435,13 @@ function buildCoverSection(meta: DocCourseContent["meta"]) {
           }),
         ],
       }),
-      spacer(400),
+      spacer(300),
+      logoEl,
       new Paragraph({
         style: "CourseTitle",
         children: [new TextRun({ text: meta.title })],
       }),
-      spacer(400),
+      spacer(300),
       new Paragraph({
         style: "CoverSubtitle",
         children: [new TextRun({ text: meta.subtitle })],
@@ -413,23 +466,10 @@ function buildCoverSection(meta: DocCourseContent["meta"]) {
         style: "CoverMeta",
         children: [new TextRun({ text: meta.date })],
       }),
-      new Paragraph({
-        style: "CoverMeta",
-        children: [new TextRun({ text: `Version ${meta.version}` })],
-      }),
       spacer(800),
       new Paragraph({
         style: "Disclaimer",
         children: [new TextRun({ text: meta.disclaimer })],
-      }),
-      spacer(400),
-      new Paragraph({
-        style: "Disclaimer",
-        children: [
-          new TextRun({
-            text: 'Note: After opening this document in Microsoft Word, right-click the Table of Contents and select "Update Field" to populate page numbers.',
-          }),
-        ],
       }),
       new Paragraph({ children: [new PageBreak()] }),
     ],
@@ -554,8 +594,7 @@ function buildTflawsSection(
   subs.managementResponses.paragraphs.forEach((p) => children.push(renderParagraph(p)));
 
   const placeholder = subs.managementResponses.imagePlaceholder;
-  const placeholderElements = createImagePlaceholder(placeholder.caption, placeholder.description);
-  children.push(...placeholderElements);
+  children.push(...buildScoringTableAndPhotos(section.id, placeholder.caption));
 
   children.push(new Paragraph({ children: [new PageBreak()] }));
 
@@ -685,6 +724,197 @@ function renderParagraph(text: string): Paragraph {
     style: "BodyText",
     children: runs,
   });
+}
+
+// ============================================================
+// SCORING TABLES + PHOTO EMBEDDING PER SECTION
+// ============================================================
+
+function buildScoringTableAndPhotos(sectionId: string, figureCaption: string): Paragraph[] {
+  const elements: Paragraph[] = [];
+
+  // Scoring table (Figure)
+  const table = buildScoringTable(sectionId);
+  if (table) {
+    elements.push(spacer(160));
+    elements.push(table as unknown as Paragraph);
+    elements.push(
+      new Paragraph({
+        style: "Caption",
+        alignment: AlignmentType.CENTER,
+        children: [new TextRun({ text: figureCaption, italics: true, font: "Calibri", size: 20 })],
+      })
+    );
+    elements.push(spacer(160));
+  }
+
+  // Photos
+  const photos = SECTION_PHOTOS[sectionId] ?? [];
+  for (const photo of photos) {
+    const buf = loadImage(photo.file);
+    if (!buf) continue;
+    elements.push(
+      new Paragraph({
+        alignment: AlignmentType.CENTER,
+        spacing: { before: 160, after: 80 },
+        children: [
+          new ImageRun({
+            data: buf,
+            transformation: { width: 440, height: 280 },
+            type: photo.ext,
+          }),
+        ],
+      })
+    );
+    elements.push(
+      new Paragraph({
+        style: "Caption",
+        alignment: AlignmentType.CENTER,
+        children: [new TextRun({ text: photo.caption, italics: true, font: "Calibri", size: 20 })],
+      })
+    );
+    elements.push(spacer(120));
+  }
+
+  return elements;
+}
+
+// ── Colored scoring tables ──────────────────────────────────
+
+function tableHeader(text: string, cols: number): TableRow {
+  return new TableRow({
+    children: [
+      new TableCell({
+        columnSpan: cols,
+        shading: { type: ShadingType.CLEAR, fill: "1F3864", color: "auto" },
+        margins: { top: convertInchesToTwip(0.06), bottom: convertInchesToTwip(0.06), left: convertInchesToTwip(0.1), right: convertInchesToTwip(0.1) },
+        children: [
+          new Paragraph({
+            alignment: AlignmentType.CENTER,
+            children: [new TextRun({ text, bold: true, color: "FFFFFF", size: 22, font: "Calibri" })],
+          }),
+        ],
+      }),
+    ],
+  });
+}
+
+function scoreCell(score: string, label: string, body: string, fill: string): TableCell {
+  return new TableCell({
+    shading: { type: ShadingType.CLEAR, fill, color: "auto" },
+    margins: { top: convertInchesToTwip(0.06), bottom: convertInchesToTwip(0.06), left: convertInchesToTwip(0.08), right: convertInchesToTwip(0.08) },
+    borders: {
+      top: { style: BorderStyle.SINGLE, size: 4, color: "CCCCCC" },
+      bottom: { style: BorderStyle.SINGLE, size: 4, color: "CCCCCC" },
+      left: { style: BorderStyle.SINGLE, size: 4, color: "CCCCCC" },
+      right: { style: BorderStyle.SINGLE, size: 4, color: "CCCCCC" },
+    },
+    children: [
+      new Paragraph({ alignment: AlignmentType.CENTER, children: [new TextRun({ text: score, bold: true, size: 22, font: "Calibri" })] }),
+      new Paragraph({ alignment: AlignmentType.CENTER, children: [new TextRun({ text: label, bold: true, size: 20, font: "Calibri" })] }),
+      new Paragraph({ alignment: AlignmentType.CENTER, spacing: { before: 60 }, children: [new TextRun({ text: body, size: 18, font: "Calibri" })] }),
+    ],
+  });
+}
+
+function buildScoringTable(sectionId: string): Table | null {
+  switch (sectionId) {
+    case "toes":
+      return new Table({
+        width: { size: 100, type: WidthType.PERCENTAGE },
+        rows: [
+          tableHeader("Footpad Dermatitis Scoring Scale (Welfare Quality®)", 3),
+          new TableRow({
+            children: [
+              scoreCell("Score 0", "Normal", "No lesion. Intact plantar skin. No discoloration.", "D8F0D2"),
+              scoreCell("Score 1", "Mild", "Superficial lesion. Mild discoloration. Surface erosion only.", "FFF2CC"),
+              scoreCell("Score 2", "Severe", "Deep ulceration. Necrosis. Affects >1/3 of footpad surface.", "FFD7D7"),
+            ],
+          }),
+        ],
+      });
+
+    case "feathers":
+      return new Table({
+        width: { size: 100, type: WidthType.PERCENTAGE },
+        rows: [
+          tableHeader("Feather Coverage Scoring Scale (LayWel Protocol)", 5),
+          new TableRow({
+            children: [
+              scoreCell("Score 0", "Full Cover", "Complete feather coverage. No bare areas visible.", "D0E4FF"),
+              scoreCell("Score 1", "Slight Loss", "Fewer than 5 feathers missing. No bare skin visible.", "C8E6FF"),
+              scoreCell("Score 2", "Moderate", "Bare skin visible. Area less than 5 cm².", "FFF2CC"),
+              scoreCell("Score 3", "Significant", "Bare area 5–10 cm². Multiple body regions affected.", "FFE0B2"),
+              scoreCell("Score 4", "Severe", "Bare area >10 cm² or open wound present.", "FFD7D7"),
+            ],
+          }),
+        ],
+      });
+
+    case "legs":
+      return new Table({
+        width: { size: 100, type: WidthType.PERCENTAGE },
+        rows: [
+          tableHeader("Bristol Gait Scoring Scale", 6),
+          new TableRow({
+            children: [
+              scoreCell("Score 0", "Normal", "Normal gait. Full weight bearing. Fluid movement.", "D8F0D2"),
+              scoreCell("Score 1", "Slight", "Minor gait abnormality. Slight limp or stiffness.", "C8F0C0"),
+              scoreCell("Score 2", "Definite", "Definite gait abnormality. Noticeable difficulty walking.", "FFF2CC"),
+              scoreCell("Score 3", "Marked", "Marked impairment. Reluctant to move. Significant pain.", "FFD27F"),
+              scoreCell("Score 4", "Severe", "Unable to walk without wing support. Cannot reach resources.", "FFB347"),
+              scoreCell("Score 5", "Cannot Walk", "Unable to walk. Lateral recumbency. Immediate action required.", "FFD7D7"),
+            ],
+          }),
+        ],
+      });
+
+    case "activity":
+      return new Table({
+        width: { size: 100, type: WidthType.PERCENTAGE },
+        rows: [
+          tableHeader("Flock Distribution Patterns", 2),
+          new TableRow({
+            children: [
+              scoreCell("NORMAL", "Even Distribution", "Birds spread evenly across the full barn floor. All areas occupied.", "D8F0D2"),
+              scoreCell("ABNORMAL", "Clustering", "Dense clusters with large empty floor areas. Indicates temperature, air quality, or light gradient problem.", "FFD7D7"),
+            ],
+          }),
+        ],
+      });
+
+    case "weight":
+      return new Table({
+        width: { size: 100, type: WidthType.PERCENTAGE },
+        rows: [
+          tableHeader("Body Weight Distribution — Uniform vs Non-Uniform Flock", 2),
+          new TableRow({
+            children: [
+              scoreCell("Uniform Flock", "CV < 10%", "Narrow bell curve. Consistent access to feed, water, and optimal environment. Target for every weigh.", "D8F0D2"),
+              scoreCell("Non-Uniform Flock", "CV > 15%", "Wide, flat distribution. Winners and losers in the barn. Investigate temperature gradient, feeder access, or drinker flow.", "FFD7D7"),
+            ],
+          }),
+        ],
+      });
+
+    case "skin":
+      return new Table({
+        width: { size: 100, type: WidthType.PERCENTAGE },
+        rows: [
+          tableHeader("Key Skin Conditions in Commercial Broiler Production", 3),
+          new TableRow({
+            children: [
+              scoreCell("Score A", "Cellulitis", "Subcutaneous fibrinous exudate. #1 cause of whole-carcass condemnation. Entry via skin breaks.", "FFD7D7"),
+              scoreCell("Score B", "Breast Blister", "Fluid-filled swelling over keel bone. Caused by chronic breast-to-litter contact in heavy birds.", "FFF2CC"),
+              scoreCell("Score C", "Ammonia Burn", "Reddened inflamed ventral skin. Indicates litter moisture >35% and ammonia >25 ppm.", "FFE0B2"),
+            ],
+          }),
+        ],
+      });
+
+    default:
+      return null;
+  }
 }
 
 function createImagePlaceholder(caption: string, description: string): Paragraph[] {
