@@ -51,7 +51,7 @@ return (
         {/* Header */}
         <div className="text-center mb-8">
           <div className="inline-block bg-[#1F3864] text-white text-xs font-semibold px-3 py-1 rounded-full mb-4 tracking-widest">
-            COURSE 1 OF 17
+            COURSE 3 OF 17
           </div>
           <h1 className="text-2xl font-bold text-[#1F3864] mb-1">T-FLAWS Dashboard</h1>
           <p className="text-sm text-gray-500">Canadian Poultry Training Series</p>
