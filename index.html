@@ -116,7 +116,7 @@
 import {
   Document, Packer, Paragraph, TextRun, AlignmentType, PageBreak,
   TableOfContents, Header, Footer, PageNumber, Table, TableRow, TableCell,
-  WidthType, BorderStyle, ShadingType, convertInchesToTwip,
+  WidthType, BorderStyle, ShadingType, convertInchesToTwip, ImageRun,
 } from "https://esm.sh/docx@9.6.1";
 
 // ============================================================
@@ -669,6 +669,35 @@ function placeholder(caption, description) {
   return [spacer(120), table, cap, spacer(120)];
 }
 
+async function fetchImg(path) {
+  try {
+    const res = await fetch(`${location.origin}${path}`);
+    if (!res.ok) return null;
+    const buf = await res.arrayBuffer();
+    const dims = await new Promise(ok => {
+      const blob = new Blob([buf]);
+      const url = URL.createObjectURL(blob);
+      const img = new Image();
+      img.onload = () => { URL.revokeObjectURL(url); ok({ w: img.naturalWidth, h: img.naturalHeight }); };
+      img.onerror = () => { URL.revokeObjectURL(url); ok(null); };
+      img.src = url;
+    });
+    if (!dims) return null;
+    const ext = path.split('.').pop().toLowerCase();
+    const type = ext === 'png' ? 'png' : ext === 'gif' ? 'gif' : 'jpg';
+    return { buf, type, ...dims };
+  } catch (e) { return null; }
+}
+
+function scaledImg(imgData, maxW) {
+  const scale = Math.min(1, maxW / imgData.w);
+  return new ImageRun({
+    data: imgData.buf,
+    type: imgData.type,
+    transformation: { width: Math.round(imgData.w * scale), height: Math.round(imgData.h * scale) },
+  });
+}
+
 // ============================================================
 // BUILD DOCUMENT
 // ============================================================
@@ -676,28 +705,49 @@ function placeholder(caption, description) {
 async function generateDocument() {
   const TITLE = meta.title;
 
+  // Fetch all images upfront; fall back to placeholder if unavailable
+  const [logoImg, ...sectionImgs] = await Promise.all([
+    fetchImg('/logo.png'),
+    fetchImg('/photos/fpd_scoring_scale.jpg'),   // T — Toes
+    fetchImg('/photos/feather_loss.jpg'),         // F — Feathers
+    fetchImg('/photos/lame_broiler.jpg'),         // L — Legs
+    fetchImg('/photos/broiler_flock.jpg'),        // A — Activity
+    fetchImg('/photos/broiler_house.jpg'),        // W — Weight
+    fetchImg('/photos/fpd_hockburn.jpg'),         // S — Skin
+  ]);
+
   // --- Cover ---
+  const coverChildren = [
+    spacer(1200),
+    new Paragraph({ alignment: AlignmentType.CENTER, spacing: { after: 120 }, children: [new TextRun({ text: meta.courseNumber.toUpperCase(), font: "Calibri", size: 22, color: "2E74B5", bold: true })] }),
+    spacer(400),
+    new Paragraph({ alignment: AlignmentType.CENTER, spacing: { before: 400, after: 200 }, children: [new TextRun({ text: meta.title, font: "Calibri Light", size: 64, color: "1F3864", bold: true })] }),
+  ];
+  if (logoImg) {
+    coverChildren.push(new Paragraph({
+      alignment: AlignmentType.CENTER,
+      spacing: { before: 0, after: 240 },
+      children: [scaledImg(logoImg, 180)],
+    }));
+  }
+  coverChildren.push(
+    new Paragraph({ alignment: AlignmentType.CENTER, spacing: { after: 240 }, children: [new TextRun({ text: meta.subtitle, font: "Calibri Light", size: 32, color: "2E74B5", italics: true })] }),
+    spacer(800),
+    new Paragraph({ alignment: AlignmentType.CENTER, children: [new TextRun({ text: "\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500", color: "2E74B5", size: 22 })] }),
+    spacer(400),
+    new Paragraph({ alignment: AlignmentType.CENTER, spacing: { after: 120 }, children: [new TextRun({ text: meta.organization, font: "Calibri", size: 24, color: "595959", bold: true })] }),
+    new Paragraph({ alignment: AlignmentType.CENTER, spacing: { after: 120 }, children: [new TextRun({ text: meta.date, font: "Calibri", size: 22, color: "595959" })] }),
+    new Paragraph({ alignment: AlignmentType.CENTER, spacing: { after: 120 }, children: [new TextRun({ text: `Version ${meta.version}`, font: "Calibri", size: 22, color: "595959" })] }),
+    spacer(800),
+    new Paragraph({ alignment: AlignmentType.CENTER, spacing: { after: 120 }, children: [new TextRun({ text: meta.disclaimer, font: "Calibri", size: 18, color: "808080", italics: true })] }),
+    new Paragraph({ alignment: AlignmentType.CENTER, spacing: { after: 120 }, children: [new TextRun({ text: 'Note: After opening in Microsoft Word, right-click the Table of Contents and select \u201cUpdate Field\u201d to populate page numbers.', font: "Calibri", size: 18, color: "808080", italics: true })] }),
+    new Paragraph({ children: [new PageBreak()] }),
+  );
   const coverSection = {
     properties: { titlePage: true, ...pageProps() },
     headers: { first: new Header({ children: [new Paragraph({ children: [] })] }) },
     footers: { first: new Footer({ children: [new Paragraph({ children: [] })] }) },
-    children: [
-      spacer(1200),
-      new Paragraph({ alignment: AlignmentType.CENTER, spacing: { after: 120 }, children: [new TextRun({ text: meta.courseNumber.toUpperCase(), font: "Calibri", size: 22, color: "2E74B5", bold: true })] }),
-      spacer(400),
-      new Paragraph({ alignment: AlignmentType.CENTER, spacing: { before: 400, after: 400 }, children: [new TextRun({ text: meta.title, font: "Calibri Light", size: 64, color: "1F3864", bold: true })] }),
-      new Paragraph({ alignment: AlignmentType.CENTER, spacing: { after: 240 }, children: [new TextRun({ text: meta.subtitle, font: "Calibri Light", size: 32, color: "2E74B5", italics: true })] }),
-      spacer(800),
-      new Paragraph({ alignment: AlignmentType.CENTER, children: [new TextRun({ text: "\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500", color: "2E74B5", size: 22 })] }),
-      spacer(400),
-      new Paragraph({ alignment: AlignmentType.CENTER, spacing: { after: 120 }, children: [new TextRun({ text: meta.organization, font: "Calibri", size: 24, color: "595959", bold: true })] }),
-      new Paragraph({ alignment: AlignmentType.CENTER, spacing: { after: 120 }, children: [new TextRun({ text: meta.date, font: "Calibri", size: 22, color: "595959" })] }),
-      new Paragraph({ alignment: AlignmentType.CENTER, spacing: { after: 120 }, children: [new TextRun({ text: `Version ${meta.version}`, font: "Calibri", size: 22, color: "595959" })] }),
-      spacer(800),
-      new Paragraph({ alignment: AlignmentType.CENTER, spacing: { after: 120 }, children: [new TextRun({ text: meta.disclaimer, font: "Calibri", size: 18, color: "808080", italics: true })] }),
-      new Paragraph({ alignment: AlignmentType.CENTER, spacing: { after: 120 }, children: [new TextRun({ text: 'Note: After opening in Microsoft Word, right-click the Table of Contents and select \u201cUpdate Field\u201d to populate page numbers.', font: "Calibri", size: 18, color: "808080", italics: true })] }),
-      new Paragraph({ children: [new PageBreak()] }),
-    ],
+    children: coverChildren,
   };
 
   // --- TOC ---
@@ -729,14 +779,33 @@ async function generateDocument() {
   };
 
   // --- T-FLAWS Sections ---
-  const tflawsSections = sections.map(sec => {
+  const tflawsSections = sections.map((sec, idx) => {
     const s = sec.subsections;
     const ch = [h1(sec.fullTitle)];
     ["whatItIs","whyItMatters","howToAssess","abnormalFindings","managementResponses"].forEach(key => {
       ch.push(h2(s[key].heading));
       s[key].paragraphs.forEach(p => ch.push(body(p)));
     });
-    ch.push(...placeholder(s.managementResponses.imagePlaceholder.caption, s.managementResponses.imagePlaceholder.description));
+    const imgCap = s.managementResponses.imagePlaceholder;
+    const img = sectionImgs[idx];
+    if (img) {
+      ch.push(
+        spacer(120),
+        new Paragraph({
+          alignment: AlignmentType.CENTER,
+          spacing: { before: 0, after: 80 },
+          children: [scaledImg(img, 450)],
+        }),
+        new Paragraph({
+          alignment: AlignmentType.CENTER,
+          spacing: { before: 80, after: 280 },
+          children: [new TextRun({ text: imgCap.caption, italics: true, color: "595959", size: 20, font: "Calibri" })],
+        }),
+        spacer(120),
+      );
+    } else {
+      ch.push(...placeholder(imgCap.caption, imgCap.description));
+    }
     ch.push(new Paragraph({ children: [new PageBreak()] }));
     return { properties: { titlePage: false, ...pageProps() }, headers: buildHeader(TITLE), footers: buildFooter(), children: ch };
   });
