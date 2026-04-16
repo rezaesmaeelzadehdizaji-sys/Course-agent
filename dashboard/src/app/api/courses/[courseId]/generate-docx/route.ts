@@ -1,5 +1,7 @@
 import { createClient } from '@supabase/supabase-js'
 import { NextResponse, type NextRequest } from 'next/server'
+import { existsSync, readFileSync } from 'fs'
+import { join } from 'path'
 // Note: binary response uses global Response (broader BodyInit support than NextResponse)
 import { generateDocument } from '@/lib/doc-generator'
 import type { DocCourseContent, DocReferences, Course, Section, Introduction, JournalSection, Reference } from '@/lib/types'
@@ -45,19 +47,17 @@ export async function POST(
 
   const origin = new URL(request.url).origin
 
-  // If a pre-built .docx exists as a static asset on the CDN, serve it directly.
-  // This bypasses generation entirely for finalized courses (e.g. T-FLAWS).
-  const staticDocUrl = `${origin}/docs/${slug}.docx`
-  const staticHead = await fetch(staticDocUrl, { method: 'HEAD' })
-  if (staticHead.ok) {
-    const docRes = await fetch(staticDocUrl)
-    const docBuffer = Buffer.from(await docRes.arrayBuffer())
-    return new Response(docBuffer, {
+  // If a pre-built .docx is bundled with the Lambda (via outputFileTracingIncludes),
+  // serve it directly. This bypasses generation entirely for finalized courses (T-FLAWS).
+  const staticPath = join(process.cwd(), 'public', 'docs', `${slug}.docx`)
+  if (existsSync(staticPath)) {
+    const fileBuffer = readFileSync(staticPath)
+    return new Response(fileBuffer, {
       status: 200,
       headers: {
         'Content-Type': DOCX_MIME,
         'Content-Disposition': `attachment; filename="${slug}.docx"`,
-        'Content-Length': String(docBuffer.length),
+        'Content-Length': String(fileBuffer.length),
       },
     })
   }
