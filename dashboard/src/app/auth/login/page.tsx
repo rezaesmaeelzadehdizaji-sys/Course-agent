@@ -7,7 +7,7 @@ type Mode = 'password' | 'magic'
 
 export default function LoginPage() {
   const [mode, setMode] = useState<Mode>('password')
-  const [email, setEmail] = useState('reza.esmaeelzadehdizaji@gmail.com')
+  const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [loading, setLoading] = useState(false)
   const [sent, setSent] = useState(false)
