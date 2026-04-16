@@ -6,7 +6,7 @@ const nextConfig = {
     },
   },
   outputFileTracingIncludes: {
-    '/api/courses/[courseId]/generate-docx': ['./public/images/**/*'],
+    '/api/courses/[courseId]/generate-docx': ['./public/images/**/*', './public/docs/**/*'],
   },
 }
 

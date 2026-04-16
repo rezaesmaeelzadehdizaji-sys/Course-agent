@@ -1,8 +1,12 @@
 import { createClient } from '@supabase/supabase-js'
 import { NextResponse, type NextRequest } from 'next/server'
+import { existsSync, readFileSync } from 'fs'
+import { join } from 'path'
 // Note: binary response uses global Response (broader BodyInit support than NextResponse)
 import { generateDocument } from '@/lib/doc-generator'
 import type { DocCourseContent, DocReferences, Course, Section, Introduction, JournalSection, Reference } from '@/lib/types'
+
+const DOCX_MIME = 'application/vnd.openxmlformats-officedocument.wordprocessingml.document'
 
 export async function POST(
   request: NextRequest,
@@ -58,6 +62,21 @@ export async function POST(
   const journal = journalRes.data as JournalSection
   const refs = (refsRes.data ?? []) as Reference[]
 
+  // Serve pre-built .docx if available (avoids generation for finalized courses)
+  const slug = course.slug ?? `course-${String(course.course_number).padStart(2, '0')}`
+  const staticPath = join(process.cwd(), 'public', 'docs', `${slug}.docx`)
+  if (existsSync(staticPath)) {
+    const fileBuffer = readFileSync(staticPath)
+    return new Response(fileBuffer, {
+      status: 200,
+      headers: {
+        'Content-Type': DOCX_MIME,
+        'Content-Disposition': `attachment; filename="${slug}.docx"`,
+        'Content-Length': String(fileBuffer.length),
+      },
+    })
+  }
+
   // Reconstruct courseContent matching original JS shape
   const courseContent: DocCourseContent = {
     meta: {
@@ -102,10 +121,7 @@ export async function POST(
       buffer.byteOffset,
       buffer.byteOffset + buffer.byteLength
     ) as ArrayBuffer
-    const DOCX_MIME = 'application/vnd.openxmlformats-officedocument.wordprocessingml.document'
     const blob = new Blob([arrayBuffer], { type: DOCX_MIME })
-
-    const slug = course.slug ?? `course-${String(course.course_number).padStart(2, '0')}`
     const filename = `${slug}.docx`
 
     return new Response(blob, {
