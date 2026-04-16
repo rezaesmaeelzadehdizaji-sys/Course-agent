@@ -1,7 +1,5 @@
 import { createClient } from '@supabase/supabase-js'
 import { NextResponse, type NextRequest } from 'next/server'
-import { existsSync, readFileSync } from 'fs'
-import { join } from 'path'
 // Note: binary response uses global Response (broader BodyInit support than NextResponse)
 import { generateDocument } from '@/lib/doc-generator'
 import type { DocCourseContent, DocReferences, Course, Section, Introduction, JournalSection, Reference } from '@/lib/types'
@@ -37,18 +35,41 @@ export async function POST(
     process.env.SUPABASE_SERVICE_ROLE_KEY!
   )
 
-  // Fetch all course data in parallel
-  const [courseRes, sectionsRes, introRes, journalRes, refsRes] = await Promise.all([
-    supabase.from('courses').select('*').eq('id', courseId).single(),
+  // Fetch course row first (need slug before parallel fetch)
+  const courseRes = await supabase.from('courses').select('*').eq('id', courseId).single()
+  if (courseRes.error || !courseRes.data) {
+    return new NextResponse('Course not found', { status: 404 })
+  }
+  const course = courseRes.data as Course
+  const slug = course.slug ?? `course-${String(course.course_number).padStart(2, '0')}`
+
+  // If a pre-built .docx exists as a static asset, fetch it from the CDN and return it.
+  // This completely bypasses doc generation for finalized courses.
+  // The file lives at public/docs/{slug}.docx and is served by Vercel's CDN.
+  const origin = new URL(request.url).origin
+  const staticDocUrl = `${origin}/docs/${slug}.docx`
+  const staticRes = await fetch(staticDocUrl, { method: 'HEAD' })
+  if (staticRes.ok) {
+    const docRes = await fetch(staticDocUrl)
+    const docBuffer = Buffer.from(await docRes.arrayBuffer())
+    return new Response(docBuffer, {
+      status: 200,
+      headers: {
+        'Content-Type': DOCX_MIME,
+        'Content-Disposition': `attachment; filename="${slug}.docx"`,
+        'Content-Length': String(docBuffer.length),
+      },
+    })
+  }
+
+  // No static file — generate from DB content
+  const [sectionsRes, introRes, journalRes, refsRes] = await Promise.all([
     supabase.from('sections').select('*').eq('course_id', courseId).order('sort_order'),
     supabase.from('introductions').select('*').eq('course_id', courseId).single(),
     supabase.from('journal_sections').select('*').eq('course_id', courseId).single(),
     supabase.from('references').select('*').eq('course_id', courseId).order('sort_order'),
   ])
 
-  if (courseRes.error || !courseRes.data) {
-    return new NextResponse('Course not found', { status: 404 })
-  }
   if (introRes.error || !introRes.data) {
     return new NextResponse('Introduction not found — please add content first', { status: 404 })
   }
@@ -56,28 +77,11 @@ export async function POST(
     return new NextResponse('Journal section not found — please add content first', { status: 404 })
   }
 
-  const course = courseRes.data as Course
   const sections = (sectionsRes.data ?? []) as Section[]
   const intro = introRes.data as Introduction
   const journal = journalRes.data as JournalSection
   const refs = (refsRes.data ?? []) as Reference[]
 
-  // Serve pre-built .docx if available (avoids generation for finalized courses)
-  const slug = course.slug ?? `course-${String(course.course_number).padStart(2, '0')}`
-  const staticPath = join(process.cwd(), 'public', 'docs', `${slug}.docx`)
-  if (existsSync(staticPath)) {
-    const fileBuffer = readFileSync(staticPath)
-    return new Response(fileBuffer, {
-      status: 200,
-      headers: {
-        'Content-Type': DOCX_MIME,
-        'Content-Disposition': `attachment; filename="${slug}.docx"`,
-        'Content-Length': String(fileBuffer.length),
-      },
-    })
-  }
-
-  // Reconstruct courseContent matching original JS shape
   const courseContent: DocCourseContent = {
     meta: {
       ...course.meta,
@@ -103,32 +107,26 @@ export async function POST(
     },
   }
 
-  // Reconstruct references matching original JS shape
   const referenceEntries: DocReferences['referenceEntries'] = {}
   const bibliographyOrder: string[] = []
-
   refs.forEach((r) => {
     referenceEntries[r.ref_key] = { apa: r.apa, short: r.short }
     bibliographyOrder.push(r.ref_key)
   })
 
-  const docReferences: DocReferences = { referenceEntries, bibliographyOrder }
-
   try {
-    const buffer = await generateDocument(courseContent, docReferences)
-    // Extract a plain ArrayBuffer (Buffer uses ArrayBufferLike which may be SharedArrayBuffer)
+    const buffer = await generateDocument(courseContent, { referenceEntries, bibliographyOrder })
     const arrayBuffer = buffer.buffer.slice(
       buffer.byteOffset,
       buffer.byteOffset + buffer.byteLength
     ) as ArrayBuffer
     const blob = new Blob([arrayBuffer], { type: DOCX_MIME })
-    const filename = `${slug}.docx`
 
     return new Response(blob, {
       status: 200,
       headers: {
         'Content-Type': DOCX_MIME,
-        'Content-Disposition': `attachment; filename="${filename}"`,
+        'Content-Disposition': `attachment; filename="${slug}.docx"`,
         'Content-Length': String(blob.size),
       },
     })
