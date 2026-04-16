@@ -5,6 +5,9 @@ const nextConfig = {
       allowedOrigins: ['localhost:3000'],
     },
   },
+  outputFileTracingIncludes: {
+    '/api/courses/[courseId]/generate-docx': ['./public/images/**/*'],
+  },
 }
 
 module.exports = nextConfig
