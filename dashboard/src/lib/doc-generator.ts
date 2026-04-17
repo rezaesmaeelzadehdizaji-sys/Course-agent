@@ -40,6 +40,10 @@ async function loadImageFromUrl(url: string): Promise<Buffer | null> {
   }
 }
 
+// Allow callers (e.g. local generation scripts) to supply pre-loaded image
+// buffers directly instead of fetching via HTTP.
+export type ImageMap = Map<string, Buffer>;
+
 // Photos embedded per section (T-FLAWS specific)
 const SECTION_PHOTOS: Record<string, Array<{ file: string; caption: string; ext: "jpg" | "png" }>> = {
   toes: [
@@ -70,13 +74,15 @@ const SECTION_PHOTOS: Record<string, Array<{ file: string; caption: string; ext:
 export async function generateDocument(
   courseContent: DocCourseContent,
   references: DocReferences,
-  imageBaseUrl?: string
+  imageBaseUrl?: string,
+  preloadedImages?: ImageMap
 ): Promise<Buffer> {
   const { referenceEntries, bibliographyOrder } = references;
 
-  // Pre-load all images from CDN in parallel
-  const images = new Map<string, Buffer>();
-  if (imageBaseUrl) {
+  // Use pre-loaded images if provided (e.g. from local generation scripts),
+  // otherwise fetch via HTTP from the given base URL.
+  const images: ImageMap = preloadedImages ?? new Map<string, Buffer>();
+  if (!preloadedImages && imageBaseUrl) {
     const allFiles = [
       "logo.png",
       ...Object.values(SECTION_PHOTOS).flat().map((p) => p.file),
@@ -936,70 +942,6 @@ function buildScoringTable(sectionId: string): Table | null {
   }
 }
 
-function createImagePlaceholder(caption: string, description: string): Paragraph[] {
-  const placeholderTable = new Table({
-    width: { size: 100, type: WidthType.PERCENTAGE },
-    rows: [
-      new TableRow({
-        children: [
-          new TableCell({
-            width: { size: 100, type: WidthType.PERCENTAGE },
-            shading: { type: ShadingType.CLEAR, fill: "F2F2F2", color: "auto" },
-            margins: {
-              top: convertInchesToTwip(0.15),
-              bottom: convertInchesToTwip(0.15),
-              left: convertInchesToTwip(0.2),
-              right: convertInchesToTwip(0.2),
-            },
-            borders: {
-              top: { style: BorderStyle.SINGLE, size: 6, color: "BFBFBF" },
-              bottom: { style: BorderStyle.SINGLE, size: 6, color: "BFBFBF" },
-              left: { style: BorderStyle.SINGLE, size: 6, color: "BFBFBF" },
-              right: { style: BorderStyle.SINGLE, size: 6, color: "BFBFBF" },
-            },
-            children: [
-              new Paragraph({
-                alignment: AlignmentType.CENTER,
-                spacing: { before: 240, after: 160 },
-                children: [
-                  new TextRun({
-                    text: "[ IMAGE PLACEHOLDER ]",
-                    bold: true,
-                    color: "7F7F7F",
-                    size: 28,
-                    font: "Calibri",
-                  }),
-                ],
-              }),
-              new Paragraph({
-                alignment: AlignmentType.CENTER,
-                spacing: { after: 240 },
-                children: [
-                  new TextRun({
-                    text: description,
-                    italics: true,
-                    color: "888888",
-                    size: 20,
-                    font: "Calibri",
-                  }),
-                ],
-              }),
-            ],
-          }),
-        ],
-      }),
-    ],
-  });
-
-  const captionParagraph = new Paragraph({
-    style: "Caption",
-    alignment: AlignmentType.CENTER,
-    children: [new TextRun({ text: caption, italics: true, font: "Calibri", size: 20 })],
-  });
-
-  // Cast table as Paragraph to satisfy return type — docx accepts both in children arrays
-  return [spacer(120), placeholderTable as unknown as Paragraph, captionParagraph, spacer(120)];
-}
 
 function spacer(spacingBefore = 240): Paragraph {
   return new Paragraph({
