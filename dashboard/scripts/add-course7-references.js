@@ -41,8 +41,11 @@ execSync(`powershell -Command "Expand-Archive -Path '${zipPath.replace(/\//g, "\
 let docXml = fs.readFileSync(path.join(extractDir, "word", "document.xml"), "utf-8");
 
 // ── Helper: build a Bibliography-style paragraph ───────────────
+function xmlEscape(str) {
+  return str.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+}
 function bibPara(text) {
-  return `<w:p><w:pPr><w:pStyle w:val="Bibliography"/></w:pPr><w:r><w:t xml:space="preserve">${text}</w:t></w:r></w:p>`;
+  return `<w:p><w:pPr><w:pStyle w:val="Bibliography"/></w:pPr><w:r><w:t xml:space="preserve">${xmlEscape(text)}</w:t></w:r></w:p>`;
 }
 
 // ── 1. Bell & Weaver (2002) ────────────────────────────────────
