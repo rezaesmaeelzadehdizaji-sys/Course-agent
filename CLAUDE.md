@@ -47,7 +47,36 @@ python -m http.server 8080
 
 ### Authoritative Sources
 
-Content must be drawn from: Merck Veterinary Manual, Poultry Science journal, CFIA, CVMA, NFACC Codes of Practice, Aviagen Ross 308 manuals, Cobb 500 manuals, Lohmann Management Guide, AVMA, MSD Animal Health, Zoetis, CEVA, HIPRA, Boehringer Ingelheim.
+Content must be drawn from: Merck Veterinary Manual, Poultry Science journal, CFIA, CVMA, NFACC Codes of Practice, Aviagen Ross 308 manuals, Cobb 500 manuals, Lohmann Management Guide, AVMA, MSD Animal Health, Zoetis, CEVA, HIPRA, Boehringer Ingelheim, Elanco Learning Center, Canadian Poultry Consultant Learning Centre.
+
+### Local Reference Library
+
+`D:\Course agent\Avian medicine sources\` contains 100+ poultry medicine and science PDFs. Always draw from these for factual content and citations. Key titles:
+
+- *Diseases of Poultry, 14th Edition* — primary disease reference (prefer over 13th ed.)
+- *Diseases of Poultry, 13th Edition*
+- CEVA Handbook of Poultry Diseases (Vol 1 & 2)
+- Elanco Broiler Disease Reference Guide
+- *Clinical Avian Medicine* — Harrison & Ritchie
+- *Avian Medicine: Principles and Application* — Harrison & Ritchie
+- *Avian Medicine and Surgery* — Bob Doneley
+- BSAVA Manual of Backyard Poultry Medicine and Surgery
+- *Commercial Chicken Meat and Egg Production* — Donald D. Bell
+- *Commercial Poultry Nutrition*
+- *Broiler Breeder Production*
+- *Poultry Signals — A Practical Guide for Poultry Farming*
+- *Avian Influenza Virus* — Erica Spackman
+- *Avian Influenza and Newcastle Disease* — Ilaria Capua
+- *Poultry Coccidiosis* — Donal P. Conway
+- *Controlling Salmonella in Poultry* — Scott M. Russel
+- *Storey's Guide to Raising Turkeys*
+- *POULTRY PRODUCTION IN HOT CLIMATES* — Nuhad J. Daghir
+- Intervet — Important Poultry Diseases
+- FAO-CEVA Poultry Disease Diagnosis Picture Book
+- *Handbook of Poultry Science and Technology*
+- *Common Poultry Diseases and Their Prevention* — Tablante, 2013
+
+When citing these, use the book title and author as the APA citation — not the file path.
 
 ## Word Document Structure
 
