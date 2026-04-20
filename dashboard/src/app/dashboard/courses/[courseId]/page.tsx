@@ -66,7 +66,7 @@ export default async function CourseDetailPage({ params }: Props) {
             )}
           </div>
           {course.status === 'Complete' && (
-            <DownloadButton courseId={course.id} courseNumber={course.course_number} />
+            <DownloadButton courseId={course.id} courseNumber={course.course_number} slug={course.slug} updatedAt={course.updated_at} />
           )}
         </div>
 
