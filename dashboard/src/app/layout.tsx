@@ -2,7 +2,7 @@ import type { Metadata } from 'next'
 import './globals.css'
 
 export const metadata: Metadata = {
-  title: 'T-FLAWS Course Dashboard',
+  title: 'CPC-Short-Course-Series Dashboard',
   description: 'Canadian Poultry Training Series — Course Management',
 }
 
