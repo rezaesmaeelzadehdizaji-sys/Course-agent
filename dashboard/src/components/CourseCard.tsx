@@ -54,7 +54,7 @@ export default function CourseCard({ course }: Props) {
           {course.status === 'Planned' ? 'Add Content' : 'Edit'}
         </Link>
         {course.status === 'Complete' && (
-          <DownloadButton courseId={course.id} courseNumber={course.course_number} slug={course.slug} />
+          <DownloadButton courseId={course.id} courseNumber={course.course_number} slug={course.slug} updatedAt={course.updated_at} />
         )}
       </div>
     </div>

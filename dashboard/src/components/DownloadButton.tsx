@@ -7,9 +7,10 @@ interface Props {
   courseId: string
   courseNumber: number
   slug: string
+  updatedAt?: string
 }
 
-export default function DownloadButton({ courseId, courseNumber, slug }: Props) {
+export default function DownloadButton({ courseId, courseNumber, slug, updatedAt }: Props) {
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState('')
 
@@ -18,9 +19,11 @@ export default function DownloadButton({ courseId, courseNumber, slug }: Props) 
     setError('')
 
     try {
-      // First try the static pre-built file (served directly by CDN, no 4.5MB limit)
-      const staticUrl = `/docs/${slug}.docx`
-      const head = await fetch(staticUrl, { method: 'HEAD' })
+      // First try the static pre-built file (served directly by CDN, no 4.5MB limit).
+      // Cache-bust with updated_at so browsers/CDN don't return a stale copy after re-upload.
+      const cacheBuster = updatedAt ? `?v=${encodeURIComponent(updatedAt)}` : `?v=${Date.now()}`
+      const staticUrl = `/docs/${slug}.docx${cacheBuster}`
+      const head = await fetch(staticUrl, { method: 'HEAD', cache: 'no-store' })
       if (head.ok) {
         const a = document.createElement('a')
         a.href = staticUrl
