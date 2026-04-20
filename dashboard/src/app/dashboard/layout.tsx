@@ -22,7 +22,7 @@ export default async function DashboardLayout({
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-14 flex items-center justify-between">
           <Link href="/dashboard" className="flex items-center gap-3 hover:opacity-90 transition-opacity">
             <div className="bg-[#2E74B5] rounded px-2 py-0.5 text-xs font-bold tracking-wider">
-              T-FLAWS
+              CPC-Short-Course-Series
             </div>
             <span className="font-semibold text-sm hidden sm:inline">
               Course Dashboard
