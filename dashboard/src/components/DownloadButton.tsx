@@ -6,9 +6,10 @@ import { createClient } from '@/lib/supabase/browser'
 interface Props {
   courseId: string
   courseNumber: number
+  slug: string
 }
 
-export default function DownloadButton({ courseId, courseNumber }: Props) {
+export default function DownloadButton({ courseId, courseNumber, slug }: Props) {
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState('')
 
@@ -17,6 +18,20 @@ export default function DownloadButton({ courseId, courseNumber }: Props) {
     setError('')
 
     try {
+      // First try the static pre-built file (served directly by CDN, no 4.5MB limit)
+      const staticUrl = `/docs/${slug}.docx`
+      const head = await fetch(staticUrl, { method: 'HEAD' })
+      if (head.ok) {
+        const a = document.createElement('a')
+        a.href = staticUrl
+        a.download = `${slug}.docx`
+        document.body.appendChild(a)
+        a.click()
+        document.body.removeChild(a)
+        return
+      }
+
+      // Fall back to API-generated docx for courses without a pre-built file
       const supabase = createClient()
       const { data: { session } } = await supabase.auth.getSession()
       if (!session) throw new Error('Not logged in — please refresh the page')
