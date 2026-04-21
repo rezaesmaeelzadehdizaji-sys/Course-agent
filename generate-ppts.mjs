@@ -40,7 +40,7 @@ function titleSlide(pptx, seriesLabel, title, subtitle, date) {
   s.addText(subtitle, { x: 0.5, y: 2.9, w: 9, h: 0.8, fontSize: 16, color: LIGHT_GREEN, align: 'center', fontFace: 'Calibri', italic: true });
   s.addText(date, { x: 0.5, y: 4.0, w: 9, h: 0.4, fontSize: 12, color: LIGHT_GREEN, align: 'center', fontFace: 'Calibri' });
   s.addText('Canadian Poultry Training Series  |  Canadian Poultry Consultants (CPC)', { x: 0.5, y: 4.65, w: 9, h: 0.35, fontSize: 11, color: WHITE, align: 'center', fontFace: 'Calibri' });
-  if (LOGO_EXISTS) s.addImage({ path: LOGO_PATH, x: 9.0, y: 0.1, w: 0.7, h: 0.7 });
+  if (LOGO_EXISTS) s.addImage({ path: LOGO_PATH, x: 8.95, y: 0.05, w: 0.85, h: 0.85 });
   return s;
 }
 
@@ -55,7 +55,7 @@ function sectionSlide(pptx, num, title, subtitle) {
   if (subtitle) {
     s.addText(subtitle, { x: 0.5, y: 3.2, w: 9, h: 0.7, fontSize: 15, color: LIGHT_GREEN, align: 'center', fontFace: 'Calibri', italic: true });
   }
-  if (LOGO_EXISTS) s.addImage({ path: LOGO_PATH, x: 9.0, y: 0.1, w: 0.7, h: 0.7 });
+  if (LOGO_EXISTS) s.addImage({ path: LOGO_PATH, x: 8.95, y: 0.05, w: 0.85, h: 0.85 });
   return s;
 }
 
@@ -65,7 +65,7 @@ function contentSlide(pptx, heading, bullets, imgPath, imgOpts) {
   s.addShape(pptx.ShapeType.rect, { x: 0, y: 0, w: 10, h: 0.75, fill: { color: DARK_GREEN } });
   s.addShape(pptx.ShapeType.rect, { x: 0, y: 0.75, w: 10, h: 0.04, fill: { color: GOLD } });
   s.addText(heading, { x: 0.25, y: 0.05, w: 8.5, h: 0.65, fontSize: 20, color: WHITE, bold: true, fontFace: 'Calibri', valign: 'middle' });
-  if (LOGO_EXISTS) s.addImage({ path: LOGO_PATH, x: 9.1, y: 0.1, w: 0.55, h: 0.55 });
+  if (LOGO_EXISTS) s.addImage({ path: LOGO_PATH, x: 9.1, y: 0.05, w: 0.65, h: 0.65 });
 
   const hasImg = imgPath && fs.existsSync(imgPath);
   const contentW = hasImg ? 5.6 : 9.5;
@@ -98,7 +98,7 @@ function imageSlide(pptx, heading, imgPath, caption, bullets) {
   s.addShape(pptx.ShapeType.rect, { x: 0, y: 0, w: 10, h: 0.75, fill: { color: DARK_GREEN } });
   s.addShape(pptx.ShapeType.rect, { x: 0, y: 0.75, w: 10, h: 0.04, fill: { color: GOLD } });
   s.addText(heading, { x: 0.25, y: 0.05, w: 8.5, h: 0.65, fontSize: 20, color: WHITE, bold: true, fontFace: 'Calibri', valign: 'middle' });
-  if (LOGO_EXISTS) s.addImage({ path: LOGO_PATH, x: 9.1, y: 0.1, w: 0.55, h: 0.55 });
+  if (LOGO_EXISTS) s.addImage({ path: LOGO_PATH, x: 9.1, y: 0.05, w: 0.65, h: 0.65 });
   if (imgPath && fs.existsSync(imgPath)) {
     s.addImage({ path: imgPath, x: 0.4, y: 0.88, w: 9.2, h: 4.3 });
     if (caption) s.addText(caption, { x: 0.4, y: 5.22, w: 9.2, h: 0.3, fontSize: 10, color: '888888', align: 'center', fontFace: 'Calibri', italic: true });
@@ -117,7 +117,7 @@ function twoColSlide(pptx, heading, leftTitle, leftBullets, rightTitle, rightBul
   s.addShape(pptx.ShapeType.rect, { x: 0, y: 0, w: 10, h: 0.75, fill: { color: DARK_GREEN } });
   s.addShape(pptx.ShapeType.rect, { x: 0, y: 0.75, w: 10, h: 0.04, fill: { color: GOLD } });
   s.addText(heading, { x: 0.25, y: 0.05, w: 8.5, h: 0.65, fontSize: 20, color: WHITE, bold: true, fontFace: 'Calibri', valign: 'middle' });
-  if (LOGO_EXISTS) s.addImage({ path: LOGO_PATH, x: 9.1, y: 0.1, w: 0.55, h: 0.55 });
+  if (LOGO_EXISTS) s.addImage({ path: LOGO_PATH, x: 9.1, y: 0.05, w: 0.65, h: 0.65 });
   // divider
   s.addShape(pptx.ShapeType.rect, { x: 4.9, y: 0.85, w: 0.05, h: 4.6, fill: { color: LIGHT_GRAY } });
   // left
@@ -137,7 +137,7 @@ function tableSlide(pptx, heading, rows, colWidths) {
   s.addShape(pptx.ShapeType.rect, { x: 0, y: 0, w: 10, h: 0.75, fill: { color: DARK_GREEN } });
   s.addShape(pptx.ShapeType.rect, { x: 0, y: 0.75, w: 10, h: 0.04, fill: { color: GOLD } });
   s.addText(heading, { x: 0.25, y: 0.05, w: 8.5, h: 0.65, fontSize: 20, color: WHITE, bold: true, fontFace: 'Calibri', valign: 'middle' });
-  if (LOGO_EXISTS) s.addImage({ path: LOGO_PATH, x: 9.1, y: 0.1, w: 0.55, h: 0.55 });
+  if (LOGO_EXISTS) s.addImage({ path: LOGO_PATH, x: 9.1, y: 0.05, w: 0.65, h: 0.65 });
   s.addTable(rows, { x: 0.3, y: 0.9, w: 9.4, colW: colWidths, fontFace: 'Calibri', fontSize: 11, border: { type: 'solid', pt: 0.5, color: LIGHT_GRAY }, valign: 'middle' });
   return s;
 }
