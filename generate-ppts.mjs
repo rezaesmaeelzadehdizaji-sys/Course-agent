@@ -138,7 +138,7 @@ function tableSlide(pptx, heading, rows, colWidths) {
 // ═══════════════════════════════════════════════════════════════════════════
 async function buildCourse3() {
   const pptx = new PptxGenJS();
-  pptx.layout = 'LAYOUT_WIDE';
+  pptx.layout = 'LAYOUT_16x9';
   pptx.author = 'Canadian Poultry Consultants (CPC)';
   pptx.company = 'CPC Training Series';
   pptx.subject = 'T-FLAWS Assessment Management Tool';
@@ -662,7 +662,7 @@ async function buildCourse3() {
 // ═══════════════════════════════════════════════════════════════════════════
 async function buildCourse7() {
   const pptx = new PptxGenJS();
-  pptx.layout = 'LAYOUT_WIDE';
+  pptx.layout = 'LAYOUT_16x9';
   pptx.author = 'Canadian Poultry Consultants (CPC)';
   pptx.company = 'CPC Training Series';
   pptx.subject = 'Common Poultry Diseases: Practical Training for Farmers';
