@@ -39,6 +39,10 @@ const LOGO_PATH = path.join(__dirname, 'logo.png');
 // Image paths
 function imgPath(n) { return path.join(OUT_DIR, `img${n}.png`); }
 function imgBuf(n)  { return fs.existsSync(imgPath(n)) ? fs.readFileSync(imgPath(n)) : null; }
+function imgBuf0()  {
+  const p = path.join(OUT_DIR, 'img0_salmonella.png');
+  return fs.existsSync(p) ? fs.readFileSync(p) : null;
+}
 
 // ============================================================
 // COLOURS
@@ -372,6 +376,7 @@ function buildSection1() {
       bullet([{ text: 'Wide temperature range: ', bold: true }, { text: 'The organism multiplies between 7 and 48 degrees Celsius, with an optimum around 37 degrees. Improperly refrigerated products can support rapid bacterial growth.' }]),
       bullet([{ text: 'Resistance to drying: ', bold: true }, { text: 'Salmonella in dried poultry feces or dust can remain viable for extended periods, making thorough cleanout and disinfection between flocks essential [5].' }]),
       bullet([{ text: 'Heat sensitivity: ', bold: true }, { text: 'Salmonella is destroyed by cooking. An internal temperature of 74 degrees Celsius for at least 15 seconds kills the organism [2].' }]),
+      ...image(imgBuf0(), 'Figure 1.2: Scientific illustration of Salmonella typhimurium. Each cell is a rod-shaped (bacillus) gram-negative bacterium measuring 0.7-1.5 x 2-5 micrometres. Peritrichous flagella (visible as thin filaments projecting in all directions) give the organism motility and aid colonization of the intestinal tract. Actual electron micrographs to be supplied by the CPC team.', 5.8),
       h2('1.3 How Salmonella Affects Birds'),
       para('In commercial broiler and layer operations, adult birds infected with paratyphoid serovars typically show no clinical signs. They are colonized in the intestinal tract and shed bacteria intermittently in their feces, contaminating litter, water, and the environment [1].'),
       para('Clinical disease is more common in young chicks under three weeks of age and may present as:'),
@@ -389,7 +394,7 @@ function buildSection1() {
       para('Vertical transmission occurs when Salmonella passes from a hen to her eggs, either by contaminating the eggshell during laying or by colonizing the reproductive tract itself. Breeder flocks that test positive for SE can pass the infection to their offspring through contaminated hatching eggs, establishing Salmonella in the day-old chick population before the birds arrive on the grow-out farm [1,6].'),
       h3('Horizontal Transmission'),
       para('Horizontal transmission is the most common route in commercial broiler and layer operations. It includes contaminated feed, unclean water or drinker biofilm, vectors and vermin (rodents, flies, darkling beetles, wild birds), movement of people and equipment between barns, and contaminated litter [1,5].'),
-      ...image(imgBuf(3), 'Figure 1.2: Salmonella transmission routes. Vertical transmission (left) passes infection from breeder to egg to chick. Horizontal transmission (right) spreads Salmonella through feed, water, rodents, insects, people, and equipment.'),
+      ...image(imgBuf(3), 'Figure 1.3: Salmonella transmission routes. Vertical transmission (left) passes infection from breeder to egg to chick. Horizontal transmission (right) spreads Salmonella through feed, water, rodents, insects, people, and equipment.'),
       pageBreak(),
     ],
   };
