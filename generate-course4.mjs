@@ -749,7 +749,7 @@ async function main() {
     creator:     'Canadian Poultry Consultants',
     title:       'Salmonella and Food Safety',
     description: 'Course 4 of 17 — CPC Short Courses',
-    features:    { updateFields: true },
+    features:    { updateFields: false },
     styles:      buildStyles(),
     numbering:   buildNumbering(),
     sections: [
