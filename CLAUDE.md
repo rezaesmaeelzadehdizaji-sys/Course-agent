@@ -101,3 +101,39 @@ This project is designed so the remaining 16 courses reuse the same structure. T
 - TOC is a Word field — it appears blank until the user right-clicks and selects **Update Field**
 - ES module imports are blocked on `file://` — always test via a local HTTP server
 - Image placeholders use a single-cell gray table — no actual images are embedded in the .docx
+
+## Editing .docx Files Directly (Node.js)
+
+When patching an existing `.docx` via Node.js (e.g. to apply text corrections), follow this exact recipe. Any deviation has caused "Word experienced an error trying to open the file."
+
+```js
+const JSZip = require('jszip');
+const fs    = require('fs');
+
+async function patchDocx(srcPath, outPath, fixes) {
+  const zip = await JSZip.loadAsync(fs.readFileSync(srcPath));
+  let xml = await zip.file('word/document.xml').async('string');
+
+  // Apply fixes — every replacement string must use &amp; not bare &
+  fixes.forEach(([find, replace]) => {
+    if (xml.includes(find)) xml = xml.split(find).join(replace);
+  });
+
+  // MANDATORY — abort if any unescaped & slipped through
+  const bad = xml.match(/&(?!amp;|lt;|gt;|quot;|apos;|#)/g);
+  if (bad) throw new Error(`Unescaped & in XML (${bad.length} found) — Word will reject`);
+
+  zip.file('word/document.xml', xml);
+  const buf = await zip.generateAsync({ type: 'nodebuffer', compression: 'DEFLATE' });
+  fs.writeFileSync(outPath, buf);
+}
+```
+
+**Rules that must never be broken:**
+
+1. **Use `jszip`, never `adm-zip`** — adm-zip produces zip files Word silently rejects.
+2. **Escape every `&` as `&amp;`** in replacement text. Author lists (`Widowski, T., & Harlander-Matauschek`) and inline text with ampersands will break Word if left as bare `&`. mammoth and xmldom tolerate unescaped `&`; Word does not.
+3. **Only replace text inside `<w:t>…</w:t>` runs** — never edit `<w:r>`, `<w:p>`, `<w:proofErr>`, or any structural XML tags.
+4. **Delete stale lock files** (`~$filename.docx`) before asking the user to reopen.
+5. **Verify with mammoth** after writing (`mammoth.extractRawText`) — 0 messages is required but not sufficient; Word is the final authority.
+6. **Always start from the original LFS object** for any patch session — never chain patches on a previously patched file.
