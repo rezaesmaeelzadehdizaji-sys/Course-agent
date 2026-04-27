@@ -51,9 +51,9 @@ export const referenceEntries = {
   },
 
   // --- D ---
-  "Daigle2017": {
-    apa: "Daigle, C. L. (2017). The effect of feather pecking on welfare and productivity. Journal of Applied Poultry Research, 26(4), 560–572. https://doi.org/10.3382/japr/pfx028",
-    short: "(Daigle, 2017)"
+  "Decina2019": {
+    apa: "Decina, C., Berke, O., van Staaveren, N., Baes, C., Widowski, T., & Harlander-Matauschek, A. (2019). Evidence for a relationship between feather pecking and feather cover scores in laying hen flocks. Poultry Science, 98(1), 439–444. https://doi.org/10.3382/ps/pey329",
+    short: "(Decina et al., 2019)"
   },
   "Dawkins2004": {
     apa: "Dawkins, M. S., Donnelly, C. A., & Jones, T. A. (2004). Chicken welfare is influenced more by housing conditions than by stocking density. Nature, 427(6972), 342–344. https://doi.org/10.1038/nature02226",
@@ -62,7 +62,7 @@ export const referenceEntries = {
 
   // --- E ---
   "EFSA2012": {
-    apa: "European Food Safety Authority. (2012). Scientific opinion on the welfare of chickens on farm. EFSA Journal, 10(1), 2424. https://doi.org/10.2903/j.efsa.2012.2424",
+    apa: "European Food Safety Authority. (2012). Scientific opinion on the use of animal-based measures to assess welfare of broilers. EFSA Journal, 10(7), 2774. https://doi.org/10.2903/j.efsa.2012.2774",
     short: "(EFSA, 2012)"
   },
   "Elfadil1996": {
@@ -167,7 +167,7 @@ export const bibliographyOrder = [
   "Cobb2021",
   "Cobb2021Mgmt",
   "CVMA2020",
-  "Daigle2017",
+  "Decina2019",
   "Dawkins2004",
   "EFSA2012",
   "Elfadil1996",
