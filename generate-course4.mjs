@@ -781,12 +781,89 @@ async function main() {
 
   let buffer = await Packer.toBuffer(doc);
 
-  // Post-process: strip <w:updateFields> from settings.xml so Word never
-  // shows the "update fields" security prompt on open.
+  // Post-process with JSZip:
+  //  1. Remove <w:updateFields> from settings.xml
+  //  2. Remove w:dirty="true" from the TOC fldChar — this flag is what
+  //     triggers Word's "update fields" dialog on every open
+  //  3. Inject pre-populated TOC entries so the TOC shows content immediately
   const zip = await JSZip.loadAsync(buffer);
+
+  // Patch settings.xml
   let settings = await zip.file('word/settings.xml').async('string');
   settings = settings.replace(/<w:updateFields[^/]*\/>/g, '');
   zip.file('word/settings.xml', settings);
+
+  // Patch document.xml
+  let xml = await zip.file('word/document.xml').async('string');
+
+  // Remove w:dirty="true" so Word treats the field as already up-to-date
+  xml = xml.replace(/\s*w:dirty="true"/g, '');
+
+  // Build static TOC content XML (injected as cached field result)
+  const toc1 = (text) =>
+    `<w:p><w:pPr><w:pStyle w:val="TOC1"/><w:tabs><w:tab w:val="right" w:leader="dot" w:pos="8640"/></w:tabs></w:pPr>` +
+    `<w:r><w:t xml:space="preserve">${text}</w:t></w:r></w:p>`;
+  const toc2 = (text) =>
+    `<w:p><w:pPr><w:pStyle w:val="TOC2"/><w:tabs><w:tab w:val="right" w:leader="dot" w:pos="8640"/></w:tabs><w:ind w:left="440"/></w:pPr>` +
+    `<w:r><w:t xml:space="preserve">${text}</w:t></w:r></w:p>`;
+
+  const tocEntries = [
+    toc1('Introduction'),
+    toc2('Section 1: Understanding Salmonella'),
+    toc2('1.1  What Is Salmonella?'),
+    toc2('1.2  The Biology of Salmonella'),
+    toc2('1.3  How Salmonella Affects Birds'),
+    toc2('1.4  How Salmonella Affects Humans'),
+    toc2('1.5  How Salmonella Spreads: Transmission Routes'),
+    toc1('Section 2: Risks on the Poultry Farm'),
+    toc2('2.1  Contaminated Feed'),
+    toc2('2.2  Contaminated Water'),
+    toc2('2.3  Carrier Birds and Asymptomatic Shedding'),
+    toc2('2.4  Wild Animals, Rodents, and Insects'),
+    toc2('2.5  Farm Worker Practices'),
+    toc2('2.6  Equipment and Litter'),
+    toc1('Section 3: Prevention and Control Measures'),
+    toc2('3.1  Biosecurity: The Foundation'),
+    toc2('3.2  Feed and Water Safety'),
+    toc2('3.3  Competitive Exclusion'),
+    toc2('3.4  Vaccination'),
+    toc2('3.5  Rodent and Pest Control'),
+    toc2('3.6  Salmonella Monitoring and Testing'),
+    toc1('Section 4: Good Hygiene Practices'),
+    toc2('4.1  Handwashing'),
+    toc2('4.2  Protective Clothing and Footwear'),
+    toc2('4.3  Barn Cleanout and Disinfection'),
+    toc2('4.4  Waste Management'),
+    toc1('Section 5: Safe Processing and Storage'),
+    toc2('5.1  Pre-Harvest Management'),
+    toc2('5.2  Temperature Control'),
+    toc2('5.3  Egg Safety: On-Farm Practices for Layer Operations'),
+    toc2('5.4  Preventing Cross-Contamination'),
+    toc1('Section 6: Farmer Responsibilities and Consumer Safety'),
+    toc2('6.1  Regulatory Framework in Canada'),
+    toc2('6.2  Record-Keeping'),
+    toc2('6.3  Monitoring Flock Health'),
+    toc2('6.4  Key Takeaways'),
+    toc1('Recommended Peer-Reviewed Journals'),
+    toc1('References'),
+  ].join('');
+
+  // Inject cached content between fldCharType="separate" and fldCharType="end"
+  const sepTag  = '<w:fldChar w:fldCharType="separate"/></w:r></w:p>';
+  const endTag  = '<w:p><w:r><w:fldChar w:fldCharType="end"/>';
+  const sepIdx  = xml.indexOf(sepTag);
+  if (sepIdx !== -1) {
+    const endIdx = xml.indexOf(endTag, sepIdx);
+    if (endIdx !== -1) {
+      xml = xml.slice(0, sepIdx + sepTag.length) + tocEntries + xml.slice(endIdx);
+    }
+  }
+
+  // Validate: no bare & that would break Word
+  const bad = xml.match(/&(?!amp;|lt;|gt;|quot;|apos;|#)/g);
+  if (bad) throw new Error(`Unescaped & found (${bad.length}), Word will reject`);
+
+  zip.file('word/document.xml', xml);
   buffer = await zip.generateAsync({ type: 'nodebuffer', compression: 'DEFLATE' });
 
   fs.writeFileSync(OUT_FILE, buffer);
