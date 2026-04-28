@@ -857,15 +857,37 @@ async function main() {
   //    Rule: Salmonella (genus) always italic; Salmonella + known lowercase species also italic
   //    Serovar names (Enteritidis, Typhimurium, Pullorum, Gallinarum, Infantis) NOT italic
   //    Alphitobius diaperinus (darkling beetle) also italic
+  //
+  //    IMPORTANT: <w:i/> must be inserted at the correct OOXML position within <w:rPr>:
+  //    after <w:rFonts> and <w:b>/<w:bCs>, but BEFORE <w:color> and <w:sz>.
+  //    Inserting at the start (after <w:rPr>) violates schema order and Word silently ignores it.
+  function insertItalic(rPr) {
+    if (!rPr) return '<w:rPr><w:i/></w:rPr>';
+    // The docx library writes <w:i w:val="false"/> on every non-italic run.
+    // Adding a second <w:i/> after it is invalid OOXML — Word uses the first one and
+    // ignores the second, so italic never renders. Replace the explicit-false instead.
+    if (rPr.includes('<w:i w:val="false"/>')) {
+      return rPr
+        .replace('<w:i w:val="false"/>', '<w:i/>')
+        .replace('<w:iCs w:val="false"/>', '<w:iCs/>');
+    }
+    // Already italic (e.g. figure captions) — no change needed
+    if (/<w:i\/>|<w:i>/.test(rPr)) return rPr;
+    // No italic element at all — insert before <w:color> or <w:sz> (correct OOXML position)
+    for (const anchor of ['<w:color ', '<w:sz ', '<w:szCs ', '</w:rPr>']) {
+      const idx = rPr.indexOf(anchor);
+      if (idx !== -1) return rPr.slice(0, idx) + '<w:i/>' + rPr.slice(idx);
+    }
+    return rPr.replace('<w:rPr>', '<w:rPr><w:i/>');
+  }
+
   docXml = docXml.replace(/<w:p\b[^>]*>[\s\S]*?<\/w:p>/g, para => {
     if (/w:val="Heading[123]"/.test(para)) return para;
     return para.replace(
       /(<w:r\b[^>]*>)((?:<w:rPr>[\s\S]*?<\/w:rPr>)?)(<w:t(?:\s+xml:space="preserve")?>)([\s\S]*?)(<\/w:t>\s*<\/w:r>)/g,
       (m, rOpen, rPr, _tOpen, text) => {
         if (!/Salmonella|Alphitobius/.test(text)) return m;
-        const rPrItalic = rPr
-          ? rPr.replace('<w:rPr>', '<w:rPr><w:i/>')
-          : '<w:rPr><w:i/></w:rPr>';
+        const rPrItalic = insertItalic(rPr);
         const parts = [];
         let last = 0;
         const taxRe = /Salmonella(?:[ ](?:arizonae|typhimurium|enterica|bongori))?|Alphitobius[ ]+diaperinus/g;
