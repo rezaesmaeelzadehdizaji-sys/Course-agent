@@ -10,7 +10,6 @@ import {
   Packer,
   Paragraph,
   TextRun,
-  Tab,
   AlignmentType,
   PageBreak,
   Header,
@@ -24,9 +23,8 @@ import {
   ShadingType,
   convertInchesToTwip,
   HeadingLevel,
+  TableOfContents,
   LevelFormat,
-  TabStopType,
-  LeaderType,
   ImageRun,
 } from 'docx';
 import JSZip from './node_modules/jszip/dist/jszip.js';
@@ -110,31 +108,6 @@ function pageBreak() {
   return new Paragraph({ children: [new PageBreak()] });
 }
 
-// Static TOC entries with dot leader tab stop and estimated page number
-const TOC_TAB = 8640; // 6 inches from left margin in twips (fits 1.25" margins on letter)
-function tocLine1(text, page) {
-  return new Paragraph({
-    children: [
-      new TextRun({ text, bold: true, color: DARK_BLUE, size: 22, font: 'Calibri' }),
-      new TextRun({ children: [new Tab()] }),
-      new TextRun({ text: String(page), bold: true, color: DARK_BLUE, size: 22, font: 'Calibri' }),
-    ],
-    tabStops: [{ type: TabStopType.RIGHT, position: TOC_TAB, leader: LeaderType.DOT }],
-    spacing: { after: 120, line: 240, lineRule: 'auto' },
-  });
-}
-function tocLine2(text, page) {
-  return new Paragraph({
-    children: [
-      new TextRun({ text, color: MED_BLUE, size: 20, font: 'Calibri' }),
-      new TextRun({ children: [new Tab()] }),
-      new TextRun({ text: String(page), color: MED_BLUE, size: 20, font: 'Calibri' }),
-    ],
-    tabStops: [{ type: TabStopType.RIGHT, position: TOC_TAB, leader: LeaderType.DOT }],
-    spacing: { after: 60, line: 240, lineRule: 'auto' },
-    indent: { left: convertInchesToTwip(0.3) },
-  });
-}
 
 // Embedded PNG image + caption
 function image(buf, caption, widthIn = 5.8) {
@@ -310,7 +283,10 @@ function buildCoverSection() {
 }
 
 // ============================================================
-// TABLE OF CONTENTS — static with estimated page numbers
+// TABLE OF CONTENTS — real Word TOC field (no hyperlink switch,
+// which was triggering the "fields referencing other files" dialog)
+// JSZip post-processing injects pre-cached entries so page numbers
+// display immediately; user can still right-click > Update Field.
 // ============================================================
 function buildTocSection() {
   return {
@@ -319,47 +295,9 @@ function buildTocSection() {
     footers: { default: buildFooter() },
     children: [
       h1('Table of Contents'),
-      tocLine1('Introduction', 4),
-      tocLine2('Learning Objectives', 4),
-      tocLine2('Course Agenda', 4),
-      tocLine2('Important Notes for Participants', 5),
-      tocLine1('Section 1: Understanding Salmonella', 5),
-      tocLine2('1.1  What Is Salmonella?', 5),
-      tocLine2('1.2  The Biology of Salmonella', 6),
-      tocLine2('1.3  How Salmonella Affects Birds', 6),
-      tocLine2('1.4  How Salmonella Affects Humans', 7),
-      tocLine2('1.5  How Salmonella Spreads: Transmission Routes', 7),
-      tocLine1('Section 2: Risks on the Poultry Farm', 8),
-      tocLine2('2.1  Contaminated Feed', 8),
-      tocLine2('2.2  Contaminated Water', 8),
-      tocLine2('2.3  Carrier Birds and Asymptomatic Shedding', 9),
-      tocLine2('2.4  Wild Animals, Rodents, and Insects', 9),
-      tocLine2('2.5  Farm Worker Practices', 9),
-      tocLine2('2.6  Equipment and Litter', 10),
-      tocLine1('Section 3: Prevention and Control Measures', 10),
-      tocLine2('3.1  Biosecurity: The Foundation', 10),
-      tocLine2('3.2  Feed and Water Safety', 11),
-      tocLine2('3.3  Competitive Exclusion', 11),
-      tocLine2('3.4  Vaccination', 12),
-      tocLine2('3.5  Rodent and Pest Control', 12),
-      tocLine2('3.6  Salmonella Monitoring and Testing', 12),
-      tocLine1('Section 4: Good Hygiene Practices', 13),
-      tocLine2('4.1  Handwashing', 13),
-      tocLine2('4.2  Protective Clothing and Footwear', 13),
-      tocLine2('4.3  Barn Cleanout and Disinfection', 14),
-      tocLine2('4.4  Waste Management', 15),
-      tocLine1('Section 5: Safe Processing and Storage', 15),
-      tocLine2('5.1  Pre-Harvest Management', 15),
-      tocLine2('5.2  Temperature Control', 16),
-      tocLine2('5.3  Egg Safety: On-Farm Practices for Layer Operations', 16),
-      tocLine2('5.4  Preventing Cross-Contamination', 17),
-      tocLine1('Section 6: Farmer Responsibilities and Consumer Safety', 18),
-      tocLine2('6.1  Regulatory Framework in Canada', 18),
-      tocLine2('6.2  Record-Keeping', 18),
-      tocLine2('6.3  Monitoring Flock Health', 19),
-      tocLine2('6.4  Key Takeaways', 19),
-      tocLine1('Recommended Peer-Reviewed Journals', 20),
-      tocLine1('References', 21),
+      new TableOfContents('Table of Contents', {
+        headingStyleRange: '1-3',
+      }),
       pageBreak(),
     ],
   };
@@ -829,37 +767,107 @@ async function main() {
   let buffer = await Packer.toBuffer(doc);
 
   // Post-process with JSZip:
-  //  1. Remove <w:updateFields> from settings.xml
-  //  2. Italicize formal Latin genus/species names in all body text runs
-  //     - Salmonella (genus) + optional lowercase species (arizonae, typhimurium): italic
-  //     - Serovar names starting with capital letter (Enteritidis, Typhimurium, Pullorum,
-  //       Gallinarum, Infantis) are NOT italicized per standard microbiological style
-  //     - Alphitobius diaperinus (darkling beetle): italic
-  //     - Section headings (Heading1/2/3) are excluded
+  //  1. settings.xml — strip <w:updateFields> (prevents auto-update dialog)
+  //  2. document.xml — strip w:dirty="true" (suppresses "update fields" dialog on open)
+  //  3. document.xml — inject pre-cached TOC entries with page numbers so the TOC
+  //     displays correctly immediately without requiring a manual update
+  //  4. document.xml — italicize formal Latin genus/species names in all body text
   const zip = await JSZip.loadAsync(buffer);
 
+  // 1. settings.xml
   let settings = await zip.file('word/settings.xml').async('string');
   settings = settings.replace(/<w:updateFields[^/]*\/>/g, '');
   zip.file('word/settings.xml', settings);
 
+  // 2-4. document.xml
   let docXml = await zip.file('word/document.xml').async('string');
 
+  // 2. Remove w:dirty="true" from every fldChar element
+  docXml = docXml.replace(/\s*w:dirty="true"/g, '');
+
+  // 3. Inject pre-cached TOC entries with estimated page numbers
+  //    Format: TOC1/TOC2 styled paragraphs with dot-leader tab + page number
+  const t1 = (text, pg) =>
+    `<w:p><w:pPr><w:pStyle w:val="TOC1"/>` +
+    `<w:tabs><w:tab w:val="right" w:leader="dot" w:pos="8640"/></w:tabs></w:pPr>` +
+    `<w:r><w:t xml:space="preserve">${text}</w:t></w:r>` +
+    `<w:r><w:tab/></w:r><w:r><w:t>${pg}</w:t></w:r></w:p>`;
+  const t2 = (text, pg) =>
+    `<w:p><w:pPr><w:pStyle w:val="TOC2"/>` +
+    `<w:tabs><w:tab w:val="right" w:leader="dot" w:pos="8640"/></w:tabs>` +
+    `<w:ind w:left="440"/></w:pPr>` +
+    `<w:r><w:t xml:space="preserve">${text}</w:t></w:r>` +
+    `<w:r><w:tab/></w:r><w:r><w:t>${pg}</w:t></w:r></w:p>`;
+
+  const tocEntries = [
+    t1('Introduction', 4),
+    t2('Learning Objectives', 4),
+    t2('Course Agenda', 4),
+    t2('Important Notes for Participants', 5),
+    t1('Section 1: Understanding Salmonella', 5),
+    t2('1.1  What Is Salmonella?', 5),
+    t2('1.2  The Biology of Salmonella', 6),
+    t2('1.3  How Salmonella Affects Birds', 6),
+    t2('1.4  How Salmonella Affects Humans', 7),
+    t2('1.5  How Salmonella Spreads: Transmission Routes', 7),
+    t1('Section 2: Risks on the Poultry Farm', 8),
+    t2('2.1  Contaminated Feed', 8),
+    t2('2.2  Contaminated Water', 8),
+    t2('2.3  Carrier Birds and Asymptomatic Shedding', 9),
+    t2('2.4  Wild Animals, Rodents, and Insects', 9),
+    t2('2.5  Farm Worker Practices', 9),
+    t2('2.6  Equipment and Litter', 10),
+    t1('Section 3: Prevention and Control Measures', 10),
+    t2('3.1  Biosecurity: The Foundation', 10),
+    t2('3.2  Feed and Water Safety', 11),
+    t2('3.3  Competitive Exclusion', 11),
+    t2('3.4  Vaccination', 12),
+    t2('3.5  Rodent and Pest Control', 12),
+    t2('3.6  Salmonella Monitoring and Testing', 12),
+    t1('Section 4: Good Hygiene Practices', 13),
+    t2('4.1  Handwashing', 13),
+    t2('4.2  Protective Clothing and Footwear', 13),
+    t2('4.3  Barn Cleanout and Disinfection', 14),
+    t2('4.4  Waste Management', 15),
+    t1('Section 5: Safe Processing and Storage', 15),
+    t2('5.1  Pre-Harvest Management', 15),
+    t2('5.2  Temperature Control', 16),
+    t2('5.3  Egg Safety: On-Farm Practices for Layer Operations', 16),
+    t2('5.4  Preventing Cross-Contamination', 17),
+    t1('Section 6: Farmer Responsibilities and Consumer Safety', 18),
+    t2('6.1  Regulatory Framework in Canada', 18),
+    t2('6.2  Record-Keeping', 18),
+    t2('6.3  Monitoring Flock Health', 19),
+    t2('6.4  Key Takeaways', 19),
+    t1('Recommended Peer-Reviewed Journals', 20),
+    t1('References', 21),
+  ].join('');
+
+  const sepTag = '<w:fldChar w:fldCharType="separate"/></w:r></w:p>';
+  const endTag = '<w:p><w:r><w:fldChar w:fldCharType="end"/>';
+  const sepIdx = docXml.indexOf(sepTag);
+  if (sepIdx !== -1) {
+    const endIdx = docXml.indexOf(endTag, sepIdx);
+    if (endIdx !== -1) {
+      docXml = docXml.slice(0, sepIdx + sepTag.length) + tocEntries + docXml.slice(endIdx);
+    }
+  }
+
+  // 4. Italicize formal Latin genus/species names in all non-heading paragraphs
+  //    Rule: Salmonella (genus) always italic; Salmonella + known lowercase species also italic
+  //    Serovar names (Enteritidis, Typhimurium, Pullorum, Gallinarum, Infantis) NOT italic
+  //    Alphitobius diaperinus (darkling beetle) also italic
   docXml = docXml.replace(/<w:p\b[^>]*>[\s\S]*?<\/w:p>/g, para => {
-    // Skip section headings
     if (/w:val="Heading[123]"/.test(para)) return para;
-    // Process each text run within this paragraph
     return para.replace(
       /(<w:r\b[^>]*>)((?:<w:rPr>[\s\S]*?<\/w:rPr>)?)(<w:t(?:\s+xml:space="preserve")?>)([\s\S]*?)(<\/w:t>\s*<\/w:r>)/g,
       (m, rOpen, rPr, _tOpen, text) => {
         if (!/Salmonella|Alphitobius/.test(text)) return m;
-        // Build italic variant of the run's rPr (insert <w:i/> after opening <w:rPr>)
         const rPrItalic = rPr
           ? rPr.replace('<w:rPr>', '<w:rPr><w:i/>')
           : '<w:rPr><w:i/></w:rPr>';
-        // Split text into italic (genus/species) and non-italic (serovar, surrounding) segments
         const parts = [];
         let last = 0;
-        // Only match known species names (lowercase) — NOT common English words
         const taxRe = /Salmonella(?:[ ](?:arizonae|typhimurium|enterica|bongori))?|Alphitobius[ ]+diaperinus/g;
         let sm;
         while ((sm = taxRe.exec(text)) !== null) {
