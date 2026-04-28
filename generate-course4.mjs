@@ -10,6 +10,7 @@ import {
   Packer,
   Paragraph,
   TextRun,
+  Tab,
   AlignmentType,
   PageBreak,
   Header,
@@ -23,7 +24,6 @@ import {
   ShadingType,
   convertInchesToTwip,
   HeadingLevel,
-  TableOfContents,
   LevelFormat,
   TabStopType,
   LeaderType,
@@ -108,6 +108,32 @@ function numbered(text) {
 
 function pageBreak() {
   return new Paragraph({ children: [new PageBreak()] });
+}
+
+// Static TOC entries with dot leader tab stop and estimated page number
+const TOC_TAB = 8640; // 6 inches from left margin in twips (fits 1.25" margins on letter)
+function tocLine1(text, page) {
+  return new Paragraph({
+    children: [
+      new TextRun({ text, bold: true, color: DARK_BLUE, size: 22, font: 'Calibri' }),
+      new TextRun({ children: [new Tab()] }),
+      new TextRun({ text: String(page), bold: true, color: DARK_BLUE, size: 22, font: 'Calibri' }),
+    ],
+    tabStops: [{ type: TabStopType.RIGHT, position: TOC_TAB, leader: LeaderType.DOT }],
+    spacing: { after: 120, line: 240, lineRule: 'auto' },
+  });
+}
+function tocLine2(text, page) {
+  return new Paragraph({
+    children: [
+      new TextRun({ text, color: MED_BLUE, size: 20, font: 'Calibri' }),
+      new TextRun({ children: [new Tab()] }),
+      new TextRun({ text: String(page), color: MED_BLUE, size: 20, font: 'Calibri' }),
+    ],
+    tabStops: [{ type: TabStopType.RIGHT, position: TOC_TAB, leader: LeaderType.DOT }],
+    spacing: { after: 60, line: 240, lineRule: 'auto' },
+    indent: { left: convertInchesToTwip(0.3) },
+  });
 }
 
 // Embedded PNG image + caption
@@ -272,13 +298,6 @@ function buildCoverSection() {
       spacing:   { before: 0, after: 120 },
     }),
 
-    // TOC note
-    new Paragraph({
-      children: [new TextRun({ text: 'Note: After opening in Microsoft Word, right-click the Table of Contents and select "Update Field" to populate page numbers.', color: '808080', size: 18, font: 'Calibri', italics: true })],
-      alignment: AlignmentType.CENTER,
-      spacing:   { before: 0, after: 0 },
-    }),
-
     pageBreak(),
   );
 
@@ -291,7 +310,7 @@ function buildCoverSection() {
 }
 
 // ============================================================
-// TABLE OF CONTENTS
+// TABLE OF CONTENTS — static with estimated page numbers
 // ============================================================
 function buildTocSection() {
   return {
@@ -300,19 +319,47 @@ function buildTocSection() {
     footers: { default: buildFooter() },
     children: [
       h1('Table of Contents'),
-      new Paragraph({
-        children: [new TextRun({ text: 'Right-click the table below and select "Update Field" to populate page numbers after opening in Word.', italics: true, color: '888888', size: 20, font: 'Calibri' })],
-        spacing: { after: 160 },
-      }),
-      new TableOfContents('Table of Contents', {
-        hyperlink: true,
-        headingStyleRange: '1-3',
-        stylesWithLevels: [
-          { styleName: 'Heading 1', level: 1 },
-          { styleName: 'Heading 2', level: 2 },
-          { styleName: 'Heading 3', level: 3 },
-        ],
-      }),
+      tocLine1('Introduction', 4),
+      tocLine2('Learning Objectives', 4),
+      tocLine2('Course Agenda', 4),
+      tocLine2('Important Notes for Participants', 5),
+      tocLine1('Section 1: Understanding Salmonella', 5),
+      tocLine2('1.1  What Is Salmonella?', 5),
+      tocLine2('1.2  The Biology of Salmonella', 6),
+      tocLine2('1.3  How Salmonella Affects Birds', 6),
+      tocLine2('1.4  How Salmonella Affects Humans', 7),
+      tocLine2('1.5  How Salmonella Spreads: Transmission Routes', 7),
+      tocLine1('Section 2: Risks on the Poultry Farm', 8),
+      tocLine2('2.1  Contaminated Feed', 8),
+      tocLine2('2.2  Contaminated Water', 8),
+      tocLine2('2.3  Carrier Birds and Asymptomatic Shedding', 9),
+      tocLine2('2.4  Wild Animals, Rodents, and Insects', 9),
+      tocLine2('2.5  Farm Worker Practices', 9),
+      tocLine2('2.6  Equipment and Litter', 10),
+      tocLine1('Section 3: Prevention and Control Measures', 10),
+      tocLine2('3.1  Biosecurity: The Foundation', 10),
+      tocLine2('3.2  Feed and Water Safety', 11),
+      tocLine2('3.3  Competitive Exclusion', 11),
+      tocLine2('3.4  Vaccination', 12),
+      tocLine2('3.5  Rodent and Pest Control', 12),
+      tocLine2('3.6  Salmonella Monitoring and Testing', 12),
+      tocLine1('Section 4: Good Hygiene Practices', 13),
+      tocLine2('4.1  Handwashing', 13),
+      tocLine2('4.2  Protective Clothing and Footwear', 13),
+      tocLine2('4.3  Barn Cleanout and Disinfection', 14),
+      tocLine2('4.4  Waste Management', 15),
+      tocLine1('Section 5: Safe Processing and Storage', 15),
+      tocLine2('5.1  Pre-Harvest Management', 15),
+      tocLine2('5.2  Temperature Control', 16),
+      tocLine2('5.3  Egg Safety: On-Farm Practices for Layer Operations', 16),
+      tocLine2('5.4  Preventing Cross-Contamination', 17),
+      tocLine1('Section 6: Farmer Responsibilities and Consumer Safety', 18),
+      tocLine2('6.1  Regulatory Framework in Canada', 18),
+      tocLine2('6.2  Record-Keeping', 18),
+      tocLine2('6.3  Monitoring Flock Health', 19),
+      tocLine2('6.4  Key Takeaways', 19),
+      tocLine1('Recommended Peer-Reviewed Journals', 20),
+      tocLine1('References', 21),
       pageBreak(),
     ],
   };
@@ -781,89 +828,12 @@ async function main() {
 
   let buffer = await Packer.toBuffer(doc);
 
-  // Post-process with JSZip:
-  //  1. Remove <w:updateFields> from settings.xml
-  //  2. Remove w:dirty="true" from the TOC fldChar — this flag is what
-  //     triggers Word's "update fields" dialog on every open
-  //  3. Inject pre-populated TOC entries so the TOC shows content immediately
+  // Post-process with JSZip: remove <w:updateFields> from settings.xml.
+  // The TOC is now fully static (no field codes), so no document.xml patching needed.
   const zip = await JSZip.loadAsync(buffer);
-
-  // Patch settings.xml
   let settings = await zip.file('word/settings.xml').async('string');
   settings = settings.replace(/<w:updateFields[^/]*\/>/g, '');
   zip.file('word/settings.xml', settings);
-
-  // Patch document.xml
-  let xml = await zip.file('word/document.xml').async('string');
-
-  // Remove w:dirty="true" so Word treats the field as already up-to-date
-  xml = xml.replace(/\s*w:dirty="true"/g, '');
-
-  // Build static TOC content XML (injected as cached field result)
-  const toc1 = (text) =>
-    `<w:p><w:pPr><w:pStyle w:val="TOC1"/><w:tabs><w:tab w:val="right" w:leader="dot" w:pos="8640"/></w:tabs></w:pPr>` +
-    `<w:r><w:t xml:space="preserve">${text}</w:t></w:r></w:p>`;
-  const toc2 = (text) =>
-    `<w:p><w:pPr><w:pStyle w:val="TOC2"/><w:tabs><w:tab w:val="right" w:leader="dot" w:pos="8640"/></w:tabs><w:ind w:left="440"/></w:pPr>` +
-    `<w:r><w:t xml:space="preserve">${text}</w:t></w:r></w:p>`;
-
-  const tocEntries = [
-    toc1('Introduction'),
-    toc2('Section 1: Understanding Salmonella'),
-    toc2('1.1  What Is Salmonella?'),
-    toc2('1.2  The Biology of Salmonella'),
-    toc2('1.3  How Salmonella Affects Birds'),
-    toc2('1.4  How Salmonella Affects Humans'),
-    toc2('1.5  How Salmonella Spreads: Transmission Routes'),
-    toc1('Section 2: Risks on the Poultry Farm'),
-    toc2('2.1  Contaminated Feed'),
-    toc2('2.2  Contaminated Water'),
-    toc2('2.3  Carrier Birds and Asymptomatic Shedding'),
-    toc2('2.4  Wild Animals, Rodents, and Insects'),
-    toc2('2.5  Farm Worker Practices'),
-    toc2('2.6  Equipment and Litter'),
-    toc1('Section 3: Prevention and Control Measures'),
-    toc2('3.1  Biosecurity: The Foundation'),
-    toc2('3.2  Feed and Water Safety'),
-    toc2('3.3  Competitive Exclusion'),
-    toc2('3.4  Vaccination'),
-    toc2('3.5  Rodent and Pest Control'),
-    toc2('3.6  Salmonella Monitoring and Testing'),
-    toc1('Section 4: Good Hygiene Practices'),
-    toc2('4.1  Handwashing'),
-    toc2('4.2  Protective Clothing and Footwear'),
-    toc2('4.3  Barn Cleanout and Disinfection'),
-    toc2('4.4  Waste Management'),
-    toc1('Section 5: Safe Processing and Storage'),
-    toc2('5.1  Pre-Harvest Management'),
-    toc2('5.2  Temperature Control'),
-    toc2('5.3  Egg Safety: On-Farm Practices for Layer Operations'),
-    toc2('5.4  Preventing Cross-Contamination'),
-    toc1('Section 6: Farmer Responsibilities and Consumer Safety'),
-    toc2('6.1  Regulatory Framework in Canada'),
-    toc2('6.2  Record-Keeping'),
-    toc2('6.3  Monitoring Flock Health'),
-    toc2('6.4  Key Takeaways'),
-    toc1('Recommended Peer-Reviewed Journals'),
-    toc1('References'),
-  ].join('');
-
-  // Inject cached content between fldCharType="separate" and fldCharType="end"
-  const sepTag  = '<w:fldChar w:fldCharType="separate"/></w:r></w:p>';
-  const endTag  = '<w:p><w:r><w:fldChar w:fldCharType="end"/>';
-  const sepIdx  = xml.indexOf(sepTag);
-  if (sepIdx !== -1) {
-    const endIdx = xml.indexOf(endTag, sepIdx);
-    if (endIdx !== -1) {
-      xml = xml.slice(0, sepIdx + sepTag.length) + tocEntries + xml.slice(endIdx);
-    }
-  }
-
-  // Validate: no bare & that would break Word
-  const bad = xml.match(/&(?!amp;|lt;|gt;|quot;|apos;|#)/g);
-  if (bad) throw new Error(`Unescaped & found (${bad.length}), Word will reject`);
-
-  zip.file('word/document.xml', xml);
   buffer = await zip.generateAsync({ type: 'nodebuffer', compression: 'DEFLATE' });
 
   fs.writeFileSync(OUT_FILE, buffer);
