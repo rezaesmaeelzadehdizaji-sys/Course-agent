@@ -23,12 +23,13 @@ import {
   ShadingType,
   convertInchesToTwip,
   HeadingLevel,
+  TableOfContents,
   LevelFormat,
-  TabStopPosition,
   TabStopType,
   LeaderType,
   ImageRun,
 } from 'docx';
+import JSZip from './node_modules/jszip/dist/jszip.js';
 import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
@@ -290,69 +291,8 @@ function buildCoverSection() {
 }
 
 // ============================================================
-// TABLE OF CONTENTS — static (no field codes, no Word dialog)
+// TABLE OF CONTENTS
 // ============================================================
-const TOC_ENTRIES = [
-  { text: 'Introduction', level: 1 },
-  { text: 'Section 1: Understanding Salmonella', level: 1 },
-  { text: '1.1  What Is Salmonella?', level: 2 },
-  { text: '1.2  The Biology of Salmonella', level: 2 },
-  { text: '1.3  How Salmonella Affects Birds', level: 2 },
-  { text: '1.4  How Salmonella Affects Humans', level: 2 },
-  { text: '1.5  How Salmonella Spreads: Transmission Routes', level: 2 },
-  { text: 'Section 2: Risks on the Poultry Farm', level: 1 },
-  { text: '2.1  Contaminated Feed', level: 2 },
-  { text: '2.2  Contaminated Water', level: 2 },
-  { text: '2.3  Carrier Birds and Asymptomatic Shedding', level: 2 },
-  { text: '2.4  Wild Animals, Rodents, and Insects', level: 2 },
-  { text: '2.5  Farm Worker Practices', level: 2 },
-  { text: '2.6  Equipment and Litter', level: 2 },
-  { text: 'Section 3: Prevention and Control Measures', level: 1 },
-  { text: '3.1  Biosecurity: The Foundation', level: 2 },
-  { text: '3.2  Feed and Water Safety', level: 2 },
-  { text: '3.3  Competitive Exclusion', level: 2 },
-  { text: '3.4  Vaccination', level: 2 },
-  { text: '3.5  Rodent and Pest Control', level: 2 },
-  { text: '3.6  Salmonella Monitoring and Testing', level: 2 },
-  { text: 'Section 4: Good Hygiene Practices', level: 1 },
-  { text: '4.1  Handwashing', level: 2 },
-  { text: '4.2  Protective Clothing and Footwear', level: 2 },
-  { text: '4.3  Barn Cleanout and Disinfection', level: 2 },
-  { text: '4.4  Waste Management', level: 2 },
-  { text: 'Section 5: Safe Processing and Storage', level: 1 },
-  { text: '5.1  Pre-Harvest Management', level: 2 },
-  { text: '5.2  Temperature Control', level: 2 },
-  { text: '5.3  Egg Safety: On-Farm Practices for Layer Operations', level: 2 },
-  { text: '5.4  Preventing Cross-Contamination', level: 2 },
-  { text: 'Section 6: Farmer Responsibilities and Consumer Safety', level: 1 },
-  { text: '6.1  Regulatory Framework in Canada', level: 2 },
-  { text: '6.2  Record-Keeping', level: 2 },
-  { text: '6.3  Monitoring Flock Health', level: 2 },
-  { text: '6.4  Key Takeaways', level: 2 },
-  { text: 'Recommended Peer-Reviewed Journals', level: 1 },
-  { text: 'References', level: 1 },
-];
-
-function tocEntry(text, level) {
-  const isH1    = level === 1;
-  const indent  = isH1 ? 0 : convertInchesToTwip(0.35);
-  const rightTab = convertInchesToTwip(5.8);
-  return new Paragraph({
-    children: [
-      new TextRun({
-        text,
-        bold:    isH1,
-        color:   isH1 ? DARK_BLUE : '3C3C3C',
-        size:    isH1 ? 24 : 22,
-        font:    'Calibri',
-      }),
-    ],
-    tabStops: [{ type: TabStopType.RIGHT, position: rightTab, leader: LeaderType.DOT }],
-    indent:   { left: indent },
-    spacing:  { after: isH1 ? 100 : 60, line: 260, lineRule: 'auto' },
-  });
-}
-
 function buildTocSection() {
   return {
     properties: { page: { margin: pageMargin } },
@@ -361,10 +301,18 @@ function buildTocSection() {
     children: [
       h1('Table of Contents'),
       new Paragraph({
-        children: [new TextRun({ text: 'Page numbers will populate after the document is fully rendered in Word.', italics: true, color: '888888', size: 20, font: 'Calibri' })],
-        spacing: { after: 240 },
+        children: [new TextRun({ text: 'Right-click the table below and select "Update Field" to populate page numbers after opening in Word.', italics: true, color: '888888', size: 20, font: 'Calibri' })],
+        spacing: { after: 160 },
       }),
-      ...TOC_ENTRIES.map(e => tocEntry(e.text, e.level)),
+      new TableOfContents('Table of Contents', {
+        hyperlink: true,
+        headingStyleRange: '1-3',
+        stylesWithLevels: [
+          { styleName: 'Heading 1', level: 1 },
+          { styleName: 'Heading 2', level: 2 },
+          { styleName: 'Heading 3', level: 3 },
+        ],
+      }),
       pageBreak(),
     ],
   };
@@ -831,7 +779,16 @@ async function main() {
     ],
   });
 
-  const buffer = await Packer.toBuffer(doc);
+  let buffer = await Packer.toBuffer(doc);
+
+  // Post-process: strip <w:updateFields> from settings.xml so Word never
+  // shows the "update fields" security prompt on open.
+  const zip = await JSZip.loadAsync(buffer);
+  let settings = await zip.file('word/settings.xml').async('string');
+  settings = settings.replace(/<w:updateFields[^/]*\/>/g, '');
+  zip.file('word/settings.xml', settings);
+  buffer = await zip.generateAsync({ type: 'nodebuffer', compression: 'DEFLATE' });
+
   fs.writeFileSync(OUT_FILE, buffer);
   console.log('Done:', OUT_FILE);
   console.log('File size:', (buffer.length / 1024).toFixed(1), 'KB');
