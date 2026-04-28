@@ -828,12 +828,58 @@ async function main() {
 
   let buffer = await Packer.toBuffer(doc);
 
-  // Post-process with JSZip: remove <w:updateFields> from settings.xml.
-  // The TOC is now fully static (no field codes), so no document.xml patching needed.
+  // Post-process with JSZip:
+  //  1. Remove <w:updateFields> from settings.xml
+  //  2. Italicize formal Latin genus/species names in all body text runs
+  //     - Salmonella (genus) + optional lowercase species (arizonae, typhimurium): italic
+  //     - Serovar names starting with capital letter (Enteritidis, Typhimurium, Pullorum,
+  //       Gallinarum, Infantis) are NOT italicized per standard microbiological style
+  //     - Alphitobius diaperinus (darkling beetle): italic
+  //     - Section headings (Heading1/2/3) are excluded
   const zip = await JSZip.loadAsync(buffer);
+
   let settings = await zip.file('word/settings.xml').async('string');
   settings = settings.replace(/<w:updateFields[^/]*\/>/g, '');
   zip.file('word/settings.xml', settings);
+
+  let docXml = await zip.file('word/document.xml').async('string');
+
+  docXml = docXml.replace(/<w:p\b[^>]*>[\s\S]*?<\/w:p>/g, para => {
+    // Skip section headings
+    if (/w:val="Heading[123]"/.test(para)) return para;
+    // Process each text run within this paragraph
+    return para.replace(
+      /(<w:r\b[^>]*>)((?:<w:rPr>[\s\S]*?<\/w:rPr>)?)(<w:t(?:\s+xml:space="preserve")?>)([\s\S]*?)(<\/w:t>\s*<\/w:r>)/g,
+      (m, rOpen, rPr, _tOpen, text) => {
+        if (!/Salmonella|Alphitobius/.test(text)) return m;
+        // Build italic variant of the run's rPr (insert <w:i/> after opening <w:rPr>)
+        const rPrItalic = rPr
+          ? rPr.replace('<w:rPr>', '<w:rPr><w:i/>')
+          : '<w:rPr><w:i/></w:rPr>';
+        // Split text into italic (genus/species) and non-italic (serovar, surrounding) segments
+        const parts = [];
+        let last = 0;
+        // Only match known species names (lowercase) — NOT common English words
+        const taxRe = /Salmonella(?:[ ](?:arizonae|typhimurium|enterica|bongori))?|Alphitobius[ ]+diaperinus/g;
+        let sm;
+        while ((sm = taxRe.exec(text)) !== null) {
+          if (sm.index > last) parts.push({ t: text.slice(last, sm.index), i: false });
+          parts.push({ t: sm[0], i: true });
+          last = sm.index + sm[0].length;
+        }
+        if (last < text.length) parts.push({ t: text.slice(last), i: false });
+        return parts
+          .filter(p => p.t.length > 0)
+          .map(p => `${rOpen}${p.i ? rPrItalic : rPr}<w:t xml:space="preserve">${p.t}</w:t></w:r>`)
+          .join('');
+      }
+    );
+  });
+
+  const bad = docXml.match(/&(?!amp;|lt;|gt;|quot;|apos;|#)/g);
+  if (bad) throw new Error(`Unescaped & in XML (${bad.length} found), Word will reject`);
+
+  zip.file('word/document.xml', docXml);
   buffer = await zip.generateAsync({ type: 'nodebuffer', compression: 'DEFLATE' });
 
   fs.writeFileSync(OUT_FILE, buffer);
