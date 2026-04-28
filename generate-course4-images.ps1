@@ -114,11 +114,11 @@ $fH2 = MkFont "Segoe UI" 12 $true
 $g.DrawString("Salmonella and Temperature: What Every Farmer Must Know", $fH2, (MkBrush "FFFFFF"), ([System.Drawing.RectangleF]::new(5, 0, $W-10, 52)), $sfC)
 
 $zones = @(
-    @{bg="CCE5FF"; hd="1F3864"; lbl="Frozen Storage"; tmp="-18 deg C or below";  ht=58; detail="Salmonella SURVIVES but does not multiply. Freezing does not kill bacteria. Cook thoroughly after thawing."},
-    @{bg="BDD7EE"; hd="2E74B5"; lbl="Refrigeration";  tmp="0 deg C to 4 deg C";  ht=54; detail="Growth greatly slowed. Hold fresh poultry and eggs at or below 4 deg C. Reduces but does not eliminate risk."},
-    @{bg="FDEBD0"; hd="D35400"; lbl="DANGER ZONE";    tmp="4 deg C to 60 deg C"; ht=72; detail="Rapid bacterial multiplication. Never leave raw poultry, eggs, or cooked poultry in this range for more than 2 hours."},
-    @{bg="FADBD8"; hd="C0392B"; lbl="Cooking Kill Zone"; tmp="60 deg C to 74 deg C"; ht=58; detail="Salmonella begins dying. Must reach 74 deg C throughout the product to ensure complete destruction."},
-    @{bg="D5F5E3"; hd="2D6A4F"; lbl="Safe Internal Temp"; tmp="74 deg C or above"; ht=54; detail="Salmonella destroyed. All poultry products must reach 74 deg C internal temp throughout."}
+    @{bg="CCE5FF"; hd="1F3864"; lbl="Frozen Storage"; tmp="-18°C or below";  ht=58; detail="Salmonella SURVIVES but does not multiply. Freezing does not kill bacteria. Cook thoroughly after thawing."},
+    @{bg="BDD7EE"; hd="2E74B5"; lbl="Refrigeration";  tmp="0°C to 4°C";      ht=54; detail="Growth greatly slowed. Hold fresh poultry and eggs at or below 4°C. Reduces but does not eliminate risk."},
+    @{bg="FDEBD0"; hd="D35400"; lbl="DANGER ZONE";    tmp="4°C to 60°C";     ht=72; detail="Rapid bacterial multiplication. Never leave raw poultry, eggs, or cooked poultry in this range for more than 2 hours."},
+    @{bg="FADBD8"; hd="C0392B"; lbl="Cooking Kill Zone"; tmp="60°C to 74°C"; ht=58; detail="Salmonella begins dying. Must reach 74°C throughout the product to ensure complete destruction."},
+    @{bg="D5F5E3"; hd="2D6A4F"; lbl="Safe Internal Temp"; tmp="74°C or above"; ht=54; detail="Salmonella destroyed. All poultry products must reach 74°C internal temp throughout."}
 )
 
 $barX = 195
@@ -210,7 +210,7 @@ Write-Host "  img3.png done" -ForegroundColor Green
 # =============================================================
 # IMG 4 — Barn Cleanout and Disinfection Protocol
 # =============================================================
-$W = 700; $H = 370
+$W = 700; $H = 490
 $bmp = New-Object System.Drawing.Bitmap($W, $H)
 $g   = [System.Drawing.Graphics]::FromImage($bmp)
 $g.SmoothingMode     = [System.Drawing.Drawing2D.SmoothingMode]::AntiAlias
@@ -222,36 +222,38 @@ $fH4 = MkFont "Segoe UI" 12 $true
 $g.DrawString("Between-Flock Cleanout and Disinfection Protocol", $fH4, (MkBrush "FFFFFF"), ([System.Drawing.RectangleF]::new(5, 0, $W-10, 52)), $sfC)
 
 $steps4 = @(
-    @{num="1"; ti="Remove all birds and equipment";    dt="Complete depopulation. Remove feeders, drinkers, all equipment from barn.";            bg="EBF5FB"},
+    @{num="1"; ti="Remove all birds and equipment";    dt="Complete depopulation. Remove feeders, drinkers, all equipment from barn.";               bg="EBF5FB"},
     @{num="2"; ti="Full litter removal";               dt="Remove all litter, manure, and debris including corners, wall edges, and under equipment."; bg="E8F8F5"},
     @{num="3"; ti="Dry sweep and blow-down";            dt="Clean ceiling, fans, lights, and attic. Work top to bottom. Remove all dry organic matter."; bg="EBF5FB"},
-    @{num="4"; ti="Pre-soak and pressure wash";         dt="Apply detergent foam soak. Pressure-wash all surfaces top to bottom. Full wet clean."; bg="E8F8F5"},
-    @{num="5"; ti="Dry completely";                    dt="Allow barn to dry fully. Disinfectants are inactivated by moisture and organic material."; bg="EBF5FB"},
+    @{num="4"; ti="Pre-soak and pressure wash";         dt="Apply detergent foam. Pressure-wash all surfaces top to bottom. Full wet clean.";           bg="E8F8F5"},
+    @{num="5"; ti="Dry completely";                    dt="Allow barn to dry fully. Disinfectants are inactivated by moisture and organic material.";   bg="EBF5FB"},
     @{num="6"; ti="Apply approved disinfectant";        dt="Correct concentration per label. Full contact time. Rotate disinfectant class each flock."; bg="E8F8F5"},
-    @{num="7"; ti="Downtime and environmental swab";   dt="Minimum 7-14 days empty. Collect environmental swabs. Culture and document results.";    bg="FDFEFE"}
+    @{num="7"; ti="Downtime and environmental swab";   dt="Minimum 7-14 days empty. Collect environmental swabs. Culture and document results.";        bg="FDFEFE"}
 )
 
 $fNum  = MkFont "Segoe UI" 14 $true
 $fTi   = MkFont "Segoe UI" 10 $true
-$fDt4  = MkFont "Segoe UI" 8
+$fDt4  = MkFont "Segoe UI" 9
 
-$stpH  = ($H - 58) / $steps4.Count
 $sfNtop = New-Object System.Drawing.StringFormat
 $sfNtop.Alignment     = [System.Drawing.StringAlignment]::Near
 $sfNtop.LineAlignment = [System.Drawing.StringAlignment]::Near
 
+$stpH  = [Math]::Floor(($H - 58) / $steps4.Count)
+
 for ($i = 0; $i -lt $steps4.Count; $i++) {
     $s4   = $steps4[$i]
-    $sy4  = 58 + $i * $stpH
+    $sy4  = [int](58 + $i * $stpH)
     $g.FillRectangle((MkBrush $s4.bg), 0, $sy4, $W, $stpH)
     $g.FillRectangle((MkBrush "1F3864"), 0, $sy4, 52, $stpH)
-    $numRect = [System.Drawing.RectangleF]::new(0,  $sy4,    52,     $stpH)
-    $tiRect  = [System.Drawing.RectangleF]::new(60, $sy4+3,  280,    $stpH*0.48)
-    $dtRect  = [System.Drawing.RectangleF]::new(60, $sy4+$stpH*0.48+2, 280, $stpH*0.46)
+    $numRect = [System.Drawing.RectangleF]::new(0,   $sy4+2,  52,  $stpH-4)
+    $tiRect  = [System.Drawing.RectangleF]::new(60,  $sy4+5,  248, $stpH-10)
+    $dtRect  = [System.Drawing.RectangleF]::new(316, $sy4+5,  376, $stpH-10)
     $g.DrawString($s4.num, $fNum, (MkBrush "FFFFFF"), $numRect, $sfC)
     $g.DrawString($s4.ti,  $fTi,  (MkBrush "1F3864"), $tiRect,  $sfNtop)
     $g.DrawString($s4.dt,  $fDt4, (MkBrush "3C3C3C"), $dtRect,  $sfNtop)
-    $g.DrawLine((MkPen "CCCCCC" 1), 0, $sy4+$stpH, $W, $sy4+$stpH)
+    $g.DrawLine((MkPen "CCCCCC" 1), 0,   $sy4+$stpH, $W,   $sy4+$stpH)
+    $g.DrawLine((MkPen "CCCCCC" 1), 312, $sy4,       312,  $sy4+$stpH)
 }
 $g.DrawRectangle((MkPen "2E74B5" 2), 1, 1, $W-2, $H-2)
 $bmp.Save("$outDir\img4.png", [System.Drawing.Imaging.ImageFormat]::Png)
@@ -322,8 +324,9 @@ foreach ($it in $dirtyItems5) {
 $noteR2 = [System.Drawing.RectangleF]::new(498, $dy5+8, 185, 40)
 $g.DrawString("No outside vehicles past this line", (MkFont "Segoe UI" 9 $true), (MkBrush "C0392B"), $noteR2, $sfW)
 
-# Zone dividers
-$g.DrawLine((MkPen "1F3864" 2), 344, 58, 344, $H-10)
+# Zone dividers: between left/center and center/right panels
+$g.DrawLine((MkPen "1F3864" 2), 209, 58, 209, $H-10)
+$g.DrawLine((MkPen "1F3864" 2), 491, 58, 491, $H-10)
 $g.DrawRectangle((MkPen "2E74B5" 2), 1, 1, $W-2, $H-2)
 $bmp.Save("$outDir\img5.png", [System.Drawing.Imaging.ImageFormat]::Png)
 $g.Dispose(); $bmp.Dispose()
