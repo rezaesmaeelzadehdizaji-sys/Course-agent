@@ -65,9 +65,61 @@ python -m http.server 8080
 
 ## Content Standards
 
-- **Tone:** Formal and precise for definitions/science; practical and direct for farm guidance
+- **Tone:** Scientifically accurate but always expressed in a practical, farmer-flow style
 - **Audience:** Experienced Canadian commercial poultry farmers (not veterinary professionals)
 - **Unverifiable claims:** Mark with `[NEEDS SOURCE]` in bold red, never fabricate
+
+## Default Writing Mode (MANDATORY)
+
+All content must be written in **Farmer-Flow Writing Mode by default**.
+
+This does NOT require user prompting.
+
+### Priority Rule
+
+This mode overrides:
+- Content Standards
+- Any unspecified tone instructions
+
+Unless explicitly overridden by the user
+
+### Definition
+
+Write as:
+"An experienced poultry veterinarian or consultant explaining real farm situations to a farm manager."
+
+### Rules
+
+- Use practical, real-world explanations
+- Avoid academic tone unless explicitly required
+- Use natural sentence flow
+- Focus on what farmers see, manage, and decide
+
+### Forbidden Style
+
+- Textbook definitions without context
+- Overly formal or robotic language
+- Repetitive sentence structures
+- Generic AI-like phrasing
+
+### Punctuation Style Rule
+
+Use em dashes (—) sparingly.
+
+Do not rely on em dashes, semicolons, or overly polished punctuation patterns to create emphasis.
+
+Prefer clear, direct farmer-flow sentences using periods or simple commas.
+
+If a paragraph contains multiple em dashes, semicolons, or polished punctuation patterns that make the text feel AI-generated, rewrite it into simpler, more natural sentences.
+
+### Rewrite Rule
+
+If text sounds:
+- AI-generated
+- too formal
+- not practical
+
+→ Rewrite automatically before final output
 
 ## Citation and Reference Standard
 
@@ -125,7 +177,19 @@ When citing these, use the book title and author as the citation source, not the
 ## Word Document Structure
 
 Every course document must follow this structure:
-1. Cover page (title, subtitle, date)
+1. Cover page (MANDATORY FORMAT)
+
+- Must include CPC branding
+- Must include CPC logo (or placeholder if embedding not possible)
+
+- Must include:
+  - Course title
+  - Subtitle (if applicable)
+  - CPC Short Courses
+  - Date
+
+- Must look like a professional industry training document (NOT generic AI output)
+
 2. Table of Contents (requires "Update Field" in Word after opening)
 3. Introduction
 4. Main content sections with Heading 1 / Heading 2 hierarchy
@@ -192,6 +256,9 @@ Before generating any course:
    - Proper citation format
    - Missing references marked
 
+6. Evaluate using Farmer-Flow Style Scoring System
+7. Rewrite if needed before finalizing
+
 ## Agent Behavior & Validation Protocol
 
 ### Core Principle
@@ -209,9 +276,9 @@ Always align output with:
 
 ### Source Priority
 
-Tier 1, Scientific textbooks & journals  
-Tier 2, Industry manuals & official orgs  
-Tier 3, Supplementary online  
+Tier 1 — Scientific textbooks & peer-reviewed journals  
+Tier 2 — Industry manuals, official organizations, and current field guidance  
+Tier 3 — Supplementary online sources    
 
 ### Validation Rules
 
@@ -220,6 +287,63 @@ Tier 3, Supplementary online
 - Never fabricate references
 - Mark unknown as **[NEEDS SOURCE]**
 
+## Farmer-Flow Style Scoring System
+
+Before finalizing any content, score from 1–5:
+
+1. Practical farm relevance
+2. Humanized flow
+3. Farmer clarity
+4. Field-vet voice
+5. Sentence rhythm
+6. Action-oriented value
+
+## Mandatory Humanization Pass
+
+After generating or revising any course content, the agent must perform a separate humanization pass.
+
+This pass is mandatory and must happen after the scientific/content pass.
+
+### Humanization Pass Requirements
+
+The agent must:
+
+1. Review each section for AI-like wording.
+2. Identify sentences that sound too polished, generic, academic, or report-like.
+3. Rewrite those sentences into farmer-flow language.
+4. Keep the scientific meaning and numbered references intact.
+5. Re-score the rewritten section using the Farmer-Flow Style Scoring System.
+
+The course cannot be considered ready unless this separate humanization pass has been completed.
+
+### Minimum passing:
+- Total ≥ 24/30
+- No score below 4
+
+### If failed:
+→ Rewrite automatically
+
+### Final check:
+- Does it sound like a real poultry consultant?
+- Is it practical for farm use?
+- Does it feel AI-generated?
+
+If yes → rewrite
+
+### Rewrite Method (MANDATORY)
+
+When rewriting:
+
+- Convert abstract explanations into practical farm observations
+- Replace definitions with "what farmers actually see"
+- Use cause → signs → impact → action flow
+- Shorten long sentences
+- Remove academic phrasing
+
+Do NOT:
+- change scientific meaning
+- remove references
+
 ## Final File Publishing Rule
 
 When the user says:
@@ -227,6 +351,14 @@ When the user says:
 "This is the final file of course X"
 
 (where X = course number, e.g., 3, 7, 10, etc.)
+
+### Final Validation Before Publishing
+
+Before pushing final file:
+
+- Must pass Style Scoring System
+- Must follow CPC cover page rules
+- Must match reference course structure
 
 ### Actions Required
 
@@ -248,9 +380,36 @@ If not connected:
 
 ### Vercel Deployment
 
-- Do NOT manually upload to Vercel  
-- Deployment must happen via GitHub push  
-- Confirm that Vercel auto-deploy will update the site  
+The user-facing dashboard is a **separate Vercel project** at `cpc-short-courses-series-dashboard.vercel.app`, deployed from the [dashboard/](dashboard/) subdirectory. It is NOT the same as the static landing page in [index.html](index.html).
+
+**Critical:** the dashboard does NOT read course files from `Course X/` at runtime. It serves pre-built `.docx` files bundled into the Next.js Lambda from [dashboard/public/docs/](dashboard/public/docs/) (see the static-path shortcut in [dashboard/src/app/api/courses/[courseId]/generate-docx/route.ts](dashboard/src/app/api/courses/%5BcourseId%5D/generate-docx/route.ts) ~line 52). Updating only `Course X/T-FLAWS_*.docx` will leave the dashboard serving the stale build.
+
+**Slug mapping** (filename Vercel serves at `/docs/<slug>.docx`):
+- Course 3 → `t-flaws-assessment-management-tool.docx`
+- Course 4 → `course-04-salmonella-food-safety.docx`
+- Course 7 → `course-07-common-poultry-diseases.docx`
+
+**Vercel auto-deploy stalls silently.** Pushing to `main` does NOT reliably trigger a new deploy on this project — observed multiple times, sometimes the most recent production build is days old while `main` has new commits. Do not assume `git push` is enough.
+
+**Quick-deploy procedure (run after every Course X publish):**
+
+1. Update both copies of the final file:
+   ```bash
+   cp "Course 3/T-FLAWS_Assessment_Management_Tool.docx" "dashboard/public/docs/t-flaws-assessment-management-tool.docx"
+   ```
+2. Commit and push the dashboard copy alongside the course file.
+3. **Force a Vercel production deploy from the dashboard directory:**
+   ```bash
+   cd dashboard && vercel deploy --prod --yes
+   ```
+   (Vercel CLI is already installed at `C:\Users\rezae\AppData\Roaming\npm\vercel.cmd` and project link is configured.)
+4. Verify the live site is serving the new file by comparing `Content-Length` to the on-disk size:
+   ```bash
+   curl -sI "https://cpc-short-courses-series-dashboard.vercel.app/docs/<slug>.docx?cb=$(date +%s)" | grep -i content-length
+   ```
+   The number must match `ls -la dashboard/public/docs/<slug>.docx`. A stale `Content-Length` means the deploy did not pick up the new file — re-run step 3.
+
+**LFS note:** all `.docx`/`.pdf`/`.png`/`.jpg` files are tracked by Git LFS (see [.gitattributes](.gitattributes)). Vercel does fetch LFS objects during build, so this is not the cause of the stall — the cause is the GitHub→Vercel webhook itself, which is why a manual `vercel deploy --prod` is required.
 
 ### Safety Rule
 
@@ -262,6 +421,143 @@ If not connected:
 - TOC is a Word field, it appears blank until the user right-clicks and selects **Update Field**
 - ES module imports are blocked on `file://`, always test via a local HTTP server
 - Image placeholders use a single-cell gray table, no actual images are embedded in the .docx
+
+## "This document contains fields that may refer to other files" Dialog (CONFIRMED FIX)
+
+**This is the Word dialog that appears every time a generated .docx is opened.** It is triggered by Word's client-side setting `File → Options → Advanced → General → Update automatic links at open`, which fires for **any** live field in the document (TOC, PAGE, NUMPAGES, hyperlinks). Trusted Locations and File-Properties → Unblock **do not suppress this dialog**, which is a separate setting from macro/active-content trust.
+
+**Do not iterate. Do not strip fields one by one. Use this exact procedure on first build:**
+
+### Step 1 — Build the document with a real TOC and live page numbers
+- Use `TableOfContents` from the docx library for the TOC.
+- Use `PageNumber.CURRENT` / `PageNumber.TOTAL_PAGES` for page numbers in headers/footers.
+- Do **not** replace TOC or page numbers with static text. The dialog will reappear later for an unrelated reason and the user loses real page numbers in exchange for nothing.
+
+### Step 2 — Post-build patch (mandatory) inside the same generator script
+After `Packer.toBuffer(doc)` and before final write:
+
+1. **Strip `w:dirty="true"` from every `<w:fldChar>` in the document.** The docx library emits `<w:fldChar w:fldCharType="begin" w:dirty="true"/>` on the TOC field. The `dirty` flag tells Word the field needs to be updated, which re-fires the "fields may refer to other files" dialog **even with cached entries and `updateFields=false`**. Run `xml.replace(/\sw:dirty="true"/g, '')` over the whole document.xml.
+2. **Inject pre-cached TOC entries** into the empty `<w:sdtContent>` the docx library produced. Build one `<w:p>` per heading entry with:
+   - `<w:pStyle w:val="TOC1"/>` or `TOC2`
+   - `<w:tabs><w:tab w:val="right" w:leader="dot" w:pos="9000"/></w:tabs>`
+   - The heading text run, a `<w:r><w:tab/></w:r>`, then the page number run.
+   - Insert them between `<w:fldChar w:fldCharType="separate"/>` and `<w:fldChar w:fldCharType="end"/>`.
+3. **Set `<w:updateFields w:val="false"/>` in `word/settings.xml`** (NOT `true`). With dirty stripped and entries cached, you want Word to leave the field alone. `true` would re-trigger the update dialog.
+4. **Add `TOC1` and `TOC2` styles to `word/styles.xml`** if missing (right tab leader, indent for TOC2). Without these, Word renders the cached rows without dot leaders.
+
+### Step 3 — Tell the user the one-time save trick
+The first time the file opens, Word still shows the dialog because the fields are flagged dirty. Tell the user:
+> "Click **Yes** once, then press **Ctrl+S** to save. The dialog will not appear on subsequent opens because the field values are now cached in the saved layout."
+
+If the user wants to disable the dialog globally for all documents: `File → Options → Advanced → General → uncheck "Update automatic links at open"`.
+
+### What does NOT work (do not waste time on these)
+- ❌ Removing the `\h` hyperlink switch from the TOC field — does not stop the dialog.
+- ❌ Replacing the live TOC with bullet text — kills the real TOC and the dialog still fires from PAGE/NUMPAGES in footers.
+- ❌ Replacing PAGE/NUMPAGES with static text — kills page numbering and the dialog can still fire from any other field; loses functionality for nothing.
+- ❌ Adding the folder to Trusted Locations — controls a different security category.
+- ❌ File Properties → Unblock — controls Mark-of-the-Web, not the field-update prompt.
+- ❌ Setting `<w:updateFields w:val="true"/>` while leaving `w:dirty="true"` on the field — Word still treats the field as dirty and re-fires the dialog. The two fixes go together: strip dirty AND set updateFields=false.
+
+### Reference implementation
+See [generate-course3-revised.mjs](generate-course3-revised.mjs) — the post-build patch block at the bottom of the file is the canonical pattern. Copy it for any new course generator.
+
+### Drop-in code (paste verbatim after `Packer.toBuffer(doc)`)
+
+```js
+import JSZip from './node_modules/jszip/dist/jszip.js';
+
+// Write initial buffer first
+fs.writeFileSync(OUT_FILE, await Packer.toBuffer(doc));
+
+// ---- POST-BUILD PATCH: kill the "fields may refer to other files" dialog ----
+const outZip = await JSZip.loadAsync(fs.readFileSync(OUT_FILE));
+
+// 1. Build cached TOC rows. tocEntries = [{ lvl: 1|2, text, page }]
+function escapeXml(s) {
+  return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+}
+function tocRow(e) {
+  const styleName = e.lvl === 1 ? 'TOC1' : 'TOC2';
+  const indent    = e.lvl === 1 ? 0 : 220;
+  const text      = escapeXml(e.text);
+  return (
+    '<w:p>' +
+      '<w:pPr>' +
+        `<w:pStyle w:val="${styleName}"/>` +
+        '<w:tabs><w:tab w:val="right" w:leader="dot" w:pos="9000"/></w:tabs>' +
+        '<w:spacing w:after="60"/>' +
+        (indent ? `<w:ind w:left="${indent}"/>` : '') +
+      '</w:pPr>' +
+      `<w:r><w:rPr><w:rFonts w:ascii="Calibri" w:hAnsi="Calibri"/><w:color w:val="3C3C3C"/><w:sz w:val="22"/></w:rPr><w:t xml:space="preserve">${text}</w:t></w:r>` +
+      '<w:r><w:tab/></w:r>' +
+      `<w:r><w:rPr><w:rFonts w:ascii="Calibri" w:hAnsi="Calibri"/><w:color w:val="3C3C3C"/><w:sz w:val="22"/></w:rPr><w:t>${e.page}</w:t></w:r>` +
+    '</w:p>'
+  );
+}
+const cachedRows = tocEntries.map(tocRow).join('');
+
+// 2. Patch document.xml: strip ALL w:dirty flags + inject cached rows into the SDT
+let docXml = await outZip.file('word/document.xml').async('string');
+const sdtMatch = docXml.match(/<w:sdt>[\s\S]*?<\/w:sdt>/);
+if (sdtMatch) {
+  let sdt = sdtMatch[0];
+  sdt = sdt.replace(/\sw:dirty="true"/g, '');                  // CRITICAL
+  sdt = sdt.replace(
+    /<w:fldChar w:fldCharType="separate"\/><\/w:r><\/w:p>/,
+    `<w:fldChar w:fldCharType="separate"/></w:r></w:p>${cachedRows}`
+  );
+  docXml = docXml.replace(sdtMatch[0], sdt);
+  docXml = docXml.replace(/\sw:dirty="true"/g, '');             // belt-and-braces
+  outZip.file('word/document.xml', docXml);
+}
+
+// 3. Patch settings.xml: updateFields=false (NOT true)
+let settings = await outZip.file('word/settings.xml').async('string');
+settings = settings.replace(/<w:updateFields[^/]*\/>/g, '');
+settings = settings.replace(
+  '<w:displayBackgroundShape/>',
+  '<w:displayBackgroundShape/><w:updateFields w:val="false"/>'
+);
+outZip.file('word/settings.xml', settings);
+
+// 4. Add TOC1 / TOC2 styles to styles.xml if missing
+let stylesXml = await outZip.file('word/styles.xml').async('string');
+if (!/w:styleId="TOC1"/.test(stylesXml)) {
+  const tocStyles =
+    '<w:style w:type="paragraph" w:styleId="TOC1"><w:name w:val="toc 1"/><w:pPr><w:tabs><w:tab w:val="right" w:leader="dot" w:pos="9000"/></w:tabs><w:spacing w:after="60"/></w:pPr><w:rPr><w:rFonts w:ascii="Calibri" w:hAnsi="Calibri"/><w:sz w:val="22"/></w:rPr></w:style>' +
+    '<w:style w:type="paragraph" w:styleId="TOC2"><w:name w:val="toc 2"/><w:pPr><w:tabs><w:tab w:val="right" w:leader="dot" w:pos="9000"/></w:tabs><w:spacing w:after="60"/><w:ind w:left="220"/></w:pPr><w:rPr><w:rFonts w:ascii="Calibri" w:hAnsi="Calibri"/><w:sz w:val="22"/></w:rPr></w:style>';
+  stylesXml = stylesXml.replace('</w:styles>', tocStyles + '</w:styles>');
+  outZip.file('word/styles.xml', stylesXml);
+}
+
+// 5. Sanity check: must be 0 dirty flags remaining
+const dirtyLeft = (docXml.match(/w:dirty=/g) || []).length;
+if (dirtyLeft > 0) throw new Error(`Still ${dirtyLeft} w:dirty flags in document.xml — dialog will appear`);
+
+// 6. Write final patched docx
+const patched = await outZip.generateAsync({ type: 'nodebuffer', compression: 'DEFLATE' });
+fs.writeFileSync(OUT_FILE, patched);
+```
+
+### Verification (run after build to confirm)
+```bash
+node -e "
+const JSZip = require('jszip'); const fs = require('fs');
+(async () => {
+  const z = await JSZip.loadAsync(fs.readFileSync(OUT_FILE));
+  const xml = await z.file('word/document.xml').async('string');
+  const settings = await z.file('word/settings.xml').async('string');
+  console.log('w:dirty count (must be 0):', (xml.match(/w:dirty=/g)||[]).length);
+  console.log('updateFields:', (settings.match(/<w:updateFields[^/]*\\/>/g)||[]));
+  console.log('SDT cached rows:', (xml.match(/<w:pStyle w:val=\"TOC[12]\"/g)||[]).length);
+})();
+"
+```
+
+If `w:dirty count` is anything other than 0, the dialog will fire. That is the single most important number to verify.
+
+---
 
 ## Editing .docx Files Directly (Node.js)
 
