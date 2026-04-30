@@ -559,6 +559,116 @@ If `w:dirty count` is anything other than 0, the dialog will fire. That is the s
 
 ---
 
+## Clickable TOC Entries (Ctrl+click jumps to heading)
+
+By default the cached TOC rows produced by the recipe above are **plain text** — they look right but Ctrl+click does nothing. Word's native TOC (and Course 7's hand-built file) makes each row clickable by:
+1. Wrapping the row's text/tab/page-number runs in `<w:hyperlink w:anchor="_TocXXXX" w:history="1">…</w:hyperlink>`.
+2. Placing matching `<w:bookmarkStart w:id="N" w:name="_TocXXXX"/>` / `<w:bookmarkEnd w:id="N"/>` around the corresponding heading paragraph.
+
+Apply this to every new course generator. The pattern that worked for Course 3 and Course 4:
+
+### Step 1 — give every TOC entry a unique anchor
+
+Convert the flat `tocEntries` array into objects with an `anchor` field. The anchor name must be unique per entry; `_Toc<8-digit zero-padded>` matches Word's convention well enough that Word treats them as native:
+
+```js
+const entriesWithAnchor = tocEntries.map((e, i) => ({
+  ...e,
+  anchor: `_Toc${String(100000 + i).padStart(8, '0')}`,
+}));
+```
+
+### Step 2 — wrap each cached row in a hyperlink
+
+```js
+function tocRow(e) {
+  const styleName = e.lvl === 1 ? 'TOC1' : 'TOC2';
+  const indent    = e.lvl === 1 ? 0 : 220;
+  const titleSize = 22;
+  const text      = escapeXml(e.text);
+  return (
+    '<w:p><w:pPr>' +
+      `<w:pStyle w:val="${styleName}"/>` +
+      '<w:tabs><w:tab w:val="right" w:leader="dot" w:pos="9000"/></w:tabs>' +
+      '<w:spacing w:after="60"/>' +
+      (indent ? `<w:ind w:left="${indent}"/>` : '') +
+    '</w:pPr>' +
+    `<w:hyperlink w:anchor="${e.anchor}" w:history="1">` +
+      `<w:r><w:rPr><w:rFonts w:ascii="Calibri" w:hAnsi="Calibri"/><w:color w:val="3C3C3C"/><w:sz w:val="${titleSize}"/></w:rPr><w:t xml:space="preserve">${text}</w:t></w:r>` +
+      '<w:r><w:tab/></w:r>' +
+      `<w:r><w:rPr><w:rFonts w:ascii="Calibri" w:hAnsi="Calibri"/><w:color w:val="3C3C3C"/><w:sz w:val="${titleSize}"/></w:rPr><w:t>${e.page}</w:t></w:r>` +
+    '</w:hyperlink></w:p>'
+  );
+}
+const cachedRows = entriesWithAnchor.map(tocRow).join('');
+```
+
+### Step 3 — inject bookmarks around the matching heading paragraphs
+
+Run this **after** the cached rows have been injected and **after** `w:dirty` has been stripped. It walks every Heading1/Heading2 paragraph in document order, matches each one against the next unconsumed entry by level + text, and wraps it with bookmark tags carrying the entry's anchor name. Headings that don't match (e.g. the "Table of Contents" h1) are skipped without consuming an entry.
+
+```js
+let entryIdx = 0;
+let bookmarkId = 1000;
+const headingRegex = /<w:p\b[^>]*>(?:(?!<\/w:p>)[\s\S])*?<w:pStyle w:val="Heading([12])"\/>(?:(?!<\/w:p>)[\s\S])*?<\/w:p>/g;
+docXml = docXml.replace(headingRegex, (match, lvlStr) => {
+  if (entryIdx >= entriesWithAnchor.length) return match;
+  const lvl = Number(lvlStr);
+  // Concatenate every <w:t>…</w:t> inside this paragraph to get the heading text
+  const textRuns = [...match.matchAll(/<w:t(?:\s[^>]*)?>([\s\S]*?)<\/w:t>/g)].map(m => m[1]).join('');
+  const heading = textRuns.trim();
+  const entry = entriesWithAnchor[entryIdx];
+  const norm = (s) => s.replace(/\s+/g, ' ').trim();
+  if (lvl !== entry.lvl) return match;
+  if (norm(heading) !== norm(entry.text)) return match;
+  entryIdx++;
+  const id = bookmarkId++;
+  return `<w:bookmarkStart w:id="${id}" w:name="${entry.anchor}"/>${match}<w:bookmarkEnd w:id="${id}"/>`;
+});
+if (entryIdx !== entriesWithAnchor.length) {
+  console.warn(`TOC bookmark warning: matched ${entryIdx}/${entriesWithAnchor.length} entries. Unmatched: ${entriesWithAnchor.slice(entryIdx).map(e => `[H${e.lvl}] ${e.text}`).join(' | ')}`);
+}
+outZip.file('word/document.xml', docXml);
+```
+
+The `norm()` step is important when TOC text uses extra whitespace (e.g. Course 4 used `"1.1  What Is Salmonella?"` with two spaces between number and title — without normalization the literal string never matches the heading paragraph's single-spaced text and the bookmark is silently skipped).
+
+### Verification
+
+```bash
+node -e "
+const JSZip=require('jszip');const fs=require('fs');
+(async()=>{
+  const z=await JSZip.loadAsync(fs.readFileSync(OUT_FILE));
+  const xml=await z.file('word/document.xml').async('string');
+  console.log('bookmarkStart:',(xml.match(/<w:bookmarkStart/g)||[]).length);
+  console.log('hyperlink:',(xml.match(/<w:hyperlink/g)||[]).length);
+})();
+"
+```
+
+Both numbers must equal the number of TOC entries. If the bookmark count is lower than the hyperlink count, some heading texts didn't match — read the warning, fix the entry text or whitespace, regenerate.
+
+To test end-to-end: convert to PDF with LibreOffice and grep for link annotations:
+```bash
+"/c/Program Files/LibreOffice/program/soffice.exe" --headless --convert-to pdf --outdir /tmp <out.docx>
+node -e "const fs=require('fs');console.log('PDF link count:',(fs.readFileSync('/tmp/<out>.pdf').toString('binary').match(/\/Subtype\s*\/Link/g)||[]).length)"
+```
+This count should equal the TOC entry count. In Word, Ctrl+click any TOC row should jump to the heading.
+
+### Pitfall — never use `.docx` as both source and output
+
+The Course 3 generator extracted images from a `SRC_FILE` that pointed at the published final docx. After "Final Publishing" copied the draft over the final, the next regeneration extracted images from itself (which had different image filenames) and silently dropped most photos. Two safeguards:
+- Keep a separate `_source_images.docx` (or similarly named) as the image-extraction source. Never use the published file as the source.
+- After any final-publish copy, run the generator once and check `Object.keys(zip.files).filter(f=>f.startsWith('word/media/')).length` is still in the expected range.
+
+If the source has already been clobbered, the original is recoverable from Git LFS history:
+```bash
+git show <pre-publish-commit>:"<path/to/source.docx>" | git lfs smudge > recovered.docx
+```
+
+---
+
 ## Editing .docx Files Directly (Node.js)
 
 When patching an existing `.docx` via Node.js (e.g. to apply text corrections), follow this exact recipe. Any deviation has caused "Word experienced an error trying to open the file."
