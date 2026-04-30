@@ -35,7 +35,7 @@ import { fileURLToPath } from 'url';
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const OUT_DIR   = path.join(__dirname, 'Course 3');
 const OUT_FILE  = path.join(OUT_DIR, 'T-FLAWS_Assessment_Management_Tool_draft.docx');
-const SRC_FILE  = path.join(OUT_DIR, 'T-FLAWS_Assessment_Management_Tool.docx');
+const SRC_FILE  = path.join(OUT_DIR, '_source_images.docx');
 const LOGO_PATH = path.join(__dirname, 'logo.png');
 
 // ============================================================
@@ -751,6 +751,14 @@ fs.writeFileSync(OUT_FILE, buf);
     return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
   }
 
+  // Assign each TOC entry a unique anchor name. These match bookmarks we
+  // inject around the matching heading paragraphs below, so Ctrl+click on
+  // a TOC row jumps to the heading like in Word's native TOC.
+  const entriesWithAnchor = tocEntries.map((e, i) => ({
+    ...e,
+    anchor: `_Toc${String(100000 + i).padStart(8, '0')}`,
+  }));
+
   function tocRow(e) {
     const styleName  = e.lvl === 1 ? 'TOC1' : 'TOC2';
     const indent     = e.lvl === 1 ? 0 : 220;
@@ -764,14 +772,16 @@ fs.writeFileSync(OUT_FILE, buf);
           `<w:spacing w:after="60"/>` +
           (indent ? `<w:ind w:left="${indent}"/>` : '') +
         '</w:pPr>' +
-        `<w:r><w:rPr><w:rFonts w:ascii="Calibri" w:hAnsi="Calibri"/><w:color w:val="3C3C3C"/><w:sz w:val="${titleSize}"/></w:rPr><w:t xml:space="preserve">${text}</w:t></w:r>` +
-        `<w:r><w:tab/></w:r>` +
-        `<w:r><w:rPr><w:rFonts w:ascii="Calibri" w:hAnsi="Calibri"/><w:color w:val="3C3C3C"/><w:sz w:val="${titleSize}"/></w:rPr><w:t>${e.page}</w:t></w:r>` +
+        `<w:hyperlink w:anchor="${e.anchor}" w:history="1">` +
+          `<w:r><w:rPr><w:rFonts w:ascii="Calibri" w:hAnsi="Calibri"/><w:color w:val="3C3C3C"/><w:sz w:val="${titleSize}"/></w:rPr><w:t xml:space="preserve">${text}</w:t></w:r>` +
+          `<w:r><w:tab/></w:r>` +
+          `<w:r><w:rPr><w:rFonts w:ascii="Calibri" w:hAnsi="Calibri"/><w:color w:val="3C3C3C"/><w:sz w:val="${titleSize}"/></w:rPr><w:t>${e.page}</w:t></w:r>` +
+        '</w:hyperlink>' +
       '</w:p>'
     );
   }
 
-  const cachedRows = tocEntries.map(tocRow).join('');
+  const cachedRows = entriesWithAnchor.map(tocRow).join('');
 
   // Replace the empty SDT content the docx library produced with cached entries.
   // The library generates: <w:sdt><w:sdtPr>...</w:sdtPr><w:sdtContent>...</w:sdtContent></w:sdt>
@@ -795,6 +805,32 @@ fs.writeFileSync(OUT_FILE, buf);
     docXml = docXml.replace(sdtMatch[0], sdt);
     // Belt-and-braces: strip w:dirty anywhere else in document body
     docXml = docXml.replace(/\sw:dirty="true"/g, '');
+  }
+
+  // ---- Inject bookmarks around heading paragraphs so the TOC hyperlinks work ----
+  // Walk every Heading1/Heading2 paragraph in document order, and if the next
+  // unmatched TOC entry has the same level + text, wrap the paragraph with
+  // bookmarkStart/bookmarkEnd carrying the entry's anchor name.
+  {
+    let entryIdx = 0;
+    let bookmarkId = 1000;
+    const headingRegex = /<w:p\b[^>]*>(?:(?!<\/w:p>)[\s\S])*?<w:pStyle w:val="Heading([12])"\/>(?:(?!<\/w:p>)[\s\S])*?<\/w:p>/g;
+    docXml = docXml.replace(headingRegex, (match, lvlStr) => {
+      if (entryIdx >= entriesWithAnchor.length) return match;
+      const lvl = Number(lvlStr);
+      // Concatenate every <w:t>...</w:t> run inside this paragraph
+      const textRuns = [...match.matchAll(/<w:t(?:\s[^>]*)?>([\s\S]*?)<\/w:t>/g)].map(m => m[1]).join('');
+      const heading = textRuns.trim();
+      const entry = entriesWithAnchor[entryIdx];
+      if (lvl !== entry.lvl) return match;
+      if (heading !== entry.text.trim()) return match;
+      entryIdx++;
+      const id = bookmarkId++;
+      return `<w:bookmarkStart w:id="${id}" w:name="${entry.anchor}"/>${match}<w:bookmarkEnd w:id="${id}"/>`;
+    });
+    if (entryIdx !== entriesWithAnchor.length) {
+      console.warn(`TOC bookmark warning: matched ${entryIdx}/${entriesWithAnchor.length} entries. Unmatched: ${entriesWithAnchor.slice(entryIdx).map(e => `[H${e.lvl}] ${e.text}`).join(' | ')}`);
+    }
     outZip.file('word/document.xml', docXml);
   }
 
