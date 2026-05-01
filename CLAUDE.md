@@ -68,6 +68,28 @@ python -m http.server 8080
 - **Tone:** Scientifically accurate but always expressed in a practical, farmer-flow style
 - **Audience:** Experienced Canadian commercial poultry farmers (not veterinary professionals)
 - **Unverifiable claims:** Mark with `[NEEDS SOURCE]` in bold red, never fabricate
+- **Spelling:** **American English only.** Apply uniformly across all 17 courses, drafts, dashboard copy, and any generated docx output. Never mix British and American forms.
+
+### American English Spelling Rules (MANDATORY)
+
+Use these forms (and their inflections) consistently. This rule cannot be overridden by topic, source, or quoted material outside of direct verbatim citations.
+
+- **-or, not -our:** color, behavior, favor, flavor, harbor, honor, labor, neighbor, vapor, odor, rumor, vigor.
+- **-ize / -ization, not -ise / -isation:** organization, realize, recognize, analyze, hospitalization, colonization, optimize, minimize, maximize, prioritize, standardize, characterize, summarize, categorize, emphasize, utilize, immunize, sterilize, specialize, generalize, harmonize, stabilize, neutralize, visualize, criticize.
+- **-er, not -re:** center, fiber, liter, meter, theater.
+- **-ense, not -ence:** defense, offense, license (noun and verb), practice (noun and verb).
+- **No -ae- / -oe- digraphs:** feces, fecal, edema, anemia, diarrhea, hemorrhage, hemoglobin, pediatric, esophagus.
+- **Single-l in inflections:** traveling, traveled, labeling, labeled, modeling, modeled, signaling, canceled.
+- **Other forms:** program (not programme), gray (not grey), mold (not mould), sulfur (not sulphur), aluminum (not aluminium), tire (not tyre), maneuver (not manoeuvre), judgment (not judgement), aging (not ageing).
+
+### Pre-publish Spelling Sweep (MANDATORY)
+
+Before reporting any course .docx as done (final or draft), run a sweep against the document.xml text and convert any British forms found. Use this Node.js sweep as a checkpoint:
+
+```js
+const checks = [/\b\w+isation\b/gi,/\b\w+ised\b/gi,/\b\w+ising\b/gi,/\b\w+ises\b/gi,/\bcolour/gi,/\bbehaviour/gi,/\bcentre/gi,/\bdefenc/gi,/\bneighbour/gi,/\bhospitalis/gi,/\bcolonis/gi,/\bgrey\b/gi,/\bmould/gi,/\bsulph/gi,/\bfaec/gi,/\boedem/gi,/\banaem/gi,/\bdiarrhoea/gi,/\bhaemo/gi,/\baluminium/gi,/\btyre/gi,/\bmanoeuvre/gi,/\bprogramme/gi];
+// Run each against the joined <w:t> text. Any hit must be converted before publishing.
+```
 
 ## Default Writing Mode (MANDATORY)
 
