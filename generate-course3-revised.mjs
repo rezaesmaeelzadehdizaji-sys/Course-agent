@@ -26,6 +26,7 @@ import {
   BorderStyle,
   convertInchesToTwip,
   ImageRun,
+  PageNumber,
 } from 'docx';
 import JSZip from './node_modules/jszip/dist/jszip.js';
 import fs from 'fs';
@@ -204,14 +205,17 @@ function buildHeader() {
 }
 
 function buildFooter() {
-  // Static footer (no PAGE / NUMPAGES fields). Live page-number fields
-  // make Word display the "fields may refer to other files" dialog on
-  // every open, even when the file is in a Trusted Location.
+  // PAGE / NUMPAGES fields are safe here because the post-build patch
+  // strips every w:dirty flag and sets updateFields=false, so Word does
+  // not prompt the "fields may refer to other files" dialog on open.
   return new Footer({
     children: [
       new Paragraph({
         children: [
-          new TextRun({ text: 'CPC Short Courses  |  Course 3 of 17  |  T-FLAWS Assessment Management Tool', color: '888888', size: 18, font: 'Calibri' }),
+          new TextRun({ text: 'CPC Short Courses  |  Course 3 of 17  |  Page ', color: '888888', size: 18, font: 'Calibri' }),
+          new TextRun({ children: [PageNumber.CURRENT], color: '888888', size: 18, font: 'Calibri' }),
+          new TextRun({ text: ' of ', color: '888888', size: 18, font: 'Calibri' }),
+          new TextRun({ children: [PageNumber.TOTAL_PAGES], color: '888888', size: 18, font: 'Calibri' }),
         ],
         alignment: AlignmentType.CENTER,
         border:    { top: { style: BorderStyle.SINGLE, size: 4, color: GOLD } },
