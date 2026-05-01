@@ -37,6 +37,11 @@ const OUT_DIR   = path.join(__dirname, 'Course 5');
 const OUT_FILE  = path.join(OUT_DIR, 'Sustainability_in_Poultry_Farming_draft.docx');
 const LOGO_PATH = path.join(__dirname, 'logo.png');
 
+function figBuf(name) {
+  const p = path.join(OUT_DIR, name);
+  return fs.existsSync(p) ? fs.readFileSync(p) : null;
+}
+
 // ============================================================
 // COLORS
 // ============================================================
@@ -145,6 +150,32 @@ function placeholder(caption, description) {
       children: [new TextRun({ text: caption, italics: true, color: '555555', size: 20, font: 'Calibri' })],
       alignment: AlignmentType.CENTER,
       spacing: { before: 60, after: 240 },
+    }),
+  ];
+}
+
+// Embedded PNG figure + italic caption
+function image(buf, caption, widthIn = 5.8) {
+  if (!buf) return [];
+  const dpi = 96;
+  const wpx = Math.round(widthIn * dpi);
+  let hpx = Math.round(wpx * 0.6);
+  try {
+    const view = new DataView(buf.buffer, buf.byteOffset);
+    const pw   = view.getUint32(16, false);
+    const ph   = view.getUint32(20, false);
+    if (pw > 0 && ph > 0) hpx = Math.round(wpx * ph / pw);
+  } catch (_) {}
+  return [
+    new Paragraph({
+      children: [new ImageRun({ data: buf, transformation: { width: wpx, height: hpx }, type: 'png' })],
+      alignment: AlignmentType.CENTER,
+      spacing:   { before: 160, after: 0 },
+    }),
+    new Paragraph({
+      children: [new TextRun({ text: caption, italics: true, color: '555555', size: 20, font: 'Calibri' })],
+      alignment: AlignmentType.CENTER,
+      spacing:   { before: 60, after: 240 },
     }),
   ];
 }
@@ -299,7 +330,6 @@ function buildTocSection() {
     children: [
       h1('Table of Contents'),
       new TableOfContents('Table of Contents', { headingStyleRange: '1-3' }),
-      pageBreak(),
     ],
   };
 }
@@ -348,10 +378,7 @@ function buildSection1() {
       h2('1.1  Understanding the Environmental Footprint'),
       para('Global livestock agriculture contributes roughly 14.5% of all human-caused greenhouse gas emissions, and the poultry sector accounts for about 8% of that total [2]. On a per-kilogram-of-protein basis, poultry compares well against beef, pork, and lamb. A life cycle assessment of broiler production in the United Kingdom found that broilers produce considerably less greenhouse gas per kilogram of product than most red meat species [13]. But comparing favorably to beef does not mean the footprint is negligible, especially when total Canadian production volumes are factored in.'),
       para('The main environmental concerns in commercial poultry farming are not exotic or hard to identify. They come down to three things: what goes into the birds (feed, water, energy), what comes out (manure, ammonia, wastewater), and how both sides of that equation interact with the land, water, and air around your farm [1].'),
-      ...placeholder(
-        'Figure 1.1: Simplified environmental footprint of a commercial broiler farm, showing major inputs (feed, water, energy) and outputs (manure, ammonia, GHG emissions, wastewater) and their primary environmental pathways.',
-        'Figure 1.1: Environmental footprint diagram. [To be supplied by CPC team]'
-      ),
+      ...image(figBuf('fig1_1.png'), 'Figure 1.1: Environmental footprint of a commercial broiler farm. Major inputs (feed, water, energy, chicks) flow through the production system; outputs include saleable meat, manure with fertilizer value, ammonia and GHG emissions, and wastewater that requires management to prevent contamination.'),
 
       h2('1.2  Water: Use and Contamination Risk'),
       para('Water is used in two ways on a poultry farm: the birds drink it, and the farm uses it for cleaning and cooling. Broilers consume roughly 1.7 to 2.0 times their feed intake by weight in water, and that ratio climbs sharply in hot weather [7]. A 20,000-bird broiler barn at peak consumption can use tens of thousands of liters per day. That is not a small number, and in regions where groundwater or municipal water costs are rising, it matters to the bottom line.'),
@@ -366,10 +393,7 @@ function buildSection1() {
       para('Ammonia is the most significant air pollutant from commercial poultry operations, and it affects you, your birds, and your neighbors [8]. Inside the barn, ammonia above 25 parts per million (ppm) starts to damage the respiratory mucosa of birds, increasing susceptibility to respiratory disease. Above 50 ppm, it is a welfare concern and a direct production problem [6]. You usually smell ammonia well before it reaches those levels, but chronic low-level exposure in workers is also a health concern over time.'),
       para('Outside the barn, ammonia emissions contribute to acid deposition and ecosystem nitrogen loading. Ammonia from agriculture is a recognized contributor to fine particulate formation in the atmosphere [8]. Communities near large poultry operations frequently cite odor as a quality-of-life issue, and in some regions this has driven regulatory tightening on stocking density, manure storage, and land application timing.'),
       para('Dust from dry litter and feathers carries bacteria, endotoxins, and other bioactive compounds that can travel beyond the barn perimeter. Good litter management reduces dust generation at the source, but controlling it entirely is difficult. Proper ventilation management is the main tool available in a commercial barn [9,11].'),
-      ...placeholder(
-        'Figure 1.2: Sources of ammonia in a commercial broiler barn, showing the pathway from manure microbes to atmospheric release, and the relationship between litter moisture, temperature, and ammonia volatilization.',
-        'Figure 1.2: Ammonia source diagram. [To be supplied by CPC team]'
-      ),
+      ...image(figBuf('fig1_2.png'), 'Figure 1.2: Ammonia in the broiler barn. Manure urea is converted to NH3 by urease enzymes. High litter moisture, elevated temperature, and poor ventilation accelerate production. Impacts range from respiratory damage in birds at greater than 25 ppm to community odor issues and ecosystem nitrogen loading beyond the barn.'),
       pageBreak(),
     ],
   };
@@ -412,10 +436,7 @@ function buildSection2() {
       bullet([{ text: 'Lighting: ', bold: true }, { text: 'LED lighting draws 50 to 80 percent less power than incandescent bulbs for the same lux output, and modern LED systems designed for poultry are dimmable and last several years without replacement. Payback on a full LED conversion is typically within a few production cycles [NEEDS SOURCE].' }]),
       bullet([{ text: 'Barn insulation: ', bold: true }, { text: 'Insulation gaps and deteriorated vapor barriers are common in older barns. Infrared thermography between flocks can identify where heat is escaping. Sealing and re-insulating concentrated problem areas is far cheaper than continuously compensating with higher heater output.' }]),
       bullet([{ text: 'Variable-speed fans: ', bold: true }, { text: 'Fixed-speed fans run at full power or not at all. Variable-speed fan controllers reduce energy consumption during mild weather when full ventilation capacity is not needed. The energy savings over a full year are significant in climates with mild spring and fall seasons.' }]),
-      ...placeholder(
-        'Figure 2.1: Resource flow in a commercial broiler barn, comparing efficient management (tight feed, water, and energy loops) against common waste points including feeder spillage, drinker leaks, and heating loss through insulation gaps.',
-        'Figure 2.1: Resource efficiency diagram. [To be supplied by CPC team]'
-      ),
+      ...image(figBuf('fig2_1.png'), 'Figure 2.1: Resource efficiency in a commercial broiler barn. For each of the three major inputs (feed, water, energy), the diagram contrasts common waste points against actionable efficiency measures. Every resource saved per kilogram of gain is a direct cost reduction.'),
       pageBreak(),
     ],
   };
@@ -455,10 +476,7 @@ function buildSection3() {
       bullet('Do not store litter on frozen ground where runoff cannot be absorbed. If the litter has to move before the ground is ready, covered temporary storage is better than an uncovered pile on frozen soil.'),
       bullet('Remove dead birds promptly, every day, and follow provincial regulations for disposal. Composting is the preferred on-farm method where it is permitted; the mortality compost area should be separate from litter storage and well away from barn entries.'),
       bullet('Clean and re-grade the area around litter storage annually to prevent water from pooling and running into the pile or toward water courses.'),
-      ...placeholder(
-        'Figure 3.1: Manure management cycle for a commercial broiler farm, showing the pathway from litter removal to storage, nutrient testing, composting, and land application, including key decision points for nutrient management planning.',
-        'Figure 3.1: Manure management cycle. [To be supplied by CPC team]'
-      ),
+      ...image(figBuf('fig3_1.png'), 'Figure 3.1: Closed-loop manure management cycle for a commercial broiler farm. Well-managed litter moves from removal through covered storage, nutrient analysis, optional composting, and matched land application to maximize crop nutrient recovery and minimize environmental risk.'),
       pageBreak(),
     ],
   };
@@ -502,10 +520,7 @@ function buildSection4() {
       bullet([{ text: 'Light management: ', bold: true }, { text: 'Gradual dimming programs at the end of the day reduce panic and pile-up injuries. Dark hours allow birds to rest, which is important for both welfare and growth efficiency. Sudden lighting changes, especially during catching, cause injuries that reduce carcass quality [4].' }]),
       bullet([{ text: 'Feed and water access: ', bold: true }, { text: 'Interruptions to feed or water access, even for a few hours, are stressful and cause compensatory feeding responses that worsen FCR. Check feeders and drinkers every morning, not just when you think there might be a problem.' }]),
       bullet([{ text: 'Temperature management: ', bold: true }, { text: 'Birds at the wrong temperature will show you immediately: panting and wing spreading indicate heat stress, huddling near the brooders indicates cold. Both responses consume energy that should be going into growth, and prolonged thermal stress increases mortality [4,9].' }]),
-      ...placeholder(
-        'Figure 4.1: Relationship between litter moisture content and bird welfare outcomes, showing the cascade from poor ventilation or drinker leaks to wet litter, elevated ammonia, footpad dermatitis, and respiratory disease.',
-        'Figure 4.1: Litter moisture and welfare outcomes. [To be supplied by CPC team]'
-      ),
+      ...image(figBuf('fig4_1.png'), 'Figure 4.1: Litter moisture cause-and-effect chain. Poor ventilation, drinker leaks, enteric disease, and high stocking density drive litter moisture above 30%. The resulting welfare consequences include footpad dermatitis, breast blisters, elevated ammonia, increased disease pressure, and performance loss. Target: 20 to 25% litter moisture throughout the grow-out.'),
       pageBreak(),
     ],
   };
@@ -551,10 +566,7 @@ function buildSection5() {
       h3('Biogas (Anaerobic Digestion)'),
       para('Anaerobic digestion converts organic material, including poultry litter and mortalities, into biogas (primarily methane) that can be used for heating and electricity generation, and a residual digestate that can be applied to land as a fertilizer [3,14]. The technology is proven, and several Canadian farm operations have installed biogas systems successfully.'),
       para('The economics of biogas are more complex than solar. Capital costs are higher, maintenance requirements are more demanding, and the system works best with consistent manure volumes. For individual operations, biogas is most feasible at larger scales or in consortium arrangements where multiple farms share a facility and spread the capital cost [3,14]. Before pursuing biogas, get a detailed feasibility study that includes your manure volume, moisture content, available feedstocks, and local energy prices.'),
-      ...placeholder(
-        'Figure 5.1: Overview of renewable energy options for commercial poultry farms, showing solar PV on barn roof generating electricity and feeding to grid or barn use, and anaerobic digestion of litter producing biogas for heat and power and digestate for land application.',
-        'Figure 5.1: Renewable energy options for poultry farms. [To be supplied by CPC team]'
-      ),
+      ...image(figBuf('fig5_1.png'), 'Figure 5.1: Renewable energy options for commercial poultry farms. Solar PV panels on barn roofs generate electricity for barn use and grid export through provincial net metering programs. Anaerobic digestion of poultry litter produces biogas for heat and power generation, and a nutrient-rich digestate for land application. Both technologies are eligible for federal and provincial grant support.'),
       pageBreak(),
     ],
   };
@@ -591,10 +603,7 @@ function buildSection6() {
       bullet([{ text: 'Regulatory compliance: ', bold: true }, { text: 'Environmental regulations on manure storage, land application, ammonia emissions, and water protection are tightening across Canada. Farms that are already meeting or exceeding current standards will absorb new requirements with less disruption than farms that are not [1].' }]),
       bullet([{ text: 'Antimicrobial resistance: ', bold: true }, { text: 'The regulatory trajectory on antibiotic use in food animals is clearly toward further restriction. Farms that have already reduced antibiotic dependence through better management are better positioned for those changes than farms that have not started [10].' }]),
       bullet([{ text: 'Farm value and succession: ', bold: true }, { text: 'A farm with documented practices, good environmental compliance history, modern equipment in good condition, and a track record of strong performance is worth more and is easier to transfer to the next generation or to a purchaser.' }]),
-      ...placeholder(
-        'Figure 6.1: Summary of economic benefits from sustainable poultry farm management, organized by time horizon: immediate cost savings (feed, water, energy), medium-term benefits (market access, reduced regulatory risk), and long-term resilience (input volatility insulation, farm value).',
-        'Figure 6.1: Economic benefits summary. [To be supplied by CPC team]'
-      ),
+      ...image(figBuf('fig6_1.png'), 'Figure 6.1: Economic benefits of sustainable farm management organized by time horizon. Immediate savings include feed FCR improvements, water leak detection, and LED lighting cost reductions. Medium-term benefits include improved contract position and reduced regulatory risk. Long-term resilience covers input price volatility protection, higher farm value at succession, and full renewable energy potential.'),
       pageBreak(),
     ],
   };
@@ -652,10 +661,7 @@ function buildSection7() {
       numbered('At the end of the cycle, compare the result to the baseline.'),
       numbered('Share the result with your veterinarian, fieldperson, or nutritionist. Their experience with other farms will help you interpret what you are seeing.'),
       para('The farms that consistently improve their sustainability performance are not the ones that made one big investment and stopped. They are the ones that make small, tracked improvements every cycle and build the discipline of knowing their own numbers. That discipline is worth more than any single technology change.'),
-      ...placeholder(
-        'Figure 7.1: Farmer self-assessment framework, showing a simple four-step cycle: measure current performance, identify the gap, implement one improvement, and track the result. Applicable to feed, water, energy, litter, and flock health metrics.',
-        'Figure 7.1: Self-assessment cycle. [To be supplied by CPC team]'
-      ),
+      ...image(figBuf('fig7_1.png'), 'Figure 7.1: Farmer self-assessment cycle applied once per grow-out. Step 1: measure baseline performance (FCR, water, energy, litter). Step 2: identify the gap against targets. Step 3: implement one specific, measurable change. Step 4: track the result and share findings with the veterinarian or fieldperson. Repeat each cycle to build a continuous improvement habit.'),
       pageBreak(),
     ],
   };
