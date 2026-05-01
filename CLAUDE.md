@@ -277,12 +277,12 @@ Every course document must follow this structure:
 Every page footer (except optionally the cover page) must use this exact format:
 
 ```
-CPC Short Courses   |  Course X of 17  |  Page N of M
+CPC Short Courses   |  Course X  |  Page N of M
 ```
 
 Rules:
 - Brand label is **`CPC Short Courses`** (three spaces before the first `|`). Do NOT use "Canadian Poultry Training Series" or any other variant.
-- Replace `X` with the course number (e.g., 4).
+- Replace `X` with the course number (e.g., 4). Do NOT include "of 17" or any total-course count — the total may change.
 - `Page N of M` uses live `PAGE` and `NUMPAGES` fields (not static text), so pagination updates automatically.
 - Separator is a pipe with two spaces on each side: `  |  `.
 - Apply the same footer to every section's `footer*.xml` part. When a course has multiple section breaks (cover, TOC, body, references), update all footer parts so they stay in sync.
