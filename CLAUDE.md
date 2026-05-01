@@ -238,6 +238,15 @@ Rules:
 
 Figure captions describe what the figure shows. Do NOT append generation-source notes such as `(Generated diagram, CPC Short Courses.)`, `(Generated scientific illustration, CPC Short Courses.)`, or "Actual electron micrographs to be supplied by the CPC team." in the caption text. The course is presented as a finished CPC product; provenance disclaimers belong in internal notes, not in the rendered caption.
 
+### Figure vs. Photo Labeling (MANDATORY)
+
+Use two parallel caption sequences depending on what the image actually is:
+
+- **`Figure X.Y:`** for diagrams, charts, schematics, scientific illustrations, flowcharts, and any rendered/generated artwork. Numbered per chapter (Figure 1.1, 1.2, 2.1, etc.).
+- **`Photo X.Y:`** for real photographs (barn shots, equipment, birds, lesions, post-mortem images, field scenes). Numbered per chapter as a separate sequence (Photo 1.1, 1.2, 2.1, etc.), so adding or removing a photo does not renumber any figures and vice versa.
+
+Apply the labeling based on the medium of the image, not on its source — a stock photo and a farm-shot photo both get `Photo`; a generated diagram and a hand-drawn schematic both get `Figure`.
+
 ## Template Architecture
 
 All courses must follow a consistent structure based on two reference courses:
