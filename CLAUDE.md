@@ -171,6 +171,7 @@ Content must be drawn from: Merck Veterinary Manual, Poultry Science journal, CF
 
 `D:\Course agent\Avian medicine sources\` contains 100+ poultry medicine and science PDFs. Always draw from these for factual content and citations. Key titles:
 
+**Disease & Clinical References**
 - *Diseases of Poultry, 14th Edition*, primary disease reference (prefer over 13th ed.)
 - *Diseases of Poultry, 13th Edition*
 - CEVA Handbook of Poultry Diseases (Vol 1 & 2)
@@ -179,20 +180,72 @@ Content must be drawn from: Merck Veterinary Manual, Poultry Science journal, CF
 - *Avian Medicine: Principles and Application*, Harrison & Ritchie
 - *Avian Medicine and Surgery*, Bob Doneley
 - BSAVA Manual of Backyard Poultry Medicine and Surgery
+- Intervet, Important Poultry Diseases
+- FAO-CEVA Poultry Disease Diagnosis Picture Book
+- *Common Poultry Diseases and Their Prevention*, Tablante, 2013
+- *Poultry Coccidiosis*, Donal P. Conway
+- *Avian Influenza Virus*, Erica Spackman
+- *Avian Influenza and Newcastle Disease*, Ilaria Capua
+- Global Strategy for the Prevention and Control of HPAI (WHO/FAO)
+- Lesion Age and Samples (post-mortem lesion aging reference)
+- 8 Poultry Diseases with Liver Lesions
+
+**Production & Management**
 - *Commercial Chicken Meat and Egg Production*, Donald D. Bell
 - *Commercial Poultry Nutrition*
 - *Broiler Breeder Production*
 - *Poultry Signals, A Practical Guide for Poultry Farming*
-- *Avian Influenza Virus*, Erica Spackman
-- *Avian Influenza and Newcastle Disease*, Ilaria Capua
-- *Poultry Coccidiosis*, Donal P. Conway
-- *Controlling Salmonella in Poultry*, Scott M. Russel
 - *Storey's Guide to Raising Turkeys*
 - *POULTRY PRODUCTION IN HOT CLIMATES*, Nuhad J. Daghir
-- Intervet, Important Poultry Diseases
-- FAO-CEVA Poultry Disease Diagnosis Picture Book
 - *Handbook of Poultry Science and Technology*
-- *Common Poultry Diseases and Their Prevention*, Tablante, 2013
+- Ross Broiler Management Handbook 2025 (Aviagen)
+- Water Quality 2025 (Aviagen)
+- Best Practices in Biosecurity (Aviagen/Ross)
+- Pre-Brooding Management (industry guide)
+- Broiler Chick Quality Manual (Parts I & II)
+- The Ultimate Chick Comfort Guide
+- First 24 Hours of Chicks
+- Hatchery Solutions; Troubleshooting Your Hatchery
+- From Broiler Processing: Preparing to Feed World Nutrition
+
+**Food Safety & Biosecurity**
+- *Controlling Salmonella in Poultry*, Scott M. Russel
+- Biosecurity Guide for Commercial Poultry Production
+- Rodent Control is a Key Factor in Poultry Biosecurity and Sustainability
+- Controlling Insects in Poultry Production
+- Biosec mLearning (biosecurity e-learning resource)
+- Poultry Hygiene (industry guide)
+
+**Nutrition**
+- Amino Acids in Broiler Nutrition
+- Antioxidants in Layer Feed
+- Yace/Trace Minerals in Poultry Nutrition
+- Solutions of the Fatty Liver Syndrome in Laying Hens
+- Role of Organic Acids in Poultry Nutrition
+- Selenium in Poultry Nutrition and Health (2018)
+- Nutrition and Feeding of Organic Poultry (CABI, 2018)
+- Moisture Retention for Higher Feed Mill Efficiency
+- Feed Strategies Magazine (2025); Feed Strategy Magazine (2025)
+- 2024 Innovad Global Feed Mycotoxin Survey
+- Sampling Procedure for Mycotoxin Analysis (DSM)
+- Alternative Protein Sources for Food and Feed
+
+**Layer & Egg Production**
+- Heat Stress in Laying Hens (Part II)
+- Double-Yolk Eggs in Commercial Laying Hens
+- Optimizing Saleable Eggs, Efficiency and Profitability
+- Egg Bioscience and Biotechnology
+
+**Welfare & Stress**
+- Effects of Chronic Stress on Poultry (Part II)
+- Heat Stress in Poultry: Solving the Problem
+- Poultry Behaviour and Welfare
+
+**Antimicrobial Use**
+- CAHS AMU Report (Canadian Antimicrobial Use in Animals, EN Final) — use for AMR/stewardship sections
+
+**Meat Science**
+- Gracey's Meat Hygiene
 
 When citing these, use the book title and author as the citation source, not the file path.
 
