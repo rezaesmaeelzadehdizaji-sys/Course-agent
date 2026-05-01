@@ -219,6 +219,25 @@ Every course document must follow this structure:
 6. Recommended peer-reviewed journals
 7. References/bibliography (numbered, in order of appearance)
 
+### Page Footer Format (MANDATORY)
+
+Every page footer (except optionally the cover page) must use this exact format:
+
+```
+CPC Short Courses   |  Course X of 17  |  Page N of M
+```
+
+Rules:
+- Brand label is **`CPC Short Courses`** (three spaces before the first `|`). Do NOT use "Canadian Poultry Training Series" or any other variant.
+- Replace `X` with the course number (e.g., 4).
+- `Page N of M` uses live `PAGE` and `NUMPAGES` fields (not static text), so pagination updates automatically.
+- Separator is a pipe with two spaces on each side: `  |  `.
+- Apply the same footer to every section's `footer*.xml` part. When a course has multiple section breaks (cover, TOC, body, references), update all footer parts so they stay in sync.
+
+### Figure Caption Rule (MANDATORY)
+
+Figure captions describe what the figure shows. Do NOT append generation-source notes such as `(Generated diagram, CPC Short Courses.)`, `(Generated scientific illustration, CPC Short Courses.)`, or "Actual electron micrographs to be supplied by the CPC team." in the caption text. The course is presented as a finished CPC product; provenance disclaimers belong in internal notes, not in the rendered caption.
+
 ## Template Architecture
 
 All courses must follow a consistent structure based on two reference courses:
