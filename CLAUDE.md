@@ -257,11 +257,16 @@ Every course document must follow this structure:
 - Must include CPC branding
 - Must include CPC logo (or placeholder if embedding not possible)
 
-- Must include:
-  - Course title
-  - Subtitle (if applicable)
-  - CPC Short Courses
-  - Date
+- Must include (in this exact order, top to bottom):
+  1. **Line 1:** `COURSE X: CPC SHORT COURSES` — all caps, bold, blue (`2E74B5`), centered. Replace X with the course number. Do NOT use "CANADIAN POULTRY TRAINING SERIES" or any other series name.
+  2. **CPC logo** (centered)
+  3. **Course title** — large, bold, blue (`2E74B5`), centered
+  4. **Subtitle** — italic, blue (`2E74B5`), centered (if applicable)
+  5. **Gold horizontal rule** (`C9A84C`)
+  6. **Metadata line:** `CPC Short Courses` — NOT "Canadian Poultry Training Series" or any variant
+  7. **Duration** (e.g., `Duration: 2 hours`)
+  8. **Date** (e.g., `April 2026`)
+  9. **Disclaimer paragraph** — standard CPC educational disclaimer
 
 - Must look like a professional industry training document (NOT generic AI output)
 
@@ -274,18 +279,60 @@ Every course document must follow this structure:
 
 ### Page Footer Format (MANDATORY)
 
-Every page footer (except optionally the cover page) must use this exact format:
+Every page footer (including all section footer*.xml parts) must use this exact format:
 
 ```
-CPC Short Courses   |  Course X  |  Page N of M
+CPC Short Courses  |  Course X  |  Page N of M
 ```
 
-Rules:
-- Brand label is **`CPC Short Courses`** (three spaces before the first `|`). Do NOT use "Canadian Poultry Training Series" or any other variant.
-- Replace `X` with the course number (e.g., 4). Do NOT include "of 17" or any total-course count — the total may change.
-- `Page N of M` uses live `PAGE` and `NUMPAGES` fields (not static text), so pagination updates automatically.
-- Separator is a pipe with two spaces on each side: `  |  `.
-- Apply the same footer to every section's `footer*.xml` part. When a course has multiple section breaks (cover, TOC, body, references), update all footer parts so they stay in sync.
+Styling (match Course 3 and Course 4 exactly):
+- Font: Calibri, size 9pt (`sz val="18"`), gray (`888888`), centered
+- Top border: single gold line (`C9A84C`, `sz="4"`)
+- `Page N of M` uses live `PAGE` and `NUMPAGES` fields — never static text
+- Separator: two spaces, pipe, two spaces: `  |  `
+- Replace `X` with the course number. Do NOT include "of 17" or any total-course count.
+- Apply to every `footer*.xml` part so all sections stay in sync.
+
+XML template (paste verbatim, change course number only):
+```xml
+<w:p>
+  <w:pPr><w:pBdr><w:top w:val="single" w:color="C9A84C" w:sz="4"/></w:pBdr><w:jc w:val="center"/></w:pPr>
+  <w:r><w:rPr><w:rFonts w:ascii="Calibri" w:cs="Calibri" w:eastAsia="Calibri" w:hAnsi="Calibri"/><w:color w:val="888888"/><w:sz w:val="18"/><w:szCs w:val="18"/></w:rPr>
+    <w:t xml:space="preserve">CPC Short Courses  |  Course X  |  Page </w:t></w:r>
+  <w:r><w:rPr><w:rFonts w:ascii="Calibri" w:cs="Calibri" w:eastAsia="Calibri" w:hAnsi="Calibri"/><w:color w:val="888888"/><w:sz w:val="18"/><w:szCs w:val="18"/></w:rPr>
+    <w:fldChar w:fldCharType="begin"/><w:instrText xml:space="preserve">PAGE</w:instrText><w:fldChar w:fldCharType="separate"/><w:fldChar w:fldCharType="end"/></w:r>
+  <w:r><w:rPr><w:rFonts w:ascii="Calibri" w:cs="Calibri" w:eastAsia="Calibri" w:hAnsi="Calibri"/><w:color w:val="888888"/><w:sz w:val="18"/><w:szCs w:val="18"/></w:rPr>
+    <w:t xml:space="preserve"> of </w:t></w:r>
+  <w:r><w:rPr><w:rFonts w:ascii="Calibri" w:cs="Calibri" w:eastAsia="Calibri" w:hAnsi="Calibri"/><w:color w:val="888888"/><w:sz w:val="18"/><w:szCs w:val="18"/></w:rPr>
+    <w:fldChar w:fldCharType="begin"/><w:instrText xml:space="preserve">NUMPAGES</w:instrText><w:fldChar w:fldCharType="separate"/><w:fldChar w:fldCharType="end"/></w:r>
+</w:p>
+```
+
+### Page Header Format (MANDATORY)
+
+Every page header (all sections except optionally the cover page) must use this exact format:
+
+```
+CPC Short Courses  |  [Course Title]
+```
+
+Styling (match Course 3 and Course 4 exactly):
+- Right-aligned
+- Bottom border: single gold line (`C9A84C`, `sz="4"`)
+- Left part `CPC Short Courses  |  `: Calibri, size 9pt, gray (`888888`), not bold
+- Right part `[Course Title]`: Calibri, size 9pt, bold, blue (`2E74B5`)
+- Apply to every `header*.xml` part so all sections stay in sync.
+
+XML template (paste verbatim, change course title only):
+```xml
+<w:p>
+  <w:pPr><w:pBdr><w:bottom w:val="single" w:color="C9A84C" w:sz="4"/></w:pBdr><w:jc w:val="right"/></w:pPr>
+  <w:r><w:rPr><w:rFonts w:ascii="Calibri" w:cs="Calibri" w:eastAsia="Calibri" w:hAnsi="Calibri"/><w:color w:val="888888"/><w:sz w:val="18"/><w:szCs w:val="18"/></w:rPr>
+    <w:t xml:space="preserve">CPC Short Courses  |  </w:t></w:r>
+  <w:r><w:rPr><w:rFonts w:ascii="Calibri" w:cs="Calibri" w:eastAsia="Calibri" w:hAnsi="Calibri"/><w:b/><w:bCs/><w:color w:val="2E74B5"/><w:sz w:val="18"/><w:szCs w:val="18"/></w:rPr>
+    <w:t xml:space="preserve">[Course Title Here]</w:t></w:r>
+</w:p>
+```
 
 ### Figure Caption Rule (MANDATORY)
 
