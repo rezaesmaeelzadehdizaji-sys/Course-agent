@@ -244,7 +244,7 @@ function fig2_1() {
   <rect x="540" y="186" width="240" height="82" rx="6" fill="${C.lightGreen}" stroke="${C.green}" stroke-width="1"/>
   <text x="660" y="208" text-anchor="middle" fill="${C.green}" font-family="Arial, sans-serif" font-size="11" font-weight="bold">&#10004; Efficiency Actions</text>
   <text x="550" y="226" fill="${C.gray}" font-family="Arial, sans-serif" font-size="11">• Daily water meter readings</text>
-  <text x="550" y="244" fill="${C.gray}" font-family="Arial, sans-serif" font-size="11">• Set pressure 15–25 psi</text>
+  <text x="550" y="244" fill="${C.gray}" font-family="Arial, sans-serif" font-size="11">• Calibrate nipple pressure (cm WC)</text>
   <text x="550" y="262" fill="${C.gray}" font-family="Arial, sans-serif" font-size="11">• Flush lines between flocks</text>
 
   <!-- ROW 3: ENERGY -->
@@ -278,8 +278,8 @@ function fig2_1() {
 // FIGURE 3.1 — Manure Management Cycle
 // ============================================================
 function fig3_1() {
-  const W = 800, H = 480;
-  const cx = 400, cy = 230, r = 150;
+  const W = 800, H = 540;
+  const cx = 400, cy = 265, r = 130;
   // 6 nodes around a circle, starting from top
   function node(angleDeg) {
     const rad = (angleDeg - 90) * Math.PI / 180;
@@ -291,7 +291,7 @@ function fig3_1() {
     { main: 'Litter Removal', sub: 'After each flock' },
     { main: 'Covered Storage', sub: 'Away from water' },
     { main: 'Manure Analysis', sub: 'N, P, K content' },
-    { main: 'Land Application', sub: 'Matched to crop needs' },
+    { main: 'Land Application', sub: 'Match to crop rate' },
     { main: 'Crop Uptake', sub: 'Nutrient recovery' },
     { main: 'Composting', sub: 'Optional: pathogen kill' },
   ];
@@ -339,9 +339,9 @@ function fig3_1() {
   <text x="${cx}" y="${cy + 24}" text-anchor="middle" fill="${C.gold}" font-family="Arial, sans-serif" font-size="11">Management</text>
 
   <!-- Key note bottom -->
-  <rect x="20" y="400" width="760" height="44" rx="6" fill="${C.lightGold}" stroke="${C.gold}" stroke-width="1.5"/>
-  <text x="400" y="418" text-anchor="middle" fill="${C.darkBlue}" font-family="Arial, sans-serif" font-size="12" font-weight="bold">Key Rule: Always get a manure analysis before land application.</text>
-  <text x="400" y="435" text-anchor="middle" fill="${C.gray}" font-family="Arial, sans-serif" font-size="11">Nutrient content varies widely by flock, feed, and moisture. Guessing application rates leads to over-application and regulatory risk.</text>
+  <rect x="20" y="458" width="760" height="44" rx="6" fill="${C.lightGold}" stroke="${C.gold}" stroke-width="1.5"/>
+  <text x="400" y="476" text-anchor="middle" fill="${C.darkBlue}" font-family="Arial, sans-serif" font-size="12" font-weight="bold">Key Rule: Always get a manure analysis before land application.</text>
+  <text x="400" y="493" text-anchor="middle" fill="${C.gray}" font-family="Arial, sans-serif" font-size="11">Nutrient content varies widely by flock, feed, and moisture. Guessing application rates leads to over-application and regulatory risk.</text>
 
   ${caption(W, H, 'Figure 3.1  |  CPC Short Courses — Course 5: Sustainability in Poultry Farming')}
 </svg>`;
@@ -351,7 +351,7 @@ function fig3_1() {
 // FIGURE 4.1 — Litter Moisture and Bird Welfare
 // ============================================================
 function fig4_1() {
-  const W = 800, H = 460;
+  const W = 800, H = 500;
   return `<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}">
   <rect width="${W}" height="${H}" fill="white"/>
   ${titleBar(W, 'Litter Moisture Management: Cause and Effect Chain')}
@@ -372,32 +372,33 @@ function fig4_1() {
   ${dArrow(650, 138, 420, 178, C.orange, 'oa')}
 
   <!-- Wet litter box -->
-  <rect x="190" y="178" width="420" height="60" rx="8" fill="#FFCDD2" stroke="${C.red}" stroke-width="2.5"/>
-  <text x="400" y="203" text-anchor="middle" fill="${C.red}" font-family="Arial, sans-serif" font-size="16" font-weight="bold">WET LITTER (&gt;30% moisture)</text>
-  <text x="400" y="224" text-anchor="middle" fill="${C.gray}" font-family="Arial, sans-serif" font-size="12">The single most common and costly management failure in commercial broiler production</text>
-
-  <!-- Arrows diverging to consequences -->
-  ${dArrow(260, 238, 104, 275, C.red, 'oa')}
-  ${dArrow(330, 238, 240, 275, C.red, 'oa')}
-  ${dArrow(400, 238, 400, 275, C.red, 'oa')}
-  ${dArrow(470, 238, 560, 275, C.red, 'oa')}
-  ${dArrow(540, 238, 680, 275, C.red, 'oa')}
-
-  <!-- Consequence boxes -->
-  ${box(20,   275, 158, 64, '#FFEBEE', C.red, 'Footpad', 'Dermatitis')}
-  ${box(188,  275, 158, 64, '#FFEBEE', C.red, 'Breast', 'Blisters')}
-  ${box(356,  275, 158, 64, '#FFEBEE', C.red, 'High NH3', '&gt;25 ppm = resp. damage')}
-  ${box(524,  275, 158, 64, '#FFEBEE', C.red, 'Disease', 'Pressure Rise')}
-  ${box(610,  275, 170, 64, '#FFEBEE', C.red, 'Performance', 'Loss &amp; Mortality')}
+  <rect x="190" y="178" width="420" height="62" rx="8" fill="#FFCDD2" stroke="${C.red}" stroke-width="2.5"/>
+  <text x="400" y="202" text-anchor="middle" fill="${C.red}" font-family="Arial, sans-serif" font-size="15" font-weight="bold">WET LITTER  (&gt;30% moisture)</text>
+  <text x="400" y="220" text-anchor="middle" fill="${C.gray}" font-family="Arial, sans-serif" font-size="11">Most common and costly management failure</text>
+  <text x="400" y="234" text-anchor="middle" fill="${C.gray}" font-family="Arial, sans-serif" font-size="11">in commercial broiler production</text>
 
   <!-- Consequences label -->
-  <text x="400" y="270" text-anchor="middle" fill="${C.darkBlue}" font-family="Arial, sans-serif" font-size="12" font-weight="bold">CONSEQUENCES</text>
+  <text x="400" y="258" text-anchor="middle" fill="${C.darkBlue}" font-family="Arial, sans-serif" font-size="11" font-weight="bold">CONSEQUENCES</text>
+
+  <!-- Arrows diverging to consequences (from wet litter bottom y=240 to boxes at y=265) -->
+  ${dArrow(260, 240, 92,  265, C.red, 'oa')}
+  ${dArrow(330, 240, 242, 265, C.red, 'oa')}
+  ${dArrow(400, 240, 393, 265, C.red, 'oa')}
+  ${dArrow(470, 240, 544, 265, C.red, 'oa')}
+  ${dArrow(540, 240, 695, 265, C.red, 'oa')}
+
+  <!-- Consequence boxes (5 boxes, width=143, gap=8, no overlap) -->
+  ${box(20,  265, 143, 64, '#FFEBEE', C.red, 'Footpad', 'Dermatitis')}
+  ${box(171, 265, 143, 64, '#FFEBEE', C.red, 'Breast', 'Blisters')}
+  ${box(322, 265, 143, 64, '#FFEBEE', C.red, 'High NH3', '&gt;25 ppm')}
+  ${box(473, 265, 143, 64, '#FFEBEE', C.red, 'Disease', 'Pressure Rise')}
+  ${box(624, 265, 143, 64, '#FFEBEE', C.red, 'Performance', 'Loss &amp; Mortality')}
 
   <!-- Management solutions bar -->
-  <rect x="20" y="360" width="760" height="54" rx="6" fill="${C.lightGreen}" stroke="${C.green}" stroke-width="1.5"/>
-  <text x="400" y="379" text-anchor="middle" fill="${C.green}" font-family="Arial, sans-serif" font-size="12" font-weight="bold">Management Solutions — Target: Litter Moisture 20–25%</text>
-  <text x="400" y="397" text-anchor="middle" fill="${C.gray}" font-family="Arial, sans-serif" font-size="11">Increase minimum ventilation  ·  Fix drinker leaks immediately  ·  Apply litter amendment (alum)  ·  Raise barn temperature</text>
-  <text x="400" y="413" text-anchor="middle" fill="${C.gray}" font-family="Arial, sans-serif" font-size="11">Footpad dermatitis at plant = late detection. Wet litter starts impacting birds 2–3 weeks before slaughter.</text>
+  <rect x="20" y="352" width="760" height="54" rx="6" fill="${C.lightGreen}" stroke="${C.green}" stroke-width="1.5"/>
+  <text x="400" y="371" text-anchor="middle" fill="${C.green}" font-family="Arial, sans-serif" font-size="12" font-weight="bold">Management Solutions — Target: Litter Moisture 20–25%</text>
+  <text x="400" y="389" text-anchor="middle" fill="${C.gray}" font-family="Arial, sans-serif" font-size="11">Increase minimum ventilation  ·  Fix drinker leaks immediately  ·  Apply litter amendment (alum)  ·  Raise barn temperature</text>
+  <text x="400" y="405" text-anchor="middle" fill="${C.gray}" font-family="Arial, sans-serif" font-size="11">Footpad dermatitis at plant = late detection. Wet litter starts impacting birds 2–3 weeks before slaughter.</text>
 
   ${caption(W, H, 'Figure 4.1  |  CPC Short Courses — Course 5: Sustainability in Poultry Farming')}
 </svg>`;
@@ -556,9 +557,9 @@ function fig6_1() {
 // FIGURE 7.1 — Self-Assessment Cycle
 // ============================================================
 function fig7_1() {
-  const W = 800, H = 480;
-  const cx = 400, cy = 240;
-  const r  = 130;
+  const W = 800, H = 500;
+  const cx = 400, cy = 242;
+  const r  = 115;
   // 4 steps: top, right, bottom, left
   const steps = [
     { angle:  -90, color: C.medBlue,  light: C.lightBlue,  num: '1', main: 'MEASURE',   sub: 'Record baseline\nFCR, water, energy,\nlitter condition' },
@@ -622,11 +623,367 @@ function fig7_1() {
   ${nodes}
 
   <!-- Bottom note -->
-  <rect x="20" y="400" width="760" height="42" rx="6" fill="${C.lightGold}" stroke="${C.gold}" stroke-width="1.5"/>
-  <text x="400" y="418" text-anchor="middle" fill="${C.darkBlue}" font-family="Arial, sans-serif" font-size="12" font-weight="bold">Apply to: Feed efficiency  ·  Water management  ·  Litter quality  ·  Energy use  ·  Flock health</text>
-  <text x="400" y="435" text-anchor="middle" fill="${C.gray}" font-family="Arial, sans-serif" font-size="11">Share results with your veterinarian and fieldperson — they can help interpret what you are seeing across other farms.</text>
+  <rect x="20" y="418" width="760" height="42" rx="6" fill="${C.lightGold}" stroke="${C.gold}" stroke-width="1.5"/>
+  <text x="400" y="436" text-anchor="middle" fill="${C.darkBlue}" font-family="Arial, sans-serif" font-size="12" font-weight="bold">Apply to: Feed efficiency  ·  Water management  ·  Litter quality  ·  Energy use  ·  Flock health</text>
+  <text x="400" y="453" text-anchor="middle" fill="${C.gray}" font-family="Arial, sans-serif" font-size="11">Share results with your veterinarian and fieldperson — they can help interpret what you are seeing across other farms.</text>
 
   ${caption(W, H, 'Figure 7.1  |  CPC Short Courses — Course 5: Sustainability in Poultry Farming')}
+</svg>`;
+}
+
+// ============================================================
+// FIGURE 1.3 — Nipple Drinker Leak
+// ============================================================
+function fig1_3() {
+  const W = 800, H = 380;
+  return `<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}">
+  <rect width="${W}" height="${H}" fill="white"/>
+  ${titleBar(W, 'Nipple Drinker Leak: Water Waste and Litter Damage')}
+
+  <!-- LEFT PANEL: schematic (x 20-460) -->
+  <!-- Drinker main line (pipe) -->
+  <rect x="60" y="85" width="360" height="14" rx="4" fill="${C.medBlue}" stroke="${C.darkBlue}" stroke-width="1.5"/>
+  <text x="240" y="79" text-anchor="middle" fill="${C.medBlue}" font-family="Arial, sans-serif" font-size="11" font-weight="bold">Nipple drinker main line (water supply)</text>
+
+  <!-- Normal nipple (left) -->
+  <rect x="100" y="99" width="10" height="28" rx="2" fill="${C.medBlue}" stroke="${C.darkBlue}" stroke-width="1"/>
+  <ellipse cx="105" cy="129" rx="8" ry="5" fill="${C.medBlue}" stroke="${C.darkBlue}" stroke-width="1"/>
+  <text x="105" y="153" text-anchor="middle" fill="${C.green}" font-family="Arial, sans-serif" font-size="10">OK</text>
+
+  <!-- Leaking nipple (center) — highlighted -->
+  <rect x="230" y="99" width="10" height="28" rx="2" fill="${C.red}" stroke="#8B0000" stroke-width="1.5"/>
+  <ellipse cx="235" cy="129" rx="8" ry="5" fill="${C.red}" stroke="#8B0000" stroke-width="1.5"/>
+  <!-- Drip chain -->
+  <circle cx="235" cy="138" r="3" fill="${C.medBlue}" opacity="0.9"/>
+  <circle cx="234" cy="148" r="4" fill="${C.medBlue}" opacity="0.8"/>
+  <circle cx="236" cy="160" r="5" fill="${C.medBlue}" opacity="0.7"/>
+  <text x="262" y="140" fill="${C.red}" font-family="Arial, sans-serif" font-size="10" font-weight="bold">Loose</text>
+  <text x="262" y="153" fill="${C.red}" font-family="Arial, sans-serif" font-size="10" font-weight="bold">connection</text>
+
+  <!-- Normal nipple (right) -->
+  <rect x="360" y="99" width="10" height="28" rx="2" fill="${C.medBlue}" stroke="${C.darkBlue}" stroke-width="1"/>
+  <ellipse cx="365" cy="129" rx="8" ry="5" fill="${C.medBlue}" stroke="${C.darkBlue}" stroke-width="1"/>
+  <text x="365" y="153" text-anchor="middle" fill="${C.green}" font-family="Arial, sans-serif" font-size="10">OK</text>
+
+  <!-- Litter floor -->
+  <rect x="60" y="175" width="360" height="38" rx="4" fill="#D7CCA8" stroke="#A09060" stroke-width="1.5"/>
+  <!-- Wet patch under leaking nipple -->
+  <ellipse cx="235" cy="181" rx="55" ry="16" fill="#8B6914" opacity="0.6"/>
+  <text x="235" y="185" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="9" font-weight="bold">Wet litter patch</text>
+  <text x="130" y="198" text-anchor="middle" fill="${C.gray}" font-family="Arial, sans-serif" font-size="10">Dry litter</text>
+  <text x="355" y="198" text-anchor="middle" fill="${C.gray}" font-family="Arial, sans-serif" font-size="10">Dry litter</text>
+
+  <!-- Floor label -->
+  <text x="240" y="228" text-anchor="middle" fill="${C.gray}" font-family="Arial, sans-serif" font-size="10" font-style="italic">Barn floor / litter surface</text>
+
+  <!-- RIGHT PANEL: impact facts (x 490-780) -->
+  <rect x="490" y="68" width="290" height="220" rx="8" fill="#FFEBEE" stroke="${C.red}" stroke-width="1.5"/>
+  <text x="635" y="90" text-anchor="middle" fill="${C.red}" font-family="Arial, sans-serif" font-size="13" font-weight="bold">Impact of One Leaking Nipple</text>
+  <line x1="500" y1="96" x2="770" y2="96" stroke="${C.red}" stroke-width="1"/>
+  <text x="505" y="116" fill="${C.gray}" font-family="Arial, sans-serif" font-size="12">&#9679;  100s of liters wasted per day</text>
+  <text x="505" y="138" fill="${C.gray}" font-family="Arial, sans-serif" font-size="12">&#9679;  Wet litter patch grows daily</text>
+  <text x="505" y="160" fill="${C.gray}" font-family="Arial, sans-serif" font-size="12">&#9679;  Local ammonia spike &gt;25 ppm</text>
+  <text x="505" y="182" fill="${C.gray}" font-family="Arial, sans-serif" font-size="12">&#9679;  Footpad dermatitis risk rises</text>
+  <text x="505" y="204" fill="${C.gray}" font-family="Arial, sans-serif" font-size="12">&#9679;  Often undetected for days</text>
+  <text x="505" y="226" fill="${C.gray}" font-family="Arial, sans-serif" font-size="12">&#9679;  More amendment cost needed</text>
+  <text x="505" y="250" fill="${C.green}" font-family="Arial, sans-serif" font-size="11" font-weight="bold">Fix: Daily water meter reading detects</text>
+  <text x="505" y="264" fill="${C.green}" font-family="Arial, sans-serif" font-size="11" font-weight="bold">a leak before litter is saturated.</text>
+
+  <!-- Bottom note -->
+  <rect x="20" y="310" width="760" height="32" rx="6" fill="${C.lightBlue}" stroke="${C.medBlue}" stroke-width="1.5"/>
+  <text x="400" y="330" text-anchor="middle" fill="${C.darkBlue}" font-family="Arial, sans-serif" font-size="11">A barn with a water meter that is read daily finds drinker problems before they become litter problems.</text>
+
+  ${caption(W, H, 'Figure 1.3  |  CPC Short Courses — Course 5: Sustainability in Poultry Farming')}
+</svg>`;
+}
+
+// ============================================================
+// FIGURE 2.2 — Feeder Height Comparison
+// ============================================================
+function fig2_2() {
+  const W = 800, H = 380;
+  return `<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}">
+  <rect width="${W}" height="${H}" fill="white"/>
+  ${titleBar(W, 'Feeder Height: Correct vs. Incorrect Setting')}
+
+  <!-- LEFT PANEL: INCORRECT -->
+  <rect x="20" y="60" width="358" height="220" rx="8" fill="#FFEBEE" stroke="${C.red}" stroke-width="2"/>
+  <text x="199" y="84" text-anchor="middle" fill="${C.red}" font-family="Arial, sans-serif" font-size="14" font-weight="bold">&#10006;  TOO LOW — Feed Spill</text>
+
+  <!-- Feeder pan (too low) -->
+  <rect x="120" y="118" width="160" height="22" rx="4" fill="${C.amber}" stroke="#8B6000" stroke-width="1.5"/>
+  <text x="200" y="133" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="10" font-weight="bold">Feed Pan</text>
+  <!-- Spilled feed dots -->
+  <circle cx="165" cy="148" r="4" fill="${C.amber}" opacity="0.8"/>
+  <circle cx="180" cy="152" r="3" fill="${C.amber}" opacity="0.7"/>
+  <circle cx="155" cy="154" r="3" fill="${C.amber}" opacity="0.6"/>
+  <circle cx="230" cy="150" r="4" fill="${C.amber}" opacity="0.8"/>
+  <circle cx="242" cy="155" r="3" fill="${C.amber}" opacity="0.7"/>
+  <circle cx="170" cy="160" r="2" fill="${C.amber}" opacity="0.6"/>
+  <!-- Litter floor -->
+  <rect x="60" y="165" width="278" height="22" rx="3" fill="#D7CCA8" stroke="#A09060" stroke-width="1"/>
+  <text x="199" y="178" text-anchor="middle" fill="${C.gray}" font-family="Arial, sans-serif" font-size="9">Litter floor</text>
+  <!-- Bird silhouette (crouching to reach low feeder) -->
+  <ellipse cx="200" cy="148" rx="20" ry="12" fill="#E0D0C0" stroke="#A09060" stroke-width="1"/>
+  <circle cx="185" cy="140" r="9" fill="#E0D0C0" stroke="#A09060" stroke-width="1"/>
+
+  <text x="199" y="214" text-anchor="middle" fill="${C.red}" font-family="Arial, sans-serif" font-size="11">Birds scratch feed over the rim.</text>
+  <text x="199" y="230" text-anchor="middle" fill="${C.red}" font-family="Arial, sans-serif" font-size="11">Spilled feed contaminates litter.</text>
+  <text x="199" y="250" text-anchor="middle" fill="${C.red}" font-family="Arial, sans-serif" font-size="11" font-weight="bold">Check and raise weekly!</text>
+
+  <!-- RIGHT PANEL: CORRECT -->
+  <rect x="422" y="60" width="358" height="220" rx="8" fill="${C.lightGreen}" stroke="${C.green}" stroke-width="2"/>
+  <text x="601" y="84" text-anchor="middle" fill="${C.green}" font-family="Arial, sans-serif" font-size="14" font-weight="bold">&#10004;  SHOULDER LEVEL — No Spill</text>
+
+  <!-- Feeder pan at shoulder height -->
+  <rect x="520" y="130" width="160" height="22" rx="4" fill="${C.amber}" stroke="#8B6000" stroke-width="1.5"/>
+  <text x="600" y="145" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="10" font-weight="bold">Feed Pan</text>
+  <!-- No spilled feed -->
+  <!-- Litter floor clean -->
+  <rect x="460" y="165" width="278" height="22" rx="3" fill="#D7CCA8" stroke="#A09060" stroke-width="1"/>
+  <text x="601" y="178" text-anchor="middle" fill="${C.gray}" font-family="Arial, sans-serif" font-size="9">Litter floor — clean</text>
+  <!-- Bird silhouette (upright, comfortable) -->
+  <ellipse cx="600" cy="150" rx="20" ry="13" fill="#E0D0C0" stroke="#A09060" stroke-width="1"/>
+  <circle cx="584" cy="138" r="9" fill="#E0D0C0" stroke="#A09060" stroke-width="1"/>
+
+  <text x="601" y="214" text-anchor="middle" fill="${C.green}" font-family="Arial, sans-serif" font-size="11">Birds eat comfortably with no waste.</text>
+  <text x="601" y="230" text-anchor="middle" fill="${C.green}" font-family="Arial, sans-serif" font-size="11">Litter stays dry under the feeder.</text>
+  <text x="601" y="250" text-anchor="middle" fill="${C.green}" font-family="Arial, sans-serif" font-size="11" font-weight="bold">Adjust height weekly as birds grow.</text>
+
+  <!-- Bottom note -->
+  <rect x="20" y="298" width="760" height="44" rx="6" fill="${C.lightGold}" stroke="${C.gold}" stroke-width="1.5"/>
+  <text x="400" y="316" text-anchor="middle" fill="${C.darkBlue}" font-family="Arial, sans-serif" font-size="12" font-weight="bold">Rule: Feeder rim at shoulder height of the birds at all times. Adjust at least weekly.</text>
+  <text x="400" y="333" text-anchor="middle" fill="${C.gray}" font-family="Arial, sans-serif" font-size="11">Feed cost = 60–70% of production cost. Feeder height adjustment costs nothing and reduces waste immediately.</text>
+
+  ${caption(W, H, 'Figure 2.2  |  CPC Short Courses — Course 5: Sustainability in Poultry Farming')}
+</svg>`;
+}
+
+// ============================================================
+// FIGURE 2.3 — LED vs Incandescent Energy Savings
+// ============================================================
+function fig2_3() {
+  const W = 800, H = 380;
+  return `<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}">
+  <rect width="${W}" height="${H}" fill="white"/>
+  ${titleBar(W, 'LED Lighting in the Broiler Barn: Energy Savings')}
+
+  <!-- Y-axis label -->
+  <text x="30" y="200" text-anchor="middle" fill="${C.gray}" font-family="Arial, sans-serif" font-size="11" transform="rotate(-90,30,200)">Energy use (% of incandescent)</text>
+  <line x1="70" y1="65" x2="70" y2="280" stroke="${C.gray}" stroke-width="1.5"/>
+  <!-- Y grid lines + labels -->
+  <line x1="68" y1="65"  x2="72" y2="65"  stroke="${C.gray}" stroke-width="1.5"/>
+  <line x1="68" y1="111" x2="72" y2="111" stroke="${C.gray}" stroke-width="1.5"/>
+  <line x1="68" y1="157" x2="72" y2="157" stroke="${C.gray}" stroke-width="1.5"/>
+  <line x1="68" y1="203" x2="72" y2="203" stroke="${C.gray}" stroke-width="1.5"/>
+  <line x1="68" y1="280" x2="72" y2="280" stroke="${C.gray}" stroke-width="1.5"/>
+  <text x="62" y="69"  text-anchor="end" fill="${C.gray}" font-family="Arial, sans-serif" font-size="10">100%</text>
+  <text x="62" y="115" text-anchor="end" fill="${C.gray}" font-family="Arial, sans-serif" font-size="10">75%</text>
+  <text x="62" y="161" text-anchor="end" fill="${C.gray}" font-family="Arial, sans-serif" font-size="10">50%</text>
+  <text x="62" y="207" text-anchor="end" fill="${C.gray}" font-family="Arial, sans-serif" font-size="10">25%</text>
+  <text x="62" y="284" text-anchor="end" fill="${C.gray}" font-family="Arial, sans-serif" font-size="10">0%</text>
+  <!-- X axis -->
+  <line x1="70" y1="280" x2="500" y2="280" stroke="${C.gray}" stroke-width="1.5"/>
+
+  <!-- Incandescent bar (100%) -->
+  <rect x="110" y="65" width="120" height="215" rx="4" fill="#FF8F00" opacity="0.85"/>
+  <text x="170" y="57" text-anchor="middle" fill="#FF8F00" font-family="Arial, sans-serif" font-size="13" font-weight="bold">100%</text>
+  <text x="170" y="300" text-anchor="middle" fill="${C.gray}" font-family="Arial, sans-serif" font-size="11">Incandescent</text>
+
+  <!-- CFL bar (~55%) -->
+  <rect x="270" y="162" width="120" height="118" rx="4" fill="${C.amber}" opacity="0.85"/>
+  <text x="330" y="154" text-anchor="middle" fill="${C.amber}" font-family="Arial, sans-serif" font-size="13" font-weight="bold">~55%</text>
+  <text x="330" y="300" text-anchor="middle" fill="${C.gray}" font-family="Arial, sans-serif" font-size="11">CFL</text>
+
+  <!-- LED bar (25%) -->
+  <rect x="430" y="226" width="120" height="54" rx="4" fill="${C.green}" opacity="0.9"/>
+  <text x="490" y="218" text-anchor="middle" fill="${C.green}" font-family="Arial, sans-serif" font-size="13" font-weight="bold">20–30%</text>
+  <text x="490" y="300" text-anchor="middle" fill="${C.gray}" font-family="Arial, sans-serif" font-size="11">LED</text>
+
+  <!-- Savings callout -->
+  <rect x="560" y="65" width="220" height="200" rx="8" fill="${C.lightGreen}" stroke="${C.green}" stroke-width="1.5"/>
+  <text x="670" y="86" text-anchor="middle" fill="${C.green}" font-family="Arial, sans-serif" font-size="13" font-weight="bold">LED Advantage</text>
+  <line x1="570" y1="92" x2="770" y2="92" stroke="${C.green}" stroke-width="1"/>
+  <text x="575" y="112" fill="${C.gray}" font-family="Arial, sans-serif" font-size="11">&#9679; 70–80% energy savings</text>
+  <text x="575" y="132" fill="${C.gray}" font-family="Arial, sans-serif" font-size="11">   vs. incandescent</text>
+  <text x="575" y="154" fill="${C.gray}" font-family="Arial, sans-serif" font-size="11">&#9679; Fully dimmable for light</text>
+  <text x="575" y="172" fill="${C.gray}" font-family="Arial, sans-serif" font-size="11">   management programs</text>
+  <text x="575" y="194" fill="${C.gray}" font-family="Arial, sans-serif" font-size="11">&#9679; 50,000+ hour bulb life</text>
+  <text x="575" y="216" fill="${C.gray}" font-family="Arial, sans-serif" font-size="11">&#9679; Payback: 12–24 months</text>
+  <text x="575" y="238" fill="${C.gray}" font-family="Arial, sans-serif" font-size="11">   in Canadian barn data</text>
+  <text x="575" y="258" fill="${C.green}" font-family="Arial, sans-serif" font-size="11" font-weight="bold">&#9679; No capital required for</text>
+  <text x="575" y="272" fill="${C.green}" font-family="Arial, sans-serif" font-size="11" font-weight="bold">   entry-level retrofits</text>
+
+  <!-- Bottom note -->
+  <rect x="20" y="312" width="760" height="30" rx="6" fill="${C.lightGold}" stroke="${C.gold}" stroke-width="1.5"/>
+  <text x="400" y="331" text-anchor="middle" fill="${C.darkBlue}" font-family="Arial, sans-serif" font-size="11">LED savings per cycle compound across every flock run. Source: Tabler et al. 2019 (MSU Ext. P2894); Hein 2025 (Canadian Poultry Magazine).</text>
+
+  ${caption(W, H, 'Figure 2.3  |  CPC Short Courses — Course 5: Sustainability in Poultry Farming')}
+</svg>`;
+}
+
+// ============================================================
+// FIGURE 3.2 — Covered vs Uncovered Litter Storage
+// ============================================================
+function fig3_2() {
+  const W = 800, H = 380;
+  return `<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}">
+  <rect width="${W}" height="${H}" fill="white"/>
+  ${titleBar(W, 'Litter Storage: Covered vs. Uncovered Pile')}
+
+  <!-- LEFT PANEL: UNCOVERED (bad) -->
+  <rect x="20" y="60" width="358" height="220" rx="8" fill="#FFEBEE" stroke="${C.red}" stroke-width="2"/>
+  <text x="199" y="82" text-anchor="middle" fill="${C.red}" font-family="Arial, sans-serif" font-size="13" font-weight="bold">&#10006;  UNCOVERED PILE</text>
+
+  <!-- Pile shape -->
+  <polygon points="80,210 199,110 318,210" fill="#C8B06A" stroke="#8B7030" stroke-width="2"/>
+  <!-- NH3 wavy lines -->
+  <path d="M 150,145 Q 145,130 155,115 Q 165,100 155,88" stroke="${C.orange}" stroke-width="2" fill="none" opacity="0.8"/>
+  <path d="M 199,130 Q 194,115 204,100 Q 214,85 204,72" stroke="${C.orange}" stroke-width="2" fill="none" opacity="0.8"/>
+  <path d="M 248,145 Q 243,130 253,115 Q 263,100 253,88" stroke="${C.orange}" stroke-width="2" fill="none" opacity="0.8"/>
+  <text x="199" y="68" text-anchor="middle" fill="${C.orange}" font-family="Arial, sans-serif" font-size="10" font-weight="bold">NH3 + Odor</text>
+  <!-- Fly dots -->
+  <text x="120" y="108" fill="${C.red}" font-family="Arial, sans-serif" font-size="14">&#x2022;</text>
+  <text x="270" y="102" fill="${C.red}" font-family="Arial, sans-serif" font-size="14">&#x2022;</text>
+  <text x="145" y="92" fill="${C.red}" font-family="Arial, sans-serif" font-size="14">&#x2022;</text>
+  <text x="199" y="210" text-anchor="middle" fill="${C.gray}" font-family="Arial, sans-serif" font-size="9">Uncovered litter pile</text>
+
+  <text x="199" y="238" text-anchor="middle" fill="${C.red}" font-family="Arial, sans-serif" font-size="11">Continuous NH3 loss</text>
+  <text x="199" y="255" text-anchor="middle" fill="${C.red}" font-family="Arial, sans-serif" font-size="11">Nitrogen value destroyed</text>
+  <text x="199" y="272" text-anchor="middle" fill="${C.red}" font-family="Arial, sans-serif" font-size="11">Fly breeding habitat</text>
+
+  <!-- RIGHT PANEL: COVERED (good) -->
+  <rect x="422" y="60" width="358" height="220" rx="8" fill="${C.lightGreen}" stroke="${C.green}" stroke-width="2"/>
+  <text x="601" y="82" text-anchor="middle" fill="${C.green}" font-family="Arial, sans-serif" font-size="13" font-weight="bold">&#10004;  COVERED / TARPED PILE</text>
+
+  <!-- Pile shape -->
+  <polygon points="482,210 601,120 720,210" fill="#C8B06A" stroke="#8B7030" stroke-width="2"/>
+  <!-- Tarp over pile -->
+  <polygon points="465,213 601,108 737,213" fill="none" stroke="${C.medBlue}" stroke-width="3" stroke-dasharray="8,4"/>
+  <text x="601" y="105" text-anchor="middle" fill="${C.medBlue}" font-family="Arial, sans-serif" font-size="10" font-weight="bold">Tarp / Cover</text>
+  <!-- Containment checkmark -->
+  <text x="601" y="160" text-anchor="middle" fill="${C.green}" font-family="Arial, sans-serif" font-size="28" font-weight="bold">&#10004;</text>
+  <text x="601" y="210" text-anchor="middle" fill="${C.gray}" font-family="Arial, sans-serif" font-size="9">Covered litter pile</text>
+
+  <text x="601" y="238" text-anchor="middle" fill="${C.green}" font-family="Arial, sans-serif" font-size="11">NH3 and odor contained</text>
+  <text x="601" y="255" text-anchor="middle" fill="${C.green}" font-family="Arial, sans-serif" font-size="11">Nitrogen value retained</text>
+  <text x="601" y="272" text-anchor="middle" fill="${C.green}" font-family="Arial, sans-serif" font-size="11">Fly habitat eliminated</text>
+
+  <!-- Bottom note -->
+  <rect x="20" y="298" width="760" height="44" rx="6" fill="${C.lightGold}" stroke="${C.gold}" stroke-width="1.5"/>
+  <text x="400" y="316" text-anchor="middle" fill="${C.darkBlue}" font-family="Arial, sans-serif" font-size="12" font-weight="bold">A covered pile reduces odor complaints, retains fertilizer value, and is easier to defend in a regulatory inspection.</text>
+  <text x="400" y="333" text-anchor="middle" fill="${C.gray}" font-family="Arial, sans-serif" font-size="11">Minimum setback: 15–30 m from any water body. Check provincial regulations for your region.</text>
+
+  ${caption(W, H, 'Figure 3.2  |  CPC Short Courses — Course 5: Sustainability in Poultry Farming')}
+</svg>`;
+}
+
+// ============================================================
+// FIGURE 4.2 — Litter Moisture: Dry vs. Wet Comparison
+// ============================================================
+function fig4_2() {
+  const W = 800, H = 380;
+  return `<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}">
+  <rect width="${W}" height="${H}" fill="white"/>
+  ${titleBar(W, 'Litter Condition: Target vs. Problem Moisture Level')}
+
+  <!-- LEFT: Good litter -->
+  <rect x="20" y="60" width="358" height="220" rx="8" fill="${C.lightGreen}" stroke="${C.green}" stroke-width="2"/>
+  <text x="199" y="82" text-anchor="middle" fill="${C.green}" font-family="Arial, sans-serif" font-size="14" font-weight="bold">TARGET  —  20–25% Moisture</text>
+
+  <!-- Litter texture (light, fluffy dots) -->
+  <rect x="60" y="100" width="278" height="90" rx="6" fill="#E8DCA0" stroke="#C0A840" stroke-width="1.5"/>
+  <text x="199" y="138" text-anchor="middle" fill="${C.darkBlue}" font-family="Arial, sans-serif" font-size="22" font-weight="bold">&#x2605; &#x2605; &#x2605; &#x2605; &#x2605;</text>
+  <text x="199" y="162" text-anchor="middle" fill="${C.gray}" font-family="Arial, sans-serif" font-size="11" font-style="italic">Dry · Friable · Fluffy · Light</text>
+  <text x="199" y="178" text-anchor="middle" fill="${C.gray}" font-family="Arial, sans-serif" font-size="10">Low ammonia  ·  Low caking risk</text>
+
+  <text x="199" y="218" text-anchor="middle" fill="${C.green}" font-family="Arial, sans-serif" font-size="11">&#10004; Birds walk and rest comfortably</text>
+  <text x="199" y="237" text-anchor="middle" fill="${C.green}" font-family="Arial, sans-serif" font-size="11">&#10004; Minimal footpad contact exposure</text>
+  <text x="199" y="256" text-anchor="middle" fill="${C.green}" font-family="Arial, sans-serif" font-size="11">&#10004; NH3 stays below 20 ppm</text>
+
+  <!-- RIGHT: Problem litter -->
+  <rect x="422" y="60" width="358" height="220" rx="8" fill="#FFEBEE" stroke="${C.red}" stroke-width="2"/>
+  <text x="601" y="82" text-anchor="middle" fill="${C.red}" font-family="Arial, sans-serif" font-size="14" font-weight="bold">PROBLEM  —  &gt;30% Moisture</text>
+
+  <!-- Litter texture (dark, caked) -->
+  <rect x="462" y="100" width="278" height="90" rx="6" fill="#6B5220" stroke="#3E3010" stroke-width="1.5"/>
+  <text x="601" y="142" text-anchor="middle" fill="#E0C080" font-family="Arial, sans-serif" font-size="22" font-weight="bold">&#x2716; &#x2716; &#x2716; &#x2716; &#x2716;</text>
+  <text x="601" y="163" text-anchor="middle" fill="#E0C080" font-family="Arial, sans-serif" font-size="11" font-style="italic">Wet · Compacted · Crusted</text>
+  <text x="601" y="178" text-anchor="middle" fill="#E0C080" font-family="Arial, sans-serif" font-size="10">High ammonia  ·  Caked surface</text>
+
+  <text x="601" y="218" text-anchor="middle" fill="${C.red}" font-family="Arial, sans-serif" font-size="11">&#10006; Footpad dermatitis developing</text>
+  <text x="601" y="237" text-anchor="middle" fill="${C.red}" font-family="Arial, sans-serif" font-size="11">&#10006; Breast blisters &amp; lesions rising</text>
+  <text x="601" y="256" text-anchor="middle" fill="${C.red}" font-family="Arial, sans-serif" font-size="11">&#10006; NH3 above 25 ppm possible</text>
+
+  <!-- Bottom note -->
+  <rect x="20" y="298" width="760" height="44" rx="6" fill="${C.lightGold}" stroke="${C.gold}" stroke-width="1.5"/>
+  <text x="400" y="316" text-anchor="middle" fill="${C.darkBlue}" font-family="Arial, sans-serif" font-size="12" font-weight="bold">Action: If litter feels wet underfoot at day 14, find the cause — ventilation, drinker leak, or enteric disease.</text>
+  <text x="400" y="333" text-anchor="middle" fill="${C.gray}" font-family="Arial, sans-serif" font-size="11">Litter moisture above 30% starts damaging footpads within days. By the time you see it at the plant, it has been a problem for weeks.</text>
+
+  ${caption(W, H, 'Figure 4.2  |  CPC Short Courses — Course 5: Sustainability in Poultry Farming')}
+</svg>`;
+}
+
+// ============================================================
+// FIGURE 4.3 — Footpad Dermatitis Scoring Guide
+// ============================================================
+function fig4_3() {
+  const W = 800, H = 380;
+  return `<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}">
+  <rect width="${W}" height="${H}" fill="white"/>
+  ${titleBar(W, 'Footpad Dermatitis Scoring — Welfare Quality Protocol')}
+
+  <!-- SCORE 0 -->
+  <rect x="20" y="60" width="232" height="224" rx="8" fill="${C.lightGreen}" stroke="${C.green}" stroke-width="2"/>
+  <text x="136" y="82" text-anchor="middle" fill="${C.green}" font-family="Arial, sans-serif" font-size="14" font-weight="bold">SCORE 0</text>
+  <text x="136" y="98" text-anchor="middle" fill="${C.green}" font-family="Arial, sans-serif" font-size="11">Healthy — No Lesion</text>
+  <!-- Footpad shape (oval, pink healthy) -->
+  <ellipse cx="136" cy="158" rx="60" ry="48" fill="#FFCCBC" stroke="#E64A19" stroke-width="2"/>
+  <!-- Toe outlines -->
+  <ellipse cx="90"  cy="118" rx="14" ry="10" fill="#FFCCBC" stroke="#E64A19" stroke-width="1.5"/>
+  <ellipse cx="136" cy="112" rx="14" ry="10" fill="#FFCCBC" stroke="#E64A19" stroke-width="1.5"/>
+  <ellipse cx="182" cy="118" rx="14" ry="10" fill="#FFCCBC" stroke="#E64A19" stroke-width="1.5"/>
+  <text x="136" y="162" text-anchor="middle" fill="${C.green}" font-family="Arial, sans-serif" font-size="28">&#10004;</text>
+  <text x="136" y="230" text-anchor="middle" fill="${C.gray}" font-family="Arial, sans-serif" font-size="11">Intact, pink surface</text>
+  <text x="136" y="248" text-anchor="middle" fill="${C.gray}" font-family="Arial, sans-serif" font-size="11">No discoloration</text>
+  <text x="136" y="268" text-anchor="middle" fill="${C.green}" font-family="Arial, sans-serif" font-size="11" font-weight="bold">Target for all birds</text>
+
+  <!-- SCORE 1 -->
+  <rect x="284" y="60" width="232" height="224" rx="8" fill="${C.lightAmber}" stroke="${C.amber}" stroke-width="2"/>
+  <text x="400" y="82" text-anchor="middle" fill="${C.orange}" font-family="Arial, sans-serif" font-size="14" font-weight="bold">SCORE 1</text>
+  <text x="400" y="98" text-anchor="middle" fill="${C.orange}" font-family="Arial, sans-serif" font-size="11">Mild — Small Lesion</text>
+  <!-- Footpad shape (mild lesion, centre discoloration) -->
+  <ellipse cx="400" cy="158" rx="60" ry="48" fill="#FFCCBC" stroke="#E64A19" stroke-width="2"/>
+  <ellipse cx="354" cy="118" rx="14" ry="10" fill="#FFCCBC" stroke="#E64A19" stroke-width="1.5"/>
+  <ellipse cx="400" cy="112" rx="14" ry="10" fill="#FFCCBC" stroke="#E64A19" stroke-width="1.5"/>
+  <ellipse cx="446" cy="118" rx="14" ry="10" fill="#FFCCBC" stroke="#E64A19" stroke-width="1.5"/>
+  <!-- Central mild lesion -->
+  <ellipse cx="400" cy="158" rx="18" ry="14" fill="#8B4513" opacity="0.5"/>
+  <text x="400" y="230" text-anchor="middle" fill="${C.gray}" font-family="Arial, sans-serif" font-size="11">Small central lesion</text>
+  <text x="400" y="248" text-anchor="middle" fill="${C.gray}" font-family="Arial, sans-serif" font-size="11">Dark discoloration &lt;25% pad</text>
+  <text x="400" y="268" text-anchor="middle" fill="${C.orange}" font-family="Arial, sans-serif" font-size="11" font-weight="bold">Early warning — check litter</text>
+
+  <!-- SCORE 2 -->
+  <rect x="548" y="60" width="232" height="224" rx="8" fill="#FFEBEE" stroke="${C.red}" stroke-width="2"/>
+  <text x="664" y="82" text-anchor="middle" fill="${C.red}" font-family="Arial, sans-serif" font-size="14" font-weight="bold">SCORE 2</text>
+  <text x="664" y="98" text-anchor="middle" fill="${C.red}" font-family="Arial, sans-serif" font-size="11">Severe — Large Lesion</text>
+  <!-- Footpad shape (severe, large dark crust) -->
+  <ellipse cx="664" cy="158" rx="60" ry="48" fill="#FFCCBC" stroke="#E64A19" stroke-width="2"/>
+  <ellipse cx="618" cy="118" rx="14" ry="10" fill="#FFCCBC" stroke="#E64A19" stroke-width="1.5"/>
+  <ellipse cx="664" cy="112" rx="14" ry="10" fill="#FFCCBC" stroke="#E64A19" stroke-width="1.5"/>
+  <ellipse cx="710" cy="118" rx="14" ry="10" fill="#FFCCBC" stroke="#E64A19" stroke-width="1.5"/>
+  <!-- Severe lesion (large dark crust >33%) -->
+  <ellipse cx="664" cy="155" rx="42" ry="35" fill="#3E1A00" opacity="0.75"/>
+  <text x="664" y="230" text-anchor="middle" fill="${C.gray}" font-family="Arial, sans-serif" font-size="11">Necrotic crust &gt;33% of pad</text>
+  <text x="664" y="248" text-anchor="middle" fill="${C.gray}" font-family="Arial, sans-serif" font-size="11">Dark, ulcerated surface</text>
+  <text x="664" y="268" text-anchor="middle" fill="${C.red}" font-family="Arial, sans-serif" font-size="11" font-weight="bold">Welfare violation — plant penalty</text>
+
+  <!-- Bottom note -->
+  <rect x="20" y="298" width="760" height="44" rx="6" fill="${C.lightGold}" stroke="${C.gold}" stroke-width="1.5"/>
+  <text x="400" y="316" text-anchor="middle" fill="${C.darkBlue}" font-family="Arial, sans-serif" font-size="12" font-weight="bold">Score 2 at the plant = litter was wet for 2–3 weeks during the grow-out. Early action prevents it.</text>
+  <text x="400" y="333" text-anchor="middle" fill="${C.gray}" font-family="Arial, sans-serif" font-size="11">Scoring protocol: Welfare Quality Assessment Protocol for Poultry, Welfare Quality Consortium, 2009.</text>
+
+  ${caption(W, H, 'Figure 4.3  |  CPC Short Courses — Course 5: Sustainability in Poultry Farming')}
 </svg>`;
 }
 
@@ -639,10 +996,15 @@ async function main() {
   const svgs = [
     { fn: fig1_1, file: 'fig1_1.png' },
     { fn: fig1_2, file: 'fig1_2.png' },
+    { fn: fig1_3, file: 'fig1_3.png' },
     { fn: fig2_1, file: 'fig2_1.png' },
+    { fn: fig2_2, file: 'fig2_2.png' },
+    { fn: fig2_3, file: 'fig2_3.png' },
     { fn: fig3_1, file: 'fig3_1.png' },
+    { fn: fig3_2, file: 'fig3_2.png' },
     { fn: fig4_1, file: 'fig4_1.png' },
-    { fn: fig5_1, file: 'fig5_1.png' },
+    { fn: fig4_2, file: 'fig4_2.png' },
+    { fn: fig4_3, file: 'fig4_3.png' },
     { fn: fig6_1, file: 'fig6_1.png' },
     { fn: fig7_1, file: 'fig7_1.png' },
   ];
