@@ -42,6 +42,11 @@ function figBuf(name) {
   return fs.existsSync(p) ? fs.readFileSync(p) : null;
 }
 
+function photoBuf(name) {
+  const p = path.join(OUT_DIR, name);
+  return fs.existsSync(p) ? fs.readFileSync(p) : null;
+}
+
 // ============================================================
 // COLORS
 // ============================================================
@@ -176,6 +181,81 @@ function image(buf, caption, widthIn = 5.8) {
       children: [new TextRun({ text: caption, italics: true, color: '555555', size: 20, font: 'Calibri' })],
       alignment: AlignmentType.CENTER,
       spacing:   { before: 60, after: 240 },
+    }),
+  ];
+}
+
+// Embedded JPEG photo + italic caption (naturalW/naturalH = pixel dims of source file)
+function photo(buf, caption, naturalW, naturalH, widthIn = 5.8) {
+  if (!buf) return [];
+  const dpi = 96;
+  let wpx = Math.round(widthIn * dpi);
+  let hpx = Math.round(wpx * naturalH / naturalW);
+  // Cap portrait images: never exceed 4.5 inches height
+  const maxH = Math.round(4.5 * dpi);
+  if (hpx > maxH) { hpx = maxH; wpx = Math.round(hpx * naturalW / naturalH); }
+  return [
+    new Paragraph({
+      children: [new ImageRun({ data: buf, transformation: { width: wpx, height: hpx }, type: 'jpg' })],
+      alignment: AlignmentType.CENTER,
+      spacing:   { before: 160, after: 0 },
+    }),
+    new Paragraph({
+      children: [new TextRun({ text: caption, italics: true, color: '555555', size: 20, font: 'Calibri' })],
+      alignment: AlignmentType.CENTER,
+      spacing:   { before: 60, after: 240 },
+    }),
+  ];
+}
+
+// Placeholder cell for photos not yet available — includes photo brief for CPC team
+function photoPlaceholder(label, brief, caption) {
+  return [
+    new Table({
+      width: { size: 100, type: WidthType.PERCENTAGE },
+      rows: [
+        new TableRow({
+          children: [
+            new TableCell({
+              children: [
+                new Paragraph({
+                  children: [new TextRun({ text: label, color: '595959', size: 22, font: 'Calibri', bold: true })],
+                  alignment: AlignmentType.CENTER,
+                  spacing: { before: convertInchesToTwip(0.25), after: 80 },
+                }),
+                new Paragraph({
+                  children: [new TextRun({ text: brief, color: '888888', size: 20, font: 'Calibri', italics: true })],
+                  alignment: AlignmentType.CENTER,
+                  spacing: { before: 0, after: 80 },
+                }),
+                new Paragraph({
+                  children: [new TextRun({ text: 'Photograph to be supplied by CPC team.', color: 'BBBBBB', size: 18, font: 'Calibri', italics: true })],
+                  alignment: AlignmentType.CENTER,
+                  spacing: { before: 0, after: convertInchesToTwip(0.25) },
+                }),
+              ],
+              shading: { fill: 'F2F2F2', type: ShadingType.CLEAR },
+              borders: {
+                top:    { style: BorderStyle.SINGLE, size: 4, color: 'CCCCCC' },
+                bottom: { style: BorderStyle.SINGLE, size: 4, color: 'CCCCCC' },
+                left:   { style: BorderStyle.SINGLE, size: 4, color: 'CCCCCC' },
+                right:  { style: BorderStyle.SINGLE, size: 4, color: 'CCCCCC' },
+              },
+              margins: {
+                top:    convertInchesToTwip(0.2),
+                bottom: convertInchesToTwip(0.2),
+                left:   convertInchesToTwip(0.3),
+                right:  convertInchesToTwip(0.3),
+              },
+            }),
+          ],
+        }),
+      ],
+    }),
+    new Paragraph({
+      children: [new TextRun({ text: caption, italics: true, color: '555555', size: 20, font: 'Calibri' })],
+      alignment: AlignmentType.CENTER,
+      spacing: { before: 60, after: 240 },
     }),
   ];
 }
@@ -371,12 +451,18 @@ function buildSection1() {
       h2('1.1  Understanding the Environmental Footprint'),
       para('Global livestock agriculture contributes roughly 14.5% of all human-caused greenhouse gas emissions, and the poultry sector accounts for about 8% of that total [2]. Per kilogram of protein produced, broilers compare well against beef, pork, and lamb. A life cycle assessment of UK broiler production found that poultry generates considerably less greenhouse gas per kilogram of product than most red meat species [13]. But comparing favorably to beef is not the same as having no footprint, especially at Canadian production volumes.'),
       para('The environmental concerns in commercial poultry farming are not complicated or hard to find. They follow the inputs and the outputs. Feed, water, and energy go in. Meat, manure, ammonia, and wastewater come out. How well you manage those flows determines whether your farm is a net contributor to the problems or part of the solution [1].'),
+      ...photo(photoBuf('photo1_1.jpg'), 'Photo 1.1: A commercial broiler barn housing birds raised for meat in Canada. Large-scale controlled-environment housing allows year-round production, but efficiently managing inputs and outputs at this scale is the core challenge of sustainable poultry farming. Photo: Chicken Farmers of Canada, CC BY 2.0.', 1024, 731),
       ...image(figBuf('fig1_1.png'), 'Figure 1.1: Environmental footprint of a commercial broiler farm. Major inputs (feed, water, energy, chicks) flow through the production system; outputs include saleable meat, manure with fertilizer value, ammonia and GHG emissions, and wastewater that requires management to prevent contamination.'),
 
       h2('1.2  Water: Use and Contamination Risk'),
       para('Water is used in two ways on a poultry farm: the birds drink it, and the farm uses it for cleaning and cooling. Broilers consume roughly 1.7 to 2.0 times their feed intake by weight in water, and that ratio climbs sharply in hot weather [7]. A 20,000-bird broiler barn at peak consumption can use tens of thousands of liters per day. That is not a small number, and in regions where groundwater or municipal water costs are rising, it matters to the bottom line.'),
       para('The bigger risk, though, is what happens to the water that leaves the farm. Runoff from litter storage areas, uncovered manure piles, and land application sites can carry nitrogen, phosphorus, and pathogens into nearby streams, ditches, and groundwater [1]. Phosphorus from over-applied litter does not flush out of soil quickly. It accumulates, and once it reaches a waterway it drives algal growth that depletes oxygen and kills fish. Many provincial environmental regulations now require buffer zones, setback distances from water courses, and nutrient management planning for exactly this reason.'),
       para('Leaking drinker lines inside the barn are also a water management problem. A single loose nipple connection can drip hundreds of liters per day without anyone noticing, and wet litter is one of the most common and expensive problems in broiler production. The connection between poor water management inside the barn and poor litter quality outside is direct [7,12].'),
+      ...photoPlaceholder(
+        'Photo 1.2',
+        'Close-up of a leaking nipple drinker showing a constant water drip and the wet, darkened litter patch forming directly beneath it. Shot from ground level inside the barn, showing the drinker connection point and at least 30 cm of surrounding litter for context. Ref: Ross Broiler Management Handbook 2025, water management section; Poultry Signals pp. 42-45.',
+        'Photo 1.2: A leaking nipple drinker connection creating a wet patch in the litter beneath it. A single loose fitting can drip continuously without triggering an alarm, saturating a patch of litter that raises local ammonia levels and footpad risk for every bird that walks through it [7,12].'
+      ),
 
       h2('1.3  Soil: Nutrients, Runoff, and Land Management'),
       para('Poultry manure is one of the most nitrogen- and phosphorus-dense organic materials available to Canadian crop farmers [3]. Handled well, it is a genuine asset. A typical broiler litter analysis will show 2.5 to 4.0 percent nitrogen, 1.5 to 3.0 percent phosphorus pentoxide, and similar levels of potassium on a dry-weight basis [3]. Applied at the right rate to the right fields at the right time, litter reduces fertilizer costs, improves soil organic matter, and builds long-term soil health.'),
@@ -413,6 +499,11 @@ function buildSection2() {
       bullet([{ text: 'Phase feeding: ', bold: true }, { text: 'Matching feed nutrient density to the growth phase of the flock reduces the overfeeding of expensive amino acids and phosphorus in later grow-out stages. Most integrators now provide phase-feeding schedules; follow them [5].' }]),
       bullet([{ text: 'Feed storage integrity: ', bold: true }, { text: 'Moisture intrusion into bins causes caking, mold, and mycotoxin formation that reduces feed intake and bird performance. Inspect bin seals and aeration systems between cycles.' }]),
       para('Tracking feed delivery dates and tonnage against performance records gives you a clear picture of where your FCR sits relative to flock targets. If the number is drifting, find the source before the next placement.'),
+      ...photoPlaceholder(
+        'Photo 2.1',
+        'Side-by-side comparison: feeder pan set too low (left) with feed visibly spilling onto litter; and feeder pan set correctly at shoulder height (right) with no spill. Both shots from the same height above litter. Birds of similar age (approx. day 21) present in both frames. Ref: Ross Broiler Management Handbook 2025, feeder management; Poultry Signals pp. 22-25.',
+        'Photo 2.1: Feeder height comparison. A feeder set too low (left) allows birds to scratch feed out, one of the most common and correctable feed waste points in a broiler barn. A feeder set to shoulder height (right) reduces spill significantly with no capital cost. Feeder height should be checked and adjusted weekly [4,11].'
+      ),
 
       h2('2.2  Water-Saving Practices'),
       para('Water efficiency in a poultry barn is mostly about drinker management and leak detection. Nipple drinker systems are more water-efficient than bell drinkers when maintained correctly, but a nipple system with poor pressure regulation or worn seals can leak just as badly as an open-water system [7].'),
@@ -429,6 +520,11 @@ function buildSection2() {
       bullet([{ text: 'Lighting: ', bold: true }, { text: 'LED lighting uses 50 to 80 percent less energy than incandescent bulbs for the same light output, and poultry-grade LED systems are dimmable and long-lasting. Payback on a full barn conversion has been documented in Canadian operations at 12 to 24 months [15,17].' }]),
       bullet([{ text: 'Barn insulation: ', bold: true }, { text: 'Insulation gaps and deteriorated vapor barriers are common in older barns. Infrared thermography between flocks can identify where heat is escaping. Sealing and re-insulating concentrated problem areas is far cheaper than continuously compensating with higher heater output.' }]),
       bullet([{ text: 'Variable-speed fans: ', bold: true }, { text: 'Fixed-speed fans run at full power or not at all. Variable-speed fan controllers reduce energy consumption during mild weather when full ventilation capacity is not needed. The energy savings over a full year are significant in climates with mild spring and fall seasons.' }]),
+      ...photoPlaceholder(
+        'Photo 2.2',
+        'Interior shot of a commercial broiler barn showing LED tube fixtures mounted above the birds, ideally with a dimmable LED controller unit visible. Shoot at mid-barn level with the full length of the lighting system in the frame. Compare before/after shots if a barn upgrade has been documented. Ref: Tabler et al. 2019 MSU Extension P2894 (has LED retrofit photos); Canadian Poultry Magazine March 2025.',
+        'Photo 2.2: LED tube lighting installed in a commercial broiler barn. LED systems use 50 to 80 percent less energy than incandescent alternatives for the same delivered light level, are dimmable to support light management programs, and have been documented to pay back the conversion cost within 12 to 24 months in Canadian operations [15,17].'
+      ),
       ...image(figBuf('fig2_1.png'), 'Figure 2.1: Resource efficiency in a commercial broiler barn. For each of the three major inputs (feed, water, energy), the diagram contrasts common waste points against actionable efficiency measures. Every resource saved per kilogram of gain is a direct cost reduction.'),
       pageBreak(),
     ],
@@ -462,6 +558,11 @@ function buildSection3() {
       bullet([{ text: 'Litter amendments: ', bold: true }, { text: 'Products such as alum (aluminum sulfate) and other acidifying amendments reduce ammonia volatilization in the barn by lowering litter pH, and they reduce phosphorus solubility in applied litter. Reduced barn ammonia translates directly to better air quality, drier litter, and better bird performance [8,12].' }]),
       bullet([{ text: 'Buffer zones: ', bold: true }, { text: 'Maintain setback distances from water courses, drainage tiles, wells, and property lines as required by provincial environmental regulations. These are not optional. Violations carry financial penalties and can restrict future operations.' }]),
       bullet([{ text: 'Inform neighbors: ', bold: true }, { text: 'Before a major land application event, let nearby residences know in advance. It sounds simple, but it prevents most of the complaints that escalate into regulatory inspections.' }]),
+      ...photoPlaceholder(
+        'Photo 3.1',
+        'Two-frame comparison: left frame shows an uncovered litter pile with visible steam or ammonia haze and fly activity; right frame shows the same or similar volume of litter under a heavy-duty polyethylene tarp, secured at the edges. Shoot both frames from the same distance. Include a scale reference (person standing adjacent or a measurement marker). Ref: OMAFRA Nutrient Management Act guidance; Kelleher et al. 2002 (Bioresour Technol 83:27-36).',
+        'Photo 3.1: Litter storage comparison. An uncovered pile (left) volatilizes ammonia continuously, loses nitrogen value, and attracts flies. A tarped or covered pile (right) retains nutrients, reduces odor substantially, and is far easier to defend in a neighbor complaint or regulatory inspection [3].'
+      ),
 
       h2('3.3  Safe Storage and Handling'),
       para('Litter that is stored correctly is a managed resource. Litter that is left in poor conditions becomes a source of pathogen spread, fly breeding, and nutrient runoff. The basics of safe storage are not complicated, but they need to be built into your routine between flocks [1,3]:'),
@@ -489,6 +590,7 @@ function buildSection4() {
 
       h2('4.1  Healthy Birds as a Sustainability Pillar'),
       para('Mortality and condemnation rates are the most direct signal of how well the flock is being managed. A bird condemned at the plant was raised to slaughter weight but cannot be sold. That is the worst possible outcome from a resource-use standpoint. Mortality above 3 to 4 percent tells you something in the management chain is not working, whether that is biosecurity, nutrition, water quality, ventilation, or disease pressure [4,6].'),
+      ...photo(photoBuf('photo4_1.jpg'), 'Photo 4.1: Day-old broiler chicks arriving at a commercial operation. Chick quality at placement is the starting point for flock health. Good brooder management in the first 72 hours sets the foundation for immune development and starter performance for the entire grow-out [4,6]. Photo: USDA/Joe Valbuena, public domain.', 431, 640, 3.5),
       para('Every treatment you can avoid through better management is a cost saved and a compliance risk not taken on. Canada has been progressively tightening restrictions on medically important antibiotics in food animals, and that direction is not changing [10]. Farms that have built health into daily management rather than relying on treatment to fix problems are already ahead of where the regulations are heading. The ones that have not started that shift are going to face it under more pressure and with less time to adjust.'),
       para('Good biosecurity is the foundation. It keeps new pathogens out of the barn and prevents cross-contamination between flocks and between neighboring operations. It does not require expensive equipment. It requires consistent habits: dedicated footwear, controlled access, downtime between farm visits, and a dead-bird disposal system that does not create a pathogen reservoir near the barn [6].'),
 
@@ -506,6 +608,11 @@ function buildSection4() {
       bullet('Running the barn slightly warmer to increase the moisture-carrying capacity of the air'),
       bullet('Fixing drinker leaks immediately when discovered'),
       bullet('Using a litter amendment to slow moisture absorption and ammonia release during high-risk periods [12]'),
+      ...photoPlaceholder(
+        'Photo 4.2',
+        'Close-up of wet, caked litter in a broiler barn. Ideal frame: one-third dry, fluffy litter on the left and two-thirds wet, compacted, crusted litter on the right (ideally from the area around a drinker line). Shoot from standing height and from floor level. Include a moisture meter probe in the wet litter reading above 30% if available. Ref: Miles DM et al. 2011 (Poult Sci 90:893-900); Poultry Signals pp. 28-33; Ross Broiler Management Handbook 2025 litter section.',
+        'Photo 4.2: Wet, compacted litter in a broiler barn. Litter above 30% moisture causes footpad dermatitis, increases barn ammonia, and raises disease pressure. This is what the "What drives litter moisture up" list looks like in practice. Prevention — through ventilation management, drinker leak control, and litter amendments — is far cheaper than the performance and welfare costs that follow [12].'
+      ),
 
       h2('4.3  Reducing Flock Stress'),
       para('Chronic stress suppresses immune function and increases susceptibility to respiratory and enteric disease. Acute stress events, catching, feed withdrawal, temperature spikes, and sudden lighting changes, can trigger mortality spikes and lasting performance depression [6]. Most stress in a commercial flock comes from management decisions, and most of it is preventable.'),
@@ -513,6 +620,11 @@ function buildSection4() {
       bullet([{ text: 'Light management: ', bold: true }, { text: 'Gradual dimming programs at the end of the day reduce panic and pile-up injuries. Dark hours allow birds to rest, which is important for both welfare and growth efficiency. Sudden lighting changes, especially during catching, cause injuries that reduce carcass quality [4].' }]),
       bullet([{ text: 'Feed and water access: ', bold: true }, { text: 'Interruptions to feed or water access, even for a few hours, are stressful and cause compensatory feeding responses that worsen FCR. Check feeders and drinkers every morning, not just when you think there might be a problem.' }]),
       bullet([{ text: 'Temperature management: ', bold: true }, { text: 'Birds at the wrong temperature will show you immediately: panting and wing spreading indicate heat stress, huddling near the brooders indicates cold. Both responses consume energy that should be going into growth, and prolonged thermal stress increases mortality [4,9].' }]),
+      ...photoPlaceholder(
+        'Photo 4.3',
+        'Footpad dermatitis scoring comparison: three feet laid flat on a clean white surface — Score 0 (healthy, intact pink footpad), Score 1 (mild discoloration, small superficial lesion less than 25% of pad), Score 2 (severe — dark necrotic crust covering more than one-third of the footpad). Same camera angle and lighting for all three. Reference: Welfare Quality Assessment Protocol for Poultry (Welfare Quality Consortium, 2009); NFACC Code of Practice for the Care and Handling of Chickens, 2016.',
+        'Photo 4.3: Footpad dermatitis scoring in broilers. Score 0 (left) is healthy tissue. Score 2 (right) indicates chronic wet litter exposure — the birds have been walking on wet, high-ammonia litter for days to weeks. Severe footpad scoring at the plant reduces carcass value and is a direct signal of a litter management problem that was present throughout the grow-out [6,12].'
+      ),
       ...image(figBuf('fig4_1.png'), 'Figure 4.1: Litter moisture cause-and-effect chain. Poor ventilation, drinker leaks, enteric disease, and high stocking density drive litter moisture above 30%. The resulting welfare consequences include footpad dermatitis, breast blisters, elevated ammonia, increased disease pressure, and performance loss. Target: 20 to 25% litter moisture throughout the grow-out.'),
       pageBreak(),
     ],
@@ -559,7 +671,7 @@ function buildSection5() {
       h3('Biogas (Anaerobic Digestion)'),
       para('Anaerobic digestion converts organic material, including poultry litter and mortalities, into biogas (primarily methane) that can be used for heating and electricity generation, and a residual digestate that can be applied to land as a fertilizer [3,14]. The technology is proven, and several Canadian farm operations have installed biogas systems successfully.'),
       para('The economics of biogas are more complex than solar. Capital costs are higher, maintenance requirements are more demanding, and the system works best with consistent manure volumes. For individual operations, biogas is most feasible at larger scales or in consortium arrangements where multiple farms share a facility and spread the capital cost [3,14]. Before pursuing biogas, get a detailed feasibility study that includes your manure volume, moisture content, available feedstocks, and local energy prices.'),
-      ...image(figBuf('fig5_1.png'), 'Figure 5.1: Renewable energy options for commercial poultry farms. Solar PV panels on barn roofs generate electricity for barn use and grid export through provincial net metering programs. Anaerobic digestion of poultry litter produces biogas for heat and power generation, and a nutrient-rich digestate for land application. Both technologies are eligible for federal and provincial grant support.'),
+      ...photo(photoBuf('photo5_1.jpg'), 'Photo 5.1: Solar photovoltaic panels installed on a farm building roof. South-facing barn roofs with adequate structural load capacity are well-suited for commercial solar installations. Under provincial net metering programs, surplus electricity generated on the farm is credited against the hydro bill, and the federal Agricultural Clean Technology Program covers up to 50% of eligible project costs [18,19]. Photo: Robin Stott / geograph.org.uk, CC BY-SA 2.0.', 640, 427),
       pageBreak(),
     ],
   };
