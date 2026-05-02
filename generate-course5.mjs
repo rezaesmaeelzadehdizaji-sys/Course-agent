@@ -320,22 +320,9 @@ function buildCoverSection() {
 }
 
 // ============================================================
-// TABLE OF CONTENTS
-// ============================================================
-function buildTocSection() {
-  return {
-    properties: { page: { margin: pageMargin } },
-    headers: { default: buildHeader() },
-    footers: { default: buildFooter() },
-    children: [
-      h1('Table of Contents'),
-      new TableOfContents('Table of Contents', { headingStyleRange: '1-3' }),
-    ],
-  };
-}
-
-// ============================================================
-// INTRODUCTION
+// TOC + INTRODUCTION (merged into one section to eliminate the
+// blank page that the section-break paragraph was producing
+// when the TOC content nearly filled page 2)
 // ============================================================
 function buildIntroSection() {
   return {
@@ -343,21 +330,27 @@ function buildIntroSection() {
     headers: { default: buildHeader() },
     footers: { default: buildFooter() },
     children: [
+      // --- TOC page ---
+      h1('Table of Contents'),
+      new TableOfContents('Table of Contents', { headingStyleRange: '1-3' }),
+      pageBreak(),
+
+      // --- Introduction ---
       h1('Introduction'),
-      para('Sustainability in poultry farming is not a program you buy or a certification you hang on the wall. It is the way you run the operation every day. It means raising birds in a way that protects the land, keeps the flock healthy, and keeps the farm profitable not just this cycle, but ten and twenty years from now. Demand for poultry is rising, feed costs are climbing, and the pressure to manage waste and protect water and air is only going to increase [1,2]. The farmers who understand how to get more out of every bag of feed, every liter of water, and every kilowatt of electricity are the ones who will still be farming when all of this gets harder.'),
-      para('That is what this course is about. Not expensive technology or complicated programs. Practical, low-cost decisions that most farmers can act on right now. Some of them will save money directly, by cutting feed waste or reducing your heating bill. Some will protect the farm from regulatory or community problems down the road. And some will help you build the kind of operation that is easier to hand off to the next generation or to scale up when the opportunity comes.'),
-      para('By the end of this course, you will be able to look at your own barn, your own records, and your own numbers and identify where the biggest gaps are. Then you will know exactly what to do about them.'),
+      para('Sustainability in poultry farming is not a program you buy or a certification you hang on the wall. It is the way you run the operation every day. It means raising birds in a way that protects the land, keeps the flock healthy, and keeps the farm profitable not just this cycle, but ten and twenty years from now. Demand for poultry is rising, feed costs are climbing, and the pressure to manage waste and protect water and air is only going to increase [1,2]. The farmers who get more out of every bag of feed, every liter of water, and every kilowatt of electricity are the ones who will still be farming when all of this gets harder.'),
+      para('This course covers practical, low-cost decisions that most farmers can act on right now. Some save money directly by cutting feed waste or trimming the heating bill. Some protect the farm from regulatory or community problems down the road. And some help you build the kind of operation that is easier to hand off to the next generation or to grow when the time is right.'),
+      para('By the end of the course, you will be able to walk through your own barn, look at your own records and numbers, and see exactly where the gaps are. Then you will know what to do about them.'),
       h2('Learning Objectives'),
       para('By completing this course, you will be able to:'),
-      bullet('Understand the meaning of sustainability and why it is important for the long-term success of poultry farming.'),
+      bullet('Explain what sustainability means for a commercial poultry farm and why it matters for long-term viability.'),
       bullet('Identify sustainable farming practices that reduce waste, save money, and protect the environment.'),
-      bullet('Recognize the impact of poultry production on soil, water, air, and local communities.'),
+      bullet('Describe the impact of poultry production on soil, water, air, and local communities.'),
       bullet('Use resources more efficiently, including feed, water, energy, and housing materials.'),
       bullet('Apply proper manure management techniques to improve soil health and reduce pollution.'),
-      bullet('Adopt healthier flock management practices that support animal welfare and reduce losses.'),
-      bullet('Explore renewable energy options, such as solar or biogas, suitable for a poultry farm.'),
-      bullet('Evaluate your own farm operations and identify simple changes to improve sustainability.'),
-      bullet('Understand the benefits of sustainability, including lower costs, higher productivity, and better market acceptance.'),
+      bullet('Adopt flock management practices that support animal welfare and reduce preventable losses.'),
+      bullet('Evaluate on-farm renewable energy options, including solar and biogas, for practical fit.'),
+      bullet('Assess your own farm operation and identify specific, actionable improvements.'),
+      bullet('Explain the financial benefits of sustainable management: lower costs, better performance, and stronger market position.'),
       pageBreak(),
     ],
   };
@@ -373,11 +366,11 @@ function buildSection1() {
     footers: { default: buildFooter() },
     children: [
       h1('Section 1: Environmental Impact of Poultry Farming'),
-      para('Commercial poultry production is one of the most efficient ways to convert plant-based feed into high-quality animal protein. The feed-conversion numbers for broilers are the envy of the red-meat sector [4,5]. But the scale of the industry means that even small inefficiencies, at a flock level, add up to significant environmental pressure when you multiply them across millions of birds. Understanding where that pressure comes from is the first step toward managing it [1,2].'),
+      para('Broilers are one of the most feed-efficient animals in commercial production, and that efficiency matters for the environment as much as it does for the bottom line [4,5]. But the scale of the Canadian poultry sector means that even small inefficiencies add up fast when you multiply them across millions of birds. The pressure to use resources well and manage what comes out of the barn responsibly is real, and it is growing [1,2].'),
 
       h2('1.1  Understanding the Environmental Footprint'),
-      para('Global livestock agriculture contributes roughly 14.5% of all human-caused greenhouse gas emissions, and the poultry sector accounts for about 8% of that total [2]. On a per-kilogram-of-protein basis, poultry compares well against beef, pork, and lamb. A life cycle assessment of broiler production in the United Kingdom found that broilers produce considerably less greenhouse gas per kilogram of product than most red meat species [13]. But comparing favorably to beef does not mean the footprint is negligible, especially when total Canadian production volumes are factored in.'),
-      para('The main environmental concerns in commercial poultry farming are not exotic or hard to identify. They come down to three things: what goes into the birds (feed, water, energy), what comes out (manure, ammonia, wastewater), and how both sides of that equation interact with the land, water, and air around your farm [1].'),
+      para('Global livestock agriculture contributes roughly 14.5% of all human-caused greenhouse gas emissions, and the poultry sector accounts for about 8% of that total [2]. Per kilogram of protein produced, broilers compare well against beef, pork, and lamb. A life cycle assessment of UK broiler production found that poultry generates considerably less greenhouse gas per kilogram of product than most red meat species [13]. But comparing favorably to beef is not the same as having no footprint, especially at Canadian production volumes.'),
+      para('The environmental concerns in commercial poultry farming are not complicated or hard to find. They follow the inputs and the outputs. Feed, water, and energy go in. Meat, manure, ammonia, and wastewater come out. How well you manage those flows determines whether your farm is a net contributor to the problems or part of the solution [1].'),
       ...image(figBuf('fig1_1.png'), 'Figure 1.1: Environmental footprint of a commercial broiler farm. Major inputs (feed, water, energy, chicks) flow through the production system; outputs include saleable meat, manure with fertilizer value, ammonia and GHG emissions, and wastewater that requires management to prevent contamination.'),
 
       h2('1.2  Water: Use and Contamination Risk'),
@@ -409,7 +402,7 @@ function buildSection2() {
     footers: { default: buildFooter() },
     children: [
       h1('Section 2: Efficient Use of Resources'),
-      para('Resource efficiency and sustainability are the same thing from a financial perspective. Every kilogram of feed that does not become bird weight is a direct financial loss. Every liter of water that leaks before a bird drinks it is wasted input cost. Every hour your heaters run longer than needed because cold air is infiltrating through a gap in the barn wall is money you paid for nothing. Improving resource efficiency is not an environmental gesture. It is the core of a profitable operation [4,5].'),
+      para('On the farm, efficiency and sustainability are the same thing. Every kilogram of feed that does not turn into bird weight is money out the door. Every liter of water that leaks before a bird drinks it is a cost for nothing. Every hour your heaters run longer than needed because of a gap in the wall is cash you paid and got no return on. These are not abstract environmental metrics. They are line items that show up on your settlement statement every cycle [4,5].'),
 
       h2('2.1  Reducing Feed Waste'),
       para('Feed represents 60 to 70 percent of the total cost of broiler production [5]. That single number explains why feed efficiency is the most watched metric in the industry, and why even small improvements in feed conversion ratio (FCR) show up directly in profitability. A 0.1-point improvement in FCR on a 20,000-bird barn running at good feed prices represents a meaningful reduction in cost per kilogram of gain.'),
@@ -433,7 +426,7 @@ function buildSection2() {
       para('Heating and ventilation together make up the largest share of energy costs in a broiler operation, and both have significant room for efficiency improvement without major capital expenditure [9].'),
       bullet([{ text: 'Brooder management: ', bold: true }, { text: 'Pre-heat the barn and bring floor temperature to target before chick arrival. A barn that is too cold on day one costs more to heat through the whole grow-out because early chilling suppresses immune development and starter performance [4].' }]),
       bullet([{ text: 'Minimum ventilation programs: ', bold: true }, { text: 'In cold weather, minimum ventilation is not optional. It removes moisture that condenses in litter and insulation, protects air quality for the birds, and prevents ammonia accumulation. Cutting ventilation to save heat almost always costs more in wet litter management and performance losses than it saves in gas [9].' }]),
-      bullet([{ text: 'Lighting: ', bold: true }, { text: 'LED lighting draws 50 to 80 percent less power than incandescent bulbs for the same lux output, and modern LED systems designed for poultry are dimmable and last several years without replacement. Payback on a full LED conversion is typically within a few production cycles [NEEDS SOURCE].' }]),
+      bullet([{ text: 'Lighting: ', bold: true }, { text: 'LED lighting uses 50 to 80 percent less energy than incandescent bulbs for the same light output, and poultry-grade LED systems are dimmable and long-lasting. Payback on a full barn conversion has been documented in Canadian operations at 12 to 24 months [15,17].' }]),
       bullet([{ text: 'Barn insulation: ', bold: true }, { text: 'Insulation gaps and deteriorated vapor barriers are common in older barns. Infrared thermography between flocks can identify where heat is escaping. Sealing and re-insulating concentrated problem areas is far cheaper than continuously compensating with higher heater output.' }]),
       bullet([{ text: 'Variable-speed fans: ', bold: true }, { text: 'Fixed-speed fans run at full power or not at all. Variable-speed fan controllers reduce energy consumption during mild weather when full ventilation capacity is not needed. The energy savings over a full year are significant in climates with mild spring and fall seasons.' }]),
       ...image(figBuf('fig2_1.png'), 'Figure 2.1: Resource efficiency in a commercial broiler barn. For each of the three major inputs (feed, water, energy), the diagram contrasts common waste points against actionable efficiency measures. Every resource saved per kilogram of gain is a direct cost reduction.'),
@@ -492,11 +485,11 @@ function buildSection4() {
     footers: { default: buildFooter() },
     children: [
       h1('Section 4: Animal Welfare and Flock Health'),
-      para('A sick bird is the least sustainable thing on a poultry farm. It consumes feed and water without converting them efficiently, it may require medication that costs money and limits market options, and if it dies it represents a total input loss. Welfare and sustainability are not separate agendas. They point toward the same management decisions [6,11].'),
+      para('A sick bird is the most expensive animal on your farm. It eats feed and drinks water but converts neither into what you need. If it requires medication, that is a real cost. If it dies, that is a total loss of every input you put in since placement. Good welfare management and sound production management are not two separate tracks. On a well-run farm, they are the same decisions, made in the same morning walk [6,11].'),
 
       h2('4.1  Healthy Birds as a Sustainability Pillar'),
-      para('In a commercial broiler barn, mortality and condemnation rates are the most direct measures of how well the flock is being managed. Condemnations at the plant represent birds that were raised to slaughter weight but could not be sold. Mortality over about 3 to 4 percent is a signal that something in the management chain needs attention, whether that is biosecurity, nutrition, water quality, ventilation, or disease pressure [4,6].'),
-      para('Preventive health management reduces the need for antibiotics, which matters increasingly because antimicrobial resistance (AMR) is changing the regulatory environment for livestock production. Canada has progressively restricted medically important antibiotic use in food animals, and those restrictions will continue to tighten [10]. Farms that have reduced antibiotic dependence through better management are already better positioned for what is coming. The farms that have not will face compliance costs and potential market access restrictions that are avoidable if the underlying management issues are addressed now.'),
+      para('Mortality and condemnation rates are the most direct signal of how well the flock is being managed. A bird condemned at the plant was raised to slaughter weight but cannot be sold. That is the worst possible outcome from a resource-use standpoint. Mortality above 3 to 4 percent tells you something in the management chain is not working, whether that is biosecurity, nutrition, water quality, ventilation, or disease pressure [4,6].'),
+      para('Every treatment you can avoid through better management is a cost saved and a compliance risk not taken on. Canada has been progressively tightening restrictions on medically important antibiotics in food animals, and that direction is not changing [10]. Farms that have built health into daily management rather than relying on treatment to fix problems are already ahead of where the regulations are heading. The ones that have not started that shift are going to face it under more pressure and with less time to adjust.'),
       para('Good biosecurity is the foundation. It keeps new pathogens out of the barn and prevents cross-contamination between flocks and between neighboring operations. It does not require expensive equipment. It requires consistent habits: dedicated footwear, controlled access, downtime between farm visits, and a dead-bird disposal system that does not create a pathogen reservoir near the barn [6].'),
 
       h2('4.2  Housing and Ventilation'),
@@ -536,7 +529,7 @@ function buildSection5() {
     footers: { default: buildFooter() },
     children: [
       h1('Section 5: Low-Cost Sustainable Solutions'),
-      para('Not every sustainable improvement requires a capital investment. The highest-return changes on most poultry farms are management changes, not equipment purchases. The ones that do require some investment, LED lighting, fan controllers, and litter amendments, tend to pay back within a small number of production cycles. The bigger-ticket options, solar panels and biogas systems, take longer but have become far more accessible as equipment costs have come down and provincial grant programs have expanded.'),
+      para('The biggest gains in sustainability on most farms come from changing how you manage things, not from buying new equipment. The management changes cost nothing or close to it, and most of them improve production performance at the same time. The modest investments, LED lighting, fan speed controllers, and litter amendments, pay back quickly [15,17]. The larger capital options, solar and biogas, take longer but have become genuinely accessible for Canadian farms as equipment costs have fallen and federal grant programs have expanded [18,19].'),
 
       h2('5.1  Composting and Reuse of Materials'),
       para('Composting is the most accessible and immediate sustainability tool available to poultry farmers, and it applies to both litter and mortalities [3]. Done correctly, it eliminates pathogens, reduces odor and volume, and produces a stable fertilizer product that is easier to spread and more predictable in nutrient release than raw litter.'),
@@ -549,20 +542,20 @@ function buildSection5() {
 
       h2('5.2  Natural Light and Airflow'),
       para('In established barns, making use of natural light and passive airflow is limited by the existing design. Retrofit options include:'),
-      bullet([{ text: 'Translucent ridge panels: ', bold: true }, { text: 'Where the barn design allows, polycarbonate or fiberglass translucent panels installed at the ridge or on the south side of the roof reduce daytime lighting requirements during high-light months. This needs to be balanced against summer heat gain [NEEDS SOURCE].' }]),
+      bullet([{ text: 'Translucent ridge panels: ', bold: true }, { text: 'Where the barn design allows, polycarbonate or fiberglass translucent panels installed at the ridge or on the south side of the roof can reduce daytime artificial lighting requirements during high-light months. This needs to be balanced against the potential for summer heat gain through the panel area.' }]),
       bullet([{ text: 'Natural ventilation supplementation: ', bold: true }, { text: 'In mild weather, carefully managed inlet door opening can reduce fan run time. This only works in well-designed, appropriately insulated barns and requires close monitoring of temperature, humidity, and litter condition.' }]),
       para('In Canada\'s climate, full reliance on natural ventilation for commercial broiler production is not practical or appropriate. Mechanical systems remain essential for bird welfare compliance and performance. Natural ventilation strategies should be treated as supplemental tools that reduce mechanical ventilation costs during favorable conditions, not as replacements [6].'),
       para('For new construction, building orientation can make a meaningful difference. Orienting the long axis of the barn to catch prevailing summer winds while protecting against prevailing winter winds reduces both cooling and heating energy demand. This is an architectural decision that costs nothing if made at the design stage and cannot be corrected after construction.'),
 
       h2('5.3  Affordable Renewable Energy: Solar and Biogas'),
-      para('Two renewable energy technologies have become practically relevant for commercial poultry farms in Canada in recent years: solar photovoltaic (PV) systems and anaerobic digestion (biogas). Both have upfront capital requirements, but the economics have improved significantly as equipment costs have fallen and government programs have expanded [NEEDS SOURCE].'),
+      para('Solar photovoltaic systems and anaerobic digestion (biogas) are the two renewable energy options most relevant for Canadian poultry farms today. Both have upfront capital requirements, but the economics have shifted significantly as equipment costs have fallen and both federal and provincial programs have expanded to support on-farm installations [19].'),
       h3('Solar Photovoltaic Systems'),
-      para('Commercial poultry barns have large, often south-facing roof surfaces that are well-suited to PV installation. A barn with 1,000 to 2,000 square meters of south-facing roof area has the potential to generate a substantial portion of its annual electricity demand from solar, with excess power sold back to the grid through provincial net metering programs where available [NEEDS SOURCE]. The economics depend on your province\'s net metering rules, local electricity rates, and available grant or financing programs.'),
+      para('Commercial poultry barns have large roof areas, often south-facing, that are well-suited to solar panel installation. Farms in Ontario have documented cases of net metering credits reducing monthly electricity bills from over $600 to under $100 after a solar installation [18]. Under Ontario\'s net metering program and similar programs in other provinces, surplus electricity generated on the farm is credited against the bill at the same rate it would be charged [18]. The federal Agricultural Clean Technology (ACT) Program provides non-repayable contributions covering up to 50% of eligible project costs for on-farm solar and other renewable energy investments [19].'),
       para('Key considerations before investing in solar:'),
-      bullet('Get the roof inspected for structural load capacity before installing panels. Older barn roofs may require reinforcement.'),
-      bullet('Check provincial net metering regulations and utility connection requirements in your area. Rules vary significantly between provinces.'),
-      bullet('Explore available federal and provincial grant programs through Agriculture and Agri-Food Canada and provincial farm organizations [NEEDS SOURCE].'),
-      bullet('Get multiple quotes from installers with experience in agricultural installations, not just residential or commercial.'),
+      bullet('Get the roof inspected for structural load capacity before installing panels. Older barn roofs may need reinforcement before panels can be mounted safely.'),
+      bullet('Check your provincial net metering program and local utility connection requirements. Program details vary between provinces and utilities.'),
+      bullet('Apply to the federal Agricultural Clean Technology Program (AAFC) for cost-sharing support. Provincial programs such as Ontario\'s Agricultural Stewardship Initiative also fund on-farm energy improvements [19].'),
+      bullet('Get multiple quotes from installers with documented experience in agricultural installations, not just residential or commercial projects.'),
       h3('Biogas (Anaerobic Digestion)'),
       para('Anaerobic digestion converts organic material, including poultry litter and mortalities, into biogas (primarily methane) that can be used for heating and electricity generation, and a residual digestate that can be applied to land as a fertilizer [3,14]. The technology is proven, and several Canadian farm operations have installed biogas systems successfully.'),
       para('The economics of biogas are more complex than solar. Capital costs are higher, maintenance requirements are more demanding, and the system works best with consistent manure volumes. For individual operations, biogas is most feasible at larger scales or in consortium arrangements where multiple farms share a facility and spread the capital cost [3,14]. Before pursuing biogas, get a detailed feasibility study that includes your manure volume, moisture content, available feedstocks, and local energy prices.'),
@@ -582,23 +575,23 @@ function buildSection6() {
     footers: { default: buildFooter() },
     children: [
       h1('Section 6: Economic Benefits of Sustainability'),
-      para('Sustainable farming and profitable farming point in the same direction. Every resource saved is a cost not incurred. Every environmental problem avoided is a legal or regulatory cost not paid. And increasingly, every documented sustainability practice is an asset in your contract relationship with your integrator and in your position relative to the market [14]. This is not a soft argument. The numbers are real.'),
+      para('The financial case for sustainable management is not complicated. Better feed efficiency means lower cost per kilogram of gain. Fewer drinker leaks mean better litter and fewer amendments to buy. Tight energy management means a lower heating bill every cycle. These are not environmental bonuses that might show up someday on a balance sheet. They show up in this cycle, on your settlement statement [14].'),
 
       h2('6.1  Lowering Production Costs'),
       para('The most direct economic benefit of sustainability improvements is reduced input cost per kilogram of gain. The two biggest levers are feed efficiency and energy cost.'),
       bullet([{ text: 'Feed efficiency: ', bold: true }, { text: 'A 0.1-point improvement in FCR on a 20,000-bird barn over a grow-out cycle represents a direct reduction in feed cost per kilogram of meat produced. At current feed prices, this is a meaningful number per cycle, and it compounds across every cycle you run [5].' }]),
       bullet([{ text: 'Water management: ', bold: true }, { text: 'Undetected drinker leaks waste water, damage litter, and cost more in litter amendments, ventilation adjustments, and performance losses than the water itself costs. Daily water metering is the lowest-cost monitoring tool available and often pays for itself in a single cycle [7].' }]),
       bullet([{ text: 'Litter management: ', bold: true }, { text: 'Good litter quality reduces the volume of litter amendments needed, reduces the cost of between-flock cleanout when it is required, and reduces the disease pressure that leads to medication costs [12].' }]),
-      bullet([{ text: 'Energy: ', bold: true }, { text: 'Insulation improvements, LED lighting, and variable-speed fan controllers reduce fixed energy costs that are paid every cycle regardless of performance. These improvements often pay back within one to three years [NEEDS SOURCE].' }]),
+      bullet([{ text: 'Energy: ', bold: true }, { text: 'Insulation improvements, LED lighting, and variable-speed fan controllers reduce fixed energy costs that are paid every cycle regardless of performance. LED conversions in Canadian poultry barns have been documented to pay back in 12 to 24 months [15,17].' }]),
       bullet([{ text: 'Manure value: ', bold: true }, { text: 'Litter sold or land-applied with proper nutrient documentation has real financial value to crop operations. Well-managed, analyzed litter commands better pricing and longer-term supply relationships than litter of unknown or poor quality [3].' }]),
 
       h2('6.2  Market Value and Consumer Trust'),
-      para('Consumer expectations around poultry production are changing, and they are changing faster than most farmers realize. Survey data consistently show that a growing proportion of consumers want assurance that the chicken they buy was raised under conditions that respected animal welfare and minimized environmental impact [14]. Most consumers cannot visit a farm and verify this themselves. They rely on the programs and certifications their retailer or processor has in place.'),
+      para('Consumer expectations around poultry production are shifting. Organic poultry output in Canada rose 12.7% between 2018 and 2021, and industry reporting consistently identifies demand for ethical and sustainable sourcing as a growth driver in premium chicken segments [14,20]. Most consumers cannot visit a farm and verify conditions themselves. They rely on the programs and certifications their retailer or processor uses, and those programs increasingly require documented farm-level compliance.'),
       para('This matters to you because integrators are increasingly required by their retail customers to demonstrate that their contracted growers meet defined environmental and welfare standards. Farms with documented records, compliance with environmental regulations, low medication use, and participation in animal care programs are in a stronger contract position than farms that cannot provide that documentation [6,10].'),
       para('Third-party certification programs in Canada, including Certified Canadian Chicken, require participating farms to meet documented standards for feed, water, housing, ventilation, animal welfare, and environmental compliance. Meeting those standards is not a separate cost for farms that are already managing their operations well. It is formal recognition of practices that sustainable operations are already doing.'),
 
       h2('6.3  Long-Term Farm Resilience'),
-      para('The farms that will still be operating profitably in twenty years are the ones being managed with that time horizon in mind today. Resilience does not happen by accident. It comes from a series of decisions that reduce exposure to input price volatility, regulatory risk, and market access restrictions.'),
+      para('Twenty years from now, the farms still running profitably will be the ones where the farmer was already thinking about input costs, regulations, and market access today. That is not a prediction. It is just what tends to happen when you manage resources carefully rather than reactively.'),
       bullet([{ text: 'Input cost volatility: ', bold: true }, { text: 'Feed prices, energy prices, and water costs all fluctuate. Farms with tight resource efficiency are less exposed to each of those spikes because they are already using less per unit of output [5].' }]),
       bullet([{ text: 'Regulatory compliance: ', bold: true }, { text: 'Environmental regulations on manure storage, land application, ammonia emissions, and water protection are tightening across Canada. Farms that are already meeting or exceeding current standards will absorb new requirements with less disruption than farms that are not [1].' }]),
       bullet([{ text: 'Antimicrobial resistance: ', bold: true }, { text: 'The regulatory trajectory on antibiotic use in food animals is clearly toward further restriction. Farms that have already reduced antibiotic dependence through better management are better positioned for those changes than farms that have not started [10].' }]),
@@ -683,10 +676,10 @@ function buildSummarySection() {
       bullet([{ text: 'Resource efficiency = profit: ', bold: true }, { text: 'Feed waste, water leaks, and energy loss all have a direct financial cost that is paid every cycle. Closing those gaps is both the right environmental decision and the highest-return management investment available [5,7].' }]),
       bullet([{ text: 'Litter is an asset: ', bold: true }, { text: 'Poultry litter has real fertilizer value. Managed properly, it replaces synthetic fertilizer costs for the farms that receive it and builds long-term soil health. Managed poorly, it becomes a source of regulatory and community problems [3].' }]),
       bullet([{ text: 'Animal welfare and production efficiency align: ', bold: true }, { text: 'Birds under chronic stress or in poor environmental conditions do not perform well. Managing housing, ventilation, stocking density, and feeding and watering programs to support welfare is also managing for better FCR and lower mortality [6,12].' }]),
-      bullet([{ text: 'Renewable energy is increasingly accessible: ', bold: true }, { text: 'Solar PV and biogas are not future technology. They are installed and operating on Canadian poultry farms today. The feasibility depends on your barn, your province, and the programs available. The time to evaluate them is before energy costs rise further [NEEDS SOURCE].' }]),
+      bullet([{ text: 'Renewable energy is accessible now: ', bold: true }, { text: 'Solar PV is operating on Canadian poultry farms today, with net metering programs in place across provinces and the federal ACT Program covering up to 50% of eligible project costs. The time to evaluate feasibility is before energy prices rise further, not after [18,19].' }]),
       bullet([{ text: 'Sustainability protects your market position: ', bold: true }, { text: 'Integrators, retailers, and consumers are moving toward documented environmental and welfare standards. Farms with good records and documented practices are better positioned for the contract and market environment that is already here [14].' }]),
       bullet([{ text: 'Start with one improvement per cycle: ', bold: true }, { text: 'You do not need to change everything at once. Pick one specific, measurable improvement, track it, and build from there. The discipline of knowing your own numbers is worth more than any single investment.' }]),
-      para('Sustainability is good for the planet. It is also good for your farm\'s bottom line. Those two things are not in tension. They point in exactly the same direction.'),
+      para('Taking care of the land, the water, and the air around your farm and running a tight, profitable operation are not competing priorities. On a well-managed poultry farm, they are the same priority.'),
       pageBreak(),
     ],
   };
@@ -740,6 +733,12 @@ function buildReferencesSection() {
       numbered('Miles DM, Rowe DE, Cathcart TC. High litter moisture content suppresses litter microbial activity. Poult Sci. 2011;90(4):893-900.'),
       numbered('Leinonen I, Williams AG, Wiseman J, Guy J, Kyriazakis I. Predicting the environmental impacts of chicken systems in the United Kingdom through a life cycle assessment: broiler production systems. Poult Sci. 2012;91(1):8-25.'),
       numbered('Food and Agriculture Organization of the United Nations (FAO). Poultry Development Review. Rome: FAO; 2013.'),
+      numbered('Tabler T, Farnell M, Wells J. LED Bulbs: Much to Offer the Poultry Industry. Mississippi State University Extension Service, Publication P2894. Starkville: Mississippi State University; 2019.'),
+      numbered('Wu Y, Huang J, Quan S, Yang Y. Light regimen on health and growth of broilers: an update review. Poult Sci. 2022;101(1):101545.'),
+      numbered('Hein T. Poultry barn lighting: Bright ideas. Canadian Poultry Magazine. 2025 Mar 5.'),
+      numbered('Ontario Energy Board. Net Metering. Toronto: Ontario Energy Board; 2024. Available from: https://www.oeb.ca/consumer-information-and-protection/net-metering'),
+      numbered('Agriculture and Agri-Food Canada. Agricultural Clean Technology Program. Ottawa: Agriculture and Agri-Food Canada; 2024. Available from: https://www.canada.ca/en/agriculture-agri-food/programs/agricultural-clean-technology-program.html'),
+      numbered('Canadian Poultry Magazine. 2024 Poultry Sector Outlook: Strong Demand Supports Profitability. Canadian Poultry Magazine. 2024.'),
     ],
   };
 }
@@ -817,7 +816,6 @@ async function main() {
     numbering:   buildNumbering(),
     sections: [
       buildCoverSection(),
-      buildTocSection(),
       buildIntroSection(),
       buildSection1(),
       buildSection2(),
