@@ -65,7 +65,7 @@ python -m http.server 8080
 
 ## MANDATORY RULE — NEEDS SOURCE (NON-NEGOTIABLE)
 
-**If you cannot verify a claim, definition, statistic, acronym expansion, or any factual statement from the local reference library or an authoritative source listed below — you MUST write `[NEEDS SOURCE]` in bold red. No exceptions.**
+**If you cannot verify a claim, definition, statistic, acronym expansion, or any factual statement from the local reference library, an authoritative source, or a web search — you MUST write `[NEEDS SOURCE]` in bold red. No exceptions.**
 
 This rule applies to:
 - Every factual claim, threshold, dosage, percentage, or statistic
@@ -80,7 +80,44 @@ This rule applies to:
 - Assume a definition is correct because it fits the acronym letters
 - Write anything that sounds factual without a verifiable source behind it
 
-**The T-FLAWS incident (May 2026):** The AI expanded "T-FLAWS" as "Toes, Feathers, Legs, Activity, Weight, and Skin" without any source — a fabricated definition inserted into the official course document. This is exactly what this rule prevents. When in doubt: write `[NEEDS SOURCE]`, stop, and ask.
+### Mandatory Multi-Source Verification
+
+Before writing any factual claim or definition, you must:
+1. Search the local reference library (`D:\Course agent\Avian medicine sources\`)
+2. Search online (web search) — many industry-standard frameworks are publicly documented
+3. Cross-check across at least two independent sources before accepting a fact as confirmed
+4. If sources conflict or are absent: write `[NEEDS SOURCE]` and flag it explicitly
+
+Industry-standard tools (e.g., FLAWS framework, scoring systems, management checklists) are often publicly available online. Failing to search online before writing is not acceptable.
+
+**The T-FLAWS incident (May 2026):** The AI fabricated the acronym expansion "Toes, Feathers, Legs, Activity, Weight, and Skin" and inserted it into the official Course 3 document without any source check. The correct T-FLAWS framework (confirmed by CPC — see below) is entirely different. The fabricated content was also structurally wrong: the entire course was built around the wrong topic. A web search would have found the real FLAWS framework immediately. When in doubt: write `[NEEDS SOURCE]`, stop, and ask.
+
+---
+
+## T-FLAWS Framework (CPC Learning Centre — CONFIRMED)
+
+**T-FLAWS** is a practical barn-entry checklist for farmers, veterinarians, and technicians. It focuses on gold-standard management — NOT disease diagnostics.
+
+- **FLAWS** is a standard management tool within the poultry industry (publicly documented).
+- **T-FLAWS** is a specific adaptation introduced by the **CPC Learning Centre** (Mike and Dr. Stew).
+
+### Correct T-FLAWS Acronym
+
+| Letter | Stands for |
+|--------|-----------|
+| T | Temperature |
+| F | Feed |
+| L | Light |
+| A | Air |
+| W | Water |
+| S | Sanitation & Space |
+
+### Course 3 Development Notes
+
+- CPC already possesses educational materials for this framework. Reza must coordinate with the CPC team to gather these before any major content revision.
+- Present all content from a farmer's perspective — practical, accessible, not overly technical veterinary language.
+- The current Course 3 draft content (built around the incorrect acronym) must be fully replaced once CPC materials are received.
+- Do NOT rewrite course body sections until CPC source materials are in hand.
 
 ---
 
