@@ -80,15 +80,56 @@ This rule applies to:
 - Assume a definition is correct because it fits the acronym letters
 - Write anything that sounds factual without a verifiable source behind it
 
-### Mandatory Multi-Source Verification
+### Deep Research Mode (MANDATORY FOR ALL COURSES)
 
-Before writing any factual claim or definition, you must:
-1. Search the local reference library (`D:\Course agent\Avian medicine sources\`)
-2. Search online (web search) — many industry-standard frameworks are publicly documented
-3. Cross-check across at least two independent sources before accepting a fact as confirmed
-4. If sources conflict or are absent: write `[NEEDS SOURCE]` and flag it explicitly
+**Every course must go through Deep Research Mode before any content is drafted. This is not optional.**
 
-Industry-standard tools (e.g., FLAWS framework, scoring systems, management checklists) are often publicly available online. Failing to search online before writing is not acceptable.
+#### What Deep Research Mode Means
+
+Before writing a single section of any course:
+
+1. **Local library first** — Search `D:\Course agent\Avian medicine sources\` for every major topic in the course outline. Identify which books and bulletins cover it and extract specific figures, thresholds, and recommendations.
+
+2. **Online research second** — Run web searches for every major claim, management threshold, and framework definition in the course. Use at least 3 independent online sources per topic. Prioritise:
+   - Peer-reviewed journals (Poultry Science, World's Poultry Science Journal)
+   - Official breed management guides (Aviagen, Cobb-Vantress, Lohmann)
+   - Government and regulatory bodies (CFIA, NFACC, USDA, Health Canada)
+   - Recognised industry bodies (Poultry Industry Council, WPSA, NCC)
+
+3. **Cross-check every number** — Every specific figure (temperature range, ppm limit, kg/m² density, lux level, pH value, flow rate, etc.) must be confirmed in at least two independent sources before it appears in the course. If sources conflict, report both with their citations and flag the discrepancy.
+
+4. **Document research findings** — Before writing, list all sources found for each topic and note what each confirms. This is the research record the content is built from.
+
+5. **Mark gaps honestly** — Any claim that cannot be confirmed in at least two independent sources gets `[NEEDS SOURCE]` in the text. Do not fill gaps with educated guesses.
+
+#### When to Run Deep Research Mode
+
+- Before generating any new course document
+- Before regenerating or significantly revising an existing course
+- When updating a section with new content
+- When a user asks to verify a specific claim in an existing course
+
+#### Deep Research Mode for Course 3 (T-FLAWS)
+
+Deep research was run in May 2026 and confirmed the following key figures. All are cross-checked against at least two sources:
+
+| Checkpoint | Claim | Sources confirmed |
+|---|---|---|
+| T: Temperature | Day 0-2 broilers: 32-34°C at bird level | CONFIRMED — McGill University; Ross 2025 [1] |
+| T: Temperature | Reduce ~0.5°C per 2-3 days as feathering develops | CONFIRMED — Ross 2025 [1] |
+| T: Temperature | Bird-level vs ceiling sensor gap: 3-5°C possible | CONFIRMED — Ross 2025 [1] |
+| A: Air | Ammonia >10 ppm begins suppressing immunity; effects clearer at 15-20 ppm | PARTIALLY CONFIRMED — PMC/NIH; some studies find minimal production impact below 20 ppm; immune changes confirmed at 15 ppm |
+| A: Air | Ammonia >25 ppm causes documented eye damage (corneal/conjunctival); respiratory tissue damage more pronounced at 50+ ppm | CONFLICTING — eye damage well-confirmed [PubMed]; direct respiratory tissue damage at 25 ppm contested; "permanent" removed from course |
+| A: Air | CO2 >3,000 ppm indicates inadequate minimum ventilation | CONFIRMED — SenseHub/MSD; Vostermans Ventilation; multiple sources |
+| A: Air | Humidity 60-70% brooding; 50-60% from week 2 onward | CONFIRMED — Alabama Extension; Ralco Agriculture; course UPDATED with age-specific ranges |
+| W: Water | Water:feed ratio ~1.7-1.8:1 at thermoneutral temperatures | CONFIRMED — Mississippi State University Extension (range 1.6-1.8:1) |
+| W: Water | Ideal water temperature at nipple: 10-14°C | CONFIRMED — Aviagen Water Quality 2025 [2] |
+| W: Water | pH target: 6.0-8.0 at the drinker | CONFIRMED — Aviagen Water Quality 2025 [2] |
+| S: Sanitation | Litter moisture target: 20-25% (NOT "below 30%") | CONFIRMED — UGA Extension; Mississippi State; course CORRECTED from "below 30%" to "20-25%" |
+| S: Space | NFACC conventional max: 31 kg/m² live weight | CONFIRMED — NFACC Code of Practice [4] (official documentation) |
+| S: Space | NFACC enhanced welfare max: 38 kg/m² live weight | CONFIRMED — NFACC Code of Practice [4] |
+| L: Light | First 7 days: minimum 20 lux, 23 hours/day | CONFIRMED — Aviagen technical bulletin; industry standard |
+| L: Light | After week 1: minimum 6 hours dark period per 24h | CONFIRMED — Aviagen breeding guidelines; welfare research |
 
 **The T-FLAWS incident (May 2026):** The AI fabricated the acronym expansion "Toes, Feathers, Legs, Activity, Weight, and Skin" and inserted it into the official Course 3 document without any source check. The correct T-FLAWS framework (confirmed by CPC — see below) is entirely different. The fabricated content was also structurally wrong: the entire course was built around the wrong topic. A web search would have found the real FLAWS framework immediately. When in doubt: write `[NEEDS SOURCE]`, stop, and ask.
 
