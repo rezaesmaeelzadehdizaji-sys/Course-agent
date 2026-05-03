@@ -381,7 +381,7 @@ const doc = new Document({
         h1('T: Temperature'),
         h2('Why Temperature Matters'),
         p('Temperature is the first thing you assess when you enter the barn, and it is also the most likely factor to be wrong at placement. A day-old chick cannot regulate its own body temperature. It depends entirely on the environment you provide [1].'),
-        p('The consequences of getting temperature wrong in the first week are lasting. Cold chicks do not eat or drink properly. Their gut development falls behind, their immune system is compromised, and their weight at seven days, which is one of the strongest predictors of final body weight, will reflect the failure [1]. A cold start is one of the most expensive mistakes in broiler production, and it is entirely preventable.'),
+        p('The consequences of getting temperature wrong in the first week are lasting. Cold chicks do not eat or drink properly. Their gut development falls behind, their immune system is compromised, and their seven-day weight, an important early performance milestone, will reflect the failure [1]. Research shows that while seven-day weight correlates with flock direction, measurements from week three onward are the more reliable predictors of final body weight — but by then the gap from a cold start has already compounded. A cold start is one of the most expensive mistakes in broiler production, and it is entirely preventable.'),
         p('The same applies at the other end. Heat stress later in the flock suppresses feed intake, elevates mortality, and cuts your feed conversion ratio [6]. Birds cannot tell you they are too hot. They show you.'),
 
         h2('Target Ranges by Bird Age'),
@@ -442,7 +442,7 @@ const doc = new Document({
         b('Remove wet, molded, or visibly contaminated feed from pans immediately and identify the source of moisture'),
         b('Monitor daily feed consumption using bin meters or manual records and compare to breed target consumption curves [1]'),
         b('If a batch of feed smells abnormal or shows unusual bridging, retain a sample and notify your feed supplier before feeding the whole delivery'),
-        b('In the first 48 hours of a new flock, check feeders every two to three hours to ensure chicks are finding and eating feed'),
+        b('In the first 48 hours, check crop fill at 2, 4, 8, 12, and 24 hours post-placement: target 75% of crops full at 2 hours, 100% by 48 hours. A bird with an empty crop at 24 hours is already behind [1]'),
 
         pb(),
 
@@ -451,7 +451,7 @@ const doc = new Document({
         h2('Why Light Programs Matter'),
         p('Light is a powerful management tool that is easy to forget about because it is always on. Birds live by light cycles. Light duration and intensity control when they eat, when they rest, and how their metabolism runs. A poorly managed light program is a source of chronic, invisible stress that shows up in your performance data without an obvious cause.'),
         p('For broilers, the first seven days require bright, consistent light for 23 hours per day. This is not about stimulating production. It is about making sure day-old chicks find the feed and water that will determine everything that follows [1]. The Ross Broiler Management Handbook recommends a minimum intensity of 20 lux during this period [1].'),
-        p('After the first week, most commercial programs reduce light intensity and introduce a dark period. The Ross 308 program, for example, targets 18 hours of light and 6 hours of darkness per day from week two onward [1]. The dark period gives birds a rest period, which is associated with better bone mineralization, reduced metabolic stress, and improved uniformity [1].'),
+        p('After the first week, most commercial programs reduce light intensity and introduce a dark period. The Ross 308 program targets 18 hours of light and 6 hours of darkness per day from week two onward [1]. A meaningful dark period supports circadian rhythm, rest behavior, and welfare. However, research cautions that excessive darkness (beyond what programs prescribe) can actually impair bone mineralization and growth. The goal is the right amount of darkness on schedule — not more, not less [1].'),
 
         h2('What to Check'),
         b('Walk every section of the barn and visually confirm all bulbs and fixtures are functioning'),
@@ -517,7 +517,7 @@ const doc = new Document({
         // ── W: WATER ──────────────────────────────────────
         h1('W: Water'),
         h2('Why Water Matters'),
-        p('Water is the most critical nutrient in your barn. Broilers consume approximately 1.7 to 1.8 times more water than feed by volume at comfortable temperatures, and this ratio increases significantly during heat stress [2]. Remove water access and you remove feed intake within hours. Feed intake falls before you can measure it, and by the time you notice reduced consumption, the bird is already behind.'),
+        p('Water is the most critical nutrient in your barn. Broilers consume approximately 1.7 to 1.8 times more water than feed by volume at comfortable temperatures, and this ratio increases significantly during heat stress [2]. The correlation between water and feed intake is 0.98 — nearly 1:1. Restrict water and feed consumption drops rapidly in response. By the time you notice reduced consumption on a meter or a daily record, the bird is already behind.'),
         p('Water management in a commercial barn is more than making sure the tanks are full. It involves pressure, flow rate, line height, water temperature, and water quality at the point of drinking, not at the header tank. A line that passes every tank test can still fail at the nipple if pressure is wrong, biofilm is heavy, or height adjustment is overdue [2,10].'),
         p('The CPC Drinking Water Management Bulletin notes that water intake monitoring is one of the most sensitive daily health indicators available to the farmer [10]. A drop in water consumption before any other sign of disease is detectable is a consistent pattern. If your meter readings drop by more than 10 percent compared to the previous day without a management change, investigate all T-FLAWS points and contact your veterinarian.'),
 
@@ -559,7 +559,7 @@ const doc = new Document({
         b('High dietary salt levels driving excess water consumption'),
         b('Disease causing watery droppings'),
         b('Insufficient litter depth at placement or poor-quality litter material'),
-        p('Wet patches spread. A small wet area under a dripping nipple doubles in size every few days if not corrected. Walk the full barn perimeter and the center on every visit. Litter problems are easier to catch in a corner than to remediate across an entire barn floor.'),
+        p('Wet patches spread. Moisture creates a feedback loop — wet litter prevents drying underneath, microbial activity generates more heat and moisture, and the affected area grows. A small wet patch under a dripping nipple becomes a large problem within days if not corrected. Walk the full barn perimeter and the center on every visit. Litter problems are easier to catch in a corner than to remediate across an entire barn floor.'),
 
         callout('If your litter is wet, your ammonia is rising and your ventilation rate needs to increase. Fix the source of moisture, increase ventilation, and consider applying a litter amendment if recommended by your veterinarian. Do not wait for footpad scores to tell you what the litter already shows.'),
 
@@ -595,7 +595,7 @@ const doc = new Document({
         b('Cold temperature causes birds to huddle, which localizes their droppings and wets the litter under the heat source (T worsening S)'),
         b('High ammonia from wet litter suppresses feed intake and irritates airways, making birds more vulnerable to respiratory disease (A and S worsening F and health)'),
         b('Poor ventilation raises humidity, accelerates litter breakdown, and raises ammonia further (A worsening both A and S in a feedback loop)'),
-        b('Low water flow causes feed intake to fall within hours, because birds stop eating when they cannot drink comfortably (W driving F)'),
+        b('Restricted water causes feed intake to fall rapidly — the two are correlated at 0.98; fix water first before investigating other causes (W driving F)'),
         b('High stocking density creates competition for every resource, amplifying any deficiency in T, F, L, A, or W (S amplifying everything else)'),
         p('When you find a T-FLAWS problem, look at the points most likely to have contributed to it and the points most likely to be affected by it. A barn walk that finds wet litter near the drinkers is not just a water pressure check. It is also a prompt to check ammonia, ventilation rate, footpad condition, and feed intake for the section affected.'),
         callout('The farmers who get the most from T-FLAWS are not the ones who use it to find problems. They are the ones who use it to prevent them. By the time a problem is visible in your birds, it has usually been building in your management for several days.'),

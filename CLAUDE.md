@@ -131,6 +131,21 @@ Deep research was run in May 2026 and confirmed the following key figures. All a
 | L: Light | First 7 days: minimum 20 lux, 23 hours/day | CONFIRMED — Aviagen technical bulletin; industry standard |
 | L: Light | After week 1: minimum 6 hours dark period per 24h | CONFIRMED — Aviagen breeding guidelines; welfare research |
 
+#### Full Qualitative Claim Verification (May 2026 — 42 claims checked)
+
+Deep research was extended to all qualitative, causal, and management claims. 36 of 42 confirmed outright. 6 corrections applied:
+
+| Claim | Original | Corrected | Source |
+|---|---|---|---|
+| 7-day weight as predictor | "one of the strongest predictors of final body weight" | "important early milestone; week-3+ measurements are more reliable predictors" | Poultry World; UF IFAS (R²=0.14-0.21 at week 1) |
+| First 48h feeder checks | "check every 2-3 hours" | "check crop fill at 2h (75% target), 4h, 8h, 12h, 24h (100% target)" | EW Nutrition; Ross Handbook 2025 |
+| Dark period and bone health | "associated with better bone mineralization" | "appropriate dark periods support welfare and rest; excessive darkness impairs bone mineralization" | Springer; ScienceDirect — research found excessive darkness reduces bone ash % |
+| Water restriction timing | "feed intake falls within hours" | "feed intake drops rapidly (water:feed correlation 0.98)" — "within hours" lacks direct peer-reviewed citation | The Poultry Site; Aviagen |
+| Wet patch spread rate | "doubles in size every few days" | "grows rapidly through moisture feedback loop" — doubling rate not directly cited in literature | Mississippi State; UGA Extension |
+| System: water→feed link | "fall within hours" | "fall rapidly" — same timing caveat as above | Aviagen Water Utilization brief |
+
+Remaining 36 claims all confirmed against PubMed, PMC, university extension, Aviagen, NFACC, and industry sources. No major scientific errors found in the course.
+
 **The T-FLAWS incident (May 2026):** The AI fabricated the acronym expansion "Toes, Feathers, Legs, Activity, Weight, and Skin" and inserted it into the official Course 3 document without any source check. The correct T-FLAWS framework (confirmed by CPC — see below) is entirely different. The fabricated content was also structurally wrong: the entire course was built around the wrong topic. A web search would have found the real FLAWS framework immediately. When in doubt: write `[NEEDS SOURCE]`, stop, and ask.
 
 ---
