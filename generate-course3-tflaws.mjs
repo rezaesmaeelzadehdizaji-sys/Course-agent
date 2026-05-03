@@ -162,11 +162,12 @@ function imgBlock(buf, type, widthIn, caption) {
       }
     } catch (_) {}
   }
+  const irType = type === 'jpg' ? 'jpg' : 'png';
   return [
     new Paragraph({
       alignment: AlignmentType.CENTER,
       spacing:   { before: 180, after: 60 },
-      children:  [new ImageRun({ data: buf, transformation: { width: wpx, height: hpx } })],
+      children:  [new ImageRun({ data: buf, transformation: { width: wpx, height: hpx }, type: irType })],
     }),
     new Paragraph({
       alignment: AlignmentType.CENTER,
