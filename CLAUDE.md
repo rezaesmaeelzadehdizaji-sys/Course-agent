@@ -63,11 +63,32 @@ python -m http.server 8080
 # Then open: http://localhost:8080
 ```
 
+## MANDATORY RULE — NEEDS SOURCE (NON-NEGOTIABLE)
+
+**If you cannot verify a claim, definition, statistic, acronym expansion, or any factual statement from the local reference library or an authoritative source listed below — you MUST write `[NEEDS SOURCE]` in bold red. No exceptions.**
+
+This rule applies to:
+- Every factual claim, threshold, dosage, percentage, or statistic
+- Every acronym expansion (e.g., what an abbreviation stands for)
+- Every definition of a proprietary tool, protocol, or method
+- Every claim attributed to a specific organization or person
+- CPC-specific content, tools, or terminology that only the CPC team can confirm
+
+**NEVER:**
+- Guess, infer, or derive an acronym expansion without a written source
+- Fill in details to make text sound complete
+- Assume a definition is correct because it fits the acronym letters
+- Write anything that sounds factual without a verifiable source behind it
+
+**The T-FLAWS incident (May 2026):** The AI expanded "T-FLAWS" as "Toes, Feathers, Legs, Activity, Weight, and Skin" without any source — a fabricated definition inserted into the official course document. This is exactly what this rule prevents. When in doubt: write `[NEEDS SOURCE]`, stop, and ask.
+
+---
+
 ## Content Standards
 
 - **Tone:** Scientifically accurate but always expressed in a practical, farmer-flow style
 - **Audience:** Experienced Canadian commercial poultry farmers (not veterinary professionals)
-- **Unverifiable claims:** Mark with `[NEEDS SOURCE]` in bold red, never fabricate
+- **Unverifiable claims:** Mark with `[NEEDS SOURCE]` in bold red — MANDATORY, never fabricate
 - **Spelling:** **American English only.** Apply uniformly across all 17 courses, drafts, dashboard copy, and any generated docx output. Never mix British and American forms.
 
 ### American English Spelling Rules (MANDATORY)
@@ -158,10 +179,11 @@ If text sounds:
 - Do not alphabetize
 
 ### Rules
-- Never fabricate references
-- Every number must correspond to a real source
-- If not verifiable → mark as **[NEEDS SOURCE]**
+- **Never fabricate references — ever**
+- Every number must correspond to a real, verifiable source
+- If not verifiable → write **[NEEDS SOURCE]** and stop — do not guess
 - Do not cite file paths; cite real sources (author, title, year)
+- This applies to acronym expansions, definitions, and proprietary CPC content — if the CPC team has not confirmed it in writing, it gets **[NEEDS SOURCE]**
 
 ### Authoritative Sources
 
