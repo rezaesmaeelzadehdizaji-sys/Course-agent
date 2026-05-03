@@ -84,23 +84,45 @@ This rule applies to:
 
 **Every course must go through Deep Research Mode before any content is drafted. This is not optional.**
 
+#### Installed Research Skills (use these — do not skip)
+
+Three research skills are installed and symlinked to Claude Code in `.agents/skills/`:
+
+| Skill | Trigger | Best for |
+|---|---|---|
+| `/deep-research` | Multi-source research, citation tracking, structured report | Full course topic research — run in **deep** mode for each major section, **ultradeep** for critical management claims |
+| `/academic-researcher` | Peer-reviewed paper analysis, Vancouver citation formatting, methodology critique | Verifying specific thresholds and statistics against scientific literature |
+| `/deep-research-agent` | Systematic literature review across PubMed, Google Scholar, industry databases | When a topic needs exhaustive academic coverage (disease mechanisms, regulatory standards) |
+
 #### What Deep Research Mode Means
 
-Before writing a single section of any course:
+Before writing a single section of any course, run the following pipeline in order:
 
-1. **Local library first** — Search `D:\Course agent\Avian medicine sources\` for every major topic in the course outline. Identify which books and bulletins cover it and extract specific figures, thresholds, and recommendations.
+**Step 1 — Local library scan**
+Search `D:\Course agent\Avian medicine sources\` for every major topic in the course outline. Identify which books and bulletins cover it and extract specific figures, thresholds, and recommendations.
 
-2. **Online research second** — Run web searches for every major claim, management threshold, and framework definition in the course. Use at least 3 independent online sources per topic. Prioritise:
-   - Peer-reviewed journals (Poultry Science, World's Poultry Science Journal)
-   - Official breed management guides (Aviagen, Cobb-Vantress, Lohmann)
-   - Government and regulatory bodies (CFIA, NFACC, USDA, Health Canada)
-   - Recognised industry bodies (Poultry Industry Council, WPSA, NCC)
+**Step 2 — `/deep-research` (deep mode)**
+Run `/deep-research` on every major section topic. Use **deep mode** (8 phases, 10-20 min) as the default for course content. Use **ultradeep mode** (8+ phases, 20-45 min) for any claim involving specific regulatory limits, management thresholds, or safety numbers. The skill:
+- Retrieves from multiple sources simultaneously
+- Triangulates conflicting evidence
+- Tracks citations at the claim level
+- Critiques and refines findings before reporting
 
-3. **Cross-check every number** — Every specific figure (temperature range, ppm limit, kg/m² density, lux level, pH value, flow rate, etc.) must be confirmed in at least two independent sources before it appears in the course. If sources conflict, report both with their citations and flag the discrepancy.
+**Step 3 — `/academic-researcher` for peer-reviewed verification**
+After Step 2, run `/academic-researcher` on any claim citing a specific statistic, threshold, or study finding. This skill:
+- Searches PubMed, Google Scholar, and JSTOR
+- Evaluates methodology quality and sample size
+- Flags studies with weak evidence (small N, single study, outdated)
+- Formats citations in Vancouver style ready to paste into the reference list
 
-4. **Document research findings** — Before writing, list all sources found for each topic and note what each confirms. This is the research record the content is built from.
+**Step 4 — Cross-check every number**
+Every specific figure (temperature range, ppm limit, kg/m² density, lux level, pH, flow rate, etc.) must be confirmed in at least two independent sources. If sources conflict, report both with citations and flag the discrepancy in the content.
 
-5. **Mark gaps honestly** — Any claim that cannot be confirmed in at least two independent sources gets `[NEEDS SOURCE]` in the text. Do not fill gaps with educated guesses.
+**Step 5 — Document findings before writing**
+Record all confirmed sources per topic. This is the research record the content is built from. Write nothing until this record exists.
+
+**Step 6 — Mark gaps honestly**
+Any claim that cannot be confirmed in at least two independent sources gets `[NEEDS SOURCE]` in the text. No exceptions. No educated guesses.
 
 #### When to Run Deep Research Mode
 
@@ -495,34 +517,36 @@ All courses must follow a consistent structure based on two reference courses:
 
 ## Production-Grade Course Generation Workflow
 
-Before generating any course:
+Before generating any course, run every step in order. Do not skip any step.
 
-1. Parse both reference files:
-   - Course 3 docx
-   - Course 7 docx
+**Phase 1 — Research (before writing a single word)**
 
-2. Extract:
-   - Structure
-   - Headings
-   - Tone
-   - Depth of explanation
-   - Formatting patterns
+1. Scan local library at `D:\Course agent\Avian medicine sources\` for all major topics
+2. Run `/deep-research` (deep mode) on each major section topic — retrieve, triangulate, synthesize, cite
+3. Run `/academic-researcher` on any specific statistic or threshold — verify against peer-reviewed sources
+4. Record all confirmed sources. Mark any unconfirmed claim `[NEEDS SOURCE]`
 
-3. Compare with new course outline
+**Phase 2 — Structure alignment**
 
-4. Generate content aligned with:
-   - Outline
-   - Reference structure
-   - CPC standards
+5. Parse both reference courses:
+   - Course 3 (T-FLAWS): `Course 3/T-FLAWS_Assessment_Management_Tool_draft.docx`
+   - Course 7 (Common Poultry Diseases): `Course 7/Common_Poultry_Diseases_draft.docx`
+6. Extract: structure, headings, tone, depth, formatting patterns
+7. Compare with new course outline and align
 
-5. Perform auto-alignment check:
-   - Structure consistency
-   - Tone consistency
-   - Proper citation format
-   - Missing references marked
+**Phase 3 — Content generation**
 
-6. Evaluate using Farmer-Flow Style Scoring System
-7. Rewrite if needed before finalizing
+8. Generate content aligned with: outline, reference structure, CPC standards, research findings from Phase 1
+9. Every claim must trace back to a confirmed source from Phase 1
+10. No number, threshold, or management recommendation without a citation
+
+**Phase 4 — Validation**
+
+11. Auto-alignment check: structure consistency, tone consistency, citation format, missing references
+12. Spelling sweep: run British English detection against all `<w:t>` text
+13. Evaluate using Farmer-Flow Style Scoring System (minimum 24/30, no score below 4)
+14. Rewrite automatically if score fails
+15. Humanization pass: identify and rewrite any AI-sounding sections before finalizing
 
 ## Agent Behavior & Validation Protocol
 
