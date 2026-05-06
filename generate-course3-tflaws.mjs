@@ -117,11 +117,14 @@ const callout = (text) => new Paragraph({
   children:  Array.isArray(text) ? text : [run(text, { italics: true, color: GRAY })],
 });
 
-// Inline bold label followed by body text
+// Inline bold label followed by body text (body may be a string or array of TextRuns)
 const labeled = (label, body) => p([
   run(label + ' ', { bold: true }),
-  run(body),
+  ...(Array.isArray(body) ? body : [run(body)]),
 ]);
+
+// CO2 with subscripted 2 — returns array of two TextRuns
+const co2r = () => [run('CO'), run('2', { subScript: true })];
 
 // CPC temperature target table (Source: CPC Learning Centre)
 function tempTable() {
@@ -610,7 +613,11 @@ const doc = new Document({
         labeled('Ammonia:', 'This is one of the most practical things you can track during your daily barn walk. Above 10 ppm at bird level, ammonia starts quietly weakening your birds\' immune defense [5]. By 15 to 20 ppm, that stress is real, even if you cannot see it yet in performance [5]. Push past 25 ppm and you will start seeing visible eye damage: irritation, swelling, and birds that are far more vulnerable to any respiratory bug that comes through the barn [5]. At 50 ppm and above, the airways themselves take a hit. The rule is simple: do not wait for a meter reading. If you can smell it when you walk in, it is already too high.'),
         p('The most important thing to know about ammonia is that you can smell it before your birds are in serious danger. If you walk into the barn and can smell ammonia at your standing height, concentrations at bird level are higher than they are at your nose. Fix it now, not at the end of the day.'),
         callout('The ammonia rule: if you can smell it when you walk in, your birds have been breathing unsafe concentrations since before your last visit. Ventilation rate needs to increase and litter moisture needs to be assessed immediately.'),
-        labeled('Carbon dioxide:', 'CO2 above 3,000 ppm indicates the minimum ventilation rate is insufficient for the current stocking density and bird size [1]. CO2 itself is not as immediately damaging as ammonia at these concentrations, but it is a reliable indicator of overall air quality. If CO2 is high, minimum ventilation is too low.'),
+        labeled('Carbon dioxide:', [
+          ...co2r(), run(' above 3,000 ppm indicates the minimum ventilation rate is insufficient for the current stocking density and bird size [1]. '),
+          ...co2r(), run(' itself is not as immediately damaging as ammonia at these concentrations, but it is a reliable indicator of overall air quality. If '),
+          ...co2r(), run(' is high, minimum ventilation is too low.'),
+        ]),
         labeled('Relative humidity:', 'During brooding (the first two weeks), target relative humidity is 60 to 70 percent to protect day-old respiratory surfaces. From two weeks onward, 50 to 60 percent is the appropriate target [5]. Below 50 percent, dust levels rise and respiratory irritation increases. Above 70 percent at any age, litter moisture builds rapidly, ammonia production accelerates, and footpad dermatitis rates climb. Humidity is a direct reflection of ventilation rate; if humidity is high, your minimum ventilation is too low.'),
         labeled('Air temperature and speed:', 'The temperature and speed of incoming air at bird level matters. In cold weather, cold air entering too fast and landing on birds causes drafts, which chills young birds and causes them to huddle even when your barn thermostat shows an adequate temperature. Adjust inlet openings to direct air up and across the roof before it falls to bird level [1].'),
 
@@ -621,7 +628,7 @@ const doc = new Document({
         h2('What Farmers See'),
         b('Persistent wet eyes or foam eyes on multiple birds: early sign of ammonia exposure above safe levels'),
         b('Sneezing, head shaking, or rattling sounds: dust and ammonia irritating the upper airway'),
-        b('Open-mouth breathing in cool conditions: indicates high CO2, not heat'),
+        b([run('Open-mouth breathing in cool conditions: indicates high '), ...co2r(), run(', not heat')]),
         b('Condensation running down walls and pooling at the base: humidity too high, ventilation rate too low'),
         b('Rapid litter deterioration not explained by drinker leaks: insufficient air exchange is allowing moisture to build in the litter'),
         b('Birds avoiding certain barn sections: check for cold drafts from inlets at those locations'),
