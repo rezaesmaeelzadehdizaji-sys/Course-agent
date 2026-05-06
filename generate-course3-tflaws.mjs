@@ -354,6 +354,7 @@ const tocEntries = [
   { lvl: 2, text: 'What to Do', page: 24 },
   { lvl: 1, text: 'S: Sanitation & Space', page: 26 },
   { lvl: 2, text: 'Sanitation', page: 26 },
+  { lvl: 2, text: 'Space:', page: 27 },
   { lvl: 2, text: 'Litter Management', page: 27 },
   { lvl: 2, text: 'Stocking Density', page: 28 },
   { lvl: 2, text: 'What Farmers See', page: 29 },
@@ -673,11 +674,11 @@ const doc = new Document({
         b('Flush drinker lines at the beginning of every flock and at regular intervals during production [2,10]'),
         b('Run a water acidifier through lines weekly during the flock to prevent biofilm buildup; consult your veterinarian for product selection [10]'),
         b('Adjust line height daily in the first week and at least weekly after that; the CPC guide recommends raising lines so birds drink at a 45-degree angle from day 3, and nearly straight up by day 10 [10]'),
-        b('Test water quality at the nipple, not just at the header tank, at minimum once per flock; test for pH, total dissolved solids, coliform counts, and ORP [2,10]'),
+        b('Test water quality at the nipple, not just at the header tank, at minimum once per flock; test for pH, total dissolved solids, coliform count [2,10]'),
         b('If nipple flow is low, check the regulator, filter, and the full line for blockages or heavy biofilm'),
         b('During hot weather, check water temperature at the nipple and increase line-flush frequency to keep water cool'),
         b('Record daily water consumption and flag any drop of more than 10 percent for the same day of age versus previous flocks [1,10]'),
-        b('Disinfect your well annually; use unscented household bleach (5 to 6% chlorine) following the CPC Drinking Water Management dosing guide for well diameter [10]'),
+        b('Disinfect your well annually; use unscented household bleach (5 to 6% chlorine) or UV systems following the CPC Drinking Water Management dosing guide for well diameter [10]'),
 
         pb(),
 
@@ -692,7 +693,9 @@ const doc = new Document({
         p('Think of that doorway as a wall between your birds and everything trying to make them sick. The wall only works if it is respected on every visit.'),
         p('Keep your water lines clean. Run an acidifier through them weekly to break down biofilm, the slimy buildup inside drinker lines that you cannot always see but that harbors bacteria [2,10]. Flush lines thoroughly after every flock before placing a new one.'),
 
-        ...imgBlock(IMG.biosec, 'png', 5.8, 'Photo 6.1: Biosecurity at the barn entrance. Proper sanitation starts before you enter. A clean biosecurity line protects every bird inside. Source: CPC Short Courses.'),
+        ...imgBlock(IMG.biosec, 'png', 5.8, 'Photo 6.1: Danish entry system at the barn entrance. Proper sanitation starts before you enter. A clean biosecurity line protects every bird inside. Source: CPC Short Courses.'),
+
+        h2('Space:'),
 
         // ── Litter Management ──────────────────────────────
         h2('Litter Management'),
@@ -741,7 +744,7 @@ const doc = new Document({
         b('Cold temperature causes birds to huddle, which localizes their droppings and wets the litter under the heat source (T worsening S)'),
         b('High ammonia from wet litter suppresses feed intake and irritates airways, making birds more vulnerable to respiratory disease (A and S worsening F and health)'),
         b('Poor ventilation raises humidity, accelerates litter breakdown, and raises ammonia further (A worsening both A and S in a feedback loop)'),
-        b('Restricted water causes feed intake to fall rapidly; the two are correlated at 0.98. Fix water first before investigating other causes (W driving F)'),
+        b('Restricted water causes feed intake to fall rapidly, Fix water first before investigating other causes (W driving F)'),
         b('High stocking density creates competition for every resource, amplifying any deficiency in T, F, L, A, or W (S amplifying everything else)'),
         p('When you find a T-FLAWS problem, ask what else it is touching. Wet litter near the drinkers is not just a water pressure issue. It is also a prompt to check ammonia, ventilation rate, footpad condition, and feed intake in that section. Fix one thing and check the rest, because they are rarely independent.'),
         callout('The farmers who get the most from T-FLAWS are not the ones who use it to find problems. They are the ones who use it to prevent them. By the time a problem is visible in your birds, it has usually been building in your management for several days.'),
