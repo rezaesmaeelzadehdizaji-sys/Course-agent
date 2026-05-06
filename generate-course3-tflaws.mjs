@@ -176,6 +176,57 @@ function tempTable() {
   });
 }
 
+// CPC lighting schedule table (Source: CPC Learning Centre)
+function lightingTable() {
+  const colW = [1400, 1200, 1200, 1400, 3440]; // twips, total = 8640
+  const hdrBg = '2E74B5';
+  const altBg = 'EBF2FA';
+  const bdr = { style: BorderStyle.SINGLE, size: 2, color: 'AAAAAA' };
+  const cellBorders = { top: bdr, bottom: bdr, left: bdr, right: bdr };
+
+  const hdrCell = (text, colIdx) => new TableCell({
+    width: { size: colW[colIdx], type: WidthType.DXA },
+    borders: cellBorders,
+    shading: { type: ShadingType.SOLID, color: hdrBg },
+    children: [new Paragraph({
+      alignment: AlignmentType.CENTER,
+      spacing: { before: 60, after: 60 },
+      children: [run(text, { bold: true, size: 18, color: 'FFFFFF' })],
+    })],
+  });
+
+  const dataCell = (text, colIdx, shade) => new TableCell({
+    width: { size: colW[colIdx], type: WidthType.DXA },
+    borders: cellBorders,
+    shading: { type: ShadingType.SOLID, color: shade ? altBg : 'FFFFFF' },
+    children: [new Paragraph({
+      alignment: colIdx === 4 ? AlignmentType.LEFT : AlignmentType.CENTER,
+      spacing: { before: 50, after: 50 },
+      children: [run(text, { size: 18, color: BODY })],
+    })],
+  });
+
+  const headers = ['Age', 'Light Hours', 'Dark Hours', 'Intensity', 'Why It Matters'];
+  const rows = [
+    ['Day 1–7',        '18 hrs', '6 hrs', '50–100 lux', 'Chicks find feed, water, and heat source easily'],
+    ['Day 7–13',       '18 hrs', '6 hrs', '30–50 lux',  'Eyes adjust; reduce stress gradually'],
+    ['Day 14–21',      '18 hrs', '6 hrs', '20–30 lux',  'Supports rest behavior and bone development'],
+    ['Day 22–27',      '18 hrs', '6 hrs', '10–20 lux',  'Steady reduction continues'],
+    ['Day 28–harvest', '22 hrs', '2 hrs', '3–5 lux',    'Extended light supports feed intake and growth'],
+  ];
+
+  return new Table({
+    width: { size: 100, type: WidthType.PERCENTAGE },
+    margins: { top: 0, bottom: 0, left: 0, right: 0 },
+    rows: [
+      new TableRow({ children: headers.map((h, i) => hdrCell(h, i)), tableHeader: true }),
+      ...rows.map((row, ri) => new TableRow({
+        children: row.map((cell, ci) => dataCell(cell, ci, ri % 2 === 1)),
+      })),
+    ],
+  });
+}
+
 // Image + caption helper
 function imgBlock(buf, type, widthIn, caption) {
   if (!buf) {
@@ -473,7 +524,7 @@ const doc = new Document({
         h2('Why Feed Management Matters'),
         p('A bird that cannot find feed or reach it comfortably does not grow. Feed access is the engine of production, and it is also one of the most reliable early-warning signals in your barn. Birds reduce feed intake before they show any other visible sign of stress or illness [1,11].'),
         p('A drop in daily feed consumption of more than 10 percent from the previous day, without a corresponding change in diet or management, is a red flag. Before you call it a feed problem, check the other five T-FLAWS points. Hot barns, poor air quality, low water flow, and high stocking density all suppress feed intake before they show up as anything else.'),
-        p('Feed management is not just about keeping the bins full. It is about making sure every bird in every corner of your barn can reach good quality feed without competition, waste, or physical barriers. When you get this right, birds grow more evenly and there are fewer surprises at weigh-out.'),
+        p('Feed management is not just about keeping the bins full. It is about making sure every bird in every corner of your barn can reach good quality feed without competition, waste, or physical barriers. Use feeder trays at 1 per 100 to 150 chicks for the first few days [11]. When you get this right, birds grow more evenly and there are fewer surprises at weigh-out.'),
 
         h2('What to Check'),
         p('At every walk, check these:'),
@@ -508,11 +559,13 @@ const doc = new Document({
         h2('Why Light Programs Matter'),
         p('Light is a powerful management tool that is easy to forget about because it is always on. Birds live by light cycles. Light duration and intensity control when they eat, when they rest, and how their metabolism runs. A poorly managed light program is a source of chronic, invisible stress that shows up in your performance data without an obvious cause.'),
 
-        p('For broilers, the first week requires bright, consistent light to ensure day-old chicks find the feed and water that will determine everything that follows [1]. The Ross Broiler Management Handbook 2025 recommends a minimum intensity of 30 to 40 lux for whole-house lighting in the first seven days, starting with close to 23 hours of light and gradually introducing a dark period by day 7 [1]. For spot-brooding setups, push that up to 80 to 100 lux right in the brooding zone. Chicks need a clear, bright signal to find the heat and feed trays in the first hours after placement [1]. The CPC Lighting Program Guidelines for Broilers (2026) follow a consistent approach: 18 hours of light with 6 hours of dark from day 0 at 50 to 100 lux through the first week [12]. Both sources agree on the key point: early-week light must be bright enough that chicks find the feed trays without difficulty, and intensity must be maintained with a stable, flicker-free source.'),
-
-        p('The CPC program steps intensity down progressively through the grow-out: 30 to 50 lux from days 7 to 13, 20 to 30 lux from days 14 to 21, then continuing to reduce to 3 to 5 lux by the final week, while extending light hours to 22 hours per day from day 28 onward [12]. After the first week, most commercial programs introduce a dark period. A meaningful dark period supports circadian rhythm, rest behavior, and welfare. Research cautions that excessive darkness beyond what programs prescribe can actually impair bone mineralization and growth. The goal is the right amount of darkness on schedule: not more, not less [1,12].'),
-
-        p('One practical note from the CPC program: if you are using LED fixtures, check for flickering at lower lux settings. Flickering at low intensity is worse than keeping intensity slightly higher. A steady 15 lux is better than a flickering 10 lux [12].'),
+        p('Good lighting in the first week is not about brightness for its own sake. It is about making sure every chick finds feed and water within the first few hours. That single factor shapes the entire flock\'s performance. Below are the CPC broiler lighting guidelines [12].'),
+        lightingTable(),
+        new Paragraph({ spacing: { before: 80, after: 0 } }),
+        p('Key practical notes:', { bold: true }),
+        b('The 6-hour dark period from Day 1 supports circadian rhythm, welfare, and bone mineralization; do not skip it.'),
+        b('If using LED fixtures, check for flickering at lower lux settings. A steady 15 lux is better than a flickering 10 lux.'),
+        b('Use a light meter; estimating lux by eye is unreliable.'),
 
         callout('In the first few days after your chicks arrive, they need to find feed fast. The CPC team recommends a simple and effective approach: direct your LEDs over the feed trays rather than lighting the whole barn evenly [12]. The bright spot acts like a signal, pulling chicks straight toward the feed. It is a small adjustment that can make a real difference in how quickly a new flock gets off to a strong start [12].'),
 
