@@ -260,15 +260,42 @@ Write as:
 - Repetitive sentence structures
 - Generic AI-like phrasing
 
-### Punctuation Style Rule
+### Punctuation Style Rule (STRICT — NO EM DASHES)
 
-Use em dashes (—) sparingly.
+**Never use em dashes (—) or en dashes (–) in body prose.** This is the single most recurring AI-tell in generated content. Replace with periods, commas, colons, or rewritten sentences. Verify with `(xml.match(/—/g) || []).length === 0` before publishing every course.
 
-Do not rely on em dashes, semicolons, or overly polished punctuation patterns to create emphasis.
+The only allowed em/en dash usage is:
+- Inside table cells for ranges like `Day 14–21`, `30–50 lux`, `32–34°C` (en dash, U+2013, for numeric ranges only)
+- Inside table cells where `—` indicates "no data" / "not applicable"
+- Never in body paragraphs, callouts, bullets, or labeled entries
 
-Prefer clear, direct farmer-flow sentences using periods or simple commas.
+Common temptations that must be rewritten:
+- `X — Y` (parenthetical) → `X. Y.` or `X, Y.` or restructure
+- `X — find the leak and fix it` → `X. Find the leak and fix it.`
+- `Something is wrong — heat, short feed, poor air — and it needs fixing` → `Something is wrong: heat, short feed, poor air. It needs fixing.`
 
-If a paragraph contains multiple em dashes, semicolons, or polished punctuation patterns that make the text feel AI-generated, rewrite it into simpler, more natural sentences.
+Also avoid heavy reliance on semicolons or overly polished punctuation patterns. Prefer plain periods and commas. Run the dash check on the final docx XML before reporting any course as done.
+
+### Phrases to Avoid (AI-sounding patterns flagged in real CPC review)
+
+Rewrite all of these on sight. They sound like a corporate report, not a vet talking to a farmer.
+
+| Avoid | Use instead |
+|---|---|
+| "X indicates Y is creating bottlenecks" | "If you're seeing X, you have a Y problem" |
+| "Birds unable to access resources without displacing others" | "Birds pushing each other off feeders" |
+| "Investigate the root cause rather than just managing the symptom" | "Find what's driving it. Spreading them out is not a fix." |
+| "develop piling behavior" | "start piling at night" |
+| "Warm water reduces consumption" | "Birds back off warm water fast. Press a nipple and feel what comes out." |
+| "Birds need true darkness to achieve a proper rest cycle" | "Birds settle quickly in true darkness. If they're still moving around, something is letting light in." |
+| "X is recommended to draw chicks to the feed" | "Push that up to X right where you need chicks to find feed" |
+| "A flock with a wide spread of bird sizes at seven or fourteen days often traces back to" | "High CV at seven or fourteen days almost always starts in" |
+| "Auger failures, blocked joints, or bridged feed can leave entire sections without feed" | "A failed auger or blocked joint can starve a whole section while the bin reads full" |
+| "Some pecking and bossing around is normal. Birds naturally sort out who is in charge, but it is a gradual process that plays out over several weeks" | "Some pecking-order sorting is normal and works itself out over time" |
+| "compounds through the grow-out" | "gets wider every week through the grow-out" |
+| "consistent with welfare research" / "associated with" / "exhibits" | rewrite as direct cause→effect |
+
+The pattern: clinical jargon, passive voice, abstraction, and "X-then-explanation" structures all signal AI. Replace with **what the farmer sees → what to do**.
 
 ### Rewrite Rule
 
@@ -473,7 +500,11 @@ XML template (paste verbatim, change course title only):
 
 ### Figure Caption Rule (MANDATORY)
 
-Figure captions describe what the figure shows. Do NOT append generation-source notes such as `(Generated diagram, CPC Short Courses.)`, `(Generated scientific illustration, CPC Short Courses.)`, or "Actual electron micrographs to be supplied by the CPC team." in the caption text. The course is presented as a finished CPC product; provenance disclaimers belong in internal notes, not in the rendered caption.
+Every figure and photo caption ends with `Source: <attribution>.` Use **`Source: CPC Short Courses.`** for diagrams, photos, and tables produced for or owned by CPC (the default for this project). Cite a third-party source by name only when the image is reproduced from outside the CPC library (e.g. `Source: Aviagen Ross 308 Manual, 2025.`).
+
+Do NOT use AI-generation disclaimers like `(Generated diagram, CPC Short Courses.)`, `(Generated scientific illustration, ...)`, or "Actual electron micrographs to be supplied by the CPC team." in the caption — these read as drafts or provenance notes, not finished captions. The course is presented as a finished CPC product; the generation method belongs in internal notes, not in the rendered caption.
+
+When swapping a figure for a photo or vice-versa (e.g. replacing a diagram with a real photograph), update both the prefix (`Figure X.Y` → `Photo X.Y`) and the caption text — describe the new image accurately, do not reuse the old caption verbatim.
 
 ### Figure vs. Photo Labeling (MANDATORY)
 
@@ -681,6 +712,8 @@ The user-facing dashboard is a **separate Vercel project** at `cpc-short-courses
 **Vercel auto-deploy stalls silently.** Pushing to `main` does NOT reliably trigger a new deploy on this project — observed multiple times, sometimes the most recent production build is days old while `main` has new commits. Do not assume `git push` is enough.
 
 **Quick-deploy procedure (run after every Course X publish):**
+
+0. **Regenerate the draft first.** After a previous push, Git LFS may show the draft as deleted from the working tree (`git status` shows ` D Course X/..._draft.docx`) even though it is committed in history. Always run the generator (`node generate-courseX-*.mjs`) once before publishing, then verify the file is on disk and the byte count is in the expected range. Do not assume the on-disk draft is the latest.
 
 1. Update both copies of the final file:
    ```bash
@@ -955,6 +988,132 @@ If the source has already been clobbered, the original is recoverable from Git L
 ```bash
 git show <pre-publish-commit>:"<path/to/source.docx>" | git lfs smudge > recovered.docx
 ```
+
+---
+
+## Subscripts and Superscripts in Chemical Formulas
+
+CO2, NH3, H2O, mg/L, m², kg/m² and similar will appear in every course. The TextRun-per-character approach is the pattern. Helpers go at the top of the generator alongside `run()` and `labeled()`.
+
+```js
+// Helpers — add once near the top of every course generator
+const co2r  = () => [run('CO'), run('2',  { subScript: true })];
+const nh3r  = () => [run('NH'), run('3',  { subScript: true })];
+const h2or  = () => [run('H'),  run('2',  { subScript: true }), run('O')];
+const m2r   = () => [run('m'),  run('2',  { superScript: true })];
+const kgm2r = () => [run('kg/m'), run('2', { superScript: true })];
+```
+
+For `labeled()` and `b()` to accept these (they return arrays of TextRuns, not strings), the helpers must spread arrays:
+
+```js
+const labeled = (label, body) => p([
+  run(label + ' ', { bold: true }),
+  ...(Array.isArray(body) ? body : [run(body)]),
+]);
+// b() already handles arrays via: children: Array.isArray(text) ? text : [run(text)]
+```
+
+Usage:
+```js
+labeled('Carbon dioxide:', [
+  ...co2r(), run(' above 3,000 ppm indicates inadequate ventilation [1]. If '),
+  ...co2r(), run(' is high, minimum ventilation is too low.'),
+]),
+b([run('Open-mouth breathing in cool conditions: indicates high '), ...co2r(), run(', not heat')]),
+```
+
+Verify in the build: `(xml.match(/w:vertAlign w:val="subscript"/g) || []).length` must equal the count of subscript runs you injected. Plain `CO2` left in the docx XML is a bug.
+
+---
+
+## Inline Data Tables in Course Generators
+
+Course 3 added two inline data tables (temperature targets, lighting schedule). The pattern below is the canonical recipe — copy it verbatim into any generator that needs a table.
+
+**Column widths must sum to 8640 twips** (page content width = 8.5" − 2×1.25" margins = 6"). The function name (`tempTable`, `lightingTable`, `densityTable`, etc.) is per-table; everything else is identical.
+
+```js
+function someTable() {
+  const colW = [/* twips, must sum to 8640 */];
+  const hdrBg = '2E74B5';   // CPC blue header
+  const altBg = 'EBF2FA';   // light blue zebra-stripe
+  const bdr = { style: BorderStyle.SINGLE, size: 2, color: 'AAAAAA' };
+  const cellBorders = { top: bdr, bottom: bdr, left: bdr, right: bdr };
+
+  const hdrCell = (text, i) => new TableCell({
+    width: { size: colW[i], type: WidthType.DXA },
+    borders: cellBorders,
+    shading: { type: ShadingType.SOLID, color: hdrBg },
+    children: [new Paragraph({
+      alignment: AlignmentType.CENTER,
+      spacing: { before: 60, after: 60 },
+      children: [run(text, { bold: true, size: 18, color: 'FFFFFF' })],
+    })],
+  });
+
+  const dataCell = (text, i, shade) => new TableCell({
+    width: { size: colW[i], type: WidthType.DXA },
+    borders: cellBorders,
+    shading: { type: ShadingType.SOLID, color: shade ? altBg : 'FFFFFF' },
+    children: [new Paragraph({
+      // Center numeric columns; left-align text columns (typically the last "Notes" column)
+      alignment: i === colW.length - 1 ? AlignmentType.LEFT : AlignmentType.CENTER,
+      spacing: { before: 50, after: 50 },
+      children: [run(text, { size: 18, color: BODY })],
+    })],
+  });
+
+  const headers = [/* … */];
+  const rows    = [[/* … */], [/* … */]];
+
+  return new Table({
+    width: { size: 100, type: WidthType.PERCENTAGE },
+    margins: { top: 0, bottom: 0, left: 0, right: 0 },
+    rows: [
+      new TableRow({ children: headers.map((h, i) => hdrCell(h, i)), tableHeader: true }),
+      ...rows.map((row, ri) => new TableRow({
+        children: row.map((cell, ci) => dataCell(cell, ci, ri % 2 === 1)),
+      })),
+    ],
+  });
+}
+```
+
+In the document body, use it like an image block:
+```js
+p('Target ranges from CPC source [4,11]:'),
+someTable(),
+new Paragraph({ spacing: { before: 80, after: 0 } }),  // breathing room after table
+```
+
+Use **en dash (–, U+2013)** for ranges inside cells (`Day 14–21`, `30–50 lux`). Em dashes are still banned even in tables; use `-` or `–` only.
+
+---
+
+## Extracting Tables and Text from CPC Source Docx Files
+
+When the user points to a CPC source `.docx` (e.g. `Avian medicine sources/CPC learning centre/.../something.docx`) as the basis for a section, extract its content programmatically — never re-type by hand.
+
+```js
+const JSZip = require('jszip');
+const fs    = require('fs');
+
+(async () => {
+  const z   = await JSZip.loadAsync(fs.readFileSync('<path/to/cpc.docx>'));
+  const xml = await z.file('word/document.xml').async('string');
+
+  // Get every non-empty text run in order. For tables, runs come out left-to-right,
+  // top-to-bottom, so you can chunk by `cols` to reconstruct rows.
+  const texts = [...xml.matchAll(/<w:t(?:\s[^>]*)?>([^<]+)<\/w:t>/g)].map(m => m[1]);
+  texts.forEach((t, i) => console.log(i, JSON.stringify(t)));
+})();
+```
+
+After extraction:
+1. **Apply American English sweep** — CPC sources sometimes use British forms (e.g. "behaviour"). Convert before pasting into the generator.
+2. **Strip the source's internal citation numbers** ("[1, 4, 12]" inside the source doc refers to *its* references, not yours). Replace with the matching numbers from your course's reference list.
+3. **Verify nothing was paraphrased silently** — the user said "keep it as it is now", so the source text is the ground truth, not your rewrite of it.
 
 ---
 
