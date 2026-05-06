@@ -41,7 +41,7 @@ const IMG = {
   nippleHeight:loadImg(path.join(C3, 'Figure 5.1, nipple height.png')),
   wetlitter:   loadImg(path.join(C3, 'nipple-leaking-wet-litter.png')),
   biosec:      loadImg(path.join(C4, 'biosecurity_door_closed_chicks.png')),
-  digital:     loadImg(path.join(C7, 'Digital flock management.png')),
+  digital:     loadImg(path.join(C3, 'Digital farm management.png')),
 };
 
 // Log which images loaded
@@ -375,7 +375,7 @@ const doc = new Document({
         b('Experienced farmers standardizing their routines across multiple barns'),
 
         h2('How to Use This Checklist'),
-        p('Work through T-FLAWS in sequence. Temperature is the first thing you check when you walk through the door. Sanitation and Space is the last scan before you leave. With practice, the full check takes ten to fifteen minutes per barn.'),
+        p('Work through T-FLAWS every time you walk the barn. Temperature is the first thing you assess when you come through the door. Space and Sanitation are your final scan before you leave. With experience, the routine becomes second nature, and you will know quickly when something is off.'),
         p('Use it every day, on every visit. Record anything that is off and what you did about it. A written daily log gives you patterns over time, and patterns tell you where the next problem will come from before it arrives.'),
 
         ...imgBlock(IMG.farm, 'png', 5.8, 'Photo 1.1: A commercial broiler barn. T-FLAWS gives every barn visit a consistent six-point structure. Source: CPC Short Courses.'),
@@ -390,17 +390,17 @@ const doc = new Document({
         p('The same applies at the other end. Heat stress later in the flock suppresses feed intake, elevates mortality, and cuts your feed conversion ratio [6]. Birds cannot tell you they are too hot. They show you.'),
 
         h2('Target Ranges by Bird Age'),
-        p('The Ross Broiler Management Handbook recommends measuring temperature at chick level, not at ceiling sensor height. On cold nights or with cold floors, bird-level temperature can be 3 to 5 degrees Celsius lower than what your barn controller shows [1]. That gap costs you.'),
+        p('Always check temperature at chick level, not at the ceiling sensor. Your barn controller reads what the sensor sees, and on a cold night or over a cold floor, that reading can be 3 to 5 degrees higher than what the birds are actually experiencing [1]. That gap is enough to stunt a whole flock in the first week.'),
         p('Target temperatures at bird level for broilers [1]:'),
         b('Day 0 to 2: 32 to 34 degrees Celsius'),
         b('Day 3 to 7: reduce by approximately 0.5 degrees every 2 to 3 days as birds feather in'),
         b('Week 2: approximately 28 to 30 degrees Celsius'),
         b('Week 3: approximately 24 to 27 degrees Celsius'),
         b('Week 4 and beyond: 18 to 22 degrees Celsius'),
-        p('These targets are starting points, not fixed rules. Always look at what the birds are doing. Bird distribution across the barn floor is a more accurate real-time indicator than any sensor reading. Chicks that are comfortable will spread evenly across the heated area, eating and drinking actively.'),
-        p('Pre-heat the barn at least 24 to 48 hours before placement, including the floor. Litter surface temperature at chick level should reach 30 degrees Celsius before the first bird arrives [1]. A warm air temperature over a cold floor is not adequate for day-olds.'),
+        p('These are targets, not fixed rules. The birds tell you more than any sensor. If they are spread evenly across the heated area, eating and drinking actively, the temperature is right. If they are piling up or pushing to the walls, something is off.'),
+        p('Pre-heat the barn at least 24 to 48 hours before placement, including the floor. The litter surface at chick level needs to reach 30 degrees Celsius before the first bird arrives [1]. Warm air over a cold floor is not enough for day-olds. They lose heat through the floor just as fast as through the air.'),
 
-        ...imgBlock(IMG.fig11, 'png', 5.8, 'Figure 1.1: Chick distribution patterns at correct temperature (even spread), too cold (huddling under heat source), and too hot (crowding to barn edges). Source: Aviagen Ross Broiler Management Handbook, 2025 [1].'),
+        ...imgBlock(IMG.fig11, 'png', 5.8, 'Figure 1.1: Chick distribution patterns at correct temperature (even spread), too cold (huddling under heat source), and too hot (crowding to barn edges). Source: CPC Short Courses.'),
 
         h2('What Farmers See'),
         labeled('Cold birds:', 'Chicks huddle tightly in a dense cluster under the heat source, often chirping loudly. They are not exploring, not eating, and not using the water. Early mortality will be elevated. If you see a pile of chicks, the temperature at bird level is too low.'),
@@ -423,10 +423,10 @@ const doc = new Document({
         h2('Why Feed Management Matters'),
         p('A bird that cannot find feed or reach it comfortably does not grow. Feed access is the engine of production, and it is also one of the most reliable early-warning signals in your barn. Birds reduce feed intake before they show any other visible sign of stress or illness [1,11].'),
         p('A drop in daily feed consumption of more than 10 percent from the previous day, without a corresponding change in diet or management, is a red flag. Before you call it a feed problem, check the other five T-FLAWS points. Hot barns, poor air quality, low water flow, and high stocking density all suppress feed intake before they show up as anything else.'),
-        p('Feed management is not just about keeping the bins full. It is about making sure every bird, in every corner of your barn, can reach good quality feed without competition, waste, or physical barriers. When this is right, growth is even and your flock coefficient of variation stays low.'),
+        p('Feed management is not just about keeping the bins full. It is about making sure every bird in every corner of your barn can reach good quality feed without competition, waste, or physical barriers. When you get this right, birds grow more evenly and there are fewer surprises at weigh-out.'),
 
         h2('What to Check'),
-        p('At every barn walk, assess each of the following:'),
+        p('At every walk, check these:'),
         labeled('Feeder levels:', 'Pans and troughs should have adequate feed without being overfilled. Overfilling increases waste and allows birds to sort, leaving fines at the bottom and wasting nutrient-dense particles.'),
         labeled('Feeder height:', 'The lip of the feeder should sit at back level as the bird stands. Too high and smaller birds cannot reach it. Too low and feed is wasted into the litter [11]. The CPC Broiler Management Bulletin recommends adjusting feeder height at a minimum of once per week as birds grow [11].'),
         labeled('Feed distribution:', 'Walk the full barn length and confirm feed is flowing to all stations. Auger failures, blocked joints, or bridged feed can leave entire sections without feed while the bins appear full.'),
@@ -449,7 +449,7 @@ const doc = new Document({
         b('If a batch of feed smells abnormal or shows unusual bridging, retain a sample and notify your feed supplier before feeding the whole delivery'),
         b('In the first 48 hours, check crop fill at 2, 4, 8, 12, 24, and 48 hours post-placement: target 75% of crops full at 2 hours, 80% at 4 hours, 95% at 24 hours, and 100% by 48 hours. A bird with an empty crop at 24 hours is already behind [1]'),
 
-        ...imgBlock(IMG.cropfill, 'png', 5.8, 'Photo 2.2: Crop fill at 24 hours. The chick on the left has a full, rounded crop, while the chick on the right has an empty crop.'),
+        ...imgBlock(IMG.cropfill, 'png', 5.8, 'Photo 2.2: Crop fill at 24 hours. The chick on the left has a full, rounded crop, while the chick on the right has an empty crop. Source: CPC Short Courses.'),
 
         pb(),
 
@@ -483,7 +483,7 @@ const doc = new Document({
         labeled('Layer production deviations:', 'If your hens fall below production targets or go off lay unexpectedly, verify the light schedule before looking at nutrition or disease. An incorrectly programmed timer is one of the first things to check.'),
         labeled('Poor uniformity in growers:', 'Uneven lux across the barn during the first week is a contributor to uneven feed and water access in that critical window, which translates directly to weight variation at seven days.'),
 
-        ...imgBlock(IMG.lux, 'png', 5.8, 'Photo 3.2: The same barn at 5 lux (top) and 20 lux (bottom). Research shows that birds kept at 5 lux have higher stress hormone levels and reduced exploratory behavior compared to birds at 20 lux. Brighter light also makes it much easier to spot a sick or lame bird before it becomes a problem.'),
+        ...imgBlock(IMG.lux, 'png', 5.8, 'Photo 3.2: The same barn at 5 lux (top) and 20 lux (bottom). Research shows that birds kept at 5 lux have higher stress hormone levels and reduced exploratory behavior compared to birds at 20 lux. Brighter light also makes it much easier to spot a sick or lame bird before it becomes a problem. Source: CPC Short Courses.'),
 
         h2('What to Do'),
         b('Replace failed bulbs the same day you find them, not at the next maintenance cycle'),
@@ -499,8 +499,8 @@ const doc = new Document({
         h1('A: Air'),
         h2('Why Ventilation Matters'),
         p('Ventilation is the most underestimated management factor in commercial poultry. It is invisible, it requires constant adjustment, and when it fails, birds absorb the consequences before most farmers notice anything wrong.'),
-        p('The job of ventilation is to remove heat, moisture, ammonia, carbon dioxide, and dust, and to replace that air with fresh air delivered at the right temperature and speed for the birds in front of you [1,5]. Minimum ventilation must run every hour of every day, including cold Canadian winters. Shutting down fans to save on heating costs in January is one of the most common management errors in commercial production. The cost of that decision arrives weeks later in respiratory disease, poor litter, and compromised feed conversion.'),
-        p('Ventilation is not just a comfort issue. It is a health, welfare, and productivity issue. Getting air quality right is as important as any vaccine or feed additive on your farm [5].'),
+        p('The job of ventilation is to pull out heat, moisture, ammonia, carbon dioxide, and dust, and bring in fresh air at the right temperature and speed for the birds in front of you [1,5]. Minimum ventilation has to run every hour of every day, including cold Canadian winters. Turning down fans to cut heating costs in January is one of the most common management mistakes in this business. You pay for it weeks later in respiratory disease, bad litter, and feed conversion that does not add up [5].'),
+        p('Air quality is not a comfort issue. It is a health, welfare, and money issue. Getting it right matters as much as any vaccine or feed additive on your farm [5].'),
 
         h2('Key Air Quality Indicators'),
         labeled('Ammonia:', 'This is one of the most practical things you can track during your daily barn walk. Above 10 ppm at bird level, ammonia starts quietly weakening your birds\' immune defense [5]. By 15 to 20 ppm, that stress is real, even if you cannot see it yet in performance [5]. Push past 25 ppm and you will start seeing visible eye damage: irritation, swelling, and birds that are far more vulnerable to any respiratory bug that comes through the barn [5]. At 50 ppm and above, the airways themselves take a hit. The rule is simple: do not wait for a meter reading. If you can smell it when you walk in, it is already too high.'),
@@ -510,7 +510,7 @@ const doc = new Document({
         labeled('Relative humidity:', 'During brooding (the first two weeks), target relative humidity is 60 to 70 percent to protect day-old respiratory surfaces. From two weeks onward, 50 to 60 percent is the appropriate target [5]. Below 50 percent, dust levels rise and respiratory irritation increases. Above 70 percent at any age, litter moisture builds rapidly, ammonia production accelerates, and footpad dermatitis rates climb. Humidity is a direct reflection of ventilation rate; if humidity is high, your minimum ventilation is too low.'),
         labeled('Air temperature and speed:', 'The temperature and speed of incoming air at bird level matters. In cold weather, cold air entering too fast and landing on birds causes drafts, which chills young birds and causes them to huddle even when your barn thermostat shows an adequate temperature. Adjust inlet openings to direct air up and across the roof before it falls to bird level [1].'),
 
-        ...imgBlock(IMG.airflow, 'png', 5.8, 'Figure 4.1: Minimum ventilation airflow in a broiler barn. Cold air enters through the sidewall inlets, is directed up toward the roof peak where it mixes with warm air, and falls back down to bird level as tempered, draft-free air.'),
+        ...imgBlock(IMG.airflow, 'png', 5.8, 'Figure 4.1: Minimum ventilation airflow in a broiler barn. Cold air enters through the sidewall inlets, is directed up toward the roof peak where it mixes with warm air, and falls back down to bird level as tempered, draft-free air. Source: CPC Short Courses.'),
 
         ...imgBlock(IMG.ventilation, 'png', 5.8, 'Photo 4.1: Commercial broiler barn interior. Proper ventilation keeps air fresh at bird level without drafts. Litter condition and bird distribution are visible indicators of air quality management. Source: CPC Short Courses.'),
 
@@ -537,7 +537,7 @@ const doc = new Document({
         h1('W: Water'),
         h2('Why Water Matters'),
         p('Water is the most critical nutrient in your barn. Broilers typically consume about twice as much water as feed by volume under comfortable temperatures, and this ratio rises sharply during heat stress [18,19]. Water and feed intake track each other so closely that a drop in one almost always signals a drop in the other. If water is restricted for any reason, feed intake falls quickly behind. By the time you notice a change on a meter or daily record, the bird is already behind [18].'),
-        p('Water management in a commercial barn is more than making sure the tanks are full. It involves pressure, flow rate, line height, water temperature, and water quality at the point of drinking, not at the header tank. A line that passes every tank test can still fail at the nipple if pressure is wrong, biofilm is heavy, or height adjustment is overdue [2,10].'),
+        p('Managing water in a commercial barn is more than keeping the tanks full. Pressure, flow rate, line height, water temperature, and quality at the nipple all matter. A line that looks fine at the header tank can still fail at the nipple if pressure is off, biofilm has built up, or you have not adjusted height in a week [2,10].'),
         p('The CPC Drinking Water Management Bulletin notes that water intake monitoring is one of the most sensitive daily health indicators available to the farmer [10]. A drop in water consumption before any other sign of disease is detectable is a consistent pattern. If your meter readings drop by more than 10 percent compared to the previous day without a management change, investigate all T-FLAWS points and contact your veterinarian.'),
 
         h2('What to Check'),
@@ -545,7 +545,7 @@ const doc = new Document({
         labeled('Line pressure:', 'Overpressure causes nipples to drip constantly, wetting the litter below. Underpressure means birds work hard for very little water and drink less than they need. Pressure regulators must be checked and adjusted as bird size increases and demand grows [2].'),
         labeled('Line height:', 'Chicks should be able to see and easily reach the nipples. In the first days, set the line so their backs are on a slight angle while they drink, not standing straight up. As they grow, keep raising the nipples so the birds have to reach a bit, but are not stretching or jumping to get a drink. If the line is too low, they twist their heads and drip water into the litter. If it is too high, the smaller birds stop trying to drink. Walk the barn and fine-tune nipple height every day as the birds grow [2].'),
 
-        ...imgBlock(IMG.nippleHeight, 'png', 5.8, 'Figure 5.1: Nipple drinker line height by bird age. In the first two days, the line is set at chick eye level. From day 3, the target is a 45-degree drinking angle. By day 10, birds should drink nearly straight up. Adjust at least daily in the first week, then weekly thereafter. Source: CPC Drinking Water Management [10].'),
+        ...imgBlock(IMG.nippleHeight, 'png', 5.8, 'Figure 5.1: Nipple drinker line height by bird age. In the first two days, the line is set at chick eye level. From day 3, the target is a 45-degree drinking angle. By day 10, birds should drink nearly straight up. Adjust at least daily in the first week, then weekly thereafter. Source: CPC Short Courses.'),
 
         labeled('Water temperature:', 'Warm water reduces consumption. Water delivered to the nipple should be cool, ideally 10 to 14 degrees Celsius [2]. In summer, this requires attention to insulation on supply lines and possibly chilling systems in extreme heat.'),
         labeled('Consumption records:', 'If your system has water meters, check daily volume against the breed target curve. The Ross Broiler Management Handbook provides expected water intake by day of age at a given temperature [1]. Any deviation greater than 10 percent in either direction needs an explanation.'),
@@ -597,13 +597,13 @@ const doc = new Document({
 
         callout('If your litter is wet, your ammonia is rising and your ventilation rate needs to increase. Fix the source of moisture, increase ventilation, and consider applying a litter amendment if recommended by your veterinarian. Do not wait for footpad scores to tell you what the litter already shows.'),
 
-        ...imgBlock(IMG.wetlitter, 'png', 5.8, 'Photo 5.1: A leaking nipple drinker drips water onto the litter directly below, creating a wet patch that spreads quickly in a crowded barn. Fix leaks the same day you find them.'),
+        ...imgBlock(IMG.wetlitter, 'png', 5.8, 'Photo 6.2: A leaking nipple drinker drips water onto the litter directly below, creating a wet patch that spreads quickly in a crowded barn. Fix leaks the same day you find them. Source: CPC Short Courses.'),
 
         // ── Stocking Density ─────────────────────────────
         h2('Stocking Density'),
         p('Stocking density affects every other T-FLAWS checkpoint. Higher density means more heat produced per square meter (T), more moisture and ammonia in the air (A), more competition for feeders and waterers (F and W), and less space per bird to rest, move, and express normal behavior (welfare).'),
         p('The National Farm Animal Care Council (NFACC) Code of Practice for the Care and Handling of Hatching Eggs, Breeders, Chickens, and Turkeys sets the legal and welfare standards for commercial broiler production in Canada. Under conventional programs, the maximum stocking density is 31 kg per square meter live weight. Programs with enhanced welfare auditing can operate up to 38 kg per square meter [4].'),
-        p('These numbers are maximums, not targets. Running consistently at the ceiling of the allowable density means your ventilation system, feeding system, and water system have no margin for error. When something goes wrong on a hot day in a barn at maximum density, everything fails faster and harder than in a barn with space to spare.'),
+        p('These are legal maximums, not production targets. Running at the ceiling on every flock means your ventilation, feeding, and water systems have zero margin for error. On a hot day in a barn packed to the limit, a single fan failure or a blocked nipple line becomes a serious welfare and mortality event. A barn with a bit of space to spare gives you time to catch problems before they escalate.'),
 
         h2('What Farmers See'),
         labeled('Wet, dark, caked litter patches:', 'Most commonly found under drinker lines, near walls, and in corners with poor air circulation. Check for the moisture source before applying a treatment.'),
@@ -632,10 +632,10 @@ const doc = new Document({
         b('Poor ventilation raises humidity, accelerates litter breakdown, and raises ammonia further (A worsening both A and S in a feedback loop)'),
         b('Restricted water causes feed intake to fall rapidly; the two are correlated at 0.98. Fix water first before investigating other causes (W driving F)'),
         b('High stocking density creates competition for every resource, amplifying any deficiency in T, F, L, A, or W (S amplifying everything else)'),
-        p('When you find a T-FLAWS problem, look at the points most likely to have contributed to it and the points most likely to be affected by it. A barn walk that finds wet litter near the drinkers is not just a water pressure check. It is also a prompt to check ammonia, ventilation rate, footpad condition, and feed intake for the section affected.'),
+        p('When you find a T-FLAWS problem, ask what else it is touching. Wet litter near the drinkers is not just a water pressure issue. It is also a prompt to check ammonia, ventilation rate, footpad condition, and feed intake in that section. Fix one thing and check the rest, because they are rarely independent.'),
         callout('The farmers who get the most from T-FLAWS are not the ones who use it to find problems. They are the ones who use it to prevent them. By the time a problem is visible in your birds, it has usually been building in your management for several days.'),
 
-        ...imgBlock(IMG.digital, 'png', 5.8, 'Figure 7.1: Digital flock management tools can support daily T-FLAWS records, making patterns visible across flocks and seasons. Source: CPC Short Courses.'),
+        ...imgBlock(IMG.digital, 'png', 5.8, 'Photo 7.1: Digital flock management tools can support daily T-FLAWS records, making patterns visible across flocks and seasons. Source: CPC Short Courses.'),
 
         pb(),
 
