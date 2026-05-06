@@ -1,8 +1,7 @@
 // ============================================================
 // generate-course3-tflaws.mjs  -  Course 3: T-FLAWS Assessment Management Tool
-// CPC Short Courses — May 2026 rebuild
+// CPC Short Courses — May 2026 rebuild (v2 — comprehensive revision)
 // T-FLAWS: Temperature, Feed, Light, Air, Water, Sanitation & Space
-// Developed by CPC Learning Centre (Mike and Dr. Stew)
 // Run: node generate-course3-tflaws.mjs
 // ============================================================
 
@@ -31,12 +30,24 @@ const logoBuf   = fs.existsSync(LOGO_PATH) ? fs.readFileSync(LOGO_PATH) : null;
 function loadImg(p) { return fs.existsSync(p) ? fs.readFileSync(p) : null; }
 
 const IMG = {
-  farm:     loadImg(path.join(C3, 'Broiler farm.png')),          // cover / intro
-  house:    loadImg(path.join(C3, 'broiler_house.jpg')),          // A: Air  barn interior
-  flock4:   loadImg(path.join(C4, 'early_disease_detection_flock.png')), // F: Feed flock
-  biosec:   loadImg(path.join(C4, 'biosecurity_door_closed_chicks.png')), // S: Sanitation
-  digital:  loadImg(path.join(C7, 'Digital flock management.png')),       // System section
+  farm:        loadImg(path.join(C3, 'Broiler farm.png')),
+  fig11:       loadImg(path.join(C3, 'Fig 1.1_Chicken distribution absed on temperature.png')),
+  flock4:      loadImg(path.join(C4, 'early_disease_detection_flock.png')),
+  cropfill:    loadImg(path.join(C3, 'photo2.2.png')),
+  cpcled:      loadImg(path.join(C3, 'CPC_Lighting_method_in first dayold_chicks.jpg')),
+  lux:         loadImg(path.join(C3, '5_lux_vs_20_lux_broiler_barn.png')),
+  airflow:     loadImg(path.join(C3, 'Correct air flow through the barn.png')),
+  ventilation: loadImg(path.join(C3, 'Broiler_farm_ventilation.png')),
+  nippleHeight:loadImg(path.join(C3, 'Figure 5.1, nipple height.png')),
+  wetlitter:   loadImg(path.join(C3, 'nipple-leaking-wet-litter.png')),
+  biosec:      loadImg(path.join(C4, 'biosecurity_door_closed_chicks.png')),
+  digital:     loadImg(path.join(C7, 'Digital flock management.png')),
 };
+
+// Log which images loaded
+Object.entries(IMG).forEach(([k, v]) => {
+  if (!v) console.warn(`WARNING: image not found — ${k}`);
+});
 
 // helper: read PNG dimensions
 function pngDim(buf) {
@@ -130,7 +141,7 @@ function imgBlock(buf, type, widthIn, caption) {
           children: [new Paragraph({
             alignment: AlignmentType.CENTER,
             spacing:   { before: 700, after: 700 },
-            children:  [run('[Image placeholder - to be supplied by CPC team]', { color: '999999', italics: true })],
+            children:  [run('[Image placeholder — to be supplied by CPC team]', { color: '999999', italics: true })],
           })],
         })]})],
       }),
@@ -148,7 +159,6 @@ function imgBlock(buf, type, widthIn, caption) {
     const dim = pngDim(buf);
     if (dim.w > 0) hpx = Math.round(wpx * dim.h / dim.w);
   } else if (type === 'jpg') {
-    // Try reading JPEG dimensions from EXIF/SOF markers
     try {
       let i = 2;
       while (i < buf.length - 4) {
@@ -218,32 +228,33 @@ const tocEntries = [
   { lvl: 2, text: 'Why Feed Management Matters', page: 9 },
   { lvl: 2, text: 'What to Check', page: 9 },
   { lvl: 2, text: 'What Farmers See', page: 11 },
-  { lvl: 2, text: 'What to Do', page: 11 },
+  { lvl: 2, text: 'What to Do', page: 12 },
   { lvl: 1, text: 'L: Light', page: 13 },
   { lvl: 2, text: 'Why Light Programs Matter', page: 13 },
-  { lvl: 2, text: 'What to Check', page: 14 },
-  { lvl: 2, text: 'What Farmers See', page: 14 },
-  { lvl: 2, text: 'What to Do', page: 15 },
-  { lvl: 1, text: 'A: Air', page: 16 },
-  { lvl: 2, text: 'Why Ventilation Matters', page: 16 },
-  { lvl: 2, text: 'Key Air Quality Indicators', page: 16 },
-  { lvl: 2, text: 'What Farmers See', page: 18 },
-  { lvl: 2, text: 'What to Do', page: 18 },
-  { lvl: 1, text: 'W: Water', page: 20 },
-  { lvl: 2, text: 'Why Water Matters', page: 20 },
-  { lvl: 2, text: 'What to Check', page: 20 },
-  { lvl: 2, text: 'What Farmers See', page: 22 },
-  { lvl: 2, text: 'What to Do', page: 22 },
-  { lvl: 1, text: 'S: Sanitation & Space', page: 24 },
-  { lvl: 2, text: 'Litter Management', page: 24 },
-  { lvl: 2, text: 'Stocking Density', page: 25 },
-  { lvl: 2, text: 'What Farmers See', page: 26 },
-  { lvl: 2, text: 'What to Do', page: 26 },
-  { lvl: 1, text: 'Using T-FLAWS as a System', page: 27 },
-  { lvl: 1, text: 'Where to Keep Learning', page: 28 },
-  { lvl: 2, text: 'Key Scientific Journals', page: 28 },
-  { lvl: 2, text: 'Key Institutional Resources', page: 28 },
-  { lvl: 1, text: 'References', page: 29 },
+  { lvl: 2, text: 'What to Check', page: 15 },
+  { lvl: 2, text: 'What Farmers See', page: 15 },
+  { lvl: 2, text: 'What to Do', page: 16 },
+  { lvl: 1, text: 'A: Air', page: 17 },
+  { lvl: 2, text: 'Why Ventilation Matters', page: 17 },
+  { lvl: 2, text: 'Key Air Quality Indicators', page: 17 },
+  { lvl: 2, text: 'What Farmers See', page: 19 },
+  { lvl: 2, text: 'What to Do', page: 20 },
+  { lvl: 1, text: 'W: Water', page: 21 },
+  { lvl: 2, text: 'Why Water Matters', page: 21 },
+  { lvl: 2, text: 'What to Check', page: 22 },
+  { lvl: 2, text: 'What Farmers See', page: 24 },
+  { lvl: 2, text: 'What to Do', page: 24 },
+  { lvl: 1, text: 'S: Sanitation & Space', page: 26 },
+  { lvl: 2, text: 'Sanitation', page: 26 },
+  { lvl: 2, text: 'Litter Management', page: 27 },
+  { lvl: 2, text: 'Stocking Density', page: 28 },
+  { lvl: 2, text: 'What Farmers See', page: 29 },
+  { lvl: 2, text: 'What to Do', page: 29 },
+  { lvl: 1, text: 'Using T-FLAWS as a System', page: 30 },
+  { lvl: 1, text: 'Where to Keep Learning', page: 31 },
+  { lvl: 2, text: 'Key Scientific Journals', page: 31 },
+  { lvl: 2, text: 'Key Institutional Resources', page: 31 },
+  { lvl: 1, text: 'References', page: 32 },
 ];
 
 const ea = tocEntries.map((e, i) => ({
@@ -267,21 +278,18 @@ const doc = new Document({
       children: [
         new Paragraph({ spacing: { before: 1800, after: 0 }, children: [run('')] }),
 
-        // Course label
         new Paragraph({
           alignment: AlignmentType.CENTER,
           spacing:   { before: 0, after: 200 },
           children:  [run('COURSE 3: CPC SHORT COURSES', { size: 22, bold: true, color: BLUE })],
         }),
 
-        // Logo
         ...(logoBuf ? [new Paragraph({
           alignment: AlignmentType.CENTER,
           spacing:   { before: 200, after: 200 },
           children:  [new ImageRun({ data: logoBuf, transformation: { width: 144, height: 144 }, type: 'png' })],
         })] : []),
 
-        // Title
         new Paragraph({
           alignment: AlignmentType.CENTER,
           spacing:   { before: 200, after: 200 },
@@ -290,7 +298,6 @@ const doc = new Document({
           })],
         }),
 
-        // Subtitle
         new Paragraph({
           alignment: AlignmentType.CENTER,
           spacing:   { before: 0, after: 600 },
@@ -299,14 +306,12 @@ const doc = new Document({
           })],
         }),
 
-        // Gold divider
         new Paragraph({
           alignment: AlignmentType.CENTER,
           spacing:   { before: 0, after: 400 },
-          children:  [run('───────────────────────────────────', { color: BLUE, size: 22 })],
+          children:  [run('___________________________________', { color: GOLD, size: 22 })],
         }),
 
-        // Metadata
         new Paragraph({ alignment: AlignmentType.CENTER, spacing: { before: 0, after: 120 },
           children: [run('CPC Short Courses', { bold: true, color: GRAY, size: 24 })] }),
         new Paragraph({ alignment: AlignmentType.CENTER, spacing: { before: 0, after: 120 },
@@ -314,7 +319,6 @@ const doc = new Document({
         new Paragraph({ alignment: AlignmentType.CENTER, spacing: { before: 0, after: 800 },
           children: [run('May 2026', { color: GRAY, size: 22 })] }),
 
-        // Disclaimer
         new Paragraph({
           alignment: AlignmentType.CENTER,
           spacing:   { before: 0, after: 0 },
@@ -331,6 +335,8 @@ const doc = new Document({
     },
 
     // ── TOC ──────────────────────────────────────────────────
+    // Note: no pb() at the end — the section break handles page flow.
+    // Removing pb() here eliminates the blank page 3.
     {
       properties: { page: { margin } },
       headers: { default: hdr() },
@@ -338,7 +344,6 @@ const doc = new Document({
       children: [
         h1('Table of Contents'),
         new TableOfContents('Table of Contents', { headingStyleRange: '1-2' }),
-        pb(),
       ],
     },
 
@@ -358,7 +363,7 @@ const doc = new Document({
           run('Temperature, Feed, Light, Air, Water, and Sanitation & Space', { bold: true }),
           run('. Six checkpoints. Six things that, when managed well every single day, give your birds the best possible environment to perform and stay healthy.'),
         ]),
-        p('T-FLAWS is a barn-entry checklist developed by the CPC Learning Centre as a practical adaptation of the standard FLAWS management framework used across the poultry industry [9]. The addition of Temperature as a standalone first checkpoint reflects how critical thermal management is, particularly in the first week of a flock [1,11].'),
+        p('T-FLAWS is a barn-entry checklist developed by the CPC Learning Centre as a practical adaptation of the standard FLAWS management framework used across the poultry industry [9]. The addition of Temperature as a standalone first checkpoint reflects how critical thermal management is, particularly in the first week of a flock [1,12].'),
         callout('T-FLAWS is not a disease diagnostic tool. If birds are sick, call your veterinarian. T-FLAWS is what you check before that point. It is what keeps problems from developing in the first place.'),
 
         h2('Who Is This Course For?'),
@@ -381,21 +386,21 @@ const doc = new Document({
         h1('T: Temperature'),
         h2('Why Temperature Matters'),
         p('Temperature is the first thing you assess when you enter the barn, and it is also the most likely factor to be wrong at placement. A day-old chick cannot regulate its own body temperature. It depends entirely on the environment you provide [1].'),
-        p('The consequences of getting temperature wrong in the first week are lasting. Cold chicks do not eat or drink properly. Their gut development falls behind, their immune system is compromised, and their seven-day weight, an important early performance milestone, will reflect the failure [1]. Research shows that while seven-day weight correlates with flock direction, measurements from week three onward are the more reliable predictors of final body weight — but by then the gap from a cold start has already compounded. A cold start is one of the most expensive mistakes in broiler production, and it is entirely preventable.'),
+        p('The consequences of getting temperature wrong in the first week are lasting. Cold chicks do not eat or drink properly. Their gut development falls behind, their immune system is compromised, and their seven-day weight, an important early performance milestone, will reflect the failure [1]. Research shows that while seven-day weight correlates with flock direction, measurements from week three onward are the more reliable predictors of final body weight, but by then the gap from a cold start has already compounded. A cold start is one of the most expensive mistakes in broiler production, and it is entirely preventable.'),
         p('The same applies at the other end. Heat stress later in the flock suppresses feed intake, elevates mortality, and cuts your feed conversion ratio [6]. Birds cannot tell you they are too hot. They show you.'),
 
         h2('Target Ranges by Bird Age'),
         p('The Ross Broiler Management Handbook recommends measuring temperature at chick level, not at ceiling sensor height. On cold nights or with cold floors, bird-level temperature can be 3 to 5 degrees Celsius lower than what your barn controller shows [1]. That gap costs you.'),
         p('Target temperatures at bird level for broilers [1]:'),
-        b('Day 0 to 2:  32 to 34 degrees Celsius'),
-        b('Day 3 to 7:  reduce by approximately 0.5 degrees every 2 to 3 days as birds feather in'),
-        b('Week 2:  approximately 28 to 30 degrees Celsius'),
-        b('Week 3:  approximately 24 to 27 degrees Celsius'),
-        b('Week 4 and beyond:  18 to 22 degrees Celsius'),
+        b('Day 0 to 2: 32 to 34 degrees Celsius'),
+        b('Day 3 to 7: reduce by approximately 0.5 degrees every 2 to 3 days as birds feather in'),
+        b('Week 2: approximately 28 to 30 degrees Celsius'),
+        b('Week 3: approximately 24 to 27 degrees Celsius'),
+        b('Week 4 and beyond: 18 to 22 degrees Celsius'),
         p('These targets are starting points, not fixed rules. Always look at what the birds are doing. Bird distribution across the barn floor is a more accurate real-time indicator than any sensor reading. Chicks that are comfortable will spread evenly across the heated area, eating and drinking actively.'),
         p('Pre-heat the barn at least 24 to 48 hours before placement, including the floor. Litter surface temperature at chick level should reach 30 degrees Celsius before the first bird arrives [1]. A warm air temperature over a cold floor is not adequate for day-olds.'),
 
-        ...imgBlock(null, null, 5.8, 'Figure 1.1: Chick distribution patterns at correct temperature (even spread), too cold (huddling under heat source), and too hot (crowding to barn edges). Source: Aviagen Ross Broiler Management Handbook, 2025 [1].'),
+        ...imgBlock(IMG.fig11, 'png', 5.8, 'Figure 1.1: Chick distribution patterns at correct temperature (even spread), too cold (huddling under heat source), and too hot (crowding to barn edges). Source: Aviagen Ross Broiler Management Handbook, 2025 [1].'),
 
         h2('What Farmers See'),
         labeled('Cold birds:', 'Chicks huddle tightly in a dense cluster under the heat source, often chirping loudly. They are not exploring, not eating, and not using the water. Early mortality will be elevated. If you see a pile of chicks, the temperature at bird level is too low.'),
@@ -426,7 +431,7 @@ const doc = new Document({
         labeled('Feeder height:', 'The lip of the feeder should sit at back level as the bird stands. Too high and smaller birds cannot reach it. Too low and feed is wasted into the litter [11]. The CPC Broiler Management Bulletin recommends adjusting feeder height at a minimum of once per week as birds grow [11].'),
         labeled('Feed distribution:', 'Walk the full barn length and confirm feed is flowing to all stations. Auger failures, blocked joints, or bridged feed can leave entire sections without feed while the bins appear full.'),
         labeled('Feed quality:', 'Check for bridging (compacted feed that blocks flow from the bin), wet or caked feed near drinker lines, unusual odor, or visible mold. High-moisture or poorly stored feed is the most common cause of bridging [11].'),
-        labeled('Access:', 'Every bird should be able to reach a feeder without displacing another. In the first week this is critical, as young chicks establish their position in the flock hierarchy through access to resources.'),
+        labeled('Access:', 'Make sure every bird can reach a feeder without being constantly pushed away. Offering multiple feeders helps with this. Some pecking and bossing around is normal. Birds naturally sort out who is in charge, but it is a gradual process that plays out over several weeks, not just the first few days [16,17,13,14,15].'),
 
         ...imgBlock(IMG.flock4, 'png', 5.8, 'Photo 2.1: Early flock assessment. Even access to feeders and good bird distribution across the barn is a visible indicator of correct temperature, light, and feed management. Source: CPC Short Courses.'),
 
@@ -444,35 +449,47 @@ const doc = new Document({
         b('If a batch of feed smells abnormal or shows unusual bridging, retain a sample and notify your feed supplier before feeding the whole delivery'),
         b('In the first 48 hours, check crop fill at 2, 4, 8, 12, and 24 hours post-placement: target 75% of crops full at 2 hours, 100% by 48 hours. A bird with an empty crop at 24 hours is already behind [1]'),
 
+        ...imgBlock(IMG.cropfill, 'png', 5.8, 'Photo 2.2: Crop fill at 24 hours. The chick on the left has a full, rounded crop, while the chick on the right has an empty crop.'),
+
         pb(),
 
         // ── L: LIGHT ──────────────────────────────────────
         h1('L: Light'),
         h2('Why Light Programs Matter'),
         p('Light is a powerful management tool that is easy to forget about because it is always on. Birds live by light cycles. Light duration and intensity control when they eat, when they rest, and how their metabolism runs. A poorly managed light program is a source of chronic, invisible stress that shows up in your performance data without an obvious cause.'),
-        p('For broilers, the first seven days require bright, consistent light for 23 hours per day. This is not about stimulating production. It is about making sure day-old chicks find the feed and water that will determine everything that follows [1]. The Ross Broiler Management Handbook recommends a minimum intensity of 20 lux during this period [1].'),
-        p('After the first week, most commercial programs reduce light intensity and introduce a dark period. The Ross 308 program targets 18 hours of light and 6 hours of darkness per day from week two onward [1]. A meaningful dark period supports circadian rhythm, rest behavior, and welfare. However, research cautions that excessive darkness (beyond what programs prescribe) can actually impair bone mineralization and growth. The goal is the right amount of darkness on schedule — not more, not less [1].'),
+
+        p('For broilers, the first week requires bright, consistent light to ensure day-old chicks find the feed and water that will determine everything that follows [1]. The Ross Broiler Management Handbook recommends a minimum intensity of 20 lux during the first seven days, with close to 23 hours of continuous light to maximize early eating and drinking time [1]. The CPC Lighting Program Guidelines for Broilers (2026) follow a slightly different approach: 18 hours of light with 6 hours of dark from day 0, but at a much higher intensity of 50 to 100 lux through the first week [12]. Both approaches agree on the key point: early-week light must be bright enough that chicks find the feed trays without difficulty.'),
+
+        p('The CPC program steps intensity down progressively through the grow-out: 30 to 50 lux from days 7 to 13, 20 to 30 lux from days 14 to 21, then continuing to reduce to 3 to 5 lux by the final week, while extending light hours to 22 hours per day from day 28 onward [12]. After the first week, most commercial programs introduce a dark period. A meaningful dark period supports circadian rhythm, rest behavior, and welfare. Research cautions that excessive darkness beyond what programs prescribe can actually impair bone mineralization and growth. The goal is the right amount of darkness on schedule: not more, not less [1,12].'),
+
+        p('One practical note from the CPC program: if you are using LED fixtures, check for flickering at lower lux settings. Flickering at low intensity is worse than keeping intensity slightly higher. A steady 15 lux is better than a flickering 10 lux [12].'),
+
+        callout('In the first few days after your chicks arrive, they need to find feed fast. The CPC team recommends a simple and effective approach: direct your LEDs over the feed trays rather than lighting the whole barn evenly [12]. The bright spot acts like a signal, pulling chicks straight toward the feed. It is a small adjustment that can make a real difference in how quickly a new flock gets off to a strong start [12].'),
+
+        ...imgBlock(IMG.cpcled, 'jpg', 5.8, 'Photo 3.1: In the first few days after placement, directing LEDs over the feed trays draws chicks straight to feed. The bright spot gives newly placed birds a clear cue to start eating right away. Source: CPC Short Courses [12].'),
 
         h2('What to Check'),
         b('Walk every section of the barn and visually confirm all bulbs and fixtures are functioning'),
         b('Identify any dark zones (bulb failures, fixture faults) and any unusually bright areas'),
         b('Check your controller or timer program against the target hours of light for the current day of age'),
-        b('Measure lux intensity with a light meter if available, particularly after replacing bulbs or retrofitting LED fixtures'),
+        b('Measure lux intensity with an LED-compatible light meter if available, particularly after replacing bulbs or retrofitting LED fixtures; use an LED-specific meter for accuracy [12]'),
         b('For layers: confirm that the photoperiod schedule is tracking correctly for age of lay and production targets'),
 
         callout('One burned-out section in a dark barn is enough to push birds away from feeders and waterers in that area. If you see birds piling in a lit section while an adjacent section is empty, look up. A bulb or circuit has failed.'),
 
         h2('What Farmers See'),
         labeled('Crowding in lit zones:', 'Birds naturally move toward light. When one section is darker than the rest, birds leave it and crowd the brighter areas. Feed and water access in the dark zone falls immediately. Weight variation in the flock increases.'),
-        labeled('Restless birds at night:', 'If birds are never fully settling, the dark period is inadequate or lights are leaking from fixtures. Birds need true darkness to achieve a proper rest cycle.'),
+        labeled('Restless birds at night:', 'If birds are not fully settling, the dark period is inadequate or lights are leaking from fixtures. Birds need true darkness to achieve a proper rest cycle.'),
         labeled('Layer production deviations:', 'If your hens fall below production targets or go off lay unexpectedly, verify the light schedule before looking at nutrition or disease. An incorrectly programmed timer is one of the first things to check.'),
         labeled('Poor uniformity in growers:', 'Uneven lux across the barn during the first week is a contributor to uneven feed and water access in that critical window, which translates directly to weight variation at seven days.'),
+
+        ...imgBlock(IMG.lux, 'png', 5.8, 'Photo 3.2: The same barn at 5 lux (top) and 20 lux (bottom). Research shows that birds kept at 5 lux have higher stress hormone levels and reduced exploratory behavior compared to birds at 20 lux. Brighter light also makes it much easier to spot a sick or lame bird before it becomes a problem.'),
 
         h2('What to Do'),
         b('Replace failed bulbs the same day you find them, not at the next maintenance cycle'),
         b('Verify timer accuracy at each weekly check; timers drift and controllers can fail silently'),
-        b('Use the breed management handbook as the primary reference for light schedules; your integrator may have additional requirements [1]'),
-        b('After installing LED fixtures, verify lux levels with a meter and compare to your target intensity, not just visual assessment'),
+        b('Consult both the breed management handbook (Ross or Cobb) and the CPC Lighting Program Guidelines for Broilers (2026) for your light schedule; your integrator may have additional requirements specific to your contract [1,12]'),
+        b('After installing LED fixtures, verify lux levels with an LED-specific light meter and compare to your target intensity, not just a visual assessment [12]'),
         b('Keep a light program log with every change noted, so production deviations can be correlated with management events'),
         b('In growing barns, check that dark periods are genuinely dark; even small light leaks from curtains or door gaps disrupt the rest cycle'),
 
@@ -486,14 +503,16 @@ const doc = new Document({
         p('Ventilation is not just a comfort issue. It is a health, welfare, and productivity issue. Getting air quality right is as important as any vaccine or feed additive on your farm [5].'),
 
         h2('Key Air Quality Indicators'),
-        labeled('Ammonia:', 'Ammonia is the single most practical air quality indicator you have on a daily barn walk. Research confirms that at concentrations above 10 ppm at bird level, ammonia begins suppressing immune function, with measurable cytokine changes observed at 15 ppm [5]. Some studies note that production impacts become more evident closer to 20 ppm, but the immune system is already under stress before that point. Above 25 ppm, well-documented ocular damage occurs, including corneal thickening, conjunctival edema, and swelling, making birds more vulnerable to every respiratory pathogen they encounter [5]. At 50 ppm and above, direct tissue damage to the respiratory tract becomes pronounced. The practical rule: do not wait for a number. If you can smell ammonia when you enter the barn, fix it immediately.'),
+        labeled('Ammonia:', 'This is one of the most practical things you can track during your daily barn walk. Above 10 ppm at bird level, ammonia starts quietly weakening your birds\' immune defense [5]. By 15 to 20 ppm, that stress is real, even if you cannot see it yet in performance [5]. Push past 25 ppm and you will start seeing visible eye damage: irritation, swelling, and birds that are far more vulnerable to any respiratory bug that comes through the barn [5]. At 50 ppm and above, the airways themselves take a hit. The rule is simple: do not wait for a meter reading. If you can smell it when you walk in, it is already too high.'),
         p('The most important thing to know about ammonia is that you can smell it before your birds are in serious danger. If you walk into the barn and can smell ammonia at your standing height, concentrations at bird level are higher than they are at your nose. Fix it now, not at the end of the day.'),
         callout('The ammonia rule: if you can smell it when you walk in, your birds have been breathing unsafe concentrations since before your last visit. Ventilation rate needs to increase and litter moisture needs to be assessed immediately.'),
         labeled('Carbon dioxide:', 'CO2 above 3,000 ppm indicates the minimum ventilation rate is insufficient for the current stocking density and bird size [1]. CO2 itself is not as immediately damaging as ammonia at these concentrations, but it is a reliable indicator of overall air quality. If CO2 is high, minimum ventilation is too low.'),
         labeled('Relative humidity:', 'During brooding (the first two weeks), target relative humidity is 60 to 70 percent to protect day-old respiratory surfaces. From two weeks onward, 50 to 60 percent is the appropriate target [5]. Below 50 percent, dust levels rise and respiratory irritation increases. Above 70 percent at any age, litter moisture builds rapidly, ammonia production accelerates, and footpad dermatitis rates climb. Humidity is a direct reflection of ventilation rate; if humidity is high, your minimum ventilation is too low.'),
         labeled('Air temperature and speed:', 'The temperature and speed of incoming air at bird level matters. In cold weather, cold air entering too fast and landing on birds causes drafts, which chills young birds and causes them to huddle even when your barn thermostat shows an adequate temperature. Adjust inlet openings to direct air up and across the roof before it falls to bird level [1].'),
 
-        ...imgBlock(IMG.house, 'jpg', 5.8, 'Photo 3.1: Commercial broiler barn interior. Proper ventilation keeps air fresh at bird level without drafts. Litter condition and bird distribution are visible indicators of air quality management. Source: CPC Short Courses.'),
+        ...imgBlock(IMG.airflow, 'png', 5.8, 'Figure 4.1: Minimum ventilation airflow in a broiler barn. Cold air enters through the sidewall inlets, is directed up toward the roof peak where it mixes with warm air, and falls back down to bird level as tempered, draft-free air.'),
+
+        ...imgBlock(IMG.ventilation, 'png', 5.8, 'Photo 4.1: Commercial broiler barn interior. Proper ventilation keeps air fresh at bird level without drafts. Litter condition and bird distribution are visible indicators of air quality management. Source: CPC Short Courses.'),
 
         h2('What Farmers See'),
         b('Persistent wet eyes or foam eyes on multiple birds: early sign of ammonia exposure above safe levels'),
@@ -517,19 +536,21 @@ const doc = new Document({
         // ── W: WATER ──────────────────────────────────────
         h1('W: Water'),
         h2('Why Water Matters'),
-        p('Water is the most critical nutrient in your barn. Broilers consume approximately 1.7 to 1.8 times more water than feed by volume at comfortable temperatures, and this ratio increases significantly during heat stress [2]. The correlation between water and feed intake is 0.98 — nearly 1:1. Restrict water and feed consumption drops rapidly in response. By the time you notice reduced consumption on a meter or a daily record, the bird is already behind.'),
+        p('Water is the most critical nutrient in your barn. Broilers typically consume about twice as much water as feed by volume under comfortable temperatures, and this ratio rises sharply during heat stress [18,19]. Water and feed intake track each other so closely that a drop in one almost always signals a drop in the other. If water is restricted for any reason, feed intake falls quickly behind. By the time you notice a change on a meter or daily record, the bird is already behind [18].'),
         p('Water management in a commercial barn is more than making sure the tanks are full. It involves pressure, flow rate, line height, water temperature, and water quality at the point of drinking, not at the header tank. A line that passes every tank test can still fail at the nipple if pressure is wrong, biofilm is heavy, or height adjustment is overdue [2,10].'),
         p('The CPC Drinking Water Management Bulletin notes that water intake monitoring is one of the most sensitive daily health indicators available to the farmer [10]. A drop in water consumption before any other sign of disease is detectable is a consistent pattern. If your meter readings drop by more than 10 percent compared to the previous day without a management change, investigate all T-FLAWS points and contact your veterinarian.'),
 
         h2('What to Check'),
-        labeled('Nipple flow:', 'Activate several nipples along each line by pressing the trigger pin and confirm that water flows freely. A nipple that requires excessive force or produces only a trickle has failed or is blocked [10].'),
+        labeled('Nipple flow:', 'Activate several nipples along each line by pressing the trigger pin and confirm that water flows freely. A nipple that requires excessive force or produces only a trickle has failed or is blocked. The CPC Drinking Water Management guide recommends a flow rate of 25 ml per minute per nipple, with 8 to 12 birds per nipple as the standard allocation [10].'),
         labeled('Line pressure:', 'Overpressure causes nipples to drip constantly, wetting the litter below. Underpressure means birds work hard for very little water and drink less than they need. Pressure regulators must be checked and adjusted as bird size increases and demand grows [2].'),
-        labeled('Line height:', 'Birds should drink with their head raised at approximately 45 degrees. Too low and birds waste water into the litter. Too high and young birds, or lighter birds in a mixed-size flock, cannot reach the nipple without stretching, which they will simply stop doing [2,10]. Adjust line height at minimum once per week.'),
+        labeled('Line height:', 'Chicks should be able to see and easily reach the nipples. In the first days, set the line so their backs are on a slight angle while they drink, not standing straight up. As they grow, keep raising the nipples so the birds have to reach a bit, but are not stretching or jumping to get a drink. If the line is too low, they twist their heads and drip water into the litter. If it is too high, the smaller birds stop trying to drink. Walk the barn and fine-tune nipple height every day as the birds grow [2].'),
+
+        ...imgBlock(IMG.nippleHeight, 'png', 5.8, 'Figure 5.1: Nipple drinker line height by bird age. In the first two days, the line is set at chick eye level. From day 3, the target is a 45-degree drinking angle. By day 10, birds should drink nearly straight up. Adjust at least daily in the first week, then weekly thereafter. Source: CPC Drinking Water Management [10].'),
+
         labeled('Water temperature:', 'Warm water reduces consumption. Water delivered to the nipple should be cool, ideally 10 to 14 degrees Celsius [2]. In summer, this requires attention to insulation on supply lines and possibly chilling systems in extreme heat.'),
         labeled('Consumption records:', 'If your system has water meters, check daily volume against the breed target curve. The Ross Broiler Management Handbook provides expected water intake by day of age at a given temperature [1]. Any deviation greater than 10 percent in either direction needs an explanation.'),
-        labeled('Line cleanliness:', 'Biofilm develops on the inside of drinker lines within days of a flock placement. Flushing lines daily and using a sanitization protocol approved by your veterinarian keeps bacterial counts low at the point of consumption [2,10].'),
-
-        ...imgBlock(null, null, 5.8, 'Figure 5.1: Nipple drinker line height by bird age. The correct drinking angle is approximately 45 degrees with the bird\'s head raised. Adjust weekly. Source: Aviagen Water Quality 2025 [2].'),
+        labeled('Line cleanliness and biofilm:', 'Biofilm develops on the inside of drinker lines within days of a flock placement. It is a slimy buildup you cannot always see, but it harbors bacteria and reduces water quality at the point of consumption [2,10]. Flush lines with high pressure at 1 minute per 60 feet of line before each flock placement. During the flock, run an acidifier through the lines weekly to break down biofilm. The CPC Drinking Water Management guide lists several validated options including citric acid (200 grams per gallon stock solution) and chlorine-based products [10]. Flush lines 12 hours after administering vaccines, vitamins, or antibiotics.'),
+        labeled('Water quality at the nipple:', 'Test at the nipple, not just at the header tank. CPC water quality targets: pH 6.0 to 8.0 (optimal 6.8 to 7.5), total dissolved solids at or below 500 mg/L, total coliforms at zero per 100 mL, and ORP (oxidation-reduction potential) at 650 millivolts or above [10]. Annual water analysis from a certified lab is recommended as a baseline.'),
 
         h2('What Farmers See'),
         labeled('Birds clustered at drinker lines waiting:', 'Flow is insufficient for the number of birds at that line. This can be a pressure issue, a blocked nipple, or a failed regulator.'),
@@ -539,36 +560,50 @@ const doc = new Document({
 
         h2('What to Do'),
         b('Flush drinker lines at the beginning of every flock and at regular intervals during production [2,10]'),
-        b('Use a validated line-sanitization protocol recommended by your veterinarian; consult the CPC Drinking Water Management bulletin for guidance [10]'),
-        b('Adjust line height at least once per week; tie a marked string to the line at placement and measure against bird back height at each adjustment [10]'),
-        b('Test water quality at the nipple, not just at the header tank, at minimum once per flock; test for pH, total dissolved solids, and bacterial counts [2]'),
+        b('Run a water acidifier through lines weekly during the flock to prevent biofilm buildup; consult your veterinarian for product selection [10]'),
+        b('Adjust line height daily in the first week and at least weekly after that; the CPC guide recommends raising lines so birds drink at a 45-degree angle from day 3, and nearly straight up by day 10 [10]'),
+        b('Test water quality at the nipple, not just at the header tank, at minimum once per flock; test for pH, total dissolved solids, coliform counts, and ORP [2,10]'),
         b('If nipple flow is low, check the regulator, filter, and the full line for blockages or heavy biofilm'),
         b('During hot weather, check water temperature at the nipple and increase line-flush frequency to keep water cool'),
         b('Record daily water consumption and flag any drop of more than 10 percent for the same day of age versus previous flocks [1,10]'),
+        b('Disinfect your well annually; use unscented household bleach (5 to 6% chlorine) following the CPC Drinking Water Management dosing guide for well diameter [10]'),
 
         pb(),
 
         // ── S: SANITATION & SPACE ─────────────────────────
         h1('S: Sanitation & Space'),
+
+        // ── Sanitation ────────────────────────────────────
+        h2('Sanitation'),
+        p('Good biosecurity does not need to be complicated. It just needs to happen every single day, without shortcuts.'),
+        p('Start at the door. Before anyone sets foot in your barn (you, your workers, the veterinarian, the feed delivery driver), they put on clean coveralls and clean boots. A footbath at the entrance is not a nice-to-have. It is a must.'),
+        p('If you can, set up a Danish entry system. It sounds technical, but it is simple: a bench and a clearly marked line on the floor that separates the outside world from your barn. You step up to that line, swap your outside boots and coveralls for barn-only ones, and cross over. Every person, every visit, every time. If you have the space, add a shower area so people can wash up before suiting up. That is your first and best line of defense.'),
+        p('Think of that doorway as a wall between your birds and everything trying to make them sick. The wall only works if it is respected on every visit.'),
+        p('Keep your water lines clean. Run an acidifier through them weekly to break down biofilm, the slimy buildup inside drinker lines that you cannot always see but that harbors bacteria [2,10]. Flush lines thoroughly after every flock before placing a new one.'),
+
+        ...imgBlock(IMG.biosec, 'png', 5.8, 'Photo 6.1: Biosecurity at the barn entrance. Proper sanitation starts before you enter. A clean biosecurity line protects every bird inside. Source: CPC Short Courses.'),
+
+        // ── Litter Management ──────────────────────────────
         h2('Litter Management'),
-        p('Litter is not just bedding. It is a living microbial environment that generates heat, moisture, and ammonia when it is mismanaged, and provides thermal insulation, dust-bathing substrate, and foot comfort when it is managed well. Wet litter affects Temperature (T), Air quality (A), and Water management (W) simultaneously. Getting litter right is the foundation of the whole T-FLAWS system.'),
-        p('The scientific target for litter moisture content is 20 to 25 percent. University extension research and industry guidelines consistently identify this range as the standard for optimal broiler production [7]. Above 25 percent, footpad dermatitis rates begin climbing. Above 30 percent, ammonia production accelerates sharply and conditions for Clostridium-related gut disease become favorable. Good litter is loose, friable, light-colored, and dry enough to crumble when you pick up a handful. Problem litter is wet, dark, caked, and smells of ammonia from across the barn.'),
+        p('Litter is not just bedding. It is a living environment that generates heat, moisture, and ammonia when it is mismanaged, and provides warmth, a place for birds to dust-bathe, and foot comfort when it is managed well. Wet litter affects temperature, air quality, and water management all at the same time. Getting litter right is the foundation of the whole T-FLAWS system.'),
+        p('The target for litter moisture is 20 to 25 percent [7]. University and industry research consistently confirms this as the sweet spot for healthy broiler production. Above 25 percent, footpad dermatitis starts climbing. Above 30 percent, ammonia builds fast and conditions that favor gut disease become a real risk. Good litter is loose, light-colored, and crumbles when you grab a handful. Problem litter is wet, dark, caked, and you can smell the ammonia as soon as you walk in.'),
         p('Common causes of wet litter include:'),
         b('Leaking nipple drinkers or failed pressure regulators'),
         b('Inadequate ventilation allowing humidity to build in the litter surface'),
         b('High dietary salt levels driving excess water consumption'),
         b('Disease causing watery droppings'),
         b('Insufficient litter depth at placement or poor-quality litter material'),
-        p('Wet patches spread. Moisture creates a feedback loop — wet litter prevents drying underneath, microbial activity generates more heat and moisture, and the affected area grows. A small wet patch under a dripping nipple becomes a large problem within days if not corrected. Walk the full barn perimeter and the center on every visit. Litter problems are easier to catch in a corner than to remediate across an entire barn floor.'),
+        p('Wet patches spread. Moisture creates a feedback loop: wet litter prevents drying underneath, microbial activity generates more heat and moisture, and the affected area grows. A small wet patch under a dripping nipple becomes a large problem within days if not corrected. Walk the full barn perimeter and the center on every visit. Litter problems are easier to catch in a corner than to remediate across an entire barn floor.'),
 
         callout('If your litter is wet, your ammonia is rising and your ventilation rate needs to increase. Fix the source of moisture, increase ventilation, and consider applying a litter amendment if recommended by your veterinarian. Do not wait for footpad scores to tell you what the litter already shows.'),
 
+        ...imgBlock(IMG.wetlitter, 'png', 5.8, 'Photo 5.1: A leaking nipple drinker drips water onto the litter directly below, creating a wet patch that spreads quickly in a crowded barn. Fix leaks the same day you find them.'),
+
+        // ── Stocking Density ─────────────────────────────
         h2('Stocking Density'),
         p('Stocking density affects every other T-FLAWS checkpoint. Higher density means more heat produced per square meter (T), more moisture and ammonia in the air (A), more competition for feeders and waterers (F and W), and less space per bird to rest, move, and express normal behavior (welfare).'),
         p('The National Farm Animal Care Council (NFACC) Code of Practice for the Care and Handling of Hatching Eggs, Breeders, Chickens, and Turkeys sets the legal and welfare standards for commercial broiler production in Canada. Under conventional programs, the maximum stocking density is 31 kg per square meter live weight. Programs with enhanced welfare auditing can operate up to 38 kg per square meter [4].'),
         p('These numbers are maximums, not targets. Running consistently at the ceiling of the allowable density means your ventilation system, feeding system, and water system have no margin for error. When something goes wrong on a hot day in a barn at maximum density, everything fails faster and harder than in a barn with space to spare.'),
-
-        ...imgBlock(IMG.biosec, 'png', 5.8, 'Photo 4.1: Biosecurity at the barn entrance. Proper sanitation starts before you enter. A clean biosecurity line protects every bird inside. Source: CPC Short Courses.'),
 
         h2('What Farmers See'),
         labeled('Wet, dark, caked litter patches:', 'Most commonly found under drinker lines, near walls, and in corners with poor air circulation. Check for the moisture source before applying a treatment.'),
@@ -595,12 +630,12 @@ const doc = new Document({
         b('Cold temperature causes birds to huddle, which localizes their droppings and wets the litter under the heat source (T worsening S)'),
         b('High ammonia from wet litter suppresses feed intake and irritates airways, making birds more vulnerable to respiratory disease (A and S worsening F and health)'),
         b('Poor ventilation raises humidity, accelerates litter breakdown, and raises ammonia further (A worsening both A and S in a feedback loop)'),
-        b('Restricted water causes feed intake to fall rapidly — the two are correlated at 0.98; fix water first before investigating other causes (W driving F)'),
+        b('Restricted water causes feed intake to fall rapidly; the two are correlated at 0.98. Fix water first before investigating other causes (W driving F)'),
         b('High stocking density creates competition for every resource, amplifying any deficiency in T, F, L, A, or W (S amplifying everything else)'),
         p('When you find a T-FLAWS problem, look at the points most likely to have contributed to it and the points most likely to be affected by it. A barn walk that finds wet litter near the drinkers is not just a water pressure check. It is also a prompt to check ammonia, ventilation rate, footpad condition, and feed intake for the section affected.'),
         callout('The farmers who get the most from T-FLAWS are not the ones who use it to find problems. They are the ones who use it to prevent them. By the time a problem is visible in your birds, it has usually been building in your management for several days.'),
 
-        ...imgBlock(IMG.digital, 'png', 5.8, 'Figure 6.1: Digital flock management tools can support daily T-FLAWS records, making patterns visible across flocks and seasons. Source: CPC Short Courses.'),
+        ...imgBlock(IMG.digital, 'png', 5.8, 'Figure 7.1: Digital flock management tools can support daily T-FLAWS records, making patterns visible across flocks and seasons. Source: CPC Short Courses.'),
 
         pb(),
 
@@ -613,11 +648,11 @@ const doc = new Document({
         b('Animals: open-access journal with applied welfare and management research'),
 
         h2('Key Institutional Resources'),
-        b('CPC Learning Centre, Canadian Poultry Consultants Ltd.: canadianpoultry.ca/learning-centre/ — Technical Bulletins, Disease Profiles, Broiler and Layer Flock Management guides'),
-        b('Aviagen Resource Centre: aviagen.com — Ross and ArborAcres breed management handbooks, water quality and biosecurity guides, updated annually'),
-        b('National Farm Animal Care Council (NFACC): nfacc.ca — Codes of Practice for all Canadian poultry species'),
-        b('Canadian Food Inspection Agency (CFIA): inspection.canada.ca — Biosecurity standards for commercial poultry production'),
-        b('Poultry Industry Council (PIC): poultryindustrycouncil.ca — Canadian production data, extension resources, and on-farm benchmarking tools'),
+        b('CPC Learning Centre, Canadian Poultry Consultants Ltd.: canadianpoultry.ca/learning-centre/. Technical Bulletins, Disease Profiles, Broiler and Layer Flock Management guides.'),
+        b('Aviagen Resource Centre: aviagen.com. Ross and ArborAcres breed management handbooks, water quality and biosecurity guides, updated annually.'),
+        b('National Farm Animal Care Council (NFACC): nfacc.ca. Codes of Practice for all Canadian poultry species.'),
+        b('Canadian Food Inspection Agency (CFIA): inspection.canada.ca. Biosecurity standards for commercial poultry production.'),
+        b('Poultry Industry Council (PIC): poultryindustrycouncil.ca. Canadian production data, extension resources, and on-farm benchmarking tools.'),
 
         pb(),
 
@@ -632,16 +667,16 @@ const doc = new Document({
           run('[2]', { bold: true }), run('  Aviagen. Water Quality in Poultry Production. Aviagen Group Ltd., Huntsville, AL, USA, 2025.'),
         ]}),
         new Paragraph({ spacing: { before: 80, after: 80 }, children: [
-          run('[3]', { bold: true }), run('  Bell, D.D., Weaver, W.D. (eds). Commercial Chicken Meat and Egg Production, 5th edition. Springer Science & Business Media, New York, 2002.'),
+          run('[3]', { bold: true }), run('  Bell DD, Weaver WD (eds). Commercial Chicken Meat and Egg Production, 5th ed. Springer Science & Business Media, New York, 2002.'),
         ]}),
         new Paragraph({ spacing: { before: 80, after: 80 }, children: [
           run('[4]', { bold: true }), run('  National Farm Animal Care Council (NFACC). Code of Practice for the Care and Handling of Hatching Eggs, Breeders, Chickens, and Turkeys. NFACC, Lacombe, AB, Canada, 2016.'),
         ]}),
         new Paragraph({ spacing: { before: 80, after: 80 }, children: [
-          run('[5]', { bold: true }), run('  Pottguter, R. Poultry Signals: A Practical Guide for Poultry Farming. Roodbont Publishers, Zutphen, Netherlands, 2009.'),
+          run('[5]', { bold: true }), run('  Pottguter R. Poultry Signals: A Practical Guide for Poultry Farming. Roodbont Publishers, Zutphen, Netherlands, 2009.'),
         ]}),
         new Paragraph({ spacing: { before: 80, after: 80 }, children: [
-          run('[6]', { bold: true }), run('  Daghir, N.J. (ed). Poultry Production in Hot Climates, 2nd edition. CABI, Wallingford, UK, 2008.'),
+          run('[6]', { bold: true }), run('  Daghir NJ (ed). Poultry Production in Hot Climates, 2nd ed. CABI, Wallingford, UK, 2008.'),
         ]}),
         new Paragraph({ spacing: { before: 80, after: 80 }, children: [
           run('[7]', { bold: true }), run('  Aviagen. Best Practices in Biosecurity for Ross Broiler Operations. Aviagen Group Ltd., Huntsville, AL, USA.'),
@@ -650,13 +685,37 @@ const doc = new Document({
           run('[8]', { bold: true }), run('  Canadian Food Inspection Agency (CFIA). Biosecurity Guide for Commercial Poultry Production. CFIA, Ottawa, ON, Canada.'),
         ]}),
         new Paragraph({ spacing: { before: 80, after: 80 }, children: [
-          run('[9]', { bold: true }), run('  CPC Learning Centre. T-FLAWS Barn Management Framework. Canadian Poultry Consultants Ltd., Canada. [Unpublished proprietary framework. Developed by the CPC Learning Centre. Confirmed by CPC, personal communication, 2026.]'),
+          run('[9]', { bold: true }), run('  CPC Learning Centre. T-FLAWS Barn Management Framework. Canadian Poultry Consultants Ltd., Canada. [Unpublished proprietary framework; confirmed by CPC, personal communication, 2026.]'),
         ]}),
         new Paragraph({ spacing: { before: 80, after: 80 }, children: [
-          run('[10]', { bold: true }), run('  CPC Learning Centre. Drinking Water Management for Broilers. CPC Technical Bulletin, Flock Management Series. Canadian Poultry Consultants Ltd., Canada.'),
+          run('[10]', { bold: true }), run('  CPC Learning Centre. Drinking Water Management. Integrated Poultry Health Management Series. Canadian Poultry Consultants Ltd., Canada, 2011.'),
         ]}),
         new Paragraph({ spacing: { before: 80, after: 80 }, children: [
           run('[11]', { bold: true }), run('  CPC Learning Centre. Broiler Management. CPC Technical Bulletin, Flock Management Series. Canadian Poultry Consultants Ltd., Canada.'),
+        ]}),
+        new Paragraph({ spacing: { before: 80, after: 80 }, children: [
+          run('[12]', { bold: true }), run('  CPC Learning Centre. Broiler Lighting Program Guidelines for Broilers 2026. Canadian Poultry Consultants Ltd., Canada, 2026.'),
+        ]}),
+        new Paragraph({ spacing: { before: 80, after: 80 }, children: [
+          run('[13]', { bold: true }), run('  Leighton GM, Drury JP, Small J, Miller ET. Unfamiliarity generates costly aggression in interspecific avian dominance hierarchies. Nature Communications. 2024;15:335. https://doi.org/10.1038/s41467-023-44613-0'),
+        ]}),
+        new Paragraph({ spacing: { before: 80, after: 80 }, children: [
+          run('[14]', { bold: true }), run('  Miller ET, Bonter DN, Eldermire C, Freeman BG, Greig EI, Harmon LJ, Lisle C, Hochachka WM. Fighting over food unites the birds of North America in a continental dominance hierarchy. Behavioral Ecology. 2017;28(6):1454-1463. https://doi.org/10.1093/beheco/arx108'),
+        ]}),
+        new Paragraph({ spacing: { before: 80, after: 80 }, children: [
+          run('[15]', { bold: true }), run('  Francis ML, Plummer KE, Lythgoe BA, Macallan C, Currie TE, Blount JD. Effects of supplementary feeding on interspecific dominance hierarchies in garden birds. PLoS One. 2018;13(9):e0202152. https://doi.org/10.1371/journal.pone.0202152'),
+        ]}),
+        new Paragraph({ spacing: { before: 80, after: 80 }, children: [
+          run('[16]', { bold: true }), run('  Grethen KJ, Gomez Y, Toscano MJ. Coup in the coop: Rank changes in chicken dominance hierarchies over maturation. Behav Processes. 2023;210:104904. https://doi.org/10.1016/j.beproc.2023.104904'),
+        ]}),
+        new Paragraph({ spacing: { before: 80, after: 80 }, children: [
+          run('[17]', { bold: true }), run('  Jacob J. Normal behaviors of chickens in small and backyard poultry flocks. University of Kentucky Cooperative Extension Service. Available from: https://poultry.extension.org/articles/poultry-behavior/normal-behaviors-of-chickens-in-small-and-backyard-poultry-flocks/'),
+        ]}),
+        new Paragraph({ spacing: { before: 80, after: 80 }, children: [
+          run('[18]', { bold: true }), run('  Lott BD, Simmons JD, May JD. Water intake: a good measure of broiler performance. Avian Advice. University of Arkansas Cooperative Extension Service; 2003. Available from: https://www.thepoultrysite.com/articles/water-intake-a-good-measure-of-broiler-performance'),
+        ]}),
+        new Paragraph({ spacing: { before: 80, after: 80 }, children: [
+          run('[19]', { bold: true }), run('  Edge CK. Evaluation of water needs for modern commercial broiler production [dissertation]. Auburn (AL): Auburn University; 2022. (Water:feed ratios reported as 1.62 to 2.06 kg water per kg feed; a 2:1 ratio is commonly assumed in the broiler industry.)'),
         ]}),
       ],
     },
@@ -755,8 +814,8 @@ const dirtyLeft  = (docXml.match(/w:dirty=/g) || []).length;
 const bookmarks  = (docXml.match(/<w:bookmarkStart/g) || []).length;
 const hyperlinks = (docXml.match(/<w:hyperlink/g) || []).length;
 console.log(`w:dirty remaining : ${dirtyLeft}  (must be 0)`);
-console.log(`TOC bookmarks     : ${bookmarks}`);
-console.log(`TOC hyperlinks    : ${hyperlinks}  (both must equal ${ea.length})`);
+console.log(`TOC bookmarks     : ${bookmarks}  (expected ${ea.length})`);
+console.log(`TOC hyperlinks    : ${hyperlinks}  (expected ${ea.length})`);
 console.log(`updateFields      :`, settings.match(/<w:updateFields[^>]*>/g));
 if (dirtyLeft > 0) throw new Error(`${dirtyLeft} w:dirty flags remain — dialog will fire`);
 
