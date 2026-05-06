@@ -36,7 +36,7 @@ import { fileURLToPath } from 'url';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const OUT_DIR   = path.join(__dirname, 'Course 4');
-const OUT_FILE  = path.join(OUT_DIR, 'Course 4 - revised aligned draft.docx');
+const OUT_FILE  = path.join(OUT_DIR, 'Salmonella_and_Food_Safety_draft.docx');
 const LOGO_PATH = path.join(__dirname, 'logo.png');
 
 // Image paths
@@ -168,7 +168,7 @@ function buildFooter() {
     children: [
       new Paragraph({
         children: [
-          new TextRun({ text: 'Canadian Poultry Training Series  |  Course 4 of 17  |  Page ', color: '888888', size: 18, font: 'Calibri' }),
+          new TextRun({ text: 'CPC Short Courses  |  Course 4  |  Page ', color: '888888', size: 18, font: 'Calibri' }),
           new TextRun({ children: [PageNumber.CURRENT], color: '888888', size: 18, font: 'Calibri' }),
           new TextRun({ text: ' of ', color: '888888', size: 18, font: 'Calibri' }),
           new TextRun({ children: [PageNumber.TOTAL_PAGES], color: '888888', size: 18, font: 'Calibri' }),
@@ -199,7 +199,7 @@ function buildCoverSection() {
 
     // Course label — small blue uppercase
     new Paragraph({
-      children: [new TextRun({ text: 'COURSE 4 OF 17: CANADIAN POULTRY TRAINING SERIES', bold: true, color: MED_BLUE, size: 22, font: 'Calibri' })],
+      children: [new TextRun({ text: 'COURSE 4: CPC SHORT COURSES', bold: true, color: MED_BLUE, size: 22, font: 'Calibri' })],
       alignment: AlignmentType.CENTER,
       spacing:   { before: 0, after: 200 },
     }),
@@ -247,7 +247,7 @@ function buildCoverSection() {
 
     // Organization
     new Paragraph({
-      children: [new TextRun({ text: 'Canadian Poultry Training Series Course', bold: true, color: '595959', size: 24, font: 'Calibri' })],
+      children: [new TextRun({ text: 'CPC Short Courses', bold: true, color: '595959', size: 24, font: 'Calibri' })],
       alignment: AlignmentType.CENTER,
       spacing:   { before: 0, after: 120 },
     }),
@@ -316,7 +316,7 @@ function buildIntroSection() {
     children: [
       h1('Introduction'),
       para('Salmonella is the kind of problem that hides in a healthy-looking flock. The birds eat, the birds drink, mortality is normal, your morning walk turns up nothing unusual. Then the swab results come back from the plant and your week is suddenly very different [1]. That is the part that makes Salmonella so hard. You cannot watch a bird and tell whether it is shedding. So everything in your program has to work whether or not you ever see a sick bird.'),
-      para('The numbers are big enough to take seriously. The Public Health Agency of Canada estimates around 87,500 illnesses, 925 hospitalisations, and 17 deaths a year from non-typhoidal Salmonella, with poultry consistently near the top of the source list [2]. That is why the regulators are interested in what you do. CFIA standards apply to your product, and when a positive comes back on your flock it does not stay quiet between you and the plant [3].'),
+      para('The numbers are big enough to take seriously. The Public Health Agency of Canada estimates around 87,500 illnesses, 925 hospitalizations, and 17 deaths a year from non-typhoidal Salmonella, with poultry consistently near the top of the source list [2]. That is why the regulators are interested in what you do. CFIA standards apply to your product, and when a positive comes back on your flock it does not stay quiet between you and the plant [3].'),
       para('What this course does is walk you through what Salmonella actually is, how it gets into a barn, and what works to keep it out. Biosecurity, hygiene, cleanout, pre-harvest management, records, and the rules you have to follow. By the end you will know where the high-risk doors are on your operation and exactly what to do at each one before the sampling truck arrives.'),
       h2('Learning Objectives'),
       para('By completing this course, you will be able to:'),
@@ -343,19 +343,19 @@ function buildSection1() {
     children: [
       h1('Section 1: Understanding Salmonella'),
       h2('1.1 What Is Salmonella?'),
-      para('Salmonella is not one bug. It is a big family, more than 2,600 different variants called serovars, and most of them do not matter in poultry production [1]. The two that matter to you in Canada are Salmonella Enteritidis (SE) and Salmonella Typhimurium (ST). They cause most of the human illness traced back to Canadian poultry, and they are what your food safety program has to push back against [2].'),
+      para('Salmonella is not one bug. It is a big family, more than 2,600 different variants called serovars, and most of them do not matter in poultry production [1]. The three that matter most to you in Canada are Salmonella Enteritidis (SE), Salmonella Typhimurium (ST), and Salmonella Heidelberg (SH). Together they account for the majority of human illness traced back to Canadian poultry. Heidelberg in particular has shown resistance to commonly used antibiotics, which creates downstream treatment problems in human medicine [2,7].'),
       para('For day-to-day decisions on the farm, think of Salmonella in three groups:'),
-      bullet([{ text: 'Paratyphoid serovars (SE, ST, Salmonella Infantis): ', bold: true }, { text: 'Your birds will not look sick with these. Adult birds carry them silently and shed them in their droppings. The contamination still reaches the consumer. These are the serovars driving most of the Salmonella food safety pressure on Canadian broiler and layer farms [1,2].' }]),
+      bullet([{ text: 'Paratyphoid serovars (SE, ST, Salmonella Heidelberg, Salmonella Infantis): ', bold: true }, { text: 'Your birds will not look sick with these. Adult birds carry them silently and shed them in their droppings. The contamination still reaches the consumer. These are the serovars driving most of the Salmonella food safety pressure on Canadian broiler and layer farms [1,2].' }]),
       bullet([{ text: 'Host-adapted serovars (Pullorum, Gallinarum): ', bold: true }, { text: 'These cause visible, serious disease in your birds: high mortality and sick flocks. Both are federally reportable. If you suspect either one, stop what you are doing and call CFIA immediately [3].' }]),
       bullet([{ text: 'Arizonosis: ', bold: true }, { text: 'Caused by Salmonella arizonae, primarily a concern in turkey flocks. Less common in Canada [4].' }]),
-      ...image(imgBuf(1), 'Figure 1.1: Salmonella classification in commercial poultry. Paratyphoid serovars (SE, ST) are the primary food safety concern. Pullorum disease and fowl typhoid are reportable diseases in Canada. (Generated diagram, CPC Short Courses.)'),
+      ...image(imgBuf(1), 'Figure 1.1: Salmonella classification in commercial poultry. Paratyphoid serovars (SE, ST, Heidelberg) are the primary food safety concern. Pullorum disease and fowl typhoid are reportable diseases in Canada. Source: CPC Short Courses.'),
       h2('1.2 The Biology of Salmonella'),
       para('A few things about how this bug behaves explain why cleanout shortcuts always come back to haunt you:'),
       bullet([{ text: 'Survives in the barn environment: ', bold: true }, { text: 'In dry litter, dust, soil, and on equipment surfaces, Salmonella can stay alive for weeks to months. A barn that looks clean is not necessarily safe [1,5].' }]),
-      bullet([{ text: 'Grows across a wide temperature range: ', bold: true }, { text: 'Salmonella multiplies between 7 and 48°C, fastest around 37°C. Anything that sits at room temperature after slaughter is a growth opportunity.' }]),
+      bullet([{ text: 'Grows across a wide temperature range: ', bold: true }, { text: 'Salmonella multiplies between approximately 5 and 46°C, fastest around 37°C [1]. Anything that sits at room temperature after slaughter is a growth opportunity.' }]),
       bullet([{ text: 'Survives drying: ', bold: true }, { text: 'Dried fecal dust can carry live Salmonella. This is why dry-sweeping before washing matters. You have to remove that material physically before disinfectant can reach the surface [5].' }]),
       bullet([{ text: 'Killed by heat: ', bold: true }, { text: 'Cooking destroys Salmonella completely. An internal temperature of 74°C throughout the product is the line [2]. Below that, the risk remains.' }]),
-      ...image(imgBuf0(), 'Figure 1.2: Scientific illustration of Salmonella typhimurium. Each cell is a rod-shaped (bacillus) gram-negative bacterium measuring 0.7-1.5 x 2-5 micrometres. Peritrichous flagella (visible as thin filaments projecting in all directions) give the organism motility and aid colonization of the intestinal tract. (Generated scientific illustration, CPC Short Courses. Actual electron micrographs to be supplied by the CPC team.)', 5.8),
+      ...image(imgBuf0(), 'Figure 1.2: Scientific illustration of Salmonella typhimurium. Each cell is a rod-shaped (bacillus) gram-negative bacterium measuring 0.7-1.5 x 2-5 micrometres. Peritrichous flagella (visible as thin filaments projecting in all directions) give the organism motility and aid colonization of the intestinal tract. Source: CPC Short Courses.', 5.8),
       h2('1.3 How Salmonella Affects Birds'),
       para('In a broiler or layer barn, most birds carrying Salmonella look completely normal. They eat, they drink, they grow, they lay. The whole time they are quietly dropping the bug into the litter and onto everything else [1]. You cannot pick those birds out by sight, and that is the entire problem.'),
       para('Young chicks, especially under three weeks, are the exception. When Salmonella does cause clinical disease at that age you will see:'),
@@ -363,7 +363,7 @@ function buildSection1() {
       bullet('Huddling and chilling'),
       bullet('Diarrhea and pasting of the vent'),
       bullet('Increased mortality in the first week of life'),
-      para("In a layer flock, SE has an extra trick. It can colonise the hen's reproductive tract and get inside the egg before the shell forms. The route is called transovarian transmission [1,6]. The shell looks perfectly clean and uncracked, but the inside is already contaminated. That is why SE in a laying flock is taken so seriously, and why the egg safety steps later in this course are not optional."),
+      para("In a layer flock, SE has an extra trick. It can colonize the hen's reproductive tract and get inside the egg before the shell forms. The route is called transovarian transmission [1,6]. The shell looks perfectly clean and uncracked, but the inside is already contaminated. That is why SE in a laying flock is taken so seriously, and why the egg safety steps later in this course are not optional."),
       h2('1.4 How Salmonella Affects Humans'),
       para('When a person gets sick from contaminated poultry, it comes on fast. Symptoms hit 6 to 72 hours after eating, cramping, diarrhea that can turn bloody, nausea, fever around 38 to 39°C, generally a bad few days. A healthy adult usually clears it in four to seven days [2].'),
       para('Children under five, elderly people, pregnant women, and anyone whose immune system is already weak, it can put them in the hospital. That is who is buying your product. They do not have the reserves to shake off what you and I would. There is also a longer-term problem. Antimicrobial overuse on poultry farms is one of the things driving resistance in Salmonella strains that later show up in hospitals with limited treatment options. Antimicrobial stewardship on your farm matters past your property line [2,7].'),
@@ -373,7 +373,7 @@ function buildSection1() {
       para('Vertical means the problem is already on board the day the chicks land. If the breeder flock is positive for SE, contaminated eggs hatch contaminated chicks and the day-old birds you place are already shedding [1,6]. The cleanest barn in the country cannot fix what walked in the door on placement day.'),
       h3('Horizontal Transmission'),
       para("Horizontal is what most farms fight every day. Anything that comes near the barn can carry it. Feed, biofilm in the drinker line, rodents, flies, darkling beetles, a wild bird that got in, a worker who did not change boots between barns, a piece of equipment that came over from the next farm [1,5]. Any one of those routes is enough to start an outbreak in a clean flock."),
-      ...image(imgBuf(3), 'Figure 1.3: Salmonella transmission routes. Vertical transmission (left) passes infection from breeder to egg to chick. Horizontal transmission (right) spreads Salmonella through feed, water, rodents, insects, people, and equipment. (Generated diagram, CPC Short Courses.)'),
+      ...image(imgBuf(3), 'Figure 1.3: Salmonella transmission routes. Vertical transmission (left) passes infection from breeder to egg to chick. Horizontal transmission (right) spreads Salmonella through feed, water, rodents, insects, people, and equipment. Source: CPC Short Courses.'),
       pageBreak(),
     ],
   };
@@ -404,7 +404,7 @@ function buildSection2() {
       para('The hardest introductions to prevent are the ones you did not invite. Each of these has its own way of getting around your defences:'),
       bullet([{ text: 'Rodents: ', bold: true }, { text: 'Rats and mice are heavily colonized with Salmonella and contaminate everything they touch (feed, water, litter) through their droppings and urine. A single rodent can shed millions of Salmonella organisms per gram of feces [5]. One active rodent infestation can undo a good biosecurity program.' }]),
       bullet([{ text: 'Wild birds: ', bold: true }, { text: 'Starlings, sparrows, and pigeons that get into your barn drop Salmonella directly into the feed and litter. They are hard to keep out completely, but gaps in walls, fans, and vents make it much worse [1].' }]),
-      bullet([{ text: 'Darkling beetles (Alphitobius diaperinus): ', bold: true }, { text: 'Once established in litter, these insects are almost impossible to eliminate. They carry Salmonella through flock cycles and survive even after thorough cleanout by hiding deep in insulation and cracks [1,5].' }]),
+      bullet([{ text: 'Darkling beetles (Alphitobius diaperinus): ', bold: true }, { text: 'These are the most significant insect pest in broiler barns worldwide. Adults are 6 to 10 mm long and complete their full life cycle in about 42 days. A single female produces up to 2,000 eggs in her lifetime [10]. Beetles and their larvae (lesser mealworms) are confirmed vectors for Salmonella, E. coli, and Campylobacter, and have been specifically identified as one of the main routes by which Salmonella gets back into the barn after a thorough cleanout and disinfection [10]. They burrow into insulation and wall cracks, which is why they survive most cleanout protocols. Severe infestations can destroy up to 25% of insulation per year and push energy costs up to 60% higher [10]. Control requires rotating insecticide classes after every two consecutive flocks and applying treatment within 24 hours of depopulation, when beetle populations are at their peak along side walls and under feed lines [10].' }]),
       bullet([{ text: 'Flies: ', bold: true }, { text: 'House flies pick up Salmonella from manure or dead birds and carry it directly to feed, drinkers, and barn surfaces. A fly pressure problem is a Salmonella amplification problem.' }]),
       h2('2.5 Farm Worker Practices'),
       para("The most mobile carrier on your farm is whoever walked through the door this morning. Every worker, technician, vet, and visitor who was on another poultry farm earlier that day can bring Salmonella in on their boots, coveralls, and hands, and almost nobody knows when it is happening [1,5]. Where this goes wrong:"),
@@ -439,17 +439,17 @@ function buildSection3() {
       bullet('Require all delivery vehicles to be washed and disinfected before entering the production area whenever possible.'),
       h3('All-In and All-Out Management'),
       para('The single most effective tool you have for breaking the cycle between flocks is all-in, all-out. One flock in, one flock out, full cleanout in between [1]. Continuous housing, where you put new birds in before the old flock is fully gone, almost guarantees Salmonella carries over. The new flock walks into a contaminated environment on day one and you are uphill for the whole grow-out.'),
-      ...image(imgBuf(5), 'Figure 3.1: Biosecurity zones and entry protocol. The clean zone (left) encompasses the production barn and dedicated equipment. The entry point (centre) enforces boot dips, coverall changes, handwashing, and visitor logging. The outside zone (right) includes public roads and delivery vehicles, which must not cross the line. (Generated diagram, CPC Short Courses.)'),
+      ...image(imgBuf(5), 'Figure 3.1: Biosecurity zones and entry protocol. The clean zone (left) encompasses the production barn and dedicated equipment. The entry point (center) enforces boot dips, coverall changes, handwashing, and visitor logging. The outside zone (right) includes public roads and delivery vehicles, which must not cross the line. Source: CPC Short Courses.'),
       h2('3.2 Feed and Water Safety'),
       para('Start with the feed supplier. Ask whether their program covers heat treatment of finished feed, post-processing contamination controls, and routine environmental Salmonella testing. If they cannot show you the paperwork, get a different supplier [5]. On the farm side, every bag and bin gets sealed and covered. No leftover feed sitting between flocks. Zero rodent access to any feed storage, ever.'),
       para('Water: test well water for total coliform and E. coli at least once a year. Run an in-line treatment system, chlorination or acidification works fine for most Canadian operations. Flush and clean drinker lines at the end of every cycle with an approved cleaner that breaks down biofilm [1].'),
       h2('3.3 Competitive Exclusion'),
-      para("Competitive exclusion is a simple idea: get the right bacteria into the chick before Salmonella does. These products are mixes of beneficial gut bacteria, applied to day-old chicks. They colonise the intestine and crowd Salmonella out before it can establish [1,5]. CE works best at hatch, before any exposure, and only as part of a broader biosecurity and management program. Several CE products are licensed in Canada. Ask your vet which one fits your placement schedule and production type."),
+      para("Competitive exclusion is a simple idea: get the right bacteria into the chick before Salmonella does. These products are mixes of beneficial gut bacteria, applied to day-old chicks. They colonize the intestine and crowd Salmonella out before it can establish [1,5]. CE works best at hatch, before any exposure, and only as part of a broader biosecurity and management program. Several CE products are licensed in Canada. Ask your vet which one fits your placement schedule and production type."),
       h2('3.4 Vaccination'),
       para('SE vaccines are available in Canada and are standard in layer and breeder operations, where the contamination of the egg itself is the main concern [1,8].'),
       bullet([{ text: 'Live attenuated vaccines: ', bold: true }, { text: 'Given in water or by spray to young pullets. These prime the gut\'s immune response, making it harder for Salmonella to establish in the intestinal tract and reducing shedding.' }]),
       bullet([{ text: 'Killed vaccines: ', bold: true }, { text: 'Injected at or near transfer to the layer barn, as a booster after the live series. Associated with lower rates of egg contamination [1,8].' }]),
-      para('Vaccination brings colonisation down and cuts the odds of transovarian transmission, but it does not clear Salmonella out of a flock. Treat it as one layer of a program, not a replacement for biosecurity and management. Your integrator or provincial vet will tell you which schedule fits your production type and the current regulations [3].'),
+      para('Vaccination brings colonization down and cuts the odds of transovarian transmission, but it does not clear Salmonella out of a flock. Treat it as one layer of a program, not a replacement for biosecurity and management. Your integrator or provincial vet will tell you which schedule fits your production type and the current regulations [3].'),
       h2('3.5 Rodent and Pest Control'),
       para('Rodents are one of the most reliable ways for Salmonella to get into a barn, and one of the hardest pest problems to clear out once they are settled in. Your rodent program has to be active, documented, and continuous. Do not wait until you see them to start working at it. The basics:'),
       bullet('Regular inspection of the barn perimeter and interior for signs of rodent activity (droppings, gnaw marks, burrows, runways).'),
@@ -458,7 +458,7 @@ function buildSection3() {
       bullet('Placing and maintaining bait stations at regular intervals around the barn perimeter and under feed storage bins.'),
       bullet('Keeping records of rodent activity levels and bait consumption to track program effectiveness.'),
       h2('3.6 Salmonella Monitoring and Testing'),
-      para("Under Canada's National Salmonella Action Plan for Chicken (NSAPC), your integrator runs pre-harvest flock testing. Treat that result as real information, not paperwork. It tells you whether the biosecurity is working and whether a specific barn is carrying a heavier load than the rest [3]. When a positive comes back, use it. Pull out your cleanout records, visitor logs, and pest control sheets. Find where the gap was. Fix it. Write down what you changed. Then call your vet about what to add to the next cycle."),
+      para("Under CFIA's Pathogen Reduction Monitoring Program (PRMP), pre-harvest testing is required to track Salmonella levels in commercial broiler flocks before slaughter [3]. Your integrator coordinates this. Treat that result as real information, not paperwork. It tells you whether your biosecurity is working and whether a specific barn is carrying a heavier load than the rest. When a positive comes back, use it. Pull out your cleanout records, visitor logs, and pest control sheets. Find where the gap was. Fix it. Write down what you changed. Then call your vet about what to add to the next cycle."),
       pageBreak(),
     ],
   };
@@ -490,7 +490,7 @@ function buildSection4() {
       bullet([{ text: 'Gloves: ', bold: true }, { text: 'Wear disposable or cleanable gloves when handling carcasses, taking samples, or administering medications. Change gloves between barns.' }]),
       h2('4.3 Barn Cleanout and Disinfection'),
       para('Cleanout is the one window in the flock cycle where you can actually reset the barn. Everything that comes after, your biosecurity, your CE product, your vaccination, is fighting uphill against whatever Salmonella load you left in the building. A proper cleanout breaks that cycle [1,5].'),
-      ...image(imgBuf(4), 'Figure 4.1: Between-flock cleanout and disinfection protocol. Each step builds on the previous; skipping any step significantly reduces effectiveness. Dry cleanout and full drying before disinfectant application are the two most commonly skipped steps. (Generated diagram, CPC Short Courses.)'),
+      ...image(imgBuf(4), 'Figure 4.1: Between-flock cleanout and disinfection protocol. Each step builds on the previous; skipping any step significantly reduces effectiveness. Dry cleanout and full drying before disinfectant application are the two most commonly skipped steps. Source: CPC Short Courses.'),
       h3('Key Cleanout Principles'),
       bullet('Remove all litter, manure, and debris from the barn, including corners, under feed and water lines, and wall edges.'),
       bullet('Dry-sweep or blow down all surfaces including walls, ceiling, fans, and attic spaces where dust accumulates.'),
@@ -516,14 +516,14 @@ function buildSection5() {
     footers: { default: buildFooter() },
     children: [
       h1('Section 5: Safe Processing and Storage'),
-      para('The plant does the kill but the farm decides how much Salmonella shows up on the truck. The colonisation level in your flock at loading is what drives carcass contamination at slaughter. Your test results, your relationship with the integrator, and your market access all trace back to what you did in the barn in the days before pickup [3,6].'),
+      para('The plant does the kill but the farm decides how much Salmonella shows up on the truck. The colonization level in your flock at loading is what drives carcass contamination at slaughter. Your test results, your relationship with the integrator, and your market access all trace back to what you did in the barn in the days before pickup [3,6].'),
       h2('5.1 Pre-Harvest Management'),
       para('The window from final feed withdrawal to loading is the worst time for Salmonella in your flock. Withdrawal stress, the chaos of catching, the stress of transport, all of it pushes carrier birds to shed at higher rates. And feathers smeared with fecal material during catching go straight onto the processing line [1,5]. Whatever you do in those 24 to 48 hours shows up in your carcass numbers.'),
       bullet([{ text: 'Feed withdrawal timing: ', bold: true }, { text: 'Follow your processor\'s specified feed withdrawal guidelines. Excessive withdrawal time causes intestinal damage that increases contamination risk during processing [6].' }]),
       bullet([{ text: 'Water access: ', bold: true }, { text: 'Maintain water access up to 1 to 2 hours before catching. Dehydrated birds experience more intestinal fragility at slaughter.' }]),
       bullet([{ text: 'Catching crew biosecurity: ', bold: true }, { text: 'Ensure catching crew members change into clean coveralls and boots before entering the barn. Crews working across multiple farms in a single day carry a higher Salmonella transfer risk.' }]),
       h2('5.2 Temperature Control'),
-      ...image(imgBuf(2), 'Figure 5.1: Temperature control for Salmonella safety. Refrigeration slows growth but does not kill bacteria. The danger zone (4 to 60°C) allows rapid multiplication. Cooking to 74°C throughout the product destroys Salmonella completely. (Generated diagram, CPC Short Courses.)'),
+      ...image(imgBuf(2), 'Figure 5.1: Temperature control for Salmonella safety. Refrigeration slows growth but does not kill bacteria. The danger zone (4 to 60°C) allows rapid multiplication. Cooking to 74°C for poultry pieces destroys Salmonella completely. Source: CPC Short Courses.'),
       bullet([{ text: 'Refrigeration: ', bold: true }, { text: 'Fresh poultry meat must be kept at or below 4°C at all times after processing. Refrigeration slows Salmonella growth greatly but does not eliminate it.' }]),
       bullet([{ text: 'Freezing: ', bold: true }, { text: 'Frozen poultry should be stored at or below -18°C. Freezing does not kill Salmonella; frozen poultry must still be handled and cooked correctly.' }]),
       bullet([{ text: 'Cooking temperature: ', bold: true }, { text: 'All poultry products must reach an internal temperature of at least 74°C (165°F) throughout the product to ensure Salmonella destruction [2,9]. This applies to all cuts, including wings and thighs close to the bone.' }]),
@@ -533,7 +533,7 @@ function buildSection5() {
       bullet('Collect eggs frequently: minimum 3 to 4 times per day for loose-housed flocks. Frequent collection reduces the time eggs spend in a warm, contaminated environment.'),
       bullet('Remove floor eggs promptly. Floor eggs have a much higher rate of fecal shell contamination and must not be sold as Grade A.'),
       bullet([{ text: 'Do not wash eggs ', bold: true }, { text: 'unless you are licensed and equipped to do so under CFIA-approved conditions. Washing with water cooler than the egg creates a negative pressure differential that actively pulls surface bacteria into the egg through the shell pores [6].' }]),
-      bullet('Cool eggs promptly after collection to below 12 degrees Celsius. Store eggs at 7 to 12 degrees Celsius pending grading.'),
+      bullet('Cool eggs promptly after collection. Store at or below 10 degrees Celsius for graded eggs, or below 13 degrees Celsius for ungraded eggs pending grading [3].'),
       bullet('Use clean, sanitized egg flats or crates. Reusable plastic egg flats must be washed and disinfected between uses.'),
       h2('5.4 Preventing Cross-Contamination'),
       para('If you do direct sales or any on-farm processing, cross-contamination is your problem to manage. Raw poultry onto a board, a surface, or a pair of hands that then touch ready-to-eat food is one of the most common ways people get sick from chicken [2]. The rules are simple. They have to be followed every time:'),
@@ -556,9 +556,9 @@ function buildSection6() {
     footers: { default: buildFooter() },
     children: [
       h1('Section 6: Farmer Responsibilities and Consumer Safety'),
-      para('Salmonella control in Canada is not optional. It is in federal law, in provincial regulation, and in the program rules of every major commodity organisation you sell into. Knowing which rules apply to you, what records you have to keep, and when to call CFIA matters as much as anything you do in the barn [3,9].'),
+      para('Salmonella control in Canada is not optional. It is in federal law, in provincial regulation, and in the program rules of every major commodity organization you sell into. Knowing which rules apply to you, what records you have to keep, and when to call CFIA matters as much as anything you do in the barn [3,9].'),
       h2('6.1 Regulatory Framework in Canada'),
-      bullet([{ text: 'Canadian Food Inspection Agency (CFIA): ', bold: true }, { text: 'Oversees the Safety of Human Food Regulations and administers the National Salmonella Action Plan for Chicken (NSAPC). The NSAPC includes pre-harvest surveillance of commercial broiler flocks, with testing conducted at defined intervals before slaughter. Positive flock results may trigger additional interventions at the processing plant [3].' }]),
+      bullet([{ text: 'Canadian Food Inspection Agency (CFIA): ', bold: true }, { text: 'Oversees the Safe Food for Canadians Regulations and administers the Pathogen Reduction Monitoring Program (PRMP) for raw poultry. The PRMP requires pre-harvest and processing surveillance to track Salmonella levels in commercial broiler operations. Positive flock results may trigger additional interventions at the processing plant [3].' }]),
       bullet([{ text: 'Chicken Farmers of Canada (CFC): ', bold: true }, { text: 'Administers the On-Farm Food Safety (OFFS) Program for broiler producers, which requires documented biosecurity and Salmonella control practices. Producers are subject to third-party audits [3].' }]),
       bullet([{ text: 'Egg Farmers of Canada (EFC): ', bold: true }, { text: 'Administers the Start Clean and Stay Clean on-farm food safety program for commercial egg producers, which includes requirements for Salmonella control and flock testing [3].' }]),
       bullet([{ text: 'Reportable diseases: ', bold: true }, { text: 'Salmonella Pullorum and Salmonella Gallinarum are reportable diseases under federal and most provincial regulations. Any suspected case must be reported to your provincial veterinarian or the CFIA immediately [3].' }]),
@@ -582,7 +582,7 @@ function buildSection6() {
       bullet('Report any unusual signs to your veterinarian promptly. Early investigation prevents disease from spreading.'),
       h2('6.4 Key Takeaways'),
       bullet('Salmonella is a zoonotic pathogen that can be carried by healthy-appearing birds and transmitted to humans through poultry products.'),
-      bullet('The two serovars of greatest food safety concern in Canadian poultry are Salmonella Enteritidis and Salmonella Typhimurium.'),
+      bullet('The three serovars of greatest food safety concern in Canadian poultry are Salmonella Enteritidis, Salmonella Typhimurium, and Salmonella Heidelberg.'),
       bullet('Control requires a layered approach: biosecurity, feed and water management, competitive exclusion, vaccination (where appropriate), hygiene, and monitoring.'),
       bullet('All-in and all-out management, combined with thorough cleanout and disinfection between flocks, is the most effective tool for breaking the Salmonella cycle between flocks.'),
       bullet('All poultry products must reach 74°C internal temperature to ensure Salmonella destruction.'),
@@ -623,13 +623,14 @@ function buildReferencesSection() {
   const refs = [
     '[1]  Russell SM. Controlling Salmonella in Poultry Production. Woodhead Publishing; 2012.',
     '[2]  Public Health Agency of Canada. Salmonellosis (non-typhoidal) [Internet]. Ottawa: Government of Canada; 2023 [cited 2026 Apr]. Available from: phac-aspc.gc.ca',
-    '[3]  Canadian Food Inspection Agency. National Salmonella Action Plan for Chicken [Internet]. Ottawa: Government of Canada; 2023 [cited 2026 Apr]. Available from: inspection.canada.ca',
+    '[3]  Canadian Food Inspection Agency. Pathogen Reduction Monitoring Program (PRMP) for raw poultry [Internet]. Ottawa: Government of Canada; 2023 [cited 2026 Apr]. Available from: inspection.canada.ca',
     '[4]  Swayne DE, Boulianne M, Logue CM, McDougald LR, Nair V, Suarez DL, editors. Diseases of Poultry. 14th ed. Hoboken (NJ): Wiley-Blackwell; 2020.',
     '[5]  Bell DD, Weaver WD. Commercial Chicken Meat and Egg Production. 5th ed. Norwell (MA): Springer; 2002.',
     '[6]  Tablante NL. Common Poultry Diseases and Their Prevention. eXtension; 2013.',
     '[7]  World Health Organization. WHO List of Critically Important Antimicrobials for Human Medicine. 6th rev. Geneva: WHO; 2019.',
     '[8]  CEVA Sante Animale. CEVA Handbook of Poultry Diseases. Vol 1. Libourne: CEVA; 2020.',
     '[9]  National Farm Animal Care Council (NFACC). Code of Practice for the Care and Handling of Hatching Eggs, Breeders, Chickens and Turkeys. Lacombe (AB): NFACC; 2016.',
+    '[10] Kehler L. Darkling beetles [Technical Bulletin]. CPC Learning Centre; [cited 2026 Apr]. Available from: cpclearningcentre.ca',
   ];
 
   return {
@@ -762,9 +763,14 @@ async function main() {
   //  4. document.xml — italicize formal Latin genus/species names in all body text
   const zip = await JSZip.loadAsync(buffer);
 
-  // 1. settings.xml
+  // 1. settings.xml: strip auto-update flag, then set it back to false
   let settings = await zip.file('word/settings.xml').async('string');
   settings = settings.replace(/<w:updateFields[^/]*\/>/g, '');
+  if (settings.includes('<w:displayBackgroundShape/>')) {
+    settings = settings.replace('<w:displayBackgroundShape/>', '<w:displayBackgroundShape/><w:updateFields w:val="false"/>');
+  } else {
+    settings = settings.replace('</w:settings>', '<w:updateFields w:val="false"/></w:settings>');
+  }
   zip.file('word/settings.xml', settings);
 
   // 2-4. document.xml
@@ -876,6 +882,18 @@ async function main() {
     });
     if (entryIdx !== entriesWithAnchor.length) {
       console.warn(`Course 4 TOC bookmark warning: matched ${entryIdx}/${entriesWithAnchor.length} entries. Unmatched: ${entriesWithAnchor.slice(entryIdx).map(e => `[H${e.lvl}] ${e.text}`).join(' | ')}`);
+    }
+  }
+
+  // 3c. Add TOC1 / TOC2 paragraph styles to styles.xml if missing (enables dot leaders)
+  {
+    let stylesXml = await zip.file('word/styles.xml').async('string');
+    if (!/w:styleId="TOC1"/.test(stylesXml)) {
+      const tocStyles =
+        '<w:style w:type="paragraph" w:styleId="TOC1"><w:name w:val="toc 1"/><w:pPr><w:tabs><w:tab w:val="right" w:leader="dot" w:pos="9000"/></w:tabs><w:spacing w:after="60"/></w:pPr><w:rPr><w:rFonts w:ascii="Calibri" w:hAnsi="Calibri"/><w:sz w:val="22"/></w:rPr></w:style>' +
+        '<w:style w:type="paragraph" w:styleId="TOC2"><w:name w:val="toc 2"/><w:pPr><w:tabs><w:tab w:val="right" w:leader="dot" w:pos="9000"/></w:tabs><w:spacing w:after="60"/><w:ind w:left="220"/></w:pPr><w:rPr><w:rFonts w:ascii="Calibri" w:hAnsi="Calibri"/><w:sz w:val="22"/></w:rPr></w:style>';
+      stylesXml = stylesXml.replace('</w:styles>', tocStyles + '</w:styles>');
+      zip.file('word/styles.xml', stylesXml);
     }
   }
 
