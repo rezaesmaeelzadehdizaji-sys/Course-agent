@@ -123,6 +123,59 @@ const labeled = (label, body) => p([
   run(body),
 ]);
 
+// CPC temperature target table (Source: CPC Learning Centre)
+function tempTable() {
+  const colW = [800, 1100, 1100, 1100, 1100, 1100, 2340]; // twips, total = 8640
+  const hdrBg = '2E74B5';
+  const altBg = 'EBF2FA';
+  const bdr = { style: BorderStyle.SINGLE, size: 2, color: 'AAAAAA' };
+  const cellBorders = { top: bdr, bottom: bdr, left: bdr, right: bdr };
+
+  const hdrCell = (text, colIdx) => new TableCell({
+    width: { size: colW[colIdx], type: WidthType.DXA },
+    borders: cellBorders,
+    shading: { type: ShadingType.SOLID, color: hdrBg },
+    children: [new Paragraph({
+      alignment: AlignmentType.CENTER,
+      spacing: { before: 60, after: 60 },
+      children: [run(text, { bold: true, size: 18, color: 'FFFFFF' })],
+    })],
+  });
+
+  const dataCell = (text, colIdx, shade) => new TableCell({
+    width: { size: colW[colIdx], type: WidthType.DXA },
+    borders: cellBorders,
+    shading: { type: ShadingType.SOLID, color: shade ? altBg : 'FFFFFF' },
+    children: [new Paragraph({
+      alignment: colIdx === 6 ? AlignmentType.LEFT : AlignmentType.CENTER,
+      spacing: { before: 50, after: 50 },
+      children: [run(text, { size: 18, color: BODY })],
+    })],
+  });
+
+  const headers = ['Age', 'House Temp (°C)', 'House Temp (°F)', 'Floor Temp (°C)', 'Floor Temp (°F)', 'Litter Temp (°C)', 'Key Notes'];
+  const rows = [
+    ['Day 1',    '32–34',          '89–93',          '31', '88', '27',    'Pre-warm litter before chick arrival'],
+    ['Day 7',    '29',                  '85',                  '28', '83', '-',     'Reduce ~0.5°C every 2–3 days as birds feather in'],
+    ['Day 14',   '27–29',          '79–84',          '26', '78', '-',     'Continue gradual weekly reduction of 2–3°C'],
+    ['Day 21',   '26',                  '78',                  '24', '75', '-',     'Monitor bird distribution for comfort'],
+    ['Day 28',   '24',                  '75',                  '22', '72', '-',     'Ventilation management becomes increasingly critical'],
+    ['Day 35',   '21–22',          '70–72',          '20', '68', '-',     'Maintain RH 50–70%'],
+    ['Day 42+',  '20–21 (min. 18)','68–70 (min. 65)','19', '66', '-',     'NFACC acceptable range: 18–24°C; adjust for season'],
+  ];
+
+  return new Table({
+    width: { size: 100, type: WidthType.PERCENTAGE },
+    margins: { top: 0, bottom: 0, left: 0, right: 0 },
+    rows: [
+      new TableRow({ children: headers.map((h, i) => hdrCell(h, i)), tableHeader: true }),
+      ...rows.map((row, ri) => new TableRow({
+        children: row.map((cell, ci) => dataCell(cell, ci, ri % 2 === 1)),
+      })),
+    ],
+  });
+}
+
 // Image + caption helper
 function imgBlock(buf, type, widthIn, caption) {
   if (!buf) {
@@ -391,12 +444,9 @@ const doc = new Document({
 
         h2('Target Ranges by Bird Age'),
         p('Always check temperature at chick level, not at the ceiling sensor. Your barn controller reads what the sensor sees, and on a cold night or over a cold floor, that reading can be 3 to 5 degrees higher than what the birds are actually experiencing [1]. That gap is enough to stunt a whole flock in the first week.'),
-        p('Target temperatures at bird level for broilers [1]:'),
-        b('Day 0 to 2: 32 to 34 degrees Celsius'),
-        b('Day 3 to 7: reduce by approximately 0.5 degrees every 2 to 3 days as birds feather in'),
-        b('Week 2: approximately 28 to 30 degrees Celsius'),
-        b('Week 3: approximately 24 to 27 degrees Celsius'),
-        b('Week 4 and beyond: 18 to 22 degrees Celsius'),
+        p('Target temperatures at bird level for broilers [4,11]:'),
+        tempTable(),
+        new Paragraph({ spacing: { before: 80, after: 0 } }),
         p('These are targets, not fixed rules. The birds tell you more than any sensor. If they are spread evenly across the heated area, eating and drinking actively, the temperature is right. If they are piling up or pushing to the walls, something is off.'),
         p('Pre-heat the barn at least 24 to 48 hours before placement, including the floor. The litter surface at chick level needs to reach 30 degrees Celsius before the first bird arrives [1]. Warm air over a cold floor is not enough for day-olds. They lose heat through the floor just as fast as through the air.'),
 
