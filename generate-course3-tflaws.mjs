@@ -592,7 +592,7 @@ const doc = new Document({
         h2('What to Do'),
         b('Replace failed bulbs the same day you find them, not at the next maintenance cycle'),
         b('Verify timer accuracy at each weekly check; timers drift and controllers can fail silently'),
-        b('Consult both the breed management handbook (Ross or Cobb) and the CPC Lighting Program Guidelines for Broilers (2026) for your light schedule; your integrator may have additional requirements specific to your contract [1,12]'),
+        b('Consult CPC Lighting Program Guidelines for Broilers, the breed management handbook (Ross or Cobb) and the National Farm Animal Care Council (NFACC) for your light schedule; your integrator may have additional requirements specific to your contract [1,4,12]'),
         b('After installing LED fixtures, verify lux levels with an LED-specific light meter and compare to your target intensity, not just a visual assessment [12]'),
         b('Keep a light program log with every change noted, so production deviations can be correlated with management events'),
         b('In growing barns, check that dark periods are genuinely dark; even small light leaks from curtains or door gaps disrupt the rest cycle'),
