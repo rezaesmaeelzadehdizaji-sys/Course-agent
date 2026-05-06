@@ -587,7 +587,7 @@ const doc = new Document({
         labeled('Layer production deviations:', 'If your hens fall below production targets or go off lay unexpectedly, verify the light schedule before looking at nutrition or disease. An incorrectly programmed timer is one of the first things to check.'),
         labeled('Poor uniformity in growers:', 'Uneven lux across the barn during the first week is a contributor to uneven feed and water access in that critical window, which translates directly to weight variation at seven days.'),
 
-        ...imgBlock(IMG.lux, 'png', 5.8, 'Photo 3.2: The same barn at 5 lux (top) and 20 lux (bottom). Research shows that birds kept at 5 lux have higher stress hormone levels and reduced exploratory behavior compared to birds at 20 lux. Brighter light also makes it much easier to spot a sick or lame bird before it becomes a problem. Source: CPC Short Courses.'),
+        ...imgBlock(IMG.lux, 'png', 5.8, 'Photo 3.2: The same barn at 5 lux (top) and 20 lux (bottom). Research shows that birds kept at 5 lux display reduced exploratory behavior; less walking, foraging, and preening, compared to birds at 20 lux. This is why lighting intensity matters at the right time and for the right reason. Source: CPC Short Courses.'),
 
         h2('What to Do'),
         b('Replace failed bulbs the same day you find them, not at the next maintenance cycle'),
