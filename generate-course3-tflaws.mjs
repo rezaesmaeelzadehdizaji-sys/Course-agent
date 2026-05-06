@@ -208,11 +208,12 @@ function lightingTable() {
 
   const headers = ['Age', 'Light Hours', 'Dark Hours', 'Intensity', 'Why It Matters'];
   const rows = [
-    ['Day 1–7',        '18 hrs', '6 hrs', '50–100 lux', 'Chicks find feed, water, and heat source easily'],
-    ['Day 7–13',       '18 hrs', '6 hrs', '30–50 lux',  'Eyes adjust; reduce stress gradually'],
-    ['Day 14–21',      '18 hrs', '6 hrs', '20–30 lux',  'Supports rest behavior and bone development'],
-    ['Day 22–27',      '18 hrs', '6 hrs', '10–20 lux',  'Steady reduction continues'],
-    ['Day 28–harvest', '22 hrs', '2 hrs', '3–5 lux',    'Extended light supports feed intake and growth'],
+    ['Day 1–7',         '18 hrs', '6 hrs', '50–100 lux', 'Chicks find feed, water, and heat source easily'],
+    ['Day 7–13',        '18 hrs', '6 hrs', '30–50 lux',  'Eyes adjust; reduce stress gradually'],
+    ['Day 14–21',       '18 hrs', '6 hrs', '20–30 lux',  'Supports rest behavior and bone development'],
+    ['Day 22–27',       '18 hrs', '6 hrs', '10–15 lux',  'Steady reduction continues'],
+    ['Day 28–31',       '22 hrs', '2 hrs', '5–10 lux',   'Extended light supports feed intake and growth'],
+    ['Day 32–harvest',  '24 hrs', '-',     '3–5 lux',    'If shipping earlier than 34 days, reduce dark hours earlier'],
   ];
 
   return new Table({
