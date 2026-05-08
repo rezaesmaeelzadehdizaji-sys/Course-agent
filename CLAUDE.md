@@ -227,6 +227,86 @@ const checks = [/\b\w+isation\b/gi,/\b\w+ised\b/gi,/\b\w+ising\b/gi,/\b\w+ises\b
 // Run each against the joined <w:t> text. Any hit must be converted before publishing.
 ```
 
+## CPC Learning Centre Materials Integration (MANDATORY)
+
+These courses are produced by CPC. CPC Learning Centre materials must be actively incorporated into every course wherever they are relevant. This is not optional and does not require user prompting.
+
+### Rule
+
+Before writing any section, scan `D:\Course agent\Avian medicine sources\CPC learning centre\` for bulletins, disease profiles, and flock management guides that cover that section's topic. If relevant material exists, draw from it and cite it.
+
+### What counts as CPC material
+
+- Technical bulletins in `CPC learning centre\Technical Bulletins\`
+- Disease profiles in `CPC learning centre\Broilers-Disease Profiles\`, `Layers-Disease Profiles\`, `Breeders-Disease Profiles\`, `Turkeys-Disease Profiles\`
+- Flock management guides in any `Flock Management\` or `Flock management\` subfolder
+- Any CPC-authored content found online at `cpclearningcentre.ca` or `canadianpoultry.ca`
+
+### How to integrate
+
+- Extract specific facts, figures, protocols, and recommendations directly from the CPC source — do not paraphrase from memory
+- Apply the American English sweep to any CPC source text before incorporating (CPC sources sometimes use British forms)
+- Strip any citation numbers from the source document that belong to its own reference list; replace with the correct citation number from the course being written
+- Cite every CPC source in the course reference list using format: `Author (if named). Title [Technical Bulletin / Disease Profile / Flock Management Guide]. CPC Learning Centre; [year if stated] [cited 2026 Apr]. Available from: cpclearningcentre.ca`
+
+### Depth of integration
+
+Integrate CPC content in proportion to its relevance, not as a formality. When CPC has a dedicated bulletin on a topic (e.g., darkling beetles, drinking water management, probiotics, spotting disease early, hatching egg care), that bulletin should be the primary source for that topic and its specifics should appear in the course content. Do not reduce CPC content to a single generic sentence when a full bulletin is available.
+
+### Where CPC materials have already been used (reference for future courses)
+
+| Course | CPC Source | Section |
+|--------|-----------|---------|
+| Course 3 | Drinking Water Management (Leslie M, 2011) | W: Water — biofilm purge protocol, nipple flow rate, well disinfection |
+| Course 3 | Broiler Management | T: Temperature — temperature tables |
+| Course 3 | CPC Lighting Program Guidelines for Broilers 2026 | L: Light — lux levels, dark period schedule |
+| Course 4 | Darkling Beetles (Kehler L) | Section 2.4 — vector role, life cycle, insecticide rotation |
+| Course 4 | Drinking Water Management (Leslie M, 2011) | Section 2.2, 3.2 — water quality standards, biofilm purge |
+| Course 4 | An Introduction to Probiotics | Section 3.3 — CE mechanism, Nurmi/Rantala 1973, Bacillus stability |
+| Course 4 | Spotting Disease Early | Section 6.3 — water before feed, five-sense walk, bird conformation |
+| Course 4 | Hatching Egg Care | Section 5.3 — shell pore mechanism, sweating, collection frequency |
+
+---
+
+## Cross-References to Other CPC Short Courses (MANDATORY)
+
+When writing any course in the series, you MUST include cross-references to other CPC Short Courses whenever a topic in the current course has been explained in more depth in another course and the reader would benefit from being directed there.
+
+### Rule
+
+If a topic is covered at summary level in the current course but covered in full detail in another course in this series, include a cross-reference sentence pointing the reader to that course.
+
+### Format
+
+One sentence, woven into the paragraph where the topic appears. Use this format:
+
+> For more on [topic], see Course X ([Short Course Title]) in this series.
+
+**Use parentheses around the course title, not em dashes.** The official course titles contain em dashes; wrapping in parentheses avoids inserting them into body prose.
+
+### Placement rules
+
+- Place the cross-reference sentence at the natural point in the paragraph where the gap arises, not at the end of a section as a generic footer
+- Never create a standalone "For more information" section or callout box
+- Maximum 2 to 3 cross-references per course — only where genuinely needed, not as a habit
+
+### When a cross-reference is warranted
+
+- The current course names a topic, tool, or framework that another course covers in full (e.g., Course 4 mentions daily litter monitoring → Course 3 covers T-FLAWS sanitation in detail)
+- A disease or condition is mentioned as a risk factor and its full profile lives in another course (e.g., immunosuppressive diseases mentioned in Course 4 → Course 7 covers disease profiles)
+- A management practice is referenced but not taught in the current course (e.g., brooding temperature is relevant but not the course topic)
+
+### Cross-references used to date
+
+| Course | Reference placed | Points to |
+|--------|-----------------|-----------|
+| Course 4, Section 4.3 | Daily litter/sanitation monitoring during flock | Course 3 (T-FLAWS Assessment Management Tool) |
+| Course 4, Section 3.3 | Immunosuppressive disease profiles | Course 7 (Common Poultry Diseases) |
+
+Update this table as new cross-references are added in future courses.
+
+---
+
 ## Default Writing Mode (MANDATORY)
 
 All content must be written in **Farmer-Flow Writing Mode by default**.
@@ -426,7 +506,7 @@ Every course document must follow this structure:
   2. **CPC logo** (centered)
   3. **Course title** — large, bold, blue (`2E74B5`), centered
   4. **Subtitle** — italic, blue (`2E74B5`), centered (if applicable)
-  5. **Gold horizontal rule** (`C9A84C`)
+  5. **Gold horizontal rule** (`C9A84C`) — implemented as plain ASCII underscores (`___________________________________`) in gold (`C9A84C`), size 22, centered. **NEVER use Unicode box-drawing characters (`───`) — they render as a thick gray rectangle in Word.** Confirmed correct implementation from Course 3 generator.
   6. **Metadata line:** `CPC Short Courses` — NOT "Canadian Poultry Training Series" or any variant
   7. **Duration** (e.g., `Duration: 2 hours`)
   8. **Date** (e.g., `April 2026`)
@@ -552,32 +632,37 @@ Before generating any course, run every step in order. Do not skip any step.
 
 **Phase 1 — Research (before writing a single word)**
 
-1. Scan local library at `D:\Course agent\Avian medicine sources\` for all major topics
-2. Run `/deep-research` (deep mode) on each major section topic — retrieve, triangulate, synthesize, cite
-3. Run `/academic-researcher` on any specific statistic or threshold — verify against peer-reviewed sources
-4. Record all confirmed sources. Mark any unconfirmed claim `[NEEDS SOURCE]`
+1. Scan `D:\Course agent\Avian medicine sources\CPC learning centre\` for every major section topic. Read any relevant CPC bulletins, disease profiles, or flock management guides and extract specific facts, protocols, and figures. This is the primary source layer for these courses — CPC materials always come first.
+2. Scan the broader local library at `D:\Course agent\Avian medicine sources\` for scientific and industry sources covering the same topics.
+3. Run `/deep-research` (deep mode) on each major section topic — retrieve, triangulate, synthesize, cite.
+4. Run `/academic-researcher` on any specific statistic or threshold — verify against peer-reviewed sources.
+5. Record all confirmed sources. Mark any unconfirmed claim `[NEEDS SOURCE]`.
 
 **Phase 2 — Structure alignment**
 
-5. Parse both reference courses:
+6. Parse both reference courses:
    - Course 3 (T-FLAWS): `Course 3/T-FLAWS_Assessment_Management_Tool_draft.docx`
    - Course 7 (Common Poultry Diseases): `Course 7/Common_Poultry_Diseases_draft.docx`
-6. Extract: structure, headings, tone, depth, formatting patterns
-7. Compare with new course outline and align
+7. Extract: structure, headings, tone, depth, formatting patterns.
+8. Compare with new course outline and align.
+9. Identify cross-reference opportunities: review the course outlines of all published courses in the series. For each section topic in the new course, note whether another published course covers that topic in greater depth. Flag those for cross-reference sentences.
 
 **Phase 3 — Content generation**
 
-8. Generate content aligned with: outline, reference structure, CPC standards, research findings from Phase 1
-9. Every claim must trace back to a confirmed source from Phase 1
-10. No number, threshold, or management recommendation without a citation
+10. Generate content aligned with: outline, reference structure, CPC standards, research findings from Phase 1.
+11. Every claim must trace back to a confirmed source from Phase 1.
+12. No number, threshold, or management recommendation without a citation.
+13. Integrate CPC Learning Centre material actively throughout — not as a token citation at the end, but woven into the section content where the CPC source is directly relevant.
+14. Insert cross-reference sentences at the point where each identified cross-reference gap arises (see Phase 2, step 9). Use format: "For more on [topic], see Course X ([Short Title]) in this series."
 
 **Phase 4 — Validation**
 
-11. Auto-alignment check: structure consistency, tone consistency, citation format, missing references
-12. Spelling sweep: run British English detection against all `<w:t>` text
-13. Evaluate using Farmer-Flow Style Scoring System (minimum 24/30, no score below 4)
-14. Rewrite automatically if score fails
-15. Humanization pass: identify and rewrite any AI-sounding sections before finalizing
+15. Auto-alignment check: structure consistency, tone consistency, citation format, missing references.
+16. Spelling sweep: run British English detection against all `<w:t>` text.
+17. Cover page check: confirm gold rule uses plain underscores (`___...___`) in GOLD (`C9A84C`), not Unicode box-drawing characters.
+18. Evaluate using Farmer-Flow Style Scoring System (minimum 24/30, no score below 4).
+19. Rewrite automatically if score fails.
+20. Humanization pass: identify and rewrite any AI-sounding sections before finalizing.
 
 ## Agent Behavior & Validation Protocol
 
