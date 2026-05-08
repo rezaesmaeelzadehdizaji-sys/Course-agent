@@ -238,9 +238,9 @@ function buildCoverSection() {
       spacing:   { before: 0, after: 600 },
     }),
 
-    // Divider
+    // Divider — plain underscores in gold, matching Course 3 exactly
     new Paragraph({
-      children: [new TextRun({ text: '───────────────────────────────────', color: MED_BLUE, size: 22, font: 'Calibri' })],
+      children: [new TextRun({ text: '___________________________________', color: GOLD, size: 22, font: 'Calibri' })],
       alignment: AlignmentType.CENTER,
       spacing:   { before: 0, after: 400 },
     }),
