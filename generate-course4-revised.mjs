@@ -971,46 +971,6 @@ async function main() {
     );
   });
 
-  // 5. Bold "CPC Learning Centre" in all non-heading paragraphs
-  function insertBold(rPr) {
-    if (!rPr) return '<w:rPr><w:b/><w:bCs/></w:rPr>';
-    if (/<w:b\/>/.test(rPr)) return rPr; // already bold
-    let result = rPr;
-    if (result.includes('<w:b w:val="false"/>')) result = result.replace('<w:b w:val="false"/>', '<w:b/>');
-    if (result.includes('<w:bCs w:val="false"/>')) result = result.replace('<w:bCs w:val="false"/>', '<w:bCs/>');
-    if (result !== rPr) return result;
-    for (const anchor of ['<w:color ', '<w:sz ', '<w:szCs ', '</w:rPr>']) {
-      const idx = result.indexOf(anchor);
-      if (idx !== -1) return result.slice(0, idx) + '<w:b/><w:bCs/>' + result.slice(idx);
-    }
-    return result.replace('<w:rPr>', '<w:rPr><w:b/><w:bCs/>');
-  }
-
-  docXml = docXml.replace(/<w:p\b[^>]*>[\s\S]*?<\/w:p>/g, paraEl => {
-    if (/w:val="Heading[123]"/.test(paraEl)) return paraEl;
-    return paraEl.replace(
-      /(<w:r\b[^>]*>)((?:<w:rPr>[\s\S]*?<\/w:rPr>)?)(<w:t(?:\s+xml:space="preserve")?>)([\s\S]*?)(<\/w:t>\s*<\/w:r>)/g,
-      (m, rOpen, rPr, _tOpen, text) => {
-        if (!text.includes('CPC Learning Centre')) return m;
-        const rPrBold = insertBold(rPr);
-        const boldParts = [];
-        let last = 0;
-        const cpcRe = /CPC Learning Centre/g;
-        let sm;
-        while ((sm = cpcRe.exec(text)) !== null) {
-          if (sm.index > last) boldParts.push({ t: text.slice(last, sm.index), b: false });
-          boldParts.push({ t: sm[0], b: true });
-          last = sm.index + sm[0].length;
-        }
-        if (last < text.length) boldParts.push({ t: text.slice(last), b: false });
-        return boldParts
-          .filter(p => p.t.length > 0)
-          .map(p => `${rOpen}${p.b ? rPrBold : rPr}<w:t xml:space="preserve">${p.t}</w:t></w:r>`)
-          .join('');
-      }
-    );
-  });
-
   const bad = docXml.match(/&(?!amp;|lt;|gt;|quot;|apos;|#)/g);
   if (bad) throw new Error(`Unescaped & in XML (${bad.length} found), Word will reject`);
 

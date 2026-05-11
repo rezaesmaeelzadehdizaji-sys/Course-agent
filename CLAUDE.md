@@ -257,16 +257,14 @@ Integrate CPC content in proportion to its relevance, not as a formality. When C
 
 **Never cite CPC Learning Centre materials with a number alone.** Every sentence that draws on a CPC source must name the CPC Learning Centre explicitly in the text.
 
-**Bold rule:** Write `CPC Learning Centre` in bold every time it appears in body text. Apply this via post-processing XML transform (see Course 4 generator for the `insertBold()` + bold step pattern) if the generator does not handle inline bolding natively.
-
-**Format:** "The **CPC Learning Centre** [document title] [verb]..."
+**Format:** "The CPC Learning Centre [document title] [verb]..."
 
 Examples:
-- "The **CPC Learning Centre** Drinking Water Management guide recommends..."
-- "The **CPC Learning Centre** Introduction to Probiotics guide explains..."
-- "The **CPC Learning Centre** 'Spotting Disease Early' guide puts it well:"
-- "...is the **CPC Learning Centre** standard for..."
-- "The **CPC Learning Centre** recommends rotating insecticide classes..."
+- "The CPC Learning Centre Drinking Water Management guide recommends..."
+- "The CPC Learning Centre Introduction to Probiotics guide explains..."
+- "The CPC Learning Centre 'Spotting Disease Early' guide puts it well:"
+- "...is the CPC Learning Centre standard for..."
+- "The CPC Learning Centre recommends rotating insecticide classes..."
 
 **Why:** CPC produces and owns these courses. Making the attribution explicit in the prose reinforces the CPC brand with every reader and makes clear that recommendations come from a recognized Canadian poultry authority, not from the document author. A citation number alone does not achieve this.
 
@@ -274,7 +272,6 @@ Examples:
 - The first sentence that introduces a CPC bulletin's content must name the bulletin and attribute it to the CPC Learning Centre
 - Subsequent sentences in the same paragraph referencing the same bulletin do not need to repeat the attribution
 - Do not shorten "CPC Learning Centre" to just "CPC" in attribution sentences
-- After generating content, run a post-processing bold step over the document XML to bold every occurrence of "CPC Learning Centre" in non-heading paragraphs
 
 ### Where CPC materials have already been used (reference for future courses)
 
