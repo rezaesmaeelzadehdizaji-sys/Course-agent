@@ -379,7 +379,6 @@ function buildSection1() {
       h3('Horizontal Transmission'),
       para("Horizontal is what most farms fight every day. Anything that comes near the barn can carry it. Feed, biofilm in the drinker line, rodents, flies, darkling beetles, a wild bird that got in, a worker who did not change boots between barns, a piece of equipment that came over from the next farm [1,5]. Any one of those routes is enough to start an outbreak in a clean flock."),
       ...image(imgBuf(3), 'Figure 1.3: Salmonella transmission routes. Vertical transmission (left) passes infection from breeder to egg to chick. Horizontal transmission (right) spreads Salmonella through feed, water, rodents, insects, people, and equipment. Source: CPC Short Courses.'),
-      pageBreak(),
     ],
   };
 }
@@ -403,14 +402,14 @@ function buildSection2() {
       bullet('Providing feed that has been stored too long, especially in warm, humid conditions'),
       h2('2.2 Contaminated Water'),
       para("Most farmers keep an eye on the feed and forget about the water. Surface water from a dugout, pond, or open stream carries a heavy bacterial load. Well water is usually cleaner but can go wrong with seasonal changes or with aging infrastructure [1]. The bigger water problem is inside the barn though, and it is biofilm. Biofilm is the slimy layer on the inside of your drinker line that builds up over the course of a flock. Salmonella lives inside it and survives a normal flush. The only thing that breaks it down is a proper water-line clean with an approved acid or enzyme product between flocks. If you are not doing that at turnover, you are starting every new flock on a contaminated water line."),
-      para("When you get your annual water test back, the numbers that matter most for Salmonella risk are total coliforms (target zero per 100 mL) and E. coli (target zero). The CPC water quality standards also flag pH: your drinking water should stay between 6.0 and 8.0, with 6.8 to 7.5 considered ideal for production performance [11]. A pH outside that range does not just affect palatability. It affects biofilm chemistry and how long pathogens survive in the line. Test your well at least twice a year and after any flooding or infrastructure work [11]."),
+      para("When you get your annual water test back, the numbers that matter most for Salmonella risk are total coliforms (target zero per 100 mL) and E. coli (target zero). The CPC Learning Centre water quality standards also flag pH: your drinking water should stay between 6.0 and 8.0, with 6.8 to 7.5 considered ideal for production performance [11]. A pH outside that range does not just affect palatability. It affects biofilm chemistry and how long pathogens survive in the line. Test your well at least twice a year and after any flooding or infrastructure work [11]."),
       h2('2.3 Carrier Birds and Asymptomatic Shedding'),
       para("Once some of your birds pick Salmonella up, they become carriers. They shed it on and off in their droppings, and they look completely normal the whole time [1]. You cannot pick them out by walking the barn. And anything that stresses the flock pushes the shedding higher, feed withdrawal, a concurrent infection, the chaos of catching. That is why barn contamination tends to peak in the 24 to 48 hours before loading. You are stressing the birds at the exact worst time."),
       h2('2.4 Wild Animals, Rodents, and Insects'),
       para('The hardest introductions to prevent are the ones you did not invite. Each of these has its own way of getting around your defences:'),
       bullet([{ text: 'Rodents: ', bold: true }, { text: 'Rats and mice are heavily colonized with Salmonella and contaminate everything they touch (feed, water, litter) through their droppings and urine. A single rodent can shed millions of Salmonella organisms per gram of feces [5]. One active rodent infestation can undo a good biosecurity program. For more on biosecurity protocols, see Course 2 (Biosecurity) in this series.' }]),
       bullet([{ text: 'Wild birds: ', bold: true }, { text: 'Starlings, sparrows, and pigeons that get into your barn drop Salmonella directly into the feed and litter. They are hard to keep out completely, but gaps in walls, fans, and vents make it much worse [1].' }]),
-      bullet([{ text: 'Darkling beetles (Alphitobius diaperinus): ', bold: true }, { text: 'These are the most significant insect pest in broiler barns worldwide. Adults are 6 to 10 mm long and complete their full life cycle in about 42 days. A single female produces up to 2,000 eggs in her lifetime [10]. Beetles and their larvae (lesser mealworms) are confirmed vectors for Salmonella, E. coli, and Campylobacter, and have been specifically identified as one of the main routes by which Salmonella gets back into the barn after a thorough cleanout and disinfection [10]. They burrow into insulation and wall cracks, which is why they survive most cleanout protocols. Severe infestations can destroy up to 25% of insulation per year and push energy costs up to 60% higher [10]. Control requires rotating insecticide classes after every two consecutive flocks and applying treatment within 24 hours of depopulation, when beetle populations are at their peak along side walls and under feed lines [10].' }]),
+      bullet([{ text: 'Darkling beetles (Alphitobius diaperinus): ', bold: true }, { text: 'These are the most significant insect pest in broiler barns worldwide. Adults are 6 to 10 mm long and complete their full life cycle in about 42 days. A single female produces up to 2,000 eggs in her lifetime [10]. Beetles and their larvae (lesser mealworms) are confirmed vectors for Salmonella, E. coli, and Campylobacter, and have been specifically identified as one of the main routes by which Salmonella gets back into the barn after a thorough cleanout and disinfection [10]. They burrow into insulation and wall cracks, which is why they survive most cleanout protocols. Severe infestations can destroy up to 25% of insulation per year and push energy costs up to 60% higher [10]. The CPC Learning Centre recommends rotating insecticide classes after every two consecutive flocks and applying treatment within 24 hours of depopulation, when beetle populations are at their peak along side walls and under feed lines [10].' }]),
       bullet([{ text: 'Flies: ', bold: true }, { text: 'House flies pick up Salmonella from manure or dead birds and carry it directly to feed, drinkers, and barn surfaces. A fly pressure problem is a Salmonella amplification problem.' }]),
       h2('2.5 Farm Worker Practices'),
       para("The most mobile carrier on your farm is whoever walked through the door this morning. Every worker, technician, vet, and visitor who was on another poultry farm earlier that day can bring Salmonella in on their boots, coveralls, and hands, and almost nobody knows when it is happening [1,5]. Where this goes wrong:"),
@@ -448,9 +447,9 @@ function buildSection3() {
       ...image(imgBuf(5), 'Figure 3.1: Biosecurity zones and entry protocol. The clean zone (left) encompasses the production barn and dedicated equipment. The entry point (center) enforces boot dips, coverall changes, handwashing, and visitor logging. The outside zone (right) includes public roads and delivery vehicles, which must not cross the line. Source: CPC Short Courses.'),
       h2('3.2 Feed and Water Safety'),
       para('Start with the feed supplier. Ask whether their program covers heat treatment of finished feed, post-processing contamination controls, and routine environmental Salmonella testing. If they cannot show you the paperwork, get a different supplier [5]. On the farm side, every bag and bin gets sealed and covered. No leftover feed sitting between flocks. Zero rodent access to any feed storage, ever.'),
-      para('Water: test well water for total coliform and E. coli at least once a year, and treat the well with chlorine periodically to keep it free from bacterial contamination [11]. Run an in-line treatment system between flocks, and keep water acidified during the grow-out. The CPC Integrated Poultry Health Management guide recommends a full biofilm purge before every placement using an approved product, with at least 12 hours of contact time for chemical cleaners, followed by a high-pressure flush at one minute per 60 feet of line [11]. During the flock, flush lines weekly at high pressure and always flush 12 hours after giving vaccines, vitamins, or antibiotics through the water to prevent residue buildup in the line [11]. Check nipple flow rate against your system specification. The standard is 25 mL per minute at nipple level. A flow rate that falls below target is often the first sign of biofilm buildup restricting the system, long before you can see it [11].'),
+      para('Water: test well water for total coliform and E. coli at least once a year, and treat the well with chlorine periodically to keep it free from bacterial contamination [11]. Run an in-line treatment system between flocks, and keep water acidified during the grow-out. The CPC Learning Centre Drinking Water Management guide recommends a full biofilm purge before every placement using an approved product, with at least 12 hours of contact time for chemical cleaners, followed by a high-pressure flush at one minute per 60 feet of line [11]. During the flock, flush lines weekly at high pressure and always flush 12 hours after giving vaccines, vitamins, or antibiotics through the water to prevent residue buildup in the line [11]. Check nipple flow rate against your system specification. The standard is 25 mL per minute at nipple level. A flow rate that falls below target is often the first sign of biofilm buildup restricting the system, long before you can see it [11].'),
       h2('3.3 Competitive Exclusion'),
-      para("Competitive exclusion is a simple idea: get the right bacteria into the chick before Salmonella does. A chick's gastrointestinal tract is completely sterile at hatch. It takes about two weeks for gut microflora to develop and close to three weeks before the immune system is fully functional [12]. That window is when Salmonella can walk into an empty barn and colonize birds that have nothing to push back with. Competitive exclusion products fill that gap by seeding the gut with a fully developed adult microflora right at placement."),
+      para("The CPC Learning Centre Introduction to Probiotics guide explains competitive exclusion simply: get the right bacteria into the chick before Salmonella does. A chick's gastrointestinal tract is completely sterile at hatch. It takes about two weeks for gut microflora to develop and close to three weeks before the immune system is fully functional [12]. That window is when Salmonella can walk into an empty barn and colonize birds that have nothing to push back with. Competitive exclusion products fill that gap by seeding the gut with a fully developed adult microflora right at placement."),
       para("The concept goes back to 1973, when Nurmi and Rantala showed that dosing newly hatched chicks with gut bacteria from healthy adults blocked Salmonella from establishing in the intestine [12]. A commercial CE product prepared from adult poultry delivers that same protection regardless of breed, strain, or sex. CE is most effective when applied at or before first exposure, which means at hatch or on arrival, before the barn environment has a chance to challenge a sterile gut [1,12]."),
       para("One practical point that matters for product choice: stress (catching, transport, feed withdrawal, concurrent infection) rapidly disrupts established gut populations and reopens the door for Salmonella, even in older birds [12]. This is why pre-slaughter Salmonella shedding spikes. Concurrent viral diseases that suppress immunity, such as infectious bursal disease and infectious bronchitis, make the problem worse by leaving birds with less capacity to resist intestinal colonization. For the full profiles of those diseases, see Course 7 (Common Poultry Diseases) in this series. For operations using pelleted feed, Bacillus spp. based products are the most stable option: the spore-forming nature of Bacillus makes them heat-resistant enough to survive feed processing and storage, where other bacteria like Lactobacillus and Bifidobacterium lose viability [12]. Ask your vet which product fits your placement schedule, production type, and feed form."),
       h2('3.4 Vaccination'),
@@ -538,9 +537,9 @@ function buildSection5() {
       bullet([{ text: 'Cooking: ', bold: true }, { text: '74°C (165°F) throughout the product kills Salmonella [2,9]. That means the thickest part of the thigh, the joint inside a wing, everywhere. A surface reading 80°C while the bone runs 68°C is not safe.' }]),
       bullet([{ text: 'Cold chain maintenance: ', bold: true }, { text: 'Do not allow poultry products to sit at room temperature for more than 2 hours. After cooking, maintain hot food above 60°C, or cool rapidly to below 4°C within 2 hours.' }]),
       h2('5.3 Egg Safety: On-Farm Practices for Layer Operations'),
-      para('Understanding why shell contamination happens makes the handling rules obvious rather than arbitrary. A freshly laid egg is at 41 to 42°C. The moment it leaves the hen it starts cooling to the room temperature around it. That cooling causes the egg contents to contract, and the contraction pulls air through the shell pores. If bacteria are sitting on the shell surface at that moment, they get drawn straight through into the membranes [14]. The shell looks clean. The inside is not. This is the same mechanism that makes washing eggs dangerous when the wash water is cooler than the egg: the temperature differential drives the pull-through actively [6]. Every handling decision in the list below exists to break one part of that chain.'),
+      para('The CPC Learning Centre Hatching Egg Care guide traces shell contamination to a simple physical mechanism, and understanding it makes every handling rule obvious. A freshly laid egg is at 41 to 42°C. The moment it leaves the hen it starts cooling to the room temperature around it. That cooling causes the egg contents to contract, and the contraction pulls air through the shell pores. If bacteria are sitting on the shell surface at that moment, they get drawn straight through into the membranes [14]. The shell looks clean. The inside is not. This is the same mechanism that makes washing eggs dangerous when the wash water is cooler than the egg: the temperature differential drives the pull-through actively [6]. Every handling decision in the list below exists to break one part of that chain.'),
       bullet('Keep nesting areas clean and dry. Wet, soiled nests dramatically increase the risk of shell contamination.'),
-      bullet('Collect eggs frequently. Four to six collections per day is the CPC standard for optimal protection; two per day is the minimum [14]. Every extra hour an egg sits in a warm, bacteria-loaded nest is another window for contamination. In hot weather, collect more often.'),
+      bullet('Collect eggs frequently. Four to six collections per day is the CPC Learning Centre standard for optimal protection; two per day is the minimum [14]. Every extra hour an egg sits in a warm, bacteria-loaded nest is another window for contamination. In hot weather, collect more often.'),
       bullet('Watch for sweating. When eggs stored in a cool room are moved into warmer air, moisture condenses on the shell surface. That moisture creates ideal conditions for bacteria to penetrate the pores at exactly the moment the egg is warming up and contracting inward [14]. If you pre-warm eggs before grading or shipping in summer, increase the storage room temperature gradually and maintain relative humidity around 75% to minimize condensation.'),
       bullet('Remove floor eggs promptly. Floor eggs have a much higher rate of fecal shell contamination and must not be sold as Grade A. If they are clean and uncracked, they can be separated and handled accordingly, but never wash them: washing removes the protective cuticle and turns a surface contamination problem into an internal one [14].'),
       bullet([{ text: 'Do not wash eggs ', bold: true }, { text: 'unless you are licensed and equipped to do so under CFIA-approved conditions. Washing with water cooler than the egg creates a negative pressure differential that actively pulls surface bacteria into the egg through the shell pores [6].' }]),
@@ -583,7 +582,7 @@ function buildSection6() {
       bullet([{ text: 'Pest control records: ', bold: true }, { text: 'Dates of inspections, rodent activity levels observed, bait products used, and contractor visit records.' }]),
       para('All records should be retained for a minimum of 2 years or as required by your provincial food safety program.'),
       h2('6.3 Monitoring Flock Health'),
-      para('Your birds will not tell you when Salmonella is shedding, but they will tell you when something is wrong. The CPC "Spotting Disease Early" guide puts it well: the goal is to know what is normal so you can spot what is not [13]. That takes daily observation, proper recording, and the discipline to act on what you find, not just walk through and see chickens.'),
+      para('Your birds will not tell you when Salmonella is shedding, but they will tell you when something is wrong. The CPC Learning Centre "Spotting Disease Early" guide puts it well: the goal is to know what is normal so you can spot what is not [13]. That takes daily observation, proper recording, and the discipline to act on what you find, not just walk through and see chickens.'),
       h3('Water Before Feed'),
       para('When a disease process or stress event starts, water consumption drops one to two days before feed intake falls [13]. By the time feed is down, the problem has been building for at least 48 hours. Install water meters on every line and record consumption at the same time every day alongside feed. A sudden unexplained drop in water is the first alarm, and it gives you two extra days to investigate and call your vet before the flock is already behind.'),
       h3('Walk the Barn With All Your Senses'),
@@ -952,11 +951,11 @@ async function main() {
     return para.replace(
       /(<w:r\b[^>]*>)((?:<w:rPr>[\s\S]*?<\/w:rPr>)?)(<w:t(?:\s+xml:space="preserve")?>)([\s\S]*?)(<\/w:t>\s*<\/w:r>)/g,
       (m, rOpen, rPr, _tOpen, text) => {
-        if (!/Salmonella|Alphitobius/.test(text)) return m;
+        if (!/Salmonella|Alphitobius|E\. coli|Campylobacter|Bacillus|Lactobacillus|Bifidobacterium/.test(text)) return m;
         const rPrItalic = insertItalic(rPr);
         const parts = [];
         let last = 0;
-        const taxRe = /Salmonella(?:[ ](?:arizonae|typhimurium|enterica|bongori))?|Alphitobius[ ]+diaperinus/g;
+        const taxRe = /Salmonella(?:[ ](?:arizonae|typhimurium|enterica|bongori))?|Alphitobius[ ]+diaperinus|E\. coli|Campylobacter|Bacillus|Lactobacillus|Bifidobacterium/g;
         let sm;
         while ((sm = taxRe.exec(text)) !== null) {
           if (sm.index > last) parts.push({ t: text.slice(last, sm.index), i: false });
@@ -967,6 +966,46 @@ async function main() {
         return parts
           .filter(p => p.t.length > 0)
           .map(p => `${rOpen}${p.i ? rPrItalic : rPr}<w:t xml:space="preserve">${p.t}</w:t></w:r>`)
+          .join('');
+      }
+    );
+  });
+
+  // 5. Bold "CPC Learning Centre" in all non-heading paragraphs
+  function insertBold(rPr) {
+    if (!rPr) return '<w:rPr><w:b/><w:bCs/></w:rPr>';
+    if (/<w:b\/>/.test(rPr)) return rPr; // already bold
+    let result = rPr;
+    if (result.includes('<w:b w:val="false"/>')) result = result.replace('<w:b w:val="false"/>', '<w:b/>');
+    if (result.includes('<w:bCs w:val="false"/>')) result = result.replace('<w:bCs w:val="false"/>', '<w:bCs/>');
+    if (result !== rPr) return result;
+    for (const anchor of ['<w:color ', '<w:sz ', '<w:szCs ', '</w:rPr>']) {
+      const idx = result.indexOf(anchor);
+      if (idx !== -1) return result.slice(0, idx) + '<w:b/><w:bCs/>' + result.slice(idx);
+    }
+    return result.replace('<w:rPr>', '<w:rPr><w:b/><w:bCs/>');
+  }
+
+  docXml = docXml.replace(/<w:p\b[^>]*>[\s\S]*?<\/w:p>/g, paraEl => {
+    if (/w:val="Heading[123]"/.test(paraEl)) return paraEl;
+    return paraEl.replace(
+      /(<w:r\b[^>]*>)((?:<w:rPr>[\s\S]*?<\/w:rPr>)?)(<w:t(?:\s+xml:space="preserve")?>)([\s\S]*?)(<\/w:t>\s*<\/w:r>)/g,
+      (m, rOpen, rPr, _tOpen, text) => {
+        if (!text.includes('CPC Learning Centre')) return m;
+        const rPrBold = insertBold(rPr);
+        const boldParts = [];
+        let last = 0;
+        const cpcRe = /CPC Learning Centre/g;
+        let sm;
+        while ((sm = cpcRe.exec(text)) !== null) {
+          if (sm.index > last) boldParts.push({ t: text.slice(last, sm.index), b: false });
+          boldParts.push({ t: sm[0], b: true });
+          last = sm.index + sm[0].length;
+        }
+        if (last < text.length) boldParts.push({ t: text.slice(last), b: false });
+        return boldParts
+          .filter(p => p.t.length > 0)
+          .map(p => `${rOpen}${p.b ? rPrBold : rPr}<w:t xml:space="preserve">${p.t}</w:t></w:r>`)
           .join('');
       }
     );
