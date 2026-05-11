@@ -288,6 +288,59 @@ Examples:
 
 ---
 
+## CPC Shop Products (canadianpoultry.ca/shop)
+
+CPC sells products directly relevant to poultry farm management. When writing a course section that covers a task or practice these products are used for, include the product by name with its photo and a one-line factual description. Do not include pricing, "buy now" language, or unsolicited promotion.
+
+### Rule
+
+Include a CPC shop product reference only when:
+- The course section is actively discussing the task the product is used for (e.g., barn cleanout, biosecurity footwear, boot dips)
+- The product name and function add practical value to the reader
+- It does not turn the section into advertising
+
+### Format
+
+One sentence woven into the relevant bullet or paragraph that names the product and its function. Follow immediately with a product photo:
+```
+Photo X.Y: [Product Name]. [One-line description]. Source: canadianpoultry.ca/shop.
+```
+
+### Products available (May 2026)
+
+| Product | Function | Relevant course topics |
+|---|---|---|
+| Elastic Top Boots | Dedicated barn footwear | Biosecurity, protective clothing |
+| Chlorinated EVO Wash | Foaming chlorine wash for footwear/equipment | Boot dips, biosecurity entry, equipment sanitation |
+| Proxy Clean | Heavy-duty organic matter remover | Barn cleanout (wash step before disinfection) |
+| Virocid | Broad-spectrum disinfectant (bacteria/viruses/fungi) | Barn cleanout (disinfection step) |
+| Enhanced Litter Treatment | Reduces bacterial load, ammonia, moisture | Pre-placement litter management |
+| Amprolium 9.6% Solution | Anti-coccidial treatment | Coccidiosis-related courses |
+| Panacur AquaSol | Fenbendazole dewormer | Parasite management courses |
+| Biomin Sol | Probiotic for backyard birds | Backyard poultry courses only |
+
+### Image embedding (technical)
+
+Download product images to the course directory as `product_{name}.jpg`. Use the `productImage()` function pattern from the Course 4 generator:
+- `productBuf(name)` loads the file
+- `productImage(buf, caption, widthIn = 2.3)` renders at 2.3" (JPEG, portrait 3:4 ratio)
+- Use `jpegDims()` for aspect ratio calculation
+- Caption sourced to `canadianpoultry.ca/shop`
+
+Image URLs: `https://canadianpoultry.ca/wp-content/uploads/2026/02/[Product-Name].jpg`
+
+### Used to date
+
+| Course | Product | Section |
+|---|---|---|
+| Course 4 | Elastic Top Boots | Section 4.2 — dedicated barn footwear |
+| Course 4 | Chlorinated EVO Wash | Section 4.2 — boot dips |
+| Course 4 | Proxy Clean | Section 4.3 — organic matter removal before disinfection |
+| Course 4 | Virocid | Section 4.3 — broad-spectrum disinfection |
+| Course 4 | Enhanced Litter Treatment | Section 4.3 — pre-placement litter management |
+
+---
+
 ## Cross-References to Other CPC Short Courses (MANDATORY)
 
 When writing any course in the series, you MUST include cross-references to other CPC Short Courses whenever a topic in the current course has been explained in more depth in another course and the reader would benefit from being directed there.

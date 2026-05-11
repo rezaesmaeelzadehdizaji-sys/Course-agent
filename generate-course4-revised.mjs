@@ -50,9 +50,28 @@ function photo11Buf() {
   const p = path.join(OUT_DIR, 'Photo1.1-Salmonellsis in chicks.png');
   return fs.existsSync(p) ? fs.readFileSync(p) : null;
 }
+function productBuf(name) {
+  const p = path.join(OUT_DIR, `product_${name}.jpg`);
+  return fs.existsSync(p) ? fs.readFileSync(p) : null;
+}
 
 // ============================================================
 // COLOURS
+// JPEG SOF dimension reader
+function jpegDims(buf) {
+  let i = 2;
+  while (i < buf.length - 10) {
+    if (buf[i] !== 0xFF) break;
+    const marker = buf[i + 1];
+    if (marker === 0xC0 || marker === 0xC1 || marker === 0xC2) {
+      return { h: (buf[i+5]<<8)|buf[i+6], w: (buf[i+7]<<8)|buf[i+8] };
+    }
+    const segLen = (buf[i+2]<<8)|buf[i+3];
+    i += 2 + segLen;
+  }
+  return null;
+}
+
 // ============================================================
 const DARK_BLUE  = '1F3864';
 const MED_BLUE   = '2E74B5';
@@ -108,6 +127,30 @@ function numbered(text) {
     numbering: { reference: 'numbered-list', level: 0 },
     spacing: { after: 80, line: 276, lineRule: 'auto' },
   });
+}
+
+// Product photo (JPEG) + caption — narrower than section figures
+function productImage(buf, caption, widthIn = 2.3) {
+  if (!buf) return [];
+  const dpi = 96;
+  const wpx = Math.round(widthIn * dpi);
+  let hpx = Math.round(wpx * 1.33); // default 3:4 portrait
+  try {
+    const d = jpegDims(buf);
+    if (d) hpx = Math.round(wpx * d.h / d.w);
+  } catch (_) {}
+  return [
+    new Paragraph({
+      children: [new ImageRun({ data: buf, transformation: { width: wpx, height: hpx }, type: 'jpg' })],
+      alignment: AlignmentType.CENTER,
+      spacing: { before: 120, after: 0 },
+    }),
+    new Paragraph({
+      children: [new TextRun({ text: caption, italics: true, color: '555555', size: 20, font: 'Calibri' })],
+      alignment: AlignmentType.CENTER,
+      spacing: { before: 40, after: 200 },
+    }),
+  ];
 }
 
 function pageBreak() {
@@ -493,8 +536,10 @@ function buildSection4() {
       para('Wash hands before and immediately after entering any poultry barn, after handling live birds or carcasses, after handling litter or soiled equipment, before eating or drinking, and after using the toilet. Provide adequate handwashing facilities at every barn entry point with clean running water, soap, and disposable paper towels [9].'),
       h2('4.2 Protective Clothing and Footwear'),
       bullet([{ text: 'Coveralls or dedicated barn clothing: ', bold: true }, { text: 'Worn only inside the barn. Change and launder after each flock cycle or more frequently if visibly soiled.' }]),
-      bullet([{ text: 'Dedicated barn boots: ', bold: true }, { text: 'Rubber or waterproof boots used only inside the designated barn or production area. Boots are among the most effective vehicles for transferring Salmonella between barns [1].' }]),
-      bullet([{ text: 'Boot dips: ', bold: true }, { text: 'Maintain footbaths at every barn entrance using an approved disinfectant at the correct concentration. Change disinfectant solutions regularly; a fouled boot dip is ineffective and may spread contamination [5].' }]),
+      bullet([{ text: 'Dedicated barn boots: ', bold: true }, { text: 'Rubber or waterproof boots used only inside the designated barn or production area. Boots are among the most effective vehicles for transferring Salmonella between barns [1]. Elastic-top rubber boots are the most practical option: the fit is secure, they slip on and off quickly at the entrance, and they stay clearly dedicated to one barn.' }]),
+      ...productImage(productBuf('elastic_top_boots'), 'Photo 4.1: Elastic Top Boots. Rubber boots with elastic tops purpose-designed for poultry barn biosecurity. Source: canadianpoultry.ca/shop.'),
+      bullet([{ text: 'Boot dips: ', bold: true }, { text: 'Maintain footbaths at every barn entrance using an approved disinfectant at the correct concentration. Change disinfectant solutions regularly; a fouled boot dip is ineffective and may spread contamination [5]. A foaming chlorinated wash is effective for boot dips and hand-tool rinses because the chlorine reduces bacterial transfer even when the solution carries some light organic loading.' }]),
+      ...productImage(productBuf('chlorinated_evo_wash'), 'Photo 4.2: Chlorinated EVO Wash. A foaming chlorine-based wash for equipment, surfaces, and footwear sanitization at barn entry points. Source: canadianpoultry.ca/shop.'),
       bullet([{ text: 'Gloves: ', bold: true }, { text: 'Wear disposable or cleanable gloves when handling carcasses, taking samples, or administering medications. Change gloves between barns.' }]),
       h2('4.3 Barn Cleanout and Disinfection'),
       para('Cleanout is the one window in the flock cycle where you can actually reset the barn. Everything that comes after, your biosecurity, your CE product, your vaccination, is fighting uphill against whatever Salmonella load you left in the building. A proper cleanout breaks that cycle [1,5].'),
@@ -502,10 +547,13 @@ function buildSection4() {
       h3('Key Cleanout Principles'),
       bullet('Remove all litter, manure, and debris from the barn, including corners, under feed and water lines, and wall edges.'),
       bullet('Dry-sweep or blow down all surfaces including walls, ceiling, fans, and attic spaces where dust accumulates.'),
-      bullet('Apply a detergent-based foaming agent and pressure-wash all surfaces. Work from the top down: start at the ceiling, fans, and light fixtures. Everything you knock loose drops onto what you have not cleaned yet. Start on the floor and you are doing it twice.'),
+      bullet('Apply a detergent-based foaming agent and pressure-wash all surfaces. Work from the top down: start at the ceiling, fans, and light fixtures. Everything you knock loose drops onto what you have not cleaned yet. Start on the floor and you are doing it twice. A heavy-duty organic matter remover at this step is important: if fecal material, grease, or protein residue is still on the surface, the disinfectant you apply next cannot penetrate it.'),
+      ...productImage(productBuf('proxy_clean'), 'Photo 4.3: Proxy Clean. A heavy-duty cleaner for removing organic matter from barn surfaces before disinfection. Source: canadianpoultry.ca/shop.'),
       bullet('Let the barn dry completely before you apply disinfectant. Wet surfaces dilute and absorb the disinfectant before it can do its job. If there is still moisture on the floor, wait another day.'),
-      bullet('Apply an approved disinfectant at the correct concentration and contact time. Rotate between disinfectant classes over successive flock cycles.'),
-      bullet('Allow the barn to sit empty for at least 7 to 14 days after disinfection before the next flock.'),
+      bullet('Apply an approved disinfectant at the correct concentration and contact time. A broad-spectrum product that covers bacteria, viruses, and fungi is the right choice for barn reset. Rotate between chemically different disinfectant classes on successive flock cycles to prevent any one class losing effectiveness in your barn environment.'),
+      ...productImage(productBuf('virocid'), 'Photo 4.4: Virocid. A broad-spectrum disinfectant effective against bacteria, viruses, and fungi on farm surfaces. Source: canadianpoultry.ca/shop.'),
+      bullet('Allow the barn to sit empty for at least 7 to 14 days after disinfection before the next flock. A litter amendment applied at the pre-placement stage reduces bacterial load, moisture, and ammonia in the floor layer before new chicks arrive.'),
+      ...productImage(productBuf('enhanced_litter_treatment'), 'Photo 4.5: Enhanced Litter Treatment. A litter amendment that reduces bacterial load, ammonia, and moisture in poultry housing before placement. Source: canadianpoultry.ca/shop.'),
       para('The cleanout covers the reset between flocks. For the daily monitoring of litter condition, sanitation checkpoints, and space management while birds are in the barn, see Course 3 (T-FLAWS Assessment Management Tool) in this series.'),
       h2('4.4 Waste Management'),
       para('Litter coming out of a positive flock is a contamination hazard the second it leaves the barn. Cover it, contain it, keep it well away from barn entrances, water sources, and the neighbours. Fresh untreated manure from a positive flock does not go onto fields that grow produce eaten raw. The downstream risk is not theoretical [5,9].'),
