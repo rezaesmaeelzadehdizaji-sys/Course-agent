@@ -302,6 +302,7 @@ One sentence, woven into the paragraph where the topic appears. Use this format:
 |--------|-----------------|-----------|
 | Course 4, Section 4.3 | Daily litter/sanitation monitoring during flock | Course 3 (T-FLAWS Assessment Management Tool) |
 | Course 4, Section 3.3 | Immunosuppressive disease profiles | Course 7 (Common Poultry Diseases) |
+| Course 4, Section 2.4 | Biosecurity protocols for rodent/pest control | Course 2 (Biosecurity) |
 
 Update this table as new cross-references are added in future courses.
 

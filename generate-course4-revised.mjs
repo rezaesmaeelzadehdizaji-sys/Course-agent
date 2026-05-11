@@ -46,6 +46,10 @@ function imgBuf0()  {
   const p = path.join(OUT_DIR, 'img0_salmonella.png');
   return fs.existsSync(p) ? fs.readFileSync(p) : null;
 }
+function photo11Buf() {
+  const p = path.join(OUT_DIR, 'Photo1.1-Salmonellsis in chicks.png');
+  return fs.existsSync(p) ? fs.readFileSync(p) : null;
+}
 
 // ============================================================
 // COLOURS
@@ -316,7 +320,7 @@ function buildIntroSection() {
     children: [
       h1('Introduction'),
       para('Salmonella is the kind of problem that hides in a healthy-looking flock. The birds eat, the birds drink, mortality is normal, your morning walk turns up nothing unusual. Then the swab results come back from the plant and your week is suddenly very different [1]. That is the part that makes Salmonella so hard. You cannot watch a bird and tell whether it is shedding. So everything in your program has to work whether or not you ever see a sick bird.'),
-      para('The numbers are big enough to take seriously. The Public Health Agency of Canada estimates around 87,500 illnesses, 925 hospitalizations, and 17 deaths a year from non-typhoidal Salmonella, with poultry consistently near the top of the source list [2]. That is why the regulators are interested in what you do. CFIA standards apply to your product, and when a positive comes back on your flock it does not stay quiet between you and the plant [3].'),
+      para('Your flock may look perfectly healthy, but they can be "silent carriers" of Avian Paratyphoid, showing no signs of illness while still spreading the bacteria. According to the Public Health Agency of Canada, these strains cause an estimated 87,500 cases of food poisoning and 17 deaths every year in Canada. Because poultry is one of the leading sources of these illnesses, what you do on your farm matters; good flock management is one of the most powerful tools we have for keeping families safe at the dinner table [2].'),
       para('What this course does is walk you through what Salmonella actually is, how it gets into a barn, and what works to keep it out. Biosecurity, hygiene, cleanout, pre-harvest management, records, and the rules you have to follow. By the end you will know where the high-risk doors are on your operation and exactly what to do at each one before the sampling truck arrives.'),
       h2('Learning Objectives'),
       para('By completing this course, you will be able to:'),
@@ -345,10 +349,10 @@ function buildSection1() {
       h2('1.1 What Is Salmonella?'),
       para('Salmonella is not one bug. It is a big family, more than 2,600 different variants called serovars, and most of them do not matter in poultry production [1]. The three that matter most to you in Canada are Salmonella Enteritidis (SE), Salmonella Typhimurium (ST), and Salmonella Heidelberg (SH). Together they account for the majority of human illness traced back to Canadian poultry. Heidelberg in particular has shown resistance to commonly used antibiotics, which creates downstream treatment problems in human medicine [2,7].'),
       para('For day-to-day decisions on the farm, think of Salmonella in three groups:'),
-      bullet([{ text: 'Paratyphoid serovars (SE, ST, Salmonella Heidelberg, Salmonella Infantis): ', bold: true }, { text: 'Your birds will not look sick with these. Adult birds carry them silently and shed them in their droppings. The contamination still reaches the consumer. These are the serovars driving most of the Salmonella food safety pressure on Canadian broiler and layer farms [1,2].' }]),
+      bullet([{ text: 'Avian Paratyphoid serovars (SE, ST, Salmonella Heidelberg, Salmonella Infantis): ', bold: true }, { text: 'Your birds will not look sick with these. Adult birds carry them silently and shed them in their droppings. The contamination still reaches the consumer. These are the serovars driving most of the Salmonella food safety pressure on Canadian broiler and layer farms [1,2].' }]),
       bullet([{ text: 'Host-adapted serovars (Pullorum, Gallinarum): ', bold: true }, { text: 'These cause visible, serious disease in your birds: high mortality and sick flocks. Both are federally reportable. If you suspect either one, stop what you are doing and call CFIA immediately [3].' }]),
       bullet([{ text: 'Arizonosis: ', bold: true }, { text: 'Caused by Salmonella arizonae, primarily a concern in turkey flocks. Less common in Canada [4].' }]),
-      ...image(imgBuf(1), 'Figure 1.1: Salmonella classification in commercial poultry. Paratyphoid serovars (SE, ST, Heidelberg) are the primary food safety concern. Pullorum disease and fowl typhoid are reportable diseases in Canada. Source: CPC Short Courses.'),
+      ...image(imgBuf(1), 'Figure 1.1: Salmonella classification in commercial poultry. Avian Paratyphoid serovars (SE, ST, Heidelberg) are the primary food safety concern. Pullorum disease and fowl typhoid are reportable diseases in Canada. Source: CPC Short Courses.'),
       h2('1.2 The Biology of Salmonella'),
       para('A few things about how this bug behaves explain why cleanout shortcuts always come back to haunt you:'),
       bullet([{ text: 'Survives in the barn environment: ', bold: true }, { text: 'In dry litter, dust, soil, and on equipment surfaces, Salmonella can stay alive for weeks to months. A barn that looks clean is not necessarily safe [1,5].' }]),
@@ -363,6 +367,7 @@ function buildSection1() {
       bullet('Huddling and chilling'),
       bullet('Diarrhea and pasting of the vent'),
       bullet('Increased mortality in the first week of life'),
+      ...image(photo11Buf(), 'Photo 1.1: Young broiler chicks under three weeks old are the most vulnerable; Salmonella infection at this age can cause lethargy, huddling, and increased early mortality. Source: CPC Short Courses.'),
       para("In a layer flock, SE has an extra trick. It can colonize the hen's reproductive tract and get inside the egg before the shell forms. The route is called transovarian transmission [1,6]. The shell looks perfectly clean and uncracked, but the inside is already contaminated. That is why SE in a laying flock is taken so seriously, and why the egg safety steps later in this course are not optional."),
       h2('1.4 How Salmonella Affects Humans'),
       para('When a person gets sick from contaminated poultry, it comes on fast. Symptoms hit 6 to 72 hours after eating, cramping, diarrhea that can turn bloody, nausea, fever around 38 to 39°C, generally a bad few days. A healthy adult usually clears it in four to seven days [2].'),
@@ -403,7 +408,7 @@ function buildSection2() {
       para("Once some of your birds pick Salmonella up, they become carriers. They shed it on and off in their droppings, and they look completely normal the whole time [1]. You cannot pick them out by walking the barn. And anything that stresses the flock pushes the shedding higher, feed withdrawal, a concurrent infection, the chaos of catching. That is why barn contamination tends to peak in the 24 to 48 hours before loading. You are stressing the birds at the exact worst time."),
       h2('2.4 Wild Animals, Rodents, and Insects'),
       para('The hardest introductions to prevent are the ones you did not invite. Each of these has its own way of getting around your defences:'),
-      bullet([{ text: 'Rodents: ', bold: true }, { text: 'Rats and mice are heavily colonized with Salmonella and contaminate everything they touch (feed, water, litter) through their droppings and urine. A single rodent can shed millions of Salmonella organisms per gram of feces [5]. One active rodent infestation can undo a good biosecurity program.' }]),
+      bullet([{ text: 'Rodents: ', bold: true }, { text: 'Rats and mice are heavily colonized with Salmonella and contaminate everything they touch (feed, water, litter) through their droppings and urine. A single rodent can shed millions of Salmonella organisms per gram of feces [5]. One active rodent infestation can undo a good biosecurity program. For more on biosecurity protocols, see Course 2 (Biosecurity) in this series.' }]),
       bullet([{ text: 'Wild birds: ', bold: true }, { text: 'Starlings, sparrows, and pigeons that get into your barn drop Salmonella directly into the feed and litter. They are hard to keep out completely, but gaps in walls, fans, and vents make it much worse [1].' }]),
       bullet([{ text: 'Darkling beetles (Alphitobius diaperinus): ', bold: true }, { text: 'These are the most significant insect pest in broiler barns worldwide. Adults are 6 to 10 mm long and complete their full life cycle in about 42 days. A single female produces up to 2,000 eggs in her lifetime [10]. Beetles and their larvae (lesser mealworms) are confirmed vectors for Salmonella, E. coli, and Campylobacter, and have been specifically identified as one of the main routes by which Salmonella gets back into the barn after a thorough cleanout and disinfection [10]. They burrow into insulation and wall cracks, which is why they survive most cleanout protocols. Severe infestations can destroy up to 25% of insulation per year and push energy costs up to 60% higher [10]. Control requires rotating insecticide classes after every two consecutive flocks and applying treatment within 24 hours of depopulation, when beetle populations are at their peak along side walls and under feed lines [10].' }]),
       bullet([{ text: 'Flies: ', bold: true }, { text: 'House flies pick up Salmonella from manure or dead birds and carry it directly to feed, drinkers, and barn surfaces. A fly pressure problem is a Salmonella amplification problem.' }]),
