@@ -440,7 +440,7 @@ function buildSection3() {
       para('Biosecurity is the wall around the barn. It is not one thing, it is a list of things you do every day. Who comes in. What vehicles cross the line. What equipment moves between farms. What chicks land on placement day. Every one of those is a possible introduction route [1,5].'),
       bullet('Establish a clearly marked farmyard boundary. Limit the number of entry points and post biosecurity requirement signs at all entry points.'),
       bullet('Maintain a visitor log. Record the name, organization, date, and any recent poultry farm contacts for every person who enters the production area.'),
-      bullet('Require visitors who have been at another poultry operation to observe a minimum downtime period, typically 24 to 72 hours depending on risk level, and always change into farm-dedicated clothing and footwear before entering your barns.'),
+      bullet('Require visitors who have been at another poultry operation to observe a minimum downtime period, typically 24 to 72 hours depending on risk level, and always change into farm-dedicated clothing and footwear before entering your barns [15,16,17].'),
       bullet('Require all delivery vehicles to be washed and disinfected before entering the production area whenever possible.'),
       ...image(imgBuf(5), 'Figure 3.1: Biosecurity zones and entry protocol. The clean zone (left) encompasses the production barn and dedicated equipment. The entry point (center) enforces boot dips, coverall changes, handwashing, and visitor logging. The outside zone (right) includes public roads and delivery vehicles, which must not cross the line. Source: CPC Short Courses.'),
       h3('All-In and All-Out Management'),
@@ -652,6 +652,9 @@ function buildReferencesSection() {
     '[12] CPC Learning Centre. An Introduction to Probiotics [Technical Bulletin]. CPC Learning Centre; [cited 2026 Apr]. Available from: cpclearningcentre.ca',
     '[13] CPC Learning Centre. Spotting Disease Early [Technical Bulletin]. CPC Learning Centre; [cited 2026 Apr]. Available from: cpclearningcentre.ca',
     '[14] CPC Learning Centre. Hatching Egg Care [Technical Bulletin]. CPC Learning Centre; [cited 2026 Apr]. Available from: cpclearningcentre.ca',
+    '[15] Hatch House HQ. Rethinking downtime as a biosecurity measure [Internet]. 2026 May 7 [cited 2026 May 11]. Available from: https://www.hatchhousehq.com/articles/new-research-update-rethinking-downtime-as-a-biosecurity-measure',
+    '[16] California Department of Food and Agriculture. Poultry facility biosecurity risk assessment guide [Internet]. Sacramento: CDFA; [cited 2026 May 11]. Available from: https://www.cdfa.ca.gov/ahfss/animal_health/biospecies/pdfs/CDFAPoultryFacilitybiosecurityRiskAssessmentGuide.pdf',
+    '[17] Chicken Farmers of Canada. Free range OFFSP and ACP manual [Internet]. 2021 [cited 2026 May 11]. Available from: https://www.chickenfarmers.ca/wp-content/uploads/2023/04/Free-Range-OFFSP-and-ACP-Manual-2021.pdf',
   ];
 
   return {
