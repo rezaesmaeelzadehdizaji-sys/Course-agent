@@ -422,7 +422,6 @@ function buildIntroSection() {
       // --- TOC page ---
       h1('Table of Contents'),
       new TableOfContents('Table of Contents', { headingStyleRange: '1-3' }),
-      pageBreak(),
 
       // --- Introduction ---
       h1('Introduction'),
