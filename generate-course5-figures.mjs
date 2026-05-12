@@ -795,16 +795,16 @@ function fig2_3() {
   <text x="330" y="154" text-anchor="middle" fill="${C.amber}" font-family="Arial, sans-serif" font-size="13" font-weight="bold">~55%</text>
   <text x="330" y="300" text-anchor="middle" fill="${C.gray}" font-family="Arial, sans-serif" font-size="11">CFL</text>
 
-  <!-- LED bar (25%) -->
-  <rect x="430" y="226" width="120" height="54" rx="4" fill="${C.green}" opacity="0.9"/>
-  <text x="490" y="218" text-anchor="middle" fill="${C.green}" font-family="Arial, sans-serif" font-size="13" font-weight="bold">20–30%</text>
+  <!-- LED bar (~20% of incandescent = 80% savings) -->
+  <rect x="430" y="237" width="120" height="43" rx="4" fill="${C.green}" opacity="0.9"/>
+  <text x="490" y="229" text-anchor="middle" fill="${C.green}" font-family="Arial, sans-serif" font-size="13" font-weight="bold">15–25%</text>
   <text x="490" y="300" text-anchor="middle" fill="${C.gray}" font-family="Arial, sans-serif" font-size="11">LED</text>
 
   <!-- Savings callout -->
   <rect x="560" y="65" width="220" height="200" rx="8" fill="${C.lightGreen}" stroke="${C.green}" stroke-width="1.5"/>
   <text x="670" y="86" text-anchor="middle" fill="${C.green}" font-family="Arial, sans-serif" font-size="13" font-weight="bold">LED Advantage</text>
   <line x1="570" y1="92" x2="770" y2="92" stroke="${C.green}" stroke-width="1"/>
-  <text x="575" y="112" fill="${C.gray}" font-family="Arial, sans-serif" font-size="11">&#9679; 70–80% energy savings</text>
+  <text x="575" y="112" fill="${C.gray}" font-family="Arial, sans-serif" font-size="11">&#9679; 75–85% energy savings</text>
   <text x="575" y="132" fill="${C.gray}" font-family="Arial, sans-serif" font-size="11">   vs. incandescent</text>
   <text x="575" y="154" fill="${C.gray}" font-family="Arial, sans-serif" font-size="11">&#9679; Fully dimmable for light</text>
   <text x="575" y="172" fill="${C.gray}" font-family="Arial, sans-serif" font-size="11">   management programs</text>
