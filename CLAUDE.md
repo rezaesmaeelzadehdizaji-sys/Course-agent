@@ -285,6 +285,10 @@ Examples:
 | Course 4 | An Introduction to Probiotics | Section 3.3 — CE mechanism, Nurmi/Rantala 1973, Bacillus stability |
 | Course 4 | Spotting Disease Early | Section 6.3 — water before feed, five-sense walk, bird conformation |
 | Course 4 | Hatching Egg Care | Section 5.3 — shell pore mechanism, sweating, collection frequency |
+| Course 5 | Managing the Nipple Drinker Line [Technical Bulletin] | Section 2.2 — nipple pressure calibration, water column target |
+| Course 5 | Drinking Water Management (Leslie M, 2011) | Section 2.2 — biofilm purge protocol between flocks |
+| Course 5 | Lighting Program Guidelines for Broilers (McIlwee M, 2026) | Section 2.3 — LED recommendation for energy and dimming |
+| Course 5 | Spotting Disease Early [Flock Management Guide] | Section 4.1 — daily barn walk, behavioral change detection |
 
 ---
 
@@ -378,6 +382,9 @@ One sentence, woven into the paragraph where the topic appears. Use this format:
 | Course 4, Section 2.4 | Biosecurity protocols for rodent/pest control | Course 2 (Biosecurity) |
 | Course 4, Section 6.1 (×3) | Full regulatory framework details | Course 17 (Regulatory Framework in Poultry Production) |
 | Course 4, Section 6.3 | Daily barn observation and management checkpoint framework | Course 3 (T-FLAWS Assessment Management Tool) |
+| Course 5, Section 4.1 | Disease profiles affecting welfare and performance | Course 7 (Common Poultry Diseases) |
+| Course 5, Section 4.1 | Biosecurity protocols for commercial operations | Course 2 (Biosecurity) |
+| Course 5, Section 4.2 | Systematic daily barn monitoring framework (litter, air, water, temp) | Course 3 (T-FLAWS Assessment Management Tool) |
 
 Update this table as new cross-references are added in future courses.
 
