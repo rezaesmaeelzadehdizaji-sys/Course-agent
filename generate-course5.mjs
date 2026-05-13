@@ -453,7 +453,7 @@ function buildSection1() {
     footers: { default: buildFooter() },
     children: [
       h1('Section 1: Environmental Impact of Poultry Farming'),
-      para('Broilers are one of the most feed-efficient animals in commercial production, and that efficiency matters for the environment as much as it does for the bottom line [4,5]. But the scale of the Canadian poultry sector means that even small inefficiencies add up fast when you multiply them across millions of birds. The pressure to use resources well and manage what comes out of the barn responsibly is real, and it is growing [1,2].'),
+      para('That kind of efficiency matters to the farm budget and to the environment [4,5]. On one farm, a little wasted feed, a small water leak or poor litter use might not seem like much. But those little losses add up quickly over millions of birds in Canada; higher costs, more waste and greater impact on the environment. That is why farmers are asked to use feed, water, energy and litter wisely, and manage manure, bird mortalities and wash water properly [1,2].'),
 
       h2('1.1  Understanding the Environmental Footprint'),
       para('Global livestock agriculture contributes roughly 14.5% of all human-caused greenhouse gas emissions, and the poultry sector accounts for about 8% of that total [2]. Per kilogram of protein produced, broilers compare well against beef, pork, and lamb. A life cycle assessment of UK broiler production found that poultry generates considerably less greenhouse gas per kilogram of product than most red meat species [13]. But comparing favorably to beef is not the same as having no footprint, especially at Canadian production volumes.'),
