@@ -678,6 +678,79 @@ Use two parallel caption sequences depending on what the image actually is:
 
 Apply the labeling based on the medium of the image, not on its source — a stock photo and a farm-shot photo both get `Photo`; a generated diagram and a hand-drawn schematic both get `Figure`.
 
+## Course Summary Page (MANDATORY FOR EVERY COURSE)
+
+Every course must have a companion **summary page** — a short standalone Word document (.docx) that serves as the session handout or facilitator reference for the course. It is **not** the course itself; it is a condensed overview.
+
+### What the summary page contains
+
+In this exact order:
+
+1. **Cover block** — flows directly into the Introduction without a page break:
+   - `COURSE X: CPC SHORT COURSES` — all caps, bold, blue (`2E74B5`), centered
+   - CPC logo (centered)
+   - Course title — large, bold, dark blue (`1F3864`), centered
+   - `Course Summary` subtitle — italic, blue (`2E74B5`), centered
+   - Gold horizontal rule (border, not underscores — simpler for a short doc)
+   - `CPC Short Courses` — bold, gray, centered
+   - `Duration: X-Hour Lecture` — centered
+   - `Month Year` — centered
+2. **Introduction** — 2 paragraphs: what sustainability/the topic means on a working farm, and what the course covers (farmer-flow language)
+3. **Agenda** — numbered list of all session topics with `a/b/c` sub-items
+4. **Learning Objectives** — numbered list (matches the LOs in the course body)
+5. **Important Notes** — bullet list (e.g., bring note-taking items, certificate available)
+
+### Layout rules (MANDATORY)
+
+- **Single section** — no separate cover section with `titlePage: true`. The cover block and all content live in one section. The header and footer are visible on every page including the first.
+- **No page break** between the cover block and the Introduction heading. The gold rule + metadata flow naturally into the section headings.
+- **No `5. Sustainability` title line** or `Course Duration:` repeated in the body — those details live only in the cover block metadata. Starting directly with the section headings (`Introduction`, `Agenda`, etc.) after the cover block is correct.
+- Section headings use bold blue (`2E74B5`) text with a gold bottom border — NOT the course document's Heading styles (which would pollute the summary page TOC).
+
+### File naming convention
+
+```
+Course X/[CourseTitleCamelCase]_Summary_Page.docx
+```
+
+Examples:
+- `Course 5/Sustainability_Summary_Page.docx`
+- `Course 4/Salmonella_Food_Safety_Summary_Page.docx`
+
+### Generator naming convention
+
+```
+generate-courseX-summary.mjs
+```
+
+### Reference implementation
+
+`generate-course5-summary.mjs` — the canonical pattern. Copy and adapt for each new course. Key structure:
+
+```js
+// Single section — no separate cover section
+const doc = new Document({
+  sections: [{
+    properties: { page: { margin: pageMargin } },
+    headers:    { default: buildHeader() },
+    footers:    { default: buildFooter() },
+    children,   // cover block + Introduction + Agenda + LOs + Important Notes
+  }],
+});
+```
+
+The cover block ends with a `spacing: { after: 360 }` on the last metadata paragraph. The first `sectionHead('Introduction')` follows immediately — no `pageBreak()` call between them.
+
+### Summary pages produced to date
+
+| Course | File | Generator |
+|--------|------|-----------|
+| Course 5 | `Course 5/Sustainability_Summary_Page.docx` | `generate-course5-summary.mjs` |
+
+Update this table as each new summary page is added.
+
+---
+
 ## Template Architecture
 
 All courses must follow a consistent structure based on two reference courses:
@@ -1320,3 +1393,58 @@ async function patchDocx(srcPath, outPath, fixes) {
 4. **Delete stale lock files** (`~$filename.docx`) before asking the user to reopen.
 5. **Verify with mammoth** after writing (`mammoth.extractRawText`), 0 messages is required but not sufficient; Word is the final authority.
 6. **Always start from the original LFS object** for any patch session, never chain patches on a previously patched file.
+
+---
+
+## Course Development Workflow: Summary Page First (MANDATORY)
+
+Every course from Course 5 onward follows this exact two-step sequence. Do not skip or reorder the steps.
+
+### Step 1 — Summary page received from user
+
+When the user provides a summary page for a new course:
+
+1. **Read it in full.** Identify: course title, duration, introduction text, agenda (section headings and sub-items), learning objectives, and any important notes.
+2. **Humanize and rewrite in Farmer-Flow tone.** Apply all Farmer-Flow Writing Mode rules to the introduction text and all descriptive body copy (learning objective descriptions, sub-item descriptions, important notes). Do not change the section headings. Headings must remain exactly as the user wrote them — they are structurally locked.
+3. **American English sweep.** Convert any British spellings before output (behaviour → behavior, etc.).
+4. **Generate the summary page docx.** Save it to `Course X/Summary_Page_CourseX_[ShortTitle].docx` using the same CPC brand pattern as [Course 4/Summary_Page_Course4_Salmonella.docx](Course 4/Summary_Page_Course4_Salmonella.docx): CPC logo, gold rule, header/footer, section headings in CPC blue with gold underline, agenda items numbered with lettered sub-items, learning objectives numbered.
+5. **Report back.** Confirm what was changed (humanized) vs what was kept (headings). Present the rewritten introduction and objectives inline so the user can review before approving.
+
+### Step 2 — Course body written from summary structure
+
+When the user approves the summary and asks to write the course body:
+
+1. **Run the full Phase 1 research pipeline** (CLAUDE.md: Production-Grade Course Generation Workflow) before writing a single sentence.
+2. **Map summary structure to course body structure.** Every agenda section heading becomes the corresponding H1 section heading in the course body. Every sub-item (a, b, c...) in the agenda maps to an H2 sub-section heading. Use the user's exact heading text.
+3. **Write body content** under each H2 using the research findings, CPC Learning Centre materials, and Farmer-Flow style. The agenda sub-items define the topic scope of each H2 — stay within that scope.
+4. **Learning objectives** from the summary go into the Introduction section of the course body, rewritten to farmer-flow bullet style if needed, but keeping the user's approved wording as the baseline.
+5. **Generate the course body docx** following all existing course generation rules (cover page, TOC, header/footer, citations, cross-references, CPC attributions, product images where relevant).
+6. **Generate or update the summary page docx** to ensure its agenda headings match the final course body H1/H2 headings exactly.
+
+### Heading lock rule (MANDATORY)
+
+The user's summary headings are the source of truth for the course structure. They are never rewritten, paraphrased, or replaced — not during humanization, not during course body generation, not during any revision. If a heading contains British spelling or an obvious typo, flag it and ask before correcting.
+
+### Summary page docx conventions
+
+- File name pattern: `Course X/Summary_Page_CourseX_[ShortTitle].docx`
+- Generator name pattern: `generate-courseX-summary.mjs`
+- Follows CPC brand styling: same header/footer as course body, CPC logo, gold divider rule
+- Section headings use CPC blue (`2E74B5`) with gold bottom border (`C9A84C`)
+- Agenda item numbers in bold CPC blue; sub-item letters in gray
+- No TOC, no references section — summary page only
+
+### Summary page docx is mandatory for every course (MANDATORY)
+
+Every completed course must have a companion summary page docx in its course folder. This is not optional and applies to all 17 courses.
+
+- File name pattern: `Course X/Summary_Page_CourseX_[ShortTitle].docx`
+- Generator name pattern: `generate-courseX-summary.mjs` in the project root
+- The summary page must be generated (or regenerated) any time the course body is finalized or updated
+- If no summary page exists for a course when work begins on it, create one before or alongside the course body generation
+
+### Where this has been applied
+
+| Course | Summary docx | Course body generator |
+|---|---|---|
+| Course 4 | [Course 4/Summary_Page_Course4_Salmonella.docx](Course 4/Summary_Page_Course4_Salmonella.docx) | generate-course4-revised.mjs |
