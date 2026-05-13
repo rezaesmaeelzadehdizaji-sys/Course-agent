@@ -719,8 +719,15 @@ The source file contains one entry per course, in order:
 Before generating any summary page:
 
 1. **Extract the relevant course content** from `Short Courses summary pdage drafts.docx` programmatically using JSZip. Never re-type or paraphrase the source content from memory.
-2. **Apply American English sweep** — source text uses British forms in places. Convert before incorporating.
-3. **Apply farmer-flow humanization** to Introduction and Learning Objectives text. The Agenda and Important Notes can be kept close to the source wording.
+2. **Apply mandatory rules to all body text — headings stay as-is:**
+   - **Humanize to farmer-flow tone**: practical, direct, field-vet voice. No academic language, no AI-sounding phrases, no passive constructions.
+   - **American English sweep**: convert any British forms (behaviour → behavior, organisation → organization, colour → color, etc.)
+   - **No em dashes** in prose — replace with period, comma, or colon.
+   - **Farmer-Flow Style Scoring**: body text must score at least 24/30 on the Farmer-Flow Scoring System before use.
+   - **Headings are exempt** — keep `Introduction`, `Agenda`, `Learning Objectives`, `Important Notes` exactly as they appear in the source.
+3. **Use the humanized content** for two purposes simultaneously:
+   - Build the standalone `Summary_Page.docx` (cover block + all four sections)
+   - Align the course body document (Introduction paragraphs, LO bullets, section structure)
 4. **Apply CPC branding** (cover block, header/footer, gold rule, blue section headings).
 5. **Output** to the course-specific folder. Never write output back to the source file.
 
