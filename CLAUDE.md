@@ -680,7 +680,62 @@ Apply the labeling based on the medium of the image, not on its source — a sto
 
 ## Course Summary Page (MANDATORY FOR EVERY COURSE)
 
-Every course must have a companion **summary page** — a short standalone Word document (.docx) that serves as the session handout or facilitator reference for the course. It is **not** the course itself; it is a condensed overview.
+Every course must have a companion **summary page** — a short standalone Word document (.docx) that serves as the session handout or facilitator reference. It is **not** the course itself; it is a condensed overview.
+
+### Master source file (READ-ONLY — NEVER MODIFY)
+
+```
+D:\Course agent\Short Courses summary pdage drafts.docx
+```
+
+This file contains the raw summary content for all 17 courses in a single document. It is the authoritative source for Introduction text, Agenda items, Learning Objectives, and Important Notes for every course. **Never edit, overwrite, or commit changes to this file.**
+
+#### What is in the source file
+
+The source file contains one entry per course, in order:
+
+| # | Course title | Duration |
+|---|---|---|
+| 1 | Brooding | 2-hour lecture + full-day workshop |
+| 2 | Biosecurity | 2-hour lecture, 1-hour workshop |
+| 3 | T-FLAWS – Assessment Management Tool | 2-hour lecture |
+| 4 | Salmonella & Food Safety | 1.5-hour lecture |
+| 5 | Sustainability | 2-hour lecture |
+| 6 | Poultry Anatomy and Physiology | 2-hour lecture |
+| 7 | Common Poultry Diseases | 2-hour lecture |
+| 8 | Vaccination – water, wing web, eye drop | 1-hour lecture, 1.5-hour workshop (3 sub-courses) |
+| 9 | The Value of Poultry Diagnostics | 2-hour lecture |
+| 10 | Necropsy – Normal Birds | 1-hour lecture, 1-hour workshop |
+| 11 | Necropsy – Common Diseases | 1-hour lecture, 1-hour workshop |
+| 12 | Humane Euthanasia | 1-hour lecture, 1-hour workshop |
+| 13 | Poultry Welfare | 1-hour lecture |
+| 14 | Intro to Field Service | 45-min lecture, 2-hour workshop |
+| 15 | Serology 101 | 2-hour lecture, 1-hour workshop |
+| 16 | Preparing for an Inspection Audit | 2-hour lecture |
+| 17 | Regulatory Framework in Poultry Production | 2-hour lecture |
+
+### Extraction and generation workflow (MANDATORY)
+
+Before generating any summary page:
+
+1. **Extract the relevant course content** from `Short Courses summary pdage drafts.docx` programmatically using JSZip. Never re-type or paraphrase the source content from memory.
+2. **Apply American English sweep** — source text uses British forms in places. Convert before incorporating.
+3. **Apply farmer-flow humanization** to Introduction and Learning Objectives text. The Agenda and Important Notes can be kept close to the source wording.
+4. **Apply CPC branding** (cover block, header/footer, gold rule, blue section headings).
+5. **Output** to the course-specific folder. Never write output back to the source file.
+
+Extraction pattern:
+```js
+const JSZip = require('jszip');
+const fs    = require('fs');
+(async () => {
+  const z   = await JSZip.loadAsync(fs.readFileSync('Short Courses summary pdage drafts.docx'));
+  const xml = await z.file('word/document.xml').async('string');
+  const texts = [...xml.matchAll(/<w:t(?:[^>]*)>([^<]+)<\/w:t>/g)]
+    .map(m => m[1].trim()).filter(t => t.length > 0);
+  // Find your course by scanning for its number/title, then extract until the next course header
+})();
+```
 
 ### What the summary page contains
 
@@ -691,21 +746,23 @@ In this exact order:
    - CPC logo (centered)
    - Course title — large, bold, dark blue (`1F3864`), centered
    - `Course Summary` subtitle — italic, blue (`2E74B5`), centered
-   - Gold horizontal rule (border, not underscores — simpler for a short doc)
+   - Gold horizontal rule (border-bottom on empty paragraph)
    - `CPC Short Courses` — bold, gray, centered
-   - `Duration: X-Hour Lecture` — centered
+   - `Duration: X-Hour Lecture` — centered (match the duration in the source file)
    - `Month Year` — centered
-2. **Introduction** — 2 paragraphs: what sustainability/the topic means on a working farm, and what the course covers (farmer-flow language)
-3. **Agenda** — numbered list of all session topics with `a/b/c` sub-items
-4. **Learning Objectives** — numbered list (matches the LOs in the course body)
-5. **Important Notes** — bullet list (e.g., bring note-taking items, certificate available)
+2. **Introduction** — from the source file; humanized to farmer-flow language
+3. **Agenda** — from the source file; numbered with `a/b/c` sub-items
+4. **Learning Objectives** — from the source file; humanized to farmer-flow language
+5. **Important Notes** — from the source file; keep as-is (already plain language)
+
+**Do NOT include** the Agenda or Important Notes in the course body document — they belong only in the summary page.
 
 ### Layout rules (MANDATORY)
 
-- **Single section** — no separate cover section with `titlePage: true`. The cover block and all content live in one section. The header and footer are visible on every page including the first.
-- **No page break** between the cover block and the Introduction heading. The gold rule + metadata flow naturally into the section headings.
-- **No `5. Sustainability` title line** or `Course Duration:` repeated in the body — those details live only in the cover block metadata. Starting directly with the section headings (`Introduction`, `Agenda`, etc.) after the cover block is correct.
-- Section headings use bold blue (`2E74B5`) text with a gold bottom border — NOT the course document's Heading styles (which would pollute the summary page TOC).
+- **Single section** — no separate cover section with `titlePage: true`. Header and footer visible on every page including the first.
+- **No page break** between the cover block and the Introduction heading. The metadata line flows directly into `sectionHead('Introduction')`.
+- **No course number title line** (`5. Sustainability`) or `Course Duration:` line in the body — those details live only in the cover block metadata.
+- Section headings use bold blue (`2E74B5`) with a gold bottom border — NOT the course document Heading styles.
 
 ### File naming convention
 
@@ -725,7 +782,7 @@ generate-courseX-summary.mjs
 
 ### Reference implementation
 
-`generate-course5-summary.mjs` — the canonical pattern. Copy and adapt for each new course. Key structure:
+`generate-course5-summary.mjs` — canonical pattern. Copy and adapt. Key structure:
 
 ```js
 // Single section — no separate cover section
@@ -739,7 +796,7 @@ const doc = new Document({
 });
 ```
 
-The cover block ends with a `spacing: { after: 360 }` on the last metadata paragraph. The first `sectionHead('Introduction')` follows immediately — no `pageBreak()` call between them.
+The cover block ends with `spacing: { after: 360 }` on the last metadata paragraph. The first `sectionHead('Introduction')` follows immediately — no `pageBreak()` call between them.
 
 ### Summary pages produced to date
 
