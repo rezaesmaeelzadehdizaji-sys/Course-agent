@@ -429,13 +429,13 @@ function buildIntroSection() {
       para('In this course, we cover practical, low-cost methods you can put to work right now to save resources, reduce pollution, improve how the barn runs, and build a farm that holds up through tight margins and tougher regulations. Sustainability is not about one big overhaul or expensive technology. It is about small, smart decisions you make every grow-out that add up for both the operation and the community around it.'),
 
       h2('Learning Objectives'),
-      bullet('Understand what sustainability actually means for a commercial poultry operation and why it matters for keeping the farm running and profitable long-term.'),
+      bullet('Understand the meaning of sustainability in the poultry business, and how it should be sustained for profitability in the long term.'),
       bullet('Identify farming practices that cut waste, save money, and protect the land and water your operation depends on.'),
       bullet('Recognize the real impacts of commercial chicken production on soil, water, air, and the people living nearby, both the benefits and the problems to manage.'),
       bullet('Get more value out of every kilogram of feed, every liter of water, every kilowatt of power, and every building on the property so nothing is going to waste.'),
       bullet('Apply sound manure management so your litter builds soil health instead of becoming a runoff problem or a regulatory headache.'),
       bullet('Run the flock in a way that keeps birds healthy and comfortable, cutting down on the losses that better management would have prevented.'),
-      bullet('Evaluate whether renewable energy options like solar panels or biogas are a realistic fit for your farm\'s scale and budget.'),
+      bullet('Find out if there are practical sources of renewable energy like solar panels or biogas that are available to meet the demands of your business and budget.'),
       bullet('Assess your own operation honestly, identify the gaps, and come away with a few concrete changes you can make in the next grow-out.'),
       bullet('Understand that a well-managed sustainable farm is also a more profitable farm, with lower input costs, better performance, and a stronger position in the market.'),
 
