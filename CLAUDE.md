@@ -428,7 +428,7 @@ Update this table as new cross-references are added in future courses.
 
 All content must be written in **Farmer-Flow Writing Mode by default**.
 
-This does NOT require user prompting.
+This does NOT require user prompting. It applies to every course, every section, every sentence, from the first word written. It is not a cleanup step — it is how the content is written in the first place.
 
 ### Priority Rule
 
@@ -441,14 +441,16 @@ Unless explicitly overridden by the user
 ### Definition
 
 Write as:
-"An experienced poultry veterinarian or consultant explaining real farm situations to a farm manager."
+"An experienced poultry veterinarian or consultant explaining real farm situations to a farm manager at a kitchen table."
 
 ### Rules
 
+- Write in farmer-flow language from the first sentence — do not write academically and plan to clean it up later
 - Use practical, real-world explanations
 - Avoid academic tone unless explicitly required
 - Use natural sentence flow
 - Focus on what farmers see, manage, and decide
+- Apply the sentence-level test (see Mandatory Humanization Pass) to every sentence as it is written, not after the section is complete
 
 ### Forbidden Style
 
@@ -908,15 +910,16 @@ Before generating any course, run every step in order. Do not skip any step.
 12. No number, threshold, or management recommendation without a citation.
 13. Integrate CPC Learning Centre material actively throughout — not as a token citation at the end, but woven into the section content where the CPC source is directly relevant.
 14. Insert cross-reference sentences at the point where each identified cross-reference gap arises (see Phase 2, step 9). Use format: "For more on [topic], see Course X ([Short Title]) in this series."
+15. **Write in farmer-flow language from the first sentence.** Do not write academically and clean up later. Every sentence must pass the three tests (kitchen table, visible outcome, sentence length) as it is written. See Mandatory Humanization Pass for the full sentence-level test definition.
 
-**Phase 4 — Validation**
+**Phase 4 — Validation (MANDATORY — every step, every course)**
 
-15. Auto-alignment check: structure consistency, tone consistency, citation format, missing references.
-16. Spelling sweep: run British English detection against all `<w:t>` text.
-17. Cover page check: confirm gold rule uses plain underscores (`___...___`) in GOLD (`C9A84C`), not Unicode box-drawing characters.
-18. Evaluate using Farmer-Flow Style Scoring System (minimum 24/30, no score below 4).
-19. Rewrite automatically if score fails.
-20. Humanization pass: identify and rewrite any AI-sounding sections before finalizing.
+16. **Sentence-level farmer-flow pass (MANDATORY):** Read every paragraph individually. Apply the sentence-level test to every sentence. Rewrite any sentence that fails before moving to the next paragraph. This is not a final skim — it is a complete pass on every sentence in every section. A course is not ready for output until this pass is done in full. See "What 'I reviewed it' means" in the Mandatory Humanization Pass section.
+17. Auto-alignment check: structure consistency, citation format, missing references.
+18. Spelling sweep: run British English detection against all `<w:t>` text.
+19. Cover page check: confirm gold rule uses plain underscores (`___...___`) in GOLD (`C9A84C`), not Unicode box-drawing characters.
+20. Farmer-Flow Style Scoring System: minimum 24/30, no individual score below 4. Rewrite automatically if any score fails.
+21. Em dash check: `(xml.match(/—/g) || []).length === 0` must be true before publishing.
 
 ## Agent Behavior & Validation Protocol
 
