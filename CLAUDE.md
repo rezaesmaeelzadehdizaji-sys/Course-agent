@@ -130,6 +130,40 @@ Any claim that cannot be confirmed in at least two independent sources gets `[NE
 - Before regenerating or significantly revising an existing course
 - When updating a section with new content
 - When a user asks to verify a specific claim in an existing course
+- **When the user says "do the deep research" on an existing course** — this triggers the Full Figures and Claims Audit below (MANDATORY)
+
+#### Full Figures and Claims Audit (MANDATORY when user says "do the deep research")
+
+When the user asks to do the deep research on a course that already exists, the audit must cover ALL of the following. A style scan alone is not sufficient and is not acceptable.
+
+**Step A — Extract every number from every file**
+Scan both the course body generator (`.mjs`) AND the figures generator (`-figures.mjs`) for:
+- Every percentage, ratio, range, threshold, ppm value, temperature, tonnage, or timeline
+- Every specific claim attributed to a named study, program, or organization
+- Every number that appears in SVG figure text (these are separate from the docx body and are not caught by a docx XML scan)
+
+**Step B — Cross-check each value against its cited source**
+For every number extracted in Step A:
+1. Identify which reference number is cited for it
+2. Confirm that the cited reference actually contains that specific value
+3. If the reference does not directly support the specific value, flag it — do not assume it is correct because it sounds plausible
+
+**Step C — Check for body/figure inconsistencies**
+Compare every number that appears in both the body text and a figure. They must match exactly. If the body text was corrected at any point and the figure was not updated, that is an error. Check both files independently.
+
+**Step D — Flag unsourced specifics**
+Any specific number (distance, rate, percentage, ratio, ppm) that appears in the body text without a citation number must be flagged as [NEEDS SOURCE] or replaced with a properly sourced value or a qualified general statement.
+
+**Step E — Report before fixing**
+Produce a complete audit table showing: claim, location (body text section or figure name), current value, source cited, confirmed/flagged status. Get user acknowledgment before making corrections. Do not silently fix errors without reporting what was found.
+
+**What this audit found in Course 5 (May 2026) — lessons learned**
+- FCR 1.8 in figures was wrong (should be 1.6) — missed in style-only reviews
+- Manure tonnage 50–80 t/cycle in Fig 1.1 was stale — body text had been corrected but figure was not
+- Water:feed 1.7–2.0 in Fig 1.1 and Fig 2.1 was stale — body text had been corrected but figures were not
+- "15-20% BW reduction at 50 ppm" cited to NFACC which does not contain that figure
+- "15-30m setback" had no citation; provincial regs vary and the specific distance was not defensible
+All five would have been missed by a style or tone scan. Only a full number-by-number extraction from both files catches them.
 
 #### Deep Research Mode for Course 3 (T-FLAWS)
 
