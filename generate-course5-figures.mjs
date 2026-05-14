@@ -104,7 +104,7 @@ function fig1_1() {
 
   <!-- Input boxes -->
   ${box(30,  84, 200, 44, C.lightBlue, C.medBlue, 'Feed', '60–70% of production cost')}
-  ${box(30, 138, 200, 44, C.lightBlue, C.medBlue, 'Water', '1.7–2.0x feed intake by weight')}
+  ${box(30, 138, 200, 44, C.lightBlue, C.medBlue, 'Water', '1.6–1.8x feed intake by weight')}
   ${box(30, 192, 200, 44, C.lightBlue, C.medBlue, 'Energy', 'Heating, ventilation, lighting')}
   ${box(30, 246, 200, 44, C.lightBlue, C.medBlue, 'Chicks &amp; Litter', 'Day-old placement inputs')}
 
@@ -121,7 +121,7 @@ function fig1_1() {
 
   <!-- Output boxes -->
   ${box(572,  84, 200, 44, C.lightGreen, C.green,  'Meat (Protein)', 'Primary saleable product')}
-  ${box(572, 138, 200, 44, C.lightAmber, C.amber,  'Manure / Litter', '50–80 t/cycle; fertilizer value')}
+  ${box(572, 138, 200, 44, C.lightAmber, C.amber,  'Manure / Litter', '20–33 t/cycle; fertilizer value')}
   ${box(572, 192, 200, 44, C.lightOrange,C.orange, 'Ammonia &amp; GHG', '~8% of global livestock GHG')}
   ${box(572, 246, 200, 44, C.lightBlue,  C.medBlue,'Wastewater', 'Cleanout and runoff risk')}
 
@@ -232,7 +232,7 @@ function fig2_1() {
   <!-- ROW 2: WATER -->
   <rect x="20"  y="186" width="220" height="82" rx="6" fill="${C.lightBlue}" stroke="${C.medBlue}" stroke-width="1.5"/>
   <text x="130" y="212" text-anchor="middle" fill="${C.darkBlue}" font-family="Arial, sans-serif" font-size="15" font-weight="bold">WATER</text>
-  <text x="130" y="231" text-anchor="middle" fill="${C.gray}" font-family="Arial, sans-serif" font-size="11">1.7–2.0x feed intake</text>
+  <text x="130" y="231" text-anchor="middle" fill="${C.gray}" font-family="Arial, sans-serif" font-size="11">1.6–1.8x feed intake</text>
   <text x="130" y="249" text-anchor="middle" fill="${C.gray}" font-family="Arial, sans-serif" font-size="11">Tens of 000s L/day</text>
 
   <rect x="260" y="186" width="260" height="82" rx="6" fill="#FFEBEE" stroke="${C.red}" stroke-width="1"/>
