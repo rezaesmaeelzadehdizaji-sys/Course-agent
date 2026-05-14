@@ -114,7 +114,7 @@ function fig1_1() {
   <text x="400" y="226" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="17" font-weight="bold">Broiler Farm</text>
   <text x="400" y="261" text-anchor="middle" fill="${C.gold}" font-family="Arial, sans-serif" font-size="12">20,000+ birds per cycle</text>
   <text x="400" y="281" text-anchor="middle" fill="${C.gold}" font-family="Arial, sans-serif" font-size="12">6–8 week grow-out</text>
-  <text x="400" y="300" text-anchor="middle" fill="${C.gold}" font-family="Arial, sans-serif" font-size="12">FCR target: ~1.8 kg feed/kg gain</text>
+  <text x="400" y="300" text-anchor="middle" fill="${C.gold}" font-family="Arial, sans-serif" font-size="12">FCR target: ~1.6 kg feed/kg gain</text>
 
   <!-- OUTPUTS label -->
   <text x="672" y="76" text-anchor="middle" fill="${C.darkBlue}" font-family="Arial, sans-serif" font-size="13" font-weight="bold" text-decoration="underline">OUTPUTS</text>
@@ -215,7 +215,7 @@ function fig2_1() {
   <rect x="20"  y="90" width="220" height="82" rx="6" fill="${C.lightBlue}" stroke="${C.medBlue}" stroke-width="1.5"/>
   <text x="130" y="116" text-anchor="middle" fill="${C.darkBlue}" font-family="Arial, sans-serif" font-size="15" font-weight="bold">FEED</text>
   <text x="130" y="135" text-anchor="middle" fill="${C.gray}" font-family="Arial, sans-serif" font-size="11">60–70% of production cost</text>
-  <text x="130" y="153" text-anchor="middle" fill="${C.gray}" font-family="Arial, sans-serif" font-size="11">FCR target ~1.8</text>
+  <text x="130" y="153" text-anchor="middle" fill="${C.gray}" font-family="Arial, sans-serif" font-size="11">FCR target ~1.6</text>
 
   <rect x="260"  y="90" width="260" height="82" rx="6" fill="#FFEBEE" stroke="${C.red}" stroke-width="1"/>
   <text x="390" y="112" text-anchor="middle" fill="${C.red}" font-family="Arial, sans-serif" font-size="11" font-weight="bold">&#10006; Waste Points</text>
