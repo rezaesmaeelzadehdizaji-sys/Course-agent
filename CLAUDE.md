@@ -967,13 +967,55 @@ This pass is mandatory and must happen after the scientific/content pass.
 
 The agent must:
 
-1. Review each section for AI-like wording.
-2. Identify sentences that sound too polished, generic, academic, or report-like.
-3. Rewrite those sentences into farmer-flow language.
+1. Read **every paragraph** individually — not sections, not at a glance. Every paragraph.
+2. Apply the sentence-level test to each sentence (see below).
+3. Rewrite any sentence that fails the test. Do not leave it and move on.
 4. Keep the scientific meaning and numbered references intact.
 5. Re-score the rewritten section using the Farmer-Flow Style Scoring System.
 
-The course cannot be considered ready unless this separate humanization pass has been completed.
+The course cannot be considered ready unless this sentence-level pass has been completed on every paragraph in every section.
+
+### Sentence-Level Test (apply to every sentence)
+
+Ask these three questions about every sentence:
+
+1. **Would a farmer sitting at a kitchen table naturally connect with this?**
+   If it sounds like a research paper, a regulatory document, or a corporate report — rewrite it.
+
+2. **Does it tell the farmer what they will SEE, NOTICE, or DO?**
+   Mechanism descriptions without visible outcomes are not farmer-friendly. Rewrite to lead with what the farmer observes, then explain why.
+
+3. **Is it short enough to read without pausing?**
+   If a sentence runs past two clauses, break it. Long sentences full of commas and subclauses are the most common farmer-flow failure.
+
+### Specific language that must be rewritten on sight
+
+Any sentence containing the following must be rewritten before the pass is complete:
+
+| Clinical / academic phrase | Replace with |
+|---|---|
+| airway cilia | birds' airways / respiratory defenses |
+| acid deposition | not needed — remove or simplify |
+| ecosystem nitrogen loading | nitrogen buildup in the surrounding environment |
+| endotoxins / bioactive compounds | bacteria and irritants |
+| agronomic value | worth money to the crop farmer / real fertilizer value |
+| carbon-to-nitrogen ratio | keep the balance right (cover with dry litter) |
+| aerobic conditions | keeps breaking down properly |
+| compliance risk | compliance problem |
+| medically important antibiotics | antibiotics used in food animals |
+| per unit of output | per kilogram of gain |
+| significant room for efficiency improvement | real room to improve |
+| without major capital expenditure | without major spending |
+| passive airflow | natural airflow |
+| input cost volatility | input prices moving around |
+| regulatory compliance matter | compliance issue / regulator |
+| community relations matter | keeping neighbours onside |
+| properly utilized | applied properly / used well |
+| processes daily mortalities | handles your daily dead birds |
+| pathogen kill | kills the pathogens |
+| welfare effects | birds start to suffer / production starts to fall |
+
+This list grows over time. Add to it whenever a new clinical or academic phrase is flagged in review.
 
 ### Minimum passing:
 - Total ≥ 24/30
@@ -982,22 +1024,26 @@ The course cannot be considered ready unless this separate humanization pass has
 ### If failed:
 → Rewrite automatically
 
-### Final check:
-- Does it sound like a real poultry consultant?
-- Is it practical for farm use?
-- Does it feel AI-generated?
+### Final check — three questions before calling any section done:
+1. Does it sound like a real poultry vet talking to a farmer at a kitchen table?
+2. Is everything tied to something the farmer can see, measure, or act on?
+3. Could any sentence be mistaken for AI output or a textbook excerpt?
 
-If yes → rewrite
+If yes to question 3 on any sentence → rewrite that sentence before moving on.
+
+### What "I reviewed it" means (MANDATORY definition)
+
+"I reviewed it" means: every paragraph was read individually, every sentence was tested against the three questions above, and every failure was rewritten. It does NOT mean: I scanned for obvious problems and fixed those. Partial reviews that miss sentences are not acceptable and will be caught by the user.
 
 ### Rewrite Method (MANDATORY)
 
 When rewriting:
 
-- Convert abstract explanations into practical farm observations
-- Replace definitions with "what farmers actually see"
-- Use cause → signs → impact → action flow
-- Shorten long sentences
-- Remove academic phrasing
+- Lead with what the farmer sees or finds, then explain the mechanism
+- Use cause → visible sign → cost or consequence → action flow
+- Shorten long sentences — one idea per sentence as the default
+- Remove academic phrasing; use plain words
+- Never sacrifice a citation number in a rewrite
 
 Do NOT:
 - change scientific meaning
