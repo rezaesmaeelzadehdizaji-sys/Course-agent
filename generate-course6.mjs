@@ -37,6 +37,30 @@ const OUT_DIR   = path.join(__dirname, 'Course 6');
 const OUT_FILE  = path.join(OUT_DIR, 'Poultry_Anatomy_and_Physiology_draft.docx');
 const LOGO_PATH = path.join(__dirname, 'logo.png');
 
+// Image helpers
+function imgFile(name) {
+  const p = path.join(OUT_DIR, name);
+  return fs.existsSync(p) ? fs.readFileSync(p) : null;
+}
+function jpegDims(buf) {
+  if (!buf) return null;
+  let i = 2;
+  while (i < buf.length - 10) {
+    if (buf[i] !== 0xFF) break;
+    const marker = buf[i + 1];
+    if (marker === 0xC0 || marker === 0xC1 || marker === 0xC2) {
+      return { h: (buf[i+5]<<8)|buf[i+6], w: (buf[i+7]<<8)|buf[i+8] };
+    }
+    const segLen = (buf[i+2]<<8)|buf[i+3];
+    i += 2 + segLen;
+  }
+  return null;
+}
+function pngDims(buf) {
+  if (!buf || buf[0] !== 0x89) return null;
+  return { w: (buf[16]<<24)|(buf[17]<<16)|(buf[18]<<8)|buf[19], h: (buf[20]<<24)|(buf[21]<<16)|(buf[22]<<8)|buf[23] };
+}
+
 // ============================================================
 // COLORS
 // ============================================================
@@ -127,6 +151,50 @@ function labeled(label, bodyText, opts = {}) {
     spacing: { after: opts.spaceAfter !== undefined ? opts.spaceAfter : 100, line: 276, lineRule: 'auto' },
     indent: opts.indent ? { left: convertInchesToTwip(opts.indent) } : undefined,
   });
+}
+
+// Embed a real JPEG photo
+function embedPhoto(buf, caption, widthIn = 5.8) {
+  if (!buf) return [];
+  const dims = jpegDims(buf);
+  const dpi  = 96;
+  let wpx    = Math.round(widthIn * dpi);
+  let hpx    = dims ? Math.round(wpx * dims.h / dims.w) : Math.round(wpx * 0.67);
+  const maxH = Math.round(4.5 * dpi);
+  if (hpx > maxH) { hpx = maxH; wpx = dims ? Math.round(hpx * dims.w / dims.h) : wpx; }
+  return [
+    new Paragraph({
+      children: [new ImageRun({ data: buf, transformation: { width: wpx, height: hpx }, type: 'jpg' })],
+      alignment: AlignmentType.CENTER,
+      spacing:   { before: 160, after: 0 },
+    }),
+    new Paragraph({
+      children: [new TextRun({ text: caption, italics: true, color: '555555', size: 20, font: 'Calibri' })],
+      alignment: AlignmentType.CENTER,
+      spacing:   { before: 60, after: 240 },
+    }),
+  ];
+}
+
+// Embed a real PNG image (diagram or illustration)
+function embedPng(buf, caption, widthIn = 5.8) {
+  if (!buf) return [];
+  const dims = pngDims(buf);
+  const dpi  = 96;
+  let wpx    = Math.round(widthIn * dpi);
+  let hpx    = dims && dims.w > 0 ? Math.round(wpx * dims.h / dims.w) : Math.round(wpx * 0.6);
+  return [
+    new Paragraph({
+      children: [new ImageRun({ data: buf, transformation: { width: wpx, height: hpx }, type: 'png' })],
+      alignment: AlignmentType.CENTER,
+      spacing:   { before: 160, after: 0 },
+    }),
+    new Paragraph({
+      children: [new TextRun({ text: caption, italics: true, color: '555555', size: 20, font: 'Calibri' })],
+      alignment: AlignmentType.CENTER,
+      spacing:   { before: 60, after: 240 },
+    }),
+  ];
 }
 
 // Gray placeholder with photo brief
@@ -458,15 +526,11 @@ function buildSection1() {
       para('Every management decision on a poultry farm, from ventilation rates to feed particle size to lighting schedules, has its logic in how the bird is built. Ventilation targets come from the anatomy of the respiratory system. Phase feeding follows the bird\'s changing digestive capacity. Lighting programs work because the reproductive system is photoperiod-sensitive. When you know the underlying physiology, the rules make sense and you apply them correctly. When you do not, you follow recipes without understanding when to adapt them [1,17].'),
       para('You do not need a veterinary degree to use this knowledge effectively. What you need is a working mental model of what is going on inside the bird. This course gives you that model, section by section, starting with the outside of the bird and working inward through each body system.'),
 
-      ...photoPlaceholder(
-        'Photo 1.1',
-        'Healthy commercial broiler or layer showing alert posture, bright eye, and full feather cover.',
-        'Photo 1.1: A healthy commercial bird showing alert posture, bright eye, and full feather cover. These external signs reflect the underlying physiological status of the bird. Source: CPC Short Courses.'
-      ),
+      ...embedPhoto(imgFile('photo_1_1_healthy_broiler.jpg'), 'Photo 1.1: A flock of healthy commercial broiler chickens showing alert posture and good body condition. Flock-level observation is the first step in daily health monitoring. Source: Wikimedia Commons / Icem4k, CC BY-SA 4.0.'),
 
       h2('1.2  Meat Birds, Layers, and Breeders: Built for Different Jobs'),
       para('All three production types are the same species, Gallus gallus domesticus, but decades of selection have pushed them in fundamentally different directions.'),
-      para('A commercial broiler is a feed-conversion machine. Its pectoralis major (breast) muscle grows faster and reaches a greater proportion of body weight than any other production animal. Modern broilers deposit breast muscle that accounts for 21 to 29% of body weight, composed almost entirely of fast-twitch white muscle fibers [11,12]. That extraordinary growth rate comes at a cost: the cardiovascular system struggles to keep pace, which creates a predictable pattern of health risks in weeks four and five.'),
+      para('A commercial broiler is a feed-conversion machine. Its pectoralis major (breast) muscle grows faster and reaches a greater proportion of body weight than any other production animal. Heritage birds from the 1950s carried breast muscle at roughly 9% of body weight; modern genetics have pushed that to 21 to 29%, composed almost entirely of fast-twitch white muscle fibers [12,22]. That extraordinary growth rate comes at a cost: the cardiovascular system struggles to keep pace, which creates a predictable pattern of health risks in weeks four and five.'),
       para('A commercial layer lives for a year or more, cycling an egg nearly every day. Her body is built for sustained activity and reproduction, not rapid muscle growth. She has a lighter frame, stronger legs, and a skeleton that includes a special type of bone (medullary bone) that acts as a labile calcium bank, resorbed every night to build each eggshell [13,14].'),
       para('A broiler breeder carries significant muscle mass from broiler genetics but must also maintain reproductive function over a 40-week production cycle. This requires careful feed restriction throughout the rearing period to prevent the bird from getting too heavy to lay or mate effectively. Getting the breeder to target body weight and holding her there is one of the most technically demanding aspects of commercial poultry production [16].'),
       para('Understanding these differences tells you why the management rules for each type are different, and what happens when those rules break down.'),
@@ -495,11 +559,7 @@ function buildSection2() {
       labeled('Body condition (keel):', 'Run your finger along the breastbone (keel). In a bird at correct body condition you feel moderate tissue over both sides of the keel with no sharp ridge. A prominent, easily palpated keel edge means the bird is losing condition. In layers, check that pubic bones (just below the vent) are at least two finger-widths apart, which indicates the bird is actively laying [5].'),
       labeled('Legs and feet:', 'The shanks should be smooth and clean. The foot pads should be intact, free of lesions and swelling. Rough, thickened scales on the shanks can indicate leg mite infestation. Swollen, discolored hocks or foot pads point to bumblefoot or infectious synovitis. Any bird that is reluctant to bear weight or cannot keep up with the flock needs immediate attention.'),
 
-      ...photoPlaceholder(
-        'Photo 2.1',
-        'Close view of comb and wattles showing bright-red color, firm turgid texture, and normal size in a healthy commercial layer.',
-        'Photo 2.1: Healthy comb and wattles in a commercial laying hen. Bright-red color and firm turgid texture are reliable indicators of good circulatory health. Source: CPC Short Courses.'
-      ),
+      ...embedPhoto(imgFile('photo_2_1_comb_wattles.jpg'), 'Photo 2.1: Close view of a hen in a barn coop showing the bright-red comb and eye. A firm, warm, bright-red comb indicates good circulatory health. Source: Wikimedia Commons, CC BY 2.0.'),
 
       h2('2.2  Reading the Bird: Signs of Health from the Outside'),
       para('A healthy bird is alert, moving, eating, drinking, and interacting normally with the flock. Any bird sitting away from others, with eyes closed, standing hunched, or showing labored breathing (tail bobbing with each breath) is telling you something is wrong. The rule in commercial production is that by the time one bird is visibly sick, the flock-level problem has usually been developing for several days [5].'),
@@ -530,11 +590,7 @@ function buildSection3() {
       labeled('Ceca:', 'Two blind pouches at the junction of the small and large intestine. The ceca ferment undigested material and produce short-chain fatty acids and B vitamins. They also reabsorb water and play a role in immune function. Cecal output, the dark, pasty, slightly pungent dropping produced once or twice a day, is completely normal and should not be mistaken for diarrhea [1].'),
       labeled('Cloaca:', 'The terminal chamber where the digestive, urinary, and reproductive tracts converge. Feces, urine, and eggs all exit through the cloaca. Because of this shared exit, egg contamination can occur when hens have enteric disease, which is one reason Salmonella control requires managing gut health as well as external hygiene.'),
 
-      ...photoPlaceholder(
-        'Figure 3.1',
-        'Labeled diagram of the poultry digestive tract showing: beak, esophagus, crop, proventriculus, gizzard, duodenum, jejunum, ileum, ceca, large intestine, and cloaca.',
-        'Figure 3.1: The poultry digestive tract from beak to cloaca. Key functional differences from mammalian digestion: no teeth, a storage crop, and a muscular gizzard that substitutes for chewing. Source: CPC Short Courses.'
-      ),
+      ...embedPng(imgFile('figure_3_1_digestive.png'), 'Figure 3.1: The poultry digestive tract from beak to cloaca. Key differences from mammalian digestion: no teeth, a storage crop, and a muscular gizzard that substitutes for chewing. Source: CPC Short Courses.'),
 
       h2('3.2  The Respiratory System'),
       para('A bird\'s respiratory system works nothing like a mammal\'s, and understanding the difference changes how you think about ventilation, ammonia, and dust management.'),
@@ -544,14 +600,10 @@ function buildSection3() {
       para('The key management implication is straightforward. This highly efficient system is also highly vulnerable. Ammonia at 10 ppm already damages the cilia lining the respiratory tract, the primary defense against bacteria and irritants [2]. The bird cannot cough pathogens out the way a mammal can. When cilia are destroyed by ammonia or dust, bacteria enter the air sacs directly. A visibly ammonia-damaged flock, with watery eyes and bubbling, has been breathing damaging air for days or weeks before those signs appeared.'),
       para('High dust loads compound the problem. Every square meter of poorly managed litter sends bacteria, endotoxins, and mold spores into the air. Adequate ventilation is not a comfort measure: it is a basic immune defense requirement.'),
 
-      ...photoPlaceholder(
-        'Figure 3.2',
-        'Diagram showing the nine air sacs of the chicken in lateral and dorsal views, with labels for cervical, interclavicular, anterior thoracic, posterior thoracic, and abdominal air sacs. Arrows indicate unidirectional airflow direction through the parabronchi.',
-        'Figure 3.2: The nine air sacs of the chicken and the direction of unidirectional airflow through the parabronchi. Unlike mammalian lungs, gas exchange occurs during both inhalation and exhalation. Source: CPC Short Courses.'
-      ),
+      ...embedPng(imgFile('figure_3_2_air_sacs.png'), 'Figure 3.2: The nine air sacs and unidirectional airflow through the parabronchi. Unlike mammalian lungs, gas exchange occurs during both inhalation and exhalation. Source: CPC Short Courses.'),
 
       h2('3.3  The Circulatory System'),
-      para('A chicken\'s heart is four-chambered, like a mammal\'s, and it works extremely hard. The resting heart rate is approximately 245 beats per minute and can reach 400 beats per minute under stress [from PMC cardiovascular data]. The left ventricle is by far the largest chamber, with walls three times thicker than the right ventricle, because it must push blood to the entire body at high pressure. The right ventricle only needs to move blood through the nearby lungs, which offer much less resistance.'),
+      para('A chicken\'s heart is four-chambered, like a mammal\'s, and it works extremely hard. The resting heart rate is approximately 250 to 300 beats per minute at rest [20]. The left ventricle is by far the largest chamber, built with far thicker walls than the right ventricle, because it must push blood to the entire body at high pressure. The right ventricle only needs to move blood through the nearby lungs, which offer much less resistance.'),
       para('Body temperature runs at 41 to 42°C. Blood volume is approximately 1 to 2% of body weight in milliliters, which means a 2.5 kg broiler carries roughly 25 to 50 mL of blood [5].'),
       para('The key management implication for broilers is this: in fast-growing commercial lines, the heart and lungs grow more slowly as a proportion of body mass than the rest of the body does [11]. By weeks four and five, many broilers are carrying more muscle mass than their cardiovascular system can comfortably supply with oxygen. In cold conditions, at altitude, or in poor ventilation, oxygen delivery falls short of demand. The right ventricle overloads trying to push blood through a congested lung. Fluid then backs up into the abdominal cavity. This is ascites. In a separate but related failure, sudden cardiovascular collapse kills apparently healthy, well-grown males without warning. This is Sudden Death Syndrome. Both conditions are direct consequences of the physiological gap between growth rate and cardiovascular capacity [6,7].'),
 
@@ -561,25 +613,21 @@ function buildSection3() {
       labeled('Medullary bone:', 'Found only in female birds approaching or in lay. Medullary bone is a highly vascularized, spongy calcium reserve found in the tibia, femur, pubic bones, ribs, ulna, and several other bones. Under the influence of estrogen at sexual maturity, hens build up medullary bone as a labile calcium bank. During the 20 hours the shell is forming overnight, when the hen is not eating, she resorbs medullary bone to supply the calcium her shell needs [14]. This process repeats every 24 hours throughout the laying cycle.'),
       labeled('Keel (sternum):', 'The breastbone and its ventral projection (the keel) provide the attachment surface for the large pectoral muscles. In broilers, palpating the keel is a rapid body condition check: a sharp, easily felt keel edge means the bird is too thin. In layers, keel damage from repeated impacts against the floor, perch, or nesting equipment is a significant welfare issue in cage-free and aviary systems [4].'),
       para('The pectoral muscles (breast) tell two very different stories in broilers versus layers.'),
-      para('In commercial broilers, the pectoralis major is almost entirely fast-twitch type IIb white muscle fibers, the same type that powers a pheasant\'s explosive burst. It has grown to 21 to 29% of body weight in modern genetics and is eight times larger in absolute terms than in broilers from the 1950s [12]. This extraordinary development is what makes the broiler economically viable. It is also what creates woody breast myopathy: when the muscle grows faster than its vascular supply can support, localized ischemia leads to fibrosis and the hard, woody texture that downgrades product at processing.'),
+      para('In commercial broilers, the pectoralis major is almost entirely fast-twitch type IIb white muscle fibers, the same type that powers a pheasant\'s explosive burst. Breast muscle made up roughly 9% of body weight in heritage birds from the 1950s; modern genetics have pushed that proportion to 21 to 29% [12,22]. This extraordinary development is what makes the broiler economically viable. It is also what creates woody breast myopathy: when the muscle grows faster than its vascular supply can support, localized ischemia leads to fibrosis and the hard, woody texture that downgrades product at processing.'),
       para('In layers, the pectoralis is smaller and less developed. The leg muscles are proportionally larger and more red (oxidative), reflecting the layer\'s selection for sustained movement and activity rather than explosive power.'),
 
       h2('3.5  The Reproductive System'),
       para('Only the left ovary and oviduct develop to functional size in female chickens. The right ovary regresses during embryonic development and is nonfunctional in the adult bird [3]. At hatch, a pullet already carries all the ova she will ever lay, tens of thousands of potential eggs, though only a small fraction will mature over her productive life. No new ova develop after hatching.'),
       para('The oviduct is 25 to 27 inches long in a fully productive layer. Egg formation from ovulation to laying takes approximately 25 to 26 hours and passes through five distinct sections [3]. See Figure 3.3 and Table 3.1 below.'),
 
-      ...photoPlaceholder(
-        'Figure 3.3',
-        'Labeled diagram of the left oviduct showing the five sections (infundibulum, magnum, isthmus, shell gland, vagina) with length and time measurements for each section, and an arrow tracing the egg from ovary to cloaca.',
-        'Figure 3.3: The five sections of the hen\'s oviduct with approximate length and time spent in each section. Total egg formation takes 25 to 26 hours. Source: CPC Short Courses.'
-      ),
+      ...embedPng(imgFile('figure_3_3_oviduct.png'), 'Figure 3.3: The five sections of the hen\'s oviduct with approximate length and time in each. Total egg formation takes 25 to 26 hours. Source: CPC Short Courses.'),
 
       para('Table 3.1: Egg formation timeline by oviduct section [3].', { spaceAfter: 60 }),
       oviductTable(),
       new Paragraph({ spacing: { before: 80, after: 0 } }),
 
       para('The calcium cost of each egg is significant. Each shell requires approximately 3 grams of calcium. During the 20-plus hours of shell formation (mostly at night, when the hen is not eating), she mobilizes 20 to 40% of that calcium from medullary bone [13]. The diet must supply the balance. A layer on an adequate calcium diet (3.5 to 4.5% of diet by weight) can meet her daily needs and maintain bone health. A layer on an inadequate calcium diet will exhaust her medullary bone and begin resorbing structural cortical bone, leading to progressive osteoporosis, fractures, and end-of-lay collapse [13,14].'),
-      para('Ovulation is triggered by light. Photosensitive cells in the hypothalamus detect changes in day length and regulate the hormonal cascade that drives follicle development and ovulation. Ovulation almost never occurs after 3 PM under normal daylight conditions, which means hens laying late in the day skip the next morning\'s ovulation and miss a laying day [3]. Careful lighting management using 14 to 16 hours of light per day maintains consistent ovulation timing across the flock. For detailed lighting program guidance, see the CPC Learning Centre Lighting Program Guidelines for Broilers 2026 [19], which covers both the technical setup and the practical management of lighting transitions.'),
+      para('Ovulation is triggered by light. The hypothalamus detects the change in day length and triggers the hormone chain that drives follicle growth and ovulation. Ovulation almost never occurs after 3 PM under normal daylight conditions, which means hens laying late in the day skip the next morning\'s ovulation and miss a laying day [3]. Careful lighting management using 14 to 16 hours of light per day maintains consistent ovulation timing across the flock. For detailed lighting program guidance, see the CPC Learning Centre Lighting Program Guidelines for Broilers 2026 [19], which covers both the technical setup and the practical management of lighting transitions.'),
     ],
   };
 }
@@ -596,25 +644,21 @@ function buildSection4() {
       h1('Section 4: Meat Birds (Broilers)'),
 
       h2('4.1  Built for Rapid Muscle Growth'),
-      para('A commercial broiler today reaches 2.5 to 3 kg in 38 to 45 days. That growth rate would have seemed impossible in the 1950s, when the same species took twice as long to reach half the weight. The key driver is genetics: broiler myoblasts (muscle precursor cells) proliferate and differentiate faster than those of any other chicken type, and selection has relentlessly favored genes that accelerate this process [12].'),
+      para('A commercial broiler today reaches 2.5 to 3 kg in 38 to 45 days. A heritage bird from the 1950s would have needed over 100 days to reach the same market weight [22]. The key driver is genetics: broiler myoblasts (muscle precursor cells) proliferate and differentiate faster than those of any other chicken type, and selection has relentlessly favored genes that accelerate this process [12].'),
       para('The pectoralis major accounts for 21 to 29% of body weight in modern broiler lines. It is composed almost entirely of type IIb fast-twitch white fibers, the same fiber type found in the wing muscles of birds that make short, explosive flights. These fibers deposit protein rapidly but demand a high energy supply. Breast muscle mass increases faster than overall body weight throughout the growth period, which is why the breast yield percentage keeps climbing as the bird gets heavier [12].'),
       para('To keep pace with this muscle growth, the digestive system has also been selected for efficiency. Broilers with better feed conversion ratios have proportionally heavier gizzards, longer ceca, and lower relative liver weight. The gut architecture in a high-performing broiler is optimized to extract as much energy and protein from each gram of feed as possible [9].'),
 
-      ...photoPlaceholder(
-        'Photo 4.1',
-        'Commercial broiler at approximately 35 days showing broad, well-developed breast, normal leg stance, and alert expression. Compare breast depth against keel visibility.',
-        'Photo 4.1: Commercial broiler at approximately 35 days showing the characteristic broad breast profile of modern genetics. Source: CPC Short Courses.'
-      ),
+      ...embedPhoto(imgFile('photo_4_1_broiler.jpg'), 'Photo 4.1: Commercial broiler showing the characteristic broad breast profile of modern genetics. Source: Wikimedia Commons / Cros2519, CC BY-SA 4.0.'),
 
       h2('4.2  Feed Conversion and Metabolism'),
-      para('Modern broilers achieve feed conversion ratios of approximately 1.5 to 1.7 kg feed per kg of gain. They achieve this through high feed intake, rapid protein deposition, and a lower level of spontaneous activity than layers. More feed energy goes toward muscle growth; less is spent on movement and heat production [11,12].'),
+      para('Modern broilers achieve feed conversion ratios of approximately 1.5 to 1.7 kg feed per kg of gain [16]. They get there through high feed intake, rapid protein deposition, and they move less than layers do. More feed energy goes toward muscle growth; less is spent on movement and heat [11,12].'),
       para('Phase feeding (starter, grower, finisher diets) is designed around the broiler\'s changing requirements. Early diets are high in protein to support rapid muscle growth. Later diets shift the energy-to-protein ratio as the bird deposits more fat in the final weeks. Getting those transitions right requires understanding the underlying physiology: feed the bird for where it is going, not where it is now.'),
 
       h2('4.3  Common Health Challenges in Broilers'),
       para('The same genetics that make the broiler grow fast create predictable health vulnerabilities. These are not random events: they follow directly from the physiological trade-offs described above.'),
 
       labeled('Ascites (pulmonary hypertension syndrome):', 'The heart and lungs grow more slowly as a proportion of body mass than the muscle does. In cold, high-altitude, or poorly ventilated conditions, the demand for oxygen outpaces the supply. The right ventricle overloads and fails. Fluid accumulates in the abdominal cavity. A bird with ascites shows a swollen, fluid-filled abdomen, labored breathing, and blue discoloration of the comb and wattles. Ascites incidence increases in cold weather flocks and at higher altitudes. The primary prevention tools are adequate ventilation, avoiding early cold snaps, and using lighting or feed restriction programs that slightly slow early growth to give the cardiovascular system time to develop [7].'),
-      labeled('Sudden Death Syndrome (SDS):', 'Rapid cardiovascular failure that kills apparently healthy, well-grown birds, predominantly males, with no prior warning signs. The bird typically flips onto its back when it dies. SDS most commonly affects birds in weeks two and three during a period of rapid muscle growth. Incidence in commercial flocks averages 0.8 to 1.4% [6]. Like ascites, it is a consequence of the gap between growth rate and cardiovascular capacity.'),
+      labeled('Sudden Death Syndrome (SDS):', 'Rapid cardiovascular failure that kills apparently healthy, well-grown birds, predominantly males, with no prior warning signs. The bird typically flips onto its back when it dies. SDS most commonly affects birds between 2 and 4 weeks of age, during the fastest period of muscle growth. In commercial flocks, SDS typically accounts for 0.5 to 4% of bird losses [6]. Like ascites, it is a consequence of the gap between growth rate and cardiovascular capacity.'),
       labeled('Skeletal disorders:', 'Rapid bone deposition before skeletal maturity leads to angular limb deformities, tibial dyschondroplasia, and valgus or varus leg deformities. A bird that cannot walk freely cannot access feed and water, which directly costs performance. Lameness in broilers is both a welfare concern and a straightforward production loss. Ensuring adequate dietary calcium, phosphorus, and vitamin D3 in early diets, along with good litter management to prevent footpad dermatitis, is the management response.'),
       labeled('Woody breast and white striping:', 'When the breast muscle grows faster than its blood supply can support, localized oxygen deprivation leads to fibrosis, fluid accumulation, and the hard, rubbery texture that processors call woody breast. White striping is a milder form of the same underlying condition. Both are more common in heavier, faster-growing lines and represent a real downgrade risk at processing. Heavier birds at slaughter carry more risk; tighter ventilation, earlier catch weights, and genetics that trade some growth rate for muscle quality are the management levers available [12].'),
 
@@ -622,7 +666,7 @@ function buildSection4() {
       para('The broiler\'s anatomy drives several non-negotiable management priorities.'),
       bullet('Ventilation must keep ammonia below 10 ppm throughout the house. At this concentration, cilia are already beginning to be damaged. A broiler at week four is carrying a cardiovascular system already running near its limits: adding respiratory stress accelerates failure [2,7].'),
       bullet('Lighting and early feed access programs can be used to slow the absolute growth rate in the first seven days, giving the heart and lungs a few extra days to develop relative to the muscle. Some integrators use short dark periods or alternate day lighting protocols for this purpose. For the full lighting protocol, see the CPC Learning Centre Lighting Program Guidelines for Broilers 2026 [19].'),
-      bullet('Litter management keeps foot pad dermatitis under control. Broilers live on the same surface from placement to catch. Wet litter means foot pad contact with caustic ammonia and bacteria all day, every day. Maintaining litter moisture at 20 to 25% protects foot pad integrity and welfare scores [from NFACC / UGA Extension sources consistent with Course 3 standards].'),
+      bullet('Litter management keeps foot pad dermatitis under control. Broilers live on the same surface from placement to catch. Wet litter means foot pad contact with caustic ammonia and bacteria all day, every day. Maintaining litter moisture at 20 to 25% protects foot pad integrity and welfare scores [21].'),
       bullet('Stocking density affects air quality, activity levels, and leg health. The NFACC Code of Practice sets conventional maximum stocking density at 31 kg/m² live weight for commercial broilers. Exceeding this increases the risk of all the conditions above.'),
       para('For the daily management framework that monitors these parameters through the grow-out, see Course 3 (T-FLAWS Assessment Management Tool) in this series.'),
     ],
@@ -642,22 +686,18 @@ function buildSection5() {
 
       h2('5.1  Built for Egg Production and Reproduction'),
       para('A commercial layer has a lighter frame, stronger legs, and a more developed pelvic region than a broiler of the same age. As she approaches sexual maturity, the pubic bones spread to allow eggs to pass. A practical field check: two or more finger-widths between the pubic bones typically indicates an active layer [5]. The layer\'s smaller muscle mass means she needs less dietary protein and energy for maintenance, freeing more nutrients for egg production.'),
-      para('Commercial white leghorn-type layers typically reach peak production of 90 to 95% hen-day production at 28 to 32 weeks of age. Production then declines gradually. By 72 weeks, many flocks fall below 70%, at which point a decision about continuing the cycle or moving to molt is made. Induced molt resets the reproductive system and can support a second production cycle, typically with reduced rate but improved shell quality.'),
+      para('Commercial white leghorn-type layers typically reach peak production of 95 to 97% hen-day production at 26 to 30 weeks of age. Production then declines gradually. By 72 weeks, many flocks fall below 70%, at which point a decision about continuing the cycle or moving to molt is made. Induced molt resets the reproductive system and can support a second production cycle, typically with reduced rate but improved shell quality.'),
       para('Broiler breeders combine the larger frame of broiler genetics with the reproductive requirement of sustained egg production. Feed restriction is applied from early in the rearing period to prevent over-conditioning. An overweight broiler breeder has reduced ovulation rate, lower fertilization, and higher embryo mortality. An underweight breeder also performs poorly. Keeping the breeder at target body weight through a carefully managed step-up feeding program is the core of breeder management [16].'),
 
-      ...photoPlaceholder(
-        'Photo 5.1',
-        'Commercial laying hen showing upright posture, prominent pubic bones visible near the vent, and a bright-red active comb typical of a hen at peak production.',
-        'Photo 5.1: Commercial layer at peak production. The spread pubic bones and bright active comb are external indicators of productive reproductive physiology. Source: CPC Short Courses.'
-      ),
+      ...embedPng(imgFile('figure_5_1_layer_hen.png'), 'Figure 5.1: Commercial white leghorn laying hen showing key external health indicators. A bright-red firm comb, alert eye, full feather coverage, and upright posture are the first signs to check on a barn walk. Source: CPC Short Courses.'),
 
       h2('5.2  The Reproductive Tract and Egg Formation'),
       para('The oviduct and egg formation process are covered in full in Section 3.5 above. A few production-specific points follow.'),
       para('The timing of the first egg is determined by light. Pullets are grown on short or declining photoperiods to delay sexual maturity until the target body weight and skeletal development are achieved. Stimulating ovulation too early, when the pullet is underweight and her bones are not fully developed, produces small eggs with poor shells and increases the risk of prolapse. Stimulating lay at the right time requires the pullet to have reached frame maturity and have adequate calcium reserves already laid down as medullary bone.'),
-      para('In broiler breeders, fertilization is the key output. The male must be in good physical condition, at the right body weight, and have adequate access to all females. The male-to-female ratio in floor-pen breeder operations is typically 1 male to 8 to 10 females [16]. Sperm can remain viable in the hen\'s sperm storage tubules at the junction of the infundibulum and uterus for up to two weeks, but fertility declines as the time since last mating increases.'),
+      para('In broiler breeders, fertilization is the key output. The male must be in good physical condition, at the right body weight, and have adequate access to all females. The male-to-female ratio in floor-pen breeder operations is typically 1 male to 8 to 10 females [16]. Sperm can remain viable in the hen\'s sperm storage tubules at the uterovaginal junction for up to two to three weeks, but fertility declines as the time since last mating increases.'),
 
       h2('5.3  Nutritional Needs for Laying and Fertility'),
-      para('A layer\'s calcium requirement is approximately 4 grams per day, far beyond what food intake at normal calcium concentrations can supply without supplementation. The diet must contain 3.5 to 4.5% calcium by weight, balanced with available phosphorus and vitamin D3 to support calcium absorption and bone metabolism [13,14]. Too little calcium and the skeleton pays. Too much, and kidney function can be compromised.'),
+      para('A layer needs roughly 4 grams of calcium every day, far more than feed alone can supply at normal calcium levels. The diet must contain 3.5 to 4.5% calcium by weight, balanced with available phosphorus and vitamin D3 to support calcium absorption and bone metabolism [13,14]. Too little calcium and the skeleton pays. Too much, and kidney function can be compromised.'),
       para('Vitamin D3 is not optional: it is required for active calcium absorption in the small intestine, for medullary bone formation, and for normal shell gland function. Layers raised indoors receive no UV light for natural vitamin D synthesis, so dietary supplementation is the only supply.'),
       para('Breeders require additional attention to vitamin E, selenium, folate, and biotin, all of which influence embryo viability and hatchability. Vitamin D3 deficiency in the breeder diet produces chicks that are weak and unable to stand normally in the hatchery. These are problems that trace back to the hen\'s nutrition, not to incubation conditions [16].'),
 
@@ -686,16 +726,16 @@ function buildSection6() {
       new Paragraph({ spacing: { before: 80, after: 0 } }),
 
       h2('6.1  Growth Patterns'),
-      para('Broilers follow a near-exponential growth curve in the first five to six weeks, depositing muscle faster than any other farm animal. At six weeks, a broiler may weigh 2.5 kg or more. A layer pullet of the same age weighs 350 to 500 g. A broiler breeder at six weeks weighs about 600 to 800 g because she has been feed-restricted to slow her growth toward the target body weight chart [16].'),
-      para('The growth curves diverge because the birds are eating completely different amounts. A broiler at four weeks consumes 90 to 110 g per day. A layer pullet of the same age on a restricted feeding program consumes 40 to 50 g per day. The difference is not just what is in the feed: it is how much the bird is allowed to eat.'),
+      para('Broilers follow a near-exponential growth curve in the first five to six weeks, depositing muscle faster than any other farm animal. A modern broiler reaches 2.5 kg or more in about 38 days; a heritage bird of the 1950s would have needed over 100 days for the same weight [22]. A layer pullet at six weeks weighs 350 to 500 g. A broiler breeder at six weeks weighs about 600 to 800 g because she has been feed-restricted to slow her growth toward the target body weight chart [16].'),
+      para('The growth curves diverge because the birds are eating completely different amounts. A broiler eats as much as it can; a layer pullet on a managed program eats a controlled ration designed to build frame without over-conditioning.'),
 
       h2('6.2  Body Structure'),
       para('Picking up a broiler and picking up a layer of similar age tells you immediately that these are not the same animal. The broiler is broad-chested, heavy, and often breathes with a slight effort even at rest. The layer is lean, narrow, active, and alert. The broiler\'s pectoral muscles are thick and fill the hand when you hold the bird. The layer\'s keel is prominent and easily palpable through lighter breast tissue.'),
       para('In breeders, the body structure sits between the two types: more breast muscle than a layer, but a leaner condition than a broiler because the feed restriction program has prevented the excess fat deposition that an unrestricted broiler-genetics bird would carry.'),
 
       h2('6.3  Metabolic Differences'),
-      para('Broilers partition nutrients toward protein deposition and rapid skeletal muscle growth. At the cellular level, broiler myoblasts proliferate faster and differentiate into muscle fibers more rapidly than layer or breeder myoblasts [12]. The broiler\'s metabolism is tuned to deposit muscle as quickly as the feed supply allows.'),
-      para('Layers partition nutrients toward the reproductive system. The daily calcium demand alone represents a significant fraction of total metabolic output. A high-producing layer is essentially running a continuous mineral and protein manufacturing process alongside her normal maintenance metabolism. Energy not needed for egg production is stored as fat in the liver and abdomen, which is why over-conditioning in cage environments becomes a problem.'),
+      para('Broilers put most of what they eat toward laying down protein and growing muscle fast. At the cellular level, broiler myoblasts proliferate faster and differentiate into muscle fibers more rapidly than layer or breeder myoblasts [12].'),
+      para('Layers push most of their feed energy toward egg production. Just keeping up with the daily calcium demand takes a big slice of everything the hen eats. A high-producing layer is running a continuous mineral and protein manufacturing process alongside her maintenance needs. Energy not directed toward eggs is stored as fat in the liver and abdomen, which is why over-conditioning in cage environments becomes a health problem.'),
       para('Breeders must balance both: enough muscle and body condition to be a functional broiler-genetics bird, and enough reproductive efficiency to produce the required number of fertile eggs over 40 weeks of production. This balance is maintained entirely through feed restriction and body weight monitoring.'),
 
       h2('6.4  Housing and Management Implications'),
@@ -723,11 +763,7 @@ function buildSection7() {
       para('Phase feeding matches nutrient supply to the bird\'s changing requirements. Feeding a broiler finisher diet in the first week costs amino acids the bird cannot use at that stage and shortchanges the starter requirements that drive early muscle deposition. Each phase transition should be timed to the bird\'s actual physiological stage, not just the calendar.'),
       para('For layers, calcium timing matters as much as calcium content. Providing coarse calcium sources such as oyster shell or limestone grit in the afternoon (not just in the complete feed) improves calcium availability at the time the hen needs it most, during overnight shell formation. Hens on a balanced layer diet but without coarse calcium access often show poorer shell quality late in the cycle [13].'),
 
-      ...photoPlaceholder(
-        'Photo 7.1',
-        'Close-up of poultry feed with varied particle sizes, showing crumble or mash texture alongside coarse limestone grit particles, illustrating practical particle-size management for gizzard development.',
-        'Photo 7.1: Feed particle size and grit availability affect gizzard development and digestive efficiency. Coarser particles or insoluble grit access in early brooding supports a well-developed gizzard throughout the grow-out. Source: CPC Short Courses.'
-      ),
+      ...embedPng(imgFile('figure_7_1_feed_grit.png'), 'Figure 7.1: Broiler crumble feed (left) compared to coarse insoluble limestone grit (right). Grit challenges the gizzard to develop its full grinding capacity. Providing insoluble grit in the first 10 to 14 days of brooding improves gizzard development and feed conversion. Source: CPC Short Courses.'),
 
       h2('7.2  Housing Adjustments'),
       para('The air sac system means ventilation is a basic respiratory health requirement, not a comfort measure. Ammonia above 10 ppm is actively destroying the primary immune defense of every bird in the house. In cold weather, the temptation is to close up and conserve heat. A warm barn with 50 ppm ammonia is far more damaging to the flock than a slightly cooler barn with clean air [2].'),
@@ -781,11 +817,11 @@ function buildSection8() {
       bullet('Pneumatic bones are connected to the air sac system. A broken humerus or keel can directly affect breathing.'),
 
       h2('The Circulatory System'),
-      bullet('Resting heart rate approximately 245 beats per minute. Body temperature 41 to 42°C.'),
+      bullet('Resting heart rate approximately 250 to 300 beats per minute. Body temperature 41 to 42°C [20].'),
       bullet('The broiler\'s cardiovascular system grows more slowly than its muscle mass after week three. This is the root cause of ascites and Sudden Death Syndrome.'),
 
       h2('The Skeletal and Muscular Systems'),
-      bullet('Modern broiler breast muscle accounts for 21 to 29% of body weight and has grown eight times in absolute size since 1955. Fast growth outpacing blood supply causes woody breast.'),
+      bullet('Modern broiler breast muscle accounts for 21 to 29% of body weight, up from roughly 9% in heritage birds of the 1950s [22]. Fast growth outpacing blood supply causes woody breast.'),
       bullet('Medullary bone in layers is a labile calcium bank, deposited and resorbed every 24 hours to supply calcium for eggshell formation.'),
       bullet('Inadequate dietary calcium in layers leads to osteoporosis and fractures, not just poor shell quality.'),
 
@@ -831,9 +867,9 @@ function buildReferencesSection() {
       numberedRef('Ascites Syndrome in Poultry. In: Merck Veterinary Manual [Internet]. Merck Sharp & Dohme LLC; [cited 2026 May]. Available from: merckvetmanual.com/poultry/miscellaneous-conditions-of-poultry/ascites-syndrome-in-poultry'),
       numberedRef('Aviagen. Gut Health in Poultry: The World Within, Gut Health Update [Technical Article]. Aviagen; 2019. Available from: aviagen.com'),
       numberedRef('Zhao J, Guo Y, Yuan J, et al. Comparative analysis of the characteristics of digestive organs in broiler chickens with different feed efficiencies. Front Vet Sci. 2022;9:1012789. Available from: pmc.ncbi.nlm.nih.gov/articles/PMC9579418/'),
-      numberedRef('Ghosh S, Mehta A, Bhut S. Nutrition and Digestive Physiology of the Broiler Chick: A Developmental Perspective. Animals (Basel). 2021;11(10):2910. Available from: pmc.ncbi.nlm.nih.gov/articles/PMC8532940/'),
+      numberedRef('Ravindran V, Abdollahi MR. Nutrition and Digestive Physiology of the Broiler Chick: State of the Art and Outlook. Animals (Basel). 2021;11(10):2795. Available from: pmc.ncbi.nlm.nih.gov/articles/PMC8532940/'),
       numberedRef('Paxton H, Daley MA, Corr SA, Hutchinson JR. Anatomical and biomechanical traits of broiler chickens across ontogeny. Part I: Anatomy of the musculoskeletal respiratory apparatus and changes in organ size. PeerJ. 2014;2:e432. Available from: pmc.ncbi.nlm.nih.gov/articles/PMC4103091/'),
-      numberedRef('Zheng Q, Bhatt DL, Bhatt S. Systematic identification of genes involved in divergent skeletal muscle growth rates of broiler and layer chickens. BMC Genomics. 2009;10:87. Available from: pmc.ncbi.nlm.nih.gov/articles/PMC2656524/'),
+      numberedRef('Zheng Q, Zhang Y, Chen Y, Yang N, Wang XJ, Zhu D. Systematic identification of genes involved in divergent skeletal muscle growth rates of broiler and layer chickens. BMC Genomics. 2009;10:87. Available from: pmc.ncbi.nlm.nih.gov/articles/PMC2656524/'),
       numberedRef('Liu Z, Liu H, Draghici M, et al. Physiological regulation of calcium and phosphorus utilization in laying hens: a review. Poult Sci. 2023;102(3):102430. Available from: pmc.ncbi.nlm.nih.gov/articles/PMC9942826/'),
       numberedRef('Whitehead CC. Overview of bone biology in the egg-laying hen. Poult Sci. 2004;83(2):193-199. Available from: pubmed.ncbi.nlm.nih.gov/14979569/'),
       numberedRef('Diseases of Poultry, 14th Edition. Ames (IA): Wiley-Blackwell; 2020.'),
@@ -841,6 +877,9 @@ function buildReferencesSection() {
       numberedRef('Bell DD, Weaver WD Jr. Commercial Chicken Meat and Egg Production. 5th ed. Norwell (MA): Springer; 2002.'),
       numberedRef('Spotting Disease Early [Flock Management Guide]. CPC Learning Centre; [cited 2026 May]. Available from: cpclearningcentre.ca'),
       numberedRef('McIlwee M. CPC Lighting Program Guidelines for Broilers 2026 [Technical Bulletin]. CPC Learning Centre; 2026. Available from: cpclearningcentre.ca'),
+      numberedRef('Resting Heart Rates. MSD Veterinary Manual [Internet]. Merck Sharp and Dohme LLC; [cited 2026 May]. Available from: msdvetmanual.com/multimedia/table/resting-heart-rates'),
+      numberedRef('National Farm Animal Care Council. Code of Practice for the Care and Handling of Hatching Eggs, Breeders, Chickens, and Turkeys. Lacombe (AB): NFACC; 2016. Available from: nfacc.ca'),
+      numberedRef('Havenstein GB, Ferket PR, Qureshi MA. Growth, efficiency, and yield of commercial broilers from 1957, 1978, and 2005. Poult Sci. 2003;82(10):1500-1508.'),
     ],
   };
 }
@@ -958,7 +997,7 @@ async function main() {
     { lvl: 2, text: 'The Reproductive System',                                                 page: 31 },
     { lvl: 2, text: 'Management Takeaways',                                                    page: 31 },
     { lvl: 1, text: 'Recommended Peer-Reviewed Journals',                                      page: 32 },
-    { lvl: 1, text: 'References',                                                              page: 33 },
+    { lvl: 1, text: 'References',                                                              page: 34 },
   ].map((e, i) => ({ ...e, anchor: `_Toc${String(100000 + i).padStart(8, '0')}` }));
 
   function escapeXml(s) {
