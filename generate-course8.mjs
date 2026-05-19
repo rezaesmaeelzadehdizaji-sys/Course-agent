@@ -62,16 +62,20 @@ function run(text, opts = {}) {
 
 function para(text, opts = {}) {
   const children = Array.isArray(text)
-    ? text.map(seg => new TextRun({
-        text:        seg.text,
-        bold:        seg.bold        || false,
-        italics:     seg.italics     || false,
-        color:       seg.color       || BODY,
-        size:        seg.size        || 24,
-        font:        'Calibri',
-        subScript:   seg.subScript   || false,
-        superScript: seg.superScript || false,
-      }))
+    ? text.map(seg =>
+        (seg instanceof TextRun)
+          ? seg
+          : new TextRun({
+              text:        seg.text,
+              bold:        seg.bold        || false,
+              italics:     seg.italics     || false,
+              color:       seg.color       || BODY,
+              size:        seg.size        || 24,
+              font:        'Calibri',
+              subScript:   seg.subScript   || false,
+              superScript: seg.superScript || false,
+            })
+      )
     : [run(text, { bold: opts.bold, italics: opts.italics, color: opts.color, size: opts.size })];
   return new Paragraph({
     children,
@@ -583,9 +587,9 @@ function buildContentSection() {
 
   c.push(labeled('Vaccinate on feed days:', ' Birds drink more actively when feed is available. The CPC Learning Centre Water Vaccination guide specifies: vaccinate on feed days [1].'));
 
-  c.push(labeled('Delivering the vaccine by drinker type [1]:',
-    '\n    Bell drinkers, troughs, and cups: pour the prepared vaccine solution directly into each drinker by hand.\n    Nipple drinker systems: transfer the vaccine from a tank to the water lines using a sump pump (approximately 1/3 horsepower) or by gravity feed. Open the water line at the far end of the barn and close it when the white milk-vaccine solution is visible coming out the end. This confirms the entire line is primed with vaccine solution.'
-  ));
+  c.push(labeled('Delivering the vaccine by drinker type [1]:', ' Match the delivery method to your drinker system:'));
+  c.push(bullet('Bell drinkers, troughs, and cups: pour the prepared vaccine solution directly into each drinker by hand.'));
+  c.push(bullet('Nipple drinker systems: transfer the vaccine from a tank to the water lines using a sump pump (approximately 1/3 horsepower) or by gravity feed. Open the water line at the far end of the barn and close it when the white milk-vaccine solution is visible coming out the end. This confirms the entire line is primed with vaccine solution.'));
 
   c.push(labeled('Walk the barn:', ' Once vaccine solution is available in the drinkers, walk through the barn to encourage birds to move and drink [1]. Birds at rest will not self-direct to the drinkers in the numbers needed. Active stimulation increases uptake. A well-vaccinated flock is one where birds are actively drinking, not one where the solution was simply available.'));
 
@@ -1002,7 +1006,7 @@ function buildContentSection() {
     'Canadian Poultry Consultants. Infectious Bursal Disease (IBD): Causative Agent, Diagnosis and Prevention [Disease Profile]. CPC Learning Centre; [cited 2026 May]. Available from: cpclearningcentre.ca',
     'Montiel E. Troubleshooting a Marek\'s Disease Outbreak [Technical Bulletin]. CPC Learning Centre; [cited 2026 May]. Available from: cpclearningcentre.ca',
     'Saif YM, Fadly AM, Glisson JR, McDougald LR, Nolan LK, Swayne DE, editors. Diseases of Poultry. 14th ed. Ames, Iowa: Wiley-Blackwell; 2022.',
-    'Merck Veterinary Manual. Vaccination of Poultry. Kenilworth, NJ: Merck &amp; Co.; 2023 [cited 2026 May]. Available from: merckvetmanual.com',
+    'Merck Veterinary Manual. Vaccination of Poultry. Kenilworth, NJ: Merck & Co.; 2023 [cited 2026 May]. Available from: merckvetmanual.com',
   ];
 
   refs.forEach((ref, i) => {
