@@ -233,7 +233,7 @@ function fig2_1() {
   <rect x="20"  y="186" width="220" height="82" rx="6" fill="${C.lightBlue}" stroke="${C.medBlue}" stroke-width="1.5"/>
   <text x="130" y="212" text-anchor="middle" fill="${C.darkBlue}" font-family="Arial, sans-serif" font-size="15" font-weight="bold">WATER</text>
   <text x="130" y="231" text-anchor="middle" fill="${C.gray}" font-family="Arial, sans-serif" font-size="11">1.6–1.8x feed intake</text>
-  <text x="130" y="249" text-anchor="middle" fill="${C.gray}" font-family="Arial, sans-serif" font-size="11">Tens of 000s L/day</text>
+  <text x="130" y="249" text-anchor="middle" fill="${C.gray}" font-family="Arial, sans-serif" font-size="11">20,000+ litres/day</text>
 
   <rect x="260" y="186" width="260" height="82" rx="6" fill="#FFEBEE" stroke="${C.red}" stroke-width="1"/>
   <text x="390" y="208" text-anchor="middle" fill="${C.red}" font-family="Arial, sans-serif" font-size="11" font-weight="bold">&#10006; Waste Points</text>
@@ -244,7 +244,7 @@ function fig2_1() {
   <rect x="540" y="186" width="240" height="82" rx="6" fill="${C.lightGreen}" stroke="${C.green}" stroke-width="1"/>
   <text x="660" y="208" text-anchor="middle" fill="${C.green}" font-family="Arial, sans-serif" font-size="11" font-weight="bold">&#10004; Efficiency Actions</text>
   <text x="550" y="226" fill="${C.gray}" font-family="Arial, sans-serif" font-size="11">• Daily water meter readings</text>
-  <text x="550" y="244" fill="${C.gray}" font-family="Arial, sans-serif" font-size="11">• Calibrate nipple pressure (cm WC)</text>
+  <text x="550" y="244" fill="${C.gray}" font-family="Arial, sans-serif" font-size="11">• Calibrate nipple pressure by age</text>
   <text x="550" y="262" fill="${C.gray}" font-family="Arial, sans-serif" font-size="11">• Flush lines between flocks</text>
 
   <!-- ROW 3: ENERGY -->
@@ -256,7 +256,7 @@ function fig2_1() {
   <rect x="260" y="282" width="260" height="82" rx="6" fill="#FFEBEE" stroke="${C.red}" stroke-width="1"/>
   <text x="390" y="304" text-anchor="middle" fill="${C.red}" font-family="Arial, sans-serif" font-size="11" font-weight="bold">&#10006; Waste Points</text>
   <text x="270" y="322" fill="${C.gray}" font-family="Arial, sans-serif" font-size="11">• Insulation gaps in barn walls</text>
-  <text x="270" y="340" fill="${C.gray}" font-family="Arial, sans-serif" font-size="11">• Incandescent/T8 lighting</text>
+  <text x="270" y="340" fill="${C.gray}" font-family="Arial, sans-serif" font-size="11">• Incandescent/CFL lighting</text>
   <text x="270" y="358" fill="${C.gray}" font-family="Arial, sans-serif" font-size="11">• Fixed-speed fans in mild weather</text>
 
   <rect x="540" y="282" width="240" height="82" rx="6" fill="${C.lightGreen}" stroke="${C.green}" stroke-width="1"/>
@@ -270,7 +270,7 @@ function fig2_1() {
   <text x="400" y="396" text-anchor="middle" fill="${C.darkBlue}" font-family="Arial, sans-serif" font-size="12" font-weight="bold">Key Metric: A 0.1-point FCR improvement on 20,000 birds = meaningful cost reduction per kg gain.</text>
   <text x="400" y="413" text-anchor="middle" fill="${C.gray}" font-family="Arial, sans-serif" font-size="11">Every resource saved is a direct profit improvement — efficiency and sustainability are the same goal.</text>
 
-  ${caption(W, H, 'Figure 2.1  |  CPC Short Courses — Course 5: Sustainability in Poultry Farming')}
+  ${caption(W, H, 'Figure 2.2  |  CPC Short Courses — Course 5: Sustainability in Poultry Farming')}
 </svg>`;
 }
 
@@ -787,12 +787,12 @@ function fig2_3() {
 
   <!-- Incandescent bar (100%) -->
   <rect x="110" y="65" width="120" height="215" rx="4" fill="#FF8F00" opacity="0.85"/>
-  <text x="170" y="57" text-anchor="middle" fill="#FF8F00" font-family="Arial, sans-serif" font-size="13" font-weight="bold">100%</text>
+  <text x="170" y="88" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="13" font-weight="bold">100%</text>
   <text x="170" y="300" text-anchor="middle" fill="${C.gray}" font-family="Arial, sans-serif" font-size="11">Incandescent</text>
 
-  <!-- CFL bar (~55%) -->
-  <rect x="270" y="162" width="120" height="118" rx="4" fill="${C.amber}" opacity="0.85"/>
-  <text x="330" y="154" text-anchor="middle" fill="${C.amber}" font-family="Arial, sans-serif" font-size="13" font-weight="bold">~55%</text>
+  <!-- CFL bar (~30% of incandescent; saves ~70%) -->
+  <rect x="270" y="215" width="120" height="65" rx="4" fill="${C.amber}" opacity="0.85"/>
+  <text x="330" y="207" text-anchor="middle" fill="${C.amber}" font-family="Arial, sans-serif" font-size="13" font-weight="bold">~30%</text>
   <text x="330" y="300" text-anchor="middle" fill="${C.gray}" font-family="Arial, sans-serif" font-size="11">CFL</text>
 
   <!-- LED bar (~20% of incandescent = 80% savings) -->
@@ -801,7 +801,7 @@ function fig2_3() {
   <text x="490" y="300" text-anchor="middle" fill="${C.gray}" font-family="Arial, sans-serif" font-size="11">LED</text>
 
   <!-- Savings callout -->
-  <rect x="560" y="65" width="220" height="200" rx="8" fill="${C.lightGreen}" stroke="${C.green}" stroke-width="1.5"/>
+  <rect x="560" y="65" width="220" height="230" rx="8" fill="${C.lightGreen}" stroke="${C.green}" stroke-width="1.5"/>
   <text x="670" y="86" text-anchor="middle" fill="${C.green}" font-family="Arial, sans-serif" font-size="13" font-weight="bold">LED Advantage</text>
   <line x1="570" y1="92" x2="770" y2="92" stroke="${C.green}" stroke-width="1"/>
   <text x="575" y="112" fill="${C.gray}" font-family="Arial, sans-serif" font-size="11">&#9679; 75–85% energy savings</text>
@@ -818,7 +818,7 @@ function fig2_3() {
   <rect x="20" y="312" width="760" height="30" rx="6" fill="${C.lightGold}" stroke="${C.gold}" stroke-width="1.5"/>
   <text x="400" y="331" text-anchor="middle" fill="${C.darkBlue}" font-family="Arial, sans-serif" font-size="11">LED savings per cycle compound across every flock run. Source: Tabler et al. 2019 (MSU Ext. P2894); Hein 2025 (Canadian Poultry Magazine).</text>
 
-  ${caption(W, H, 'Figure 2.3  |  CPC Short Courses — Course 5: Sustainability in Poultry Farming')}
+  ${caption(W, H, 'Figure 2.1  |  CPC Short Courses — Course 5: Sustainability in Poultry Farming')}
 </svg>`;
 }
 
