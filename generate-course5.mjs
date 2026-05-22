@@ -644,7 +644,7 @@ function buildSection5() {
       h2('5.3  Affordable Renewable Energy: Solar and Biogas'),
       para('Solar photovoltaic systems and anaerobic digestion (biogas) are the two renewable energy options most relevant for Canadian poultry farms right now. Both cost money to set up, but the numbers look a lot better than they did ten years ago as equipment has gotten cheaper and government programs have expanded [19].'),
       h3('Solar Photovoltaic Systems'),
-      para('Commercial poultry barns have large roof areas, often south-facing, that are well-suited to solar panel installation. Under Ontario\'s net metering program and similar programs in other provinces, surplus electricity generated on the farm is credited back at the full retail rate, and farms with larger installations have seen their hydro bills drop noticeably [18]. The federal Agricultural Clean Technology Program can help pay for on-farm solar and other renewable energy projects, with non-repaid funding that usually covers around forty percent of eligible costs for most farms [19].'),
+      para('Many commercial poultry barns have large roof areas that may be appropriate for solar panel installation. In BC, BC Hydro\'s self-generation program lets farms use on-site solar to offset electricity bills and receive credits for excess generation, with any remaining annual surplus paid out at market price rather than the full retail rate [26]. Federal support has also been available through the Agricultural Clean Technology Program, which provided non-repayable contributions of up to 40% of eligible costs for most farms, although that intake is now closed [19].'),
       para('Before you jump into solar, there are a few practical checks to do.'),
       bullet('Get your barn roof checked by someone who understands loads and snow, to be sure it can safely carry the extra weight of solar panels, since older roofs may need some strengthening first.'),
       bullet('Look into your provincial net metering rules and what your local power company requires for hooking up solar, because programs and paperwork can be quite different from one province or utility to another.'),
@@ -837,6 +837,7 @@ function buildReferencesSection() {
       numberedRef('McIlwee M. Lighting Program Guidelines for Broilers [Flock Management Guide]. CPC Learning Centre; 2026. Available from: cpclearningcentre.ca'),
       numberedRef('Spotting Disease Early [Flock Management Guide]. CPC Learning Centre. Available from: cpclearningcentre.ca'),
       numberedRef('Province of British Columbia. Mortality Management [Internet]. Victoria: Government of British Columbia; [cited 2026 May]. Available from: https://www2.gov.bc.ca/gov/content/industry/agriculture-seafood/agricultural-land-and-environment/agricultural-waste-management/mortality-management'),
+      numberedRef('Canadian Poultry Magazine. B.C. egg farm getting federal funding for solar project [Internet]. [cited 2026 May]. Available from: https://www.canadianpoultrymag.com/b-c-egg-farm-getting-federal-funding-for-solar-project/'),
     ],
   };
 }
