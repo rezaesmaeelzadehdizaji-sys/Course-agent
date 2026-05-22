@@ -559,48 +559,26 @@ function fig6_1() {
 // ============================================================
 function fig7_1() {
   const W = 800, H = 500;
-  const cx = 400, cy = 242;
-  const r  = 115;
-  // 4 steps: top, right, bottom, left
-  const steps = [
-    { angle:  -90, color: C.medBlue,  light: C.lightBlue,  num: '1', main: 'MEASURE',   sub: 'Record baseline\nFCR, water, energy,\nlitter condition' },
-    { angle:    0, color: C.orange,   light: C.lightOrange, num: '2', main: 'IDENTIFY',  sub: 'Find the gap\nCompare to targets\nRank by impact' },
-    { angle:   90, color: C.green,    light: C.lightGreen,  num: '3', main: 'IMPLEMENT', sub: 'One change\nper cycle\nKeep it specific' },
-    { angle:  180, color: C.amber,    light: C.lightAmber,  num: '4', main: 'TRACK',     sub: 'Compare result\nto baseline\nShare with vet' },
-  ];
+  // Box dimensions and corner positions (top-left origin)
+  const bw = 156, bh = 90;
+  // Boxes at four corners; center circle at (400, 240)
+  // Box 1 top-left, Box 2 top-right, Box 3 bottom-right, Box 4 bottom-left
+  const s1 = { bx: 97,  by: 80,  num: '1', main: 'MEASURE',   sub: ['Record baseline FCR,', 'water, energy,', 'litter condition'], color: C.medBlue,  light: C.lightBlue };
+  const s2 = { bx: 547, by: 80,  num: '2', main: 'IDENTIFY',  sub: ['Find the gap',          'Compare to targets', 'Rank by impact'],    color: C.orange,   light: C.lightOrange };
+  const s3 = { bx: 547, by: 320, num: '3', main: 'IMPLEMENT', sub: ['One change per cycle',  'Keep it specific',  ''],                   color: C.green,    light: C.lightGreen };
+  const s4 = { bx: 97,  by: 320, num: '4', main: 'TRACK',     sub: ['Compare result to',     'baseline',          'Share with vet'],     color: C.amber,    light: C.lightAmber };
 
-  let nodes = '', arrows = '';
-  steps.forEach((s, i) => {
-    const rad = s.angle * Math.PI / 180;
-    const nx  = cx + r * Math.cos(rad);
-    const ny  = cy + r * Math.sin(rad);
-    // Box
-    const bw = 140, bh = 88;
-    const bx = nx - bw / 2, by = ny - bh / 2;
-    nodes += `<rect x="${bx.toFixed(0)}" y="${by.toFixed(0)}" width="${bw}" height="${bh}" rx="8" fill="${s.light}" stroke="${s.color}" stroke-width="2.5"/>`;
-    nodes += `<circle cx="${(bx + 16).toFixed(0)}" cy="${(by + 16).toFixed(0)}" r="12" fill="${s.color}"/>`;
-    nodes += `<text x="${(bx + 16).toFixed(0)}" y="${(by + 21).toFixed(0)}" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="13" font-weight="bold">${s.num}</text>`;
-    nodes += `<text x="${nx.toFixed(0)}" y="${(by + 24).toFixed(0)}" text-anchor="middle" fill="${s.color}" font-family="Arial, sans-serif" font-size="14" font-weight="bold">${s.main}</text>`;
-    // Sub-text lines
-    const subLines = s.sub.split('\n');
-    subLines.forEach((ln, li) => {
-      nodes += `<text x="${nx.toFixed(0)}" y="${(by + 44 + li * 15).toFixed(0)}" text-anchor="middle" fill="${C.gray}" font-family="Arial, sans-serif" font-size="11">${ln}</text>`;
-    });
-
-    // Arc arrow to next step
-    const next = steps[(i + 1) % 4];
-    const nextRad = next.angle * Math.PI / 180;
-    const midAngle = (s.angle + (next.angle - s.angle + 360) % 360 / 2) * Math.PI / 180;
-    // Arrow on the circle between nodes, inset by 75px
-    const ar = r - 2;
-    const startAngle = (s.angle + 45) * Math.PI / 180;
-    const endAngle   = (next.angle - 45) * Math.PI / 180;
-    const ax1 = cx + ar * Math.cos(startAngle);
-    const ay1 = cy + ar * Math.sin(startAngle);
-    const ax2 = cx + ar * Math.cos(endAngle);
-    const ay2 = cy + ar * Math.sin(endAngle);
-    arrows += `<path d="M ${ax1.toFixed(0)} ${ay1.toFixed(0)} A ${ar} ${ar} 0 0 1 ${ax2.toFixed(0)} ${ay2.toFixed(0)}" stroke="${C.gold}" stroke-width="2.5" fill="none" marker-end="url(#cyc7)"/>`;
-  });
+  function stepBox(s) {
+    const mcx = s.bx + bw / 2;
+    return `
+    <rect x="${s.bx}" y="${s.by}" width="${bw}" height="${bh}" rx="8" fill="${s.light}" stroke="${s.color}" stroke-width="2.5"/>
+    <circle cx="${s.bx + 16}" cy="${s.by + 16}" r="12" fill="${s.color}"/>
+    <text x="${s.bx + 16}" y="${s.by + 21}" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="13" font-weight="bold">${s.num}</text>
+    <text x="${mcx}" y="${s.by + 33}" text-anchor="middle" fill="${s.color}" font-family="Arial, sans-serif" font-size="13" font-weight="bold">${s.main}</text>
+    ${s.sub[0] ? `<text x="${mcx}" y="${s.by + 51}" text-anchor="middle" fill="${C.gray}" font-family="Arial, sans-serif" font-size="10">${s.sub[0]}</text>` : ''}
+    ${s.sub[1] ? `<text x="${mcx}" y="${s.by + 64}" text-anchor="middle" fill="${C.gray}" font-family="Arial, sans-serif" font-size="10">${s.sub[1]}</text>` : ''}
+    ${s.sub[2] ? `<text x="${mcx}" y="${s.by + 77}" text-anchor="middle" fill="${C.gray}" font-family="Arial, sans-serif" font-size="10">${s.sub[2]}</text>` : ''}`;
+  }
 
   return `<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}">
   <rect width="${W}" height="${H}" fill="white"/>
@@ -611,22 +589,32 @@ function fig7_1() {
     </marker>
   </defs>
 
-  <!-- Arcs first (behind nodes) -->
-  ${arrows}
+  <!-- Arrows drawn first so boxes sit on top -->
+  <!-- 1 to 2: rightward across top (y=125 = vertical center of top boxes) -->
+  <line x1="255" y1="125" x2="543" y2="125" stroke="${C.gold}" stroke-width="2.5" marker-end="url(#cyc7)"/>
+  <!-- 2 to 3: downward on right side -->
+  <line x1="625" y1="172" x2="625" y2="316" stroke="${C.gold}" stroke-width="2.5" marker-end="url(#cyc7)"/>
+  <!-- 3 to 4: leftward across bottom (y=365 = vertical center of bottom boxes) -->
+  <line x1="545" y1="365" x2="257" y2="365" stroke="${C.gold}" stroke-width="2.5" marker-end="url(#cyc7)"/>
+  <!-- 4 to 1: upward on left side (completes the cycle) -->
+  <line x1="175" y1="318" x2="175" y2="174" stroke="${C.gold}" stroke-width="2.5" marker-end="url(#cyc7)"/>
 
   <!-- Center -->
-  <circle cx="${cx}" cy="${cy}" r="55" fill="${C.darkBlue}" stroke="${C.gold}" stroke-width="2"/>
-  <text x="${cx}" y="${cy - 10}" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="13" font-weight="bold">Continuous</text>
-  <text x="${cx}" y="${cy + 8}" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="13" font-weight="bold">Improvement</text>
-  <text x="${cx}" y="${cy + 25}" text-anchor="middle" fill="${C.gold}" font-family="Arial, sans-serif" font-size="11">Per cycle</text>
+  <circle cx="400" cy="240" r="55" fill="${C.darkBlue}" stroke="${C.gold}" stroke-width="2"/>
+  <text x="400" y="230" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="13" font-weight="bold">Continuous</text>
+  <text x="400" y="247" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="13" font-weight="bold">Improvement</text>
+  <text x="400" y="263" text-anchor="middle" fill="${C.gold}" font-family="Arial, sans-serif" font-size="11">Per grow-out</text>
 
-  <!-- Step nodes -->
-  ${nodes}
+  <!-- Step boxes -->
+  ${stepBox(s1)}
+  ${stepBox(s2)}
+  ${stepBox(s3)}
+  ${stepBox(s4)}
 
   <!-- Bottom note -->
-  <rect x="20" y="418" width="760" height="42" rx="6" fill="${C.lightGold}" stroke="${C.gold}" stroke-width="1.5"/>
-  <text x="400" y="436" text-anchor="middle" fill="${C.darkBlue}" font-family="Arial, sans-serif" font-size="12" font-weight="bold">Apply to: Feed efficiency  ·  Water management  ·  Litter quality  ·  Energy use  ·  Flock health</text>
-  <text x="400" y="453" text-anchor="middle" fill="${C.gray}" font-family="Arial, sans-serif" font-size="11">Share results with your veterinarian and fieldperson — they can help interpret what you are seeing across other farms.</text>
+  <rect x="20" y="428" width="760" height="40" rx="6" fill="${C.lightGold}" stroke="${C.gold}" stroke-width="1.5"/>
+  <text x="400" y="446" text-anchor="middle" fill="${C.darkBlue}" font-family="Arial, sans-serif" font-size="12" font-weight="bold">Apply to: Feed efficiency  ·  Water management  ·  Litter quality  ·  Energy use  ·  Flock health</text>
+  <text x="400" y="462" text-anchor="middle" fill="${C.gray}" font-family="Arial, sans-serif" font-size="11">Share results with your veterinarian and fieldperson. They can help interpret what you are seeing across other farms.</text>
 
   ${caption(W, H, 'Figure 7.1  |  CPC Short Courses — Course 5: Sustainability in Poultry Farming')}
 </svg>`;
