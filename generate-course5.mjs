@@ -681,7 +681,7 @@ function buildSection6() {
       h2('6.2  Market Value and Consumer Trust'),
       para('The demand for chicken is not going away, but what buyers and retailers expect from the farms behind it is changing. Organic and premium segments have grown steadily, and the retailers running those programs are pushing their requirements further down the supply chain [20]. Most consumers never see a farm. They trust the certification or the label their store puts in front of them, and those labels are increasingly tied to documented farm-level compliance.'),
       para('This matters to you because your integrator is already being required by its retail customers to show that contracted farms meet defined environmental and welfare standards. Farms with documented records, a clean compliance history, low medication use, and participation in animal care programs are in a stronger position when contract renewals come around [6,10].'),
-      para('Third-party certification programs in Canada, including Certified Canadian Chicken, require farms to meet documented standards for feed, water, housing, ventilation, animal welfare, and environmental compliance. If you are already running a tight, well-documented operation, meeting those standards is not extra work. The program is just catching up to what you are already doing.'),
+      para('Third-party audited chicken programs in Canada, including Chicken Farmers of Canada\'s Raised by a Canadian Farmer Animal Care and On-Farm Food Safety programs, require farms to meet documented standards for bird care, feed and water management, biosecurity, cleanliness, flock monitoring, and record keeping. If you are already running a tight, well-documented operation, the standards may feel familiar, but certification still means proving that work through the required records and audits [28].'),
 
       h2('6.3  Long-Term Farm Resilience'),
       para('Twenty years from now, the farms still running profitably will be the ones where the farmer was already thinking about input costs, regulations, and market access today. That is not a prediction. It is just what tends to happen when you manage resources carefully rather than reactively.'),
@@ -839,6 +839,7 @@ function buildReferencesSection() {
       numberedRef('Province of British Columbia. Mortality Management [Internet]. Victoria: Government of British Columbia; [cited 2026 May]. Available from: https://www2.gov.bc.ca/gov/content/industry/agriculture-seafood/agricultural-land-and-environment/agricultural-waste-management/mortality-management'),
       numberedRef('Canadian Poultry Magazine. B.C. egg farm getting federal funding for solar project [Internet]. [cited 2026 May]. Available from: https://www.canadianpoultrymag.com/b-c-egg-farm-getting-federal-funding-for-solar-project/'),
       numberedRef('Clarke S, Ward D. Energy-efficient lighting for poultry housing [Factsheet 17-020]. Toronto: Ontario Ministry of Agriculture, Food and Rural Affairs; 2017. ISSN 1198-712X.'),
+      numberedRef('Chicken Farmers of Canada. High Animal Care Standards [Internet]. Ottawa: Chicken Farmers of Canada; [cited 2026 May]. Available from: https://www.chickenfarmers.ca/high-animal-care-standards/'),
     ],
   };
 }
