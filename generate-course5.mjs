@@ -628,7 +628,7 @@ function buildSection5() {
       h2('5.1  Composting and Reuse of Materials'),
       para('Composting is one of the most practical sustainability tools available to poultry farmers, and it works for both litter and dead birds [3]. Done right, it kills pathogens, cuts odor, reduces the volume of material you need to move, and turns what would otherwise be a disposal problem into a fertilizer product that is easier to spread and more consistent in its effect on the crop than raw litter.'),
       h3('In-Barn Mortality Composting'),
-      para('A mortality composting bin inside the barn, or in a covered area beside it, handles your daily dead birds without needing off-farm disposal. Cover each layer of birds with dry litter to keep the balance right, check the pile temperature to make sure it is hitting 55 degrees Celsius or above for at least three days straight (that is what kills the pathogens), and turn it periodically so it keeps breaking down. Get that right and you eliminate the daily haul to a refrigerated bin, which saves labor and cuts a significant source of odor near the barn entry [3].'),
+      para('A covered mortality composting bin in a dedicated area beside the barn can manage routine day-to-day mortalities on the farm. Each layer should be covered with dry litter or another carbon source, the pile should be monitored to ensure active composting temperatures are reached, and the material should be moved at the right stage so the process finishes properly. When well managed, this approach can reduce labour, improve daily mortality handling, and help control odour, although farms facing higher disease pressure or stricter biosecurity demands may prefer an incinerator for faster carcass disposal [25].'),
       h3('Between-Flock Windrow Composting'),
       para('If you clean out between flocks, windrow composting the removed litter on a pad or in a covered area turns it into a more stable fertilizer with far fewer pathogens before it goes on the land. It also shrinks the volume you need to haul, which cuts transport costs [3].'),
       h3('Partial Litter Reuse'),
@@ -836,6 +836,7 @@ function buildReferencesSection() {
       numberedRef('Leslie M. Drinking Water Management [Technical Bulletin]. CPC Learning Centre; 2011. Available from: cpclearningcentre.ca'),
       numberedRef('McIlwee M. Lighting Program Guidelines for Broilers [Flock Management Guide]. CPC Learning Centre; 2026. Available from: cpclearningcentre.ca'),
       numberedRef('Spotting Disease Early [Flock Management Guide]. CPC Learning Centre. Available from: cpclearningcentre.ca'),
+      numberedRef('Province of British Columbia. Mortality Management [Internet]. Victoria: Government of British Columbia; [cited 2026 May]. Available from: https://www2.gov.bc.ca/gov/content/industry/agriculture-seafood/agricultural-land-and-environment/agricultural-waste-management/mortality-management'),
     ],
   };
 }
