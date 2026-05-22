@@ -608,7 +608,6 @@ function buildSection4() {
       bullet([{ text: 'Light management: ', bold: true }, { text: 'Use a slow dimming at the end of the day so birds can settle calmly and you see less panicking and piling. Give them real dark time to rest; that supports growth and welfare. And avoid sudden light changes, especially during catching, since that is where panic injuries happen that hurt carcass quality at the plant [4].' }]),
       bullet([{ text: 'Feed and water access: ', bold: true }, { text: 'Interruptions to feed or water access, even for a few hours, cause birds to gorge when access comes back, and that hurts FCR. Check feeders and drinkers every morning, not just when you think there might be a problem.' }]),
       bullet([{ text: 'Temperature management: ', bold: true }, { text: 'Birds at the wrong temperature will show you immediately: panting and wing spreading mean heat stress, huddling near the brooders means cold. Either way, energy that should be going into growth is going into staying comfortable instead, and prolonged thermal stress pushes up mortality [4,9].' }]),
-      ...image(figBuf('fig4_1.png'), 'Figure 4.1: Litter moisture cause-and-effect chain. Poor ventilation, drinker leaks, enteric disease, and high stocking density drive litter moisture above 30%. The resulting welfare consequences include footpad dermatitis, breast blisters, elevated ammonia, increased disease pressure, and performance loss. Target: 20 to 25% litter moisture throughout the grow-out.'),
       pageBreak(),
     ],
   };
