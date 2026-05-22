@@ -523,11 +523,12 @@ function fig6_1() {
   <text x="283" y="148" fill="${C.gray}" font-family="Arial, sans-serif" font-size="12">&#9679; Better contract position</text>
   <text x="283" y="168" fill="${C.gray}" font-family="Arial, sans-serif" font-size="12">   with integrator</text>
   <text x="283" y="188" fill="${C.gray}" font-family="Arial, sans-serif" font-size="12">&#9679; Third-party certification</text>
-  <text x="283" y="208" fill="${C.gray}" font-family="Arial, sans-serif" font-size="12">   access (e.g. CCC)</text>
+  <text x="283" y="208" fill="${C.gray}" font-family="Arial, sans-serif" font-size="12">   access (e.g. CFC On-Farm)</text>
   <text x="283" y="228" fill="${C.gray}" font-family="Arial, sans-serif" font-size="12">&#9679; Reduced regulatory risk</text>
   <text x="283" y="248" fill="${C.gray}" font-family="Arial, sans-serif" font-size="12">   as rules tighten</text>
   <text x="283" y="268" fill="${C.gray}" font-family="Arial, sans-serif" font-size="12">&#9679; Solar / insulation ROI</text>
-  <text x="283" y="288" fill="${C.gray}" font-family="Arial, sans-serif" font-size="12">&#9679; AMR compliance ready</text>
+  <text x="283" y="282" fill="${C.gray}" font-family="Arial, sans-serif" font-size="12">&#9679; Antimicrobial resistance</text>
+  <text x="283" y="300" fill="${C.gray}" font-family="Arial, sans-serif" font-size="12">   (AMR) compliance ready</text>
   <text x="400" y="318" text-anchor="middle" fill="${C.medBlue}" font-family="Arial, sans-serif" font-size="11" font-style="italic">Payback: 1–3 production years</text>
 
   <!-- LONG-TERM column -->
