@@ -809,10 +809,9 @@ function fig2_3() {
   <text x="575" y="154" fill="${C.gray}" font-family="Arial, sans-serif" font-size="11">&#9679; Fully dimmable for light</text>
   <text x="575" y="172" fill="${C.gray}" font-family="Arial, sans-serif" font-size="11">   management programs</text>
   <text x="575" y="194" fill="${C.gray}" font-family="Arial, sans-serif" font-size="11">&#9679; 50,000+ hour bulb life</text>
-  <text x="575" y="216" fill="${C.gray}" font-family="Arial, sans-serif" font-size="11">&#9679; Payback: 12–24 months</text>
-  <text x="575" y="238" fill="${C.gray}" font-family="Arial, sans-serif" font-size="11">   in Canadian barn data</text>
-  <text x="575" y="258" fill="${C.green}" font-family="Arial, sans-serif" font-size="11" font-weight="bold">&#9679; No capital required for</text>
-  <text x="575" y="272" fill="${C.green}" font-family="Arial, sans-serif" font-size="11" font-weight="bold">   entry-level retrofits</text>
+  <text x="575" y="216" fill="${C.gray}" font-family="Arial, sans-serif" font-size="11">&#9679; Payback: in future</text>
+  <text x="575" y="238" fill="${C.green}" font-family="Arial, sans-serif" font-size="11" font-weight="bold">&#9679; No capital required for</text>
+  <text x="575" y="258" fill="${C.green}" font-family="Arial, sans-serif" font-size="11" font-weight="bold">   entry-level retrofits</text>
 
   <!-- Bottom note -->
   <rect x="20" y="312" width="760" height="30" rx="6" fill="${C.lightGold}" stroke="${C.gold}" stroke-width="1.5"/>
