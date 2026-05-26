@@ -505,10 +505,10 @@ function buildContentSection() {
   ]));
   c.push(bullet('Explain the immune mechanisms relevant to water, wing web, eye drop, coarse spray, and injection vaccination routes.'));
   c.push(bullet('Identify which diseases are controlled through each vaccination method.'));
-  c.push(bullet('Handle, store, and prepare vaccines correctly at each step from refrigerator to bird.'));
-  c.push(bullet('Apply correct technique for water vaccination, wing web injection, eye drop administration, coarse spray vaccination, and subcutaneous and intramuscular injection with killed multivalent vaccines.'));
-  c.push(bullet('Use PPE and biosecurity protocols for each method.'));
-  c.push(bullet('Monitor flock response and identify vaccination failures before they become production losses.'));
+  c.push(bullet('Know how to store, transport, and prepare each vaccine type correctly before the first vial is opened.'));
+  c.push(bullet('Execute water vaccination, wing web, eye drop, coarse spray, and injection technique correctly on your own flock.'));
+  c.push(bullet('Follow the PPE and biosecurity steps for each method and understand why they matter.'));
+  c.push(bullet('Recognize what a vaccination failure looks like in the flock, and catch it before birds start getting sick.'));
 
   // ============================================================
   // SECTION 1: WATER VACCINATION
@@ -554,17 +554,17 @@ function buildContentSection() {
 
   c.push(bullet([
     { text: 'Newcastle Disease (NDV)', bold: true },
-    { text: ': Live attenuated lentogenic strains including La Sota, Clone 30, and B1 (Hitchner B1) are routinely delivered by water. These strains replicate in the respiratory and gut lining and build broad local and systemic protection. NDV is highly contagious and federally reportable in Canada [12], and vaccination is a cornerstone of commercial broiler and layer programs.' },
+    { text: ': Live attenuated lentogenic strains including La Sota, Clone 30, and B1 (Hitchner B1) go into the water and replicate in the gut and upper airways. NDV is federally reportable in Canada [12]. If you run commercial broilers or layers, you are already vaccinating for it.' },
   ]));
 
   c.push(bullet([
     { text: 'Infectious Bronchitis (IBV)', bold: true },
-    { text: ': A highly contagious coronavirus affecting the respiratory, renal, and reproductive systems in chickens of all ages [8]. The CPC Learning Centre IBV Disease Profile describes IBV as "highly transmissible and a tremendous hazard for unvaccinated flocks" [8]. Multiple serotypes circulate in Canada, including Massachusetts, Connecticut, and variants [8]. Live IBV vaccines are frequently delivered by water and coarse spray together for broad mucosal coverage.' },
+    { text: ': IBV hits the airways, kidneys, and reproductive system at any age [8]. The CPC Learning Centre IBV Disease Profile calls it "highly transmissible and a tremendous hazard for unvaccinated flocks" [8]. Multiple serotypes circulate in Canada, including Massachusetts, Connecticut, and variants [8]. Water and coarse spray are often run together to cover both the gut and respiratory mucosa.' },
   ]));
 
   c.push(bullet([
     { text: 'Coccidiosis (live oocyst vaccines)', bold: true },
-    { text: ': Live coccidial vaccines are sometimes delivered through the drinking water in early chick placement, seeding the litter with low-pathogenicity oocysts to establish controlled immunity. Protocols vary and require veterinary guidance.' },
+    { text: ': Live coccidial vaccines are sometimes added to the drinking water on placement day. The idea is to seed the litter with low-level oocysts early, cycling birds through controlled exposure before they meet the field strain. Protocols vary and need veterinary guidance.' },
   ]));
 
   c.push(...figureOrPlaceholder(
@@ -653,8 +653,8 @@ function buildContentSection() {
 
   c.push(numbered('Add skim milk powder to the vaccine water at a rate of approximately 454 g per 190 litres (1 lb per 50 gallons) and mix thoroughly [1].'));
   c.push(numbered('Dissolve the vaccine by adding a small amount of the milk-water solution directly to each vaccine vial. Do not use plain tap water at this step.'));
-  c.push(numbered('Add the dissolved vaccine to the main milk-water solution.'));
-  c.push(numbered('Rinse each vial thoroughly before discarding. The CPC Learning Centre guide notes that failing to rinse vials properly can waste up to 15% of the vaccine dose [1].'));
+  c.push(numbered('Pour the dissolved vaccine into the main milk-water solution and mix.'));
+  c.push(numbered('Rinse each empty vial properly before discarding. If you skip the rinse, you leave up to 15% of the dose stuck to the inside of the glass [1].'));
   c.push(numbered('Record the serial number and expiry date of every vial used [1].'));
 
   c.push(...figureOrPlaceholder(
@@ -685,9 +685,9 @@ function buildContentSection() {
 
   c.push(labeled('Walk the barn:', ' Once vaccine solution is in the drinkers, walk through the barn and get birds moving toward the water [1]. Birds sitting still will not find the drinkers fast enough. The flock needs to be on its feet and drinking. If you walk the barn and birds are still resting, walk it again.'));
 
-  c.push(labeled('Confirm consumption:', ' The vaccine solution should be fully consumed within two hours of delivery [1]. If consumption appears incomplete, walk the flock again. Observe for areas where birds are avoiding drinkers: this can indicate a system blockage, a zone where chlorine was not fully cleared, or overcrowding that is preventing access.'));
+  c.push(labeled('Confirm consumption:', ' The whole volume should be gone within two hours [1]. If solution is still in the drinkers after that, walk the flock again. Look for birds standing away from the drinkers: you may have a blockage, a zone where chlorine was not cleared properly, or birds being pushed out by crowding.'));
 
-  c.push(labeled('Post-vaccination water:', ' Once the vaccine solution is fully consumed, restore normal water to the flock [1]. Do not leave birds without water after vaccination.'));
+  c.push(labeled('Post-vaccination water:', ' As soon as the vaccine solution is consumed, turn the water back on for the flock [1]. Do not leave birds dry after the session.'));
 
   c.push(...figureOrPlaceholder(
     'fig1_2.png',
@@ -898,13 +898,13 @@ function buildContentSection() {
   c.push(bullet('The CPC Learning Centre Inactivated Vaccine Administration guide specifies changing the needle at no more than every 1,000 birds [4]. For the wing web applicator, inspect the needles regularly for bending or dulling. A dull or bent needle produces an unclean puncture and increases reaction rates.'));
   c.push(bullet('Burn all empty vaccine vials after the session [1]. Do not discard open vials in accessible waste bins.'));
   c.push(bullet('After the session, disinfect the applicator with 70% isopropyl alcohol, rinse well with clean water, and store in a clean, dry place [3].'));
-  c.push(bullet('Do not use the same applicator for different vaccine types without full cleaning and sterilization between uses.'));
+  c.push(bullet('If you are using one applicator for more than one vaccine type in the same day, sterilize completely between products. Contamination between vials compromises both vaccines.'));
 
   // 2.7
   c.push(h2('2.7  Monitoring and Troubleshooting'));
 
   c.push(labeled('Low take rate (below 80%):', [
-    run(' Review cold chain records from the vaccine\'s arrival to the day of vaccination. A single temperature excursion above 8°C can reduce take rate dramatically. Confirm the applicator is functioning correctly and needles are sharp. Review restraint technique: a bird that moved at the moment of injection may have received a missed or partial dose. Evaluate whether the vaccine vial was fully reconstituted and whether the diluent was at the correct temperature.'),
+    run(' Go back through your cold chain records from the day the vaccine arrived. One warm spell above 8°C before the session can knock take rates across the whole flock. Check that your applicator needles are still sharp and functioning. Look at your restraint technique: a bird that moved at the moment of injection likely missed the tissue entirely. Make sure each vial was fully dissolved and the diluent was at the right temperature.'),
   ]));
 
   c.push(labeled('No takes at all:', [
@@ -974,9 +974,9 @@ function buildContentSection() {
   // 3.3
   c.push(h2('3.3  Equipment and Vaccine Preparation'));
 
-  c.push(labeled('Dropper calibration:', ' The standard volume per eye drop for poultry vaccines is in the range of 25 to 35 microlitres (µL). Before beginning a vaccination session, calibrate your dropper by counting how many drops fill 1 mL from a calibrated syringe. Thirty drops per mL equals approximately 33 µL per drop, which is within the correct range. If drops are too large (fewer than 25 per mL), reduce pressure. If too small (more than 40 per mL), increase pressure or change the dropper tip. Consistent drop size is essential for uniform dose delivery across the flock [12].'));
+  c.push(labeled('Dropper calibration:', ' Each drop should be in the range of 25 to 35 microlitres. Before you start, count how many drops fill 1 mL in a syringe. Thirty drops per mL is about 33 µL, which is right. Fewer than 25 drops per mL means your drops are too big: reduce pressure. More than 40 drops per mL means they are too small: increase pressure or swap the tip. If drop size is off, some birds get too much and some get too little [12].'));
 
-  c.push(labeled('Diluent:', ' Use the manufacturer-specified diluent for each vaccine. Most live eye drop vaccines use a sterile physiological saline or purified water diluent. Do not substitute tap water.'));
+  c.push(labeled('Diluent:', ' Use the manufacturer-specified diluent. Most live eye drop vaccines call for sterile saline or purified water. Do not use tap water.'));
 
   c.push(labeled('Blue dye option:', ' Some programs add a non-toxic blue dye to the diluent at reconstitution. When a bird receives the correct drop and the nasolacrimal drainage occurs, the dye stains the beak or tongue blue within a few minutes. This gives you a rapid field check to confirm the drop drained through correctly rather than running off the eyelid. Check 2% of the flock immediately after vaccination.'));
 
@@ -993,10 +993,10 @@ function buildContentSection() {
 
   c.push(numbered('Pick up the bird and hold it firmly against your body. Control the head so it cannot turn away.'));
   c.push(numbered('Tilt the bird\'s head slightly so the eye faces upward. This prevents the drop from immediately running sideways off the eyelid.'));
-  c.push(numbered('Position the dropper tip approximately 1 to 2 cm above the eye. Do not touch the dropper to the eye surface: contact contamination can introduce bacteria into the vial.'));
-  c.push(numbered('Squeeze the dropper to deliver a single drop directly onto the center of the conjunctiva (the clear surface of the eye, not the eyelid).'));
-  c.push(numbered('Hold the bird in position until the drop is absorbed. You will see the bird blink, which distributes the vaccine across the conjunctival surface. Do not release until the drop is no longer visible on the eye.'));
-  c.push(numbered('Set the bird down and move to the next. Maintain a steady working pace.'));
+  c.push(numbered('Hold the dropper tip about 1 to 2 cm above the eye. Do not touch the tip to the eye surface. Touching the eye carries bacteria from the bird back into your vial.'));
+  c.push(numbered('Squeeze the dropper to deliver a single drop directly onto the eye, not the eyelid.'));
+  c.push(numbered('Hold the bird in position until the drop is absorbed. You will see the bird blink: that blink spreads the vaccine across the whole eye. Do not let the bird go until you cannot see the drop anymore.'));
+  c.push(numbered('Set the bird down and move to the next. Keep your pace steady and consistent throughout.'));
 
   c.push(para(
     'Common errors in technique:'
@@ -1017,13 +1017,6 @@ function buildContentSection() {
     { text: 'Drops too large:', bold: true },
     { text: ' Excess vaccine runs off regardless of technique. Recalibrate the dropper.' },
   ]));
-
-  c.push(...figureOrPlaceholder(
-    'fig3_1.png',
-    'Figure 3.1: Eye drop vaccination administration',
-    'Figure 3.1: Correct head position with the eye facing up, a full drop placed on the conjunctival surface, and the nasolacrimal drainage pathway that carries vaccine antigen to the Harderian gland and the upper respiratory tract. Source: CPC Short Courses.',
-    6.5
-  ));
 
   c.push(...figureOrPlaceholder(
     'Eye-drop-vaccination.png',
@@ -1071,7 +1064,7 @@ function buildContentSection() {
   ]));
 
   c.push(labeled('No visible flock reaction at day 5 to 7:', [
-    run(' The expected mild reaction did not occur. Possible causes: vaccine inactivated before delivery (cold chain failure), technique errors resulting in widespread missed doses, or high maternal antibody levels neutralizing the vaccine. Review cold chain records and technique consistency. Check serology at day 14 to 21.'),
+    run(' If you see nothing at day 5 to 7, the immune response did not kick in the way it should. Either the vaccine was already dead when it was delivered, you had widespread missed doses from technique problems, or maternal antibodies blocked the vaccine before it could stimulate immunity. Pull your cold chain records and look hard at your technique consistency. Run serology at day 14 to 21 to see what protection built, if any.'),
   ]));
 
   c.push(labeled('Severe post-vaccination reaction:', [
@@ -1121,7 +1114,7 @@ function buildContentSection() {
 
   c.push(labeled('Choose coarse spray when:', ''));
   c.push(bullet([{ text: 'The target disease requires mucosal respiratory immunity rather than systemic protection.' }]));
-  c.push(bullet([{ text: 'Flock size or labor availability makes individual bird handling impractical.' }]));
+  c.push(bullet([{ text: 'The flock is too large or the labor is not available to handle birds one by one.' }]));
   c.push(bullet([{ text: 'A rapid prime-boost schedule requires vaccinating large numbers in a short window.' }]));
   c.push(bullet([{ text: 'The vaccine label specifies the coarse spray route.' }]));
 
@@ -1449,9 +1442,9 @@ function buildContentSection() {
 
   c.push(labeled('Needle stick first aid:', ' If you stick yourself with a needle used on poultry, wash the wound thoroughly with soap and water for at least 15 minutes, report the incident, and contact a physician. Needle stick injury with a killed vaccine product is generally low risk but requires documentation. [4]'));
 
-  c.push(labeled('Record keeping:', ' The CPC Learning Centre Inactivated Vaccine Administration bulletin specifies recording the following for every injection session: product name, manufacturer, serial number, expiry date, number of birds vaccinated, date of vaccination, and operator name [4]. These records are required for traceability and are requested during CFIA inspections and veterinary herd health reviews.'));
+  c.push(labeled('Record keeping:', ' The CPC Learning Centre Inactivated Vaccine Administration bulletin specifies recording the following for every injection session: product name, manufacturer, serial number, expiry date, number of birds vaccinated, date of vaccination, and operator name [4]. CFIA inspectors and your veterinarian will ask for these records. Keep them where you can find them.'));
 
-  c.push(labeled('Vaccine disposal:', ' Dispose of empty vials and used needles according to your provincial sharps disposal protocol. Do not discard used needles in general waste bins. Return them in a sealed sharps container. [4]'));
+  c.push(labeled('Vaccine disposal:', ' Dispose of empty vials and used needles using your provincial sharps disposal protocol. Used needles go in a sealed sharps container, not general waste. [4]'));
 
   c.push(h2('6.6  Monitoring and Troubleshooting'));
 
