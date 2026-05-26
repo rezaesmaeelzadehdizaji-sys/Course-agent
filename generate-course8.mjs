@@ -858,6 +858,13 @@ function buildContentSection() {
     'A vaccination session that was completed efficiently but produced an 80% take rate means one in five birds is unprotected. In a Fowl Pox outbreak, those birds become the leading edge of further spread. Take rate checks are not a formality.'
   ));
 
+  c.push(...figureOrPlaceholder(
+    'pox_take_wingweb.jpg',
+    'Photo 2.2: Wing web vaccination take reactions at 7–9 days post-vaccination',
+    'Photo 2.2: Real wing web vaccination take reactions in chickens at 7–9 days post-vaccination. Left and center: multiple small firm nodules visible on the thigh skin from feather-follicle application of a Fowlpox/NDV combination vaccine. Right (circled): a confirmed take nodule at the wing web site from the stab technique. A firm bump or developing scab like the circled nodule is the field sign that the vaccine was delivered correctly and the immune response is underway. Source: Tesfaye YT et al., Acta Vet Scand. 2022;64:38. CC BY 4.0.',
+    6.0
+  ));
+
   // 2.6
   c.push(h2('2.6  Biosecurity, Safety, and Post-Vaccination Hygiene'));
 
