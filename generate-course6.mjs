@@ -561,6 +561,8 @@ function buildSection2() {
 
       ...embedPhoto(imgFile('photo_2_1_comb_wattles.jpg'), 'Photo 2.1: Close view of a hen in a barn coop showing the bright-red comb and eye. A firm, warm, bright-red comb indicates good circulatory health. Source: Wikimedia Commons, CC BY 2.0.'),
 
+      ...embedPhoto(imgFile('photo_2_2_legs_feet.jpg'), 'Photo 2.2: Healthy chicken foot showing clean smooth shanks and intact foot pads. Clean pale-yellow scales and an unblemished foot pad indicate no leg mite infestation or bumblefoot. Source: Wikimedia Commons / Arie M. den Toom, CC BY-SA 4.0.'),
+
       h2('2.2  Reading the Bird: Signs of Health from the Outside'),
       para('A healthy bird is alert, moving, eating, drinking, and interacting normally with the flock. Any bird sitting away from others, with eyes closed, standing hunched, or showing labored breathing (tail bobbing with each breath) is telling you something is wrong. The rule in commercial production is that by the time one bird is visibly sick, the flock-level problem has usually been developing for several days [5].'),
       para('The CPC Learning Centre "Spotting Disease Early" guide provides a practical framework: the first change is always behavioral. Water consumption drops before feed intake; feed intake drops before posture changes; posture changes before mortality climbs [18]. Walking the barn once or twice a day with both eyes open, not just checking feed and water levels, is what separates farms that catch problems at day one from those that catch them at day four when options are narrower.'),
@@ -591,6 +593,8 @@ function buildSection3() {
       labeled('Cloaca:', 'The terminal chamber where the digestive, urinary, and reproductive tracts converge. Feces, urine, and eggs all exit through the cloaca. Because of this shared exit, egg contamination can occur when hens have enteric disease, which is one reason Salmonella control requires managing gut health as well as external hygiene.'),
 
       ...embedPng(imgFile('figure_3_1_digestive.png'), 'Figure 3.1: The poultry digestive tract from beak to cloaca. Key differences from mammalian digestion: no teeth, a storage crop, and a muscular gizzard that substitutes for chewing. Source: CPC Short Courses.'),
+
+      ...embedPhoto(imgFile('photo_3_1_gizzard.jpg'), 'Photo 3.1: A chicken gizzard opened to show the thick muscular walls and tough koilin lining. The koilin layer (pale yellow) protects the muscle from the grinding action. Grit particles retained in the chamber work against the ridged lining to break down feed. Source: Wikimedia Commons / Bjferstern, CC BY-SA 3.0.'),
 
       h2('3.2  The Respiratory System'),
       para('A bird\'s respiratory system works nothing like a mammal\'s, and understanding the difference changes how you think about ventilation, ammonia, and dust management.'),
@@ -689,7 +693,7 @@ function buildSection5() {
       para('Commercial white leghorn-type layers typically reach peak production of 95 to 97% hen-day production at 26 to 30 weeks of age. Production then declines gradually. By 72 weeks, many flocks fall below 70%, at which point a decision about continuing the cycle or moving to molt is made. Induced molt resets the reproductive system and can support a second production cycle, typically with reduced rate but improved shell quality.'),
       para('Broiler breeders combine the larger frame of broiler genetics with the reproductive requirement of sustained egg production. Feed restriction is applied from early in the rearing period to prevent over-conditioning. An overweight broiler breeder has reduced ovulation rate, lower fertilization, and higher embryo mortality. An underweight breeder also performs poorly. Keeping the breeder at target body weight through a carefully managed step-up feeding program is the core of breeder management [16].'),
 
-      ...embedPng(imgFile('figure_5_1_layer_hen.png'), 'Figure 5.1: Commercial white leghorn laying hen showing key external health indicators. A bright-red firm comb, alert eye, full feather coverage, and upright posture are the first signs to check on a barn walk. Source: CPC Short Courses.'),
+      ...embedPhoto(imgFile('photo_5_1_layer_hen.jpg'), 'Photo 5.1: Commercial white leghorn laying hen. A bright-red firm comb, clear amber eyes, full white plumage, and upright alert posture all indicate a bird in good health. Source: USDA Agricultural Research Service / Stephen Ausmus, Public Domain.'),
 
       h2('5.2  The Reproductive Tract and Egg Formation'),
       para('The oviduct and egg formation process are covered in full in Section 3.5 above. A few production-specific points follow.'),
