@@ -285,7 +285,7 @@ function comparisonTable() {
     ['Breast muscle (% BW)',     '21–29%',                  '10–14%',                 '18–24%'],
     ['FCR',                      '1.5–1.7:1',               'N/A',                    'N/A'],
     ['Body temperature',         '41–42°C',                 '41–42°C',                '41–42°C'],
-    ['Resting heart rate',       '~245 bpm',                '~245 bpm',               '~245 bpm'],
+    ['Resting heart rate',       '250–300 bpm',             '250–300 bpm',            '250–300 bpm'],
     ['Primary health risk',      'Ascites, SDS, woody breast', 'Osteoporosis, fatty liver', 'Over-conditioning, reduced fertility'],
     ['Key nutritional focus',    'Energy and amino acids',  'Calcium and vitamin D',  'Energy balance, micronutrients'],
   ];
@@ -585,7 +585,7 @@ function buildSection3() {
 
       labeled('Crop:', 'The first stop after the esophagus. The crop is a pouch in the lower neck that stores feed and water until the rest of the tract is ready to receive it. It also begins the softening of dry feed through moisture absorption. When the crop empties, the bird signals hunger. In day-old chicks, crop fill at 24 hours is a key welfare indicator: the target is 100% of chicks showing a full, palpable crop [1].'),
       labeled('Proventriculus (true stomach):', 'This is where chemical digestion begins. The proventriculus secretes hydrochloric acid and pepsinogen, initiating protein breakdown. It is relatively small and passes feed through quickly into the gizzard [1].'),
-      labeled('Gizzard:', 'The mechanical stomach. Two sets of powerful smooth muscles grind feed against small stones (grit) retained in the gizzard. This grinding reduces feed particles to below 0.1 mm before they pass into the small intestine [1,9]. A well-developed gizzard improves digestive efficiency and feed conversion. Birds on fine mash diets without access to insoluble grit can have underdeveloped gizzards. Feeding coarser particle feed or providing insoluble grit, particularly in the first two weeks for broilers, improves gizzard development and overall gut health.'),
+      labeled('Gizzard:', 'The mechanical stomach. Two sets of powerful smooth muscles grind feed against small stones (grit) retained in the gizzard. This grinding reduces feed particles to approximately 1 to 2 mm before they pass into the small intestine [1,9]. A well-developed gizzard improves digestive efficiency and feed conversion. Birds on fine mash diets without access to insoluble grit can have underdeveloped gizzards. Feeding coarser particle feed or providing insoluble grit, particularly in the first two weeks for broilers, improves gizzard development and overall gut health.'),
       labeled('Small intestine (duodenum, jejunum, ileum):', 'The pancreas and liver deliver digestive enzymes and bile salts into the duodenum. The jejunum and ileum are where nutrients are absorbed across the villi into the bloodstream. Villus height and crypt depth in the small intestine determine how much of each gram of feed actually enters the bird. Enteric disease, mycotoxins, or coccidiosis damage the villi and directly reduce nutrient absorption and feed efficiency [10].'),
       labeled('Ceca:', 'Two blind pouches at the junction of the small and large intestine. The ceca ferment undigested material and produce short-chain fatty acids and B vitamins. They also reabsorb water and play a role in immune function. Cecal output, the dark, pasty, slightly pungent dropping produced once or twice a day, is completely normal and should not be mistaken for diarrhea [1].'),
       labeled('Cloaca:', 'The terminal chamber where the digestive, urinary, and reproductive tracts converge. Feces, urine, and eggs all exit through the cloaca. Because of this shared exit, egg contamination can occur when hens have enteric disease, which is one reason Salmonella control requires managing gut health as well as external hygiene.'),
@@ -604,7 +604,7 @@ function buildSection3() {
 
       h2('3.3  The Circulatory System'),
       para('A chicken\'s heart is four-chambered, like a mammal\'s, and it works extremely hard. The resting heart rate is approximately 250 to 300 beats per minute at rest [20]. The left ventricle is by far the largest chamber, built with far thicker walls than the right ventricle, because it must push blood to the entire body at high pressure. The right ventricle only needs to move blood through the nearby lungs, which offer much less resistance.'),
-      para('Body temperature runs at 41 to 42°C. Blood volume is approximately 1 to 2% of body weight in milliliters, which means a 2.5 kg broiler carries roughly 25 to 50 mL of blood [5].'),
+      para('Body temperature runs at 41 to 42°C. Blood volume is approximately 6 to 9% of body weight, which means a 2.5 kg broiler carries roughly 150 to 225 mL of blood [5].'),
       para('The key management implication for broilers is this: in fast-growing commercial lines, the heart and lungs grow more slowly as a proportion of body mass than the rest of the body does [11]. By weeks four and five, many broilers are carrying more muscle mass than their cardiovascular system can comfortably supply with oxygen. In cold conditions, at altitude, or in poor ventilation, oxygen delivery falls short of demand. The right ventricle overloads trying to push blood through a congested lung. Fluid then backs up into the abdominal cavity. This is ascites. In a separate but related failure, sudden cardiovascular collapse kills apparently healthy, well-grown males without warning. This is Sudden Death Syndrome. Both conditions are direct consequences of the physiological gap between growth rate and cardiovascular capacity [6,7].'),
 
       h2('3.4  The Skeletal and Muscular Systems'),
@@ -626,7 +626,7 @@ function buildSection3() {
       oviductTable(),
       new Paragraph({ spacing: { before: 80, after: 0 } }),
 
-      para('The calcium cost of each egg is significant. Each shell requires approximately 3 grams of calcium. During the 20-plus hours of shell formation (mostly at night, when the hen is not eating), she mobilizes 20 to 40% of that calcium from medullary bone [13]. The diet must supply the balance. A layer on an adequate calcium diet (3.5 to 4.5% of diet by weight) can meet her daily needs and maintain bone health. A layer on an inadequate calcium diet will exhaust her medullary bone and begin resorbing structural cortical bone, leading to progressive osteoporosis, fractures, and end-of-lay collapse [13,14].'),
+      para('The calcium cost of each egg is significant. Each shell contains approximately 2 grams of calcium [13]. During the 20-plus hours of shell formation (mostly at night, when the hen is not eating), she mobilizes 20 to 40% of that calcium from medullary bone [13]. The diet must supply the balance. A layer on an adequate calcium diet (3.5 to 4.5% of diet by weight) can meet her daily needs and maintain bone health. A layer on an inadequate calcium diet will exhaust her medullary bone and begin resorbing structural cortical bone, leading to progressive osteoporosis, fractures, and end-of-lay collapse [13,14].'),
       para('Ovulation is triggered by light. The hypothalamus detects the change in day length and triggers the hormone chain that drives follicle growth and ovulation. Ovulation almost never occurs after 3 PM under normal daylight conditions, which means hens laying late in the day skip the next morning\'s ovulation and miss a laying day [3]. Careful lighting management using 14 to 16 hours of light per day maintains consistent ovulation timing across the flock. For detailed lighting program guidance, see the CPC Learning Centre Lighting Program Guidelines for Broilers 2026 [19], which covers both the technical setup and the practical management of lighting transitions.'),
     ],
   };
@@ -827,7 +827,7 @@ function buildSection8() {
 
       h2('The Reproductive System'),
       bullet('Only the left ovary and oviduct are functional. Egg formation takes 25 to 26 hours through five oviduct sections.'),
-      bullet('Shell formation takes 20-plus hours and requires 3 grams of calcium, of which 20 to 40% comes from bone overnight.'),
+      bullet('Shell formation takes 20-plus hours and deposits approximately 2 grams of calcium, of which 20 to 40% comes from medullary bone overnight [13,14].'),
       bullet('Ovulation is light-triggered. Lighting program management is reproductive system management.'),
 
       h2('Management Takeaways'),
