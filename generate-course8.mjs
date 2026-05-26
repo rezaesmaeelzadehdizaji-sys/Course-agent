@@ -33,7 +33,7 @@ import { fileURLToPath } from 'url';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const OUT_DIR   = path.join(__dirname, 'Course 8');
-const OUT_FILE  = path.join(OUT_DIR, 'Vaccination_draft.docx');
+const OUT_FILE  = process.env.OUT_FILE || path.join(OUT_DIR, 'Vaccination_draft.docx');
 const LOGO_PATH = path.join(__dirname, 'logo.png');
 
 // ============================================================
@@ -132,7 +132,7 @@ function callout(text) {
   });
 }
 
-// Placeholder image block (gray bordered cell + caption)
+// Placeholder image block (gray bordered cell + caption) — used as fallback if file missing
 function imagePlaceholder(label, caption) {
   const bdr = { style: BorderStyle.SINGLE, size: 4, color: 'BBBBBB' };
   const cellBorders = { top: bdr, bottom: bdr, left: bdr, right: bdr };
@@ -157,6 +157,65 @@ function imagePlaceholder(label, caption) {
       spacing: { before: 60, after: 240 },
     }),
   ];
+}
+
+// ============================================================
+// IMAGE EMBEDDING
+// ============================================================
+function imgBuf(name) {
+  const p = path.join(OUT_DIR, name);
+  if (!fs.existsSync(p)) return null;
+  return fs.readFileSync(p);
+}
+// PNG dimensions from IHDR
+function pngDims(buf) {
+  return { width: buf.readUInt32BE(16), height: buf.readUInt32BE(20) };
+}
+// JPEG dimensions from SOF markers
+function jpegDims(buf) {
+  let i = 2;
+  while (i < buf.length) {
+    if (buf[i] !== 0xFF) { i++; continue; }
+    const marker = buf[i + 1];
+    if (marker >= 0xC0 && marker <= 0xCF && marker !== 0xC4 && marker !== 0xC8 && marker !== 0xCC) {
+      const height = buf.readUInt16BE(i + 5);
+      const width  = buf.readUInt16BE(i + 7);
+      return { width, height };
+    }
+    const len = buf.readUInt16BE(i + 2);
+    i += 2 + len;
+  }
+  return { width: 0, height: 0 };
+}
+// Render an embedded image with caption. type: 'png' | 'jpg', widthIn = display width in inches.
+function embedImage(buf, type, caption, widthIn = 6.0) {
+  const dims = type === 'png' ? pngDims(buf) : jpegDims(buf);
+  const dpi  = 96;
+  const wpx  = Math.round(widthIn * dpi);
+  const hpx  = Math.round((dims.height / dims.width) * wpx);
+  return [
+    new Paragraph({
+      alignment: AlignmentType.CENTER,
+      spacing: { before: 60, after: 60 },
+      children: [new ImageRun({
+        data: buf,
+        transformation: { width: wpx, height: hpx },
+        type,
+      })],
+    }),
+    new Paragraph({
+      children: [new TextRun({ text: caption, italics: true, color: '555555', size: 20, font: 'Calibri' })],
+      alignment: AlignmentType.CENTER,
+      spacing: { before: 0, after: 240 },
+    }),
+  ];
+}
+// figureOrPlaceholder: tries to embed the named file from Course 8/, falls back to gray placeholder.
+function figureOrPlaceholder(filename, label, caption, widthIn = 6.0) {
+  const buf = imgBuf(filename);
+  if (!buf) return imagePlaceholder(label, caption);
+  const type = filename.toLowerCase().endsWith('.png') ? 'png' : 'jpg';
+  return embedImage(buf, type, caption, widthIn);
 }
 
 // ============================================================
@@ -211,7 +270,7 @@ function buildHeader() {
       new Paragraph({
         children: [
           new TextRun({ text: 'CPC Short Courses  |  ', color: '888888', size: 18, font: 'Calibri' }),
-          new TextRun({ text: 'Vaccination – water, wing web, eye drop', color: MED_BLUE, size: 18, font: 'Calibri', bold: true }),
+          new TextRun({ text: 'Vaccination – water, wing web, eye drop, spray', color: MED_BLUE, size: 18, font: 'Calibri', bold: true }),
         ],
         alignment: AlignmentType.RIGHT,
         border: { bottom: { style: BorderStyle.SINGLE, size: 4, color: GOLD } },
@@ -277,7 +336,7 @@ function buildCoverSection() {
       spacing: { before: 0, after: 40 },
     }),
     new Paragraph({
-      children: [new TextRun({ text: 'water, wing web, eye drop', bold: true, color: MED_BLUE, size: 36, font: 'Calibri' })],
+      children: [new TextRun({ text: 'water, wing web, eye drop, spray, in-ovo', bold: true, color: MED_BLUE, size: 36, font: 'Calibri' })],
       alignment: AlignmentType.CENTER,
       spacing: { before: 0, after: 80 },
     }),
@@ -297,7 +356,7 @@ function buildCoverSection() {
       spacing: { before: 0, after: 40 },
     }),
     new Paragraph({
-      children: [new TextRun({ text: 'Duration: 1-Hour Lecture, 1.5-Hour Workshop (3 Sub-Courses)', color: BODY, size: 22, font: 'Calibri' })],
+      children: [new TextRun({ text: 'Duration: 1-Hour Lecture, 1.5-Hour Workshop (4 Sub-Courses)', color: BODY, size: 22, font: 'Calibri' })],
       alignment: AlignmentType.CENTER,
       spacing: { before: 0, after: 40 },
     }),
@@ -352,8 +411,18 @@ const tocEntries = [
   { lvl: 2, text: '3.5  Confirming Uniform Coverage', page: 24 },
   { lvl: 2, text: '3.6  Biosecurity, PPE, and Safety', page: 25 },
   { lvl: 2, text: '3.7  Monitoring and Troubleshooting', page: 26 },
-  { lvl: 1, text: 'Recommended Peer-Reviewed Journals', page: 27 },
-  { lvl: 1, text: 'References', page: 28 },
+  { lvl: 1, text: 'Section 4: Poultry Coarse Spray Vaccination', page: 28 },
+  { lvl: 2, text: '4.1  How Coarse Spray Vaccination Works', page: 28 },
+  { lvl: 2, text: '4.2  Target Diseases and When to Use Spray', page: 29 },
+  { lvl: 2, text: '4.3  Equipment and Spray Settings', page: 30 },
+  { lvl: 2, text: '4.4  Diluent, Volume, and Vaccine Preparation', page: 31 },
+  { lvl: 2, text: '4.5  Ventilation Management', page: 32 },
+  { lvl: 2, text: '4.6  Running the Vaccination', page: 33 },
+  { lvl: 2, text: '4.7  Biosecurity, PPE, and Safety', page: 35 },
+  { lvl: 2, text: '4.8  Monitoring and Troubleshooting', page: 36 },
+  { lvl: 1, text: 'Section 5: In-Ovo Vaccination', page: 37 },
+  { lvl: 1, text: 'Recommended Peer-Reviewed Journals', page: 39 },
+  { lvl: 1, text: 'References', page: 40 },
 ];
 
 const entriesWithAnchor = tocEntries.map((e, i) => ({
@@ -399,7 +468,7 @@ function buildContentSection() {
   ));
 
   c.push(para(
-    'The CPC Learning Centre General Principles of Vaccination guide puts it plainly: vaccination is an art [2]. It takes knowledge, attention to detail, and practiced technique. This course covers three distinct vaccination methods that together represent most of what a commercial poultry operation will use: water vaccination, wing web vaccination, and eye drop vaccination. Each method targets different diseases through different immune pathways, and each demands its own protocol.'
+    'The CPC Learning Centre General Principles of Vaccination guide puts it plainly: vaccination is an art [2]. It takes knowledge, attention to detail, and practiced technique. This course covers four distinct vaccination methods that together represent most of what a commercial poultry operation will use: water vaccination, wing web vaccination, eye drop vaccination, and coarse spray vaccination. Each method targets different diseases through different immune pathways, and each demands its own protocol.'
   ));
 
   c.push(para(
@@ -427,10 +496,10 @@ function buildContentSection() {
   c.push(para([
     { text: 'Learning objectives for Course 8:', bold: true },
   ]));
-  c.push(bullet('Explain the immune mechanisms relevant to water, wing web, and eye drop vaccination routes.'));
+  c.push(bullet('Explain the immune mechanisms relevant to water, wing web, eye drop, and coarse spray vaccination routes.'));
   c.push(bullet('Identify which diseases are controlled through each vaccination method.'));
   c.push(bullet('Handle, store, and prepare vaccines correctly at each step from refrigerator to bird.'));
-  c.push(bullet('Apply correct technique for water vaccination, wing web injection, and eye drop administration.'));
+  c.push(bullet('Apply correct technique for water vaccination, wing web injection, eye drop administration, and coarse spray vaccination.'));
   c.push(bullet('Use PPE and biosecurity protocols for each method.'));
   c.push(bullet('Monitor flock response and identify vaccination failures before they become production losses.'));
 
@@ -461,7 +530,7 @@ function buildContentSection() {
 
   c.push(para([
     { text: 'What oral vaccination cannot do.', bold: true },
-    { text: ' Not every disease can be controlled through the water route. Marek\'s Disease requires a cell-associated herpesvirus vaccine that must be given by subcutaneous injection at the hatchery [11]. Fowl Pox is not effectively delivered by water: it needs direct contact with the skin to stimulate a local pox immune response, which is why wing web vaccination is used instead. For respiratory diseases where direct individual delivery matters (ILT in particular), eye drop vaccination is more reliable than water.' },
+    { text: ' Not every disease can be controlled through the water route. Marek\'s Disease requires a cell-associated herpesvirus vaccine delivered by subcutaneous injection or in-ovo administration at the hatchery [11,12]. For a brief overview of in-ovo vaccination, see Section 5 of this course. Fowl Pox is not effectively delivered by water: it needs direct contact with the skin to stimulate a local pox immune response, which is why wing web vaccination is used instead. For respiratory diseases where direct individual delivery matters (ILT in particular), eye drop vaccination is more reliable than water.' },
   ]));
 
   // 1.2
@@ -478,7 +547,7 @@ function buildContentSection() {
 
   c.push(bullet([
     { text: 'Newcastle Disease (NDV)', bold: true },
-    { text: ': Live La Sota and Clone 30 (B1) strains are routinely delivered by water. These strains colonize the respiratory and enteric mucosa and stimulate broad local and systemic immunity. Highly contagious and federally reportable in Canada [12], NDV vaccination is a cornerstone of commercial broiler and layer programs.' },
+    { text: ': Live attenuated lentogenic strains including La Sota, Clone 30, and B1 (Hitchner B1) are routinely delivered by water. These strains colonize the respiratory and enteric mucosa and stimulate broad local and systemic immunity. Highly contagious and federally reportable in Canada [12], NDV vaccination is a cornerstone of commercial broiler and layer programs.' },
   ]));
 
   c.push(bullet([
@@ -491,9 +560,11 @@ function buildContentSection() {
     { text: ': Live coccidial vaccines are sometimes delivered through the drinking water in early chick placement, seeding the litter with low-pathogenicity oocysts to establish controlled immunity. Protocols vary and require veterinary guidance.' },
   ]));
 
-  c.push(...imagePlaceholder(
+  c.push(...figureOrPlaceholder(
+    'photo1_1.jpg',
     'Photo 1.1: Water vaccination in a commercial broiler barn',
-    'Photo 1.1: Broiler birds drinking vaccine solution through nipple drinkers during a water vaccination session. Source: CPC Short Courses.'
+    'Photo 1.1: A commercial broiler house of the kind used for water vaccination across Canada. Drinker lines run the full length of the barn so every bird can reach water during the two-hour vaccine window. Photo: USDA/Joe Valbuena, public domain.',
+    5.6
   ));
 
   // 1.3
@@ -597,9 +668,11 @@ function buildContentSection() {
 
   c.push(labeled('Post-vaccination water:', ' Once the vaccine solution is fully consumed, restore normal water to the flock [1]. Do not leave birds without water after vaccination.'));
 
-  c.push(...imagePlaceholder(
+  c.push(...figureOrPlaceholder(
+    'fig1_2.png',
     'Figure 1.2: Water volume and consumption timeline during vaccination',
-    'Figure 1.2: Timeline showing water starvation period, two-hour vaccine window, and post-vaccination water restoration. Source: CPC Short Courses.'
+    'Figure 1.2: Timeline showing the short water withdrawal period before vaccination, the two-hour vaccine window when birds must drink the full dose, and the resumption of normal water afterward. Source: CPC Short Courses.',
+    6.2
   ));
 
   c.push(labeled('Drinker ratios [1]:',
@@ -716,9 +789,11 @@ function buildContentSection() {
     'Prevention through biosecurity is the best long-term approach: no commingling of birds from different sources, strict visitor control with clean coveralls and boot covers, and mosquito management during the vector season [7]. For more on biosecurity protocols, see Course 2 (Biosecurity) in this series.'
   ));
 
-  c.push(...imagePlaceholder(
+  c.push(...figureOrPlaceholder(
+    'photo2_1.jpg',
     'Photo 2.1: Dry form Fowl Pox lesions on the comb and wattles',
-    'Photo 2.1: Classic dry form Fowl Pox showing raised scabbed lesions on unfeathered facial skin. Source: CPC Short Courses.'
+    'Photo 2.1: Classic dry form Fowl Pox in a chicken. Raised scab-like lesions on the comb and wattles are the most recognizable field sign. These are the lesions wing web vaccination is designed to prevent. Photo: Lucyin, CC BY-SA 4.0.',
+    5.0
   ));
 
   // 2.3
@@ -755,9 +830,11 @@ function buildContentSection() {
 
   c.push(labeled('Move to the next bird:', ' Work at a steady pace. Dip the applicator between each bird. Change vaccine vials when the current vial is empty and record the next serial number.'));
 
-  c.push(...imagePlaceholder(
+  c.push(...figureOrPlaceholder(
+    'fig2_2.png',
     'Figure 2.2: Wing web vaccination site anatomy',
-    'Figure 2.2: Cross-section of the wing web showing the two skin layers and the correct depth for bifurcated needle placement. Source: CPC Short Courses.'
+    'Figure 2.2: Left, where the wing web sits when the wing is held open. Right, cross-section showing the two skin layers and the loose connective tissue between them where the bifurcated needle deposits the vaccine. Source: CPC Short Courses.',
+    6.5
   ));
 
   // 2.5
@@ -790,7 +867,7 @@ function buildContentSection() {
 
   c.push(bullet('Wear disposable gloves throughout the session.'));
   c.push(bullet('If working with NDV-containing wing web products (less common in this route), add safety glasses.'));
-  c.push(bullet('The CPC Learning Centre Inactivated Vaccine guide specifies changing the needle (or in this context, cleaning the applicator) at no more than every 1,000 birds [3]. In practice, inspect the applicator needles regularly for bending or dulling. A dull or bent needle produces an unclean puncture and increases reaction rates.'));
+  c.push(bullet('The CPC Learning Centre Inactivated Vaccine Administration guide specifies changing the needle at no more than every 1,000 birds [4]. For the wing web applicator, inspect the needles regularly for bending or dulling. A dull or bent needle produces an unclean puncture and increases reaction rates.'));
   c.push(bullet('Burn all empty vaccine vials after the session [1]. Do not discard open vials in accessible waste bins.'));
   c.push(bullet('After the session, disinfect the applicator with 70% isopropyl alcohol, rinse well with clean water, and store in a clean, dry place [3].'));
   c.push(bullet('Do not use the same applicator for different vaccine types without full cleaning and sterilization between uses.'));
@@ -913,9 +990,11 @@ function buildContentSection() {
     { text: ' Excess vaccine runs off regardless of technique. Recalibrate the dropper.' },
   ]));
 
-  c.push(...imagePlaceholder(
+  c.push(...figureOrPlaceholder(
+    'fig3_1.png',
     'Figure 3.1: Eye drop vaccination administration',
-    'Figure 3.1: Correct head position and drop placement on the conjunctival surface, showing the nasolacrimal drainage pathway to the nasal cavity. Source: CPC Short Courses.'
+    'Figure 3.1: Correct head position with the eye facing up, a full drop placed on the conjunctival surface, and the nasolacrimal drainage pathway that carries vaccine antigen to the Harderian gland and the upper respiratory tract. Source: CPC Short Courses.',
+    6.5
   ));
 
   // 3.5
@@ -969,7 +1048,235 @@ function buildContentSection() {
   ]));
 
   c.push(callout(
-    'All three vaccination methods covered in this course depend on the same foundation: a well-timed program designed with veterinary input, vaccines kept cold from factory to barn, and a technique executed consistently on every bird. The best vaccination program in the world fails at any one of those three points.'
+    'All three vaccination methods covered so far depend on the same foundation: a well-timed program designed with veterinary input, vaccines kept cold from factory to barn, and a technique executed consistently on every bird. The best vaccination program in the world fails at any one of those three points.'
+  ));
+
+  // ============================================================
+  // SECTION 4: POULTRY COARSE SPRAY VACCINATION
+  // ============================================================
+  c.push(pageBreak());
+  c.push(h1('Section 4: Poultry Coarse Spray Vaccination'));
+
+  c.push(para(
+    'Coarse spray vaccination lets you cover an entire barn in a single walk-through. There is no water starvation, no individual bird handling, and no limit on flock size. The vaccine is diluted in clean water and applied as a coarse mist over the birds\' heads. Each bird inhales and absorbs the vaccine through the conjunctiva and nares. When it is done correctly, uniform flock coverage is achievable in minutes. When it is done incorrectly, missed birds and failed protection are the result. The difference lies in the details: the right diluent, the right volume, the right pressure, the right height, and fans off at the right time. This section draws directly from the CPC Learning Centre Coarse Spray Vaccination Technical Bulletin [6].'
+  ));
+
+  c.push(h2('4.1  How Coarse Spray Vaccination Works'));
+
+  c.push(para(
+    'Coarse spray vaccines target the upper respiratory mucosa. The large droplets that a properly calibrated sprayer produces at 4.5-5.0 Bar settle on the conjunctiva and nares rather than penetrating deep into the lungs. This matters because the mucosal immune tissue in the upper respiratory tract is where protection against diseases like Newcastle Disease and Infectious Bronchitis actually needs to start. Fine mist particles (from a poorly maintained nozzle or incorrect pressure) travel too deep, bypass the mucosal entry points, and deliver far less protection. [6,13]'
+  ));
+
+  c.push(para(
+    'Once the droplets land on the conjunctiva or nares, the same immune pathway as eye drop vaccination is triggered. The vaccine antigen reaches the Harderian gland and the bronchus-associated lymphoid tissue (BALT), stimulating local IgA production and mucosal immunity across the respiratory tract. The advantage over eye drop vaccination is speed: coarse spray covers a whole barn floor in one pass. The trade-off is that you cannot verify individual bird coverage the way you can with eye drop or wing web vaccination. [2,13]'
+  ));
+
+  c.push(h2('4.2  Target Diseases and When to Use Spray'));
+
+  c.push(para(
+    'Coarse spray is well suited to live respiratory vaccines. The main targets in Canadian commercial broiler programs are Newcastle Disease virus (NDV) and Infectious Bronchitis virus (IBV). Some operations also use coarse spray for initial priming doses against Infectious Laryngotracheitis (ILT), though eye drop is often preferred for ILT due to more precise individual dosing. [2,8,9]'
+  ));
+
+  c.push(labeled('Choose coarse spray when:', ''));
+  c.push(bullet([{ text: 'The target disease requires mucosal respiratory immunity rather than systemic protection.' }]));
+  c.push(bullet([{ text: 'Flock size or labor availability makes individual bird handling impractical.' }]));
+  c.push(bullet([{ text: 'A rapid prime-boost schedule requires vaccinating large numbers in a short window.' }]));
+  c.push(bullet([{ text: 'The vaccine label specifies the coarse spray route.' }]));
+
+  c.push(labeled('Choose eye drop or water vaccination instead when:', ''));
+  c.push(bullet([{ text: 'Precision per-bird dosing is required (ILT, high-priority primer doses).' }]));
+  c.push(bullet([{ text: 'Water-soluble vaccines are specified by label for the water route.' }]));
+  c.push(bullet([{ text: 'Flock health, age, or weather conditions make barn spray impractical.' }]));
+
+  c.push(h2('4.3  Equipment and Spray Settings'));
+
+  c.push(para(
+    'The CPC Learning Centre Coarse Spray Vaccination Technical Bulletin specifies the use of a Hardi sprayer for this procedure [6]. That sprayer must be kept exclusively for vaccination. It must never be used for pesticides, herbicides, or disinfectants. Residue contamination of any of those chemicals, even in trace amounts, will damage or destroy the live vaccine.'
+  ));
+
+  c.push(labeled('Before vaccination day:', ''));
+  c.push(bullet([{ text: 'Rinse the sprayer with clean water.' }]));
+  c.push(bullet([{ text: 'Spray at a light source to observe spray particle size and pattern. Large, visible droplets that fall quickly are correct. A fine mist that hangs in the air is not.' }]));
+  c.push(bullet([{ text: 'Run a practice pass with water only, one or two days before vaccination. This tells you how much water you need per section and how fast to walk to achieve the correct volume. [6]' }]));
+
+  c.push(para(
+    'Maintain constant pressure throughout the vaccination run. The CPC Learning Centre Coarse Spray Vaccination Technical Bulletin specifies 4.5-5.0 Bar (65-73 PSI) [6]. Pressure below that range produces larger, heavier droplets that fall short of the birds. Pressure above that range produces fine mist that misses the target tissue.'
+  ));
+
+  c.push(h2('4.4  Diluent, Volume, and Vaccine Preparation'));
+
+  c.push(para(
+    'Water quality is not optional for spray vaccination. The CPC Learning Centre Coarse Spray Vaccination Technical Bulletin states to use distilled, demineralized, or deionized water to maximize vaccine quality and viability [6]. Chlorinated tap water, well water, or any water with mineral contamination will degrade a live vaccine before it reaches the birds.'
+  ));
+
+  c.push(labeled('Volume targets [6]:', ''));
+
+  const sprayVolTable = (() => {
+    const colW = [2800, 2800, 2800];
+    const hdrBg = MED_BLUE;
+    const altBg = 'EBF2FA';
+    const bdr = { style: BorderStyle.SINGLE, size: 2, color: 'AAAAAA' };
+    const cellBorders = { top: bdr, bottom: bdr, left: bdr, right: bdr };
+    const hdrCell = (text, i) => new TableCell({
+      width: { size: colW[i], type: WidthType.DXA },
+      borders: cellBorders,
+      shading: { type: ShadingType.SOLID, color: hdrBg },
+      children: [new Paragraph({
+        alignment: AlignmentType.CENTER,
+        spacing: { before: 60, after: 60 },
+        children: [run(text, { bold: true, size: 18, color: 'FFFFFF' })],
+      })],
+    });
+    const dataCell = (text, i, shade) => new TableCell({
+      width: { size: colW[i], type: WidthType.DXA },
+      borders: cellBorders,
+      shading: { type: ShadingType.SOLID, color: shade ? altBg : 'FFFFFF' },
+      children: [new Paragraph({
+        alignment: AlignmentType.CENTER,
+        spacing: { before: 50, after: 50 },
+        children: [run(text, { size: 18, color: BODY })],
+      })],
+    });
+    const headers = ['Age', 'Volume per 10,000 birds', 'Volume per 1,000 birds'];
+    const rows = [
+      ['Day 1 (farm spray)', '3 L', '300 mL'],
+      ['Older than 7 days', '7-8 L', '700-800 mL'],
+    ];
+    return new Table({
+      width: { size: 100, type: WidthType.PERCENTAGE },
+      margins: { top: 0, bottom: 0, left: 0, right: 0 },
+      rows: [
+        new TableRow({ children: headers.map((h, i) => hdrCell(h, i)), tableHeader: true }),
+        ...rows.map((row, ri) => new TableRow({
+          children: row.map((cell, ci) => dataCell(cell, ci, ri % 2 === 1)),
+        })),
+      ],
+    });
+  })();
+  c.push(sprayVolTable);
+  c.push(new Paragraph({ spacing: { before: 80, after: 0 } }));
+
+  c.push(labeled('Vaccine preparation steps [6]:', ''));
+  c.push(bullet([{ text: 'Prepare enough doses for each floor section or the whole barn before starting.' }]));
+  c.push(bullet([{ text: 'Dissolve the vaccine in the vials first, then add to the measured water.' }]));
+  c.push(bullet([{ text: 'Rinse each vial properly after emptying. The CPC Learning Centre Coarse Spray Vaccination Technical Bulletin notes that 15% of the vaccine dose is lost if vials are not rinsed [6]. That is a significant portion of the dose in every run.' }]));
+  c.push(bullet([{ text: 'Shake well after mixing.' }]));
+  c.push(bullet([{ text: 'Record the serial number and expiry date for every vaccine vial used. This record is essential if a failure investigation is needed later.' }]));
+
+  c.push(para(
+    'Cold chain applies here just as it does for water vaccination and wing web vaccination. The CPC Learning Centre Coarse Spray Vaccination Technical Bulletin specifies storage at 2-8°C (35-45°F), transported in a cooler on ice until used, and protected from sunlight at all times [6]. A vaccine that has been warm-stored or sun-exposed will not perform, regardless of correct technique in the barn.'
+  ));
+
+  c.push(h2('4.5  Ventilation Management'));
+
+  c.push(para(
+    'Ventilation control is the factor most often overlooked in spray vaccination. Fans moving air through the barn during the spray will push droplets away from the birds before they are inhaled, and remove the vaccine cloud from the air space before coverage is complete.'
+  ));
+
+  c.push(para(
+    'The CPC Learning Centre Coarse Spray Vaccination Technical Bulletin is specific on this point: turn off all fans before starting, and do not turn them back on until 20 minutes after vaccination is complete [6]. That 20-minute window allows the vaccine cloud to settle onto the birds and be absorbed. If ventilation resumes too early, birds in the sections vaccinated last may not have received a full dose.'
+  ));
+
+  c.push(labeled('Ventilation rules [6]:', ''));
+  c.push(bullet([{ text: 'Turn off all fans before starting the spray run.' }]));
+  c.push(bullet([{ text: 'Turn all fans back on 20 minutes after the run is complete.' }]));
+  c.push(bullet([{ text: 'In hot summer weather, vaccinate very early in the morning when outside temperatures are coolest. This gives you a safe window to hold ventilation without heat stress.' }]));
+  c.push(bullet([{ text: 'Monitor birds and air quality throughout. If heat stress builds before the 20-minute window closes, resume ventilation early rather than risk bird welfare.' }]));
+
+  c.push(h2('4.6  Running the Vaccination'));
+
+  c.push(para(
+    'Technique in the barn differs by bird type and housing system. The CPC Learning Centre Coarse Spray Vaccination Technical Bulletin specifies the following procedures [6]:'
+  ));
+
+  c.push(labeled('Broilers (floor housing):', ''));
+  c.push(bullet([{ text: 'Group birds along the side walls before starting. This concentrates them where the spray will be applied.' }]));
+  c.push(bullet([{ text: 'Keep the distance between the vaccinator and the side wall to a maximum of 4 metres (12 feet). Birds beyond that range will not receive adequate coverage. [6]' }]));
+  c.push(bullet([{ text: 'Reduce light intensity over the birds. Turn off other lights in the barn if possible. Dim light keeps birds calm and grouped.' }]));
+  c.push(bullet([{ text: 'Hold the spray nozzle in a downward direction, 1 metre (3 feet) above the birds\' heads. This is the height that produces the correct droplet size and landing pattern at the recommended pressure. [6]' }]));
+  c.push(bullet([{ text: 'Walk slowly and steadily down the barn. Rushing produces uneven coverage.' }]));
+
+  c.push(labeled('Breeder pullets:', ''));
+  c.push(bullet([{ text: 'Vaccinate on the feed day. Birds will be concentrated at the feed lines, which improves coverage distribution. [6]' }]));
+  c.push(bullet([{ text: 'Dim lights over the feed lines during the spray run.' }]));
+
+  c.push(labeled('Pullets (cage housing):', ''));
+  c.push(bullet([{ text: 'Dim barn lights before starting.' }]));
+  c.push(bullet([{ text: 'Walk down the barn at a slow, steady pace, spraying directly at the face of the birds in each cage row. [6]' }]));
+
+  c.push(para(
+    'No water starvation is required for coarse spray vaccination. Birds do not need to be thirsty to receive the vaccine through the respiratory route. [6]'
+  ));
+
+  c.push(...figureOrPlaceholder(
+    'fig4_1.png',
+    'Figure 4.1: Coarse spray vaccination technique',
+    'Figure 4.1: Coarse spray vaccination technique in a commercial broiler barn. Birds grouped along the side wall. Vaccinator walks slowly with the nozzle 1 m (3 ft) above the birds in a downward direction. Maximum 4 m (12 ft) from wall. Fans off during the run and for 20 minutes after. Pressure: 4.5-5.0 Bar (65-73 PSI). Source: CPC Short Courses.',
+    6.5
+  ));
+
+  c.push(h2('4.7  Biosecurity, PPE, and Safety'));
+
+  c.push(para(
+    'Spray vaccination using live Newcastle Disease virus creates a real occupational exposure risk. The CPC Learning Centre Coarse Spray Vaccination Technical Bulletin states clearly: wear gloves, a mask, and safety glasses during preparation and vaccine administration to avoid eye infection (conjunctivitis) following Newcastle virus contact [6]. This is not a formality. Newcastle Disease virus can cause conjunctivitis and mild flu-like symptoms in exposed humans.'
+  ));
+
+  c.push(labeled('PPE requirements [6]:', ''));
+  c.push(bullet([{ text: 'Gloves during preparation and throughout the spray run.' }]));
+  c.push(bullet([{ text: 'Mask to prevent inhalation of the vaccine cloud.' }]));
+  c.push(bullet([{ text: 'Safety glasses or a face shield. The spray cloud is concentrated in the barn and contact with the eyes is likely without eye protection.' }]));
+
+  c.push(labeled('After vaccination [6]:', ''));
+  c.push(bullet([{ text: 'Rinse the Hardi sprayer thoroughly with distilled water immediately after use.' }]));
+  c.push(bullet([{ text: 'Sanitize with "Clean Tabs" or an equivalent approved sanitizer.' }]));
+  c.push(bullet([{ text: 'Rinse again with distilled water, then store upside down to dry in a clean location.' }]));
+  c.push(bullet([{ text: 'Burn all empty vaccine containers.' }]));
+
+  c.push(callout(
+    'The sprayer used for vaccination must never be used for pesticides, herbicides, or disinfectants. Even trace contamination from a previous use will inactivate a live vaccine. Keep a dedicated sprayer for vaccination only and label it clearly. [6]'
+  ));
+
+  c.push(h2('4.8  Monitoring and Troubleshooting'));
+
+  c.push(para(
+    'Unlike wing web vaccination, where a take is visible at day 7-10, or water vaccination, where you can see birds actively drinking, coarse spray coverage is harder to verify in real time. The key monitoring steps are before and after the run, not during it.'
+  ));
+
+  c.push(labeled('Before the run:', ''));
+  c.push(bullet([{ text: 'Practice run with water confirms the volume needed and the walking speed required to deliver that volume to each section. Do this 1-2 days ahead of vaccination day. [6]' }]));
+  c.push(bullet([{ text: 'Check spray pattern at a light source. Correct droplet size should be visible as falling coarse drops, not a hanging mist.' }]));
+  c.push(bullet([{ text: 'Confirm fans are off before starting.' }]));
+
+  c.push(labeled('During and after the run:', ''));
+  c.push(bullet([{ text: 'Watch birds as you walk. They should be calm and grouped. Birds scattering or piling may mean light levels are too high or the spray is startling them.' }]));
+  c.push(bullet([{ text: 'Confirm the 20-minute ventilation hold is completed before turning fans back on.' }]));
+  c.push(bullet([{ text: 'For respiratory vaccines, post-vaccination serology (titer testing at 21 days post-vaccination) is the most reliable way to confirm that coverage was achieved uniformly across the flock.' }]));
+
+  c.push(labeled('Common failures and causes:', ''));
+  c.push(bullet([{ text: 'Low titers in post-vaccination serology: check water quality (chlorine contamination), pressure (too high producing fine mist), walking speed (too fast), or vial rinsing (not done). [6]' }]));
+  c.push(bullet([{ text: 'Wide spread in serology titers (high CV): indicates uneven coverage. Sections of the barn vaccinated quickly or at the wrong distance from the wall will have lower-titer birds than sections done correctly.' }]));
+  c.push(bullet([{ text: 'No immune response in vaccinated birds: cold chain failure or wrong diluent (chlorinated water) are the most common causes. Distilled or deionized water is non-negotiable. [6]' }]));
+
+  c.push(callout(
+    'All four vaccination methods in this course depend on the same foundation: a well-timed program designed with veterinary input, vaccines kept cold from factory to barn, and a technique executed consistently on every bird. The best vaccination program in the world fails at any one of those three points.'
+  ));
+
+  // ============================================================
+  // SECTION 5: IN-OVO VACCINATION (brief overview)
+  // ============================================================
+  c.push(pageBreak());
+  c.push(h1('Section 5: In-Ovo Vaccination'));
+
+  c.push(para(
+    'In-ovo vaccination delivers vaccine to the developing embryo inside the egg at approximately 18 days of a 21-day incubation period, before the chick hatches [12,13]. Automated machines at the hatchery pierce the eggshell and deposit a measured vaccine dose into the amniotic fluid. In the 24 to 48 hours before hatch, the embryo swallows the amniotic fluid and absorbs the vaccine. By the time the chick arrives in the barn, it already has immunity primed from before hatch [13].'
+  ));
+
+  c.push(para(
+    'The main vaccines delivered in-ovo in commercial broiler and breeder programs are Marek\'s Disease (using HVT, bivalent HVT/SB-1, or CVI988/Rispens strains), Infectious Bursal Disease, and in some programs Newcastle Disease [12,13]. For Marek\'s Disease in particular, in-ovo has largely replaced post-hatch subcutaneous injection in high-volume hatcheries: every egg in the setter receives a confirmed dose automatically, with no additional labor per chick. Protection begins before the chick encounters the virus environment at placement, which matters because Marek\'s Disease virus can be present in barn litter from day one [11].'
+  ));
+
+  c.push(para(
+    'In-ovo vaccination is a hatchery procedure. Equipment setup, egg tray positioning, needle calibration, sanitation between trays, and vaccine refrigeration at the injector station are all managed by hatchery staff, not barn managers. What the barn manager needs to understand is that in-ovo-vaccinated chicks arrive with immunity already primed, and any farm-level booster doses required by the flock program must be timed to complement that primed immunity, not compete with it. Timing conflicts between in-ovo and early farm-level boosters should be resolved with your veterinarian before the vaccination program is set for the season. For a full treatment of in-ovo vaccination equipment, technique, egg handling, and hatchery management protocols, see the Hatchery Management and Incubation Biology course in this series.'
   ));
 
   // ============================================================
@@ -1214,7 +1521,8 @@ if (dirtyLeft > 0) {
 
 // 7. Spelling sweep — check for British forms
 const britishPatterns = [/\bcolour/gi, /\bbehaviour/gi, /\bcentre\b/gi, /\bdefenc/gi, /\bneighbour/gi, /\bgrey\b/gi, /\bmould\b/gi, /\bsulph/gi, /\bfaec/gi, /\boedem/gi, /\bdiarrhoea/gi, /\bhaemo/gi, /\borganis/gi, /\brecognis/gi, /\banalyse/gi];
-const allText = docXml.replace(/<[^>]+>/g, ' ');
+// Strip "Learning Centre" (CPC Learning Centre is the org's proper name — not a British-spelling error)
+const allText = docXml.replace(/<[^>]+>/g, ' ').replace(/learning centre/gi, 'learning center');
 const britishHits = britishPatterns.filter(p => p.test(allText));
 if (britishHits.length > 0) {
   console.warn('British spelling check: FAIL — found patterns:', britishHits.map(p => p.toString()));
