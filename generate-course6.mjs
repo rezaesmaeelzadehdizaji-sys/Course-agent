@@ -582,19 +582,25 @@ function buildSection3() {
     children: [
       h1('Section 3: Internal Body Systems Overview'),
 
+      para('The diagram below shows the position of every major organ system inside a commercial laying hen. Work through it once before reading the sections that follow. It will anchor every labeled structure to an actual location in the bird\'s body.'),
+
+      ...embedPhoto(imgFile('anatomy_overview.jpg'), 'Figure 3.1: Internal anatomy of the chicken showing the position of all major organ systems. Source: PoultryHub Australia / University of New England.'),
+
       h2('3.1  The Digestive System'),
       para('A chicken\'s digestive tract has no teeth. It swallows feed whole and relies on a sequence of mechanical and chemical processes to extract nutrients. Every major feeding decision, from particle size to phase feeding to grit use, has its roots in this anatomy [1].'),
 
       labeled('Crop:', 'The first stop after the esophagus. The crop is a pouch in the lower neck that stores feed and water until the rest of the tract is ready to receive it. It also begins the softening of dry feed through moisture absorption. When the crop empties, the bird signals hunger. In day-old chicks, crop fill at 24 hours is a key welfare indicator: the target is 100% of chicks showing a full, palpable crop [1].'),
       labeled('Proventriculus (true stomach):', 'This is where chemical digestion begins. The proventriculus secretes hydrochloric acid and pepsinogen, initiating protein breakdown. It is relatively small and passes feed through quickly into the gizzard [1].'),
       labeled('Gizzard:', 'The mechanical stomach. Two sets of powerful smooth muscles grind feed against small stones (grit) retained in the gizzard. This grinding reduces feed particles to approximately 1 to 2 mm before they pass into the small intestine [1,9]. A well-developed gizzard improves digestive efficiency and feed conversion. Birds on fine mash diets without access to insoluble grit can have underdeveloped gizzards. Feeding coarser particle feed or providing insoluble grit, particularly in the first two weeks for broilers, improves gizzard development and overall gut health.'),
+
+      ...embedPng(imgFile('anatomy_proventriculus_gizzard.png'), 'Photo 3.1: Proventriculus (left) and gizzard (right) from a chicken. The proventriculus is narrow and glandular; the gizzard is thick-walled and muscular. Source: Dr. Jacquie Jacob, University of Kentucky.', 4.0),
       labeled('Small intestine (duodenum, jejunum, ileum):', 'The pancreas and liver deliver digestive enzymes and bile salts into the duodenum. The jejunum and ileum are where nutrients are absorbed across the villi into the bloodstream. Villus height and crypt depth in the small intestine determine how much of each gram of feed actually enters the bird. Enteric disease, mycotoxins, or coccidiosis damage the villi and directly reduce nutrient absorption and feed efficiency [10].'),
       labeled('Ceca:', 'Two blind pouches at the junction of the small and large intestine. The ceca ferment undigested material and produce short-chain fatty acids and B vitamins. They also reabsorb water and play a role in immune function. Cecal output, the dark, pasty, slightly pungent dropping produced once or twice a day, is completely normal and should not be mistaken for diarrhea [1].'),
       labeled('Cloaca:', 'The terminal chamber where the digestive, urinary, and reproductive tracts converge. Feces, urine, and eggs all exit through the cloaca. Because of this shared exit, egg contamination can occur when hens have enteric disease, which is one reason Salmonella control requires managing gut health as well as external hygiene.'),
 
-      ...embedPng(imgFile('figure_3_1_digestive.png'), 'Figure 3.1: The poultry digestive tract from beak to cloaca. Key differences from mammalian digestion: no teeth, a storage crop, and a muscular gizzard that substitutes for chewing. Source: CPC Short Courses.'),
+      ...embedPhoto(imgFile('anatomy_digestive_tract.jpg'), 'Photo 3.2: The complete chicken digestive tract laid out from beak and crop at left through to the ceca and cloaca at right. The small intestine coils fill most of the mid-section. Source: Dr. Jacquie Jacob, University of Kentucky.'),
 
-      ...embedPhoto(imgFile('photo_3_1_gizzard.jpg'), 'Photo 3.1: A chicken gizzard opened to show the thick muscular walls and tough koilin lining. The koilin layer (pale yellow) protects the muscle from the grinding action. Grit particles retained in the chamber work against the ridged lining to break down feed. Source: Wikimedia Commons / Bjferstern, CC BY-SA 3.0.'),
+      ...embedPhoto(imgFile('photo_3_1_gizzard.jpg'), 'Photo 3.3: A chicken gizzard opened to show the thick muscular walls and tough koilin lining. The koilin layer (pale yellow) protects the muscle from the grinding action. Grit particles retained in the chamber work against the ridged lining to break down feed. Source: Wikimedia Commons / Bjferstern, CC BY-SA 3.0.'),
 
       h2('3.2  The Respiratory System'),
       para('A bird\'s respiratory system works nothing like a mammal\'s, and understanding the difference changes how you think about ventilation, ammonia, and dust management.'),
@@ -604,7 +610,9 @@ function buildSection3() {
       para('The key management implication is straightforward. This highly efficient system is also highly vulnerable. Ammonia at 10 ppm already damages the cilia lining the respiratory tract, the primary defense against bacteria and irritants [2]. The bird cannot cough pathogens out the way a mammal can. When cilia are destroyed by ammonia or dust, bacteria enter the air sacs directly. A visibly ammonia-damaged flock, with watery eyes and bubbling, has been breathing damaging air for days or weeks before those signs appeared.'),
       para('High dust loads compound the problem. Every square meter of poorly managed litter sends bacteria, endotoxins, and mold spores into the air. Adequate ventilation is not a comfort measure: it is a basic immune defense requirement.'),
 
-      ...embedPng(imgFile('figure_3_2_air_sacs.png'), 'Figure 3.2: The nine air sacs and unidirectional airflow through the parabronchi. Unlike mammalian lungs, gas exchange occurs during both inhalation and exhalation. Source: CPC Short Courses.'),
+      ...embedPhoto(imgFile('anatomy_respiratory.jpg'), 'Figure 3.2: The avian upper respiratory tract showing larynx, trachea, syrinx, bronchi, and lungs. The syrinx is the sound-producing organ unique to birds. Source: Public Domain.', 3.5),
+
+      ...embedPng(imgFile('figure_3_2_air_sacs.png'), 'Figure 3.3: The nine air sacs and unidirectional airflow through the parabronchi. Unlike mammalian lungs, gas exchange occurs during both inhalation and exhalation. Source: CPC Short Courses.'),
 
       h2('3.3  The Circulatory System'),
       para('A chicken\'s heart is four-chambered, like a mammal\'s, and it works extremely hard. The resting heart rate is approximately 250 to 300 beats per minute at rest [20]. The left ventricle is by far the largest chamber, built with far thicker walls than the right ventricle, because it must push blood to the entire body at high pressure. The right ventricle only needs to move blood through the nearby lungs, which offer much less resistance.'),
@@ -624,7 +632,7 @@ function buildSection3() {
       para('Only the left ovary and oviduct develop to functional size in female chickens. The right ovary regresses during embryonic development and is nonfunctional in the adult bird [3]. At hatch, a pullet already carries all the ova she will ever lay, tens of thousands of potential eggs, though only a small fraction will mature over her productive life. No new ova develop after hatching.'),
       para('The oviduct is 25 to 27 inches long in a fully productive layer. Egg formation from ovulation to laying takes approximately 25 to 26 hours and passes through five distinct sections [3]. See Figure 3.3 and Table 3.1 below.'),
 
-      ...embedPng(imgFile('figure_3_3_oviduct.png'), 'Figure 3.3: The five sections of the hen\'s oviduct with approximate length and time in each. Total egg formation takes 25 to 26 hours. Source: CPC Short Courses.'),
+      ...embedPng(imgFile('figure_3_3_oviduct.png'), 'Figure 3.4: The five sections of the hen\'s oviduct with approximate length and time in each. Total egg formation takes 25 to 26 hours. Source: CPC Short Courses.'),
 
       para('Table 3.1: Egg formation timeline by oviduct section [3].', { spaceAfter: 60 }),
       oviductTable(),
