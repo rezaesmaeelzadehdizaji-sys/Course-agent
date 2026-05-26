@@ -270,7 +270,7 @@ function buildHeader() {
       new Paragraph({
         children: [
           new TextRun({ text: 'CPC Short Courses  |  ', color: '888888', size: 18, font: 'Calibri' }),
-          new TextRun({ text: 'Vaccination – water, wing web, eye drop, spray', color: MED_BLUE, size: 18, font: 'Calibri', bold: true }),
+          new TextRun({ text: 'Vaccination – water, wing web, eye drop, spray, injection', color: MED_BLUE, size: 18, font: 'Calibri', bold: true }),
         ],
         alignment: AlignmentType.RIGHT,
         border: { bottom: { style: BorderStyle.SINGLE, size: 4, color: GOLD } },
@@ -336,7 +336,7 @@ function buildCoverSection() {
       spacing: { before: 0, after: 40 },
     }),
     new Paragraph({
-      children: [new TextRun({ text: 'water, wing web, eye drop, spray, in-ovo', bold: true, color: MED_BLUE, size: 36, font: 'Calibri' })],
+      children: [new TextRun({ text: 'water, wing web, eye drop, spray, in-ovo, injection', bold: true, color: MED_BLUE, size: 36, font: 'Calibri' })],
       alignment: AlignmentType.CENTER,
       spacing: { before: 0, after: 80 },
     }),
@@ -421,8 +421,15 @@ const tocEntries = [
   { lvl: 2, text: '4.7  Biosecurity, PPE, and Safety', page: 35 },
   { lvl: 2, text: '4.8  Monitoring and Troubleshooting', page: 36 },
   { lvl: 1, text: 'Section 5: In-Ovo Vaccination', page: 37 },
-  { lvl: 1, text: 'Recommended Peer-Reviewed Journals', page: 39 },
-  { lvl: 1, text: 'References', page: 40 },
+  { lvl: 1, text: 'Section 6: Injection Vaccination', page: 39 },
+  { lvl: 2, text: '6.1  When and Why Injection Vaccination Is Used', page: 39 },
+  { lvl: 2, text: '6.2  Target Vaccines and Disease Coverage', page: 40 },
+  { lvl: 2, text: '6.3  Equipment and Vaccine Handling', page: 41 },
+  { lvl: 2, text: '6.4  Subcutaneous and Intramuscular Technique', page: 42 },
+  { lvl: 2, text: '6.5  Biosecurity, PPE, and Record Keeping', page: 44 },
+  { lvl: 2, text: '6.6  Monitoring and Troubleshooting', page: 45 },
+  { lvl: 1, text: 'Recommended Peer-Reviewed Journals', page: 46 },
+  { lvl: 1, text: 'References', page: 47 },
 ];
 
 const entriesWithAnchor = tocEntries.map((e, i) => ({
@@ -468,7 +475,7 @@ function buildContentSection() {
   ));
 
   c.push(para(
-    'The CPC Learning Centre General Principles of Vaccination guide puts it plainly: vaccination is an art [2]. It takes knowledge, attention to detail, and practiced technique. This course covers four distinct vaccination methods that together represent most of what a commercial poultry operation will use: water vaccination, wing web vaccination, eye drop vaccination, and coarse spray vaccination. Each method targets different diseases through different immune pathways, and each demands its own protocol.'
+    'The CPC Learning Centre General Principles of Vaccination guide puts it plainly: vaccination is an art [2]. It takes knowledge, attention to detail, and practiced technique. This course covers five distinct vaccination methods used in Canadian commercial poultry: water vaccination, wing web vaccination, eye drop vaccination, coarse spray vaccination, and injection vaccination with killed multivalent vaccines. Each method targets different diseases through different immune pathways, and each demands its own protocol.'
   ));
 
   c.push(para(
@@ -496,10 +503,10 @@ function buildContentSection() {
   c.push(para([
     { text: 'Learning objectives for Course 8:', bold: true },
   ]));
-  c.push(bullet('Explain the immune mechanisms relevant to water, wing web, eye drop, and coarse spray vaccination routes.'));
+  c.push(bullet('Explain the immune mechanisms relevant to water, wing web, eye drop, coarse spray, and injection vaccination routes.'));
   c.push(bullet('Identify which diseases are controlled through each vaccination method.'));
   c.push(bullet('Handle, store, and prepare vaccines correctly at each step from refrigerator to bird.'));
-  c.push(bullet('Apply correct technique for water vaccination, wing web injection, eye drop administration, and coarse spray vaccination.'));
+  c.push(bullet('Apply correct technique for water vaccination, wing web injection, eye drop administration, coarse spray vaccination, and subcutaneous and intramuscular injection with killed multivalent vaccines.'));
   c.push(bullet('Use PPE and biosecurity protocols for each method.'));
   c.push(bullet('Monitor flock response and identify vaccination failures before they become production losses.'));
 
@@ -1320,6 +1327,142 @@ function buildContentSection() {
   c.push(para(
     'In-ovo vaccination is a hatchery procedure. Equipment setup, egg tray positioning, needle calibration, sanitation between trays, and vaccine refrigeration at the injector station are all managed by hatchery staff, not barn managers. What the barn manager needs to understand is that in-ovo-vaccinated chicks arrive with immunity already primed, and any farm-level booster doses required by the flock program must be timed to complement that primed immunity, not compete with it. Timing conflicts between in-ovo and early farm-level boosters should be resolved with your veterinarian before the vaccination program is set for the season. For a full treatment of in-ovo vaccination equipment, technique, egg handling, and hatchery management protocols, see the Hatchery Management and Incubation Biology course in this series.'
   ));
+
+  // ============================================================
+  // SECTION 6: INJECTION VACCINATION
+  // ============================================================
+  c.push(pageBreak());
+  c.push(h1('Section 6: Injection Vaccination'));
+
+  c.push(para(
+    'When a pullet flock gets close to transfer, your veterinarian will often schedule a round of injections: killed multivalent vaccines given subcutaneously or into the pectoral muscle. These are not boosters in the casual sense. They are the final, high-dose priming event that builds the deep systemic titers layers and breeders need for a full production cycle. The CPC Learning Centre Inactivated Vaccine Administration bulletin describes inactivated vaccines as "the cornerstone of antibody-based protection programs in laying and breeding flocks" [4]. Once a bird goes into lay, you cannot vaccinate the same way again without disrupting production. This pre-transfer injection round is the window. Done well, the birds carry protection through to the end of the flock.'
+  ));
+
+  c.push(h2('6.1  When and Why Injection Vaccination Is Used'));
+
+  c.push(para(
+    'Injection vaccination with killed (inactivated) products is the standard final-stage vaccination method for commercial layer pullets and broiler breeders before they move to the laying house or production barn. The timing is driven by biology: by the time pullets are 14 to 18 weeks old, they have been primed by the live vaccine schedule earlier in the rearing program, and their immune systems are ready to mount a strong secondary response to a killed antigen boost. That response produces high, lasting IgY titers that will carry the birds through production. [4,12]'
+  ));
+
+  c.push(para(
+    'Two things happen when injection vaccination is timed correctly. First, the bird itself develops strong circulating antibody levels that protect her through a long production cycle where live vaccine boosts are not practical. Second, in breeder programs, those high serum IgY titers translate directly into maternal antibodies transferred through the egg yolk to the next generation of chicks. The CPC Learning Centre Maternal Antibody Transfer bulletin explains that the level of protection a day-old chick carries at placement depends almost entirely on the titer of her dam at the time the egg was laid [5]. A well-vaccinated breeder produces chicks with meaningful maternal protection. A poorly vaccinated breeder produces chicks that are exposed from day one.'
+  ));
+
+  c.push(labeled('Who uses injection vaccination:', ''));
+  c.push(bullet([{ text: 'Commercial layer pullets:', bold: false }, { text: ' typically vaccinated at 14 to 16 weeks, before transfer to the laying house at 16 to 18 weeks.' }]));
+  c.push(bullet([{ text: 'Broiler breeders:', bold: false }, { text: ' typically vaccinated at 18 to 20 weeks, before moving to the production barn, sometimes with a second injection 4 to 6 weeks later during lay.' }]));
+  c.push(bullet([{ text: 'Turkeys in some programs:', bold: false }, { text: ' depending on regional disease pressure and veterinary protocols.' }]));
+
+  c.push(para(
+    'Injection vaccination is also used in commercial broiler programs for certain diseases, particularly Newcastle Disease in areas with high endemic pressure, and for inactivated Marek\'s Disease vaccine in programs where the in-ovo HVT dose is supplemented with an SB-1 or bivalent product at hatch. The principles are the same: the injection delivers a killed antigen that stimulates a sustained systemic antibody response.'
+  ));
+
+  c.push(h2('6.2  Target Vaccines and Disease Coverage'));
+
+  c.push(para(
+    'Killed multivalent vaccines combine multiple antigens into a single injection, reducing handling stress on the birds and labor time for the crew. A typical pre-transfer layer program may use a product covering three to five diseases in one dose. Your veterinarian selects the combination based on regional disease pressure and the live vaccine history of the flock. Common antigens in killed combination products used in Canadian commercial flocks include:'
+  ));
+
+  c.push(bullet([
+    { text: 'Newcastle Disease virus (NDV):', bold: true },
+    { text: ' Killed NDV boosts the systemic IgY titers built by earlier live La Sota or Clone 30 water and spray vaccines. High NDV titers at lay also protect chick progeny through maternal antibody transfer. [12]' },
+  ]));
+  c.push(bullet([
+    { text: 'Egg Drop Syndrome 1976 (EDS-76):', bold: true },
+    { text: ' An adenovirus that suppresses shell gland function and causes thin-shelled, shell-less, and discolored eggs during peak lay. There is no live EDS vaccine. Injection with a killed EDS antigen before lay is the only way to protect the flock. [12]' },
+  ]));
+  c.push(bullet([
+    { text: 'Infectious Bronchitis virus (IBV):', bold: true },
+    { text: ' The killed IBV component in a multivalent product reinforces the mucosal immunity from earlier live IB vaccinations and contributes to systemic titer. In breeders, it supports maternal antibody transfer to progeny. [8,12]' },
+  ]));
+  c.push(bullet([
+    { text: 'Infectious Laryngotracheitis (ILT):', bold: true },
+    { text: ' Some multivalent products include a killed ILT component. In flocks with ILT pressure, this is combined with an earlier live eye drop or coarse spray prime. [9,12]' },
+  ]));
+  c.push(bullet([
+    { text: 'Mycoplasma gallisepticum (MG) and Mycoplasma synoviae (MS):', bold: true },
+    { text: ' Killed Mycoplasma bacterins are used in programs where Mycoplasma is endemic or where clean flock status must be maintained. These require veterinary direction. [12]' },
+  ]));
+
+  c.push(para(
+    'Your veterinarian determines the specific product, dose, and schedule. Never substitute one killed multivalent product for another without checking that the antigen content matches what your program requires. Products from different manufacturers may carry the same name but different strains or antigen concentrations.'
+  ));
+
+  c.push(h2('6.3  Equipment and Vaccine Handling'));
+
+  c.push(para(
+    'The CPC Learning Centre Inactivated Vaccine Administration bulletin is the reference document for this section [4]. Follow it for all equipment selection and vaccine handling steps.'
+  ));
+
+  c.push(labeled('Injector:', ' Use an automatic multi-dose injector connected to the vaccine bottle by a fill tube. These injectors draw a fixed volume from the bottle and reset automatically between birds. Set the dose volume according to the vaccine label before starting and test-inject into a clean cup of water to confirm the volume is correct. Do not use a manual syringe for large flocks: speed and consistency both suffer. [4]'));
+
+  c.push(labeled('Needle selection:', ' Most killed vaccine protocols call for an 18 to 20 gauge needle. Use a shorter needle (1.5 cm) for subcutaneous injection and a longer needle (2 to 2.5 cm) for intramuscular injection. Change the needle at least every 500 birds, and immediately if it becomes bent, dull, or contaminated. [4]'));
+
+  c.push(labeled('Cold chain for killed vaccines:', ' Killed vaccines, particularly oil emulsion products, must be stored at 2 to 8°C. They must never be frozen. Freezing breaks the oil-in-water emulsion and the product cannot be used. A frozen and thawed oil vaccine looks different: you will see separation, oiliness, or clumping. Discard any vial with these signs. [4]'));
+
+  c.push(labeled('Warming before use:', ' Remove vaccine from the refrigerator at least one hour before vaccination and allow it to warm to 20 to 25°C. Cold vaccine is more viscous, harder to inject, and causes more pain and tissue reaction at the injection site than vaccine at room temperature. Do not heat above 25°C. [4]'));
+
+  c.push(labeled('Shaking:', ' Oil emulsion vaccines must be gently shaken before filling the injector and periodically during the session if it runs longer than 30 to 45 minutes. Separation during a long session means the later birds are receiving a different antigen concentration than the early birds. [4]'));
+
+  c.push(labeled('Volume per bird:', ' Follow the vaccine label. Most killed poultry vaccines are dosed at 0.5 mL per bird. Some products specify 1.0 mL. Never reduce the dose: the antigen load in killed vaccines is matched to the labeled volume. [4]'));
+
+  c.push(callout(
+    'Oil emulsion vaccines cannot be frozen. A single temperature excursion below 0°C destroys the product. Store them at the back of the fridge away from the freezer compartment, check the thermometer on delivery day, and never pack them in a cooler with ice directly touching the bottles. [4]'
+  ));
+
+  c.push(h2('6.4  Subcutaneous and Intramuscular Technique'));
+
+  c.push(para(
+    'The two standard injection routes for poultry are subcutaneous (SC) and intramuscular (IM). Both are described in the CPC Learning Centre Inactivated Vaccine Administration bulletin [4]. Your vaccine label or veterinarian will specify which route to use. Some programs use both routes on the same bird when combining multiple products that require different routes.'
+  ));
+
+  c.push(...figureOrPlaceholder(
+    'Injection vaccination in pullets befor transfer to layeing house.png',
+    'Photo 6.1: Subcutaneous injection in a pullet before transfer to the laying house',
+    'Photo 6.1: An automatic multi-dose injector delivering a killed multivalent vaccine subcutaneously in a pullet before transfer to the laying house. The operator tents the loose skin at the nape of the neck, inserts the needle at a low angle between the skin and the underlying muscle, and injects the full dose before withdrawing. Source: CPC Short Courses.',
+    5.8
+  ));
+
+  c.push(labeled('Subcutaneous (SC) injection:', ' The SC route delivers vaccine into the loose connective tissue between the skin and the muscle. The standard site for poultry is the loose skin at the nape of the neck (back of the neck between the head and the top of the shoulders). Pick up the loose skin with your non-needle hand, tent it away from the muscle, insert the needle at a shallow angle (20 to 30 degrees) through the skin and into the pocket, and inject the full dose before withdrawing. You should feel no resistance when the needle is correctly positioned. Resistance means the needle is in muscle or hitting the neck vertebra: withdraw and reposition. [4]'));
+
+  c.push(labeled('Intramuscular (IM) injection:', ' The IM route delivers vaccine directly into the pectoral muscle (the large breast muscle on either side of the keel bone). Hold the bird with the breast toward you. Locate the keel bone and insert the needle at a 45-degree angle into the muscle mass to one side of the keel. Do not inject along the midline: the keel bone is just under the surface and you will hit bone. Do not inject too deep toward the body cavity. Withdraw smoothly after delivering the dose. [4]'));
+
+  c.push(labeled('Site rotation:', ' In large flocks vaccinated in multiple sessions, or where a second injection is given during production, rotate the injection site. Injecting repeatedly into the same site builds scar tissue that reduces absorption and increases the risk of persistent reactions. [4]'));
+
+  c.push(labeled('Bird handling during injection:', ' Restrain birds firmly but without compression of the chest. Struggling birds risk needle stick injuries to the operator and poorly placed injections. Work at a steady pace that allows correct restraint on every bird. [4]'));
+
+  c.push(labeled('Injection site reactions:', ' A small, firm lump at the SC injection site is normal and expected with oil emulsion vaccines. This is the oil adjuvant creating a slow-release antigen depot. The lump typically resolves over 2 to 3 weeks. Abnormal signs include large, spreading abscesses, persistent weeping lesions, or high flock-level mortality following injection. Any of these should prompt immediate contact with your veterinarian. [4]'));
+
+  c.push(h2('6.5  Biosecurity, PPE, and Record Keeping'));
+
+  c.push(labeled('PPE during injection vaccination:', ''));
+  c.push(bullet([{ text: 'Gloves throughout the session. Change if torn or heavily soiled.' }]));
+  c.push(bullet([{ text: 'Safety glasses or face shield. Accidental needle stick or spray from the injector tip can direct vaccine toward the operator\'s eyes. [4]' }]));
+  c.push(bullet([{ text: 'Change needles regularly. A dull needle causes more tissue trauma and increases post-injection reaction rates. [4]' }]));
+
+  c.push(labeled('Needle stick first aid:', ' If you stick yourself with a needle used on poultry, wash the wound thoroughly with soap and water for at least 15 minutes, report the incident, and contact a physician. Needle stick injury with a killed vaccine product is generally low risk but requires documentation. [4]'));
+
+  c.push(labeled('Record keeping:', ' The CPC Learning Centre Inactivated Vaccine Administration bulletin specifies recording the following for every injection session: product name, manufacturer, serial number, expiry date, number of birds vaccinated, date of vaccination, and operator name [4]. These records are required for traceability and are requested during CFIA inspections and veterinary herd health reviews.'));
+
+  c.push(labeled('Vaccine disposal:', ' Dispose of empty vials and used needles according to your provincial sharps disposal protocol. Do not discard used needles in general waste bins. Return them in a sealed sharps container. [4]'));
+
+  c.push(h2('6.6  Monitoring and Troubleshooting'));
+
+  c.push(labeled('High rate of injection site reactions:', [
+    run(' A small firm lump is expected. Large, weeping, or spreading reactions across the flock are not. The most common causes are: vaccine injected intramuscularly when SC was specified (oil in muscle causes severe inflammation), wrong needle length, contaminated needles, or cold vaccine injected before it warmed to room temperature. Review technique, equipment, and the warming protocol. [4]'),
+  ]));
+
+  c.push(labeled('Post-vaccination serology:', [
+    run(' The only reliable way to confirm that injection vaccination achieved adequate flock protection is serology at 4 to 6 weeks post-vaccination. Titers below the protective threshold after a properly executed injection program indicate either a cold chain failure, wrong product, or an immune system problem in the flock (e.g., immunosuppressive disease). Work with your veterinarian to interpret serology results and decide whether revaccination is needed. [4,12]'),
+  ]));
+
+  c.push(labeled('Birds showing significant post-vaccination depression or mortality:', [
+    run(' Mild injection-site swelling and brief post-handling quiet are expected. Flock-wide depression lasting more than 24 to 48 hours, or any significant mortality following injection, is not normal. Possibilities include anaphylactic reaction (rare), vaccine contamination, wrong product or dose, or systemic disease present in the flock at the time of vaccination. Contact your veterinarian immediately. [4]'),
+  ]));
+
+  c.push(labeled('Titer failures at first-egg serology:', [
+    run(' If serology at lay shows titers below the expected range after a correct injection program, review cold chain records from product arrival through the vaccination session. One freezing event, even brief, destroys an oil emulsion vaccine. Also confirm the product used actually contained the antigen in question: multivalent product labels vary and not every NDV or IBV product uses the same strains. [4,12]'),
+  ]));
 
   // ============================================================
   // RECOMMENDED JOURNALS
