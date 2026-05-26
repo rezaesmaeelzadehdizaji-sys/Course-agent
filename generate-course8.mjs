@@ -484,11 +484,11 @@ function buildContentSection() {
 
   c.push(para([
     { text: 'How the avian immune system responds to vaccines.', bold: true },
-    { text: ' The avian immune system has two main branches: innate immunity (present from hatch, non-specific) and adaptive immunity (acquired through exposure or vaccination) [3]. Adaptive immunity is further divided into humoral immunity, driven by B cells that produce antibodies, and cell-mediated immunity, driven by T cells that directly destroy infected cells [3]. Vaccination targets the adaptive system, training it to recognize and respond to a specific pathogen before the bird ever encounters the real thing.' },
+    { text: ' A bird\'s immune system has two layers that work together [3]. The first is present from hatch and responds immediately to any threat, without recognizing what it is. The second is the trained layer: it learns from vaccination or infection and builds a specific response that is faster and stronger the next time the bird meets that pathogen. That second layer is what vaccination is building. [3]' },
   ]));
 
   c.push(para(
-    'Three antibody types matter most to vaccination: IgM is the first antibody produced after initial exposure. IgY (equivalent to IgG in mammals) develops after IgM and drives the recall response when the bird encounters the antigen again. IgA is produced constantly at mucosal surfaces in the gut, airways, and eyes, and stops pathogens from attaching to those surfaces before they can cause infection [3]. Eye drop and water vaccination work largely through IgA. Inactivated injected vaccines work primarily through IgY.'
+    'Three types of antibody matter in a poultry vaccination program. IgM appears first after any new exposure. IgY (the same as IgG in mammals) builds up after IgM and is what serology measures when you send samples to the lab. IgA works at mucosal surfaces: the gut lining, the airways, and the eyes. It catches pathogens at the entry point and stops them attaching before they can get into the bird. Eye drop and water vaccines work mainly through IgA. Killed injected vaccines work mainly through IgY. [3]'
   ));
 
   c.push(para([
@@ -524,15 +524,15 @@ function buildContentSection() {
   c.push(h2('1.1  Immune Responses to Oral Vaccines'));
 
   c.push(para(
-    'When a bird drinks a live attenuated vaccine, the vaccine virus contacts the gut lining and the gut-associated lymphoid tissue (GALT). The GALT includes the cecal tonsils and other lymphoid patches that sample the gut contents and start the immune response [3]. B cells in the GALT produce IgA antibodies that travel to mucosal surfaces throughout the bird: the gut, the respiratory tract, and the eye.'
+    'When a bird drinks a live attenuated vaccine, the vaccine virus contacts the gut lining and the immune tissue clustered there: the cecal tonsils and other lymphoid patches that sample what the bird is swallowing [3]. That contact triggers IgA production. The IgA spreads to mucosal surfaces throughout the bird, including the gut, the airways, and the eye.'
   ));
 
   c.push(para(
-    'The result is mucosal immunity. For respiratory vaccines like Newcastle Disease (NDV) and Infectious Bronchitis (IBV) delivered by water, the IgA built in the gut travels to the respiratory surfaces and blocks virus before it can get a foothold. For gut-targeting vaccines like Infectious Bursal Disease (IBD/Gumboro), the IgA response right at the gut lining is what provides the protection.'
+    'For respiratory vaccines like Newcastle Disease (NDV) and Infectious Bronchitis (IBV) delivered by water, the IgA generated in the gut travels to the respiratory surfaces and blocks virus at the entry point. For Infectious Bursal Disease (IBD/Gumboro), the IgA response at the gut lining itself is where the protection sits.'
   ));
 
   c.push(para(
-    'The CPC Learning Centre General Principles of Vaccination guide explains that the humoral immune response, driven by B cells derived from the bursa of Fabricius, produces the antibodies that block infection [2]. Cell-mediated immunity, driven by T cells from the thymus, handles destruction of already-infected cells. Effective vaccination programs stimulate both branches [2].'
+    'The CPC Learning Centre General Principles of Vaccination guide explains that two immune mechanisms run in parallel after vaccination [2]. Antibody-based immunity, driven by B cells, blocks the pathogen from attaching and spreading. Cell-based immunity, driven by T cells, destroys cells that are already infected. A good vaccination program stimulates both. [2]'
   ));
 
   c.push(para([
@@ -683,7 +683,7 @@ function buildContentSection() {
   c.push(bullet('Bell drinkers, troughs, and cups: pour the prepared vaccine solution directly into each drinker by hand.'));
   c.push(bullet('Nipple drinker systems: transfer the vaccine from a tank to the water lines using a sump pump (approximately 1/3 horsepower) or by gravity feed. Open the water line at the far end of the barn and close it when the white milk-vaccine solution is visible coming out the end. This confirms the entire line is primed with vaccine solution.'));
 
-  c.push(labeled('Walk the barn:', ' Once vaccine solution is available in the drinkers, walk through the barn to encourage birds to move and drink [1]. Birds at rest will not self-direct to the drinkers in the numbers needed. Active stimulation increases uptake. A well-vaccinated flock is one where birds are actively drinking, not one where the solution was simply available.'));
+  c.push(labeled('Walk the barn:', ' Once vaccine solution is in the drinkers, walk through the barn and get birds moving toward the water [1]. Birds sitting still will not find the drinkers fast enough. The flock needs to be on its feet and drinking. If you walk the barn and birds are still resting, walk it again.'));
 
   c.push(labeled('Confirm consumption:', ' The vaccine solution should be fully consumed within two hours of delivery [1]. If consumption appears incomplete, walk the flock again. Observe for areas where birds are avoiding drinkers: this can indicate a system blockage, a zone where chlorine was not fully cleared, or overcrowding that is preventing access.'));
 
@@ -767,7 +767,7 @@ function buildContentSection() {
   c.push(h2('2.1  When to Use Wing Web Vaccination'));
 
   c.push(para(
-    'Use wing web vaccination when the disease requires direct skin contact with the vaccine virus to stimulate local immunity, when confirming individual bird protection matters, or when vaccination-in-the-face-of-outbreak is necessary because of the disease\'s slow spread dynamics.'
+    'Use wing web vaccination when the disease needs direct contact with skin to trigger immunity, when you need to confirm protection bird by bird, or when you are vaccinating into an active outbreak and need to get ahead of it while the disease is still spreading slowly.'
   ));
 
   c.push(para(
@@ -873,7 +873,7 @@ function buildContentSection() {
 
   c.push(labeled('Excessive reaction:', ' A large, swollen, weeping lesion with spreading redness and possible discharge. This usually indicates secondary bacterial contamination at the injection site, from a dirty applicator, a contaminated vial, or injection into muscle where vaccine does not belong.'));
 
-  c.push(labeled('Take rate standard:', ' Check 2% of the flock (a minimum of 20 birds in any flock) at day 7 to 10. A take rate of 90% or higher is the target. A take rate below 80% indicates a vaccination protocol problem and should prompt a review of cold chain, applicator technique, and reconstitution procedure.'));
+  c.push(labeled('Take rate standard:', ' Check 2% of the flock (minimum 20 birds) at day 7 to 10. A take rate of 90% or higher is the target. Below 80% means something in your protocol broke down. Go back through your cold chain records, your applicator technique, and how the vaccine was reconstituted before the session.'));
 
   c.push(callout(
     'A vaccination session that was completed efficiently but produced an 80% take rate means one in five birds is unprotected. In a Fowl Pox outbreak, those birds become the leading edge of further spread. Take rate checks are not a formality.'
@@ -940,7 +940,7 @@ function buildContentSection() {
     'The CPC Learning Centre Article on the Avian Immune System explains that IgA is the key antibody at mucosal surfaces: it stops pathogens from attaching and taking hold at the gut lining, airways, and eye [3]. IgA is produced constantly at the eye, respiratory tract, gut, and other mucosal surfaces. When vaccine antigen contacts the conjunctiva, it triggers local IgA production that spreads across the eye and upper respiratory mucosa.'
   ));
 
-  c.push(labeled('The Harderian gland:', ' The Harderian gland is a large gland located behind the eye in birds. It is a primary site of IgA production in the avian immune system. When vaccine antigen contacts the conjunctiva, the Harderian gland is directly stimulated [3]. This is why the ocular route produces superior local respiratory immunity compared to systemic injection for respiratory disease vaccines.'));
+  c.push(labeled('The Harderian gland:', ' The Harderian gland sits behind the eye in birds. It is a major producer of IgA. When vaccine antigen contacts the conjunctiva, the Harderian gland fires directly [3]. That is why eye drop vaccination builds better protection in the upper airways than a subcutaneous or intramuscular injection for respiratory diseases: the IgA goes exactly where the virus enters the bird.'));
 
   c.push(labeled('Nasolacrimal drainage:', ' The eye and nasal cavity are connected by the nasolacrimal duct. When a vaccine drop is absorbed through the conjunctiva, excess vaccine and the IgA response generated at the eye drains through this duct into the nasal cavity and upper pharynx. This extends mucosal protection to include the nasal passages and the beginning of the trachea, the entry points for ILT and IBV [9].'));
 
@@ -1067,7 +1067,7 @@ function buildContentSection() {
   c.push(h2('3.7  Monitoring and Troubleshooting'));
 
   c.push(labeled('Expected post-vaccination flock response:', [
-    run(' Live respiratory vaccines delivered by eye drop will produce a mild reaction in the flock at 5 to 7 days post-vaccination. Birds may show brief, mild respiratory signs: quiet tracheal rales, a small increase in eye moisture, slight depression for 12 to 24 hours. This is the expected immune stimulation response, not a disease outbreak. A reaction that is severe, prolonged, or accompanied by mortality is not expected and should prompt immediate consultation with your veterinarian.'),
+    run(' Live respiratory vaccines delivered by eye drop will produce a mild reaction in the flock at 5 to 7 days post-vaccination. You may hear a faint tracheal rattle walking through the barn, see slightly watery eyes on some birds, or notice birds a little quieter than normal for a day. That is the immune response working, not a disease outbreak. A reaction that spreads, gets worse, or causes deaths is not normal and needs veterinary attention immediately.'),
   ]));
 
   c.push(labeled('No visible flock reaction at day 5 to 7:', [
@@ -1079,7 +1079,7 @@ function buildContentSection() {
   ]));
 
   c.push(labeled('Uneven serology (wide range of titers at day 21):', [
-    run(' High coefficient of variation in post-vaccination serology indicates that some birds received adequate doses and some did not. Review technique consistency across operators. Check for zones in the barn where birds were not accessible or where operators had difficulty. High CV in serology is the serological equivalent of poor water uptake in water vaccination: a coverage problem, not a vaccine problem.'),
+    run(' A wide spread in titers at day 21 means some birds got a good dose and some did not. Look at how consistently each operator was working. Check for zones in the barn where birds were hard to reach or where the work was rushed. Wide titer spread after eye drop is the same problem as poor consumption after water vaccination: birds were missed, not a bad vaccine.'),
   ]));
 
   c.push(callout(
@@ -1348,7 +1348,7 @@ function buildContentSection() {
   c.push(h2('6.1  When and Why Injection Vaccination Is Used'));
 
   c.push(para(
-    'Injection vaccination with killed (inactivated) products is the standard final-stage vaccination method for commercial layer pullets and broiler breeders before they move to the laying house or production barn. The timing is driven by biology: by the time pullets are 14 to 18 weeks old, they have been primed by the live vaccine schedule earlier in the rearing program, and their immune systems are ready to mount a strong secondary response to a killed antigen boost. That response produces high, lasting IgY titers that will carry the birds through production. [4,12]'
+    'Injection vaccination with killed (inactivated) products is the standard final-stage vaccination method for commercial layer pullets and broiler breeders before they move to the laying house or production barn. The timing is driven by where the birds are in the rearing program. By 14 to 18 weeks, the live vaccines given earlier have primed the immune system. When you follow that with a killed injection, the bird\'s immune system recognizes the antigens and responds hard: high serum titers that stay elevated for the full production cycle. [4,12]'
   ));
 
   c.push(para(
