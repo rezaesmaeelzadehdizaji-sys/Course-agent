@@ -657,6 +657,13 @@ function buildContentSection() {
   c.push(numbered('Rinse each vial thoroughly before discarding. The CPC Learning Centre guide notes that failing to rinse vials properly can waste up to 15% of the vaccine dose [1].'));
   c.push(numbered('Record the serial number and expiry date of every vial used [1].'));
 
+  c.push(...figureOrPlaceholder(
+    'Drinking Water vaccination prepration.png',
+    'Photo 1.3: Dissolving a live vaccine vial into the milk-water solution',
+    'Photo 1.3: A technician in blue gloves submerges a live vaccine vial into a bucket of skim milk-water solution tinted blue. The vial is held under the surface so a small volume of the solution enters the vial, dissolves the lyophilized vaccine, and is then decanted back into the bucket. The milk proteins protect the vaccine from inactivation by residual chlorine or organic matter in the water. Source: CPC Short Courses.',
+    4.5
+  ));
+
   c.push(para(
     'Do not add vaccine to standing water with no milk protection. Do not use a proportioner or medicator to deliver the vaccine: proportioners use concentrations and dilutions that can exceed safe ranges, and internal parts may have residual disinfectant [1]. Add vaccine directly to the drinker system after pre-flushing with the milk solution.'
   ));
