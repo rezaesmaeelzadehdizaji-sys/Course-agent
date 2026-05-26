@@ -481,7 +481,7 @@ function buildContentSection() {
   ]));
 
   c.push(para(
-    'Three antibody types matter most to vaccination: IgM is the first antibody produced after initial exposure. IgY (equivalent to IgG in mammals) develops after IgM and drives the recall response when the bird encounters the antigen again. IgA is produced constantly at mucosal surfaces including the gut, respiratory tract, eyes, and saliva, and prevents pathogens from binding to epithelial cells [3]. Eye drop and water vaccination work largely through IgA. Inactivated injected vaccines work primarily through IgY.'
+    'Three antibody types matter most to vaccination: IgM is the first antibody produced after initial exposure. IgY (equivalent to IgG in mammals) develops after IgM and drives the recall response when the bird encounters the antigen again. IgA is produced constantly at mucosal surfaces in the gut, airways, and eyes, and stops pathogens from attaching to those surfaces before they can cause infection [3]. Eye drop and water vaccination work largely through IgA. Inactivated injected vaccines work primarily through IgY.'
   ));
 
   c.push(para([
@@ -517,11 +517,11 @@ function buildContentSection() {
   c.push(h2('1.1  Immune Responses to Oral Vaccines'));
 
   c.push(para(
-    'When a bird drinks a live attenuated vaccine, the vaccine virus contacts the gut lining and the gut-associated lymphoid tissue (GALT). The GALT includes structures like the Meckel\'s diverticulum and cecal tonsils that sample the intestinal contents and trigger immune responses [3]. B cells in the GALT are activated and begin producing IgA antibodies. These IgA antibodies are transported to mucosal surfaces throughout the bird: the gut, the respiratory tract, and the eye.'
+    'When a bird drinks a live attenuated vaccine, the vaccine virus contacts the gut lining and the gut-associated lymphoid tissue (GALT). The GALT includes the cecal tonsils and other lymphoid patches that sample the gut contents and start the immune response [3]. B cells in the GALT produce IgA antibodies that travel to mucosal surfaces throughout the bird: the gut, the respiratory tract, and the eye.'
   ));
 
   c.push(para(
-    'The result is mucosal immunity. For respiratory vaccines like Newcastle Disease (NDV) and Infectious Bronchitis (IBV) delivered by water, the mucosal IgA produced in the gut is distributed to respiratory surfaces where it neutralizes virus before it can establish infection. For gut-targeting vaccines like Infectious Bursal Disease (IBD/Gumboro), the local IgA response in the intestinal lining is the primary mechanism of protection.'
+    'The result is mucosal immunity. For respiratory vaccines like Newcastle Disease (NDV) and Infectious Bronchitis (IBV) delivered by water, the IgA built in the gut travels to the respiratory surfaces and blocks virus before it can get a foothold. For gut-targeting vaccines like Infectious Bursal Disease (IBD/Gumboro), the IgA response right at the gut lining is what provides the protection.'
   ));
 
   c.push(para(
@@ -547,7 +547,7 @@ function buildContentSection() {
 
   c.push(bullet([
     { text: 'Newcastle Disease (NDV)', bold: true },
-    { text: ': Live attenuated lentogenic strains including La Sota, Clone 30, and B1 (Hitchner B1) are routinely delivered by water. These strains colonize the respiratory and enteric mucosa and stimulate broad local and systemic immunity. Highly contagious and federally reportable in Canada [12], NDV vaccination is a cornerstone of commercial broiler and layer programs.' },
+    { text: ': Live attenuated lentogenic strains including La Sota, Clone 30, and B1 (Hitchner B1) are routinely delivered by water. These strains replicate in the respiratory and gut lining and build broad local and systemic protection. NDV is highly contagious and federally reportable in Canada [12], and vaccination is a cornerstone of commercial broiler and layer programs.' },
   ]));
 
   c.push(bullet([
@@ -909,7 +909,7 @@ function buildContentSection() {
   c.push(h2('3.1  How Eye Drop Vaccination Works'));
 
   c.push(para(
-    'The CPC Learning Centre Article on the Avian Immune System describes IgA as the key immunoglobulin at mucosal surfaces: it prevents adherence and colonization by microbial pathogens [3]. IgA is produced constantly at the eye, respiratory tract, gut, and other mucous membrane surfaces. When vaccine antigen is delivered to the conjunctival surface, it triggers local IgA production that is distributed across the mucosal surfaces of the eye and upper respiratory tract.'
+    'The CPC Learning Centre Article on the Avian Immune System explains that IgA is the key antibody at mucosal surfaces: it stops pathogens from attaching and taking hold at the gut lining, airways, and eye [3]. IgA is produced constantly at the eye, respiratory tract, gut, and other mucosal surfaces. When vaccine antigen contacts the conjunctiva, it triggers local IgA production that spreads across the eye and upper respiratory mucosa.'
   ));
 
   c.push(labeled('The Harderian gland:', ' The Harderian gland is a large gland located behind the eye in birds. It is a primary site of IgA production in the avian immune system. When vaccine antigen contacts the conjunctiva, the Harderian gland is directly stimulated [3]. This is why the ocular route produces superior local respiratory immunity compared to systemic injection for respiratory disease vaccines.'));
@@ -925,12 +925,12 @@ function buildContentSection() {
 
   c.push(bullet([
     { text: 'Infectious Laryngotracheitis (ILT)', bold: true },
-    { text: ': A herpesvirus causing acute respiratory disease in chickens. The CPC Learning Centre ILT Disease Profile describes outbreaks causing up to 50-70% mortality in severe cases, with typical mortality in the 10-20% range and disease persisting for 2 to 6 weeks [9]. The CPC Learning Centre ILT profile also notes that in Delmarva in 1998, approximately 200 ILT cases caused losses exceeding $1 million USD [9]. Eye drop or eyedrop/intranasal is the preferred vaccination route for live ILT vaccines in commercial flocks.' },
+    { text: ': A herpesvirus causing acute respiratory disease in chickens. The CPC Learning Centre ILT Disease Profile describes outbreaks causing up to 50-70% mortality in severe cases, with typical mortality in the 10-20% range and disease persisting for 2 to 6 weeks [9]. The CPC Learning Centre ILT profile also notes that in Delmarva in 1998, approximately 200 ILT cases caused losses exceeding $1 million USD [9]. Eye drop or intranasal delivery is the preferred vaccination route for live ILT vaccines in commercial flocks.' },
   ]));
 
   c.push(bullet([
     { text: 'Newcastle Disease (NDV)', bold: true },
-    { text: ': Eye drop delivery of live NDV vaccines (La Sota, Clone 30, B1) produces strong local mucosal immunity in the upper respiratory tract. It is preferred over water in programs where uniform individual coverage is critical, such as in breeder or layer operations where a single poorly protected bird can serve as a virus reservoir.' },
+    { text: ': Eye drop delivery of live NDV vaccines (La Sota, Clone 30, B1) produces strong local mucosal immunity in the upper respiratory tract. It is preferred over water in programs where uniform individual coverage matters most, such as breeder or layer operations where a single poorly protected bird can carry the virus and re-expose the rest of the flock.' },
   ]));
 
   c.push(bullet([
@@ -1064,7 +1064,7 @@ function buildContentSection() {
   c.push(h2('4.1  How Coarse Spray Vaccination Works'));
 
   c.push(para(
-    'Coarse spray vaccines target the upper respiratory mucosa. The large droplets that a properly calibrated sprayer produces at 4.5-5.0 Bar settle on the conjunctiva and nares rather than penetrating deep into the lungs. This matters because the mucosal immune tissue in the upper respiratory tract is where protection against diseases like Newcastle Disease and Infectious Bronchitis actually needs to start. Fine mist particles (from a poorly maintained nozzle or incorrect pressure) travel too deep, bypass the mucosal entry points, and deliver far less protection. [6,13]'
+    'Coarse spray vaccines target the upper respiratory mucosa. The large droplets a properly calibrated sprayer produces at 4.5-5.0 Bar settle on the conjunctiva and nares rather than going deep into the lungs. That matters because the mucosal immune tissue in the upper airways is where protection against diseases like Newcastle Disease and Infectious Bronchitis needs to start. Fine mist particles from a worn nozzle or wrong pressure travel past that immune tissue and into the deep lung, missing the site where the protection needs to build. [6,13]'
   ));
 
   c.push(para(
