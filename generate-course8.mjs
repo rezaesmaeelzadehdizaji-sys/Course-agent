@@ -588,6 +588,13 @@ function buildContentSection() {
     'Check expiry dates on every vial before vaccination day. An expired vaccine may have reduced potency even if it was stored correctly. Never assume a vial is good because it was refrigerated.'
   ));
 
+  c.push(...figureOrPlaceholder(
+    'New-LS-Mass vaccine vials.jpg',
+    'Photo 1.2: Poulvac New LaSota + Bron H120 live vaccine vials (Zoetis)',
+    'Photo 1.2: Poulvac New LaSota + Bron H120 (Zoetis). A live combination vaccine for Newcastle Disease (LaSota strain) and Infectious Bronchitis (H120 strain) packaged for use in commercial chicken flocks. Each vial is lyophilized and requires reconstitution before administration. Store at 2-8°C, protect from light, and record the serial number and expiry date from every vial before each session. Source: CPC Short Courses.',
+    4.5
+  ));
+
   // 1.4
   c.push(h2('1.4  Preparing Your Water System'));
 
@@ -1004,6 +1011,13 @@ function buildContentSection() {
     6.5
   ));
 
+  c.push(...figureOrPlaceholder(
+    'Eye-drop-vaccination.png',
+    'Photo 3.1: Eye drop vaccination of a day-old chick',
+    'Photo 3.1: A single drop of live vaccine delivered directly onto the conjunctiva of a day-old chick. The head is tilted to keep the eye facing up so the drop stays in contact with the conjunctival surface until it is absorbed. The blink reflex distributes the vaccine across the eye and drains it through the nasolacrimal duct to the Harderian gland and upper respiratory tract. Source: CPC Short Courses.',
+    5.0
+  ));
+
   // 3.5
   c.push(h2('3.5  Confirming Uniform Coverage'));
 
@@ -1076,6 +1090,13 @@ function buildContentSection() {
 
   c.push(para(
     'Once the droplets land on the conjunctiva or nares, the same immune pathway as eye drop vaccination is triggered. The vaccine antigen reaches the Harderian gland and the bronchus-associated lymphoid tissue (BALT), stimulating local IgA production and mucosal immunity across the respiratory tract. The advantage over eye drop vaccination is speed: coarse spray covers a whole barn floor in one pass. The trade-off is that you cannot verify individual bird coverage the way you can with eye drop or wing web vaccination. [2,13]'
+  ));
+
+  c.push(...figureOrPlaceholder(
+    'Coars spray at one day old Hatchery.png',
+    'Photo 4.1: Hatchery spray cabinet vaccinating day-old chicks',
+    'Photo 4.1: A hatchery spray cabinet delivering coarse droplets over day-old chicks in a transport tray. The overhead nozzle applies vaccine at controlled pressure as the tray passes under it. Each chick absorbs the vaccine through the conjunctiva and nares. Hatchery cabinet spray gives uniform coverage on every bird before they leave the hatchery. Source: CPC Short Courses.',
+    4.5
   ));
 
   c.push(h2('4.2  Target Diseases and When to Use Spray'));
@@ -1222,6 +1243,13 @@ function buildContentSection() {
     6.5
   ));
 
+  c.push(...figureOrPlaceholder(
+    'spray at broiler barn.png',
+    'Photo 4.2: Coarse spray vaccination walk-through in a commercial broiler barn',
+    'Photo 4.2: A vaccinator in full PPE (coveralls, respirator, gloves) walks a coarse spray run through a commercial broiler barn. The nozzle is directed downward over grouped birds along the side wall. All fans are off during the run. This is the standard in-barn spray technique for large flocks where individual bird handling is not practical. Source: CPC Short Courses.',
+    5.8
+  ));
+
   c.push(h2('4.7  Biosecurity, PPE, and Safety'));
 
   c.push(para(
@@ -1276,6 +1304,13 @@ function buildContentSection() {
 
   c.push(para(
     'In-ovo vaccination delivers vaccine to the developing embryo inside the egg at approximately 18 days of a 21-day incubation period, before the chick hatches [12,13]. Automated machines at the hatchery pierce the eggshell and deposit a measured vaccine dose into the amniotic fluid. In the 24 to 48 hours before hatch, the embryo swallows the amniotic fluid and absorbs the vaccine. By the time the chick arrives in the barn, it already has immunity primed from before hatch [13].'
+  ));
+
+  c.push(...figureOrPlaceholder(
+    'In-Ovo-vaccination at hatchery.png',
+    'Photo 5.1: Automated in-ovo vaccination machine at the hatchery',
+    'Photo 5.1: An automated in-ovo vaccination machine with multiple injection needles aligned to pierce a full tray of eggs simultaneously. Each needle deposits a measured vaccine dose into the amniotic fluid at approximately day 18 of incubation. Automated systems like this process thousands of eggs per hour with consistent dosing and minimal manual handling per egg. Source: CPC Short Courses.',
+    5.8
   ));
 
   c.push(para(
