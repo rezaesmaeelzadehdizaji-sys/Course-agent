@@ -747,23 +747,23 @@ function buildJournalSection() {
 // ============================================================
 function buildReferencesSection() {
   const refs = [
-    '[1]  Russell SM. Controlling Salmonella in Poultry Production. Woodhead Publishing; 2012.',
+    '[1]  Russell SM. Controlling Salmonella in Poultry Production and Processing. Boca Raton (FL): CRC Press; 2012.',
     '[2]  Public Health Agency of Canada. Salmonellosis (non-typhoidal) [Internet]. Ottawa: Government of Canada; 2023 [cited 2026 Apr]. Available from: phac-aspc.gc.ca',
     '[3]  Canadian Food Inspection Agency. Pathogen Reduction Monitoring Program (PRMP) for raw poultry [Internet]. Ottawa: Government of Canada; 2023 [cited 2026 Apr]. Available from: inspection.canada.ca',
     '[4]  Swayne DE, Boulianne M, Logue CM, McDougald LR, Nair V, Suarez DL, editors. Diseases of Poultry. 14th ed. Hoboken (NJ): Wiley-Blackwell; 2020.',
     '[5]  Bell DD, Weaver WD. Commercial Chicken Meat and Egg Production. 5th ed. Norwell (MA): Springer; 2002.',
-    '[6]  Tablante NL. Common Poultry Diseases and Their Prevention. eXtension; 2013.',
-    '[7]  World Health Organization. WHO List of Critically Important Antimicrobials for Human Medicine. 6th rev. Geneva: WHO; 2019.',
-    '[8]  CEVA Sante Animale. CEVA Handbook of Poultry Diseases. Vol 1. Libourne: CEVA; 2020.',
+    '[6]  Tablante NL. Common Poultry Diseases and Their Prevention. College Park (MD): University of Maryland Extension; 2013.',
+    '[7]  World Health Organization. Critically important antimicrobials for human medicine. 6th revision. Geneva: WHO; 2019.',
+    '[8]  Dinev I. CEVA Handbook of Poultry Diseases. Vol 1. Libourne: CEVA Sante Animale; 2014.',
     '[9]  National Farm Animal Care Council (NFACC). Code of Practice for the Care and Handling of Hatching Eggs, Breeders, Chickens and Turkeys. Lacombe (AB): NFACC; 2016.',
     '[10] Kehler L. Darkling beetles [Technical Bulletin]. CPC Learning Centre. Available from: cpclearningcentre.ca',
     '[11] Leslie M. Drinking Water Management [Technical Bulletin]. Canadian Poultry Consultants Ltd.; 2011. Available from: cpclearningcentre.ca',
     '[12] CPC Learning Centre. An Introduction to Probiotics [Technical Bulletin]. CPC Learning Centre. Available from: cpclearningcentre.ca',
     '[13] CPC Learning Centre. Spotting Disease Early [Technical Bulletin]. CPC Learning Centre. Available from: cpclearningcentre.ca',
     '[14] CPC Learning Centre. Hatching Egg Care [Technical Bulletin]. CPC Learning Centre. Available from: cpclearningcentre.ca',
-    '[15] Hatch House HQ. Rethinking downtime as a biosecurity measure [Internet]. 2026 May 7 [cited 2026 May 11]. Available from: https://www.hatchhousehq.com/articles/new-research-update-rethinking-downtime-as-a-biosecurity-measure',
+    '[15] Hatch House HQ. New research update: Rethinking downtime as a biosecurity measure [Internet]. 2026 Feb 5 [cited 2026 May 27]. Available from: https://www.hatchhousehq.com/articles/new-research-update-rethinking-downtime-as-a-biosecurity-measure',
     '[16] California Department of Food and Agriculture. Poultry facility biosecurity risk assessment guide [Internet]. Sacramento: CDFA; [cited 2026 May 11]. Available from: https://www.cdfa.ca.gov/ahfss/animal_health/biospecies/pdfs/CDFAPoultryFacilitybiosecurityRiskAssessmentGuide.pdf',
-    '[17] Chicken Farmers of Canada. Free range OFFSP and ACP manual [Internet]. 2021 [cited 2026 May 11]. Available from: https://www.chickenfarmers.ca/wp-content/uploads/2023/04/Free-Range-OFFSP-and-ACP-Manual-2021.pdf',
+    '[17] Chicken Farmers of Canada. Free Range On-Farm Food Safety Program and Animal Care Program manual [Internet]. Ottawa: Chicken Farmers of Canada; 2021 [cited 2026 May 27]. Available from: https://www.chickenfarmers.ca/wp-content/uploads/2021/08/Free-Range-OFFSP-and-ACP-Manual-2021.pdf',
   ];
 
   return {
