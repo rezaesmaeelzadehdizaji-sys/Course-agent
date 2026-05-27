@@ -526,7 +526,7 @@ function buildSection1() {
       para('Every management decision on a poultry farm, from ventilation rates to feed particle size to lighting schedules, has its logic in how the bird is built. Ventilation targets come from the anatomy of the respiratory system. Phase feeding follows the bird\'s changing digestive capacity. Lighting programs work because the reproductive system responds to day length. When you understand how the bird is built, the rules make sense and you apply them correctly. When you do not, you follow recipes without understanding when to adapt them [1,17].'),
       para('You do not need a veterinary degree to use this knowledge effectively. What you need is a clear picture of what is going on inside the bird. This course builds that picture section by section, starting with the outside of the bird and working inward through each body system.'),
 
-      ...embedPhoto(imgFile('photo_1_1_healthy_broiler.jpg'), 'Photo 1.1: A flock of healthy commercial broiler chickens showing alert posture and good body condition. Flock-level observation is the first step in daily health monitoring. Source: Wikimedia Commons / Icem4k, CC BY-SA 4.0.'),
+      ...embedPhoto(imgFile('Commercial broiler flock.jpg'), 'Photo 1.1: A flock of healthy commercial broiler chickens showing alert posture and good body condition. Flock-level observation is the first step in daily health monitoring. Source: CPC Short Courses.'),
 
       h2('1.2  Meat Birds, Layers, and Breeders: Built for Different Jobs'),
       para('All three production types are the same species, Gallus gallus domesticus, but decades of selection have pushed them in fundamentally different directions.'),
