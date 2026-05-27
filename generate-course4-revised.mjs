@@ -752,7 +752,7 @@ function buildReferencesSection() {
     '[3]  Canadian Food Inspection Agency. Pathogen Reduction Monitoring Program (PRMP) for raw poultry [Internet]. Ottawa: Government of Canada; 2023 [cited 2026 Apr]. Available from: inspection.canada.ca',
     '[4]  Swayne DE, Boulianne M, Logue CM, McDougald LR, Nair V, Suarez DL, editors. Diseases of Poultry. 14th ed. Hoboken (NJ): Wiley-Blackwell; 2020.',
     '[5]  Bell DD, Weaver WD. Commercial Chicken Meat and Egg Production. 5th ed. Norwell (MA): Springer; 2002.',
-    '[6]  Tablante NL. Common Poultry Diseases and Their Prevention. College Park (MD): University of Maryland Extension; 2013.',
+    '[6]  Tablante NL. Common Poultry Diseases and Their Prevention. College Park (MD): University of Maryland Extension; 2017.',
     '[7]  World Health Organization. Critically important antimicrobials for human medicine. 6th revision. Geneva: WHO; 2019.',
     '[8]  Dinev I. CEVA Handbook of Poultry Diseases. Vol 1. Libourne: CEVA Sante Animale; 2014.',
     '[9]  National Farm Animal Care Council (NFACC). Code of Practice for the Care and Handling of Hatching Eggs, Breeders, Chickens and Turkeys. Lacombe (AB): NFACC; 2016.',
