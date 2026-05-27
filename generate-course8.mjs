@@ -1486,18 +1486,18 @@ function buildContentSection() {
   c.push(h1('References'));
 
   const refs = [
-    'Canadian Poultry Consultants. Water Vaccination [Technical Bulletin]. CPC Learning Centre; [cited 2026 May]. Available from: cpclearningcentre.ca',
-    'Gillingham S. General Principles of Vaccination [Technical Bulletin]. CPC Learning Centre; [cited 2026 May]. Available from: cpclearningcentre.ca',
-    'Burns Grogan KA, Fernandez RJ, Rojo Barranon FJ, Garcia Espinosa H. Avian Immune System: A Brief Review [Article]. CPC Learning Centre; [cited 2026 May]. Available from: cpclearningcentre.ca',
-    'Canadian Poultry Consultants. Inactivated Vaccine Administration [Technical Bulletin]. CPC Learning Centre; [cited 2026 May]. Available from: cpclearningcentre.ca',
+    'Merial. Water Vaccination [Technical Bulletin]. Merial; [cited 2026 May]. Available via CPC Learning Centre: cpclearningcentre.ca',
+    'General Principles of Vaccination [Technical Bulletin]. CPC Learning Centre; [cited 2026 May]. Available from: cpclearningcentre.ca',
+    'Burns Grogan KA, Fernandez RJ, Rojo Barranon FJ, Garcia Espinosa H. Avian Immune System: A Brief Review. Merial; 2008 [cited 2026 May]. Available via CPC Learning Centre: cpclearningcentre.ca',
+    'Merial. Inactivated Vaccine Administration [Technical Bulletin]. Merial; [cited 2026 May]. Available via CPC Learning Centre: cpclearningcentre.ca',
     'Canadian Poultry Consultants. Maternal Antibody Transfer [Technical Bulletin]. CPC Learning Centre; [cited 2026 May]. Available from: cpclearningcentre.ca',
-    'Canadian Poultry Consultants. Coarse Spray Vaccination [Technical Bulletin]. CPC Learning Centre; [cited 2026 May]. Available from: cpclearningcentre.ca',
+    'Merial. Coarse Spray Vaccination [Technical Bulletin]. Merial; [cited 2026 May]. Available via CPC Learning Centre: cpclearningcentre.ca',
     'Canadian Poultry Consultants. Fowl Pox in the Fraser Valley [Disease Profile]. CPC Learning Centre; [cited 2026 May]. Available from: cpclearningcentre.ca',
     'Canadian Poultry Consultants. Infectious Bronchitis Virus (IBV) [Disease Profile]. CPC Learning Centre; [cited 2026 May]. Available from: cpclearningcentre.ca',
     'Canadian Poultry Consultants. Infectious Laryngotracheitis (ILT) [Disease Profile]. CPC Learning Centre; [cited 2026 May]. Available from: cpclearningcentre.ca',
     'Canadian Poultry Consultants. Infectious Bursal Disease (IBD): Causative Agent, Diagnosis and Prevention [Disease Profile]. CPC Learning Centre; [cited 2026 May]. Available from: cpclearningcentre.ca',
     'Montiel E. Troubleshooting a Marek\'s Disease Outbreak [Technical Bulletin]. CPC Learning Centre; [cited 2026 May]. Available from: cpclearningcentre.ca',
-    'Saif YM, Fadly AM, Glisson JR, McDougald LR, Nolan LK, Swayne DE, editors. Diseases of Poultry. 14th ed. Ames, Iowa: Wiley-Blackwell; 2022.',
+    'Swayne DE, editor. Diseases of Poultry. 14th ed. Hoboken, NJ: Wiley-Blackwell; 2020.',
     'Merck Veterinary Manual. Vaccination of Poultry. Kenilworth, NJ: Merck & Co.; 2023 [cited 2026 May]. Available from: merckvetmanual.com',
   ];
 
