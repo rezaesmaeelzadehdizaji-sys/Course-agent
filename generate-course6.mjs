@@ -610,9 +610,7 @@ function buildSection3() {
       para('The management implication is straightforward. That efficiency comes with a trade-off. Ammonia at 10 ppm already damages the cilia lining the respiratory tract, the primary defense against bacteria and irritants [2]. The bird cannot cough pathogens out the way a mammal can. When cilia are destroyed by ammonia or dust, bacteria reach the air sacs directly. A flock visibly damaged by ammonia, with watery eyes and bubbling faces, has been breathing damaging air for days or weeks before those signs appeared.'),
       para('High dust loads make it worse. Every square meter of poorly managed litter sends bacteria, endotoxins, and mold spores into the air. Adequate ventilation is not a comfort measure: it is a basic immune defense requirement.'),
 
-      ...embedPhoto(imgFile('anatomy_respiratory.jpg'), 'Figure 3.2: The avian upper respiratory tract showing larynx, trachea, syrinx, bronchi, and lungs. The syrinx is the sound-producing organ unique to birds. Source: Public Domain.', 3.5),
-
-      ...embedPng(imgFile('figure_3_2_air_sacs.png'), 'Figure 3.3: The nine air sacs and unidirectional airflow through the parabronchi. Unlike mammalian lungs, gas exchange occurs during both inhalation and exhalation. Source: CPC Short Courses.'),
+      ...embedPng(imgFile('respiratory system.png'), 'Figure 3.2: The avian upper respiratory tract showing the nine air sacs, larynx, trachea, syrinx, bronchi, and lungs. The syrinx is the sound-producing organ unique to birds. Unlike mammalian lungs, gas exchange occurs during both inhalation and exhalation. Source: CPC Short Courses.'),
 
       h2('3.3  The Circulatory System'),
       para('A chicken\'s heart is four-chambered, like a mammal\'s, and it works extremely hard. The resting heart rate is approximately 250 to 300 beats per minute [20]. The left ventricle is the largest chamber by far, with much thicker walls than the right, because it has to push blood to the entire body at high pressure. The right ventricle only needs to move blood through the nearby lungs, which offer much less resistance.'),
