@@ -584,7 +584,7 @@ function buildSection3() {
 
       para('The diagram below shows the position of every major organ system inside a commercial laying hen. Work through it once before reading the sections that follow. It will anchor every labeled structure to an actual location in the bird\'s body.'),
 
-      ...embedPhoto(imgFile('anatomy_overview.jpg'), 'Figure 3.1: Internal anatomy of the chicken showing the position of all major organ systems. Source: PoultryHub Australia / University of New England.'),
+      ...embedPhoto(imgFile('chicken systems.jpeg'), 'Figure 3.1: Internal anatomy of the chicken showing the position of all major organ systems. Source: CPC Short Courses.'),
 
       h2('3.1  The Digestive System'),
       para('A chicken\'s digestive tract has no teeth. It swallows feed whole and relies on a sequence of mechanical and chemical processes to extract nutrients. Every major feeding decision, from particle size to phase feeding to grit use, has its roots in this anatomy [1].'),
@@ -598,9 +598,7 @@ function buildSection3() {
       labeled('Ceca:', 'Two blind pouches at the junction of the small and large intestine. The ceca ferment undigested material and produce short-chain fatty acids and B vitamins. They also reabsorb water and support immune function. Cecal output, the dark, pasty, slightly pungent dropping produced once or twice a day, is completely normal and should not be mistaken for diarrhea [1].'),
       labeled('Cloaca:', 'The shared exit point for the gut, kidneys, and reproductive tract. Feces, urine, and eggs all pass through the cloaca. Because of this shared exit, egg contamination can occur when hens have enteric disease, which is one reason Salmonella control requires managing gut health as well as external hygiene.'),
 
-      ...embedPhoto(imgFile('anatomy_digestive_tract.jpg'), 'Photo 3.2: The complete chicken digestive tract laid out from beak and crop at left through to the ceca and cloaca at right. The small intestine coils fill most of the mid-section. Source: Dr. Jacquie Jacob, University of Kentucky.'),
-
-      ...embedPhoto(imgFile('photo_3_1_gizzard.jpg'), 'Photo 3.3: A chicken gizzard opened to show the thick muscular walls and tough koilin lining. The koilin layer (pale yellow) protects the muscle from the grinding action. Grit particles retained in the chamber work against the ridged lining to break down feed. Source: Wikimedia Commons / Bjferstern, CC BY-SA 3.0.'),
+      ...embedPhoto(imgFile('photo_3_1_gizzard.jpg'), 'Photo 3.2: A chicken gizzard opened to show the thick muscular walls and tough koilin lining. The koilin layer (pale yellow) protects the muscle from the grinding action. Grit particles retained in the chamber work against the ridged lining to break down feed. Source: Wikimedia Commons / Bjferstern, CC BY-SA 3.0.'),
 
       h2('3.2  The Respiratory System'),
       para('A bird\'s respiratory system works nothing like a mammal\'s, and understanding the difference changes how you think about ventilation, ammonia, and dust management.'),
@@ -623,7 +621,7 @@ function buildSection3() {
       labeled('Medullary bone:', 'Found only in female birds approaching or in lay. Medullary bone is a dense, spongy calcium reserve found in the tibia, femur, pubic bones, ribs, ulna, and several other bones. As pullets approach lay, estrogen triggers the buildup of medullary bone as a labile calcium bank. During the 20 hours the shell is forming overnight, when the hen is not eating, she draws on medullary bone to supply the calcium her shell needs [14]. This process repeats every 24 hours throughout the laying cycle.'),
       labeled('Keel (sternum):', 'The breastbone and its forward-facing ridge (the keel) serve as the attachment surface for the large pectoral muscles. In broilers, palpating the keel is a rapid body condition check: a sharp, easily felt keel edge means the bird is too thin. In layers, keel damage from repeated impacts against the floor, perch, or nesting equipment is a significant welfare issue in cage-free and aviary systems [4].'),
 
-      ...embedPhoto(imgFile('Skeletal system of chicken.jpeg'), 'Photo 3.4: Chicken skeleton. Use this simple outline to learn the names and locations of the major bones so you can talk clearly with vets and spot skeletal issues early in the flock. Source: dummies.com (dummies.com/article/home-auto-hobbies/hobby-farming/chickens/the-skeleton-of-a-chicken-167942/).'),
+      ...embedPhoto(imgFile('Skeletal system of chicken.jpeg'), 'Photo 3.3: Chicken skeleton. Use this simple outline to learn the names and locations of the major bones so you can talk clearly with vets and spot skeletal issues early in the flock. Source: dummies.com (dummies.com/article/home-auto-hobbies/hobby-farming/chickens/the-skeleton-of-a-chicken-167942/).'),
 
       para('The pectoral muscles (breast) tell two very different stories in broilers versus layers.'),
       para('In commercial broilers, the pectoralis major is almost entirely fast-twitch type IIb white muscle fibers, the same type that powers a pheasant\'s explosive burst. Breast muscle made up roughly 9% of body weight in heritage birds from the 1950s; modern genetics have pushed that proportion to 21 to 29% [12,22]. This extraordinary development is what makes the broiler profitable. It is also what drives woody breast myopathy: when the muscle grows faster than its blood supply can keep up with, local oxygen starvation leads to scarring and the hard, woody texture that downgrades product at processing.'),
