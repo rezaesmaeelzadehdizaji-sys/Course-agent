@@ -584,7 +584,7 @@ function buildSection3() {
 
       para('The diagram below shows the position of every major organ system inside a commercial laying hen. Work through it once before reading the sections that follow. It will anchor every labeled structure to an actual location in the bird\'s body.'),
 
-      ...embedPhoto(imgFile('chicken systems.jpeg'), 'Figure 3.1: Internal anatomy of the chicken showing the position of all major organ systems. Source: CPC Short Courses.'),
+      ...embedPhoto(imgFile('chicken systems.jpeg'), 'Figure 3.1: Internal anatomy of the chicken showing the position of all major organ systems. Source: Purina Animal Nutrition LLC.'),
 
       h2('3.1  The Digestive System'),
       para('A chicken\'s digestive tract has no teeth. It swallows feed whole and relies on a sequence of mechanical and chemical processes to extract nutrients. Every major feeding decision, from particle size to phase feeding to grit use, has its roots in this anatomy [1].'),
