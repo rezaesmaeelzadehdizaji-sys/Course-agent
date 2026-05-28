@@ -552,11 +552,11 @@ function buildSection2() {
       h2('2.1  Key External Structures and Their Functions'),
       para('The external anatomy of a chicken is a direct window into the bird\'s health. A farmer who knows what healthy looks like can spot a sick bird quickly.'),
 
-      labeled('Comb and wattles:', 'In a healthy bird they are bright red, slightly warm, and firm. They are not just cosmetic: blood flow through the comb dissipates heat, making the comb important for temperature regulation in hot weather. A pale or shrunken comb tells you the bird is anemic, dehydrated, or cold-stressed. A blue or purple comb means circulation is failing, which points to respiratory or cardiovascular disease [5].'),
-      labeled('Eyes:', 'Should be clear, bright, and have a copper-red iris. Discharge, swelling, or a sunken appearance are signs of disease or injury. Closed or partially closed eyes in a standing bird usually indicate the bird is ill and weak [5].'),
+      labeled('Comb and wattles:', 'In a healthy bird they are bright red, slightly warm, and firm. They are not just cosmetic: blood flow through the comb dissipates heat, making the comb important for temperature regulation in hot weather. A pale or shrunken comb tells you the bird is anemic, dehydrated, or cold-stressed. A blue or purple comb means circulation is failing, which points to respiratory or cardiovascular disease [5,24].'),
+      labeled('Eyes:', 'Should be clear, bright, and have a copper-red iris. Discharge, swelling, or a sunken appearance are signs of disease or injury. Closed or partially closed eyes in a standing bird usually indicate the bird is ill and weak [5,24].'),
       labeled('Nares and beak:', 'The nostrils should be clean and open. Nasal discharge or crusted nares point to respiratory infection. Check that the beak closes cleanly. Open the beak and look inside: white plaques or lesions in the mouth point to candidiasis or vitamin A deficiency.'),
-      labeled('Feathers:', 'Healthy feathers cover the bird from head to vent, lying flat and close to the body. A bird that is ruffled, fluffed up, and hunched is either cold-stressed or sick. Dirty feathers around the vent area may indicate enteric disease. Patchy feather loss in females around the back and neck can indicate over-mating by males. Feather pecking in a flock signals stress, overcrowding, nutritional imbalance, or inadequate lighting [5].'),
-      labeled('Body condition (keel):', 'Run your finger along the breastbone (keel). In a bird at correct body condition you feel moderate tissue over both sides of the keel with no sharp ridge. A prominent, easily palpated keel edge means the bird is losing condition. In layers, check that pubic bones (just below the vent) are at least two finger-widths apart, which indicates the bird is actively laying [5].'),
+      labeled('Feathers:', 'Healthy feathers cover the bird from head to vent, lying flat and close to the body. A bird that is ruffled, fluffed up, and hunched is either cold-stressed or sick. Dirty feathers around the vent area may indicate enteric disease. Patchy feather loss in females around the back and neck can indicate over-mating by males. Feather pecking in a flock signals stress, overcrowding, nutritional imbalance, or inadequate lighting [5,24].'),
+      labeled('Body condition (keel):', 'Run your finger along the breastbone (keel). In a bird at correct body condition you feel moderate tissue over both sides of the keel with no sharp ridge. A prominent, easily palpated keel edge means the bird is losing condition. In layers, check that pubic bones (just below the vent) are at least two finger-widths apart, which indicates the bird is actively laying [5,24].'),
       labeled('Legs and feet:', 'The shanks should be smooth and clean. The foot pads should be intact, free of lesions and swelling. Scales that are rough, lifted, or crusty on the shanks point to leg mite infestation. Swollen, discolored hocks or foot pads point to bumblefoot or infectious synovitis. Any bird that is reluctant to bear weight or cannot keep up with the flock needs immediate attention.'),
 
       ...embedPhoto(imgFile('photo_2_1_comb_wattles.jpg'), 'Photo 2.1: Close view of a hen in a barn coop showing the bright-red comb and eye. A firm, warm, bright-red comb indicates good circulatory health. Source: Wikimedia Commons, CC BY 2.0.'),
@@ -564,7 +564,7 @@ function buildSection2() {
       ...embedPhoto(imgFile('Photo 2.2, foot pad.jpg'), 'Photo 2.2: Healthy chicken foot pad with smooth shanks and an intact, unblemished plantar surface. A clean foot pad rules out bumblefoot and pododermatitis on flock walks. Source: Ohio State University Extension, Ohioline VME-20 (ohioline.osu.edu/factsheet/vme-20).'),
 
       h2('2.2  Reading the Bird: Signs of Health from the Outside'),
-      para('A healthy bird is alert, moving, eating, drinking, and interacting normally with the flock. Any bird sitting away from others, with eyes closed, standing hunched, or showing labored breathing (tail bobbing with each breath) is telling you something is wrong. By the time one bird is visibly sick, the flock problem has usually been building for several days [5].'),
+      para('A healthy bird is alert, moving, eating, drinking, and interacting normally with the flock. Any bird sitting away from others, with eyes closed, standing hunched, or showing labored breathing (tail bobbing with each breath) is telling you something is wrong. By the time one bird is visibly sick, the flock problem has usually been building for several days [5,24].'),
       para('The CPC Learning Centre "Spotting Disease Early" guide provides a practical framework: the first change is always behavioral. Water consumption drops before feed intake; feed intake drops before posture changes; posture changes before mortality climbs [18]. Walking the barn once or twice a day with both eyes open, not just checking feed and water levels, is what separates farms that catch problems at day one from those that catch them at day four when options are narrower.'),
       para('For a systematic daily barn assessment framework that uses external indicators alongside environmental checks, see Course 3 (T-FLAWS Assessment Management Tool) in this series.'),
     ],
@@ -616,7 +616,7 @@ function buildSection3() {
 
       h2('3.3  The Circulatory System'),
       para('A chicken\'s heart is four-chambered, like a mammal\'s, and it works extremely hard. The resting heart rate is approximately 250 to 300 beats per minute [20]. The left ventricle is the largest chamber by far, with much thicker walls than the right, because it has to push blood to the entire body at high pressure. The right ventricle only needs to move blood through the nearby lungs, which offer much less resistance.'),
-      para('Body temperature runs at 41 to 42°C. Blood volume is approximately 6 to 9% of body weight, which means a 2.5 kg broiler carries roughly 150 to 225 mL of blood [5].'),
+      para('Body temperature runs at 41 to 42°C. Blood volume is approximately 6 to 9% of body weight, which means a 2.5 kg broiler carries roughly 150 to 225 mL of blood [5,24].'),
       para('The key management implication for broilers is this: in fast-growing commercial lines, the heart and lungs grow more slowly as a proportion of body mass than the rest of the body does [11]. By weeks four and five, many broilers are carrying more muscle mass than their cardiovascular system can comfortably supply with oxygen. In cold conditions, at altitude, or in poor ventilation, oxygen delivery falls short of demand. The right ventricle overloads trying to push blood through a congested lung. Fluid then backs up into the abdominal cavity. This is ascites. In a separate but related failure, sudden cardiovascular collapse kills apparently healthy, well-grown males without warning. This is Sudden Death Syndrome. Both follow directly from the bird\'s heart and lungs falling behind its muscle growth [6,7].'),
 
       h2('3.4  The Skeletal and Muscular Systems'),
@@ -695,7 +695,7 @@ function buildSection5() {
       h1('Section 5: Layers and Breeders'),
 
       h2('5.1  Built for Egg Production and Reproduction'),
-      para('A commercial layer has a lighter frame, stronger legs, and a more developed pelvic region than a broiler of the same age. As she approaches sexual maturity, the pubic bones spread to allow eggs to pass. A practical field check: two or more finger-widths between the pubic bones typically indicates an active layer [5]. The layer\'s smaller muscle mass means she needs less dietary protein and energy for maintenance, freeing more nutrients for egg production.'),
+      para('A commercial layer has a lighter frame, stronger legs, and a more developed pelvic region than a broiler of the same age. As she approaches sexual maturity, the pubic bones spread to allow eggs to pass. A practical field check: two or more finger-widths between the pubic bones typically indicates an active layer [5,24]. The layer\'s smaller muscle mass means she needs less dietary protein and energy for maintenance, freeing more nutrients for egg production.'),
       para('Commercial white leghorn-type layers typically hit peak production of 95 to 97% hen-day (nearly one egg per hen per day) at 26 to 30 weeks of age. Production then declines gradually. By 72 weeks, many flocks fall below 70%, at which point you decide whether to extend the cycle or move to molt. Induced molt resets the reproductive system and can support a second production cycle, typically with reduced rate but improved shell quality.'),
       para('Broiler breeders combine the larger frame of broiler genetics with the reproductive requirement of sustained egg production. Feed restriction starts early in rearing to prevent over-conditioning. An overweight broiler breeder has reduced ovulation rate, lower fertilization, and higher embryo mortality. An underweight breeder also performs poorly. Keeping the breeder at target body weight through a carefully managed step-up feeding program is the core of breeder management [23].'),
 
@@ -731,7 +731,7 @@ function buildSection6() {
     children: [
       h1('Section 6: Comparing Meat Birds vs Layers and Breeders'),
 
-      para('Table 6.1 summarizes the key physiological and production differences across the three main production types [5,6,7,11,12,13,16].', { spaceAfter: 60 }),
+      para('Table 6.1 summarizes the key physiological and production differences across the three main production types [5,6,7,11,12,13,16,24].', { spaceAfter: 60 }),
       comparisonTable(),
       new Paragraph({ spacing: { before: 80, after: 0 } }),
 
@@ -891,6 +891,7 @@ function buildReferencesSection() {
       numberedRef('National Farm Animal Care Council. Code of Practice for the Care and Handling of Hatching Eggs, Breeders, Chickens, and Turkeys. Lacombe (AB): NFACC; 2016. Available from: nfacc.ca'),
       numberedRef('Zuidhof MJ, Schneider BL, Carney VL, Korver DR, Robinson FE. Growth, efficiency, and yield of commercial broilers from 1957, 1978, and 2005. Poult Sci. 2014;93(12):2970-2982. doi:10.3382/ps.2014-04291. PMID: 25260522.'),
       numberedRef('Aviagen. Ross Parent Stock Management Handbook 2023. Newbridge (UK): Aviagen Ltd; 2023. Available from: aviagen.com/assets/Tech_Center/Ross_PS/Aviagen_Ross_PS_Handbook_2023_Interactive_EN.pdf'),
+      numberedRef('Ohio State University Extension. Poultry Husbandry [Ohioline factsheet VME-20]. Columbus (OH): The Ohio State University; [cited 2026 May]. Available from: ohioline.osu.edu/factsheet/vme-20'),
     ],
   };
 }
