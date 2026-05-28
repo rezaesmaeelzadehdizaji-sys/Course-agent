@@ -660,7 +660,7 @@ function buildSection4() {
       para('In today\'s meat birds, the big breast muscle alone makes up around a quarter of the bird\'s live weight. It is built almost entirely from fast "white" muscle fibers, and those fibers are very good at packing on meat quickly, but they burn a lot of fuel to do it. As the broiler grows, the breast puts on weight even faster than the rest of the body, so breast yield keeps climbing as you raise birds to heavier weights [12].'),
       para('To keep pace with this muscle growth, the digestive system has also been selected for efficiency. Broilers with better feed conversion ratios have proportionally heavier gizzards, longer ceca, and lower relative liver weight. The gut in a high-performing broiler is built to squeeze every bit of energy and protein from each gram of feed [9].'),
 
-      ...embedPhoto(imgFile('photo_4_1_broiler.jpg'), 'Photo 4.1: Commercial broiler showing the characteristic broad breast profile of modern genetics. Source: Wikimedia Commons / Cros2519, CC BY-SA 4.0.'),
+      ...embedPng(imgFile('Broiler wide breast.png'), 'Photo 4.1: Commercial broiler showing the characteristic broad breast profile of modern genetics. Source: CPC Short Courses.'),
 
       h2('4.2  Feed Conversion and Metabolism'),
       para('Modern broilers achieve feed conversion ratios of approximately 1.5 to 1.7 kg feed per kg of gain [16]. They get there through high feed intake, fast muscle growth, and less energy spent on movement than layers do. More feed energy goes toward muscle growth; less is spent on movement and heat [11,12].'),
