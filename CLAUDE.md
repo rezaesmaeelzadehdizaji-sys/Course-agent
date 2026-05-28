@@ -97,6 +97,12 @@ All of the following are treated as fabricated and unacceptable:
 - **Chapter title swap:** book chapter cited with the wrong chapter title or wrong page range within an otherwise real edited book
 - **Hybrid citations:** the most common AI failure — title from one paper, pages from another, authors from a third. Every author + every title word + every page + every volume must come from the same physical source
 
+### Installed verification skill — `/citation-verification` (USE FOR EVERY COURSE)
+
+A dedicated skill is installed at `~/.agents/skills/citation-verification/` and registered to Claude Code. It is the canonical workflow for verifying citations against CrossRef, Semantic Scholar, arXiv, Google Scholar, and publisher landing pages. Invoke it via the Skill tool with name `citation-verification` whenever you are about to add or audit references.
+
+The skill warns explicitly: **AI-generated citations have approximately 40% error rate.** This matches what was observed in Course 6 (6/22 wrong) and Course 7 (6 errors caught in audit). Do not skip the skill in favor of "I'll check the suspicious ones."
+
 ### Pre-publish reference verification (MANDATORY — EVERY COURSE, EVERY REVISION)
 
 Before reporting any course as done or final, every single reference in the bibliography must be verified individually. This applies to drafts, finals, edits, and additions. There is no "spot check," no "verify the suspicious ones." Every citation, every time.
