@@ -80,6 +80,82 @@ This rule applies to:
 - Assume a definition is correct because it fits the acronym letters
 - Write anything that sounds factual without a verifiable source behind it
 
+## RED FLAG — REFERENCE FABRICATION IS THE #1 PROJECT RISK (ZERO TOLERANCE)
+
+**The user has stated explicitly: "I never, never want a fake or wrong or fabricated ref in the courses."** Reference fabrication is the single most serious failure mode for this project. It has already happened in Course 6 (6 of 22 refs wrong) and Course 7 (6 reference errors caught in audit: fabricated author lists, wrong chapter titles, wrong page numbers, wrong title words, unverifiable papers). This rule is not negotiable and is not optional.
+
+### What counts as fabrication or "wrong"
+
+All of the following are treated as fabricated and unacceptable:
+
+- **Fabricated authors:** the paper exists but the author list cited is invented or partially wrong
+- **Fabricated titles:** the title is rewritten, paraphrased, or invented rather than copied verbatim from the source
+- **Fabricated journals or publishers:** the article exists in a different journal or the book has a different publisher
+- **Fabricated page numbers:** the article exists but pages are wrong
+- **Fabricated volumes / issues / years:** any one of these wrong is a fabricated citation
+- **Fabricated papers:** no matching paper exists in PubMed, PMC, Google Scholar, or the publisher's site
+- **Chapter title swap:** book chapter cited with the wrong chapter title or wrong page range within an otherwise real edited book
+- **Hybrid citations:** the most common AI failure — title from one paper, pages from another, authors from a third. Every author + every title word + every page + every volume must come from the same physical source
+
+### Pre-publish reference verification (MANDATORY — EVERY COURSE, EVERY REVISION)
+
+Before reporting any course as done or final, every single reference in the bibliography must be verified individually. This applies to drafts, finals, edits, and additions. There is no "spot check," no "verify the suspicious ones." Every citation, every time.
+
+**For each peer-reviewed article in the reference list:**
+
+1. Search PubMed or Google Scholar for the exact title (in quotes)
+2. Open the result and confirm ALL of the following match the citation in the course:
+   - Every author name and initial, in the exact order listed
+   - Title — every word, including hyphenation and capitalization of proper nouns
+   - Journal name (full or abbreviated form, consistent)
+   - Volume, issue, year
+   - First and last page numbers
+   - DOI where available
+3. If ANY field does not match: correct it from the verified source, or mark `[NEEDS SOURCE]` if the paper cannot be located
+4. Record the DOI or PubMed ID in a verification log
+
+**For each book or book chapter:**
+
+1. Confirm the edition number and publication year via the publisher's website or WorldCat
+2. Confirm the publisher name (e.g. Blackwell vs Wiley-Blackwell vs Springer)
+3. For chapters: confirm the chapter title, author, and exact page range against the book's table of contents
+4. Multi-author books (e.g. *Diseases of Poultry*): never assume a chapter is in a given edition without checking the contents page for that edition specifically
+
+**For each government / institutional / industry publication:**
+
+1. Confirm the document exists on the issuing body's website
+2. Confirm the year matches
+3. Confirm the title matches verbatim
+4. If the citation says "Public Health Agency of Canada / PMC" or similar dual attribution: pick one verifiable source and remove the speculation
+5. Vague citations like "CVMA position statement on farm animal welfare" without a specific document title or URL must be replaced with the actual document title or removed
+
+### The exact failures seen so far (use as a checklist of patterns to never repeat)
+
+| Pattern | Example from Course 7 |
+|---|---|
+| Fabricated author list with real title and pages | Ruhnke et al. 2019 — actual authors are Brochu, Guerin, Varga, Lillie, Brash, Susta |
+| Wrong chapter title in real book | Opengart 2008 — cited as "Necrotic dermatitis"; actual chapter is "Necrotic enteritis" |
+| Wrong page range in real chapter | Opengart 2008 — cited as pp. 1092-1095; actual is pp. 872-877 |
+| Missing co-author in otherwise correct citation | Elfadil 1996 — missing C. L. Gyles |
+| Wrong title word that changes meaning | Dhama 2013 — "zoonotic importance" cited; actual is "zoonotic significance" |
+| Paper cannot be located anywhere | Pickup 2006 "extent and control of avian influenza in Canada"; Rautenschlein & Haase 2019 Avian Pathology 48(S1) |
+| End-page off by one | Elfadil 1996 — cited 677-688; actual 677-689 |
+
+Every one of these patterns must be specifically checked against during the pre-publish verification pass. If you see any of these patterns repeating, stop and re-verify the entire reference list, not just the flagged entry.
+
+### Self-flagging requirement
+
+If during verification you cannot find a citation in 2 to 3 minutes of searching across PubMed, PMC, Google Scholar, and the publisher's site, that citation MUST be marked `[NEEDS SOURCE]` and reported to the user. Do not leave a citation in the bibliography "because it sounds plausible." Do not paraphrase a closely-matching paper and pretend it's the cited one. Do not write a citation that you cannot point to a URL or DOI for.
+
+### Verification audit log (MANDATORY for every new course)
+
+Save a verification log at `Course X/reference_verification_log.md` listing every citation with:
+- The DOI or PubMed ID (or URL for institutional sources)
+- The date verified
+- A line confirming the authors / title / year / journal / volume / pages all match
+
+This log is part of the deliverable. A course is not done until this log exists and every line is filled.
+
 ### Deep Research Mode (MANDATORY FOR ALL COURSES)
 
 **Every course must go through Deep Research Mode before any content is drafted. This is not optional.**
