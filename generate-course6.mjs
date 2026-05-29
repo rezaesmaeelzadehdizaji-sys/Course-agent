@@ -282,8 +282,8 @@ function comparisonTable() {
   const headers = ['Feature', 'Broilers', 'Commercial Layers', 'Broiler Breeders'];
   const rows = [
     ['Market/peak weight',       '2.5–3 kg at 38–45 days', '1.5–2 kg at 72+ weeks', '3.5–4.5 kg at 60+ weeks'],
-    ['Breast muscle (% BW)',     '21–29%',                  '10–14%',                 '18–24%'],
-    ['FCR',                      '1.5–1.7:1',               'N/A',                    'N/A'],
+    ['Breast muscle (% BW)',     '21–29%',                  '10–14%',                 'Intermediate'],
+    ['FCR',                      '1.5–1.7:1',               'Not usually used',       'Not usually used'],
     ['Primary health risk',      'Ascites, SDS, woody breast', 'Osteoporosis, fatty liver', 'Over-conditioning, reduced fertility'],
     ['Key nutritional focus',    'Energy and amino acids',  'Calcium and vitamin D',  'Energy balance, micronutrients'],
   ];
