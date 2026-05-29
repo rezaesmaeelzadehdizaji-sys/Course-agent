@@ -712,7 +712,7 @@ function buildSection5() {
 
       h2('5.3  Nutritional Needs for Laying and Fertility'),
       para('A layer needs roughly 4 grams of calcium every day, far more than feed provides at standard inclusion levels. The diet must contain 3.5 to 4.5% calcium by weight, balanced with available phosphorus and vitamin D3 to support calcium absorption and bone metabolism [13,14]. Too little calcium and the skeleton pays. Too much, and kidney function can be compromised.'),
-      para('Vitamin D3 is not optional: it is required for active calcium absorption in the small intestine, for medullary bone formation, and for normal shell gland function. Layers raised indoors receive no UV light for natural vitamin D synthesis, so dietary supplementation is the only supply.'),
+      para('Vitamin D3 is not optional: it is required for active calcium absorption in the small intestine, for medullary bone formation, and for normal shell gland function [30,31,32,33]. Layers raised indoors receive no UV light for natural vitamin D synthesis, so dietary supplementation is the only supply [30,31,32,33].'),
       para('Breeders require additional attention to vitamin E, selenium, folate, and biotin, all of which affect whether embryos develop and hatch normally. Vitamin D3 deficiency in the breeder diet produces chicks that are weak and unable to stand normally in the hatchery. These are problems that trace back to the hen\'s nutrition, not to incubation conditions [23].'),
 
       h2('5.4  Health Issues Specific to Layers and Breeders'),
@@ -900,6 +900,10 @@ function buildReferencesSection() {
       numberedRef('BC SPCA. Egg-Laying Hens [Internet]. Vancouver (BC): BC SPCA; [cited 2026 May]. Available from: spca.bc.ca/programs-services/farm-animal-programs/farm-animal-production/egg-laying-hens/'),
       numberedRef('Lohmann Breeders. Lohmann Brown-Classic Cage Housing Management Guide [Internet]. Cuxhaven (Germany): Lohmann Breeders GmbH; [cited 2026 May]. Available from: lohmann-breeders.com/strains/lohmann-brown-classic-cage-housing/'),
       numberedRef('Hy-Line International. Hy-Line Brown Variety [Internet]. West Des Moines (IA): Hy-Line International; [cited 2026 May]. Available from: hyline.com/varieties/brown'),
+      numberedRef('Warren MF, Pitman PM, Hodgson DD, Thompson NC, Livingston KA. Dietary super-doses of cholecalciferol fed to aged laying hens illustrates limitation of 24,25-dihydroxycholecalciferol conversion. Curr Dev Nutr. 2024;8(5):102156. doi:10.1016/j.cdnut.2024.102156.'),
+      numberedRef('DSM Nutritional Products. Vitamin Supplementation Guidelines. Basel (Switzerland): DSM; 2006.'),
+      numberedRef('DSM Nutritional Products. Optima: Nutricion Vitaminica de los animales para la produccion de alimentos de calidad. Basel (Switzerland): DSM; 2002.'),
+      numberedRef('Vitamin Deficiencies in Poultry. In: Merck Veterinary Manual [Internet]. Merck Sharp & Dohme LLC; [cited 2026 May]. Available from: merckvetmanual.com/poultry/nutrition-and-management-poultry/vitamin-deficiencies-in-poultry'),
     ],
   };
 }
