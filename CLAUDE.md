@@ -1178,6 +1178,7 @@ The user-facing dashboard is a **separate Vercel project** at `cpc-short-courses
 - Course 3 → `t-flaws-assessment-management-tool.docx`
 - Course 4 → `course-04-salmonella-food-safety.docx`
 - Course 5 → `course-05-sustainability.docx`
+- Course 6 → `course-06-poultry-anatomy-and-physiology.docx`
 - Course 7 → `course-07-common-poultry-diseases.docx`
 
 **Vercel auto-deploy stalls silently.** Pushing to `main` does NOT reliably trigger a new deploy on this project — observed multiple times, sometimes the most recent production build is days old while `main` has new commits. Do not assume `git push` is enough.
