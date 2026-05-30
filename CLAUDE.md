@@ -1203,7 +1203,23 @@ The user-facing dashboard is a **separate Vercel project** at `cpc-short-courses
    ```
    The number must match `ls -la dashboard/public/docs/<slug>.docx`. A stale `Content-Length` means the deploy did not pick up the new file — re-run step 3.
 
+5. **Mark the course `Complete` in Supabase so it appears on `/dashboard` (MANDATORY).** The dashboard page at `https://cpc-short-courses-series-dashboard.vercel.app/dashboard` is a server component that queries the `courses` table on every request. Until the row's `status` is flipped to `Complete` with a matching `slug`, the tile renders as Planned (or gets filtered out) even though the static `.docx` is live. The static download URL works, the dashboard tile does not — this caused a visible regression after the Course 6 publish.
+
+   Create one update script per course at `dashboard/supabase/seed/update-courseXX.ts`, mirroring `update-course04.ts` / `update-course06.ts` / `update-course07.ts`. Each script sets `slug`, `status='Complete'`, `progress_pct=100`, `meta` (title, subtitle, organization, date, version, disclaimer), and `updated_at`, scoped to `course_number = X`.
+
+   Run it once against production Supabase:
+   ```bash
+   cd dashboard && npx tsx supabase/seed/update-courseXX.ts
+   ```
+   (`tsx` is installed on first run via `npm warn exec` auto-install — no manual `npm install` needed. `ts-node --esm` from older course scripts also works.)
+
+   Successful output reports the course UUID, slug, and `Status: Complete`. Commit the script alongside the rest of the publish so future regeneration is reproducible.
+
+6. **Verify the dashboard tile.** Open `/dashboard` in a browser (or hit it with `curl -s`) and confirm the Course X tile shows the Complete badge and links to the live `.docx`. No Vercel redeploy is required for Step 5 to take effect — the server component reads Supabase live on each request.
+
 **LFS note:** all `.docx`/`.pdf`/`.png`/`.jpg` files are tracked by Git LFS (see [.gitattributes](.gitattributes)). Vercel does fetch LFS objects during build, so this is not the cause of the stall — the cause is the GitHub→Vercel webhook itself, which is why a manual `vercel deploy --prod` is required.
+
+**Why the two-stage publish exists.** The Lambda route at [dashboard/src/app/api/courses/\[courseId\]/generate-docx/route.ts](dashboard/src/app/api/courses/%5BcourseId%5D/generate-docx/route.ts) has a static-path shortcut (`public/docs/${slug}.docx`) that bypasses DB-driven generation when the file exists. But `/dashboard` itself is a separate Supabase-backed server component (`dashboard/src/app/dashboard/page.tsx`). So a course publish has two halves: (1) push the static `.docx` so the API can serve it, (2) update the Supabase row so the dashboard renders the tile. Skipping either half leaves a working download URL with no visible link, or a visible tile with no downloadable file. Both halves are mandatory.
 
 ### Safety Rule
 
