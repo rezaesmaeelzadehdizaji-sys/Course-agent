@@ -1,6 +1,6 @@
 // ============================================================
 // generate-course8-summary.mjs — Course 8 Summary Page
-// Vaccination – water, wing web, eye drop (3 sub-courses)
+// Vaccination – water, wing web, eye drop, spray, in-ovo, injection (6 sub-courses)
 // CPC Short Courses
 // Run: node generate-course8-summary.mjs
 // ============================================================
@@ -147,7 +147,7 @@ function buildHeader() {
       new Paragraph({
         children: [
           new TextRun({ text: 'CPC Short Courses  |  ', color: '888888', size: 18, font: 'Calibri' }),
-          new TextRun({ text: 'Vaccination – water, wing web, eye drop', color: MED_BLUE, size: 18, font: 'Calibri', bold: true }),
+          new TextRun({ text: 'Vaccination', color: MED_BLUE, size: 18, font: 'Calibri', bold: true }),
         ],
         alignment: AlignmentType.RIGHT,
         border: { bottom: { style: BorderStyle.SINGLE, size: 4, color: GOLD } },
@@ -214,7 +214,7 @@ children.push(
 
 children.push(
   new Paragraph({
-    children: [new TextRun({ text: 'water, wing web, eye drop', bold: true, color: DARK_BLUE, size: 30, font: 'Calibri' })],
+    children: [new TextRun({ text: 'water, wing web, eye drop, spray, in-ovo, injection', bold: true, color: DARK_BLUE, size: 26, font: 'Calibri' })],
     alignment: AlignmentType.CENTER,
     spacing: { before: 0, after: 40 },
   })
@@ -246,7 +246,7 @@ children.push(
 
 children.push(
   new Paragraph({
-    children: [new TextRun({ text: 'Duration: 1-Hour Lecture, 1.5-Hour Workshop (3 Sub-Courses)', color: BODY_GRAY, size: 22, font: 'Calibri' })],
+    children: [new TextRun({ text: 'Duration: 1-Hour Lecture, 1.5-Hour Workshop (6 Sub-Courses)', color: BODY_GRAY, size: 22, font: 'Calibri' })],
     alignment: AlignmentType.CENTER,
     spacing: { before: 0, after: 40 },
   })
@@ -486,6 +486,195 @@ children.push(lo(4, 'Restrain a bird and administer a single drop to the eye, co
 children.push(lo(5, 'Apply biosecurity and PPE protocols throughout the session.'));
 children.push(lo(6, 'Use the blue dye method or other monitoring tools to verify that the full flock received coverage.'));
 children.push(lo(7, 'Identify and correct errors in eye drop vaccination technique.'));
+
+// ============================================================
+// SUB-COURSE D: POULTRY COARSE SPRAY VACCINATION
+// ============================================================
+children.push(subCourseHeader('Sub-Course D: Poultry Coarse Spray Vaccination'));
+
+children.push(sectionLabel('Introduction'));
+
+children.push(p(
+  'Coarse spray vaccination lets you protect a whole barn in a single walk-through. No water starvation, no individual bird handling, no limit on flock size. The vaccine is dissolved in clean water and applied as a coarse mist over the birds\' heads. Each bird inhales and absorbs the antigen through the conjunctiva and nares, triggering mucosal immunity in the upper respiratory tract.'
+));
+
+children.push(p(
+  'Done right, uniform flock coverage is achievable in minutes. Done wrong, missed birds and failed protection are the result. In this sub-course, you will learn how the immune response is triggered through the respiratory route, how to prepare the diluent and calculate the right volume, how to manage ventilation during the spray window, and the specific technique differences for broilers, breeder pullets, and cage-housed pullets.',
+  { spaceAfter: 120 }
+));
+
+children.push(sectionLabel('Agenda'));
+
+children.push(numbered(1, 'Welcome & Introduction'));
+children.push(subitem('a', 'Course objectives and expectations'));
+children.push(subitem('b', 'Why coarse spray is the right choice for large respiratory vaccine programs'));
+
+children.push(numbered(2, 'Fundamentals of Poultry Immunology'));
+children.push(subitem('a', 'How the upper respiratory mucosa responds to coarse spray antigens'));
+children.push(subitem('b', 'Why droplet size matters: coarse spray vs. fine mist and where each lands'));
+
+children.push(numbered(3, 'Overview of Coarse Spray Vaccination'));
+children.push(subitem('a', 'Target diseases: Newcastle Disease, Infectious Bronchitis, and others'));
+children.push(subitem('b', 'When to choose spray over eye drop or water vaccination'));
+
+children.push(numbered(4, 'Vaccine Handling & Preparation'));
+children.push(subitem('a', 'Cold chain: storage at 2-8 C, transport on ice, protect from sunlight'));
+children.push(subitem('b', 'Diluent: distilled, demineralized, or deionized water only (no chlorinated water)'));
+children.push(subitem('c', 'Volume per 1,000 birds by age, and why rinsing each vial matters'));
+
+children.push(numbered(5, 'Equipment & Spray Settings'));
+children.push(subitem('a', 'The Hardi sprayer: vaccination use only, never pesticides or disinfectants'));
+children.push(subitem('b', 'Pressure: 4.5-5.0 Bar (65-75 PSI) held constant throughout the run'));
+children.push(subitem('c', 'Practice run with water 1-2 days before to confirm volume and walking speed'));
+
+children.push(numbered(6, 'Practical Spray Vaccination Procedures'));
+children.push(subitem('a', 'Broilers: grouping along side walls, 4 m max distance, nozzle 1 m above birds'));
+children.push(subitem('b', 'Breeder pullets and cage pullets: light dimming and technique differences'));
+children.push(subitem('c', 'Fans off during vaccination; back on 20 minutes after completion'));
+
+children.push(numbered(7, 'Biosecurity & Safety Protocols'));
+children.push(subitem('a', 'PPE: gloves, mask, and safety glasses (Newcastle conjunctivitis risk)'));
+children.push(subitem('b', 'Sprayer cleaning: rinse with distilled water, sanitize with Clean Tabs, store inverted'));
+
+children.push(numbered(8, 'Monitoring, Evaluation & Troubleshooting'));
+children.push(subitem('a', 'How to verify coverage using post-vaccination serology'));
+children.push(subitem('b', 'The most common spray vaccination failures and their causes'));
+children.push(subitem('c', 'Adjusting for summer heat: early-morning vaccination windows'));
+
+children.push(numbered(9, 'Hands-On Demonstration / Practical Session'));
+children.push(subitem('a', 'Practice spray run with water to calibrate volume and walking pace'));
+children.push(subitem('b', 'Observing spray particle size and pattern at a light source'));
+children.push(subitem('c', 'Q&A session'));
+
+children.push(numbered(10, 'Review, Assessment & Closing Remarks'));
+children.push(subitem('a', 'Summary of key learnings'));
+children.push(subitem('b', 'Participant evaluation'));
+children.push(subitem('c', 'Certificates and next steps'));
+
+children.push(p('', { spaceAfter: 40 }));
+
+children.push(sectionLabel('Learning Objectives'));
+
+children.push(lo(1, 'Explain how coarse spray vaccine droplets stimulate upper respiratory mucosal immunity, and why droplet size determines where the antigen is deposited.'));
+children.push(lo(2, 'Identify the diseases best controlled through coarse spray vaccination and when spray is preferred over eye drop or water routes.'));
+children.push(lo(3, 'Prepare vaccine correctly for spray delivery: cold chain, distilled water diluent, volume by flock age, and proper vial rinsing.'));
+children.push(lo(4, 'Set up and calibrate a Hardi sprayer to the correct pressure (4.5-5.0 Bar / 65-75 PSI), confirm spray pattern, and complete a practice water run.'));
+children.push(lo(5, 'Apply the correct technique for broilers, breeder pullets, and cage pullets, including distance, nozzle height, walking speed, and light management.'));
+children.push(lo(6, 'Manage ventilation correctly: fans off before the run, back on 20 minutes after, adjusted earlier if heat stress warrants it.'));
+children.push(lo(7, 'Identify and correct the most common coarse spray failures using post-vaccination serology and field observations.'));
+
+// ============================================================
+// SUB-COURSE E: IN-OVO VACCINATION
+// ============================================================
+children.push(subCourseHeader('Sub-Course E: In-Ovo Vaccination'));
+
+children.push(sectionLabel('Introduction'));
+
+children.push(p(
+  'In-ovo vaccination is done at the hatchery, not on the farm. Automated machines pierce the eggshell at approximately day 18 of incubation and deposit a measured vaccine dose into the amniotic fluid. In the 24 to 48 hours before hatch, the embryo swallows the fluid and absorbs the vaccine. By the time chicks arrive in the barn, immunity is already primed.'
+));
+
+children.push(p(
+  'Barn managers do not operate the equipment, but they need to understand what vaccines were delivered, when, and why that timing matters for scheduling any farm-level booster doses. This sub-course gives you that context.',
+  { spaceAfter: 120 }
+));
+
+children.push(sectionLabel('Agenda'));
+
+children.push(numbered(1, 'Welcome & Introduction'));
+children.push(subitem('a', 'Course objectives and who uses in-ovo vaccination'));
+children.push(subitem('b', 'Why timing at day 18 matters'));
+
+children.push(numbered(2, 'How In-Ovo Vaccination Works'));
+children.push(subitem('a', 'Automated hatchery machines: needle alignment, dose delivery, throughput'));
+children.push(subitem('b', 'How the embryo absorbs the vaccine through amniotic fluid before hatch'));
+
+children.push(numbered(3, 'Target Diseases and Vaccine Strains'));
+children.push(subitem('a', "Marek's Disease: HVT, bivalent HVT/SB-1, and CVI988/Rispens strains"));
+children.push(subitem('b', 'Infectious Bursal Disease and Newcastle Disease in-ovo programs'));
+children.push(subitem('c', 'Why in-ovo has largely replaced post-hatch injection for Marek\'s Disease in high-volume hatcheries'));
+
+children.push(numbered(4, 'What In-Ovo Means for Barn Managers'));
+children.push(subitem('a', 'Chicks arrive pre-primed: what that means for the timing of farm-level boosters'));
+children.push(subitem('b', 'Timing conflicts between in-ovo and early booster vaccines and how to avoid them'));
+children.push(subitem('c', 'What to confirm with your veterinarian before the season\'s vaccination program is set'));
+
+children.push(numbered(5, 'Review & Q&A'));
+children.push(subitem('a', 'Summary of key points for barn managers'));
+children.push(subitem('b', 'Questions from participants'));
+
+children.push(p('', { spaceAfter: 40 }));
+
+children.push(sectionLabel('Learning Objectives'));
+
+children.push(lo(1, "Explain what happens inside the egg during in-ovo vaccination and why day 18 of incubation is the standard delivery point."));
+children.push(lo(2, "Name the three main vaccine categories delivered in-ovo in Canadian commercial broiler and breeder programs."));
+children.push(lo(3, "Describe why in-ovo has largely replaced post-hatch subcutaneous injection for Marek's Disease in high-volume hatcheries."));
+children.push(lo(4, 'Identify the practical implication for barn managers: how in-ovo priming affects the timing of farm-level booster vaccines.'));
+children.push(lo(5, 'Know when to consult your veterinarian about timing conflicts between in-ovo and early farm-level vaccines.'));
+
+// ============================================================
+// SUB-COURSE F: INJECTION VACCINATION
+// ============================================================
+children.push(subCourseHeader('Sub-Course F: Injection Vaccination'));
+
+children.push(sectionLabel('Introduction'));
+
+children.push(p(
+  'Injection vaccination with killed products is the final high-dose priming event for layer pullets and broiler breeders before they move to the production barn. By 14 to 18 weeks, the live vaccines given earlier have primed the immune system. When you follow that with a killed injection, the bird responds hard: high serum titers that stay elevated for the full production cycle. Once a bird goes into lay, you cannot vaccinate the same way again without disrupting production. This is the window.'
+));
+
+children.push(p(
+  'In this sub-course, you will learn when and why injection vaccination is used, how to handle oil emulsion vaccines safely, how to deliver subcutaneous and intramuscular injections correctly, and what post-vaccination serology tells you about whether the program worked.',
+  { spaceAfter: 120 }
+));
+
+children.push(sectionLabel('Agenda'));
+
+children.push(numbered(1, 'Welcome & Introduction'));
+children.push(subitem('a', 'Who uses injection vaccination: layers, breeders, and some broiler programs'));
+children.push(subitem('b', 'Where injection fits in the full vaccination program timeline'));
+
+children.push(numbered(2, 'Target Vaccines and Disease Coverage'));
+children.push(subitem('a', 'Newcastle Disease, EDS-76, Infectious Bronchitis, ILT, Mycoplasma – what each antigen does'));
+children.push(subitem('b', 'Killed multivalent products: how your veterinarian selects the combination for your flock'));
+children.push(subitem('c', 'Maternal antibody transfer: why breeder titer levels at lay matter for the next generation of chicks'));
+
+children.push(numbered(3, 'Equipment and Vaccine Handling'));
+children.push(subitem('a', 'Automatic multi-dose injector: setup, dose calibration using mineral oil, and filling from the bottle'));
+children.push(subitem('b', 'Cold chain: storage at 2-8°C, transport, and 24-hour warming before use'));
+children.push(subitem('c', 'Oil emulsion vaccines: what freezing does and how to identify a damaged vial before using it'));
+
+children.push(numbered(4, 'Subcutaneous and Intramuscular Technique'));
+children.push(subitem('a', 'SC injection at the nape of the neck: angle, depth, and confirming correct placement'));
+children.push(subitem('b', 'IM injection into the pectoral muscle: site selection and keel bone avoidance'));
+children.push(subitem('c', 'Injection site reactions: what is normal with oil adjuvant and what needs a vet call'));
+
+children.push(numbered(5, 'Biosecurity, PPE, and Record Keeping'));
+children.push(subitem('a', 'Gloves, eye protection, needle change frequency, and safe needle disposal'));
+children.push(subitem('b', 'What records to keep and why CFIA inspectors will ask for them'));
+
+children.push(numbered(6, 'Monitoring and Troubleshooting'));
+children.push(subitem('a', 'Post-vaccination serology at 4 to 6 weeks: what the numbers mean'));
+children.push(subitem('b', 'High injection site reaction rates: most common causes and how to fix them'));
+children.push(subitem('c', 'When a poor serology result means revaccination vs. a flock health problem'));
+
+children.push(numbered(7, 'Review, Assessment & Closing Remarks'));
+children.push(subitem('a', 'Summary of key learnings'));
+children.push(subitem('b', 'Participant evaluation'));
+children.push(subitem('c', 'Certificates and next steps'));
+
+children.push(p('', { spaceAfter: 40 }));
+
+children.push(sectionLabel('Learning Objectives'));
+
+children.push(lo(1, 'Identify which flocks use injection vaccination and explain the systemic immunity a killed injection builds after live vaccine priming.'));
+children.push(lo(2, 'Name the main antigens in killed multivalent products used in Canadian commercial programs and describe what each one protects against.'));
+children.push(lo(3, 'Set up and calibrate an automatic multi-dose injector, maintain the cold chain, and warm oil emulsion vaccine correctly before a session.'));
+children.push(lo(4, 'Perform SC injection at the nape of the neck and IM injection into the pectoral muscle with correct angle, depth, and bird restraint for each route.'));
+children.push(lo(5, 'Apply PPE, follow the needle change protocol, and dispose of sharps safely throughout the session.'));
+children.push(lo(6, 'Keep complete injection records and interpret post-vaccination serology results with veterinary guidance.'));
+children.push(lo(7, 'Identify abnormal injection site reactions and know when to contact your veterinarian.'));
 
 // ============================================================
 // IMPORTANT NOTES
