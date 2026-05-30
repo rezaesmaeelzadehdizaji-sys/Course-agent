@@ -363,7 +363,7 @@ Before writing any section, scan `D:\Course agent\Avian medicine sources\CPC lea
 - Extract specific facts, figures, protocols, and recommendations directly from the CPC source — do not paraphrase from memory
 - Apply the American English sweep to any CPC source text before incorporating (CPC sources sometimes use British forms)
 - Strip any citation numbers from the source document that belong to its own reference list; replace with the correct citation number from the course being written
-- Cite every CPC source in the course reference list using format: `Author (if named). Title [Technical Bulletin / Disease Profile / Flock Management Guide]. CPC Learning Centre; [year if stated] [cited 2026 Apr]. Available from: cpclearningcentre.ca`
+- Cite every CPC source in the course reference list using format: `Author (if named). Title [Technical Bulletin / Disease Profile / Flock Management Guide]. CPC Learning Centre; [year if stated]. Available from: cpclearningcentre.ca`
 
 ### Depth of integration
 
@@ -607,6 +607,29 @@ If text sounds:
 - If not verifiable → write **[NEEDS SOURCE]** and stop — do not guess
 - Do not cite file paths; cite real sources (author, title, year)
 - This applies to acronym expansions, definitions, and proprietary CPC content — if the CPC team has not confirmed it in writing, it gets **[NEEDS SOURCE]**
+
+### Cited-Date Rule (MANDATORY)
+
+**Do NOT include a month of citation for local CPC/Merial sources.** These are static PDFs held in the local reference library — they do not change, so a retrieval date adds no information.
+
+| Source type | Cited date format |
+|---|---|
+| CPC Learning Centre bulletins, disease profiles, flock management guides | No cited date. End with year (if known) and `Available from: cpclearningcentre.ca` |
+| Merial / manufacturer Technical Bulletins hosted on cpclearningcentre.ca | No cited date. End with year (if known) and `Available via CPC Learning Centre: cpclearningcentre.ca` |
+| Live websites (Merck Vet Manual, CFIA, government pages, publisher sites) | Include `[cited YYYY Mon]` — these pages can change |
+| Books and journal articles | No cited date — use volume/issue/year/pages/DOI |
+
+**Correct format for CPC local sources:**
+```
+Canadian Poultry Consultants. Fowl Pox in the Fraser Valley [Disease Profile]. CPC Learning Centre. Available from: cpclearningcentre.ca
+Merial. Injection of Inactivated Vaccines [Technical Bulletin]. Merial. Available via CPC Learning Centre: cpclearningcentre.ca
+Montiel E. Troubleshooting a Marek's Disease Outbreak [Technical Bulletin]. Merial; 2005. Available from: cpclearningcentre.ca
+```
+
+**Correct format for live online sources:**
+```
+Merck Veterinary Manual. Vaccination of Poultry. Kenilworth, NJ: Merck & Co.; 2023 [cited 2026 May]. Available from: merckvetmanual.com
+```
 
 ### Authoritative Sources
 
