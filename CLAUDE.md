@@ -625,7 +625,7 @@ This is not optional and does not require the user to ask. It is part of the sam
    - Pass 1: replace every `[N]` bracket and every bibliography label `N.  ` with a unique temp marker (e.g. `TMPN07`, `TMPN08`). Process longer multi-number patterns first to avoid partial matches.
    - Pass 2: replace every temp marker with the correct new number.
    - Verify: zero temp markers remain in the XML; first-appearance order is now 1, 2, 3 ... N.
-4. **Also reorder the bibliography paragraphs** to match the new numbering so that bibliography entry [1] is the source cited first in the text, entry [2] is the source cited second, and so on.
+4. **Also reorder the bibliography paragraphs physically** to match the new numbering. Updating only the bold label text (e.g. "16.  " → "7.  ") is not enough — the paragraph must also move to the correct position in the list. Extract all bibliography paragraphs (identifiable by `w:ind w:left="504" w:hanging="504"`), sort them by their label number, and reconstruct the block in sorted order. Failure to do this leaves lower-numbered entries physically sitting after higher-numbered ones in the document, which is what the user sees when they scroll.
 5. **Report the remapping** to the user so they can see what changed (e.g. "old [16,17] → new [7,8]; old [7]–[15] → new [9]–[17]").
 
 **The lesson from Course 8 (May 2026):** Two new refs were appended as [16,17] but the citation point was early in the document (Section 1.2), so refs [7]–[15] all appeared after them in the text — a Vancouver violation. The reorder script caught and fixed all 17 citations in one pass using the temp-marker technique described above.
