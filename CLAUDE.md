@@ -608,6 +608,28 @@ If text sounds:
 - Do not cite file paths; cite real sources (author, title, year)
 - This applies to acronym expansions, definitions, and proprietary CPC content — if the CPC team has not confirmed it in writing, it gets **[NEEDS SOURCE]**
 
+### Citation Reordering After Any Addition (MANDATORY — NO EXCEPTIONS)
+
+**Every time a new reference is added to a course — even a single one — you must immediately reorder all citations in the entire document to restore sequential first-appearance order.**
+
+This is not optional and does not require the user to ask. It is part of the same operation as adding the reference.
+
+**Why:** Vancouver style requires citations to be numbered in the order they first appear in the text. Appending a new source as [N+1] at the end of the bibliography is only correct if that source is cited for the first time after every existing citation in the document. This is rarely the case when inserting new content mid-document.
+
+**Mandatory steps after every reference addition:**
+
+1. **Scan first-appearance order** — extract all `[N]` and `[N,M]` patterns from the document XML in text order and record the first position each number appears.
+2. **Check whether the order is already sequential** — if citation numbers appear in the order 1, 2, 3 ... N without any gaps or reversals, no renumbering is needed.
+3. **If out of order, renumber using the cascade-safe temp-marker technique:**
+   - Build an old→new mapping from the first-appearance scan.
+   - Pass 1: replace every `[N]` bracket and every bibliography label `N.  ` with a unique temp marker (e.g. `TMPN07`, `TMPN08`). Process longer multi-number patterns first to avoid partial matches.
+   - Pass 2: replace every temp marker with the correct new number.
+   - Verify: zero temp markers remain in the XML; first-appearance order is now 1, 2, 3 ... N.
+4. **Also reorder the bibliography paragraphs** to match the new numbering so that bibliography entry [1] is the source cited first in the text, entry [2] is the source cited second, and so on.
+5. **Report the remapping** to the user so they can see what changed (e.g. "old [16,17] → new [7,8]; old [7]–[15] → new [9]–[17]").
+
+**The lesson from Course 8 (May 2026):** Two new refs were appended as [16,17] but the citation point was early in the document (Section 1.2), so refs [7]–[15] all appeared after them in the text — a Vancouver violation. The reorder script caught and fixed all 17 citations in one pass using the temp-marker technique described above.
+
 ### Cited-Date Rule (MANDATORY)
 
 **Do NOT include a month of citation for local CPC/Merial sources.** These are static PDFs held in the local reference library — they do not change, so a retrieval date adds no information.
