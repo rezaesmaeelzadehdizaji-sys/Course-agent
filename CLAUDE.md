@@ -737,6 +737,25 @@ Content must be drawn from: Merck Veterinary Manual, Poultry Science journal, CF
 **Meat Science**
 - Gracey's Meat Hygiene
 
+**Vaccination (dedicated sub-library)**
+
+`D:\Course agent\Avian medicine sources\Avian medicine\Poultry vaccination\` — 19 PDFs covering all major vaccination routes and species programs. Scan this folder first for any course section on vaccination, vaccine reactions, or vaccination programs. Key titles:
+
+- *Newcastle and Infectious Bronchitis Vaccine Reactions in Commercial Broilers* — Butcher GD, Miles RD, Nilipour AH (UF/IFAS Extension VM097) — post-vaccination reactions, MG amplification, secondary E. coli; cited as ref [21] in Course 8
+- *Principles of Vaccination* — general immunology and vaccination principles
+- *Cobb Vaccination Guide* (2025) — species-specific program recommendations
+- *Hy-Line Vaccination Recommendations* — layer vaccination schedules
+- *Water-Vax* — water vaccination protocols
+- *Coarse-Spray* — coarse spray technique and droplet size
+- *Hatchery Spray Vaccine Application* — hatchery cabinet spray
+- *Commercial Chicken Vaccination Part 1: Spray and Aerosol Usage* — spray method overview
+- *ZOETIS Spray Vaccination of Broiler Flocks Guide* — field spray guide
+- *Aviagen Brief: Drinking Water Vaccination* (Sept 2008) — water route protocol
+- *Inactive-Vax* — inactivated/killed vaccine handling and injection
+- *Marek's Troubleshooting* — Montiel E, 2005 (same Montiel cited in CPC Learning Centre Marek's bulletin)
+- *Maternal Antibodies* — maternal antibody transfer and interference with vaccination timing
+- *Merck Veterinary Manual: Vaccination Programs* — separate PDFs for broilers, broiler-breeders, layers, turkeys, ducks, duck breeders
+
 When citing these, use the book title and author as the citation source, not the file path.
 
 ## Word Document Structure
