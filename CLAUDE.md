@@ -197,8 +197,12 @@ After Step 2, run `/academic-researcher` on any claim citing a specific statisti
 - Flags studies with weak evidence (small N, single study, outdated)
 - Formats citations in Vancouver style ready to paste into the reference list
 
-**Step 4 — Cross-check every number**
-Every specific figure (temperature range, ppm limit, kg/m² density, lux level, pH, flow rate, etc.) must be confirmed in at least two independent sources. If sources conflict, report both with citations and flag the discrepancy in the content.
+**Step 4 — Cross-check every number against current online sources (MANDATORY)**
+Every specific figure (temperature range, ppm limit, kg/m² density, lux level, pH, flow rate, drinker ratio, needle gauge, vaccine dose, etc.) must be confirmed in at least two independent sources. If sources conflict, report both with citations and flag the discrepancy in the content.
+
+**Local library PDFs may be outdated — online verification is mandatory for every quantitative claim.** The local reference library is the starting point, not the final authority. After extracting a figure from a local PDF, always cross-check it against the most current version of that standard available online (Aviagen, Cobb, Merck Veterinary Manual, CFIA, NFACC, manufacturer technical bulletins, etc.). If the online source gives a different value, use the online (more recent) value and note the discrepancy. Do not assume a local PDF figure is still current simply because it is the cited source.
+
+**Lesson from Course 8 (June 2026):** The local Water-Vax bulletin [11] gave drinker access ratios that had been superseded by current Aviagen 2025 and manufacturer guidance. The course was initially corrected to match the local PDF, then had to be corrected again after online verification showed the original values were more accurate. This double-correction was caused by trusting the local PDF without checking whether its figures reflected current standards. This must never happen again.
 
 **Step 5 — Document findings before writing**
 Record all confirmed sources per topic. This is the research record the content is built from. Write nothing until this record exists.
@@ -658,6 +662,8 @@ Merck Veterinary Manual. Vaccination of Poultry. Kenilworth, NJ: Merck & Co.; 20
 Content must be drawn from: Merck Veterinary Manual, Poultry Science journal, CFIA, CVMA, NFACC Codes of Practice, Aviagen Ross 308 manuals, Cobb 500 manuals, Lohmann Management Guide, AVMA, MSD Animal Health, Zoetis, CEVA, HIPRA, Boehringer Ingelheim, Elanco Learning Center, Canadian Poultry Consultant Learning Centre.
 
 ### Local Reference Library
+
+**WARNING — LOCAL PDFs ARE STATIC AND MAY BE OUTDATED.** The local library is the research starting point, not the publication standard. Every specific number, ratio, threshold, or protocol step extracted from a local PDF must be cross-checked against the most current online version of that source or an equivalent authoritative online source before it goes into a course. Where the online source differs from the local PDF, use the online (more recent) value, cite the online source, and note that the local PDF figure was superseded. See Step 4 above for the mandatory procedure.
 
 `D:\Course agent\Avian medicine sources\` contains 100+ poultry medicine and science PDFs. Always draw from these for factual content and citations. Key titles:
 
