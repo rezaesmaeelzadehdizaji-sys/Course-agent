@@ -998,6 +998,7 @@ The cover block ends with `spacing: { after: 360 }` on the last metadata paragra
 | Course | File | Generator |
 |--------|------|-----------|
 | Course 5 | `Course 5/Sustainability_Summary_Page.docx` | `generate-course5-summary.mjs` |
+| Course 8 | `Course 8/Summary_Page_Course8_Vaccination.docx` | `generate-course8-summary.mjs` |
 
 Update this table as each new summary page is added.
 
@@ -1250,6 +1251,7 @@ The user-facing dashboard is a **separate Vercel project** at `cpc-short-courses
 - Course 5 → `course-05-sustainability.docx`
 - Course 6 → `course-06-poultry-anatomy-and-physiology.docx`
 - Course 7 → `course-07-common-poultry-diseases.docx`
+- Course 8 → `course-08-vaccination-treatment.docx`
 
 **Vercel auto-deploy stalls silently.** Pushing to `main` does NOT reliably trigger a new deploy on this project — observed multiple times, sometimes the most recent production build is days old while `main` has new commits. Do not assume `git push` is enough.
 
