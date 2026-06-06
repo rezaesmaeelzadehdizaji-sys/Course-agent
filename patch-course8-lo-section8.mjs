@@ -1,6 +1,5 @@
 // patch-course8-lo-section8.mjs
-// Adds three Section 8 (AMR/Treatment) learning objectives to the Introduction
-// after the existing 6th LO bullet in the course body.
+// Replaces the three Section 8 LO bullets with shorter, farmer-friendly wording.
 
 import JSZip from './node_modules/jszip/dist/jszip.js';
 import fs from 'fs';
@@ -27,48 +26,37 @@ function saxValidate(xml) {
   if (bad) throw new Error('Unescaped & in XML: ' + bad.length);
 }
 
-function loBullet(text) {
-  return (
-    '<w:p><w:pPr>' +
-    '<w:pStyle w:val="ListParagraph"/>' +
-    '<w:numPr><w:ilvl w:val="0"/><w:numId w:val="2"/></w:numPr>' +
-    '<w:spacing w:after="80" w:line="276" w:lineRule="auto"/>' +
-    '</w:pPr>' +
-    '<w:r><w:t>' + text + '</w:t></w:r>' +
-    '</w:p>'
-  );
+function replaceOnce(xml, oldStr, newStr, label) {
+  if (!xml.includes(oldStr)) throw new Error('NOT FOUND: ' + label);
+  if (xml.split(oldStr).length - 1 > 1) throw new Error('NOT UNIQUE: ' + label);
+  console.log('  Fixed: ' + label);
+  return xml.split(oldStr).join(newStr);
 }
 
 async function run() {
   const zip = await JSZip.loadAsync(fs.readFileSync(FILE));
   let xml = await zip.file('word/document.xml').async('string');
 
-  const OLD = 'Recognize what a vaccination failure looks like in the flock, and catch it before birds start getting sick.</w:t></w:r></w:p>';
-  if (!xml.includes(OLD)) throw new Error('NOT FOUND: last existing LO bullet');
-  if (xml.split(OLD).length - 1 > 1) throw new Error('NOT UNIQUE: last existing LO bullet');
+  xml = replaceOnce(xml,
+    'Explain how antibiotic resistance develops and why it matters for your flock\'s long-term health and your market access.',
+    'Know what AMR is and why misusing antibiotics today can leave you with harder-to-treat bacteria tomorrow.',
+    'LO 7: AMR'
+  );
 
-  const NEW =
-    OLD +
-    loBullet('Explain how antibiotic resistance develops and why it matters for your flock\'s long-term health and your market access.') +
-    loBullet('Know the Canadian legal requirements for antibiotic use in commercial poultry: VCPR, Veterinary Health Certificate, and the prescription rules that took effect December 1, 2018.') +
-    loBullet('Select the right treatment route for each situation, observe the correct withdrawal time, and keep complete treatment records.');
+  xml = replaceOnce(xml,
+    'Know the Canadian legal requirements for antibiotic use in commercial poultry: VCPR, Veterinary Health Certificate, and the prescription rules that took effect December 1, 2018.',
+    'Know the rules before you treat: you need a valid VCPR with your vet, a Veterinary Health Certificate, and a prescription. No exceptions since December 2018.',
+    'LO 8: VCPR/VHC'
+  );
 
-  xml = xml.split(OLD).join(NEW);
-  console.log('  Added 3 Section 8 learning objectives to Introduction');
+  xml = replaceOnce(xml,
+    'Select the right treatment route for each situation, observe the correct withdrawal time, and keep complete treatment records.',
+    'Choose the right delivery route — water, feed, or injectable — watch the withdrawal time on the label, and keep records your vet or inspector can read.',
+    'LO 9: treatment routes'
+  );
 
   saxValidate(xml);
   console.log('  SAX: PASS');
-
-  const checks = [
-    ['antibiotic resistance develops and why it matters for your flock', true],
-    ['VCPR, Veterinary Health Certificate, and the prescription rules', true],
-    ['Select the right treatment route for each situation', true],
-  ];
-  checks.forEach(([s, should]) => {
-    const found = xml.includes(s);
-    if (found !== should) throw new Error('FAIL: ' + s);
-    console.log('  OK [' + (should ? 'present' : 'removed') + ']: ' + s.slice(0, 70));
-  });
 
   zip.file('word/document.xml', xml);
   const buf = await zip.generateAsync({ type: 'nodebuffer', compression: 'DEFLATE' });
