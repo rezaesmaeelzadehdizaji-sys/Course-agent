@@ -627,8 +627,8 @@ function buildReferencesSection() {
     children: [
       h1('References'),
       para('References are listed in order of first appearance in the text. All sources are peer-reviewed literature, veterinary manuals, or guides from recognized regulatory and scientific bodies.'),
-      numberedRef('Bowes V. Serology 101: Understanding Blood Test Results. Abbotsford, BC: Animal Health Centre; 2003.'),
-      numberedRef('Spotting Disease Early: A Flock Management Guide. CPC Learning Centre; 2024. Available from: cpclearningcentre.ca.'),
+      numberedRef('Bowes V. Serology 101: or how to interpret those funny-looking graphs [Presentation]. Abbotsford, BC: Animal Health Centre; 2003.'),
+      numberedRef('Spotting Disease Early [Flock Management Guide]. CPC Learning Centre. Available from: cpclearningcentre.ca.'),
       numberedRef('Diseases of Poultry. Swayne DE, editor. 14th ed. Hoboken, NJ: John Wiley &amp; Sons; 2020.'),
       numberedRef('Ceva Santé Animale. Ceva Handbook of Poultry Diseases. Libourne, France: Ceva Santé Animale; n.d.'),
       numberedRef('Ross Broiler Management Handbook. Huntsville, AL: Aviagen; 2025.'),
