@@ -412,13 +412,13 @@ function buildSection1() {
       h1('Section 1: Why Poultry Diagnostics Matter in Modern Farming'),
       h2('1.1 The Role of Diagnostics in Flock Health and Farm Viability'),
       para('In a modern commercial poultry house, everything runs on tight margins and tight timing. In a broiler barn holding 20,000 birds or more, a single disease outbreak can move through the house in days. In layers, a disease that damages egg production or shell quality can hurt profitability for months. Diagnostics is not a luxury in that environment. It is the steering wheel that keeps your flock on track [3,5].'),
-      para('Every dollar you spend on diagnostic monitoring works to protect your larger investments in chicks, feed, and labor. By tracking the immune status of the flock through serology (blood tests) or submitting early mortalities for necropsy, you establish a baseline of what is normal for your farm. When something shifts, you do not have to guess. You have hard data to guide your response. This prevents minor viral challenges from turning into secondary bacterial infections that require expensive antibiotic treatments.'),
+      para('Every dollar you spend on diagnostic monitoring works to protect your larger investments in chicks, feed, and labor. By tracking the immune status of the flock through serology (blood tests) or submitting early mortalities for necropsy, you establish a baseline of what is normal for your farm. When something shifts, you do not have to guess. You have hard data to guide your response. That stops a small virus problem from turning into a bacterial infection and keeps you out of expensive antibiotics.'),
       ...image(figBuf('fig9_1.png'), 'Figure 1.1: The continuous diagnostic and farm health feedback loop. Monitoring feed and water trends informs veterinary testing, which results in targeted on-farm action plans. Source: CPC Short Courses.'),
       para('Diagnostics is a routine part of farm management, not just something you reach for in a crisis. When your barn decisions are driven by what the lab tells you, subclinical problems show up earlier, you adjust ventilation before birds are stressed, and you know your vaccination program is actually working [1].'),
 
       h2('1.2 Common Misconceptions: Cost vs. Investment, Diagnostics vs. Autopsy'),
-      para('The most common reason growers skip diagnostic work is the belief that lab testing is too expensive. This is a misunderstanding of farm economics. A standard diagnostic submission, including necropsy and basic PCR testing, costs a few hundred dollars. In contrast, losing even one percent of a 20,000-bird broiler flock to a preventable disease like Gumboro or Infectious Bronchitis represents thousands of dollars in lost market value, plus the wasted feed those birds consumed [2,5].'),
-      para('The table below illustrates the cost comparison between routine testing investment and delayed intervention. Figures are illustrative estimates only and will vary by farm size, region, and diagnostic lab.'),
+      para('The most common reason growers skip diagnostic work is the belief that lab testing is too expensive. This is a misunderstanding of farm economics. A standard diagnostic submission, including necropsy and basic PCR testing, costs a few hundred dollars. In contrast, losing even one percent of a 20,000-bird broiler flock to a preventable disease like Gumboro or Infectious Bronchitis means thousands of dollars gone in lost market weight, plus all the feed those birds ate while they were going downhill [2,5].'),
+      para('The table below puts the numbers side by side. Figures are illustrative estimates only and will vary by farm size, region, and diagnostic lab.'),
 
       new Table({
         width: { size: 100, type: WidthType.PERCENTAGE },
@@ -551,7 +551,7 @@ function buildSection4() {
       para('Here is how to read the %CV number on your serology report:'),
       bullet([{ text: 'Under 30%: Excellent. ', bold: true }, { text: 'The whole flock responded to vaccination evenly. All birds have similar antibody levels and are protected across the board.' }]),
       bullet([{ text: '30% to 50%: Good. ', bold: true }, { text: 'Solid, acceptable response for most commercial flocks.' }]),
-      bullet([{ text: '51% to 80%: Fair. ', bold: true }, { text: 'Vaccination coverage was uneven, or there was a mild environmental challenge in the barn.' }]),
+      bullet([{ text: '51% to 80%: Fair. ', bold: true }, { text: 'Vaccination coverage was uneven, or something in the barn stressed the birds during the vaccination window.' }]),
       bullet([{ text: 'Over 80% (81%+): Poor or Bimodal. ', bold: true }, { text: 'This is a split flock. Half the birds are sitting with low titers and no real protection, while the other half have very high titers from an active field exposure. Vaccination was missed in some birds, or a field virus is circulating right now [1].' }]),
 
       h2('4.3 Field Challenge vs. Vaccine Response, and the Value of Paired Samples'),
