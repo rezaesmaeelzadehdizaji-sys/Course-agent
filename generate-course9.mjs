@@ -505,7 +505,7 @@ function buildSection3() {
       h1('Section 3: Benefits of Early and Accurate Diagnosis'),
       h2('3.1 Preventing Massive Losses: Early Warnings in Water and Feed Consumption'),
       para('Commercial birds live in tight groups. A disease challenge can move through a house in days. Catching it early is everything. Long before birds start coughing, huddling, or looking lethargic, their behavior shifts. Your daily water and feed meters are the most sensitive early indicators of that shift [2].'),
-      para('Water consumption is particularly sensitive. The CPC Learning Centre \'Spotting Disease Early\' guide identifies a drop in water intake of 10% or more on a single day as a strong early warning sign. Water meters should be checked every day. In many cases, the meters drop a full day or two before you hear birds coughing or see them backing off feed. If you wait until you have sick birds or high mortalities, you have already lost days you cannot get back [2,7].'),
+      para('Water consumption is particularly sensitive. The CPC Learning Centre \'Spotting Disease Early\' guide identifies when disease or stress hits the flock, water intake drops before feed intake, often a full day or two before birds start coughing or show other signs. A notable unexplained drop in your water meter on a single day is a strong early warning. If you wait until you have sick birds or high mortalities, you have already lost days you cannot get back [2].'),
       para('When the meters drop, call your vet and get birds or blood cards to the lab that day. Getting that diagnosis early lets you start treatment or fix the ventilation before E. coli moves in behind the virus and causes the real damage [2,3].'),
 
       h2('3.2 Stopping Disease Transmission and Protecting Neighboring Barns'),
@@ -516,7 +516,7 @@ function buildSection3() {
       para('Not all diseases kill birds. In fact, some of the most expensive conditions in poultry farming are subclinical. None of them will drop your flock overnight. But each one quietly chips away at gut function or immune response, and by the time you notice the damage, feed costs have climbed and birds are coming off the truck lighter than they should be [5].'),
       para('Common subclinical challenges include:'),
       bullet([{ text: 'Subclinical Coccidiosis: ', bold: true }, { text: 'Tiny protozoan parasites damage the gut lining so the bird cannot absorb what it eats. Feed goes in, but it does not come out as weight. The FCR climbs and flock uniformity drops.' }]),
-      bullet([{ text: 'Subclinical Gumboro (IBD): ', bold: true }, { text: 'The virus hits the bursa of Fabricius, the organ that builds the chick\'s immune system. The bird survives, but the immune system is permanently damaged. It picks up E. coli easily and does not respond properly to the next round of vaccinations [3].' }]),
+      bullet([{ text: 'Subclinical Gumboro (IBD): ', bold: true }, { text: 'The virus hits the bursa of Fabricius, the organ that builds the chick\'s immune system. Young birds that survive can suffer lasting immune damage. They pick up E. coli easily and do not respond properly to the next round of vaccinations [3].' }]),
       bullet([{ text: 'Mycoplasma: ', bold: true }, { text: 'MG and MS quietly inflame the air sacs and joints without killing a single bird. Growth slows and you start seeing more condemnations at the plant [3].' }]),
 
       para('Routine diagnostics is the only way to catch these problems. Regular coccidia oocyst counts on fecal samples and IBD titer checks on blood cards let you find these performance-drainers before they cost you the whole flock\'s margin. Fix your vaccination or coccidiostat program early, not after the damage is done [1,2]. For full disease profiles on Gumboro, Mycoplasma, and the other common subclinical pathogens, see Course 7 (Common Poultry Diseases) in this series.'),
@@ -537,7 +537,7 @@ function buildSection4() {
       h2('4.1 When to Call for Support: Knowing Your Baseline'),
       para('To recognize when a flock is in trouble, you must know what is normal for your barn. Every farm has a baseline: normal daily water intake, typical flock behavior at different ages, and normal daily mortality (typically under 0.05% per day after the first week) [2,5].'),
       para('The CPC Learning Centre \'Spotting Disease Early\' guide recommends contacting your veterinarian or service representative immediately if you observe any of the following triggers [2,5]:'),
-      bullet('A drop in daily water or feed consumption of 10% or more on a single day.'),
+      bullet('A notable unexplained drop in daily water or feed consumption, with no obvious mechanical cause, on a single day.'),
       bullet('Daily mortality running above 0.1% for two days in a row, or any sudden jump in dead birds.'),
       bullet('Birds huddling, going quiet, or making a soft clicking sound (snicking) on your night barn walk.'),
       bullet('Weekly gains dropping suddenly, or birds starting to spread wide in size.'),
@@ -559,7 +559,7 @@ function buildSection4() {
       para('Paired sampling involves collecting blood cards from the same flock at two distinct times:'),
       numbered('Acute Sample: Collected immediately when the flock first shows signs of trouble (e.g., a water drop or mild respiratory snicks).'),
       numbered('Convalescent Sample: Collected 10 to 14 days later from the same barn.'),
-      para('It takes 10 to 14 days for a bird to build antibodies after a new exposure. This window is called seroconversion. Comparing the two samples tells you exactly what you need to know. If the titers hold steady, the high level you saw was from vaccination. If the mean titers double, triple, or jump from negative to strongly positive between the acute and convalescent samples, you have confirmed an active field challenge [1].'),
+      para('Collecting the convalescent sample 10 to 14 days later gives the flock\'s immune system time to show a measurable antibody rise if a new field exposure occurred. Comparing the two samples tells you exactly what you need to know. If the titers hold steady, the high level you saw was from vaccination. If the mean titers double, triple, or jump from negative to strongly positive between the acute and convalescent samples, you have confirmed an active field challenge [1].'),
 
       h2('4.4 Management Errors vs. Infections'),
       para('When a flock performance issue occurs, growers often assume an infectious disease is responsible. The CPC Learning Centre \'Spotting Disease Early\' guide notes that a high percentage of bird submissions to the laboratory are in fact non-infectious conditions linked to management errors. Walk your barn and check the basics before you submit anything [2].'),
@@ -567,7 +567,7 @@ function buildSection4() {
       para('Always investigate these non-infectious factors first. For a systematic barn-entry checklist covering temperature, feed, light, air, water, and sanitation, see Course 3 (T-FLAWS Assessment Management Tool) in this series.'),
       bullet([{ text: 'Water line issues: ', bold: true }, { text: 'Check for airlocks, clogged nipples, or a failure in the line regulator. A sudden drop in water intake is often a mechanical failure, not a disease.' }]),
       bullet([{ text: 'Feed line blockages: ', bold: true }, { text: 'Verify that the feed lines are running and that bins are not empty. A blocked boot at the feed bin can starve a house in hours.' }]),
-      bullet([{ text: 'Temperature and ventilation: ', bold: true }, { text: 'Ensure the temperature matches the birds\' age. Chilling or overheating causes birds to huddle and stop eating or drinking. Ammonia starts suppressing immunity above 10 ppm; above 25 ppm you will see eye irritation and tearing; above 50 ppm the airways themselves are damaged. If you can smell ammonia at bird level, it is already high enough to mimic a respiratory infection [2].' }]),
+      bullet([{ text: 'Temperature and ventilation: ', bold: true }, { text: 'Ensure the temperature matches the birds\' age. Chilling or overheating causes birds to huddle and stop eating or drinking. Check your ammonia level too. Even before birds show respiratory signs, high ammonia suppresses immunity and can look exactly like an infectious respiratory disease. If you can smell ammonia at bird level when you walk in, it is already too high [5].' }]),
     ],
   };
 }
