@@ -1,5 +1,5 @@
 // patch-course8-lo-section8.mjs
-// Replaces the three Section 8 LO bullets with shorter, farmer-friendly wording.
+// Fixes em dash in Section 8 LO 9.
 
 import JSZip from './node_modules/jszip/dist/jszip.js';
 import fs from 'fs';
@@ -26,34 +26,21 @@ function saxValidate(xml) {
   if (bad) throw new Error('Unescaped & in XML: ' + bad.length);
 }
 
-function replaceOnce(xml, oldStr, newStr, label) {
-  if (!xml.includes(oldStr)) throw new Error('NOT FOUND: ' + label);
-  if (xml.split(oldStr).length - 1 > 1) throw new Error('NOT UNIQUE: ' + label);
-  console.log('  Fixed: ' + label);
-  return xml.split(oldStr).join(newStr);
-}
-
 async function run() {
   const zip = await JSZip.loadAsync(fs.readFileSync(FILE));
   let xml = await zip.file('word/document.xml').async('string');
 
-  xml = replaceOnce(xml,
-    'Explain how antibiotic resistance develops and why it matters for your flock\'s long-term health and your market access.',
-    'Know what AMR is and why misusing antibiotics today can leave you with harder-to-treat bacteria tomorrow.',
-    'LO 7: AMR'
-  );
+  const OLD = 'Choose the right delivery route — water, feed, or injectable — watch the withdrawal time on the label, and keep records your vet or inspector can read.';
+  const NEW = 'Choose the right delivery route for the situation: water, feed, or injectable. Watch the withdrawal time on the label and keep records your vet or inspector can read.';
 
-  xml = replaceOnce(xml,
-    'Know the Canadian legal requirements for antibiotic use in commercial poultry: VCPR, Veterinary Health Certificate, and the prescription rules that took effect December 1, 2018.',
-    'Know the rules before you treat: you need a valid VCPR with your vet, a Veterinary Health Certificate, and a prescription. No exceptions since December 2018.',
-    'LO 8: VCPR/VHC'
-  );
+  if (!xml.includes(OLD)) throw new Error('NOT FOUND: LO 9 with em dash');
+  xml = xml.split(OLD).join(NEW);
+  console.log('  Fixed em dash in LO 9');
 
-  xml = replaceOnce(xml,
-    'Select the right treatment route for each situation, observe the correct withdrawal time, and keep complete treatment records.',
-    'Choose the right delivery route — water, feed, or injectable — watch the withdrawal time on the label, and keep records your vet or inspector can read.',
-    'LO 9: treatment routes'
-  );
+  // Belt-and-braces: confirm zero em dashes remain in body text
+  const emDashes = (xml.match(/—/g) || []).length;
+  if (emDashes > 0) throw new Error('Em dashes still present: ' + emDashes);
+  console.log('  Em dash count: 0 (PASS)');
 
   saxValidate(xml);
   console.log('  SAX: PASS');
