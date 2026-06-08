@@ -685,6 +685,10 @@ Content must be drawn from: Merck Veterinary Manual, Poultry Science journal, CF
 - Global Strategy for the Prevention and Control of HPAI (WHO/FAO)
 - Lesion Age and Samples (post-mortem lesion aging reference)
 - 8 Poultry Diseases with Liver Lesions
+- *Handbook of Poultry Parasites* — added 2026-05-19; internal/external parasite ID, life cycles, treatment options
+- *Infectious Diseases of Wild Birds* — added 2026-05-13; wild bird reservoirs and spillover risk, useful for biosecurity/AI risk sections
+- Veterinary Histopathology — Sample Submission Maximizing — added 2026-05-05; correct tissue sampling and submission protocol for diagnostic labs
+- Ojkic D, et al. "Genotyping of Infectious Bronchitis Virus in Canada During 2014-2023" (2024) — added 2026-06-01; verify full citation (authors, journal, volume, pages, DOI) against PubMed/CrossRef before use, do not cite from the PDF filename alone
 
 **Production & Management**
 - *Commercial Chicken Meat and Egg Production*, Donald D. Bell
@@ -731,6 +735,26 @@ Content must be drawn from: Merck Veterinary Manual, Poultry Science journal, CF
 - Double-Yolk Eggs in Commercial Laying Hens
 - Optimizing Saleable Eggs, Efficiency and Profitability
 - Egg Bioscience and Biotechnology
+- Egg-Laying Hen Production in Canada (2017, SPCA BC) — added 2026-05-29; Canadian layer housing/welfare context
+
+**Layer & Breeder Management Guides — added 2026-05-27 to 2026-05-29 (verify breed/strain match before citing)**
+
+These are manufacturer management guides for specific commercial strains. Use the guide that matches the strain named in the course outline; do not cite a Lohmann figure for a Hy-Line or Ross flock or vice versa.
+
+- *Aviagen Ross PS (Parent Stock) Handbook 2023, Interactive EN* — Ross broiler breeder management
+- *Hy-Line Brown Parent Stock Management Guide*
+- *Hy-Line Brown Commercial (COM) ENG Management Guide*
+- *Hy-Line 36 Commercial (COM) ENG Management Guide*
+- *Hy-Line 36 Parent Stock (Commercial) ENG Management Guide*
+- *Hy-Line 36 Performance Summary ENG*
+- *Lohmann Breeders — Parent Stock Management Guide*
+- *Lohmann Breeders — Management Guide, Cage Housing, LSL-Classic EN*
+- *Lohmann Breeders — Management Guide for Hot Climates*
+- *Lohmann Breeders — TG-Hygiene EN* (biosecurity/hygiene guide for breeder operations)
+- *Lohmann Brown-Classic — Alternative Haltung (Alternative Housing) EN*
+
+**Lighting**
+- *Lighting for Poultry with Light-Emitting Diodes (LEDs)* — added 2026-05-22; LED spectrum/intensity guidance, cross-check against CPC Lighting Program Guidelines for Broilers 2026
 
 **Welfare & Stress**
 - Effects of Chronic Stress on Poultry (Part II)
@@ -788,7 +812,7 @@ Every course document must follow this structure:
 2. Table of Contents (requires "Update Field" in Word after opening)
 3. Introduction
 4. Main content sections with Heading 1 / Heading 2 hierarchy
-5. Image placeholders, gray bordered table cell + caption (no actual images embedded)
+5. Embedded images with captions. Generate real photorealistic images for any real-world subject (anatomy, organs, necropsy, lesions, birds, barns, equipment, procedures) and embed them. See "Real Photos, Never Cartoon Anatomy" above. Schematic process graphics (flowcharts, decision trees, comparison tables) may be embedded as SVG-rendered figures. Do NOT leave gray-cell placeholders for real-world subjects.
 6. Recommended peer-reviewed journals
 7. References/bibliography (numbered, in order of appearance)
 
@@ -866,6 +890,46 @@ Use two parallel caption sequences depending on what the image actually is:
 
 Apply the labeling based on the medium of the image, not on its source — a stock photo and a farm-shot photo both get `Photo`; a generated diagram and a hand-drawn schematic both get `Figure`.
 
+### Real Photos, Never Cartoon Anatomy (MANDATORY — ALL 17 COURSES)
+
+**Whenever a course needs to show a real-world subject — anatomy, organs, a necropsy view, a lesion, a bird, a barn, equipment, a procedure — generate a real photorealistic image and embed it in the document. Never draw the subject as a cartoon, a flat colored shape, or a schematic blob.** This is a standing project-wide rule, not a Course 10 one-off. The user has stated this directly: I generate the needed photos myself, place them in the course wherever an image is needed, and the user reviews and tells me what to change.
+
+**This replaces the old "image placeholder" convention.** Earlier course generators used a gray bordered empty table cell with a caption as a stand-in for an image, and some captions said things like "to be supplied by the CPC team." That is no longer acceptable for any real-world subject. Do not leave placeholders and do not defer image creation to CPC. Generate the image, embed it, caption it.
+
+#### How to generate — working route on THIS machine
+
+The actual working route on this Windows machine is the **`belt` CLI (inference.sh)**, contingent on the account having credits:
+```bash
+belt app run openai/gpt-image-2 --input '{"prompt":"...","size":"1536x1024"}' -o result.json
+```
+Used for Course 10 Photo 3.2 — produced a usable photoreal image on the first try.
+
+**The `ai-image-generation` (RunComfy) skill is installed but its CLI does NOT run on Windows.** `@runcomfy/cli` ships only darwin/linux native binaries; its postinstall fails with `unsupported platform/arch: win32-x64` even with `--force`. The skill is registered for portability if this project ever moves to macOS/Linux, but on the current machine it is a dead end — do not attempt to run `runcomfy`.
+
+Other dead ends on this machine (do not retry): the `gpt-image-2` skill needs a ChatGPT Plus/Pro plan (user has neither); pollinations.ai is paywalled (HTTP 402).
+
+For photorealistic poultry/anatomy/necropsy/barn subjects, write a specific photoreal prompt and run it through `belt app run openai/gpt-image-2`.
+
+#### Workflow per image
+
+1. Write a specific, photoreal prompt describing exactly what the figure must show (species, view, what organs/structures are visible, lighting, background, framing). For anatomy/necropsy, specify "commercial broiler," the anatomical view, and a clinical/diagnostic setting (e.g. stainless steel necropsy surface, good lighting).
+2. Generate at a size that matches the embed aspect ratio (landscape `1536x1024` for wide figures, portrait for tall ones).
+3. Save the PNG/JPG into the course folder (`Course X/`) with a descriptive name (e.g. `photo3_2_necropsy_organs.png`).
+4. Embed it with the generator's `image()` helper and a finished caption (`Photo X.Y: ... Source: CPC Short Courses.` for CPC-generated artwork).
+5. Regenerate the docx and tell the user which images were generated so they can review.
+
+#### Caption attribution for generated images
+
+A generated photo that CPC owns gets `Source: CPC Short Courses.` — same as any CPC-owned artwork. Do **not** write AI-generation disclaimers in the caption ("Generated image," "AI-generated illustration," "to be supplied by CPC"). The course is a finished CPC product; the generation method lives in internal notes, not the rendered caption.
+
+#### Anatomical-accuracy note (do not re-raise)
+
+AI image models can get internal organ shapes and positions wrong, which matters when the image teaches farmers what "normal" looks like. The user is aware of this and has made the call: generate the image, the user reviews it, and the user decides if it needs changing ("use it as-is, I've reviewed it"). Do not repeatedly flag the accuracy caveat on every generated anatomy image — generate, embed, and let the user review.
+
+#### What stays a diagram (Figure, SVG)
+
+Process and workflow graphics are still fine as schematic SVG infographics: flowcharts, decision trees, toolkit/checklist lists, comparison tables, timelines. The "real photo, never cartoon" rule applies to depictions of physical real-world subjects (anatomy, organs, lesions, birds, barns, equipment, procedures), not to abstract process graphics.
+
 ## Course Summary Page (MANDATORY FOR EVERY COURSE)
 
 Every course must have a companion **summary page** — a short standalone Word document (.docx) that serves as the session handout or facilitator reference. It is **not** the course itself; it is a condensed overview.
@@ -902,11 +966,29 @@ The source file contains one entry per course, in order:
 | 16 | Preparing for an Inspection Audit | 2-hour lecture |
 | 17 | Regulatory Framework in Poultry Production | 2-hour lecture |
 
+### Second source file — updated brief outlines (READ-ONLY — NEVER MODIFY)
+
+```
+D:\Course agent\CPCLearningCenter (1).docx
+```
+
+This is a **newer, brief** CPC course-catalog document (added 2026-06-07). It contains, per course: course title, format (Classroom/Workshop), duration, lead developer initials (e.g. `MM`, `VB`, `LR`, `CPC`), audience tags (e.g. "Meat birds", "Layers & breeders", "Ducks & Geese"), prerequisites, and a description template (Introduction / Agenda / Learning Objectives / Important Notes — illustrated with a Serology 101 example). It does **not** replace `Short Courses summary pdage drafts.docx` — it is shorter and was updated more recently, so the two files can disagree on course titles, scope, or structure. **Never edit, overwrite, or commit changes to this file.**
+
+#### MANDATORY rule — always cross-check both summary source files
+
+**Before building any summary page or course draft, read both `Short Courses summary pdage drafts.docx` (the long-form draft) AND `CPCLearningCenter (1).docx` (the brief, more recently updated catalog) and reconcile them.** Do not build from one file alone — each can contain information the other lacks or has superseded.
+
+- If the two files **agree** on a course's title, scope, and structure: proceed using the long-form draft as the primary content source (it has the full Introduction/Agenda/LO/Notes text).
+- If the two files **disagree** (e.g., a different course title, an added scope element, a different audience or prerequisite): treat the brief catalog (`CPCLearningCenter (1).docx`) as the more current signal on *what the course should be about*, but still build the actual summary content from the long-form draft, adjusted to match the corrected scope/title. Flag the discrepancy to the user and confirm before finalizing if the change is structural (not just wording).
+- Record any reconciliation decision in your report back to the user so it is traceable later (which file's title/scope won, and why).
+
+**Precedent — Course 8:** `Short Courses summary pdage drafts.docx` listed Course 8 as "Vaccination – water, wing web, eye drop" (route-focused, 3 sub-courses). `CPCLearningCenter (1).docx` lists it as "Fundamentals of Poultry Vaccination & Treatment, including AMR" (broader scope: principles of vaccination and treatment, AMR, practical workshop). The user instructed adding treatment and AMR content and updating the topic — the final Course 8 draft was built by merging both: the long-form draft's structure and detail, corrected and expanded to the brief catalog's broader title and scope (including AMR). This is the model to follow for every future course: cross-check both, merge, and confirm with the user when the scope changes materially.
+
 ### Extraction and generation workflow (MANDATORY)
 
 Before generating any summary page:
 
-1. **Extract the relevant course content** from `Short Courses summary pdage drafts.docx` programmatically using JSZip. Never re-type or paraphrase the source content from memory.
+1. **Extract the relevant course content** from `Short Courses summary pdage drafts.docx` AND cross-check the course title/scope/audience against `CPCLearningCenter (1).docx` programmatically using JSZip. Never re-type or paraphrase the source content from memory.
 2. **Apply mandatory rules to all body text — headings stay as-is:**
    - **Humanize to farmer-flow tone**: practical, direct, field-vet voice. No academic language, no AI-sounding phrases, no passive constructions.
    - **American English sweep**: convert any British forms (behaviour → behavior, organisation → organization, colour → color, etc.)
@@ -1018,7 +1100,7 @@ All courses must follow a consistent structure based on two reference courses:
 3. Introduction  
 4. Main sections (Heading hierarchy)  
 5. Practical farmer-focused explanations  
-6. Image placeholders  
+6. Embedded real photos for real-world subjects (generated, not cartoon); SVG figures for process graphics  
 7. Recommended journals  
 8. References (Numbered style)
 
@@ -1302,7 +1384,7 @@ The user-facing dashboard is a **separate Vercel project** at `cpc-short-courses
 
 - TOC is a Word field, it appears blank until the user right-clicks and selects **Update Field**
 - ES module imports are blocked on `file://`, always test via a local HTTP server
-- Image placeholders use a single-cell gray table, no actual images are embedded in the .docx
+- Real-world subjects (anatomy, organs, necropsy, lesions, birds, barns, equipment) are embedded as generated photorealistic images, not gray-cell placeholders. Process graphics may be embedded as SVG-rendered figures. The legacy gray single-cell placeholder is deprecated and must not be used for any real-world subject. See "Real Photos, Never Cartoon Anatomy."
 
 ## "This document contains fields that may refer to other files" Dialog (CONFIRMED FIX)
 
