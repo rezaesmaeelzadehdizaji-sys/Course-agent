@@ -130,15 +130,22 @@ function image(buf, caption, widthIn = 5.9) {
   const dpi = 96;
   const wpx = Math.round(widthIn * dpi);
   let hpx = Math.round(wpx * 0.6);
+  const isJpeg = buf[0] === 0xFF && buf[1] === 0xD8;
+  const type = isJpeg ? 'jpg' : 'png';
   try {
-    const view = new DataView(buf.buffer, buf.byteOffset);
-    const pw   = view.getUint32(16, false);
-    const ph   = view.getUint32(20, false);
-    if (pw > 0 && ph > 0) hpx = Math.round(wpx * ph / pw);
+    if (isJpeg) {
+      const d = jpegDims(buf);
+      if (d && d.w > 0 && d.h > 0) hpx = Math.round(wpx * d.h / d.w);
+    } else {
+      const view = new DataView(buf.buffer, buf.byteOffset);
+      const pw   = view.getUint32(16, false);
+      const ph   = view.getUint32(20, false);
+      if (pw > 0 && ph > 0) hpx = Math.round(wpx * ph / pw);
+    }
   } catch (_) {}
   return [
     new Paragraph({
-      children: [new ImageRun({ data: buf, transformation: { width: wpx, height: hpx }, type: 'png' })],
+      children: [new ImageRun({ data: buf, transformation: { width: wpx, height: hpx }, type })],
       alignment: AlignmentType.CENTER,
       spacing:   { before: 160, after: 0 },
     }),
@@ -406,7 +413,7 @@ function buildSection3() {
       bullet([{ text: 'Head: ', bold: true }, { text: 'Eyes bright and clear, nostrils clean and dry, comb and wattles a normal full color for the bird type. The sinuses just below the eyes should be flat, not puffed up.' }]),
       bullet([{ text: 'Joints and legs: ', bold: true }, { text: 'Hocks and feet should be cool, smooth, and the same size on both sides. A normal joint is not hot, swollen, or hard. Footpads should be smooth, without deep cracks or black scabs.' }]),
       bullet([{ text: 'Body condition: ', bold: true }, { text: 'Run a finger along the keel bone in the center of the breast. In a well-conditioned bird the breast muscle is full and rounds out on either side of the keel. A sharp, prominent keel with sunken muscle means the bird was thin.' }]),
-      ...photoPlaceholder('Photo 3.1', 'Healthy bird, external view: clean feathers, bright eye, smooth cool hocks, well-fleshed breast.', 'Photo 3.1: The external exam comes first. A clean, well-fleshed, bright-eyed bird sets your baseline before you open it. Source: CPC Short Courses.'),
+      ...image(figBuf('photo3_1_broiler_external.jpg'), 'Photo 3.1: A healthy eight-week-old broiler. Clean, well-set feathers, a bright clear eye, and a full breast. Get your eye used to a normal bird on the outside before you ever open one. Source: AJ. Adekunle, Wikimedia Commons (CC BY-SA 4.0).', 3.3),
 
       h2('3.2 Internal Organs: Heart, Lungs, Liver, Spleen, and Intestines'),
       para('Once the breast plate is off, the chest and belly open up in front of you. Before you move anything, take in where each organ sits and how it looks. Photo 3.2 shows the normal layout you should expect [3,4].'),
@@ -478,7 +485,7 @@ function buildSection4() {
       h2('4.1 Musculoskeletal Development and the Large Breast Muscles'),
       para('The first thing that hits you in a broiler is the breast. The two breast muscles are huge, deep, and pale pink, far bigger in proportion than anything you see in a laying hen. That is the whole point of the bird, and it is completely normal [6]. Healthy breast muscle is firm, evenly colored, and dry to the touch.'),
       para('Because broilers grow so fast, the skeleton is racing to keep up. Leg and wing bones are still relatively soft and the growth plates are active. This is normal for a young, fast-growing bird, but it is also why leg and skeletal issues show up in this class of bird. Look for legs that are straight and even, and breast muscle that is clean. Pale streaks or hard pale patches in the breast are not normal and are worth sampling [7].'),
-      ...photoPlaceholder('Photo 4.1', 'Normal broiler breast muscle: full, deep, pale pink, firm and dry.', 'Photo 4.1: The deep, well-developed breast of a healthy broiler. This heavy muscling is the normal signature of a meat bird. Source: CPC Short Courses.'),
+      ...image(figBuf('photo4_1_broiler_breast.jpg'), 'Photo 4.1: The deep, pale, firm breast muscle of a meat bird. That heavy breast, far bigger in proportion than anything on a laying hen, is the normal signature of a broiler. Source: Wikimedia Commons (public domain).', 5.0),
 
       h2('4.2 Heart, Liver, and Metabolic Features in Fast-Growing Birds'),
       para('Pushing that much growth puts a real load on the heart and the liver, and a normal broiler shows it. The heart is working hard to feed all that muscle with oxygen. In a healthy bird it is still a firm, clean red cone, but this is the class of bird where heart and circulation problems turn up, so it pays to know the normal heart well [7].'),
@@ -587,12 +594,12 @@ function buildSection8() {
       h2('8.1 Walk-Through Necropsy of a Broiler and a Layer'),
       para('We run the exact same five-stage routine on both birds, side by side. Outside check first, then head and airway, then open the body, lift the breast plate, and work through every organ in the same order. Doing them back to back is the whole point, because the contrasts teach faster than either bird alone [4].'),
       para('On the broiler, expect the signature of a meat bird: a big pale breast, a busy full gut, a large working liver, and a tiny undeveloped reproductive tract. On the layer, expect the signature of an egg producer: a leaner breast, a grape-like cluster of yolks on the ovary, a wide active oviduct that may hold a forming egg, and calcium-rich leg bones. Two healthy birds, two completely different normal pictures.'),
-      ...photoPlaceholder('Photo 8.1', 'Workshop bench: broiler and layer opened side by side, organs exposed for comparison.', 'Photo 8.1: The broiler and layer opened together. Seeing both normal pictures at once is the fastest way to learn the difference. Source: CPC Short Courses.'),
+      ...image(figBuf('photo8_1_hen_insitu.png'), 'Photo 8.1: The layer half of the comparison, opened up with the organs still in place. The standout in a productive hen is the reproductive tract: the cluster of yellow pre-ovulatory follicles on the ovary and the wide, active oviduct (magnum, infundibulum, shell gland) filling the body cavity. A broiler the same age has almost nothing here. Source: Apperson et al., Veterinary Sciences 2017 (CC BY 4.0).', 5.0),
 
       h2('8.2 Identifying Healthy Organs in Both Types'),
       para('As we work, name each organ out loud and call its color, texture, and size before moving on. Heart firm and clean. Liver deep red-brown with sharp edges. Spleen small, round, and firm. Lungs bright pink and spongy. Gut soft and full. This habit of naming and grading each organ is the same skill the lab uses, and it is what you will carry back to your own barn [3,4].'),
       para('By the end of the session, opening a bird should feel routine and a healthy organ should look familiar. That is the finish line for this course. You now have a clear picture of normal in both a broiler and a hen, which is the foundation you need before moving on to diseased birds. Course 11 (Necropsy of Common Diseases) in this series picks up from here and shows you what happens to these same organs when disease strikes.'),
-      ...photoPlaceholder('Photo 8.2', 'Close-up of a healthy hen ovary showing the normal graded cluster of yolks.', 'Photo 8.2: A normal laying-hen ovary, the graded cluster of yolks that marks a productive hen. Source: CPC Short Courses.'),
+      ...image(figBuf('photo8_2_hen_ovary.png'), 'Photo 8.2: The same tract lifted out and laid flat. The graded cluster of developing yolks on the ovary, biggest down to smallest, is the mark of a hen in full lay, with the oviduct stretched out below. Source: Apperson et al., Veterinary Sciences 2017 (CC BY 4.0).', 5.5),
     ],
   };
 }
