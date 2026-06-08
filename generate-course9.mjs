@@ -394,8 +394,8 @@ function buildIntroSection() {
       bullet('Describe the main diagnostic tools available, including blood tests, necropsies, and house monitoring, and know when to use each one.'),
       bullet('Collect and handle basic farm samples, such as blood cards, fecal droppings, water, feed, and fresh mortalities, so they arrive at the lab in usable condition.'),
       bullet('Work with your veterinarian or extension agent to read and understand lab reports, including mean titers and uniformity scores.'),
-      bullet('Use diagnostic results to make smart decisions about treatments, management adjustments, and long-term vaccination plans.'),
-      bullet('Calculate the real economic value of using diagnostics on your farm, comparing the low cost of a test to the high cost of a delayed diagnosis.'),
+      bullet('Use your test results to guide real decisions on treatments, day-to-day management, and your long-term vaccination plan.'),
+      bullet('Work out what diagnostics are actually worth on your farm by comparing the small cost of a test with the much bigger cost of missing or delaying a diagnosis.'),
     ],
   };
 }
@@ -469,7 +469,7 @@ function buildSection2() {
       para('There are several diagnostic tools available, and each one is built to find a different type of problem. Knowing what each test does means you and your vet can pick the right one the first time [1,3].'),
       ...image(figBuf('fig9_2.png'), 'Figure 2.1: Diagnostic methods matrix detailing Serology, Necropsy, PCR, and Bacteriology applications. Source: CPC Short Courses.'),
       para('Each method has a specific role:'),
-      bullet([{ text: 'Serology (ELISA, HI, Plate Agglutination): ', bold: true }, { text: 'Looks for and measures antibodies in the blood. This tells you whether a bird responded to a vaccine or was exposed to a field virus. The ELISA is the most common test for routine flock screening because it is fast and handles large sample numbers. The HI (Hemagglutination Inhibition) test is more specific and is used for Newcastle Disease and Avian Influenza. Rapid Plate Agglutination is a quick on-farm test to screen for Mycoplasma gallisepticum (MG) and Mycoplasma synoviae (MS) [1].' }]),
+      bullet('Serology tests like ELISA, HI, and plate agglutination check the blood for antibodies. This helps you see if your birds responded to a vaccine or if they\'ve been exposed to a virus out in the barn. The ELISA is the most common test for routine flock screening because it is fast and handles large sample numbers. The HI (Hemagglutination Inhibition) test is more specific and is used for Newcastle Disease and Avian Influenza. Rapid Plate Agglutination is a quick on-farm test to screen for Mycoplasma gallisepticum (MG) and Mycoplasma synoviae (MS) [1].'),
       bullet([{ text: 'PCR (Polymerase Chain Reaction): ', bold: true }, { text: 'Finds the DNA or RNA fingerprint of a virus or bacterium in the sample. It catches pathogens in tiny amounts and returns a result in 24 to 48 hours. PCR is particularly useful for identifying which strain of Infectious Bronchitis Virus (IBV) you are dealing with, so your vet can pick the right vaccine strain [1,3].' }]),
       bullet([{ text: 'Necropsy: ', bold: true }, { text: 'An examination of a fresh bird carcass after death. The pathologist looks for visible changes inside the bird, such as fluid in the air sacs, bleeding in the gut, or swollen kidneys. Within hours, you have clues about what is hitting your birds [4].' }]),
       bullet([{ text: 'Histopathology: ', bold: true }, { text: 'Examining thin slices of tissue under a microscope. If a necropsy shows swollen kidneys, histopathology lets the pathologist look at those kidney cells and confirm whether a specific virus or a nutritional problem caused the damage [4].' }]),
@@ -557,7 +557,7 @@ function buildSection4() {
       h2('4.3 Field Challenge vs. Vaccine Response, and the Value of Paired Samples'),
       para('A single blood sample showing high titers can be difficult to interpret. Does the high titer mean the birds responded well to their vaccine, or does it mean they are currently fighting a wild field virus? To answer this question, you need paired samples [1].'),
       para('Paired sampling involves collecting blood cards from the same flock at two distinct times:'),
-      numbered('Acute Sample: Collected immediately when the flock first shows signs of trouble (e.g., a water drop or mild respiratory snicks).'),
+      numbered('Acute sample: collected as soon as you notice something isn\'t quite right in the flock, like a dip in water intake or a few birds starting to snick.'),
       numbered('Convalescent Sample: Collected 10 to 14 days later from the same barn.'),
       para('Collecting the convalescent sample 10 to 14 days later gives the flock\'s immune system time to show a measurable antibody rise if a new field exposure occurred. Comparing the two samples tells you exactly what you need to know. If the titers hold steady, the high level you saw was from vaccination. If the mean titers double, triple, or jump from negative to strongly positive between the acute and convalescent samples, you have confirmed an active field challenge [1].'),
 
