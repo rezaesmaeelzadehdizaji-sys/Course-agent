@@ -418,7 +418,9 @@ function buildSection1() {
 
       h2('1.2 Common Misconceptions: Cost vs. Investment, Diagnostics vs. Autopsy'),
       para('The most common reason growers skip diagnostic work is the belief that lab testing is too expensive. This is a misunderstanding of farm economics. A standard diagnostic submission, including necropsy and basic PCR testing, costs a few hundred dollars. In contrast, losing even one percent of a 20,000-bird broiler flock to a preventable disease like Gumboro or Infectious Bronchitis means thousands of dollars gone in lost market weight, plus all the feed those birds ate while they were going downhill [2,5].'),
-      para('The table below puts the numbers side by side. Figures are illustrative estimates only and will vary by farm size, region, and diagnostic lab.'),
+      para('The table below compares the two approaches.'),
+
+      new Paragraph({ spacing: { before: 160, after: 0 } }),
 
       new Table({
         width: { size: 100, type: WidthType.PERCENTAGE },
@@ -426,29 +428,31 @@ function buildSection1() {
           new TableRow({
             children: [
               new TableCell({ children: [para('Scenario', { bold: true })], shading: { fill: 'D6E4F0' } }),
-              new TableCell({ children: [para('Typical Action & Cost', { bold: true })], shading: { fill: 'D6E4F0' } }),
+              new TableCell({ children: [para('Action Taken', { bold: true })], shading: { fill: 'D6E4F0' } }),
               new TableCell({ children: [para('Flock Performance Impact', { bold: true })], shading: { fill: 'D6E4F0' } }),
-              new TableCell({ children: [para('Net Economic Outcome', { bold: true })], shading: { fill: 'D6E4F0' } }),
+              new TableCell({ children: [para('Economic Outcome', { bold: true })], shading: { fill: 'D6E4F0' } }),
             ],
           }),
           new TableRow({
             children: [
               new TableCell({ children: [para('Proactive Diagnostic Screening')] }),
-              new TableCell({ children: [para('Routine serology + early mortality necropsy: $350')] }),
-              new TableCell({ children: [para('Catch subclinical challenge early; adjust vaccine or ventilation; zero mortality spike.')] }),
-              new TableCell({ children: [para('Flock performance maintained. Return on investment: High.')] }),
+              new TableCell({ children: [para('Submit a routine serology panel and early-mortality necropsy at the first sign of a problem.')] }),
+              new TableCell({ children: [para('Identify the issue early; adjust the vaccine program or management before performance drops.')] }),
+              new TableCell({ children: [para('Testing cost is a fraction of the potential loss. Flock performance is maintained.')] }),
             ],
           }),
           new TableRow({
             children: [
               new TableCell({ children: [para('Delayed Action / Guessing')] }),
-              new TableCell({ children: [para('Wait for obvious signs; self-treat with broad-spectrum therapy: $1,200')] }),
-              new TableCell({ children: [para('3% mortality spike; feed conversion ratio (FCR) drops by 0.15 points.')] }),
-              new TableCell({ children: [para('Estimated loss on 20,000 birds: $4,500 to $6,000.')] }),
+              new TableCell({ children: [para('Wait for obvious signs; treat empirically with broad-spectrum antibiotics.')] }),
+              new TableCell({ children: [para('Mortality climbs; FCR worsens; days of poor performance cannot be recovered.')] }),
+              new TableCell({ children: [para('Loss on a commercial flock can quickly exceed the full testing cost many times over.')] }),
             ],
           }),
         ],
       }),
+
+      new Paragraph({ spacing: { before: 160, after: 0 } }),
 
       para('Another misconception is that diagnostics is only for dead birds. An autopsy, or post-mortem examination, is simply a tool to find out why a specific bird died. Diagnostics is much broader. It covers monitoring water and feed trends, checking incoming water quality, running drag swabs for Salmonella, and testing blood from healthy birds to measure their antibody levels. The goal is to keep the flock alive and performing well, not just to write a death certificate [1,2].'),
     ],
