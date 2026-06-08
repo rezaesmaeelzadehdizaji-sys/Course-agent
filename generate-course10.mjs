@@ -409,8 +409,8 @@ function buildSection3() {
       ...photoPlaceholder('Photo 3.1', 'Healthy bird, external view: clean feathers, bright eye, smooth cool hocks, well-fleshed breast.', 'Photo 3.1: The external exam comes first. A clean, well-fleshed, bright-eyed bird sets your baseline before you open it. Source: CPC Short Courses.'),
 
       h2('3.2 Internal Organs: Heart, Lungs, Liver, Spleen, and Intestines'),
-      para('Once the breast plate is off, the chest and belly open up in front of you. Before you move anything, take in where each organ sits and how it looks. Figure 3.1 maps the normal layout you should expect [3,4].'),
-      ...image(figBuf('fig10_4.png'), 'Figure 3.1: A simplified map of the chest and belly with the breast plate lifted. Knowing where each organ belongs is half the battle. Source: CPC Short Courses.'),
+      para('Once the breast plate is off, the chest and belly open up in front of you. Before you move anything, take in where each organ sits and how it looks. Photo 3.2 shows the normal layout you should expect [3,4].'),
+      ...photoPlaceholder('Photo 3.2', 'Ventral view of an opened healthy bird with the breast plate lifted: heart, liver, spleen, gizzard, and intestines visible in normal position.', 'Photo 3.2: The chest and belly of a healthy bird with the breast plate lifted. Knowing where each organ belongs is half the battle. Source: CPC Short Courses.'),
       para('Here is what normal looks like, organ by organ:'),
       bullet([{ text: 'Heart: ', bold: true }, { text: 'Sits high and central, tucked in a thin clear sac. It is a firm, pale to medium red cone with smooth surfaces. The sac around it (the pericardium) holds only a tiny amount of clear fluid. Cloudy fluid or a thick coating is not normal [4].' }]),
       bullet([{ text: 'Lungs: ', bold: true }, { text: 'A pair of bright pink, spongy organs pressed up against the ribs along the back. In a healthy bird they sit flush against the back wall and spring back when pressed. They should not be firm, dark, or wet [3].' }]),

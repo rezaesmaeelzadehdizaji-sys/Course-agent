@@ -183,45 +183,6 @@ function fig2_2() {
 }
 
 // ============================================================
-// FIGURE 3.1 — Normal organ layout (situs)
-// ============================================================
-function fig3_1() {
-  const W = 820, H = 470;
-  // Simple ventral-view body outline with labeled organs
-  const cx = 300;
-  const body = `<path d="M ${cx} 80 C 215 90, 185 180, 195 280 C 200 360, 250 410, ${cx} 415 C 350 410, 400 360, 405 280 C 415 180, 385 90, ${cx} 80 Z" fill="${C.flesh}" stroke="${C.gray}" stroke-width="2"/>`;
-  const heart = `<path d="M ${cx} 150 C 280 130, 255 165, ${cx} 185 C 345 165, 320 130, ${cx} 150 Z" fill="${C.red}" stroke="#7a1c1c" stroke-width="1.5"/>`;
-  const liverL = `<path d="M 240 185 C 215 200, 215 250, 250 265 C 285 255, 290 205, 280 190 Z" fill="${C.liver}" stroke="#4d2418" stroke-width="1.5"/>`;
-  const liverR = `<path d="M 360 185 C 385 200, 385 250, 350 265 C 315 255, 310 205, 320 190 Z" fill="${C.liver}" stroke="#4d2418" stroke-width="1.5"/>`;
-  const gizzard = `<ellipse cx="335" cy="300" rx="40" ry="30" fill="#C9A063" stroke="#8a6a32" stroke-width="1.5"/>`;
-  const spleen = `<circle cx="285" cy="278" r="13" fill="#6E2E5B" stroke="#451c39" stroke-width="1.2"/>`;
-  const intestine = `<path d="M 255 320 C 230 350, 270 365, 290 345 C 312 365, 350 352, 330 322" fill="none" stroke="#E3A08A" stroke-width="13" stroke-linecap="round"/>`;
-  const labels = [
-    ['Heart', cx, 168, 470, 150, 'center on top, pale-red, smooth'],
-    ['Liver (two lobes)', 250, 262, 470, 205, 'dark red-brown, sharp edges'],
-    ['Spleen', 285, 278, 470, 260, 'small, round, dark, cherry-sized'],
-    ['Gizzard', 335, 300, 470, 315, 'firm muscle, pale; grit inside'],
-    ['Intestines', 290, 350, 470, 370, 'coiled, soft pink-tan'],
-  ];
-  let lab = '';
-  labels.forEach(l => {
-    lab += `<line x1="${l[1]}" y1="${l[2]}" x2="${l[3] - 4}" y2="${l[4]}" stroke="${C.gray}" stroke-width="1" stroke-dasharray="3,2"/>
-<rect x="${l[3]}" y="${l[4] - 16}" width="320" height="30" rx="5" fill="white" stroke="${C.medBlue}" stroke-width="1"/>
-<text x="${l[3] + 10}" y="${l[4] + 1}" fill="${C.darkBlue}" font-family="Arial, sans-serif" font-size="12.5" font-weight="bold">${l[0]}</text>
-<text x="${l[3] + 10}" y="${l[4] + 15}" fill="${C.gray}" font-family="Arial, sans-serif" font-size="10.5">${l[5]}</text>`;
-  });
-  const note = `<text x="${cx}" y="438" text-anchor="middle" fill="${C.gray}" font-family="Arial, sans-serif" font-size="11" font-style="italic">Lungs and kidneys sit deep against the back and are seen after the gut is reflected.</text>`;
-  return `<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}">
-  <rect width="${W}" height="${H}" fill="white"/>
-  ${titleBar(W, 'Where the Normal Organs Sit (Ventral View)')}
-  ${body}${liverL}${liverR}${heart}${gizzard}${spleen}${intestine}
-  ${lab}
-  ${note}
-  ${caption(W, H, 'A simplified map of the chest and belly once the breast plate is lifted. Source: CPC Short Courses.')}
-</svg>`;
-}
-
-// ============================================================
 // FIGURE 5.1 — Hen reproductive tract
 // ============================================================
 function fig5_1() {
@@ -368,7 +329,6 @@ function wrap(text, max) {
 svgToPng(fig1_1(), 'fig10_1.png');
 svgToPng(fig2_1(), 'fig10_2.png');
 svgToPng(fig2_2(), 'fig10_3.png');
-svgToPng(fig3_1(), 'fig10_4.png');
 svgToPng(fig5_1(), 'fig10_5.png');
 svgToPng(fig6_1(), 'fig10_6.png');
 svgToPng(fig7_1(), 'fig10_7.png');
