@@ -896,19 +896,26 @@ Apply the labeling based on the medium of the image, not on its source — a sto
 
 **This replaces the old "image placeholder" convention.** Earlier course generators used a gray bordered empty table cell with a caption as a stand-in for an image, and some captions said things like "to be supplied by the CPC team." That is no longer acceptable for any real-world subject. Do not leave placeholders and do not defer image creation to CPC. Generate the image, embed it, caption it.
 
-#### How to generate — working route on THIS machine
+#### How to get the image — PRIMARY: source a real, openly-licensed photo and cite it
 
-The actual working route on this Windows machine is the **`belt` CLI (inference.sh)**, contingent on the account having credits:
-```bash
-belt app run openai/gpt-image-2 --input '{"prompt":"...","size":"1536x1024"}' -o result.json
-```
-Used for Course 10 Photo 3.2 — produced a usable photoreal image on the first try.
+**The chosen project-wide strategy (user decision, June 2026) is to source a real, openly-licensed photograph and embed it with the real source named in the caption.** This is free, needs no account or API token, works on Windows today, and is more defensible than AI generation for veterinary teaching (AI can render organs anatomically wrong, which matters when the image teaches farmers what "normal" looks like).
 
-**The `ai-image-generation` (RunComfy) skill is installed but its CLI does NOT run on Windows.** `@runcomfy/cli` ships only darwin/linux native binaries; its postinstall fails with `unsupported platform/arch: win32-x64` even with `--force`. The skill is registered for portability if this project ever moves to macOS/Linux, but on the current machine it is a dead end — do not attempt to run `runcomfy`.
+Sourcing workflow per image:
+1. Web-search for the exact subject restricted to openly-licensed / public-domain sources: **Wikimedia Commons, USDA / government agencies, university extension necropsy atlases (e.g. UMN, UGA, Mississippi State), FAO-CEVA Poultry Disease Diagnosis Picture Book, CEVA/Merck necropsy bulletins, the local reference library PDFs.**
+2. Confirm the license permits reuse (public domain, CC0, CC BY, CC BY-SA, or USDA/government work). Record the license and the source URL.
+3. Download the image into the course folder (`Course X/`) with a descriptive name.
+4. Embed it with the generator's `image()` helper.
+5. Caption it with the **real source named**, per the Figure Caption Rule — e.g. `Photo X.Y: ... Source: Wikimedia Commons (CC BY-SA 4.0).` or `Source: USDA.` or `Source: FAO-CEVA Poultry Disease Diagnosis Picture Book.` Do NOT use `Source: CPC Short Courses.` on a third-party photo — that attribution is only for CPC-owned artwork.
+6. Regenerate the docx and tell the user which photos were sourced and from where, so they can review.
 
-Other dead ends on this machine (do not retry): the `gpt-image-2` skill needs a ChatGPT Plus/Pro plan (user has neither); pollinations.ai is paywalled (HTTP 402).
+#### AI generation — only if a FREE token is set up; paid/native routes are dead ends here
 
-For photorealistic poultry/anatomy/necropsy/barn subjects, write a specific photoreal prompt and run it through `belt app run openai/gpt-image-2`.
+AI image *generation* is the fallback, used only when no suitable licensed real photo can be found. Every generation service requires either payment or at least a free account token:
+- **Working when funded:** `belt` CLI (inference.sh) — `belt app run openai/gpt-image-2 --input '{"prompt":"...","size":"1536x1024"}' -o result.json`. Used for Course 10 Photo 3.2. The user has declined to keep this funded, so treat it as unavailable unless they say otherwise.
+- **Free-token options (need a one-time free, no-credit-card account):** Hugging Face Inference API or Cloudflare Workers AI, called over plain HTTPS (works on Windows). Only pursue if the user sets up a token.
+- **Dead ends on this machine — do NOT retry:** the `ai-image-generation` (RunComfy) skill — its `@runcomfy/cli` ships only darwin/linux binaries and fails with `unsupported platform/arch: win32-x64` even force-installed, AND needs a paid RunComfy token; the `gpt-image-2` skill needs ChatGPT Plus/Pro (user has neither); pollinations.ai is now crypto-paywalled (HTTP 402 x402).
+
+When a generated image IS produced (CPC-owned), caption it `Source: CPC Short Courses.` and do not add an AI-generation disclaimer.
 
 #### Workflow per image
 
