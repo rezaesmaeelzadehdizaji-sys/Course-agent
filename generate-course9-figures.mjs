@@ -186,7 +186,7 @@ function fig9_2() {
   <text x="200" y="325" fill="${C.gray}" font-family="Arial, sans-serif" font-size="11">specific (differentiates variants/strains)</text>
 
   <rect x="476" y="269" width="304" height="74" rx="4" fill="${C.lightGold}" stroke="${C.gold}"/>
-  <text x="488" y="289" fill="${C.gray}" font-family="Arial, sans-serif" font-size="11">• Confirms viral presence (IBV, NDV, IBDV)</text>
+  <text x="488" y="289" fill="${C.gray}" font-family="Arial, sans-serif" font-size="11">• Confirms viral presence (IBV, NDV, IBHV)</text>
   <text x="488" y="307" fill="${C.gray}" font-family="Arial, sans-serif" font-size="11">• Identifies strain variants (e.g. DMG strain)</text>
   <text x="488" y="325" fill="${C.gray}" font-family="Arial, sans-serif" font-size="11">• Extremely fast turnaround (24–48 hours)</text>
 
@@ -201,7 +201,7 @@ function fig9_2() {
   <text x="200" y="407" fill="${C.gray}" font-family="Arial, sans-serif" font-size="11">antibiotics will actually kill them</text>
 
   <rect x="476" y="351" width="304" height="74" rx="4" fill="${C.lightGold}" stroke="${C.gold}"/>
-  <text x="488" y="371" fill="${C.gray}" font-family="Arial, sans-serif" font-size="11">• Identifies E. coli, Salmonella, Pasteurella</text>
+  <text x="488" y="371" fill="${C.gray}" font-family="Arial, sans-serif" font-size="11">• Identifies E. coli, Salmonella, Enterococcus</text>
   <text x="488" y="389" fill="${C.gray}" font-family="Arial, sans-serif" font-size="11">• Antibiotic Sensitivity prevents treatment failure</text>
   <text x="488" y="407" fill="${C.gray}" font-family="Arial, sans-serif" font-size="11">• Crucial for reducing antimicrobial resistance</text>
 
