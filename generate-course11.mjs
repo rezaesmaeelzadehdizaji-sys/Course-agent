@@ -252,7 +252,7 @@ function buildBody() {
     h2('1.1  How Necropsy Supports Early Detection'),
     para('Watching a sick flock tells you something is wrong. A necropsy tells you what. Most disease processes leave distinct marks on organs, tissues, and body cavities that match a specific cause. Spotting those marks early gives you a head start on the problem and gives your veterinarian a concrete picture rather than a vague clinical description.'),
     para('Birds that die early in an outbreak often have the most acute and diagnostic lesions. As a disease runs its course, lesions become more complex, secondary infections pile on, and the picture gets harder to read. That is why the first few birds that die unexpectedly deserve an immediate necropsy rather than a trip to the mortality bin.'),
-    para('The CPC Learning Centre Spotting Disease Early guide puts it directly: water consumption drops one to two days before feed intake falls, and observant farmers catch the warning before the flock goes downhill [1]. Necropsy is the follow-up step that confirms what you are seeing behaviorally.'),
+    para('The CPC Learning Centre Spotting Disease Early guide puts it directly: water consumption drops one to two days before feed intake falls, and observant farmers catch the warning before the flock goes downhill [1]. Necropsy is the follow-up step that confirms what you are seeing in the barn.'),
 
     h2('1.2  Linking Lesions to Flock History and Symptoms'),
     para('Lesions are most meaningful when you read them alongside flock history. A bird with fibrin wrapped around its heart means something different in a four-week-old broiler than in a 60-week-old layer. The same lesion in a flock that skipped its Marek\'s vaccination has a different weight than in a fully vaccinated flock. Always ask these questions before you start:'),
@@ -300,7 +300,7 @@ function buildBody() {
     // ─── SECTION 3 ───
     h1('3. Overview of Common Necropsy Lesions'),
     h2('3.1  What Abnormal Findings Look Like'),
-    para('Normal poultry organs are clean, well-defined, and consistent in color. Disease changes that baseline. The table below gives you a quick orientation to what you are looking for across the major body systems. Sections 4 and 5 break these down by disease.'),
+    para('Normal poultry organs are clean, well-defined, and consistent in color. Disease changes all of that. The table below gives you a quick orientation to what you are looking for across the major body systems. Sections 4 and 5 break these down by disease.'),
     spacer(80),
     lesionTable(
       ['Body System', 'Normal Appearance', 'Key Abnormal Signs', 'Common Causes'],
@@ -313,7 +313,7 @@ function buildBody() {
         ['Bursa of Fabricius', 'Firm, cream-colored, smooth', 'Enlarged and hemorrhagic (acute IBD) or shrunken (chronic)', 'IBD/Gumboro'],
         ['Kidneys', 'Dark red, smooth', 'Swollen, pale, urate deposits (chalky white tubules)', 'IBV renal form, IBD, dehydration'],
         ['Peripheral nerves (sciatic)', 'Uniform white, symmetric', 'Enlarged, asymmetric, loss of striations', "Marek's Disease"],
-        ['Abdominal cavity', 'No free fluid', 'Yellow/orange fluid (yolk), clear fluid (ascites), caseous material', 'Ascites, Egg Peritonitis'],
+        ['Abdominal cavity', 'No free fluid', 'Yellow/orange fluid (yolk), straw-colored fluid (ascites), caseous material', 'Ascites, Egg Peritonitis'],
         ['Oviduct', 'Thin-walled, normal lumen', 'Caseous exudate, impacted with abnormal egg material', 'Salpingitis'],
       ]
     ),
@@ -330,10 +330,10 @@ function buildBody() {
     h2('4.1  Bacterial Diseases'),
 
     para([{ text: 'Colibacillosis (', bold: true }, { text: 'E. coli' }, { text: ')', bold: true }]),
-    para('Colibacillosis is the most common bacterial septicemia in commercial broilers and the single most frequent reason for condemnation at the processing plant. The CPC Learning Centre Colibacillosis disease profile identifies the classic lesion triad: airsacculitis, pericarditis, and perihepatitis [4]. At the necropsy table you will see:'),
+    para('Colibacillosis is the most common bacterial septicemia in commercial broilers and the single most frequent reason for condemnation at the processing plant [4,5]. The CPC Learning Centre Colibacillosis disease profile identifies the classic lesion triad: airsacculitis, pericarditis, and perihepatitis [4]. At the necropsy table you will see:'),
     bullet([{ text: 'Air sacs:', bold: true }, { text: ' Cloudy, thickened, with yellow-white foamy or creamy exudate. In mild cases, the air sac is slightly hazy. In severe cases, it is packed with caseous material.' }]),
     bullet([{ text: 'Pericardium:', bold: true }, { text: ' White fibrin plaques on the heart surface, excess fluid in the pericardial sac. In chronic cases the fibrin becomes adherent and rubber-like.' }]),
-    bullet([{ text: 'Liver:', bold: true }, { text: ' Greenish-gray fibrin coating the liver surface (perihepatitis). In septicemic cases the liver is dark, swollen, and friable.' }]),
+    bullet([{ text: 'Liver:', bold: true }, { text: ' Yellow-white fibrin coating the liver surface (perihepatitis). In septicemic cases the liver is dark, swollen, and friable.' }]),
     bullet([{ text: 'Peritonitis:', bold: true }, { text: ' Yellow egg yolk-like material in the abdominal cavity in laying hens, fibrinous deposits on intestinal serosa in broilers.' }]),
     para('Colibacillosis rarely acts alone. It enters through respiratory or intestinal mucosal damage caused by a primary virus or management problem. Look for the primary cause: IBV, IBD, or poor ventilation that opened the door for the E. coli. Confirm the diagnosis with air sac swab culture from multiple birds [5].'),
 
@@ -422,7 +422,7 @@ function buildBody() {
     bullet([{ text: 'Heart:', bold: true }, { text: ' Right ventricle is dilated and hypertrophied. The right atrium is enlarged. In acute deaths the right ventricle may be blood-filled and flaccid.' }]),
     bullet([{ text: 'Liver:', bold: true }, { text: ' Congested, swollen, and dark. The capsule may be thickened. In chronic cases the liver takes on a nutmeg appearance from back-pressure venous congestion.' }]),
     bullet([{ text: 'Lungs:', bold: true }, { text: ' Congested and edematous. Pulmonary capillary hypertension is the driving mechanism, so the lungs show the consequences of increased vascular resistance.' }]),
-    para('An ascitic bird opens looking like it is full of water. The intestines are pushed aside by free abdominal fluid. Birds that die suddenly with flippers, no prior wasting, and no infectious lesions elsewhere are often SDS (sudden death syndrome) rather than ascites. Check the heart carefully to tell the two apart.'),
+    para('An ascitic bird opens looking like it is full of water. The intestines are pushed aside by free abdominal fluid. If you find a sudden-death bird with no free fluid, no infectious lesions, and a well-filled gut, think SDS (sudden death syndrome) rather than ascites. Check the heart carefully to tell the two apart.'),
 
     spacer(40),
     para([{ text: 'Sudden Death Syndrome (SDS)', bold: true }]),
@@ -445,7 +445,7 @@ function buildBody() {
     h2('5.1  Reproductive System Disorders'),
     para([{ text: 'Egg Peritonitis', bold: true }]),
     para('Egg yolk peritonitis is one of the most common causes of sporadic death in layers and breeder hens around peak production. The lesions are difficult to miss [15]:'),
-    bullet([{ text: 'Abdominal cavity:', bold: true }, { text: ' Yellow, orange, or green egg yolk material free in the abdomen. In fresh cases it is fluid and oily. In older cases it has cooked into a solid, caseous mass with a distinctive cooked-egg smell.' }]),
+    bullet([{ text: 'Abdominal cavity:', bold: true }, { text: ' Yellow or orange egg yolk material free in the abdomen. In fresh cases it is fluid and oily. In older cases it has cooked into a solid, caseous mass with a distinctive cooked-egg smell.' }]),
     bullet([{ text: 'Peritoneum:', bold: true }, { text: ' Thickened, inflamed, and often covered in fibrin from secondary E. coli infection. In chronic peritonitis the abdominal surfaces are matted together with adhesions.' }]),
     bullet([{ text: 'Ovary:', bold: true }, { text: ' Atretic (shrunken) follicles, ruptured follicles, or follicular hemorrhage depending on the stage of disease. In acute cases the ovary may look normal.' }]),
     para('Egg peritonitis often starts when reverse peristalsis pushes yolk material from the oviduct back into the abdominal cavity, or when a follicle ruptures into the coelom rather than being caught by the infundibulum. Secondary E. coli infection is almost universal once yolk material sits in the warm abdominal cavity [15].'),
@@ -475,7 +475,7 @@ function buildBody() {
     h2('5.3  Viral Diseases'),
     para([{ text: "Marek's Disease", bold: true }]),
     para("Marek's disease causes two distinct lesion patterns, and knowing which form you are dealing with matters for your vaccination audit [18]:"),
-    bullet([{ text: 'Neural form:', bold: true }, { text: ' Enlarged peripheral nerves. The sciatic nerves are the most accessible: find them running along each side of the spine in the pelvic canal. In a healthy bird they are uniform, slightly striated, and bilaterally symmetric. In Marek\'s neural form, one or both are obviously enlarged, swollen, and have lost their normal striations. Compare left to right. Asymmetry is the key finding. The vagus, brachial, and femoral nerves may also be affected.' }]),
+    bullet([{ text: 'Neural form:', bold: true }, { text: ' Enlarged peripheral nerves. The sciatic nerves are the most accessible: after removing the abdominal organs, find them running bilaterally in the sacral region alongside the vertebral column, just under the kidneys. In a healthy bird they are uniform, slightly striated, and bilaterally symmetric. In Marek\'s neural form, one or both are obviously enlarged, swollen, and have lost their normal striations. Compare left to right. Asymmetry is the key finding. The vagus, brachial, and femoral nerves may also be affected.' }]),
     bullet([{ text: 'Visceral form:', bold: true }, { text: ' Whitish lymphoma nodules in multiple organs: liver, spleen, gonads, kidney, heart, proventriculus, and intestine. Tumor nodules range from pinpoint to several centimeters. The liver may be diffusely enlarged with a mottled appearance or studded with discrete white nodules. This form has 10 to 70% mortality depending on the strain and immune status of the flock [18].' }]),
     bullet([{ text: 'Cutaneous form:', bold: true }, { text: ' Enlarged, reddened feather follicles visible as nodular skin lesions, usually on the neck and back. Less common in well-vaccinated commercial flocks.' }]),
     ...image(photoMar, "Photo 5.1: Cutaneous form of Marek's disease in a broiler showing enlarged, reddened feather follicles on the skin surface. Source: Roman Halouzka, Wikimedia Commons (CC BY-SA 3.0).", 4.5),
@@ -554,7 +554,7 @@ function buildBody() {
     para([{ text: 'Flock history:', bold: true }, { text: ' ISA Brown layers, 42 weeks of age, 20,000 hens in conventional cages. Egg production fell 18% over 10 days. Ten to fifteen birds dying per day, found on cage floors. Birds appear dull, some with distended abdomens.' }]),
     para([{ text: 'Necropsy findings (8 birds):', bold: true }, { text: ' Distended abdomen with yellow-orange fluid and solid cooked-egg material in 6 of 8 birds. Oviduct inflamed and containing caseous exudate in 4 of 8 birds. Liver pale and enlarged in 3 of 8 birds. One bird: swollen left sciatic nerve, liver with 3 white nodules. Ovarian follicles atretic in most birds.' }]),
     para([{ text: 'Interpretation:', bold: true }, { text: ' Egg peritonitis and salpingitis are the primary findings. Colibacillosis secondary to the reproductive tract infection is likely. The single bird with nerve and liver findings suggests concurrent Marek\'s disease, which may be suppressing immunity in this flock.' }]),
-    para([{ text: 'Next steps:', bold: true }, { text: ' Oviduct swabs for bacterial culture and sensitivity. Blood serology for Marek\'s DNA (PCR on spleen tissue from the affected bird). Review vaccination records and Marek\'s vaccine cold chain compliance. Assess diet, body condition score, and calcium supply.' }]),
+    para([{ text: 'Next steps:', bold: true }, { text: ' Oviduct swabs for bacterial culture and sensitivity. ELISA serology for Marek\'s antibody status across the flock, and PCR on spleen tissue from the affected bird for Marek\'s virus confirmation. Review vaccination records and Marek\'s vaccine cold chain compliance. Assess diet, body condition score, and calcium supply.' }]),
 
     h2('7.3  Case 3: Young Broiler Flock, Sudden Mortality at 3 Weeks'),
     para([{ text: 'Flock history:', bold: true }, { text: ' Ross 308 broilers, 21 days old, 60,000 birds. Mortality jumped from 0.1% to 2.5% in a 36-hour period. Birds found dead and dying with loose, watery droppings and some vent staining. No prior problems. Litter moisture has been high this week.' }]),
@@ -572,7 +572,7 @@ function buildBody() {
     bullet('Mortality that is not responding to an ongoing treatment protocol after 48 hours.'),
     bullet('Any time the lesion pattern is unclear and you cannot connect the findings to a diagnosis.'),
     bullet('Routine flock health monitoring: some farms necropsy a set number of birds each week and submit quarterly for a clean bill of health and early pathogen detection.'),
-    para('The earlier you submit, the better the result. Fresh samples give the lab the best chance of finding the pathogen. Decomposed samples yield unreliable culture results and cannot be used for histopathology or virus isolation [3].'),
+    para('The earlier you submit, the better the result. Fresh samples give the lab the best chance of finding the pathogen. Decomposed samples yield unreliable culture results and cannot be used for histopathology or virus isolation [2].'),
 
     h2('8.2  What to Tell the Vet or Diagnostic Lab'),
     para('The submission form is only as good as the information you put into it. A well-completed form gets your results faster and more accurately. Include:'),
@@ -589,7 +589,7 @@ function buildBody() {
     para('You do not need a lab result to take preliminary action. Based on your necropsy findings, you can move immediately on several fronts:'),
     bullet([{ text: 'Airsacculitis with fibrinous pericarditis:', bold: true }, { text: ' Colibacillosis is the primary differential. Review ventilation quality, stocking density, and litter moisture. Colibacillosis secondary to a primary virus means you need to look for the underlying cause.' }]),
     bullet([{ text: 'Ballooned intestine with pseudomembrane:', bold: true }, { text: ' Necrotic enteritis. Look at the coccidiosis control program and the diet composition immediately. This cannot wait for lab confirmation.' }]),
-    bullet([{ text: 'Blood-filled ceca:', bold: true }, { text: ' Eimeria tenella coccidiosis. Check your anticoccidial program: is resistance developing? Has the litter been too wet to maintain effective oocyst pressure for natural immunity?' }]),
+    bullet([{ text: 'Blood-filled ceca:', bold: true }, { text: ' Eimeria tenella coccidiosis. Check your anticoccidial program: is resistance developing? Wet litter accelerates oocyst cycling and drives heavier challenge. Tighten litter management alongside the treatment response.' }]),
     bullet([{ text: 'Enlarged bursa with muscle hemorrhages:', bold: true }, { text: ' Gumboro. Notify your veterinarian and review maternal antibody data and vaccination timing. Check the rest of the flock for signs of immunosuppression, because other diseases often follow.' }]),
     bullet([{ text: 'Yellow yolk in the abdominal cavity:', bold: true }, { text: ' Egg peritonitis. Assess diet, body condition, and whether stressors (heat, handling, overcrowding) have been triggering follicular rupture or reverse peristalsis.' }]),
     bullet([{ text: 'Pale yellow friable liver with blood clot:', bold: true }, { text: ' FLHS. This is almost always a nutritional and management problem. Review body weight targets, feed energy, and whether hens are under-exercised.' }]),
