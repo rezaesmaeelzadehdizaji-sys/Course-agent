@@ -480,7 +480,7 @@ function buildSection2() {
       bullet([{ text: 'Bacteriology (Culture and Sensitivity): ', bold: true }, { text: 'Grows bacteria from tissue samples on lab plates to identify what species is present, then tests which antibiotics will actually kill it. That sensitivity result stops you from treating with the wrong drug and helps cut down on antimicrobial resistance [3].' }]),
 
       h2('2.2 Sample Collection and Handling'),
-      para('The accuracy of any lab test depends on the quality of the sample you submit. In veterinary medicine, the rule is "garbage in, garbage out." A degraded or contaminated sample will lead to incorrect results, wasting your money and delaying treatment [2].'),
+      para('The accuracy of any lab test depends on the quality of the sample you submit. In veterinary medicine, the rule is "garbage in, garbage out." A degraded or contaminated sample will lead to incorrect results, wasting your money and delaying treatment [2]. The best approach is to have your veterinarian collect and submit the samples. They know exactly what to collect, how to package it, and which lab to send it to for the specific disease you are investigating.'),
       ...image(figBuf('fig9_3.png'), 'Figure 2.2: Guidelines for collecting and submitting fecal, blood card, water/feed, and mortality samples. Source: CPC Short Courses.'),
       para('Here is how to collect each type of sample:'),
       bullet([{ text: 'Fecal / Litter samples: ', bold: true }, { text: 'Collect fresh droppings from multiple spots around the barn. Skip dry crust and clean litter. Put the droppings in a sealed plastic bag and keep them cool. Do not freeze fecal samples. Freezing kills parasite eggs (coccidia oocysts) and throws off the bacterial counts.' }]),
