@@ -240,21 +240,20 @@ function fig9_3() {
   <text x="225" y="145" fill="${C.gray}" font-family="Arial, sans-serif" font-size="11" font-weight="bold">Submission Goal:</text>
   <text x="225" y="162" fill="${C.gray}" font-family="Arial, sans-serif" font-size="11">Antibody titer checks</text>
   <text x="225" y="179" fill="${C.gray}" font-family="Arial, sans-serif" font-size="11">for vaccine/field response</text>
-  <!-- Preferred: tubes -->
-  <rect x="220" y="192" width="160" height="18" rx="3" fill="${C.medBlue}" opacity="0.15"/>
-  <text x="225" y="205" fill="${C.medBlue}" font-family="Arial, sans-serif" font-size="10" font-weight="bold">★ PREFERRED: Blood in Tubes</text>
+  <!-- Preferred: tubes — full sub-box enclosing header + bullets -->
+  <rect x="219" y="189" width="162" height="82" rx="4" fill="${C.medBlue}" opacity="0.08" stroke="${C.medBlue}" stroke-width="1"/>
+  <rect x="219" y="189" width="162" height="20" rx="4" fill="${C.medBlue}" opacity="0.3"/>
+  <text x="300" y="203" text-anchor="middle" fill="${C.darkBlue}" font-family="Arial, sans-serif" font-size="10" font-weight="bold">★ PREFERRED: Blood in Tubes</text>
   <text x="225" y="222" fill="${C.gray}" font-family="Arial, sans-serif" font-size="10">• CPC team / vet collects</text>
   <text x="225" y="237" fill="${C.gray}" font-family="Arial, sans-serif" font-size="10">• Plain red-top serum tubes</text>
-  <text x="225" y="252" fill="${C.gray}" font-family="Arial, sans-serif" font-size="10">• Clean venipuncture needed</text>
-  <text x="225" y="267" fill="${C.gray}" font-family="Arial, sans-serif" font-size="10">• Prevents hemolysis</text>
-  <!-- Farmer option: cards -->
-  <rect x="220" y="278" width="160" height="18" rx="3" fill="#888" opacity="0.12"/>
-  <text x="225" y="291" fill="${C.gray}" font-family="Arial, sans-serif" font-size="10" font-weight="bold">FARMER OPTION: Blood Cards</text>
-  <text x="225" y="308" fill="${C.gray}" font-family="Arial, sans-serif" font-size="10">• 12–24 birds, wing vein</text>
-  <text x="225" y="323" fill="${C.gray}" font-family="Arial, sans-serif" font-size="10">• Fill filter card circles</text>
-  <text x="225" y="338" fill="${C.gray}" font-family="Arial, sans-serif" font-size="10">• Air dry fully before bag</text>
-  <text x="225" y="353" fill="${C.gray}" font-family="Arial, sans-serif" font-size="10">• Damp cards ruin the sample</text>
-  <text x="225" y="368" fill="${C.gray}" font-family="Arial, sans-serif" font-size="10">• Use if vet visit not possible</text>
+  <text x="225" y="252" fill="${C.gray}" font-family="Arial, sans-serif" font-size="10">• Prevents hemolysis</text>
+  <!-- Farmer option: cards — full sub-box enclosing header + bullets -->
+  <rect x="219" y="281" width="162" height="78" rx="4" fill="#888" opacity="0.07" stroke="#999" stroke-width="1"/>
+  <rect x="219" y="281" width="162" height="20" rx="4" fill="#888" opacity="0.2"/>
+  <text x="300" y="295" text-anchor="middle" fill="${C.gray}" font-family="Arial, sans-serif" font-size="10" font-weight="bold">FARMER OPTION: Blood Cards</text>
+  <text x="225" y="314" fill="${C.gray}" font-family="Arial, sans-serif" font-size="10">• 12–24 birds, wing vein</text>
+  <text x="225" y="329" fill="${C.gray}" font-family="Arial, sans-serif" font-size="10">• Fill filter card circles</text>
+  <text x="225" y="344" fill="${C.gray}" font-family="Arial, sans-serif" font-size="10">• Air dry fully before bag</text>
 
   <!-- 3. Water / Feed -->
   <rect x="405" y="80" width="170" height="350" rx="8" fill="${C.lightGray}" stroke="#ccc" stroke-width="1.5"/>
