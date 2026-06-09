@@ -519,7 +519,7 @@ function buildSection3() {
       para('Commercial birds live in tight groups. A disease challenge can move through a house in days. Catching it early is everything. Long before birds start coughing, huddling, or looking lethargic, their behavior shifts. Your daily water and feed meters are the most sensitive early indicators of that shift [2].'),
       para('Water consumption is particularly sensitive. The CPC Learning Centre \'Spotting Disease Early\' guide identifies when disease or stress hits the flock, water intake drops before feed intake, often a full day or two before birds start coughing or show other signs. A notable unexplained drop in your water meter on a single day is a strong early warning. If you wait until you have sick birds or high mortalities, you have already lost days you cannot get back [2].'),
       para([
-        { text: 'When the meters drop, call your vet and get birds or blood cards to the lab that day. Getting that diagnosis early lets you start treatment or fix the ventilation before ' },
+        { text: 'When the meters drop, call your vet and, based on their consultation, get birds or blood cards to the lab that day. Getting that diagnosis early lets you start treatment or fix the ventilation before ' },
         { text: 'E. coli', italics: true },
         { text: ' moves in behind the virus and causes the real damage [2,3].' },
       ]),
