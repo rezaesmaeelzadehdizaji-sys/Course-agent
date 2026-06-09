@@ -217,6 +217,7 @@ function lesionTable(headers, rows) {
 // DOCUMENT CHILDREN
 // ============================================================
 function buildBody() {
+  const fig11_2_1 = figBuf('fig11_2_1.png');
   const fig11_1  = figBuf('fig11_1.png');
   const fig11_2  = figBuf('fig11_2.png');
   const fig11_3  = figBuf('fig11_3.png');
@@ -295,6 +296,8 @@ function buildBody() {
     bullet('For serology and virology: whole blood in a red-top tube (no anticoagulant) or tracheal/cloacal swabs in viral transport media.'),
     bullet('Include a detailed submission form: flock age, number of birds affected, mortality rate, clinical signs, vaccination history, and a copy of the mortality graph if you have one.'),
     para('The CFIA maintains a list of approved animal health diagnostic laboratories across Canada [3]. Your veterinarian will know which lab serves your region and what specific submission protocols apply.'),
+    spacer(80),
+    ...image(fig11_2_1, 'Figure 2.1: Laboratory sample submission guide showing which sample type, test method, and pathogen or condition each submission is designed to identify. Source: CPC Short Courses.', 5.9),
     pageBreak(),
 
     // ─── SECTION 3 ───
