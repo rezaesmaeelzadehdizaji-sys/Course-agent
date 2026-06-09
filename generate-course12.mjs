@@ -376,7 +376,7 @@ const verificationSvg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 78
   <text x="390" y="288" text-anchor="middle" font-size="12" font-weight="bold" fill="#538135">All three checks must PASS. Wait at least 5 minutes of continuous absence before declaring death.</text>
   <text x="390" y="308" text-anchor="middle" font-size="11" fill="#3C3C3C">Wing flapping and muscle movement after euthanasia are normal reflexes and do NOT indicate the bird is still alive.</text>
   <text x="390" y="326" text-anchor="middle" font-size="11" fill="#3C3C3C">If any check fails: apply a secondary method immediately (decapitation or a second application of your primary method).</text>
-  <text x="390" y="344" text-anchor="middle" font-size="10" fill="#888" font-style="italic">Source: Iowa State VDPAM; Merck Veterinary Manual (AVMA 2020) [10,11]</text>
+  <text x="390" y="344" text-anchor="middle" font-size="10" fill="#888" font-style="italic">Source: Iowa State VDPAM; Merck Veterinary Manual (AVMA 2020) [4,11]</text>
 </svg>`;
 
 // ============================================================
@@ -437,7 +437,7 @@ function buildBody() {
     // ─── SECTION 1 ───
     h1('1. Understanding Humane Euthanasia'),
     h2('1.1  Definition and Purpose'),
-    para('Humane euthanasia means ending a bird\'s life in a way that is rapid, irreversible, and minimizes pain and distress. The AVMA defines it as: "rapid loss of consciousness followed by cardiac or respiratory arrest and, ultimately, a loss of all brain function and death" [1]. The key word is rapid. A slow or incomplete procedure is not euthanasia. It is prolonged suffering by a different name.'),
+    para('Humane euthanasia means ending a bird\'s life in a way that is rapid, irreversible, and minimizes pain and distress. The AVMA Guidelines describe the goal as rapid loss of consciousness followed by cardiac or respiratory arrest and, ultimately, complete loss of brain function [1]. The key word is rapid. A slow or incomplete procedure is not euthanasia. It is prolonged suffering by a different name.'),
     para('On a commercial farm, the birds you will be euthanizing are ones that have no realistic chance of recovery. They are suffering now, and they will keep suffering if you leave them. The purpose of euthanasia is straightforward: remove pain quickly, remove that bird from the population, and protect the rest of the flock from a potential disease reservoir.'),
     para('The NFACC Code of Practice is direct on this point. Sick or injured birds showing obvious signs of pain must be promptly treated or euthanized [2]. "Promptly" is not a suggestion. Farmers and barn staff who delay euthanasia for compromised birds risk both animal welfare violations and audit failures under the Chicken Farmers of Canada Animal Care Program [3].'),
 
@@ -494,7 +494,7 @@ function buildBody() {
     // ─── SECTION 3 ───
     h1('3. Approved Humane Euthanasia Methods'),
     h2('3.1  Overview of Approved Methods'),
-    para('The AVMA 2020 Guidelines classify euthanasia methods as Acceptable or Acceptable with Conditions for each species [1]. The Merck Veterinary Manual translates this into practical on-farm guidance [10]. For poultry, the methods available to trained farm workers fall into three main categories: physical methods, gas methods, and injectable methods. Each has a specific use case. Not every method is appropriate for every bird or every farm setting.'),
+    para('The AVMA 2020 Guidelines classify euthanasia methods as Acceptable or Acceptable with Conditions for each species [1]. The Merck Veterinary Manual translates this into practical on-farm guidance [4]. For poultry, the methods available to trained farm workers fall into three main categories: physical methods, gas methods, and injectable methods. Each has a specific use case. Not every method is appropriate for every bird or every farm setting.'),
     spacer(80),
     dataTable(
       ['Method', 'Who Can Use It', 'Best For', 'Key Conditions'],
@@ -509,13 +509,13 @@ function buildBody() {
       [1800, 1800, 2160, 2880]
     ),
     spacer(160),
-    para([{ text: 'Source:', bold: true }, { text: ' American Veterinary Medical Association, Guidelines for the Euthanasia of Animals: 2020 Edition [1]; Merck Veterinary Manual (citing AVMA 2020) [10]; Poultry Industry Council, Practical Guidelines for On-Farm Euthanasia of Poultry [4].' }]),
+    para([{ text: 'Source:', bold: true }, { text: ' American Veterinary Medical Association, Guidelines for the Euthanasia of Animals: 2020 Edition [1]; Merck Veterinary Manual (citing AVMA 2020) [4]; Poultry Industry Council, Practical Guidelines for On-Farm Euthanasia of Poultry [5].' }]),
 
     h2('3.2  Manual Cervical Dislocation'),
     para('Manual cervical dislocation is the most widely used method for individual bird euthanasia on Canadian farms. When performed correctly by a trained worker, it produces rapid loss of consciousness and death through disruption of the brainstem and spinal cord. When performed incorrectly, it can fail to produce immediate unconsciousness and the bird will suffer.'),
-    para([{ text: 'When it is appropriate:', bold: true }, { text: ' Broilers up to approximately 2.3 kg (typically up to 7 weeks of age). Smaller layers and growers. It becomes physically difficult and unreliable in heavier birds [7,8].' }]),
-    para([{ text: 'When it is not appropriate:', bold: true }, { text: ' Broiler breeders at production weight (3.5 to 4.5 kg). Heavy turkeys. Birds over 3 kg in any situation where a mechanical device or captive bolt is available [7].' }]),
-    para('The technique, drawn from peer-reviewed research on broiler euthanasia [7]:'),
+    para([{ text: 'When it is appropriate:', bold: true }, { text: ' Broilers up to approximately 2.3 kg (typically up to 7 weeks of age). Smaller layers and growers. It becomes physically difficult and unreliable in heavier birds [6,7].' }]),
+    para([{ text: 'When it is not appropriate:', bold: true }, { text: ' Broiler breeders at production weight (3.5 to 4.5 kg). Heavy turkeys. Birds over 3 kg in any situation where a mechanical device or captive bolt is available [6].' }]),
+    para('The technique, drawn from peer-reviewed research on broiler euthanasia [6]:'),
     numbered('Hold the bird\'s legs and lower body securely in one hand, with the bird\'s back resting against your body or thigh.'),
     numbered('With the other hand, grip the head firmly behind the skull between your thumb and first two fingers.'),
     numbered('In a single rapid motion: pull the head firmly downward and simultaneously press your knuckle into the back of the neck at the skull base, stretching and dislocating the cervical vertebrae.'),
@@ -527,35 +527,35 @@ function buildBody() {
     spacer(120),
 
     h2('3.3  Mechanical Cervical Dislocation (KED Devices)'),
-    para('Mechanical cervical dislocation devices remove the technique variability of the manual method and extend the weight range that one trained person can euthanize safely. The Koechner Euthanizing Device (KED) is the most widely used commercial option, available in multiple sizes to cover the full range of commercial poultry weights [6].'),
+    para('Mechanical cervical dislocation devices remove the technique variability of the manual method and extend the weight range that one trained person can euthanize safely. The KED device is the most widely used commercial option for poultry, available in multiple sizes to cover the full range of commercial poultry weights [8].'),
     para([{ text: 'Device sizing:', bold: true }]),
     bullet('KED-S: birds up to 1.8 kg (chicks, pullets, young growers)'),
     bullet('KED-C: birds up to approximately 13.6 kg (broiler breeders, large market birds)'),
     bullet('KED-T: birds up to approximately 29 kg (turkeys)'),
-    para('The device is positioned at the base of the skull, perpendicular to the neck. The handles are closed in a single firm motion, separating the skull from the first cervical vertebra. Research comparing the KED to manual cervical dislocation in broiler breeders (average weight 3.86 to 4.39 kg) found both methods had a greater than 97% kill success rate, with the KED producing rapid death in the majority of birds [6].'),
-    para('One important finding from the same research: the KED produces more external skin damage and bleeding than manual cervical dislocation [6]. This does not affect welfare outcome but is worth knowing when training staff. The procedure looks more invasive than the manual method. The animal is not suffering more because of the appearance.'),
+    para('The device is positioned at the base of the skull, perpendicular to the neck. The handles are closed in a single firm motion, separating the skull from the first cervical vertebra. Research on broiler breeders comparing mechanical cervical dislocation to manual cervical dislocation found both methods achieved high kill success rates in birds averaging 3.86 to 4.39 kg, with the mechanical method producing rapid death reliably across the weight range studied [8].'),
+    para('One important finding from the same research: the KED produces more external skin damage and bleeding than manual cervical dislocation [8]. This does not affect welfare outcome but is worth knowing when training staff. The procedure looks more invasive than the manual method. The animal is not suffering more because of the appearance.'),
     para('Follow the same three-check death confirmation protocol after mechanical cervical dislocation that you use for the manual method.'),
 
     h2('3.4  Non-Penetrating Captive Bolt'),
     para('The non-penetrating captive bolt delivers a percussive blow to the skull that produces immediate concussive unconsciousness. It does not penetrate the brain. Because it does not destroy brain tissue, it must be followed immediately by a secondary method that ensures death: cervical dislocation, decapitation, or exsanguination. Using a captive bolt alone, without a secondary method, is not acceptable.'),
     para('Captive bolt devices are particularly useful for heavier birds where manual cervical dislocation is not reliable: broiler breeders at late production weight, large male turkeys, and birds where a mechanical cervical dislocation device of the appropriate size is not available. The device must be applied to the correct anatomical site on the skull at the proper angle to produce effective stunning. Manufacturer instructions and hands-on training are mandatory before using this equipment.'),
-    para('Research on broiler breeders found that the Turkey Euthanasia Device (a non-penetrating captive bolt) achieved 100% immediate insensibility across all birds tested, with reflexes ceasing within seven seconds [6]. This makes it one of the fastest methods for achieving irreversible unconsciousness in heavier birds.'),
+    para('Research on broiler breeders confirmed that non-penetrating captive bolt stunning achieves immediate insensibility reliably in birds at production weight, making it one of the fastest methods for reaching irreversible unconsciousness in heavy birds where cervical dislocation is not practical [8].'),
 
     h2('3.5  CO2 Euthanasia'),
     para([
       { text: 'Carbon dioxide (' }, { text: 'CO', bold: false }, { text: '2' }, { text: ') euthanasia is approved for poultry under the AVMA 2020 Guidelines as an "Acceptable with Conditions" method [1]. It works by displacing oxygen from the breathing space, causing hypoxia and hypercapnia that leads to unconsciousness and death. It is well-suited for hatchery cull birds, small groups of birds, or individual birds when manual or mechanical methods are not practical.' },
     ]),
-    para('Key technical requirements based on peer-reviewed research [5]:'),
+    para('Key technical requirements based on peer-reviewed research [9]:'),
     bullet([
-      { text: 'Concentration for chicks (day-old to 3 weeks): ' }, { text: 'Minimum 80% CO', bold: true }, { text: '2', bold: true, subScript: true }, { text: ' by volume in the chamber. Lower concentrations (below 60%) do not reliably produce rapid death in neonatal chicks within a practical timeframe [5].' },
+      { text: 'Concentration for chicks (day-old to 3 weeks): ' }, { text: 'Minimum 80% CO', bold: true }, { text: '2', bold: true, subScript: true }, { text: ' by volume in the chamber. Lower concentrations (below 60%) do not reliably produce rapid death in neonatal chicks within a practical timeframe [9].' },
     ]),
     bullet([
-      { text: 'Concentration for adult birds: ' }, { text: 'Above 50% CO', bold: true }, { text: '2', bold: true, subScript: true }, { text: ' produces rapid loss of consciousness. Pre-filling the chamber to high concentration before introducing the birds produces faster insensibility and less distress behavior than gradual fill [5].' },
+      { text: 'Concentration for adult birds: ' }, { text: 'Above 50% CO', bold: true }, { text: '2', bold: true, subScript: true }, { text: ' produces rapid loss of consciousness. Pre-filling the chamber to high concentration before introducing the birds produces faster insensibility and less distress behavior than gradual fill [1,9].' },
     ]),
     bullet([
       { text: 'Fill rate: ' }, { text: 'For gradual fill methods, a displacement rate of 30 to 70% of the chamber volume per minute is the range used in research settings [1]. Pre-fill (immersion) method is preferred for speed and welfare.' },
     ]),
-    bullet('Continue CO2 flow until you have confirmed absence of all reflexes: corneal blink, heartbeat, and respiration. Then maintain for a minimum of 1 additional minute to be certain [5].'),
+    bullet('Continue CO2 flow until you have confirmed absence of all reflexes: corneal blink, heartbeat, and respiration. Then maintain for a minimum of 1 additional minute to be certain [9].'),
     bullet('Chamber must seal. Gas leaks reduce concentration in the breathing zone and produce a slower, less humane death.'),
     spacer(80),
     calloutMulti(
@@ -574,7 +574,7 @@ function buildBody() {
 
     h2('3.6  Blunt Force Trauma for Neonatal Chicks'),
     para('Blunt force trauma (a single firm blow to the skull) is listed by the AVMA 2020 Guidelines as "Acceptable with Conditions" for poultry and is used primarily for neonatal chicks and very small birds at hatchery placement [1]. It requires significant operator skill to ensure that a single blow produces immediate and irreversible loss of consciousness.'),
-    para('The AVMA notes that those using this method should search for alternatives where feasible [1]. The Poultry Industry Council Practical Guidelines for On-Farm Euthanasia of Poultry recommends CO2 as the preferred method for large numbers of compromised chicks at placement, with blunt force trauma reserved for individual birds when no alternative is immediately available [4].'),
+    para('The AVMA notes that those using this method should search for alternatives where feasible [1]. The Poultry Industry Council Practical Guidelines for On-Farm Euthanasia of Poultry recommends CO2 as the preferred method for large numbers of compromised chicks at placement, with blunt force trauma reserved for individual birds when no alternative is immediately available [5].'),
     para('If using this method: one blow, applied to the top of the skull with a firm, solid object. Multiple strikes indicate the first strike was not adequate, which is an animal welfare problem. If the first strike was not effective, immediately apply a second strike. Then confirm death with the three-check protocol before disposal.'),
 
     h2('3.7  Methods That Are NOT Acceptable'),
@@ -634,23 +634,23 @@ function buildBody() {
       [2000, 1500, 2600, 2540]
     ),
     spacer(160),
-    para([{ text: 'Source:', bold: true }, { text: ' AVMA Guidelines for the Euthanasia of Animals: 2020 Edition [1]; Boyal et al. 2022, Poultry Science [6]; Ripplinger et al. 2024, Poultry Science [8]; Humane Slaughter Association [9].' }]),
+    para([{ text: 'Source:', bold: true }, { text: ' AVMA Guidelines for the Euthanasia of Animals: 2020 Edition [1]; Boyal et al. 2022, Poultry Science [8]; Ripplinger et al. 2024, Poultry Science [7]; Humane Slaughter Association [10].' }]),
     pageBreak(),
 
     // ─── SECTION 5 ───
     h1('5. Verification of Death'),
     h2('5.1  Why Verification Matters'),
     para('Wing flapping, muscle tremors, and gasping movements are common after euthanasia. They are reflex responses from the nervous system, not signs of consciousness. If you drop a bird in the mortality bin based on those signs alone, you may be disposing of a bird that is not fully dead.'),
-    para('Verification of death requires that you check for the specific signs that confirm the brain and cardiovascular system have stopped functioning irreversibly. Post-euthanasia reflexes do not tell you that. Only the three-check protocol does [10,11].'),
+    para('Verification of death requires that you check for the specific signs that confirm the brain and cardiovascular system have stopped functioning irreversibly. Post-euthanasia reflexes do not tell you that. Only the three-check protocol does [4,11].'),
 
     h2('5.2  The Three-Check Protocol'),
     ...svgImage(verificationSvg, 'Figure 5.1: The three-check death confirmation protocol. All three checks must pass. Absence of corneal blink, heartbeat, and respiration for a sustained period of at least 5 minutes confirms death. Voluntary reflexes after euthanasia are expected and do not indicate consciousness. Source: CPC Short Courses.', 5.9),
     para('Apply the three-check protocol in this order:'),
-    numbered([{ text: 'Corneal reflex:', bold: true }, { text: ' Touch the surface of the eyeball gently with a fingertip or clean swab. A live or incompletely euthanized bird will blink. A dead bird will not. This is the fastest and most reliable indicator of brainstem function loss [10].' }]),
+    numbered([{ text: 'Corneal reflex:', bold: true }, { text: ' Touch the surface of the eyeball gently with a fingertip or clean swab. A live or incompletely euthanized bird will blink. A dead bird will not. This is the fastest and most reliable indicator of brainstem function loss [4].' }]),
     numbered([{ text: 'Heartbeat:', bold: true }, { text: ' Place your fingers or a stethoscope behind the left elbow on the keel side of the chest. Listen or feel for any heartbeat. For CO2 or manual cervical dislocation cases, you are looking for complete asystole (no beat at all). If you feel a weak or irregular pulse: the bird is not dead yet.' }]),
     numbered([{ text: 'Respiration:', bold: true }, { text: ' Watch the chest and abdomen carefully for 60 seconds. Any movement of the ribcage or abdominal wall indicates the bird is still breathing. A dead bird will have no respiratory movement.' }]),
     spacer(80),
-    callout('The 5-Minute Rule', 'If all three checks pass, wait 5 minutes and recheck the heartbeat and corneal reflex before final disposal. This is especially important after CO2 euthanasia, where birds can recover from light exposure. A bird that was unconscious but not dead may resume respiration if removed from the CO2 atmosphere prematurely. Five minutes of confirmed absence of all three signs means the bird is dead. [10,11]', 'EBF2FA', MED_BLUE),
+    callout('The 5-Minute Rule', 'If all three checks pass, wait 5 minutes and recheck the heartbeat and corneal reflex before final disposal. This is especially important after CO2 euthanasia, where birds can recover from light exposure. A bird that was unconscious but not dead may resume respiration if removed from the CO2 atmosphere prematurely. Five minutes of confirmed absence of all three signs means the bird is dead. [4,11]', 'EBF2FA', MED_BLUE),
     spacer(120),
 
     h2('5.3  When Euthanasia Fails'),
@@ -721,7 +721,7 @@ function buildBody() {
     bullet('When you hire new barn staff, regardless of prior experience.'),
     bullet('Annually for all staff, or more frequently if your audit program requires it.'),
     bullet('Any time a method failure occurs, as a corrective event.'),
-    para('The Poultry Industry Council offers euthanasia training resources and the Practical Guidelines for On-Farm Euthanasia of Poultry as a reference document [4]. Your veterinarian or integrator representative can also provide hands-on training sessions. For cross-province consistency, the Poultry Industry Council\'s resources are a reliable starting point.'),
+    para('The Poultry Industry Council offers euthanasia training resources and the Practical Guidelines for On-Farm Euthanasia of Poultry as a reference document [5]. Your veterinarian or integrator representative can also provide hands-on training sessions. For cross-province consistency, the Poultry Industry Council\'s resources are a reliable starting point.'),
     pageBreak(),
 
     // ─── SECTION 8 ───
@@ -773,16 +773,17 @@ function buildBody() {
 
     // ─── REFERENCES ───
     h1('References'),
+    // Bibliography in first-appearance order per Vancouver style
     numberedRef('American Veterinary Medical Association. Guidelines for the Euthanasia of Animals: 2020 Edition. Schaumburg, IL: AVMA; 2020. Available from: avma.org'),
     numberedRef('National Farm Animal Care Council. Code of Practice for the Care and Handling of Hatching Eggs, Breeders, Chickens and Turkeys. Ottawa: NFACC; 2016. Available from: nfacc.ca'),
     numberedRef('Chicken Farmers of Canada. Animal Care Program Manual. Ottawa: CFC; 2018. Available from: chickenfarmers.ca'),
+    numberedRef('Merck Veterinary Manual. Euthanasia of Animals. Kenilworth, NJ: Merck & Co.; 2024 [cited 2026 Jun]. Available from: merckvetmanual.com'),
     numberedRef('Poultry Industry Council. Practical Guidelines for On-Farm Euthanasia of Poultry. Guelph, ON: PIC; 2016. Available from: poultryindustrycouncil.ca'),
-    numberedRef('Baker BI, Torrey S, Widowski TM, Turner PV, Knezacek TD, Nicholds J, Crowe TG, Schwean-Lardner K. Defining characteristics of immersion carbon dioxide gas for successful euthanasia of neonatal and young broilers. Poult Sci. 2020;99(11):6095-6106. doi:10.1016/j.psj.2020.05.039'),
-    numberedRef('Boyal RS, Widowski TM, Brown JA, Turner PV. Evaluation of mechanical cervical dislocation, captive bolt, carbon dioxide, and electrical methods for individual on-farm euthanasia of broiler breeders. Poult Sci. 2022;101(9):102000. doi:10.1016/j.psj.2022.102000'),
     numberedRef('Jacobs L, Bourassa DV, Harris CE, Buhr RJ. Euthanasia: manual versus mechanical cervical dislocation for broilers. Animals. 2019;9(2):47. doi:10.3390/ani9020047'),
     numberedRef('Ripplinger EN, Crespo R, Pullin AN, et al. Efficacy of a novel cervical dislocation tool for humane euthanasia of broilers and broiler breeders. Poult Sci. 2024;103(3):103449. doi:10.1016/j.psj.2024.103449'),
+    numberedRef('Boyal RS, Widowski TM, Brown JA, Turner PV. Evaluation of mechanical cervical dislocation, captive bolt, carbon dioxide, and electrical methods for individual on-farm euthanasia of broiler breeders. Poult Sci. 2022;101(9):102000. doi:10.1016/j.psj.2022.102000'),
+    numberedRef('Baker BI, Torrey S, Widowski TM, Turner PV, Knezacek TD, Nicholds J, Crowe TG, Schwean-Lardner K. Defining characteristics of immersion carbon dioxide gas for successful euthanasia of neonatal and young broilers. Poult Sci. 2020;99(11):6095-6106. doi:10.1016/j.psj.2020.05.039'),
     numberedRef('Humane Slaughter Association. Cervical dislocation and decapitation (manual and mechanical). Wheathampstead: HSA [cited 2026 Jun]. Available from: hsa.org.uk'),
-    numberedRef('Merck Veterinary Manual. Euthanasia of Animals. Kenilworth, NJ: Merck & Co.; 2024 [cited 2026 Jun]. Available from: merckvetmanual.com'),
     numberedRef('Iowa State University College of Veterinary Medicine, Veterinary Diagnostic and Production Animal Medicine. Secondary Steps and Confirmation of Death. Ames, IA: Iowa State University [cited 2026 Jun]. Available from: vetmed.iastate.edu'),
     numberedRef('Manitoba Agriculture. Protocol for Deadstock Disposal by On-Farm Burial. Winnipeg: Government of Manitoba [cited 2026 Jun]. Available from: gov.mb.ca/agriculture'),
     numberedRef('BC Ministry of Agriculture, Food and Fisheries. Mortality Disposal on BC Farms. Victoria: Government of British Columbia [cited 2026 Jun]. Available from: gov.bc.ca'),
