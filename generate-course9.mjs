@@ -473,7 +473,13 @@ function buildSection2() {
       para('There are several diagnostic tools available, and each one is built to find a different type of problem. Knowing what each test does means you and your vet can pick the right one the first time [1,3].'),
       ...image(figBuf('fig9_2.png'), 'Figure 2.1: Diagnostic methods matrix detailing Serology, Necropsy, PCR, and Bacteriology applications. Source: CPC Short Courses.'),
       para('Each method has a specific role:'),
-      bullet('Serology tests like ELISA, HI, and plate agglutination check the blood for antibodies. This helps you see if your birds responded to a vaccine or if they\'ve been exposed to a virus out in the barn. The ELISA is the most common test for routine flock screening because it is fast and handles large sample numbers. The HI (Hemagglutination Inhibition) test is more specific and is used for Newcastle Disease and Avian Influenza. Rapid Plate Agglutination is a quick on-farm test to screen for Mycoplasma gallisepticum (MG) and Mycoplasma synoviae (MS) [1].'),
+      bullet([
+        { text: 'Serology tests like ELISA, HI, and plate agglutination check the blood for antibodies. This helps you see if your birds responded to a vaccine or if they\'ve been exposed to a virus out in the barn. The ELISA is the most common test for routine flock screening because it is fast and handles large sample numbers. The HI (Hemagglutination Inhibition) test is more specific and is used for Newcastle Disease and Avian Influenza. Rapid Plate Agglutination is a quick on-farm test to screen for ' },
+        { text: 'Mycoplasma gallisepticum', italics: true },
+        { text: ' (MG) and ' },
+        { text: 'Mycoplasma synoviae', italics: true },
+        { text: ' (MS) [1].' },
+      ]),
       bullet([{ text: 'PCR (Polymerase Chain Reaction): ', bold: true }, { text: 'Finds the DNA or RNA fingerprint of a virus or bacterium in the sample. It catches pathogens in tiny amounts and returns a result in 24 to 48 hours. PCR is particularly useful for identifying which strain of Infectious Bronchitis Virus (IBV) or Inclusion Body Hepatitis virus (IBHV, a Fowl Adenovirus) you are dealing with [1,3]. For IBV, knowing the strain lets your vet pick the right vaccine strain. For IBH, strain typing guides the development of an autogenous vaccine, a custom vaccine prepared from your specific field isolate, because no single commercial vaccine covers all IBH serotypes [3].' }]),
       bullet([{ text: 'Necropsy: ', bold: true }, { text: 'An examination of a fresh bird carcass after death. The pathologist looks for visible changes inside the bird, such as fluid in the air sacs, bleeding in the gut, swollen kidneys, or signs of septicemia: infection and inflammation across different organs. Within hours, you have clues about what is hitting your birds [4].' }]),
       bullet([{ text: 'Histopathology: ', bold: true }, { text: 'Examining thin slices of tissue under a microscope. If a necropsy shows swollen kidneys, histopathology lets the pathologist look at those kidney cells and confirm whether a specific virus or a nutritional problem caused the damage [4].' }]),
@@ -510,7 +516,11 @@ function buildSection3() {
       h2('3.1 Preventing Massive Losses: Early Warnings in Water and Feed Consumption'),
       para('Commercial birds live in tight groups. A disease challenge can move through a house in days. Catching it early is everything. Long before birds start coughing, huddling, or looking lethargic, their behavior shifts. Your daily water and feed meters are the most sensitive early indicators of that shift [2].'),
       para('Water consumption is particularly sensitive. The CPC Learning Centre \'Spotting Disease Early\' guide identifies when disease or stress hits the flock, water intake drops before feed intake, often a full day or two before birds start coughing or show other signs. A notable unexplained drop in your water meter on a single day is a strong early warning. If you wait until you have sick birds or high mortalities, you have already lost days you cannot get back [2].'),
-      para('When the meters drop, call your vet and get birds or blood cards to the lab that day. Getting that diagnosis early lets you start treatment or fix the ventilation before E. coli moves in behind the virus and causes the real damage [2,3].'),
+      para([
+        { text: 'When the meters drop, call your vet and get birds or blood cards to the lab that day. Getting that diagnosis early lets you start treatment or fix the ventilation before ' },
+        { text: 'E. coli', italics: true },
+        { text: ' moves in behind the virus and causes the real damage [2,3].' },
+      ]),
 
       h2('3.2 Stopping Disease Transmission and Protecting Neighboring Barns'),
       para('In poultry-dense regions, like the Fraser Valley in British Columbia or parts of Southern Ontario, biosecurity is a shared responsibility. An infectious outbreak in your barn does not just threaten your birds. It threatens every poultry farm within several kilometers. Airborne pathogens, wild birds, and shared service vehicles can carry viruses like Newcastle Disease, ILT, or Avian Influenza from farm to farm [5].'),
@@ -520,7 +530,12 @@ function buildSection3() {
       para('Not all diseases kill birds. In fact, some of the most expensive conditions in poultry farming are subclinical. None of them will drop your flock overnight. But each one quietly chips away at gut function or immune response, and by the time you notice the damage, feed costs have climbed and birds are coming off the truck lighter than they should be [5].'),
       para('Common subclinical challenges include:'),
       bullet([{ text: 'Subclinical Coccidiosis: ', bold: true }, { text: 'Tiny protozoan parasites damage the gut lining so the bird cannot absorb what it eats. Feed goes in, but it does not come out as weight. The FCR climbs and flock uniformity drops.' }]),
-      bullet([{ text: 'Subclinical Gumboro (IBD): ', bold: true }, { text: 'The virus hits the bursa of Fabricius, the organ that builds the chick\'s immune system. Young birds that survive can suffer lasting immune damage. They pick up E. coli easily and do not respond properly to the next round of vaccinations [3].' }]),
+      bullet([
+        { text: 'Subclinical Gumboro (IBD): ', bold: true },
+        { text: 'The virus hits the bursa of Fabricius, the organ that builds the chick\'s immune system. Young birds that survive can suffer lasting immune damage. They pick up ' },
+        { text: 'E. coli', italics: true },
+        { text: ' easily and do not respond properly to the next round of vaccinations [3].' },
+      ]),
       bullet([{ text: 'Mycoplasma: ', bold: true }, { text: 'MG and MS quietly inflame the air sacs and joints without killing a single bird. Growth slows and you start seeing more condemnations at the plant [3].' }]),
 
       para('Routine diagnostics is the only way to catch these problems. Regular coccidia oocyst counts on fecal samples and IBD titer checks on blood cards let you find these performance-drainers before they cost you the whole flock\'s margin. Fix your vaccination or coccidiostat program early, not after the damage is done [1,2]. For full disease profiles on Gumboro, Mycoplasma, and the other common subclinical pathogens, see Course 7 (Common Poultry Diseases) in this series.'),
@@ -578,13 +593,27 @@ function buildSection5() {
       para('Background: A grower in Ontario noticed that three consecutive broiler flocks had slightly elevated feed conversion ratios, averaging 1.72 against a target of 1.60. Mortality held at a normal 3.2% and no birds looked sick. But every flock hit the plant with a wide spread in bird sizes. Something was quietly dragging down the smaller ones, and nobody could pin it down.'),
       para('What the Lab Found: On the fourth flock, the grower pulled blood cards with their vet on day 14 and again on day 28. The day 14 %CV read 25%, which looked fine. By day 28, it had jumped to 92%. That bimodal split told them half the flock was responding normally to vaccination while the other half had a completely different, much higher exposure.'),
       para('Three birds showing poor growth were sent for necropsy. The pathologist found the bursa of Fabricius in each bird severely shrunken. Histopathology showed the immune tissue inside the bursa had been wiped out, the hallmark of subclinical Gumboro (IBD) [3,4].'),
-      para('Outcome & Action: Subclinical IBD was hitting the chicks early in the grow-out, before they could build proper immunity, and leaving them wide open to E. coli. The vet adjusted the breeder flock vaccination program to push more maternal antibodies into the chicks at placement. The grower also scrubbed the concrete floor with a chlorine-based sanitizer to knock out the highly resistant IBD virus before the next flock went in. The following flock FCR came back at 1.62, saving over $3,800 in feed costs.'),
+      para([
+        { text: 'Outcome & Action: Subclinical IBD was hitting the chicks early in the grow-out, before they could build proper immunity, and leaving them wide open to ' },
+        { text: 'E. coli', italics: true },
+        { text: '. The vet adjusted the breeder flock vaccination program to push more maternal antibodies into the chicks at placement. The grower also scrubbed the concrete floor with a chlorine-based sanitizer to knock out the highly resistant IBD virus before the next flock went in. The following flock FCR came back at 1.62, saving over $3,800 in feed costs.' },
+      ]),
 
       h2('5.2 Case Study B: How Delayed Action on Water Decline Cost a Broiler Flock'),
       para('Background: On day 22 of a 38-day broiler cycle, the barn computer recorded a 12% drop in daily water consumption. The grower walked the lines, confirmed pressure was normal and nipples were working, then decided to wait it out and see if intake would come back on its own.'),
       para('What Happened Next: By day 24, feed was down 15% and birds were lethargic. On day 25, the dead-bird count jumped from 8 to 45 in a single day. The grower called their vet, who picked up 10 fresh mortalities and got them to the lab that afternoon [2].'),
-      para('The necropsy came back with fibrin layered over the heart and liver, flooded air sacs, and septicemia throughout. PCR confirmed Infectious Bronchitis Virus DMG strain, with E. coli moving in hard behind it [3,4].'),
-      para('Outcome & Cost: The three-day wait gave the Infectious Bronchitis Virus time to break down the birds\' respiratory defenses. E. coli moved in behind it and went septic. Emergency antibiotic treatment cost $1,500. The flock lost 4.5% mortality and took an FCR penalty that pushed the total cycle loss past $5,200. Had the grower submitted blood cards or early mortalities on day 22 when the water dropped, the vet could have stepped in before the E. coli broke. Electrolytes, adjusted ventilation, and an early targeted plan would have kept that secondary infection out entirely. That is the difference between a lab submission and a $5,200 loss [2].'),
+      para([
+        { text: 'The necropsy came back with fibrin layered over the heart and liver, flooded air sacs, and septicemia throughout. PCR confirmed Infectious Bronchitis Virus DMG strain, with ' },
+        { text: 'E. coli', italics: true },
+        { text: ' moving in hard behind it [3,4].' },
+      ]),
+      para([
+        { text: 'Outcome & Cost: The three-day wait gave the Infectious Bronchitis Virus time to break down the birds\' respiratory defenses. ' },
+        { text: 'E. coli', italics: true },
+        { text: ' moved in behind it and went septic. Emergency antibiotic treatment cost $1,500. The flock lost 4.5% mortality and took an FCR penalty that pushed the total cycle loss past $5,200. Had the grower submitted blood cards or early mortalities on day 22 when the water dropped, the vet could have stepped in before the ' },
+        { text: 'E. coli', italics: true },
+        { text: ' broke. Electrolytes, adjusted ventilation, and an early targeted plan would have kept that secondary infection out entirely. That is the difference between a lab submission and a $5,200 loss [2].' },
+      ]),
     ],
   };
 }
