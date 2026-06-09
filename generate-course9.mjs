@@ -489,10 +489,10 @@ function buildSection2() {
       bullet([{ text: 'Fresh Mortalities: ', bold: true }, { text: 'Submit 10 to 12 fresh birds for necropsy. Choose recent mortalities or live birds showing the same signs as the problem flock. Keep them chilled at 4°C in transport. Do not freeze them. Freezing tears apart the cell walls and destroys the tissue detail the pathologist needs [4].' }]),
 
       para('Never forget that you are handling live pathogens during collection. Put on disposable gloves, use your farm-dedicated boots, and wash your hands before and after [5].'),
-      para('Use these CPC tools at the barn door and before your sampling kit leaves the property:'),
-      ...productImage(productBuf('elastic_top_boots'), 'Photo 9.1: Elastic Top Boots. Durable rubber boots designed for quick sanitation and dedicated barn use during sample collection. Source: canadianpoultry.ca/shop.'),
-      ...productImage(productBuf('chlorinated_evo_wash'), 'Photo 9.2: Chlorinated EVO Wash. A foaming chlorine-based sanitizer for disinfecting sampling kits and transport containers. Source: canadianpoultry.ca/shop.'),
-      para('Put on the Elastic Top Boots before entering each house so you are not tracking pathogens from barn to barn. Wipe your transport containers down with Chlorinated EVO Wash before they leave the property.'),
+      para('Have these basic supplies ready at the barn door and before your sampling kit leaves the property:'),
+      ...productImage(productBuf('elastic_top_boots'), 'Photo 2.1: Elastic Top Boots. Durable rubber boots designed for quick sanitation and dedicated barn use during sample collection. Source: canadianpoultry.ca/shop.'),
+      ...productImage(productBuf('chlorinated_evo_wash'), 'Photo 2.2: Chlorinated EVO Wash. A foaming chlorine-based sanitizer for disinfecting sampling kits and transport containers. Source: canadianpoultry.ca/shop.'),
+      para('Put on dedicated rubber barn boots before entering each house so you are not tracking pathogens from barn to barn. Wipe your transport containers down with a foaming chlorine sanitizer before they leave the property.'),
     ],
   };
 }
@@ -578,7 +578,7 @@ function buildSection5() {
       para('Background: A grower in Ontario noticed that three consecutive broiler flocks had slightly elevated feed conversion ratios, averaging 1.72 against a target of 1.60. Mortality held at a normal 3.2% and no birds looked sick. But every flock hit the plant with a wide spread in bird sizes. Something was quietly dragging down the smaller ones, and nobody could pin it down.'),
       para('What the Lab Found: On the fourth flock, the grower pulled blood cards with their vet on day 14 and again on day 28. The day 14 %CV read 25%, which looked fine. By day 28, it had jumped to 92%. That bimodal split told them half the flock was responding normally to vaccination while the other half had a completely different, much higher exposure.'),
       para('Three birds showing poor growth were sent for necropsy. The pathologist found the bursa of Fabricius in each bird severely shrunken. Histopathology showed the immune tissue inside the bursa had been wiped out, the hallmark of subclinical Gumboro (IBD) [3,4].'),
-      para('Outcome & Action: Subclinical IBD was hitting the chicks early in the grow-out, before they could build proper immunity, and leaving them wide open to E. coli. The vet adjusted the breeder flock vaccination program to push more maternal antibodies into the chicks at placement. The grower also scrubbed the concrete floor with Chlorinated EVO Wash to knock out the highly resistant IBD virus before the next flock went in. The following flock FCR came back at 1.62, saving over $3,800 in feed costs.'),
+      para('Outcome & Action: Subclinical IBD was hitting the chicks early in the grow-out, before they could build proper immunity, and leaving them wide open to E. coli. The vet adjusted the breeder flock vaccination program to push more maternal antibodies into the chicks at placement. The grower also scrubbed the concrete floor with a chlorine-based sanitizer to knock out the highly resistant IBD virus before the next flock went in. The following flock FCR came back at 1.62, saving over $3,800 in feed costs.'),
 
       h2('5.2 Case Study B: How Delayed Action on Water Decline Cost a Broiler Flock'),
       para('Background: On day 22 of a 38-day broiler cycle, the barn computer recorded a 12% drop in daily water consumption. The grower walked the lines, confirmed pressure was normal and nipples were working, then decided to wait it out and see if intake would come back on its own.'),
