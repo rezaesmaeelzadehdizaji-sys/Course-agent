@@ -199,11 +199,16 @@ function lesionTable(headers, rows) {
     shading: { type: ShadingType.SOLID, color: hdrBg },
     children: [new Paragraph({ alignment: AlignmentType.CENTER, spacing: { before: 60, after: 60 }, children: [run(t, { bold: true, size: 18, color: 'FFFFFF' })] })],
   });
-  const dataCell = (t, i, shade) => new TableCell({
-    width: { size: colW[i], type: WidthType.DXA }, borders: cb,
-    shading: { type: ShadingType.SOLID, color: shade ? altBg : 'FFFFFF' },
-    children: [new Paragraph({ alignment: i === 0 ? AlignmentType.LEFT : AlignmentType.LEFT, spacing: { before: 50, after: 50 }, children: [run(t, { size: 18 })] })],
-  });
+  const dataCell = (t, i, shade) => {
+    const kids = Array.isArray(t)
+      ? t.map(s => new TextRun({ text: s.text, italics: s.italics || false, bold: s.bold || false, color: BODY_GRAY, size: 18, font: 'Calibri' }))
+      : [run(t, { size: 18 })];
+    return new TableCell({
+      width: { size: colW[i], type: WidthType.DXA }, borders: cb,
+      shading: { type: ShadingType.SOLID, color: shade ? altBg : 'FFFFFF' },
+      children: [new Paragraph({ alignment: AlignmentType.LEFT, spacing: { before: 50, after: 50 }, children: kids })],
+    });
+  };
   return new Table({
     width: { size: 100, type: WidthType.PERCENTAGE },
     rows: [
@@ -352,7 +357,11 @@ function buildBody() {
 
     para([{ text: 'Airsacculitis Complex', bold: true }]),
     para('Airsacculitis as an isolated finding usually means a primary respiratory pathogen opened the door and E. coli finished the job. The air sac system runs from the lungs deep into the abdominal cavity, which means an infection here spreads quickly. At necropsy you will find cloudy, thickened air sac membranes ranging from slightly milky to packed with yellow caseous exudate. In severe cases the liver and heart are coated in fibrin as the infection extends into the body cavity.'),
-    para('Airsacculitis with fibrinous perihepatitis and pericarditis in a three to five week old broiler is the classic colibacillosis picture. Airsacculitis with mucoid tracheal exudate and thickened tracheal wall, but less liver and heart involvement, points more toward Mycoplasma gallisepticum (MG) as the primary agent [5].'),
+    para([
+      { text: 'Airsacculitis with fibrinous perihepatitis and pericarditis in a three to five week old broiler is the classic colibacillosis picture. Airsacculitis with mucoid tracheal exudate and thickened tracheal wall, but less liver and heart involvement, points more toward ' },
+      { text: 'Mycoplasma gallisepticum', italics: true },
+      { text: ' (MG) as the primary agent [5].' },
+    ]),
 
     h2('4.2  Viral Diseases'),
     para([{ text: 'Infectious Bronchitis (IBV)', bold: true }]),
@@ -458,7 +467,7 @@ function buildBody() {
     para('Salpingitis is inflammation of the oviduct, and it is often found alongside egg peritonitis or as a separate cause of production loss and mortality. The oviduct is the first place to examine in any layer or breeder hen that has died or been euthanized due to reproductive failure [16]:'),
     bullet([{ text: 'Oviduct:', bold: true }, { text: ' Thickened, inflamed walls. The lumen contains yellow or white caseous exudate instead of normal secretions. In severe cases the entire oviduct is packed solid with pus or necrotic material (a "lash egg").' }]),
     bullet([{ text: 'Impacted oviduct:', bold: true }, { text: ' The oviduct fills with a large mass of albumin, yolk, and inflammatory debris. The bird stops laying but the abdomen becomes enlarged. This is a chronic end-stage presentation.' }]),
-    bullet([{ text: 'Bacterial involvement:', bold: true }, { text: ' E. coli, Mycoplasma, Salmonella, and Pasteurella are all associated with salpingitis. Swab the oviduct contents for culture to identify the primary organism.' }]),
+    bullet([{ text: 'Bacterial involvement:', bold: true }, { text: ' E. coli, ' }, { text: 'Mycoplasma', italics: true }, { text: ', Salmonella, and Pasteurella are all associated with salpingitis. Swab the oviduct contents for culture to identify the primary organism.' }]),
 
     h2('5.2  Bacterial Diseases'),
     para([{ text: 'Fowl Cholera (', bold: true }, { text: 'Pasteurella multocida', italics: true }, { text: ')', bold: true }]),
@@ -469,7 +478,12 @@ function buildBody() {
 
     spacer(40),
     para([{ text: 'Mycoplasmosis (MG and MS)', bold: true }]),
-    para('Mycoplasma gallisepticum (MG) and Mycoplasma synoviae (MS) are chronic respiratory and synovitis pathogens that cost the layer and breeder industry through reduced production, increased condemnation, and treatment costs rather than through acute mortality [18,19].'),
+    para([
+      { text: 'Mycoplasma gallisepticum', italics: true },
+      { text: ' (MG) and ' },
+      { text: 'Mycoplasma synoviae', italics: true },
+      { text: ' (MS) are chronic respiratory and synovitis pathogens that cost the layer and breeder industry through reduced production, increased condemnation, and treatment costs rather than through acute mortality [18,19].' },
+    ]),
     para('At necropsy, the lesions depend on which organism is involved and how far the disease has progressed:'),
     bullet([{ text: 'MG (respiratory form):', bold: true }, { text: ' Cloudy, thickened air sacs ranging from slightly hazy to opaque. Mucoid or caseous exudate in the air sac lumen. Tracheal mucosa congested and thickened. Swollen infraorbital sinuses, sometimes with caseous plugs. Concurrent E. coli infection (from the immunosuppression MG causes) adds pericarditis and perihepatitis to the picture.' }]),
     bullet([{ text: 'MS (synovitis form):', bold: true }, { text: ' Swollen hock joints and foot pads. Open the joint to find a creamy, viscous fluid (synovial exudate) instead of the thin, clear joint lubricant you see in a healthy bird. The tendon sheaths may also be thickened. This is one of the cleanest diagnostic presentations in poultry: swollen joint, open it, find cream-colored exudate, and MS is your primary differential.' }]),
@@ -534,7 +548,7 @@ function buildBody() {
         ['Abdominal cavity', 'Free fluid, exudate, yolk', 'Straw fluid (ascites); yolk material (egg peritonitis)', 'Ascites, Egg Peritonitis'],
         ['Oviduct', 'Wall, lumen content', 'Caseous exudate; impacted; inflamed wall', 'Salpingitis'],
         ['Skin and feather follicles', 'Nodules, color', 'Enlarged reddened follicles; hemorrhagic or necrotic patches', "Marek's (cutaneous), Fowl Pox"],
-        ['Hock and foot pad joints', 'Swelling, exudate', 'Swollen joint with cream exudate', 'Mycoplasma synoviae (MS)'],
+        ['Hock and foot pad joints', 'Swelling, exudate', 'Swollen joint with cream exudate', [{ text: 'Mycoplasma synoviae', italics: true }, { text: ' (MS)' }]],
         ['Bone (cross-section)', 'Cortical thickness', 'Thin cortex, fragile, cancellous replacement', 'Calcium deficiency, cage layer fatigue'],
         ['Skeletal muscles (breast/thigh)', 'Color, texture, hemorrhage', 'Ecchymotic hemorrhages in muscle', 'IBD/Gumboro'],
       ]

@@ -561,6 +561,31 @@ Common temptations that must be rewritten:
 
 Also avoid heavy reliance on semicolons or overly polished punctuation patterns. Prefer plain periods and commas. Run the dash check on the final docx XML before reporting any course as done.
 
+### Latin Species Names — Italics (MANDATORY — ALL 17 COURSES)
+
+**All genus and species names in Latin binomial nomenclature must be italicized every time they appear in body prose, bullets, tables, captions, and figure text.** This is standard scientific convention and applies without exception.
+
+Organisms that appear across the CPC Short Courses series and must always be italicized:
+
+| Organism | Italicized form |
+|---|---|
+| Mycoplasma gallisepticum | *Mycoplasma gallisepticum* |
+| Mycoplasma synoviae | *Mycoplasma synoviae* |
+| Escherichia coli | *Escherichia coli* |
+| Salmonella (species) | *Salmonella* spp. or *Salmonella* Enteritidis, etc. |
+| Clostridium perfringens | *Clostridium perfringens* |
+| Pasteurella multocida | *Pasteurella multocida* |
+| Eimeria (species) | *Eimeria* spp., *Eimeria maxima*, *Eimeria tenella*, etc. |
+| Marek's Disease Virus | not Latin — no italics needed |
+| Enterococcus (species) | *Enterococcus* spp. |
+| Aspergillus fumigatus | *Aspergillus fumigatus* |
+
+**In the docx generator**, use a `TextRun` with `italics: true` for the species name, splitting the sentence into multiple runs where necessary. Never render a genus/species name as plain text.
+
+**In SVG figures**, use `font-style="italic"` on the `<text>` element or wrap the species name in a `<tspan font-style="italic">` so the italics render correctly in the PNG output.
+
+**Pre-publish check:** Search the final docx XML for any unitalicized instance: `(xml.match(/Mycoplasma gallisepticum|Mycoplasma synoviae|Clostridium perfringens|Pasteurella multocida/g) || [])` — every hit must fall inside a `<w:rPr><w:i/></w:rPr>` run. If not, the course is not ready.
+
 ### Phrases to Avoid (AI-sounding patterns flagged in real CPC review)
 
 Rewrite all of these on sight. They sound like a corporate report, not a vet talking to a farmer.
