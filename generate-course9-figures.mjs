@@ -213,16 +213,15 @@ function fig9_2() {
 // FIGURE 9.3 — Minimum Sample Submission Guidelines
 // ============================================================
 function fig9_3() {
-  const W = 800, H = 450;
+  const W = 800, H = 530;
   return `<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}">
   <rect width="${W}" height="${H}" fill="white"/>
   ${titleBar(W, 'Sample Submission Guidelines: Getting Clean Data to the Lab')}
 
-  <!-- 4 Sample Category Boxes -->
-  <!-- Left-to-right: Fecal/Litter, Blood Cards, Water/Feed, Dead Birds -->
-  
+  <!-- 4 Sample Category Boxes — height expanded to 350 to fit blood tube content -->
+
   <!-- 1. Fecal/Litter -->
-  <rect x="25" y="80" width="170" height="280" rx="8" fill="${C.lightGray}" stroke="#ccc" stroke-width="1.5"/>
+  <rect x="25" y="80" width="170" height="350" rx="8" fill="${C.lightGray}" stroke="#ccc" stroke-width="1.5"/>
   <rect x="25" y="80" width="170" height="40" rx="8" fill="${C.amber}"/>
   <text x="110" y="105" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="13" font-weight="bold">Fecal / Litter</text>
   <text x="35" y="145" fill="${C.gray}" font-family="Arial, sans-serif" font-size="11" font-weight="bold">Submission Goal:</text>
@@ -234,21 +233,31 @@ function fig9_3() {
   <text x="35" y="261" fill="${C.gray}" font-family="Arial, sans-serif" font-size="11">• Pool 5–10 spots per pen</text>
   <text x="35" y="278" fill="${C.gray}" font-family="Arial, sans-serif" font-size="11">• Keep cool (do not freeze)</text>
 
-  <!-- 2. Blood Cards (Serology) -->
-  <rect x="215" y="80" width="170" height="280" rx="8" fill="${C.lightGray}" stroke="#ccc" stroke-width="1.5"/>
+  <!-- 2. Blood Samples (Serology) -->
+  <rect x="215" y="80" width="170" height="350" rx="8" fill="${C.lightGray}" stroke="#ccc" stroke-width="1.5"/>
   <rect x="215" y="80" width="170" height="40" rx="8" fill="${C.medBlue}"/>
-  <text x="300" y="105" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="13" font-weight="bold">Blood Cards</text>
+  <text x="300" y="105" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="13" font-weight="bold">Blood Samples</text>
   <text x="225" y="145" fill="${C.gray}" font-family="Arial, sans-serif" font-size="11" font-weight="bold">Submission Goal:</text>
   <text x="225" y="162" fill="${C.gray}" font-family="Arial, sans-serif" font-size="11">Antibody titer checks</text>
-  <text x="225" y="179" fill="${C.gray}" font-family="Arial, sans-serif" font-size="11">for vaccine/field run</text>
-  <text x="225" y="210" fill="${C.gray}" font-family="Arial, sans-serif" font-size="11" font-weight="bold">Procedure:</text>
-  <text x="225" y="227" fill="${C.gray}" font-family="Arial, sans-serif" font-size="11">• Collect 12–24 birds</text>
-  <text x="225" y="244" fill="${C.gray}" font-family="Arial, sans-serif" font-size="11">• Prick wing vein cleanly</text>
-  <text x="225" y="261" fill="${C.gray}" font-family="Arial, sans-serif" font-size="11">• Fill circles on filter card</text>
-  <text x="225" y="278" fill="${C.gray}" font-family="Arial, sans-serif" font-size="11">• Air dry fully before bag</text>
+  <text x="225" y="179" fill="${C.gray}" font-family="Arial, sans-serif" font-size="11">for vaccine/field response</text>
+  <!-- Preferred: tubes -->
+  <rect x="220" y="192" width="160" height="18" rx="3" fill="${C.medBlue}" opacity="0.15"/>
+  <text x="225" y="205" fill="${C.medBlue}" font-family="Arial, sans-serif" font-size="10" font-weight="bold">★ PREFERRED: Blood in Tubes</text>
+  <text x="225" y="222" fill="${C.gray}" font-family="Arial, sans-serif" font-size="10">• CPC team / vet collects</text>
+  <text x="225" y="237" fill="${C.gray}" font-family="Arial, sans-serif" font-size="10">• Plain red-top serum tubes</text>
+  <text x="225" y="252" fill="${C.gray}" font-family="Arial, sans-serif" font-size="10">• Clean venipuncture needed</text>
+  <text x="225" y="267" fill="${C.gray}" font-family="Arial, sans-serif" font-size="10">• Prevents hemolysis</text>
+  <!-- Farmer option: cards -->
+  <rect x="220" y="278" width="160" height="18" rx="3" fill="#888" opacity="0.12"/>
+  <text x="225" y="291" fill="${C.gray}" font-family="Arial, sans-serif" font-size="10" font-weight="bold">FARMER OPTION: Blood Cards</text>
+  <text x="225" y="308" fill="${C.gray}" font-family="Arial, sans-serif" font-size="10">• 12–24 birds, wing vein</text>
+  <text x="225" y="323" fill="${C.gray}" font-family="Arial, sans-serif" font-size="10">• Fill filter card circles</text>
+  <text x="225" y="338" fill="${C.gray}" font-family="Arial, sans-serif" font-size="10">• Air dry fully before bag</text>
+  <text x="225" y="353" fill="${C.gray}" font-family="Arial, sans-serif" font-size="10">• Damp cards ruin the sample</text>
+  <text x="225" y="368" fill="${C.gray}" font-family="Arial, sans-serif" font-size="10">• Use if vet visit not possible</text>
 
   <!-- 3. Water / Feed -->
-  <rect x="405" y="80" width="170" height="280" rx="8" fill="${C.lightGray}" stroke="#ccc" stroke-width="1.5"/>
+  <rect x="405" y="80" width="170" height="350" rx="8" fill="${C.lightGray}" stroke="#ccc" stroke-width="1.5"/>
   <rect x="405" y="80" width="170" height="40" rx="8" fill="${C.green}"/>
   <text x="490" y="105" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="13" font-weight="bold">Water / Feed</text>
   <text x="415" y="145" fill="${C.gray}" font-family="Arial, sans-serif" font-size="11" font-weight="bold">Submission Goal:</text>
@@ -261,7 +270,7 @@ function fig9_3() {
   <text x="415" y="278" fill="${C.gray}" font-family="Arial, sans-serif" font-size="11">  sample from bin center</text>
 
   <!-- 4. Dead Birds (Necropsy) -->
-  <rect x="595" y="80" width="170" height="280" rx="8" fill="${C.lightGray}" stroke="#ccc" stroke-width="1.5"/>
+  <rect x="595" y="80" width="170" height="350" rx="8" fill="${C.lightGray}" stroke="#ccc" stroke-width="1.5"/>
   <rect x="595" y="80" width="170" height="40" rx="8" fill="${C.red}"/>
   <text x="680" y="105" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="13" font-weight="bold">Dead Birds</text>
   <text x="605" y="145" fill="${C.gray}" font-family="Arial, sans-serif" font-size="11" font-weight="bold">Submission Goal:</text>
@@ -274,8 +283,8 @@ function fig9_3() {
   <text x="605" y="278" fill="${C.gray}" font-family="Arial, sans-serif" font-size="11">• Transport immediately</text>
 
   <!-- Bottom alert -->
-  <rect x="25" y="380" width="740" height="30" rx="4" fill="${C.lightGold}" stroke="${C.gold}"/>
-  <text x="395" y="399" text-anchor="middle" fill="${C.darkBlue}" font-family="Arial, sans-serif" font-size="11" font-weight="bold">Crucial Rule: Do not freeze samples. Keep them chilled (4°C) to prevent tissue crystallization.</text>
+  <rect x="25" y="452" width="740" height="30" rx="4" fill="${C.lightGold}" stroke="${C.gold}"/>
+  <text x="395" y="471" text-anchor="middle" fill="${C.darkBlue}" font-family="Arial, sans-serif" font-size="11" font-weight="bold">Crucial Rule: Do not freeze samples. Keep them chilled (4°C) to prevent tissue crystallization.</text>
 
   ${caption(W, H, 'Figure 2.2  |  Guidelines for Basic Diagnostic Sample Collection and Submission')}
 </svg>`;
