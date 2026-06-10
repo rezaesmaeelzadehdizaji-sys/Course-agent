@@ -310,7 +310,7 @@ const decisionTreeSvg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80
   <!-- Right box: Monitor closely -->
   <rect x="640" y="285" width="130" height="50" rx="8" fill="#538135"/>
   <text x="705" y="308" text-anchor="middle" font-size="12" fill="white" font-weight="bold">Monitor closely</text>
-  <text x="705" y="326" text-anchor="middle" font-size="11" fill="white">reassess in 4 h</text>
+  <text x="705" y="326" text-anchor="middle" font-size="11" fill="white">recheck later</text>
   <!-- Arrow down: Unsure -->
   <line x1="400" y1="360" x2="400" y2="390" stroke="#555" stroke-width="2" marker-end="url(#arr)"/>
   <text x="420" y="380" font-size="12" fill="#555">Unsure?</text>
@@ -321,7 +321,7 @@ const decisionTreeSvg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80
   <!-- Rule box at bottom -->
   <rect x="80" y="470" width="640" height="90" rx="6" fill="#FFF3E0" stroke="#C9A84C" stroke-width="2"/>
   <text x="400" y="492" text-anchor="middle" font-size="12" font-weight="bold" fill="#1F3864">NFACC Code of Practice Rule (2016):</text>
-  <text x="400" y="512" text-anchor="middle" font-size="11" fill="#3C3C3C">"Sick or injured birds showing obvious signs of pain MUST be promptly treated or euthanized."</text>
+  <text x="400" y="512" text-anchor="middle" font-size="11" fill="#3C3C3C">Sick or injured birds showing obvious signs of pain must be promptly treated or euthanized.</text>
   <text x="400" y="532" text-anchor="middle" font-size="11" fill="#3C3C3C">Compromised chicks at placement must be euthanized within 1 hour of flock processing completion.</text>
   <text x="400" y="552" text-anchor="middle" font-size="11" fill="#888" font-style="italic">Source: NFACC Code of Practice, 2016 [2]</text>
   <!-- Arrow marker -->
@@ -376,7 +376,7 @@ const verificationSvg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 78
   <text x="390" y="288" text-anchor="middle" font-size="12" font-weight="bold" fill="#538135">All three checks must PASS. Wait at least 5 minutes of continuous absence before declaring death.</text>
   <text x="390" y="308" text-anchor="middle" font-size="11" fill="#3C3C3C">Wing flapping and muscle movement after euthanasia are normal reflexes and do NOT indicate the bird is still alive.</text>
   <text x="390" y="326" text-anchor="middle" font-size="11" fill="#3C3C3C">If any check fails: apply a secondary method immediately (decapitation or a second application of your primary method).</text>
-  <text x="390" y="344" text-anchor="middle" font-size="10" fill="#888" font-style="italic">Source: Iowa State VDPAM; Merck Veterinary Manual (AVMA 2020) [4,11]</text>
+  <text x="390" y="344" text-anchor="middle" font-size="10" fill="#888" font-style="italic">Source: Iowa State VDPAM; Merck Veterinary Manual [4,11]</text>
 </svg>`;
 
 // ============================================================
@@ -479,7 +479,7 @@ function buildBody() {
         ['Respiratory signs', 'Mild rattling in one or two birds: isolate, monitor, call vet', 'Gasping open-mouthed at rest, head pulled back, cyanotic comb in cool conditions'],
         ['Wound / injury', 'Minor superficial wound: clean, monitor', 'Open wound exposing muscle, bone, or viscera. Active pecking target.'],
         ['Body condition', 'Thin but mobile bird in a young flock: check management', 'Emaciated, keel bone fully palpable with no muscle cover, dehydrated'],
-        ['Neurological signs', 'Mild incoordination in a young chick: move to recovery pen, recheck in 4 h', 'Full loss of righting reflex, circling, or star-gazing with no improvement in 10 min'],
+        ['Neurological signs', 'Mild incoordination in a young chick: move to recovery pen, recheck within a few hours', 'Full loss of righting reflex, circling, or star-gazing with no improvement in 10 min'],
         ['Deformity', 'Mild beak or toe defect not affecting feed access', 'Cross-beak severe enough to prevent feed intake, or any structural defect preventing normal movement'],
       ],
       [2400, 3200, 3040]
@@ -527,14 +527,15 @@ function buildBody() {
     spacer(120),
 
     h2('3.3  Mechanical Cervical Dislocation (KED Devices)'),
-    para('Mechanical cervical dislocation devices remove the technique variability of the manual method and extend the weight range that one trained person can euthanize safely. The KED device is the most widely used commercial option for poultry, available in multiple sizes to cover the full range of commercial poultry weights [8].'),
+    para('KED stands for Koechner Euthanizing Device, a plier-style tool positioned at the base of the skull, perpendicular to the neck. The handles are closed in a single firm motion, separating the skull from the first cervical vertebra. It comes in several sizes to match different bird weights [8]:'),
     para([{ text: 'Device sizing:', bold: true }]),
     bullet('KED-S: birds up to 1.8 kg (chicks, pullets, young growers)'),
     bullet('KED-C: birds up to approximately 13.6 kg (broiler breeders, large market birds)'),
     bullet('KED-T: birds up to approximately 29 kg (turkeys)'),
-    para('The device is positioned at the base of the skull, perpendicular to the neck. The handles are closed in a single firm motion, separating the skull from the first cervical vertebra. Research on broiler breeders comparing mechanical cervical dislocation to manual cervical dislocation found both methods achieved high kill success rates in birds averaging 3.86 to 4.39 kg, with the mechanical method producing rapid death reliably across the weight range studied [8].'),
-    para('One important finding from the same research: the KED produces more external skin damage and bleeding than manual cervical dislocation [8]. This does not affect welfare outcome but is worth knowing when training staff. The procedure looks more invasive than the manual method. The animal is not suffering more because of the appearance.'),
-    para('Follow the same three-check death confirmation protocol after mechanical cervical dislocation that you use for the manual method.'),
+    para('Do not reach for the KED as an automatic upgrade for birds you can already euthanize by hand. A study comparing manual cervical dislocation to the KED in broilers found manual dislocation worked faster: birds lost reflexes and stopped moving sooner. Reflexes returned, a sign the bird may have been regaining consciousness, in roughly half of the KED-euthanized birds, compared to 0 to 15% of birds done by hand. The researchers recommended manual cervical dislocation as the better choice for broilers in this weight range [6]. See Section 3.2 for technique.'),
+    para('Where the KED earns its place is on birds too heavy for manual dislocation to be reliable: broiler breeders at production weight and similarly large birds. A study on broiler breeders averaging 3.86 to 4.39 kg found the KED achieved a 98% success rate, 57 of 59 birds [8]. This is the weight range where the device is the right tool, not a substitute for manual dislocation on smaller birds.'),
+    para('Expect more visible skin damage and bleeding with the KED than with the manual method. In the broiler study, 68 to 95% of KED-euthanized birds showed broken skin or bleeding, compared to none of the birds done by hand [6]. The appearance alone does not tell you whether the bird is dead.'),
+    para('Reflexes returned in close to half the KED-euthanized birds in the research above. That makes the three-check protocol in Section 5 essential, not optional, after KED use. Check corneal reflex, heartbeat, and respiration on every bird, every time, before it goes in the mortality bin.'),
 
     h2('3.4  Non-Penetrating Captive Bolt'),
     para('The non-penetrating captive bolt delivers a percussive blow to the skull that produces immediate concussive unconsciousness. It does not penetrate the brain. Because it does not destroy brain tissue, it must be followed immediately by a secondary method that ensures death: cervical dislocation, decapitation, or exsanguination. Using a captive bolt alone, without a secondary method, is not acceptable.'),
@@ -665,20 +666,20 @@ function buildBody() {
     // ─── SECTION 6 ───
     h1('6. Carcass Disposal'),
     h2('6.1  Approved Disposal Methods'),
-    para('Carcass disposal for euthanized birds follows the same rules as routine mortality management. In Canada, disposal regulations are set by provincial governments, not the federal CFIA, and they vary by province. The four approved methods used across Canadian provinces are rendering, composting, on-farm burial, and incineration [11]. Your farm program and provincial regulations specify which methods apply to your operation.'),
+    para('Carcass disposal for euthanized birds follows the same rules as routine mortality management. In Canada, disposal regulations are set by provincial governments, not the federal CFIA, and they vary by province. The table below covers the methods used on Canadian farms: rendering, composting, on-farm burial, and incineration. Your farm program and provincial regulations specify which methods apply to your operation.'),
     spacer(80),
     dataTable(
       ['Disposal Method', 'How It Works', 'Key Requirements'],
       [
         ['Rendering', 'Carcasses collected by a licensed renderer and processed into meal and fat', 'Carcasses must be stored refrigerated or frozen if retained more than 48 hours after death (Manitoba standard). Keep in sealed containers. Renderer provides collection schedule.'],
         ['On-farm composting', 'Carcasses layered with carbon-rich material (sawdust, straw, wood chips) in an active compost pile', 'Carbon material must fully cover each layer of carcasses. Pile must reach internal temperatures sufficient to kill pathogens. CFIA has specific composting procedures (see Appendix B, Chicken Farmers of Canada) [3].'],
-        ['On-farm burial', 'Carcasses buried in a designated pit on the farm property', 'Pit must be at least 30 metres from any water source (BC standard). Cover with minimum 1 metre of impermeable material. Must not pose groundwater contamination risk.'],
+        ['On-farm burial', 'Carcasses buried in a designated pit on the farm property', 'Manitoba requires burial pits at least 100 meters from any watercourse, spring, sinkhole, or well, with a minimum of 1 meter of impermeable cover over the carcasses [12]. British Columbia requires that buried mortalities not contaminate groundwater and be deep enough to prevent predator access [13]. Setback distances vary by province, so check your local rules.'],
         ['Incineration', 'Carcasses burned in an approved incinerator', 'Must comply with provincial environmental regulations for emissions. Not all provinces permit on-farm incineration without a permit.'],
       ],
       [1800, 3240, 3600]
     ),
     spacer(160),
-    para([{ text: 'Source:', bold: true }, { text: ' Manitoba Agriculture, Protocol for Deadstock Disposal by On-Farm Burial [12]; BC Ministry of Agriculture, Mortality Disposal on BC Farms [13]; Chicken Farmers of Canada Animal Care Program [3].' }]),
+    para([{ text: 'Source:', bold: true }, { text: ' Manitoba Agriculture, Protocol for Deadstock Disposal by On-Farm Burial [12]; British Columbia Ministry of Agriculture, Farm Practices: Mortality Disposal [13]; Chicken Farmers of Canada Animal Care Program [3].' }]),
 
     h2('6.2  Biosecurity During Disposal'),
     para('Carcasses are a source of pathogens. How you handle them between euthanasia and disposal affects the rest of your flock.'),
@@ -780,13 +781,13 @@ function buildBody() {
     numberedRef('Merck Veterinary Manual. Euthanasia of Animals. Kenilworth, NJ: Merck & Co.; 2024 [cited 2026 Jun]. Available from: merckvetmanual.com'),
     numberedRef('Poultry Industry Council. Practical Guidelines for On-Farm Euthanasia of Poultry. Guelph, ON: PIC; 2016. Available from: poultryindustrycouncil.ca'),
     numberedRef('Jacobs L, Bourassa DV, Harris CE, Buhr RJ. Euthanasia: manual versus mechanical cervical dislocation for broilers. Animals. 2019;9(2):47. doi:10.3390/ani9020047'),
-    numberedRef('Ripplinger EN, Crespo R, Pullin AN, et al. Efficacy of a novel cervical dislocation tool for humane euthanasia of broilers and broiler breeders. Poult Sci. 2024;103(3):103449. doi:10.1016/j.psj.2024.103449'),
-    numberedRef('Boyal RS, Widowski TM, Brown JA, Turner PV. Evaluation of mechanical cervical dislocation, captive bolt, carbon dioxide, and electrical methods for individual on-farm euthanasia of broiler breeders. Poult Sci. 2022;101(9):102000. doi:10.1016/j.psj.2022.102000'),
-    numberedRef('Baker BI, Torrey S, Widowski TM, Turner PV, Knezacek TD, Nicholds J, Crowe TG, Schwean-Lardner K. Defining characteristics of immersion carbon dioxide gas for successful euthanasia of neonatal and young broilers. Poult Sci. 2020;99(11):6095-6106. doi:10.1016/j.psj.2020.05.039'),
+    numberedRef('Ripplinger EN, Crespo R, Pullin AN, Carnaccini S, Nelson NC, Trindade PHE, et al. Efficacy of a novel cervical dislocation tool for humane euthanasia of broilers and broiler breeders. Poult Sci. 2024;103(3):103449. doi:10.1016/j.psj.2024.103449'),
+    numberedRef('Boyal RS, Buhr RJ, Harris CE, Jacobs L, Bourassa DV. Evaluation of mechanical cervical dislocation, captive bolt, carbon dioxide, and electrical methods for individual on-farm euthanasia of broiler breeders. Poult Sci. 2022;101(9):102000. doi:10.1016/j.psj.2022.102000'),
+    numberedRef('Baker BI, Torrey S, Widowski TM, Turner PV, Knezacek TD, Nicholds J, Crowe TG, Schwean-Lardner K. Defining characteristics of immersion carbon dioxide gas for successful euthanasia of neonatal and young broilers. Poult Sci. 2020;99(9):4408-4416. doi:10.1016/j.psj.2020.05.039'),
     numberedRef('Humane Slaughter Association. Cervical dislocation and decapitation (manual and mechanical). Wheathampstead: HSA [cited 2026 Jun]. Available from: hsa.org.uk'),
     numberedRef('Iowa State University College of Veterinary Medicine, Veterinary Diagnostic and Production Animal Medicine. Secondary Steps and Confirmation of Death. Ames, IA: Iowa State University [cited 2026 Jun]. Available from: vetmed.iastate.edu'),
     numberedRef('Manitoba Agriculture. Protocol for Deadstock Disposal by On-Farm Burial. Winnipeg: Government of Manitoba [cited 2026 Jun]. Available from: gov.mb.ca/agriculture'),
-    numberedRef('BC Ministry of Agriculture, Food and Fisheries. Mortality Disposal on BC Farms. Victoria: Government of British Columbia [cited 2026 Jun]. Available from: gov.bc.ca'),
+    numberedRef('British Columbia Ministry of Agriculture. Farm Practices: Mortality Disposal. Order No. 870.218-46. Victoria: Government of British Columbia; 2014 [cited 2026 Jun]. Available from: gov.bc.ca'),
   ];
 }
 
