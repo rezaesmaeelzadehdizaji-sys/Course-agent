@@ -689,6 +689,17 @@ Merck Veterinary Manual. Vaccination of Poultry. Kenilworth, NJ: Merck & Co.; 20
 
 Content must be drawn from: Merck Veterinary Manual, Poultry Science journal, CFIA, CVMA, NFACC Codes of Practice, Aviagen Ross 308 manuals, Cobb 500 manuals, Lohmann Management Guide, AVMA, MSD Animal Health, Zoetis, CEVA, HIPRA, Boehringer Ingelheim, Elanco Learning Center, Canadian Poultry Consultant Learning Centre.
 
+### BC Provincial Marketing Board / Commission Sources (Canadian regulatory & supply-management context)
+
+These four BC supply-management bodies are authoritative for British Columbia / Canadian regulatory framework, supply management, quota, and industry-program content (most relevant to Course 17 — Regulatory Framework, and to biosecurity/industry-context sections in other courses):
+
+- **British Columbia Chicken Marketing Board (BCCMB)** — bcchicken.ca — regulates chicken production and marketing in BC; supply management, food safety, and animal welfare program oversight
+- **BC Egg Marketing Board** — bcegg.com — represents BC egg farmers; supply management, quota, governance
+- **British Columbia Broiler Hatching Egg Commission (BCBHEC)** — bcbhec.com — represents the BC broiler hatching egg sector (~14% of Canada's hatching egg supply)
+- **BC Turkey Marketing Board / BC Turkey Association ("BC Turkey")** — bcturkey.com — represents the BC turkey industry under national supply management
+
+As with all online sources, cite the specific page/document title and use `[cited YYYY Mon]` per the Cited-Date Rule. Do not cite the homepage generically; find the specific page that supports the claim. If a claim cannot be confirmed on these sites, mark `[NEEDS SOURCE]` as usual.
+
 ### Local Reference Library
 
 **WARNING — LOCAL PDFs ARE STATIC AND MAY BE OUTDATED.** The local library is the research starting point, not the publication standard. Every specific number, ratio, threshold, or protocol step extracted from a local PDF must be cross-checked against the most current online version of that source or an equivalent authoritative online source before it goes into a course. Where the online source differs from the local PDF, use the online (more recent) value, cite the online source, and note that the local PDF figure was superseded. See Step 4 above for the mandatory procedure.
