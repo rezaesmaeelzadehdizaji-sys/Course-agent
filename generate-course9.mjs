@@ -428,26 +428,26 @@ function buildSection1() {
         rows: [
           new TableRow({
             children: [
-              new TableCell({ children: [para('Scenario', { bold: true })], shading: { fill: 'D6E4F0' } }),
-              new TableCell({ children: [para('Action Taken', { bold: true })], shading: { fill: 'D6E4F0' } }),
-              new TableCell({ children: [para('Flock Performance Impact', { bold: true })], shading: { fill: 'D6E4F0' } }),
-              new TableCell({ children: [para('Economic Outcome', { bold: true })], shading: { fill: 'D6E4F0' } }),
+              new TableCell({ children: [para('Scenario', { bold: true, alignment: AlignmentType.LEFT })], shading: { fill: 'D6E4F0' } }),
+              new TableCell({ children: [para('Action Taken', { bold: true, alignment: AlignmentType.LEFT })], shading: { fill: 'D6E4F0' } }),
+              new TableCell({ children: [para('Flock Performance Impact', { bold: true, alignment: AlignmentType.LEFT })], shading: { fill: 'D6E4F0' } }),
+              new TableCell({ children: [para('Economic Outcome', { bold: true, alignment: AlignmentType.LEFT })], shading: { fill: 'D6E4F0' } }),
             ],
           }),
           new TableRow({
             children: [
-              new TableCell({ children: [para('Proactive Diagnostic Screening')] }),
-              new TableCell({ children: [para('Submit a routine serology panel and early-mortality necropsy at the first sign of a problem.')] }),
-              new TableCell({ children: [para('Identify the issue early; adjust the vaccine program or management before performance drops.')] }),
-              new TableCell({ children: [para('Testing cost is a fraction of the potential loss. Flock performance is maintained.')] }),
+              new TableCell({ children: [para('Proactive Diagnostic Screening', { alignment: AlignmentType.LEFT })] }),
+              new TableCell({ children: [para('Submit a routine serology panel and early-mortality necropsy at the first sign of a problem.', { alignment: AlignmentType.LEFT })] }),
+              new TableCell({ children: [para('Identify the issue early; adjust the vaccine program or management before performance drops.', { alignment: AlignmentType.LEFT })] }),
+              new TableCell({ children: [para('Testing cost is a fraction of the potential loss. Flock performance is maintained.', { alignment: AlignmentType.LEFT })] }),
             ],
           }),
           new TableRow({
             children: [
-              new TableCell({ children: [para('Delayed Action / Guessing')] }),
-              new TableCell({ children: [para('Wait for obvious signs; treat empirically with broad-spectrum antibiotics.')] }),
-              new TableCell({ children: [para('Mortality climbs; FCR worsens; days of poor performance cannot be recovered.')] }),
-              new TableCell({ children: [para('Loss on a commercial flock can quickly exceed the full testing cost many times over.')] }),
+              new TableCell({ children: [para('Delayed Action / Guessing', { alignment: AlignmentType.LEFT })] }),
+              new TableCell({ children: [para('Wait for obvious signs; treat empirically with broad-spectrum antibiotics.', { alignment: AlignmentType.LEFT })] }),
+              new TableCell({ children: [para('Mortality climbs; FCR worsens; days of poor performance cannot be recovered.', { alignment: AlignmentType.LEFT })] }),
+              new TableCell({ children: [para('Loss on a commercial flock can quickly exceed the full testing cost many times over.', { alignment: AlignmentType.LEFT })] }),
             ],
           }),
         ],
