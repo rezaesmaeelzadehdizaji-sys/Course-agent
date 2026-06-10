@@ -505,6 +505,9 @@ One sentence, woven into the paragraph where the topic appears. Use this format:
 | Course 5, Section 4.1 | Disease profiles affecting welfare and performance | Course 7 (Common Poultry Diseases) |
 | Course 5, Section 4.1 | Biosecurity protocols for commercial operations | Course 2 (Biosecurity) |
 | Course 5, Section 4.2 | Systematic daily barn monitoring framework (litter, air, water, temp) | Course 3 (T-FLAWS Assessment Management Tool) |
+| Course 14, Section 3.1 | Systematic T-FLAWS barn assessment framework | Course 3 (T-FLAWS Assessment Management Tool) |
+| Course 14, Section 5.4 | Full disease profiles and distinguishing clinical signs | Course 7 (Common Poultry Diseases) |
+| Course 14, Section 6.1 | Post-mortem examination technique and normal organ appearance | Course 10 (Necropsy, Normal Birds) |
 
 Update this table as new cross-references are added in future courses.
 
