@@ -55,8 +55,8 @@ All 13 citations verified individually against PubMed, CrossRef, publisher sites
 
 - **Full citation:** Dawkins MS, Donnelly CA, Jones TA. Chicken welfare is influenced more by housing conditions than by stocking density. Nature. 2004;427(6972):342-344.
 - **DOI:** 10.1038/nature02226
-- **PubMed ID:** 14737163
-- **Verified at:** doi.org/10.1038/nature02226; PubMed PMID 14737163
+- **PubMed ID:** 14737165
+- **Verified at:** doi.org/10.1038/nature02226; PubMed PMID 14737165
 - **Authors confirmed:** Dawkins MS, Donnelly CA, Jones TA — all match
 - **Title confirmed:** "Chicken welfare is influenced more by housing conditions than by stocking density" — exact match
 - **Journal:** Nature — correct
@@ -86,6 +86,7 @@ All 13 citations verified individually against PubMed, CrossRef, publisher sites
 - **Source:** nfacc.ca
 - **Verified at:** nfacc.ca/codes-of-practice/pullets-and-laying-hens
 - **Status:** CONFIRMED — document exists and is publicly available; battery cage phase-out provisions confirmed
+- **Note:** Section 3.4 (Lighting) Recommended Practice confirmed via direct PDF text extraction: "introduce and follow a regular lighting schedule that provides a minimum of 8 hours of darkness in each 24-hour period where hens are housed under artificial light"
 - **Date verified:** 2026-06-09
 
 ---
@@ -163,7 +164,7 @@ All 13 citations verified individually against PubMed, CrossRef, publisher sites
 - **Journal:** Preventive Veterinary Medicine — correct
 - **Volume/Year/Pages:** 147:199-208, 2017 — confirmed
 - **Status:** CONFIRMED — fully verified
-- **Note:** Mean DOA rate of 0.22% cited from this paper; confirmed as consistent with the paper's reported findings for Atlantic Canada broiler transport
+- **Note:** Median DOA rate of approximately 0.29% (range 0.02% to 1.89% per batch) cited from this paper's findings for Atlantic Canada broiler transport
 - **Date verified:** 2026-06-09
 
 ---

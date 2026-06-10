@@ -710,7 +710,7 @@ function buildSection2() {
       para('For a full daily monitoring framework covering temperature, feed, light, air, water, and sanitation, see Course 3 (T-FLAWS Assessment Management Tool) in this series.'),
 
       h2('2.3 Lighting for Welfare and Production'),
-      para('Light affects bird behavior, growth, reproduction, and rest. The NFACC Code requires that birds have a minimum dark period of 4 continuous hours per 24-hour cycle for broilers (6 hours for layers and breeders) to support normal rest behavior [1].'),
+      para('Light affects bird behavior, growth, reproduction, and rest. The NFACC Code requires a minimum dark period of 4 continuous hours per 24-hour cycle for broilers and broiler breeders to support normal rest behavior [1]. For layers, the NFACC Code recommends at least 8 hours of darkness per 24-hour period [7].'),
       bullet('First 7 days: minimum 20 lux, 23 hours of light per day to ensure chicks find feed and water.'),
       bullet('From week 2 onward: reduce to 6-8 lux to reduce activity and pecking behavior. Birds settle quickly in true darkness. If they are still moving around at night, something is letting light in.'),
       bullet('For layers: light programs drive sexual maturity and production. Consult your integrator or management manual for the specific program for your strain and housing system.'),
@@ -746,7 +746,7 @@ function buildSection3(gaitBuf) {
       h2('3.1 Gait and Leg Health in Broilers'),
       para('Leg problems are one of the most significant welfare issues in commercial broiler production. Broilers have been selected for rapid body weight gain, and that selection pressure creates a mismatch between muscle mass and skeletal development. The result is a measurable prevalence of leg weakness across commercial flocks.'),
       ...image(gaitBuf, 'Figure 3.1: Bristol Gait Scoring scale for broiler chickens (Kestin et al. 1992). Birds scoring GS 3 or above are in pain and require immediate attention. Source: CPC Short Courses.', 5.8),
-      para('Kestin et al. (1992) evaluated 2.7 million commercial broilers and found that 90% had detectable gait abnormalities, and 26% had abnormalities severe enough to compromise welfare [9]. Use the six-point Bristol Gait Score (GS 0-5) on a sample of birds at every barn check.'),
+      para('Kestin et al. (1992) surveyed commercial broiler flocks in the UK and found that 90% had a detectable gait abnormality, and 26% had an abnormality severe enough to compromise welfare [9]. Use the six-point Bristol Gait Score (GS 0-5) on a sample of birds at every barn check.'),
       bullet('GS 0-1: Normal to minor deviation. No welfare concern.'),
       bullet('GS 2: Obvious gait abnormality. Walking is still functional. Monitor and investigate cause.'),
       bullet('GS 3: Clear defect, function impaired. These birds are in pain. Action is required.'),
@@ -761,7 +761,7 @@ function buildSection3(gaitBuf) {
       para('The main driver is litter moisture. Keep litter at 20-25% moisture. In cold Canadian winters, ventilation tends to drop to conserve heat, and that is when litter gets wet and FPD rates climb. Do not sacrifice air quality to save heating costs.'),
 
       h2('3.3 Hock Burns'),
-      para('Hock burns are contact lesions on the skin of the hock joint, scored 0-4 under the same scale used for FPD [8]. Like FPD, they reflect how much time birds are spending in contact with wet litter. Prevalence in commercial broiler flocks ranges from 35-88% depending on litter conditions, season, and bird age. High hock burn rates are a red flag for the same litter and ventilation problems that drive FPD.'),
+      para('Hock burns are contact lesions on the skin of the hock joint, scored 0-4 under the same scale used for FPD [8]. Like FPD, they reflect how much time birds are spending in contact with wet litter, and rates can swing widely between flocks depending on litter conditions, season, and bird age. High hock burn rates are a red flag for the same litter and ventilation problems that drive FPD.'),
       para('Both FPD and hock burns can be scored at slaughter as part of your standard welfare audit. If you are getting feedback from the plant on high lesion scores, check your litter moisture and ventilation management first.'),
 
       h2('3.4 Keel Bone Condition in Laying Hens'),
@@ -885,7 +885,7 @@ function buildSection5() {
       bullet('Broilers (week 1): minimum 20 lux, 23 hours of light. This ensures chicks find feed and water.'),
       bullet('Broilers (week 2 onward): step down to 6-8 lux and introduce 4-6 hours of continuous darkness.'),
       bullet('Layers and breeders: consult your integrator\'s lighting program. Increasing day length stimulates sexual maturity and production; abrupt changes cause stress.'),
-      bullet('Minimum continuous dark period: 4 hours for broilers; 6 hours for layers and breeders [1].'),
+      bullet('Minimum continuous dark period: 4 hours for broilers and broiler breeders [1]. For layers, NFACC recommends at least 8 hours of darkness per 24-hour period [7].'),
       para('Uniform light distribution is as important as intensity. Hot spots with high intensity over feeders or drinkers can drive pecking at those locations. Walk the barn with a light meter and check that intensity is consistent across the floor.'),
     ],
   };
@@ -921,7 +921,7 @@ function buildSection6() {
       bullet('Complete catching in under 2-3 hours where possible. Extended catching time increases heat stress, especially in older birds.'),
 
       h2('6.3 From Farm to Plant: Reducing Pre-Slaughter Stress'),
-      para('Once birds leave your farm, a different set of welfare risks applies: trailer microclimate, journey duration, and lairage conditions. Caffrey et al. (2017) found that journey duration, bird age, catching team, and holding barn duration all independently affected dead-on-arrival (DOA) rates in broiler transport in Atlantic Canada [13]. The mean DOA rate for broilers transported to federally inspected plants in Canada is approximately 0.22%.'),
+      para('Once birds leave your farm, a different set of welfare risks applies: trailer microclimate, journey duration, and lairage conditions. Caffrey et al. (2017) found that journey duration, bird age, catching team, and holding barn duration all independently affected dead-on-arrival (DOA) rates in broiler transport in Atlantic Canada [13]. The median DOA rate in that study was approximately 0.29%, but individual loads ranged from near zero to almost 2% depending on these factors.'),
       para('Your influence over transport welfare is limited once the truck leaves, but you can control several key factors:'),
       bullet('Withdraw feed at the right time before catching. Too early causes feed restriction stress; too late causes crop content that affects processing. Follow your integrator\'s withdrawal schedule.'),
       bullet('Communicate with the catching crew supervisor about any bird health concerns in the flock. Compromised birds have higher transport mortality risk.'),
