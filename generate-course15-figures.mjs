@@ -88,8 +88,9 @@ function fig15_1() {
   ${DEFS(C.gray, 'gr')}
 
   <!-- Top box: Bird exposed to a germ -->
-  ${box(280, 64, 240, 46, C.darkBlue, C.gold, 'Bird Meets a Germ', '', 8, 13)}
-  <text x="400" y="103" text-anchor="middle" fill="${C.lightBlue}" font-family="Arial, sans-serif" font-size="10">(bacteria, virus, or vaccine strain)</text>
+  <rect x="280" y="64" width="240" height="46" rx="8" fill="${C.darkBlue}" stroke="${C.gold}" stroke-width="1.5"/>
+  <text x="400" y="86" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="13" font-weight="bold">Bird Meets a Germ</text>
+  <text x="400" y="102" text-anchor="middle" fill="${C.lightBlue}" font-family="Arial, sans-serif" font-size="10">(bacteria, virus, or vaccine strain)</text>
 
   ${dArrow(370, 110, 230, 150, C.gray, 'gr')}
   ${dArrow(430, 110, 570, 150, C.gray, 'gr')}
@@ -112,14 +113,21 @@ function fig15_1() {
   <text x="580" y="182" text-anchor="middle" fill="${C.medBlue}" font-family="Arial, sans-serif" font-size="14" font-weight="bold">Acquired Immunity</text>
   <text x="580" y="200" text-anchor="middle" fill="${C.gray}" font-family="Arial, sans-serif" font-size="11">Builds up after exposure. Targets one germ.</text>
 
-  ${box(430, 215, 300, 50, C.white, C.medBlue, 'Active immunity', 'The bird builds its own antibodies after infection or vaccination', 6, 12)}
-  ${box(430, 273, 300, 50, C.white, C.medBlue, 'Passive immunity', 'Maternal antibodies pass from hen to chick through the egg yolk', 6, 12)}
+  <rect x="430" y="212" width="300" height="56" rx="6" fill="${C.white}" stroke="${C.medBlue}" stroke-width="1.5"/>
+  <text x="580" y="232" text-anchor="middle" fill="${C.gray}" font-family="Arial, sans-serif" font-size="12" font-weight="bold">Active immunity</text>
+  <text x="580" y="248" text-anchor="middle" fill="${C.gray}" font-family="Arial, sans-serif" font-size="11">The bird builds its own antibodies</text>
+  <text x="580" y="262" text-anchor="middle" fill="${C.gray}" font-family="Arial, sans-serif" font-size="11">after infection or vaccination</text>
 
-  <rect x="430" y="335" width="300" height="95" rx="6" fill="${C.white}" stroke="${C.medBlue}" stroke-dasharray="4,3"/>
-  <text x="580" y="357" text-anchor="middle" fill="${C.gray}" font-family="Arial, sans-serif" font-size="11" font-weight="bold">Slower to start, but specific and</text>
-  <text x="580" y="373" text-anchor="middle" fill="${C.gray}" font-family="Arial, sans-serif" font-size="11" font-weight="bold">leaves a "memory"</text>
-  <text x="580" y="394" text-anchor="middle" fill="${C.gray}" font-family="Arial, sans-serif" font-size="10">Antibody levels in the blood (titers)</text>
-  <text x="580" y="410" text-anchor="middle" fill="${C.gray}" font-family="Arial, sans-serif" font-size="10">are part of this system. This is what serology measures.</text>
+  <rect x="430" y="276" width="300" height="56" rx="6" fill="${C.white}" stroke="${C.medBlue}" stroke-width="1.5"/>
+  <text x="580" y="296" text-anchor="middle" fill="${C.gray}" font-family="Arial, sans-serif" font-size="12" font-weight="bold">Passive immunity</text>
+  <text x="580" y="312" text-anchor="middle" fill="${C.gray}" font-family="Arial, sans-serif" font-size="11">Maternal antibodies pass from hen to</text>
+  <text x="580" y="326" text-anchor="middle" fill="${C.gray}" font-family="Arial, sans-serif" font-size="11">chick through the egg yolk</text>
+
+  <rect x="430" y="340" width="300" height="92" rx="6" fill="${C.white}" stroke="${C.medBlue}" stroke-dasharray="4,3"/>
+  <text x="580" y="362" text-anchor="middle" fill="${C.gray}" font-family="Arial, sans-serif" font-size="11" font-weight="bold">Slower to start, but specific and</text>
+  <text x="580" y="378" text-anchor="middle" fill="${C.gray}" font-family="Arial, sans-serif" font-size="11" font-weight="bold">leaves a "memory"</text>
+  <text x="580" y="399" text-anchor="middle" fill="${C.gray}" font-family="Arial, sans-serif" font-size="10">Antibody levels in the blood (titers) are</text>
+  <text x="580" y="414" text-anchor="middle" fill="${C.gray}" font-family="Arial, sans-serif" font-size="10">part of this. This is what serology measures.</text>
 
   ${caption(W, H, 'Figure 1.1  |  Innate immunity reacts to everything the same way; acquired immunity learns and remembers')}
 </svg>`;
@@ -164,7 +172,7 @@ function fig15_2() {
   <!-- Axes -->
   <line x1="${x0}" y1="${y0}" x2="${x0 + xAxisLen}" y2="${y0}" stroke="${C.gray}" stroke-width="2" marker-end="url(#axisArr)"/>
   <line x1="${x0}" y1="${y0}" x2="${x0}" y2="${y0 - yAxisLen}" stroke="${C.gray}" stroke-width="2" marker-end="url(#axisArr)"/>
-  <text x="${x0 + xAxisLen / 2}" y="${y0 + 36}" text-anchor="middle" fill="${C.gray}" font-family="Arial, sans-serif" font-size="13" font-weight="bold">Time (days to weeks)</text>
+  <text x="${x0 + xAxisLen / 2}" y="${y0 + 60}" text-anchor="middle" fill="${C.gray}" font-family="Arial, sans-serif" font-size="13" font-weight="bold">Time (days to weeks)</text>
   <text x="30" y="${y0 - yAxisLen / 2}" text-anchor="middle" fill="${C.gray}" font-family="Arial, sans-serif" font-size="13" font-weight="bold" transform="rotate(-90 30 ${y0 - yAxisLen / 2})">Antibody Level (Titer)</text>
 
   <!-- Exposure markers -->
@@ -193,10 +201,6 @@ function fig15_2() {
   <text x="${x0 + 565}" y="${y0 - 278}" text-anchor="middle" fill="${C.green}" font-family="Arial, sans-serif" font-size="11" font-weight="bold">Secondary response</text>
   <text x="${x0 + 565}" y="${y0 - 263}" text-anchor="middle" fill="${C.gray}" font-family="Arial, sans-serif" font-size="10">Fast, much higher peak</text>
 
-  <!-- Bottom note -->
-  <rect x="80" y="430" width="660" height="34" rx="6" fill="${C.lightGold}" stroke="${C.gold}"/>
-  <text x="410" y="452" text-anchor="middle" fill="${C.darkBlue}" font-family="Arial, sans-serif" font-size="11" font-weight="bold">This is why a 2-dose live vaccination program builds stronger, longer-lasting titers than a single dose</text>
-
   ${caption(W, H, 'Figure 1.2  |  Memory cells from the first exposure drive a faster, bigger response the second time')}
 </svg>`;
 }
@@ -205,7 +209,7 @@ function fig15_2() {
 // FIGURE 15.3 — Reading an AGID Test Pattern
 // ============================================================
 function fig15_3() {
-  const W = 800, H = 460;
+  const W = 800, H = 480;
 
   function agidPlate(cx, cy, label, labelColor, wells) {
     // wells: array of 6 {angle, fill, lineToCenter: bool, lineCurve: 'in'|'out'|'straight'}
@@ -275,7 +279,7 @@ function fig15_3() {
   ${agidPlate(200, 250, 'NEGATIVE: lines stay separate', C.gray, negWells)}
   ${agidPlate(600, 250, 'POSITIVE: lines fuse together', C.green, posWells)}
 
-  <text x="600" y="430" text-anchor="middle" fill="${C.gray}" font-family="Arial, sans-serif" font-size="11">A "line of identity" forms where the bird's antibodies meet the antigen,</text>
+  <text x="400" y="430" text-anchor="middle" fill="${C.gray}" font-family="Arial, sans-serif" font-size="11">A "line of identity", where the bird's antibodies meet the antigen, is a positive result.</text>
 
   ${caption(W, H, 'Figure 2.1  |  In a positive sample, the test-well line joins (fuses with) the control line; in a negative sample it does not')}
 </svg>`;
@@ -300,7 +304,7 @@ function fig15_4() {
     const stroke = i < 4 ? C.red : (i < 7 ? C.amber : C.green);
     bars += `<rect x="${x}" y="${barY}" width="56" height="${barH}" fill="${shade}" stroke="${stroke}" stroke-width="1.5"/>`;
     bars += `<text x="${x + 28}" y="${barY + 23}" text-anchor="middle" fill="${C.gray}" font-family="Arial, sans-serif" font-size="11" font-weight="bold">${d}</text>`;
-    bars += `<text x="${x + 28}" y="${barY + 60}" text-anchor="middle" fill="${C.darkBlue}" font-family="Arial, sans-serif" font-size="12" font-weight="bold">${groups[i]}</text>`;
+    bars += `<text x="${x + 28}" y="${barY + 70}" text-anchor="middle" fill="${C.darkBlue}" font-family="Arial, sans-serif" font-size="12" font-weight="bold">${groups[i]}</text>`;
   });
 
   return `<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}">
@@ -313,7 +317,7 @@ function fig15_4() {
 
   <text x="${startX - 10}" y="${barY - 14}" text-anchor="start" fill="${C.gray}" font-family="Arial, sans-serif" font-size="11" font-weight="bold">Reciprocal serum dilution showing a positive reaction:</text>
   ${bars}
-  <text x="${startX - 10}" y="${barY + 60}" text-anchor="start" fill="${C.darkBlue}" font-family="Arial, sans-serif" font-size="11" font-weight="bold">Titer group (log2):</text>
+  <text x="${startX - 10}" y="${barY + 50}" text-anchor="start" fill="${C.darkBlue}" font-family="Arial, sans-serif" font-size="11" font-weight="bold">Titer group (log2):</text>
 
   ${dArrow(startX, barY + 80, endX, barY + 80, C.gray, 'titerArr')}
   <text x="${startX + 60}" y="${barY + 100}" text-anchor="middle" fill="${C.red}" font-family="Arial, sans-serif" font-size="11" font-weight="bold">Low / negative</text>
@@ -342,15 +346,15 @@ function fig15_5() {
   let histEx = '';
   exHeights.forEach((h, idx) => {
     const x = 55 + idx * 32;
-    const y = 270 - h * 4;
-    histEx += `<rect x="${x}" y="${y}" width="26" height="${h*4}" fill="${C.green}" stroke="${C.darkBlue}" stroke-width="0.5"/>`;
+    const y = 270 - h * 2.7;
+    histEx += `<rect x="${x}" y="${y}" width="26" height="${h*2.7}" fill="${C.green}" stroke="${C.darkBlue}" stroke-width="0.5"/>`;
   });
 
   let histNi = '';
   niHeights.forEach((h, idx) => {
     const x = 455 + idx * 32;
-    const y = 270 - h * 4;
-    histNi += `<rect x="${x}" y="${y}" width="26" height="${h*4}" fill="${C.red}" stroke="${C.darkBlue}" stroke-width="0.5"/>`;
+    const y = 270 - h * 2.7;
+    histNi += `<rect x="${x}" y="${y}" width="26" height="${h*2.7}" fill="${C.red}" stroke="${C.darkBlue}" stroke-width="0.5"/>`;
   });
 
   return `<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}">
@@ -392,7 +396,7 @@ function fig15_5() {
 // FIGURE 15.6 — Locating the Brachial (Wing) Vein for Blood Collection
 // ============================================================
 function fig15_6() {
-  const W = 800, H = 460;
+  const W = 800, H = 490;
 
   return `<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}">
   <rect width="${W}" height="${H}" fill="white"/>
@@ -400,7 +404,7 @@ function fig15_6() {
   ${DEFS(C.gray, 'wingArr')}
   ${DEFS(C.red, 'veinArr')}
 
-  <text x="${W/2}" y="80" text-anchor="middle" fill="${C.gray}" font-family="Arial, sans-serif" font-size="12">Underside of an extended wing, feathers parted over the elbow joint</text>
+  <text x="40" y="95" text-anchor="start" fill="${C.gray}" font-family="Arial, sans-serif" font-size="12">Underside of an extended wing, feathers parted at the elbow.</text>
 
   <!-- Wing outline (extended wing, underside view) -->
   <path d="M 110 180 L 690 230 L 660 290 L 620 320 L 540 340 L 420 350 L 300 345 L 190 320 L 120 270 Z"
@@ -412,8 +416,8 @@ function fig15_6() {
 
   <!-- Elbow marker -->
   <circle cx="430" cy="290" r="8" fill="${C.medBlue}"/>
-  <text x="430" y="395" text-anchor="middle" fill="${C.darkBlue}" font-family="Arial, sans-serif" font-size="12" font-weight="bold">Elbow joint</text>
-  ${dArrow(430, 380, 430, 300, C.darkBlue, 'wingArr')}
+  <text x="430" y="380" text-anchor="middle" fill="${C.darkBlue}" font-family="Arial, sans-serif" font-size="12" font-weight="bold">Elbow joint</text>
+  ${dArrow(430, 368, 430, 300, C.darkBlue, 'wingArr')}
 
   <!-- Wingtip label -->
   <text x="650" y="200" text-anchor="middle" fill="${C.darkBlue}" font-family="Arial, sans-serif" font-size="12" font-weight="bold">Toward wingtip</text>
@@ -421,7 +425,7 @@ function fig15_6() {
 
   <!-- Brachial vein line (between shoulder and elbow) -->
   <path d="M 145 222 Q 290 248 425 285" fill="none" stroke="${C.red}" stroke-width="3.5"/>
-  <text x="290" y="245" text-anchor="middle" fill="${C.red}" font-family="Arial, sans-serif" font-size="13" font-weight="bold">Brachial (wing) vein</text>
+  <text x="330" y="275" text-anchor="middle" fill="${C.red}" font-family="Arial, sans-serif" font-size="13" font-weight="bold">Brachial (wing) vein</text>
 
   <!-- Needle, inserted mid-way, shallow angle, bevel up, toward wingtip -->
   <g>
@@ -441,9 +445,9 @@ function fig15_6() {
   <text x="455" y="172" fill="${C.gray}" font-family="Arial, sans-serif" font-size="11">  4 weeks and older [6]</text>
 
   <!-- Bottom note -->
-  <rect x="60" y="395" width="680" height="45" rx="6" fill="${C.lightGold}" stroke="${C.gold}"/>
-  <text x="400" y="415" text-anchor="middle" fill="${C.darkBlue}" font-family="Arial, sans-serif" font-size="11" font-weight="bold">Go in under the skin first, then into the vein. Pull back gently. A hard pull collapses</text>
-  <text x="400" y="432" text-anchor="middle" fill="${C.darkBlue}" font-family="Arial, sans-serif" font-size="11" font-weight="bold">the vein and stops the flow before you have enough blood [6]</text>
+  <rect x="60" y="408" width="680" height="42" rx="6" fill="${C.lightGold}" stroke="${C.gold}"/>
+  <text x="400" y="428" text-anchor="middle" fill="${C.darkBlue}" font-family="Arial, sans-serif" font-size="11" font-weight="bold">Go in under the skin first, then into the vein. Pull back gently. A hard pull collapses</text>
+  <text x="400" y="444" text-anchor="middle" fill="${C.darkBlue}" font-family="Arial, sans-serif" font-size="11" font-weight="bold">the vein and stops the flow before you have enough blood [6]</text>
 
   ${caption(W, H, 'Figure 4.1  |  Brachial vein location and needle angle for a wing-vein blood draw')}
 </svg>`;
