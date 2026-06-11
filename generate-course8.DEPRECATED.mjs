@@ -31,6 +31,33 @@ import fs from 'fs';
 import path from 'path';
 import { fileURLToPath } from 'url';
 
+// ============================================================
+// DEPRECATED — DO NOT RUN.
+// This generator is STALE. It builds an OLD 6-section structure
+// (water / wing web / eye drop / coarse spray / in-ovo / injection,
+// in that order). The live course is an 8-section document
+// (adds Spray reorder + Fine Spray 2.9, Post-Vaccination Reactions
+// Section 7, and Principles of Treatment incl. AMR Section 8) and is
+// maintained by DIRECT XML PATCHING of the .docx, not by this script.
+// Running this would OVERWRITE the current course with an old version
+// and silently drop Sections 7 & 8 and many edits.
+//
+// Source of truth:  Course 8/Vaccination_draft.docx
+// How it is edited: jszip patch scripts (see patch-course8-*.cjs,
+//                   renumber-course8.cjs, toc-refresh-course8.cjs)
+// Full explanation: Course 8/README_SOURCE_OF_TRUTH.md
+//
+// If you genuinely need to run the old generator, set
+//   ALLOW_STALE_REGEN=1  in the environment to override this guard.
+// ============================================================
+if (!process.env.ALLOW_STALE_REGEN) {
+  console.error('[generate-course8] DEPRECATED and stale — refusing to run.');
+  console.error('  Source of truth: Course 8/Vaccination_draft.docx (patched directly).');
+  console.error('  See Course 8/README_SOURCE_OF_TRUTH.md.');
+  console.error('  Override with ALLOW_STALE_REGEN=1 only if you know what you are doing.');
+  process.exit(1);
+}
+
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const OUT_DIR   = path.join(__dirname, 'Course 8');
 const OUT_FILE  = process.env.OUT_FILE || path.join(OUT_DIR, 'Vaccination_draft.docx');
@@ -890,13 +917,11 @@ function buildContentSection() {
   c.push(h2('2.6  Biosecurity, Safety, and Post-Vaccination Hygiene'));
 
   c.push(para(
-    'Wing web vaccines are live bird-adapted viruses. The risk to humans is low, but standard PPE protects both the operator and the birds.'
+    'Wing web vaccines are live bird-adapted viruses. The risk to humans is low. Standard PPE requirements, including gloves, eye protection, vial disposal, and hand washing, are the same as described in Section 1.7. The wing web method has two additional safety points specific to the applicator.'
   ));
 
-  c.push(bullet('Wear disposable gloves throughout the session.'));
   c.push(bullet('If working with NDV-containing wing web products (less common in this route), add safety glasses.'));
   c.push(bullet('The CPC Learning Centre Inactivated Vaccine Administration guide specifies changing the needle at no more than every 1,000 birds [4]. For the wing web applicator, inspect the needles regularly for bending or dulling. A dull or bent needle produces an unclean puncture and increases reaction rates.'));
-  c.push(bullet('Burn all empty vaccine vials after the session [1]. Do not discard open vials in accessible waste bins.'));
   c.push(bullet('After the session, disinfect the applicator with 70% isopropyl alcohol, rinse well with clean water, and store in a clean, dry place [3].'));
   c.push(bullet('If you are using one applicator for more than one vaccine type in the same day, sterilize completely between products. Contamination between vials compromises both vaccines.'));
 
@@ -1042,13 +1067,10 @@ function buildContentSection() {
   c.push(h2('3.6  Biosecurity, PPE, and Safety'));
 
   c.push(para(
-    'Eye drop vaccines for ILT and NDV contain live, replication-competent virus. The risk to humans is real but manageable with correct PPE. The CPC Learning Centre Water Vaccination guide notes that Newcastle Disease virus contact can cause conjunctivitis in humans [1]. This applies equally to NDV eye drop vaccines.'
+    'Standard PPE requirements for live NDV and ILT vaccines, including gloves, eye protection, flushing protocol, hand washing, and vial disposal, are the same as described in Section 1.7. Eye drop vaccination has one additional disposal step because used droppers are also biohazardous waste.'
   ));
 
   c.push(bullet('Wear safety glasses or a face shield throughout the vaccination session when using NDV or ILT vaccines.'));
-  c.push(bullet('Wear disposable gloves. Replace gloves if they become visibly soiled.'));
-  c.push(bullet('If vaccine contacts your eyes, flush immediately with copious clean water for 15 minutes and consult a physician.'));
-  c.push(bullet('Wash hands and forearms thoroughly after each session.'));
   c.push(bullet('Burn all empty vaccine vials and discard single-use droppers in a sealed bag before burning [1].'));
   c.push(bullet('Do not eat, drink, or touch your face during a vaccination session.'));
 
@@ -1092,7 +1114,7 @@ function buildContentSection() {
   c.push(h2('4.1  How Coarse Spray Vaccination Works'));
 
   c.push(para(
-    'Coarse spray vaccines target the upper respiratory mucosa. The large droplets a properly calibrated sprayer produces at 4.5-5.0 Bar settle on the conjunctiva and nares rather than going deep into the lungs. That matters because the mucosal immune tissue in the upper airways is where protection against diseases like Newcastle Disease and Infectious Bronchitis needs to start. Fine mist particles from a worn nozzle or wrong pressure travel past that immune tissue and into the deep lung, missing the site where the protection needs to build. [6,13]'
+    'Coarse spray vaccines target the upper respiratory mucosa. The large droplets a properly calibrated sprayer produces at 4.5-5.0 Bar settle on the conjunctiva and nares rather than going deep into the lungs. That matters because the mucosal immune tissue in the upper airways is where protection against diseases like Newcastle Disease and Infectious Bronchitis needs to start. Fine mist particles from a worn nozzle or wrong pressure travel past that immune tissue and into the deep lung, missing the site where the protection needs to build and increasing the risk of respiratory reaction rather than protection [1,14,15].'
   ));
 
   c.push(para(
@@ -1109,7 +1131,7 @@ function buildContentSection() {
   c.push(h2('4.2  Target Diseases and When to Use Spray'));
 
   c.push(para(
-    'Coarse spray is well suited to live respiratory vaccines. The main targets in Canadian commercial broiler programs are Newcastle Disease virus (NDV) and Infectious Bronchitis virus (IBV). Some operations also use coarse spray for initial priming doses against Infectious Laryngotracheitis (ILT), though eye drop is often preferred for ILT due to more precise individual dosing. [2,8,9]'
+    'Coarse spray is well suited to live respiratory vaccines. The main targets in Canadian commercial broiler programs are Newcastle Disease virus (NDV), Infectious Bronchitis virus (IBV), and coccidiosis [13]. Some operations also use coarse spray for initial priming doses against Infectious Laryngotracheitis (ILT), though eye drop is often preferred for ILT due to more precise individual dosing. [2,8,9]'
   ));
 
   c.push(labeled('Choose coarse spray when:', ''));
@@ -1126,7 +1148,7 @@ function buildContentSection() {
   c.push(h2('4.3  Equipment and Spray Settings'));
 
   c.push(para(
-    'The CPC Learning Centre Coarse Spray Vaccination Technical Bulletin specifies the use of a Hardi sprayer for this procedure [6]. That sprayer must be kept exclusively for vaccination. It must never be used for pesticides, herbicides, or disinfectants. Residue contamination of any of those chemicals, even in trace amounts, will damage or destroy the live vaccine.'
+    'Use a clean, well-calibrated sprayer for this job [14]. It needs to be set up to give you a coarse droplet at the right pressure, so the spray lands on the birds\' eyes and nostrils instead of drifting everywhere. Keep this sprayer for vaccines only. Do not ever use it for herbicides, pesticides, or disinfectants, because even a tiny bit of chemical residue can kill the live vaccine and leave your birds unprotected.'
   ));
 
   c.push(labeled('Before vaccination day:', ''));
@@ -1260,13 +1282,11 @@ function buildContentSection() {
   c.push(h2('4.7  Biosecurity, PPE, and Safety'));
 
   c.push(para(
-    'Spray vaccination using live Newcastle Disease virus creates a real occupational exposure risk. The CPC Learning Centre Coarse Spray Vaccination Technical Bulletin states clearly: wear gloves, a mask, and safety glasses during preparation and vaccine administration to avoid eye infection (conjunctivitis) following Newcastle virus contact [6]. This is not a formality. Newcastle Disease virus can cause conjunctivitis and mild flu-like symptoms in exposed humans.'
+    'Standard PPE for live NDV vaccination, including gloves, eye protection, vial disposal, and hand washing, is covered in Section 1.7. Coarse spray adds one requirement that does not apply to the other methods.'
   ));
 
-  c.push(labeled('PPE requirements [6]:', ''));
-  c.push(bullet([{ text: 'Gloves during preparation and throughout the spray run.' }]));
-  c.push(bullet([{ text: 'Mask to prevent inhalation of the vaccine cloud.' }]));
-  c.push(bullet([{ text: 'Safety glasses or a face shield. The spray cloud is concentrated in the barn and contact with the eyes is likely without eye protection.' }]));
+  c.push(labeled('Additional PPE for spray [6]:', ''));
+  c.push(bullet([{ text: 'Mask to prevent inhalation of the vaccine cloud. You walk through the spray during the run, and the cloud is concentrated inside the barn. This is the one PPE step unique to spray vaccination.' }]));
 
   c.push(labeled('After vaccination [6]:', ''));
   c.push(bullet([{ text: 'Rinse the Hardi sprayer thoroughly with distilled water immediately after use.' }]));
@@ -1436,8 +1456,8 @@ function buildContentSection() {
   c.push(h2('6.5  Biosecurity, PPE, and Record Keeping'));
 
   c.push(labeled('PPE during injection vaccination:', ''));
-  c.push(bullet([{ text: 'Gloves throughout the session. Change if torn or heavily soiled.' }]));
-  c.push(bullet([{ text: 'Safety glasses or face shield. Accidental needle stick or spray from the injector tip can direct vaccine toward the operator\'s eyes. [4]' }]));
+  c.push(bullet([{ text: 'Standard PPE requirements, including gloves and vial disposal, are the same as described in Section 1.7.' }]));
+  c.push(bullet([{ text: 'Safety glasses or face shield. Accidental needle stick or spray from the injector tip can direct vaccine toward the operator\'s eyes, which is a different risk from NDV exposure. [4]' }]));
   c.push(bullet([{ text: 'Change needles regularly. A dull needle causes more tissue trauma and increases post-injection reaction rates. [4]' }]));
 
   c.push(labeled('Needle stick first aid:', ' If you stick yourself with a needle used on poultry, wash the wound thoroughly with soap and water for at least 15 minutes, report the incident, and contact a physician. Needle stick injury with a killed vaccine product is generally low risk but requires documentation. [4]'));
