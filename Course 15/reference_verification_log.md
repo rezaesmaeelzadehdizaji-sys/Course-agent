@@ -78,4 +78,17 @@ Citation first-appearance order confirmed sequential 1 → 7 in document XML (no
 | 6 | Hy-Line International | Company technical | Verified (read in full) |
 | 7 | BioChek | Lab manual | Verified (read in full) |
 
-All 7 references verified. The five local-library sources ([1], [3], [4], [6], [7]) were verified by full read of the source this session. The live online source [2] and the peer-reviewed article [5] were verified online on 2026-06-10: [2] by direct page fetch (title/author/dates confirmed), [5] against CrossRef and PubMed (PMID 23820164 — all 7 authors, title, journal, volume/issue/year, and 291-297 page range confirmed against one physical source).
+All 7 references verified. The five local-library sources ([1], [3], [4], [6], [7]) were verified by full read of the source this session. The live online source [2] and the peer-reviewed article [5] were verified online on 2026-06-10: [2] by direct page fetch (title/author/dates confirmed), [5] against CrossRef and PubMed (PMID 23820164: all 7 authors, title, journal, volume/issue/year, and 291-297 page range confirmed against one physical source).
+
+---
+
+## 2026-06-11 Addendum — Sentence-level body verification pass
+
+A full sentence-by-sentence verification of the entire course body (`generate-course15.mjs`) was completed against all 7 sources above. Findings:
+
+- **Citation completeness confirmed:** All 7 reference numbers [1] through [7] appear in-text, in sequential first-appearance order (1,2,3,4,5,6,7). No orphan references and no uncited claims requiring a new reference.
+- **Citation usage counts:** [1] x17 (+2 paired with [2] or [3]), [2] x2 (always with [1]), [3] x4 (+2 paired with [1] or [7]), [4] x1, [5] x2, [6] x24, [7] x3 (+1 paired with [3]).
+- **Fix applied (Section 2.2, ELISA):** The sentence "That is why ELISA is the default test for routine flock monitoring of Newcastle disease, infectious bronchitis, infectious bursal disease, and avian reovirus [3]" was corrected to remove "Newcastle disease." Source [3] (Zavala/IDEXX) lists IBV, IBDV, and avian reovirus as the ELISA monitoring trend diseases but does not list NDV for this purpose. NDV serology is covered separately via HI in Section 2.4, citing [5]. Verified post-fix: old phrase no longer present, corrected phrase confirmed present in the regenerated docx.
+- **Minor note (Section 3.1):** The example "a flock with a mean titer of 2,000 against avian reovirus [1,3]" uses a figure that, in source [3] (IDEXX Ten Principles), is actually given as an example for IBV (1,200 is the REO example in [3]). However, "2,000" is independently grounded in source [1] (Bowes, CPC Learning Centre), whose titre-group table lists "2000-2999" as a real Reovirus titre-group boundary. Since the sentence cites [1,3] together and [1] supports the figure, no change was made. Flagged here for transparency.
+- **Photo 5.1 attribution (Wikimedia Commons / Uwe Gille):** Could not be independently re-confirmed via web search this session. The image content itself (3 blood tubes: EDTA K red cap, Li-Heparin orange cap, Serum white cap with clear pale serum over a clotted layer) visually matches the caption's factual description. Open item, not blocking.
+- **Document integrity checks (regenerated docx):** w:dirty count = 0, em dash count = 0, en dash count = 5 (all in numeric ranges, e.g. titer scale), bookmarkStart = hyperlink = 23 (TOC links intact), British-spelling sweep returned only false positives ("raised," "rising": correct in both US/UK; "Centre" x9: correct as part of the proper noun "CPC Learning Centre" / "Animal Health Centre," per CLAUDE.md and not to be changed to "Center").

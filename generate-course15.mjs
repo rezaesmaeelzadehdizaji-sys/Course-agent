@@ -380,7 +380,7 @@ function buildBodySection() {
 
     para('ELISA stands for enzyme-linked immunosorbent assay, and it is the workhorse test for poultry serology. A test plate is coated with the antigen for the disease being tested. When diluted serum is added, any matching antibodies in the sample latch onto that antigen. A reagent is added that turns shades of blue depending on how much antibody is bound, and a plate reader converts that color into a titer number for every well [1].'),
 
-    para('The biggest advantage of ELISA is speed. The test is fully automated, and a single lab can run hundreds, even thousands, of serum samples in a day. That is why ELISA is the default test for routine flock monitoring of Newcastle disease, infectious bronchitis, infectious bursal disease, and avian reovirus [3].'),
+    para('The biggest advantage of ELISA is speed. The test is fully automated, and a single lab can run hundreds, even thousands, of serum samples in a day. That is why ELISA is the default test for routine flock monitoring of infectious bronchitis, infectious bursal disease, and avian reovirus [3].'),
 
     para('ELISA does have one real limitation worth remembering: it tells you how much antibody is there, but not which strain triggered it. If your flock\'s infectious bronchitis titers come back higher than expected, ELISA cannot tell you which strain of the virus is behind it, only that the birds have responded to something [3].'),
 
