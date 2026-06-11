@@ -527,7 +527,7 @@ function buildSection1() {
       ...embedPhoto(imgFile('Commercial broiler flock.jpg'), 'Photo 1.1: A flock of healthy commercial broiler chickens showing alert posture and good body condition. Flock-level observation is the first step in daily health monitoring. Source: CPC Short Courses.'),
 
       h2('1.2  Meat Birds, Layers, and Breeders: Built for Different Jobs'),
-      para('All three production types are the same species, Gallus gallus domesticus, but decades of selection have pushed them in fundamentally different directions.'),
+      para('All three production types are the same species, Gallus gallus domesticus, but decades of selective breeding have pushed them in fundamentally different directions.'),
       para('A commercial broiler is a feed-conversion machine. Its pectoralis major (breast) muscle grows faster and reaches a greater proportion of body weight than any other production animal. Heritage birds from the 1950s carried breast muscle at roughly 9% of body weight; modern genetics have pushed that to 21 to 29%, composed almost entirely of fast-twitch white muscle fibers [12,22]. That extraordinary growth rate comes at a cost: the cardiovascular system struggles to keep pace, which creates predictable health problems in weeks four and five.'),
       para('A commercial layer lives for a year or more, cycling an egg nearly every day. Her body is built for sustained activity and reproduction, not rapid muscle growth. She has a lighter frame, stronger legs, and a skeleton that carries a special calcium reserve (medullary bone), drawn down every night to build each eggshell [13,14].'),
       para('A broiler breeder carries significant muscle mass from broiler genetics but must also keep producing fertile eggs across a 40-week production cycle. This requires careful feed restriction throughout the rearing period to prevent the bird from getting too heavy to lay or mate effectively. Getting the breeder to target body weight and holding her there is one of the most demanding management challenges in commercial production [23].'),
@@ -596,6 +596,8 @@ function buildSection3() {
       labeled('Ceca:', 'Two blind pouches at the junction of the small and large intestine. The ceca ferment undigested material and produce short-chain fatty acids and B vitamins. They also reabsorb water and support immune function. Cecal output, the dark, pasty, slightly pungent dropping produced once or twice a day, is completely normal and should not be mistaken for diarrhea [1].'),
       labeled('Cloaca:', 'The shared exit point for the gut, kidneys, and reproductive tract. Feces, urine, and eggs all pass through the cloaca. Because of this shared exit, egg contamination can occur when hens have enteric disease, which is one reason Salmonella control requires managing gut health as well as external hygiene.'),
 
+      ...embedPng(imgFile('figure_3_2_lower_digestive.png'), 'Figure 3.2: The lower (back half) of the digestive tract, from the gizzard outlet to the vent. The small intestine absorbs nutrients, the two ceca ferment fiber and reclaim water, and everything exits through the cloaca. The white cap on a normal dropping is urine from the kidneys; the darker portion is feces from the gut. Source: CPC Short Courses.'),
+
       ...embedPhoto(imgFile('photo_3_1_gizzard.jpg'), 'Photo 3.2: A chicken gizzard opened to show the thick muscular walls and tough koilin lining. The koilin layer (pale yellow) protects the muscle from the grinding action. Grit particles retained in the chamber work against the ridged lining to break down feed. Source: Wikimedia Commons / Bjferstern, CC BY-SA 3.0.'),
 
       h2('3.2  The Respiratory System'),
@@ -606,7 +608,7 @@ function buildSection3() {
       para('The management implication is straightforward. That efficiency comes with a trade-off. Ammonia at 10 ppm already damages the cilia lining the respiratory tract, the primary defense against bacteria and irritants [2]. The bird cannot cough pathogens out the way a mammal can. When cilia are destroyed by ammonia or dust, bacteria reach the air sacs directly. A flock visibly damaged by ammonia, with watery eyes and bubbling faces, has been breathing damaging air for days or weeks before those signs appeared.'),
       para('High dust loads make it worse. Every square meter of poorly managed litter sends bacteria, endotoxins, and mold spores into the air. Adequate ventilation is not a comfort measure: it is a basic immune defense requirement.'),
 
-      ...embedPng(imgFile('respiratory system.png'), 'Figure 3.2: The avian upper respiratory tract showing the nine air sacs, larynx, trachea, syrinx, bronchi, and lungs. The syrinx is the sound-producing organ unique to birds. Unlike mammalian lungs, gas exchange occurs during both inhalation and exhalation. Source: CPC Short Courses.'),
+      ...embedPng(imgFile('respiratory system.png'), 'Figure 3.3: The avian upper respiratory tract showing the nine air sacs, larynx, trachea, syrinx, bronchi, and lungs. The syrinx is the sound-producing organ unique to birds. Unlike mammalian lungs, gas exchange occurs during both inhalation and exhalation. Source: CPC Short Courses.'),
 
       h2('3.3  The Circulatory System'),
       para('A chicken\'s heart is four-chambered, like a mammal\'s, and it works extremely hard. The resting heart rate is approximately 250 to 300 beats per minute [20]. The left ventricle is the largest chamber by far, with much thicker walls than the right, because it has to push blood to the entire body at high pressure. The right ventricle only needs to move blood through the nearby lungs, which offer much less resistance.'),
@@ -614,7 +616,7 @@ function buildSection3() {
       para('Here\'s what matters for fast-growing broilers: their hearts and lungs can\'t keep up with how quickly they\'re putting on muscle [11]. By week four or five, many birds are carrying more breast meat than their heart and lungs were built to handle. When it\'s cold, you\'re at altitude, or the barn\'s poorly ventilated, the heart can\'t push enough oxygen to all that muscle. The right side of the heart works overtime trying to force blood through congested lungs. Eventually, fluid backs up into the belly. That\'s ascites. In other cases, the heart just gives out without warning, and you lose a healthy-looking bird overnight. That\'s Sudden Death Syndrome. Both come down to the same problem: muscle growth outpaces heart and lung capacity [6,7].'),
 
       h2('3.4  The Skeletal and Muscular Systems'),
-      para('A chicken\'s skeleton evolved for flight: lighter relative to body size than a mammal\'s, with hollow bones, fused sections for rigidity, and a keel that anchors the main flight muscles. Those features matter in the barn.'),
+      para('A chicken\'s skeleton is built light for flight. Compared to a mammal of the same size, the bones are lighter, several sections are fused together for rigidity, and a deep keel anchors the main flight muscles. Whatever your view on how birds came to be the way they are, those are the features you are working with in the barn, and they shape how you handle the bird and what goes wrong.'),
       labeled('Pneumatic bones:', 'The skull, humerus, clavicle, keel, pelvic girdle, and lumbar and sacral vertebrae are hollow and connected to the air sac system [4]. A fracture of a pneumatic bone can compromise breathing. Rough catching, improper handling, or falls during transport can cause these fractures.'),
       labeled('Medullary bone:', 'Found only in female birds approaching or in lay. Medullary bone is a dense, spongy calcium reserve found in the tibia, femur, pubic bones, ribs, ulna, and several other bones. As pullets approach lay, estrogen triggers the buildup of medullary bone as a labile calcium bank. During the 20 hours the shell is forming overnight, when the hen is not eating, she draws on medullary bone to supply the calcium her shell needs [14]. This process repeats every 24 hours throughout the laying cycle.'),
 
@@ -630,7 +632,9 @@ function buildSection3() {
 
       h2('3.5  The Reproductive System'),
       para('Only the left ovary and oviduct develop fully in female chickens. The right side shuts down before hatch and stays dormant for life [3]. At hatch, a pullet already carries all the ova she will ever lay, tens of thousands of potential eggs, though only a small fraction will mature over her productive life. No new ova develop after hatching.'),
-      para('The oviduct is 25 to 27 inches long in a fully productive layer. Egg formation from ovulation to laying takes approximately 25 to 26 hours and passes through five distinct sections [3]. See Table 3.1 below.'),
+      para('The oviduct is 25 to 27 inches long in a fully productive layer. Egg formation from ovulation to laying takes approximately 25 to 26 hours and passes through five distinct sections [3]. Figure 3.4 shows the layout of the tract, and Table 3.1 lays out the timing section by section.'),
+
+      ...embedPng(imgFile('figure_3_4_repro_tract.png'), 'Figure 3.4: The hen\'s reproductive tract. Only the left ovary and oviduct develop. The yolk is released from the ovary, caught by the infundibulum, then wrapped in egg white, membranes, and finally the calcium shell as it moves down the tract. About 20 to 40% of the calcium in each shell is pulled from the hen\'s own bone overnight. Source: CPC Short Courses.'),
 
       para('Table 3.1: Egg formation timeline by oviduct section [3].', { spaceAfter: 60 }),
       oviductTable(),
@@ -638,6 +642,22 @@ function buildSection3() {
 
       para('The calcium cost of each egg is significant. Each shell contains approximately 2 grams of calcium [13]. During the 20-plus hours of shell formation (mostly at night, when the hen is not eating), she mobilizes 20 to 40% of that calcium from medullary bone [13]. The diet must supply the balance. A layer on an adequate calcium diet (3.5 to 4.5% of diet by weight) can meet her daily needs and maintain bone health. A layer on an inadequate calcium diet will exhaust her medullary bone and begin resorbing structural cortical bone, leading to progressive osteoporosis, fractures, and end-of-lay collapse [13,14].'),
       para('Ovulation is triggered by light. The hypothalamus detects the change in day length and triggers the hormone chain that drives follicle growth and ovulation. Ovulation almost never occurs after 3 PM under normal daylight conditions, which means hens laying late in the day skip the next morning\'s ovulation and miss a laying day [3]. Careful lighting management using 14 to 16 hours of light per day maintains consistent ovulation timing across the flock. For detailed lighting program guidance, see the CPC Learning Centre Lighting Program Guidelines for Broilers 2026 [19], which covers both the technical setup and the practical management of lighting transitions.'),
+
+      h2('3.6  The Urinary System'),
+      para('The bird\'s urinary system explains something a farmer sees every single day: the white cap on top of a normal dropping. A bird gets rid of its nitrogen waste as uric acid, a thick white paste, not as watery urine the way a mammal does [34]. So when you look at a normal dropping, the white part is the "urine" from the kidneys and the darker part is the feces from the gut. Reading droppings starts with knowing which part comes from where.'),
+      para('A bird has two reddish-brown kidneys, each in three lobes, tucked tight against the backbone and the pelvic bones, right behind the lungs [34]. You cannot feel them in a live bird; you see them at necropsy sitting in hollows in the bone. There is no bladder. Birds do not store urine. A narrow tube (the ureter) runs straight from each kidney to the cloaca [34]. To save water, the bird moves urine backward into the lower gut and reclaims some of the water before it passes out [34]. That helps the bird hold water, but it also means the kidneys lean on the bird drinking enough in the first place.'),
+      para('Here is what goes wrong. When the kidneys cannot keep up, when a bird is short of water, or when non-laying birds get a high-calcium layer ration, uric acid builds up in the blood and crystallizes out as chalky white deposits. On the organs, that is visceral gout; in the joints, articular gout [34,35]. At necropsy a gout bird looks like the heart, liver, and air sacs were dusted with white chalk. Infectious bronchitis and a few other diseases can damage the kidneys and trigger the same thing, which is one more reason those diseases matter on a layer farm [35].'),
+      para('The prevention is plain. Keep clean water in front of the birds at all times, especially in hot weather when intake climbs and any water-line problem shows up fast. Do not feed a layer (high-calcium) ration to pullets or non-laying birds, because their kidneys cannot clear that calcium load. For the full barn water management framework, see Course 3 (T-FLAWS Assessment Management Tool) in this series.'),
+
+      ...embedPng(imgFile('figure_3_5_urinary.png'), 'Figure 3.5: The avian urinary system. Two kidneys sit tight against the backbone and drain through the ureters directly to the cloaca; there is no bladder. Nitrogen leaves the body as uric acid, the white cap on a normal dropping. When uric acid backs up, it crystallizes on the organs (visceral gout) or in the joints (articular gout). Source: CPC Short Courses.'),
+
+      h2('3.7  The Immune System'),
+      para('It is worth knowing the immune system for one simple reason: every vaccine you give and every disease challenge your flock faces runs straight through it. A few of its parts are unique to birds, and most of them are biggest in young birds, which is exactly why early life is when the immune system gets built.'),
+      para('There are two "training schools" where the bird makes its defense cells. The bursa of Fabricius is a small pouch just above the vent, and it is found only in birds. It trains the B-cells that make antibodies [36]. The thymus runs as strips of tissue up both sides of the neck, and it trains the T-cells that find and kill infected cells [36]. Both organs are largest in the young bird and shrink with age. Once the cells are trained, they move out and stand guard in the spleen, in the cecal tonsils at the gut, and in the Harderian gland behind the eye [36].'),
+      para('Two of these matter directly for day-to-day management. The bursa is the target of Gumboro disease (infectious bursal disease). Wreck the bursa early and the bird cannot make antibodies properly, so every other vaccine works poorly and the bird stays vulnerable. That is why the immunosuppressive diseases like Gumboro and Marek\'s are taken so seriously. For the full profiles of those diseases, see Course 7 (Common Poultry Diseases) in this series. The Harderian gland matters because spray and eye-drop vaccines land right where this gland can pick them up, which is why those routes work well for respiratory diseases.'),
+      para('The other piece is maternal antibodies. A chick hatches with antibodies passed from the hen through the yolk [36]. They protect the chick for the first couple of weeks, then fade. Vaccinate too early, while those maternal antibodies are still high, and they soak up the vaccine before it can do its job. Vaccinate too late, and disease gets there first. Timing the vaccine around maternal antibody levels is the whole game. For the full vaccination programs and the hands-on technique for water, spray, eye-drop, and injection routes, see Course 8 (Vaccination) in this series.'),
+
+      ...embedPng(imgFile('figure_3_6_immune.png'), 'Figure 3.6: The main immune organs of the chicken. The bursa of Fabricius and the thymus train new defense cells and are largest in young birds; the spleen, cecal tonsils, and Harderian gland are where those cells stand guard. Maternal antibodies passed through the yolk protect the chick early but fade, which is why vaccination timing is built around them. Source: CPC Short Courses.'),
     ],
   };
 }
@@ -665,7 +685,7 @@ function buildSection4() {
       para('Phase feeding (starter, grower, finisher diets) is designed around the broiler\'s changing requirements. Early diets are high in protein to support rapid muscle growth. Later diets shift the energy-to-protein ratio as the bird deposits more fat in the final weeks. Getting those transitions right means knowing what the bird needs at each stage: feed ahead of the curve, not behind it.'),
 
       h2('4.3  Common Health Challenges in Broilers'),
-      para('The same genetics that make the broiler grow fast create predictable health vulnerabilities. These are not random events: they follow directly from the biological trade-offs described above.'),
+      para('The same genetics that make the broiler grow fast create predictable health vulnerabilities. The conditions in this section are the non-infectious ones: metabolic and structural problems that come from the bird\'s own biology and growth rate, not from a virus, bacteria, or parasite. They are not random events. They follow directly from the biological trade-offs described above. The infectious diseases that also hit broilers, and how to tell them apart from these, are covered separately in Course 7 (Common Poultry Diseases) in this series.'),
 
       labeled('Ascites (pulmonary hypertension syndrome):', 'The heart and lungs grow more slowly as a proportion of body mass than the muscle does. In cold, high-altitude, or poorly ventilated conditions, the demand for oxygen outpaces the supply. The right ventricle overloads and gives out. When that happens, fluid backs up into the body cavity. You see a swollen, heavy belly, labored breathing, and a blue-purple comb. Ascites is more common in cold-weather flocks and at higher altitudes. Adequate ventilation, avoiding early cold snaps, and lighting or feed restriction programs that slightly slow early growth to let the cardiovascular system keep up are the main prevention tools [7]. For the full ascites disease profile, see Course 7 (Common Poultry Diseases) in this series.'),
       labeled('Sudden Death Syndrome (SDS):', 'There are no warning signs. One minute the bird looks healthy; the next it is dead, typically on its back. SDS hits predominantly males and the fastest-growing birds in the flock. It most commonly affects birds between 2 and 4 weeks of age, during the fastest period of muscle growth. In commercial flocks, SDS typically accounts for 0.5 to 4% of bird losses [6]. Like ascites, it comes from the bird\'s heart and lungs falling behind its muscle growth. For the full SDS disease profile, see Course 7 (Common Poultry Diseases) in this series.'),
@@ -731,8 +751,9 @@ function buildSection6() {
     headers:    { default: buildHeader() },
     footers:    { default: buildFooter() },
     children: [
-      h1('Section 6: Comparing Meat Birds vs Layers and Breeders'),
+      h1('Section 6: Comparing the Physiology of Meat Birds, Layers, and Breeders'),
 
+      para('Anatomy is how the bird is built. Physiology is how those parts actually work day to day: how the bird turns feed into meat or eggs, how it moves calcium, how hard the heart and gut have to run. This is where the course title earns its second half. All three production types share the same basic anatomy, the same organs in the same places, but their physiology pulls in very different directions, and that is what drives the different management rules for each one. This section puts that physiology side by side.'),
       para('Table 6.1 summarizes the key physiological and production differences across the three main production types [5,6,7,11,12,13,16,24].', { spaceAfter: 60 }),
       comparisonTable(),
       new Paragraph({ spacing: { before: 80, after: 0 } }),
@@ -841,6 +862,14 @@ function buildSection8() {
       bullet('Shell formation takes 20-plus hours and deposits approximately 2 grams of calcium, of which 20 to 40% comes from medullary bone overnight [13,14].'),
       bullet('Ovulation is light-triggered. Lighting program management is reproductive system management.'),
 
+      h2('The Urinary System'),
+      bullet('Birds have no bladder and pass nitrogen waste as uric acid, the white cap on a normal dropping. The white part comes from the kidneys; the dark part is feces from the gut.'),
+      bullet('When uric acid backs up (dehydration, kidney damage, or high-calcium feed given to non-laying birds), it crystallizes on the organs or in the joints as gout. Steady clean water and the right ration for the bird\'s stage are the prevention [34,35].'),
+
+      h2('The Immune System'),
+      bullet('The bursa of Fabricius (unique to birds) and the thymus train the bird\'s defense cells, and both are largest in young birds. The bursa is the target of Gumboro disease, which is why immunosuppressive diseases hurt every vaccine [36].'),
+      bullet('Chicks hatch with maternal antibodies from the yolk that fade over the first weeks. Vaccination timing is built around those levels [36].'),
+
       h2('Management Takeaways'),
       bullet('Feed particle size and grit access in early brooding shape gizzard development and feed conversion.'),
       bullet('Ventilation is not a comfort measure: it is a respiratory immune defense measure. Keep ammonia below 10 ppm.'),
@@ -902,6 +931,9 @@ function buildReferencesSection() {
       numberedRef('DSM Nutritional Products. Vitamin Supplementation Guidelines. Basel (Switzerland): DSM; 2006.'),
       numberedRef('DSM Nutritional Products. Optima: Nutricion Vitaminica de los animales para la produccion de alimentos de calidad. Basel (Switzerland): DSM; 2002.'),
       numberedRef('Vitamin Deficiencies in Poultry. In: Merck Veterinary Manual [Internet]. Merck Sharp & Dohme LLC; [cited 2026 May]. Available from: merckvetmanual.com/poultry/nutrition-and-management-poultry/vitamin-deficiencies-in-poultry'),
+      numberedRef('Poultry Hub Australia. Excretory System [Internet]. Armidale (NSW): Poultry Hub Australia; [cited 2026 Jun]. Available from: poultryhub.org/anatomy-and-physiology/body-systems/excretory-system'),
+      numberedRef('Urate Deposition (Gout) in Poultry. In: Merck Veterinary Manual [Internet]. Merck Sharp & Dohme LLC; [cited 2026 Jun]. Available from: merckvetmanual.com/poultry/miscellaneous-conditions-of-poultry/urate-deposition-gout-in-poultry'),
+      numberedRef('Butcher GD, Miles RD. The Avian Immune System [Internet]. Document VM74/VM016. Gainesville (FL): University of Florida IFAS Extension; [cited 2026 Jun]. Available from: edis.ifas.ufl.edu/publication/VM016'),
     ],
   };
 }
@@ -977,49 +1009,53 @@ async function main() {
   const entriesWithAnchor = [
     { lvl: 1, text: 'Introduction',                                                           page: 3  },
     { lvl: 2, text: 'Learning Objectives',                                                     page: 3  },
-    { lvl: 1, text: 'Section 1: Introduction to Poultry Anatomy and Physiology',               page: 4  },
-    { lvl: 2, text: '1.1  Why the Bird\'s Body Matters to You',                                page: 4  },
+    { lvl: 1, text: 'Section 1: Introduction to Poultry Anatomy and Physiology',               page: 5  },
+    { lvl: 2, text: '1.1  Why the Bird\'s Body Matters to You',                                page: 5  },
     { lvl: 2, text: '1.2  Meat Birds, Layers, and Breeders: Built for Different Jobs',         page: 5  },
-    { lvl: 1, text: 'Section 2: External Anatomy',                                             page: 6  },
-    { lvl: 2, text: '2.1  Key External Structures and Their Functions',                        page: 6  },
-    { lvl: 2, text: '2.2  Reading the Bird: Signs of Health from the Outside',                 page: 7  },
-    { lvl: 1, text: 'Section 3: Internal Body Systems Overview',                               page: 8  },
-    { lvl: 2, text: '3.1  The Digestive System',                                               page: 8  },
-    { lvl: 2, text: '3.2  The Respiratory System',                                             page: 10 },
-    { lvl: 2, text: '3.3  The Circulatory System',                                             page: 11 },
-    { lvl: 2, text: '3.4  The Skeletal and Muscular Systems',                                  page: 12 },
-    { lvl: 2, text: '3.5  The Reproductive System',                                            page: 13 },
-    { lvl: 1, text: 'Section 4: Meat Birds (Broilers)',                                        page: 15 },
-    { lvl: 2, text: '4.1  Built for Rapid Muscle Growth',                                      page: 15 },
-    { lvl: 2, text: '4.2  Feed Conversion and Metabolism',                                     page: 16 },
-    { lvl: 2, text: '4.3  Common Health Challenges in Broilers',                               page: 16 },
-    { lvl: 2, text: '4.4  Key Management Considerations',                                      page: 18 },
-    { lvl: 1, text: 'Section 5: Layers and Breeders',                                          page: 19 },
-    { lvl: 2, text: '5.1  Built for Egg Production and Reproduction',                          page: 19 },
-    { lvl: 2, text: '5.2  The Reproductive Tract and Egg Formation',                           page: 20 },
-    { lvl: 2, text: '5.3  Nutritional Needs for Laying and Fertility',                         page: 21 },
-    { lvl: 2, text: '5.4  Health Issues Specific to Layers and Breeders',                      page: 22 },
-    { lvl: 1, text: 'Section 6: Comparing Meat Birds vs Layers and Breeders',                  page: 23 },
-    { lvl: 2, text: '6.1  Growth Patterns',                                                    page: 24 },
-    { lvl: 2, text: '6.2  Body Structure',                                                     page: 24 },
-    { lvl: 2, text: '6.3  Metabolic Differences',                                              page: 25 },
-    { lvl: 2, text: '6.4  Housing and Management Implications',                                page: 25 },
-    { lvl: 1, text: 'Section 7: Practical Application for Farmers',                            page: 26 },
-    { lvl: 2, text: '7.1  Feeding Strategies',                                                 page: 26 },
-    { lvl: 2, text: '7.2  Housing Adjustments',                                                page: 27 },
-    { lvl: 2, text: '7.3  Health Monitoring',                                                  page: 28 },
-    { lvl: 2, text: '7.4  Handling and Welfare Considerations',                                page: 29 },
-    { lvl: 1, text: 'Summary and Key Takeaways',                                               page: 30 },
-    { lvl: 2, text: 'The Bird\'s Design Purpose',                                              page: 30 },
-    { lvl: 2, text: 'External Anatomy as a Health Tool',                                       page: 30 },
-    { lvl: 2, text: 'The Digestive System',                                                    page: 30 },
-    { lvl: 2, text: 'The Respiratory System',                                                  page: 31 },
-    { lvl: 2, text: 'The Circulatory System',                                                  page: 31 },
-    { lvl: 2, text: 'The Skeletal and Muscular Systems',                                       page: 31 },
-    { lvl: 2, text: 'The Reproductive System',                                                 page: 31 },
-    { lvl: 2, text: 'Management Takeaways',                                                    page: 31 },
-    { lvl: 1, text: 'Recommended Peer-Reviewed Journals',                                      page: 32 },
-    { lvl: 1, text: 'References',                                                              page: 34 },
+    { lvl: 1, text: 'Section 2: External Anatomy',                                             page: 7  },
+    { lvl: 2, text: '2.1  Key External Structures and Their Functions',                        page: 7  },
+    { lvl: 2, text: '2.2  Reading the Bird: Signs of Health from the Outside',                 page: 9  },
+    { lvl: 1, text: 'Section 3: Internal Body Systems Overview',                               page: 10 },
+    { lvl: 2, text: '3.1  The Digestive System',                                               page: 10 },
+    { lvl: 2, text: '3.2  The Respiratory System',                                             page: 13 },
+    { lvl: 2, text: '3.3  The Circulatory System',                                             page: 14 },
+    { lvl: 2, text: '3.4  The Skeletal and Muscular Systems',                                  page: 15 },
+    { lvl: 2, text: '3.5  The Reproductive System',                                            page: 17 },
+    { lvl: 2, text: '3.6  The Urinary System',                                                 page: 18 },
+    { lvl: 2, text: '3.7  The Immune System',                                                  page: 19 },
+    { lvl: 1, text: 'Section 4: Meat Birds (Broilers)',                                        page: 21 },
+    { lvl: 2, text: '4.1  Built for Rapid Muscle Growth',                                      page: 21 },
+    { lvl: 2, text: '4.2  Feed Conversion and Metabolism',                                     page: 22 },
+    { lvl: 2, text: '4.3  Common Health Challenges in Broilers',                               page: 22 },
+    { lvl: 2, text: '4.4  Key Management Considerations',                                      page: 23 },
+    { lvl: 1, text: 'Section 5: Layers and Breeders',                                          page: 24 },
+    { lvl: 2, text: '5.1  Built for Egg Production and Reproduction',                          page: 24 },
+    { lvl: 2, text: '5.2  The Reproductive Tract and Egg Formation',                           page: 25 },
+    { lvl: 2, text: '5.3  Nutritional Needs for Laying and Fertility',                         page: 26 },
+    { lvl: 2, text: '5.4  Health Issues Specific to Layers and Breeders',                      page: 26 },
+    { lvl: 1, text: 'Section 6: Comparing the Physiology of Meat Birds, Layers, and Breeders',  page: 28 },
+    { lvl: 2, text: '6.1  Growth Patterns',                                                    page: 28 },
+    { lvl: 2, text: '6.2  Body Structure',                                                     page: 28 },
+    { lvl: 2, text: '6.3  Metabolic Differences',                                              page: 29 },
+    { lvl: 2, text: '6.4  Housing and Management Implications',                                page: 29 },
+    { lvl: 1, text: 'Section 7: Practical Application for Farmers',                            page: 30 },
+    { lvl: 2, text: '7.1  Feeding Strategies',                                                 page: 30 },
+    { lvl: 2, text: '7.2  Housing Adjustments',                                                page: 31 },
+    { lvl: 2, text: '7.3  Health Monitoring',                                                  page: 31 },
+    { lvl: 2, text: '7.4  Handling and Welfare Considerations',                                page: 32 },
+    { lvl: 1, text: 'Summary and Key Takeaways',                                               page: 33 },
+    { lvl: 2, text: 'The Bird\'s Design Purpose',                                              page: 33 },
+    { lvl: 2, text: 'External Anatomy as a Health Tool',                                       page: 33 },
+    { lvl: 2, text: 'The Digestive System',                                                    page: 33 },
+    { lvl: 2, text: 'The Respiratory System',                                                  page: 33 },
+    { lvl: 2, text: 'The Circulatory System',                                                  page: 33 },
+    { lvl: 2, text: 'The Skeletal and Muscular Systems',                                       page: 34 },
+    { lvl: 2, text: 'The Reproductive System',                                                 page: 34 },
+    { lvl: 2, text: 'The Urinary System',                                                      page: 34 },
+    { lvl: 2, text: 'The Immune System',                                                       page: 34 },
+    { lvl: 2, text: 'Management Takeaways',                                                    page: 34 },
+    { lvl: 1, text: 'Recommended Peer-Reviewed Journals',                                      page: 36 },
+    { lvl: 1, text: 'References',                                                              page: 36 },
   ].map((e, i) => ({ ...e, anchor: `_Toc${String(100000 + i).padStart(8, '0')}` }));
 
   function escapeXml(s) {
