@@ -493,6 +493,7 @@ function buildIntroSection() {
       h1('Table of Contents'),
       new TableOfContents('Table of Contents', { headingStyleRange: '1-2' }),
 
+      pageBreak(),
       h1('Introduction'),
       para('Understanding how a chicken\'s body works is one of the most practical things a farmer can know. How a chicken is built shapes its growth rate, egg production, feed conversion, behavior, and health. Meat birds, layers, and breeders may look similar at a distance, but their bodies are built for very different jobs, and those differences explain why the management rules for each type are not the same [1,2].'),
       para('This course walks through the major body systems of the chicken: what they do, how they connect to the conditions in the barn, and what goes wrong when those conditions are off. You will also see how the way each type is built directly drives the management priorities for that production type. A farmer who understands the bird makes better decisions, catches problems earlier, and loses fewer birds to conditions that could have been avoided.'),
@@ -1015,8 +1016,8 @@ async function main() {
 
   // 2. TOC entries with anchors
   const entriesWithAnchor = [
-    { lvl: 1, text: 'Introduction',                                                           page: 3  },
-    { lvl: 2, text: 'Learning Objectives',                                                     page: 3  },
+    { lvl: 1, text: 'Introduction',                                                           page: 4  },
+    { lvl: 2, text: 'Learning Objectives',                                                     page: 4  },
     { lvl: 1, text: 'Section 1: Introduction to Poultry Anatomy and Physiology',               page: 5  },
     { lvl: 2, text: '1.1  Why the Bird\'s Body Matters to You',                                page: 5  },
     { lvl: 2, text: '1.2  Meat Birds, Layers, and Breeders: Built for Different Jobs',         page: 5  },
