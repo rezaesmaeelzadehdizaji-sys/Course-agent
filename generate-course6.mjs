@@ -639,9 +639,9 @@ function buildSection3() {
       h2('3.5  The Reproductive System'),
       para('Only the left ovary and oviduct develop fully in female chickens. The right side shuts down before hatch and stays dormant for life [20]. At hatch, a pullet already carries all the ova she will ever lay, tens of thousands of potential eggs, though only a small fraction will mature over her productive life. No new ova develop after hatching.'),
       para('The oviduct is 25 to 27 inches long in a fully productive layer. Egg formation from ovulation to laying takes approximately 25 to 26 hours and passes through five distinct sections [20]. Figure 3.4 shows the layout of both the hen\'s and the rooster\'s reproductive tract, and Table 3.1 lays out the timing section by section.'),
-      para('The male side, shown on the right in Figure 3.4, is simpler. A rooster carries his two testes inside the body cavity up near the kidneys, not outside the body the way a mammal does, and sperm runs from each testis down a tube called the ductus deferens to the cloaca. Roosters have phallic bodies, and mating happens through a brief cloacal contact.'),
+      para('The male side, shown on the right in Figure 3.4, is simpler. A rooster carries his two testes inside the body cavity up near the kidneys, not outside the body the way a mammal does, and sperm runs from each testis down a tube called the ductus deferens to the cloaca. Roosters do not have a true penis; instead, they have small papillae inside the cloaca, and mating happens through a brief "cloacal kiss" when the two cloacas touch.'),
 
-      ...embedPhoto(imgFile('Poultry reproductive System.JPG'), 'Figure 3.4: (a) The hen\'s reproductive tract. Only the left ovary and oviduct develop. The yolk is released from the ovary, caught by the infundibulum, then wrapped in egg white, membranes, and finally the calcium shell as it moves down the tract. (b) The rooster\'s reproductive system. The two testes lie inside the abdominal cavity near the kidneys, unlike mammals where the testes are usually located outside the body. Source: USDA.'),
+      ...embedPhoto(imgFile('Poultry reproductive System.JPG'), 'Figure 3.4: (a) The hen\'s reproductive tract. Only the left ovary and oviduct develop. The yolk is released from the ovary, caught by the infundibulum, then wrapped in egg white, membranes, and finally the calcium shell as it moves down the tract. (b) The rooster\'s reproductive system: the two testes lie inside the abdominal cavity near the kidneys. Source: USDA.'),
 
       para('Table 3.1: Egg formation timeline by oviduct section [20].', { spaceAfter: 60 }),
       oviductTable(),
@@ -861,9 +861,9 @@ function buildSection8() {
       bullet('The broiler\'s cardiovascular system grows more slowly than its muscle mass after week three. This is the root cause of ascites and Sudden Death Syndrome.'),
 
       h2('The Skeletal and Muscular Systems'),
-      bullet('Modern broiler breast muscle accounts for 21 to 29% of body weight, up from roughly 9% in heritage birds of the 1950s [4]. Fast growth outpacing blood supply causes woody breast.'),
       bullet('Medullary bone in layers is a labile calcium bank, deposited and resorbed every 24 hours to supply calcium for eggshell formation.'),
       bullet('Inadequate dietary calcium in layers leads to osteoporosis and fractures, not just poor shell quality.'),
+      bullet('Modern broiler breast muscle accounts for 21 to 29% of body weight, up from roughly 9% in heritage birds of the 1950s [4]. Fast growth outpacing blood supply causes woody breast.'),
 
       h2('The Reproductive System'),
       bullet('Only the left ovary and oviduct are functional. Egg formation takes 25 to 26 hours through five oviduct sections.'),
