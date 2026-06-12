@@ -186,7 +186,9 @@ async function main() {
   children.push(subItem('b', 'Respiratory system'));
   children.push(subItem('c', 'Circulatory system'));
   children.push(subItem('d', 'Skeletal and muscular systems'));
-  children.push(subItem('e', 'Reproductive system'));
+  children.push(subItem('e', 'Reproductive system (hen and rooster)'));
+  children.push(subItem('f', 'Urinary system'));
+  children.push(subItem('g', 'Immune system (and the tie-in to vaccination)'));
   children.push(numbered(4, 'Meat Birds (Broilers)'));
   children.push(subItem('a', 'Anatomy built for rapid muscle growth'));
   children.push(subItem('b', 'Feed conversion and metabolism'));
@@ -197,7 +199,7 @@ async function main() {
   children.push(subItem('b', 'Reproductive tract and egg formation'));
   children.push(subItem('c', 'Nutritional needs to support laying and fertility'));
   children.push(subItem('d', 'Health issues specific to layers and breeders'));
-  children.push(numbered(6, 'Comparing Meat Birds vs Layers and Breeders'));
+  children.push(numbered(6, 'Comparing the Physiology of Meat Birds, Layers, and Breeders'));
   children.push(subItem('a', 'Growth patterns'));
   children.push(subItem('b', 'Body structure'));
   children.push(subItem('c', 'Metabolic differences'));
