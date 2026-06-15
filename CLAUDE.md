@@ -728,6 +728,15 @@ As with all online sources, cite the specific page/document title and use `[cite
 - *Infectious Diseases of Wild Birds* — added 2026-05-13; wild bird reservoirs and spillover risk, useful for biosecurity/AI risk sections
 - Veterinary Histopathology — Sample Submission Maximizing — added 2026-05-05; correct tissue sampling and submission protocol for diagnostic labs
 - Ojkic D, et al. "Genotyping of Infectious Bronchitis Virus in Canada During 2014-2023" (2024) — added 2026-06-01; verify full citation (authors, journal, volume, pages, DOI) against PubMed/CrossRef before use, do not cite from the PDF filename alone
+- *Guide to Poultry Fecal Health Management* — added 2026-06-15; normal vs. abnormal droppings, fecal scoring, gut-health indicators; useful for daily-monitoring and disease-detection sections
+- *Color Atlas of Poultry Diseases* — added 2026-06-15; photographic disease/lesion atlas for gross-lesion identification across systems
+- Aviagen / Arbor Acres *Service Bulletin: Broiler Foot Health* — added 2026-06-15; footpad dermatitis causes, litter/moisture management, scoring; cross-check figures against current Aviagen guidance before citing
+- *A Visual Guide to a Chicken Necropsy* — added 2026-06-15; step-by-step post-mortem technique with photos (Course 10/11 necropsy)
+- *Birds Necropsy* — added 2026-06-15; avian post-mortem dissection reference (Course 10/11 necropsy)
+- *Illustrated Guide to Poultry Necropsy* (USDA) — added 2026-06-15; USDA government necropsy atlas, openly licensed; primary necropsy-technique and normal-anatomy reference
+- *Fowl Pox in Domestic Birds* (Station Bulletin 411) — added 2026-06-15; fowl pox clinical/pathology reference for disease and vaccination sections
+- *Immunity of the Chicken* — added 2026-06-15; avian immune system overview; supports immunology, vaccination, and immunosuppression content
+- *Medication and Health Care* (PowerPoint) — added 2026-06-15; poultry medication/treatment overview; cross-check any specific drug/dose against current authoritative sources before citing
 
 **Production & Management**
 - *Commercial Chicken Meat and Egg Production*, Donald D. Bell
