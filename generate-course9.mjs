@@ -472,7 +472,7 @@ function buildSection2() {
       h1('Section 2: What Poultry Diagnostics Involves'),
       h2('2.1 Types of Diagnostic Tests'),
       para('There are several diagnostic tools available, and each one is built to find a different type of problem. Knowing what each test does means you and your vet can pick the right one the first time [1,3].'),
-      ...image(figBuf('fig9_2.png'), 'Figure 2.1: Diagnostic methods matrix detailing Serology, Necropsy, PCR, and Bacteriology applications. Source: CPC Short Courses.'),
+      ...image(figBuf('fig9_2.png'), 'Figure 2.1: Diagnostic methods matrix detailing Serology, Necropsy, Histopathology, PCR, and Bacteriology applications. Source: CPC Short Courses.'),
       para('Each method has a specific role:'),
       bullet([
         { text: 'Serology tests like ELISA, HI, and plate agglutination check the blood for antibodies. This helps you see if your birds responded to a vaccine or if they\'ve been exposed to a virus out in the barn. The ELISA is the most common test for routine flock screening because it is fast and handles large sample numbers. The HI (Hemagglutination Inhibition) test is more specific and is used for Newcastle Disease and Avian Influenza. Rapid Plate Agglutination is a quick on-farm test to screen for ' },
@@ -481,9 +481,9 @@ function buildSection2() {
         { text: 'Mycoplasma synoviae', italics: true },
         { text: ' (MS) [1].' },
       ]),
-      bullet([{ text: 'PCR (Polymerase Chain Reaction): ', bold: true }, { text: 'Finds the DNA or RNA fingerprint of a virus or bacterium in the sample. It catches pathogens in tiny amounts and returns a result in 24 to 48 hours. PCR is particularly useful for identifying which strain of Infectious Bronchitis Virus (IBV) or Inclusion Body Hepatitis virus (IBHV, a Fowl Adenovirus) you are dealing with [1,3]. For IBV, knowing the strain lets your vet pick the right vaccine strain. For IBH, strain typing guides the development of an autogenous vaccine, a custom vaccine prepared from your specific field isolate, because no single commercial vaccine covers all IBH serotypes [3].' }]),
       bullet([{ text: 'Necropsy: ', bold: true }, { text: 'An examination of a fresh bird carcass after death. The pathologist looks for visible changes inside the bird, such as fluid in the air sacs, bleeding in the gut, swollen kidneys, or signs of septicemia: infection and inflammation across different organs. Within hours, you have clues about what is hitting your birds [4].' }]),
       bullet([{ text: 'Histopathology: ', bold: true }, { text: 'Examining thin slices of tissue under a microscope. If a necropsy shows swollen kidneys, histopathology lets the pathologist look at those kidney cells and confirm whether a specific virus or a nutritional problem caused the damage [4].' }]),
+      bullet([{ text: 'PCR (Polymerase Chain Reaction): ', bold: true }, { text: 'Finds the DNA or RNA fingerprint of a virus or bacterium in the sample. It catches pathogens in tiny amounts and returns a result in 24 to 48 hours. PCR is particularly useful for identifying which strain of Infectious Bronchitis Virus (IBV) or Inclusion Body Hepatitis virus (IBHV, a Fowl Adenovirus) you are dealing with [1,3]. For IBV, knowing the strain lets your vet pick the right vaccine strain. For IBH, strain typing guides the development of an autogenous vaccine, a custom vaccine prepared from your specific field isolate, because no single commercial vaccine covers all IBH serotypes [3].' }]),
       bullet([{ text: 'Bacteriology (Culture and Sensitivity): ', bold: true }, { text: 'Grows bacteria from tissue samples on lab plates to identify what species is present, then tests which antibiotics will actually kill it. That sensitivity result stops you from treating with the wrong drug and helps cut down on antimicrobial resistance [3].' }]),
 
       h2('2.2 Sample Collection and Handling'),

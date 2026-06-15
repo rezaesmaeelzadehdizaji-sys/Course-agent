@@ -30,6 +30,8 @@ const C = {
   lightAmber:'#FFF8E1',
   red:       '#C62828',
   lightRed:  '#FFEBEE',
+  purple:    '#6A1B9A',
+  lightPurple:'#F3E5F5',
   white:     '#FFFFFF',
 };
 
@@ -130,7 +132,7 @@ function fig9_1() {
 // FIGURE 9.2 — Types of Diagnostic Tests Matrix
 // ============================================================
 function fig9_2() {
-  const W = 800, H = 500;
+  const W = 800, H = 582;
   return `<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}">
   <rect width="${W}" height="${H}" fill="white"/>
   ${titleBar(W, 'Diagnostic Methods: What They Detect and When to Use Them')}
@@ -175,35 +177,50 @@ function fig9_2() {
   <text x="488" y="225" fill="${C.gray}" font-family="Arial, sans-serif" font-size="11">• Rapid diagnostic indicator in mortality spikes</text>
   <text x="488" y="243" fill="${C.gray}" font-family="Arial, sans-serif" font-size="11">• Identifies lesion distribution in the flock</text>
 
-  <!-- Row 3: PCR & Virology -->
-  <rect x="20" y="269" width="160" height="74" rx="4" fill="#E8F5E9" stroke="${C.green}"/>
-  <text x="100" y="304" text-anchor="middle" fill="${C.green}" font-family="Arial, sans-serif" font-size="13" font-weight="bold">PCR &amp; Virology</text>
-  <text x="100" y="320" text-anchor="middle" fill="${C.gray}" font-family="Arial, sans-serif" font-size="10">(DNA/RNA Detection)</text>
+  <!-- Row 3: Histopathology -->
+  <rect x="20" y="269" width="160" height="74" rx="4" fill="${C.lightPurple}" stroke="${C.purple}"/>
+  <text x="100" y="304" text-anchor="middle" fill="${C.purple}" font-family="Arial, sans-serif" font-size="13" font-weight="bold">Histopathology</text>
+  <text x="100" y="320" text-anchor="middle" fill="${C.gray}" font-family="Arial, sans-serif" font-size="10">(Tissue Sections)</text>
 
   <rect x="188" y="269" width="280" height="74" rx="4" fill="${C.lightGray}" stroke="#ccc"/>
-  <text x="200" y="289" fill="${C.gray}" font-family="Arial, sans-serif" font-size="11" font-weight="bold">Genetic material (viral/bacterial DNA/RNA)</text>
-  <text x="200" y="307" fill="${C.gray}" font-family="Arial, sans-serif" font-size="11">Amplifies tiny pathogen traces; highly</text>
-  <text x="200" y="325" fill="${C.gray}" font-family="Arial, sans-serif" font-size="11">specific (differentiates variants/strains)</text>
+  <text x="200" y="289" fill="${C.gray}" font-family="Arial, sans-serif" font-size="11" font-weight="bold">Cell-level changes inside affected tissue</text>
+  <text x="200" y="307" fill="${C.gray}" font-family="Arial, sans-serif" font-size="11">Confirms what is behind the lesions seen</text>
+  <text x="200" y="325" fill="${C.gray}" font-family="Arial, sans-serif" font-size="11">at necropsy under a microscope</text>
 
   <rect x="476" y="269" width="304" height="74" rx="4" fill="${C.lightGold}" stroke="${C.gold}"/>
-  <text x="488" y="289" fill="${C.gray}" font-family="Arial, sans-serif" font-size="11">• Confirms viral presence (IBV, NDV, IBHV)</text>
-  <text x="488" y="307" fill="${C.gray}" font-family="Arial, sans-serif" font-size="11">• Identifies strain variants (e.g. DMG strain)</text>
-  <text x="488" y="325" fill="${C.gray}" font-family="Arial, sans-serif" font-size="11">• Extremely fast turnaround (24–48 hours)</text>
+  <text x="488" y="289" fill="${C.gray}" font-family="Arial, sans-serif" font-size="11">• Confirms subclinical IBD (bursal damage)</text>
+  <text x="488" y="307" fill="${C.gray}" font-family="Arial, sans-serif" font-size="11">• Distinguishes infectious vs. nutritional damage</text>
+  <text x="488" y="325" fill="${C.gray}" font-family="Arial, sans-serif" font-size="11">• Provides a definitive disease diagnosis</text>
 
-  <!-- Row 4: Bacteriology -->
-  <rect x="20" y="351" width="160" height="74" rx="4" fill="#FFEBEE" stroke="${C.red}"/>
-  <text x="100" y="386" text-anchor="middle" fill="${C.red}" font-family="Arial, sans-serif" font-size="13" font-weight="bold">Bacteriology</text>
-  <text x="100" y="402" text-anchor="middle" fill="${C.gray}" font-family="Arial, sans-serif" font-size="10">(Culture &amp; Sensitivity)</text>
+  <!-- Row 4: PCR & Virology -->
+  <rect x="20" y="351" width="160" height="74" rx="4" fill="#E8F5E9" stroke="${C.green}"/>
+  <text x="100" y="386" text-anchor="middle" fill="${C.green}" font-family="Arial, sans-serif" font-size="13" font-weight="bold">PCR &amp; Virology</text>
+  <text x="100" y="402" text-anchor="middle" fill="${C.gray}" font-family="Arial, sans-serif" font-size="10">(DNA/RNA Detection)</text>
 
   <rect x="188" y="351" width="280" height="74" rx="4" fill="${C.lightGray}" stroke="#ccc"/>
-  <text x="200" y="371" fill="${C.gray}" font-family="Arial, sans-serif" font-size="11" font-weight="bold">Bacterial growth on agar plates</text>
-  <text x="200" y="389" fill="${C.gray}" font-family="Arial, sans-serif" font-size="11">Isolates specific bacteria and tests which</text>
-  <text x="200" y="407" fill="${C.gray}" font-family="Arial, sans-serif" font-size="11">antibiotics will actually kill them</text>
+  <text x="200" y="371" fill="${C.gray}" font-family="Arial, sans-serif" font-size="11" font-weight="bold">Genetic material (viral/bacterial DNA/RNA)</text>
+  <text x="200" y="389" fill="${C.gray}" font-family="Arial, sans-serif" font-size="11">Amplifies tiny pathogen traces; highly</text>
+  <text x="200" y="407" fill="${C.gray}" font-family="Arial, sans-serif" font-size="11">specific (differentiates variants/strains)</text>
 
   <rect x="476" y="351" width="304" height="74" rx="4" fill="${C.lightGold}" stroke="${C.gold}"/>
-  <text x="488" y="371" fill="${C.gray}" font-family="Arial, sans-serif" font-size="11">• Identifies E. coli, Salmonella, Enterococcus</text>
-  <text x="488" y="389" fill="${C.gray}" font-family="Arial, sans-serif" font-size="11">• Antibiotic Sensitivity prevents treatment failure</text>
-  <text x="488" y="407" fill="${C.gray}" font-family="Arial, sans-serif" font-size="11">• Crucial for reducing antimicrobial resistance</text>
+  <text x="488" y="371" fill="${C.gray}" font-family="Arial, sans-serif" font-size="11">• Confirms viral presence (IBV, NDV, IBHV)</text>
+  <text x="488" y="389" fill="${C.gray}" font-family="Arial, sans-serif" font-size="11">• Identifies strain variants (e.g. DMG strain)</text>
+  <text x="488" y="407" fill="${C.gray}" font-family="Arial, sans-serif" font-size="11">• Extremely fast turnaround (24–48 hours)</text>
+
+  <!-- Row 5: Bacteriology -->
+  <rect x="20" y="433" width="160" height="74" rx="4" fill="#FFEBEE" stroke="${C.red}"/>
+  <text x="100" y="468" text-anchor="middle" fill="${C.red}" font-family="Arial, sans-serif" font-size="13" font-weight="bold">Bacteriology</text>
+  <text x="100" y="484" text-anchor="middle" fill="${C.gray}" font-family="Arial, sans-serif" font-size="10">(Culture &amp; Sensitivity)</text>
+
+  <rect x="188" y="433" width="280" height="74" rx="4" fill="${C.lightGray}" stroke="#ccc"/>
+  <text x="200" y="453" fill="${C.gray}" font-family="Arial, sans-serif" font-size="11" font-weight="bold">Bacterial growth on agar plates</text>
+  <text x="200" y="471" fill="${C.gray}" font-family="Arial, sans-serif" font-size="11">Isolates specific bacteria and tests which</text>
+  <text x="200" y="489" fill="${C.gray}" font-family="Arial, sans-serif" font-size="11">antibiotics will actually kill them</text>
+
+  <rect x="476" y="433" width="304" height="74" rx="4" fill="${C.lightGold}" stroke="${C.gold}"/>
+  <text x="488" y="453" fill="${C.gray}" font-family="Arial, sans-serif" font-size="11">• Identifies E. coli, Salmonella, Enterococcus</text>
+  <text x="488" y="471" fill="${C.gray}" font-family="Arial, sans-serif" font-size="11">• Antibiotic Sensitivity prevents treatment failure</text>
+  <text x="488" y="489" fill="${C.gray}" font-family="Arial, sans-serif" font-size="11">• Crucial for reducing antimicrobial resistance</text>
 
   ${caption(W, H, 'Figure 2.1  |  Matrix of Common Diagnostic Methods and Applications')}
 </svg>`;
