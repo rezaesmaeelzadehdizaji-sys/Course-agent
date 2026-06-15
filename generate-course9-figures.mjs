@@ -218,7 +218,7 @@ function fig9_2() {
   <text x="200" y="489" fill="${C.gray}" font-family="Arial, sans-serif" font-size="11">antibiotics will actually kill them</text>
 
   <rect x="476" y="433" width="304" height="74" rx="4" fill="${C.lightGold}" stroke="${C.gold}"/>
-  <text x="488" y="453" fill="${C.gray}" font-family="Arial, sans-serif" font-size="11">• Identifies E. coli, Salmonella, Enterococcus</text>
+  <text x="488" y="453" fill="${C.gray}" font-family="Arial, sans-serif" font-size="11">• Identifies <tspan font-style="italic">E. coli</tspan>, <tspan font-style="italic">Salmonella</tspan>, <tspan font-style="italic">Enterococcus</tspan></text>
   <text x="488" y="471" fill="${C.gray}" font-family="Arial, sans-serif" font-size="11">• Antibiotic Sensitivity prevents treatment failure</text>
   <text x="488" y="489" fill="${C.gray}" font-family="Arial, sans-serif" font-size="11">• Crucial for reducing antimicrobial resistance</text>
 
