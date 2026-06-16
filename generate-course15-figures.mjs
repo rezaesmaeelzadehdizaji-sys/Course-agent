@@ -271,7 +271,7 @@ function fig15_3() {
 
   return `<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}">
   <rect width="${W}" height="${H}" fill="white"/>
-  ${titleBar(W, 'Reading a Precipitin-Line Test (AGID / Plate Agglutination)')}
+  ${titleBar(W, 'Reading an AGID Precipitin-Line Test')}
 
   <text x="200" y="90" text-anchor="middle" fill="${C.gray}" font-family="Arial, sans-serif" font-size="12">Center well holds antigen. Peripheral wells alternate</text>
   <text x="200" y="106" text-anchor="middle" fill="${C.gray}" font-family="Arial, sans-serif" font-size="12">positive control serum and the bird's test serum.</text>

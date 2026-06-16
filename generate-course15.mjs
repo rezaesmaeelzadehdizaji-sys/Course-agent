@@ -390,9 +390,9 @@ function buildBodySection() {
 
     para('If the serum contains antibodies that match the antigen, a visible line forms in the gel where the two meet. When that line connects smoothly with the line from a known positive control, it is called a line of identity, and that is a positive result. If the lines stay separate, or bend away from each other instead of joining, the result is negative. A clear positive line usually shows up within 24 hours, though weak positives can take up to 48 hours to appear [4].'),
 
-    ...image(figBuf('fig15_3.png'), 'Figure 2.1: In a positive AGID or plate agglutination test, the test-well line joins (fuses with) the control line. In a negative test, the lines stay separate. Source: CPC Short Courses.'),
+    ...image(figBuf('fig15_3.png'), 'Figure 2.1: In a positive AGID result, the test-well precipitin line joins (fuses with) the positive control line in the gel. In a negative result, the lines stay separate. Source: CPC Short Courses.'),
 
-    para('Plate agglutination is a third method, faster and simpler than ELISA or AGID. A drop of antigen is mixed directly with a drop of blood or serum on a plate, and if antibodies are present, you\'ll see visible clumping form quickly [1]. It\'s quick and inexpensive, which is why it\'s still used for routine screening, although it\'s less precise for tracking titer trends over time than ELISA or AGID.'),
+    para('Plate agglutination is a third method. A drop of antigen is mixed directly with a drop of blood or serum on a plate, and if antibodies are present, the mixture clumps visibly within minutes [1].'),
 
     h2('2.4  Hemagglutination Inhibition (HI) Testing'),
 
