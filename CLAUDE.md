@@ -2,7 +2,7 @@
 
 ## Project Overview
 
-**CPC Short Courses** is a poultry education project designed to generate 17 short training courses for Canadian commercial poultry farmers as downloadable Word documents (.docx).
+**CPC Short Courses** is a poultry education project designed to generate 18 short training courses for Canadian commercial poultry farmers as downloadable Word documents (.docx).
 
 The project currently includes two completed reference courses:
 
@@ -24,7 +24,7 @@ Each new course may follow its own topic-specific outline, but must remain consi
 ## Project Naming
 
 - Overall project name: **CPC Short Courses**
-- Total courses: **17 short courses**
+- Total courses: **18 short courses** (Courses 1–17 from the master summary draft; Course 18, *Current Poultry Issues (Hot Topics)*, added June 2026 from the `CPCLearningCenter (1).docx` catalog)
 - Reference courses:
   - Course 3: **T-FLAWS – Assessment Management Tool**
   - Course 7: **Common Poultry Diseases — Practical Training for Farmers**
@@ -324,7 +324,7 @@ Remaining 36 claims all confirmed against PubMed, PMC, university extension, Avi
 - **Tone:** Scientifically accurate but always expressed in a practical, farmer-flow style
 - **Audience:** Experienced Canadian commercial poultry farmers (not veterinary professionals)
 - **Unverifiable claims:** Mark with `[NEEDS SOURCE]` in bold red — MANDATORY, never fabricate
-- **Spelling:** **American English only.** Apply uniformly across all 17 courses, drafts, dashboard copy, and any generated docx output. Never mix British and American forms.
+- **Spelling:** **American English only.** Apply uniformly across all 18 courses, drafts, dashboard copy, and any generated docx output. Never mix British and American forms.
 
 ### American English Spelling Rules (MANDATORY)
 
@@ -1021,6 +1021,8 @@ The source file contains one entry per course, in order:
 | 16 | Preparing for an Inspection Audit | 2-hour lecture |
 | 17 | Regulatory Framework in Poultry Production | 2-hour lecture |
 
+**Course 18 — Current Poultry Issues (Hot Topics)** (2-hour lecture) is NOT in this master summary draft. It was added in June 2026 from the `CPCLearningCenter (1).docx` catalog (which lists it after Regulatory Framework, with sub-topics Avian Influenza and Emerging Disease Issues). Its summary/agenda/objectives were authored from the user-confirmed outline, not extracted from this source file. It is a currency-driven ("hot topics") course, so its disease figures carry an explicit mid-2026 date caveat and must be re-confirmed against current CFIA reporting before reuse.
+
 ### Second source file — updated brief outlines (READ-ONLY — NEVER MODIFY)
 
 ```
@@ -1167,7 +1169,7 @@ All courses must follow a consistent structure based on two reference courses:
 
 ### Consistency Rules
 
-- Maintain similar structure across all 17 courses
+- Maintain similar structure across all 18 courses
 - Keep tone practical and farmer-oriented
 - Keep scientific accuracy
 - Keep formatting consistent
@@ -1892,7 +1894,7 @@ The user's summary headings are the source of truth for the course structure. Th
 
 ### Summary page docx is mandatory for every course (MANDATORY)
 
-Every completed course must have a companion summary page docx in its course folder. This is not optional and applies to all 17 courses.
+Every completed course must have a companion summary page docx in its course folder. This is not optional and applies to all 18 courses.
 
 - File name pattern: `Course X/Summary_Page_CourseX_[ShortTitle].docx`
 - Generator name pattern: `generate-courseX-summary.mjs` in the project root
