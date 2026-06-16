@@ -7,11 +7,11 @@ create extension if not exists "pgcrypto";
 
 -- ============================================================
 -- COURSES
--- Registry of all 17 courses
+-- Registry of all courses (1-99; series currently has 18)
 -- ============================================================
 create table if not exists courses (
   id              uuid primary key default gen_random_uuid(),
-  course_number   smallint not null unique check (course_number between 1 and 17),
+  course_number   smallint not null unique check (course_number between 1 and 99),
   slug            text not null unique,
   status          text not null default 'Planned'
                     check (status in ('Complete', 'In Progress', 'Planned')),

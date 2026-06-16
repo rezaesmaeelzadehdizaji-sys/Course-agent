@@ -85,7 +85,7 @@ export async function POST(
   const courseContent: DocCourseContent = {
     meta: {
       ...course.meta,
-      courseNumber: `Course ${course.course_number} of 17`,
+      courseNumber: `Course ${course.course_number}`,
     },
     introduction: {
       title: intro.title,

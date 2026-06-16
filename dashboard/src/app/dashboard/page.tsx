@@ -31,7 +31,7 @@ export default async function DashboardPage() {
           All Courses
         </h1>
         <p className="text-sm text-gray-500">
-          Canadian Poultry Training Series · 17 courses total
+          CPC Short Courses · {courses.length} courses total
         </p>
         {/* Summary badges */}
         <div className="flex gap-3 mt-3">
@@ -45,7 +45,7 @@ export default async function DashboardPage() {
           </span>
           <span className="inline-flex items-center gap-1.5 text-xs font-medium bg-gray-100 text-gray-500 px-2.5 py-1 rounded-full">
             <span className="w-1.5 h-1.5 bg-gray-400 rounded-full inline-block" />
-            {17 - complete - inProgress} Planned
+            {courses.length - complete - inProgress} Planned
           </span>
         </div>
       </div>
