@@ -23,6 +23,8 @@ verified field-by-field against PubMed/CrossRef/publisher pages.
 | 10 | Spotting Disease Early [Flock Management Guide]. CPC Learning Centre. | cpclearningcentre.ca; local CPC library PDF | ✅ confirmed (local) |
 | 11 | Ojkic D, Susta L, Martin E. Genotyping of infectious bronchitis virus in Canada. J Vet Diagn Invest. 2024;36(6):804-808. | PubMed 39108146; DOI 10.1177/10406387241265955; authors/journal/vol/issue/pages all match | ✅ confirmed |
 | 12 | Hassan MSH, Ali A, Buharideen SM, Goldsmith D, Coffin CS, Cork SC, van der Meer F, Boulianne M, Abdul-Careem MF. Pathogenicity of the Canadian Delmarva (DMV/1639) IBV on Female Reproductive Tract of Chickens. Viruses. 2021;13(12):2488. | PMC8703381; DOI 10.3390/v13122488; full author list, journal, vol(issue):article all match | ✅ confirmed |
+| 13 | Farooq M, Ali A, Hassan MSH, Abdul-Careem MF. Nucleotide and amino acid analyses of unique infectious bronchitis virus (IBV) variants from Canadian poultry flocks with drop in egg production. Genes (Basel). 2024;15(11):1480. | PMC11593648; DOI 10.3390/genes15111480; authors/journal/vol(issue):article all match; two novel recombinant IBV variants (T-62, CL-61) with egg-drop | ✅ confirmed |
+| 14 | Ojkic D, Lopes J, Sandrock C, Ratsep E, Brouwer E, Brooks A, Rossi T, Martin E. Fowl adenovirus infection and inclusion body hepatitis in Canada: genotyping trends from 2008 to 2024. J Vet Diagn Invest. 2026. Epub 2026 Jan 21. | PMID 41562204; PMC12823366; DOI 10.1177/10406387251412366; online ahead of print (no vol/issue yet); IBH an emerging disease, FAdV8b now dominant since 2015, testing/cases climbed 2008–2024 | ✅ confirmed (Epub ahead of print) |
 
 ## Important note on the Ojkic 2024 citation (CLAUDE.md flagged this exact paper)
 CLAUDE.md warned that the local PDF filename ("...During 2014-2023") may not match the
@@ -36,6 +38,8 @@ Susta, Martin. The course cites the verified title/journal, not the filename.
 - H5N1 clade 2.3.4.4b in US dairy cattle since Mar 2024, 950+ herds: AVMA + npj Viruses / EID journals.
 - ~70 US human cases, 1 death, no human-to-human spread (Mar 2024–May 2025): CDC + Nature Medicine.
 - DMV/1639 variant IBV dominant in Eastern Canadian layers, false layer syndrome: Ojkic 2024 + Hassan 2021 (Viruses) + multiple DMV/1639 papers.
+- New/novel IBV variants beyond DMV/1639 in Canadian flocks with egg-drop (T-62, CL-61 recombinants): Farooq 2024 (Genes).
+- Inclusion body hepatitis (IBH) from fowl adenovirus emerging in Canadian broilers; steep rise in testing/cases 2008–2024 and shift to FAdV8b dominance: Ojkic 2026 (J Vet Diagn Invest, Epub ahead of print).
 
 ## Notes
 - `[cited 2026 Jun]` applied to all live government/agency pages per the Cited-Date Rule.
