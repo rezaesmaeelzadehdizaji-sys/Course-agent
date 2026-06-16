@@ -60,8 +60,11 @@ function bullet(text, lvl = 0) {
   return new Paragraph({ children, numbering: { reference: 'bullet-list', level: lvl }, spacing: { after: 80, line: 276, lineRule: 'auto' } });
 }
 function numberedRef(text) {
+  const children = Array.isArray(text)
+    ? text.map(seg => new TextRun({ text: seg.text, italics: seg.italics || false, color: BODY_GRAY, size: 22, font: 'Calibri' }))
+    : [new TextRun({ text, color: BODY_GRAY, size: 22, font: 'Calibri' })];
   return new Paragraph({
-    children: [new TextRun({ text, color: BODY_GRAY, size: 22, font: 'Calibri' })],
+    children,
     numbering: { reference: 'references-list', level: 0 },
     spacing: { after: 80, line: 276, lineRule: 'auto' },
   });
@@ -287,6 +290,34 @@ function buildSection3() {
   };
 }
 
+// ---- Section 4 ----
+function buildSection4() {
+  return {
+    properties: { page: { margin: pageMargin } },
+    headers: { default: buildHeader() }, footers: { default: buildFooter() },
+    children: [
+      h1('Section 4: Antimicrobial Resistance (AMR)'),
+      para('The last hot topic in this course is not a single disease but a slow-moving threat that sits behind every disease: antimicrobial resistance, or AMR. It has gone from a background worry to a front-page issue for the whole poultry industry, and it is one of the few topics where what you do in your barn is directly connected to human health.'),
+
+      h2('4.1 What AMR Is and Why It Is a Hot Topic'),
+      para('AMR is what happens when the bugs we treat with antibiotics learn to survive them. Every time an antibiotic is used, in people or in animals, the bacteria that live through it get a chance to adapt. Use these drugs too often or too loosely and the resistant strains take over, which leaves you with medicines that no longer work when you truly need them. Health authorities around the world now rank AMR as one of the biggest threats to human medicine, and poultry is part of that conversation because the same families of drugs are used on both sides.'),
+      para([
+        { text: 'Canada has a clear, homegrown example of why this matters. For years, an antibiotic called ceftiofur was used in some chicken hatcheries. National surveillance found that resistance to it in ' },
+        { text: 'Salmonella', italics: true },
+        { text: ' Heidelberg, a bug that makes people sick, rose and fell in retail chicken and in human infections almost in lockstep [15]. When hatcheries in Quebec voluntarily stopped using the drug, resistance dropped sharply in both chicken and people, then climbed again when use resumed [15]. It is about as clear a demonstration as you can get that on-farm antibiotic use reaches all the way to the dinner table. That kind of evidence, tracked by the national surveillance program CIPARS, is exactly why AMR became a hot topic [16].' },
+      ]),
+
+      h2('4.2 What Canada and the Poultry Industry Are Doing About It'),
+      para('Both government and the industry have moved hard on this. On the regulatory side, since December 2018 Health Canada has required a veterinary prescription for every medically important antibiotic used in animals, and it had the growth-promotion claims stripped off those products [17]. In plain terms, you can no longer buy these antibiotics over the counter, and you cannot use them just to make birds grow faster. Every important antibiotic now runs through your veterinarian.'),
+      para('The poultry industry did not wait to be forced. Through the Chicken Farmers of Canada Responsible Antimicrobial Use Strategy, the chicken sector eliminated the preventive use of the antibiotic categories most important to human medicine, starting with the highest-priority Category I drugs in 2014 and Category II in 2018, and it keeps working to push overall use down [18]. The payoff has been real drops in resistance in the bacteria that surveillance tracks, which is the whole point of the exercise.'),
+
+      h2('4.3 What It Means for Your Farm'),
+      para('For you, antimicrobial stewardship is now just part of good farming, not an optional extra. The guiding idea is simple: use antibiotics as little as possible and as much as necessary. That means treating real, diagnosed disease under your veterinarian’s direction instead of reaching for antibiotics out of habit, recording every treatment with its dose and withdrawal time, and respecting that withdrawal time to the day before any birds or eggs leave the farm.'),
+      para('The best way to use fewer antibiotics is to need fewer. Strong biosecurity, good vaccination, clean water, and solid day-to-day management keep birds healthy enough that they rarely need treating in the first place. Stewardship and good husbandry are the same thing seen from two sides. For the full picture on treatment, vaccination, and antimicrobial stewardship on the farm, see Course 8 (Fundamentals of Poultry Vaccination and Treatment) in this series.'),
+    ],
+  };
+}
+
 function buildJournalSection() {
   return {
     properties: { page: { margin: pageMargin } },
@@ -323,6 +354,14 @@ function buildReferencesSection() {
       numberedRef('Hassan MSH, Ali A, Buharideen SM, Goldsmith D, Coffin CS, Cork SC, van der Meer F, Boulianne M, Abdul-Careem MF. Pathogenicity of the Canadian Delmarva (DMV/1639) infectious bronchitis virus (IBV) on female reproductive tract of chickens. Viruses. 2021;13(12):2488. doi:10.3390/v13122488'),
       numberedRef('Farooq M, Ali A, Hassan MSH, Abdul-Careem MF. Nucleotide and amino acid analyses of unique infectious bronchitis virus (IBV) variants from Canadian poultry flocks with drop in egg production. Genes (Basel). 2024;15(11):1480. doi:10.3390/genes15111480'),
       numberedRef('Ojkic D, Lopes J, Sandrock C, Ratsep E, Brouwer E, Brooks A, Rossi T, Martin E. Fowl adenovirus infection and inclusion body hepatitis in Canada: genotyping trends from 2008 to 2024. J Vet Diagn Invest. 2026. Epub 2026 Jan 21. doi:10.1177/10406387251412366'),
+      numberedRef([
+        { text: 'Dutil L, Irwin R, Finley R, Ng LK, Avery BP, Boerlin P, et al. Ceftiofur resistance in ' },
+        { text: 'Salmonella enterica', italics: true },
+        { text: ' serovar Heidelberg from chicken meat and humans, Canada. Emerg Infect Dis. 2010;16(1):48-54. doi:10.3201/eid1601.090729' },
+      ]),
+      numberedRef('Public Health Agency of Canada. Canadian Integrated Program for Antimicrobial Resistance Surveillance (CIPARS): annual report. Guelph, ON: PHAC; [cited 2026 Jun]. Available from: canada.ca'),
+      numberedRef('Health Canada. Responsible use of medically important antimicrobials in animals. Ottawa: Health Canada; [cited 2026 Jun]. Available from: canada.ca'),
+      numberedRef('Chicken Farmers of Canada. Responsible Antimicrobial Use Strategy. Ottawa: Chicken Farmers of Canada; [cited 2026 Jun]. Available from: chickenfarmers.ca'),
     ],
   };
 }
@@ -373,6 +412,7 @@ async function main() {
       buildSection1(),
       buildSection2(),
       buildSection3(),
+      buildSection4(),
       buildJournalSection(),
       buildReferencesSection(),
     ],
@@ -407,8 +447,12 @@ async function main() {
     { lvl: 2, text: '3.2 Diseases on the Radar in Canada', page: 10 },
     { lvl: 2, text: '3.3 Surveillance and Early Warning', page: 10 },
     { lvl: 2, text: '3.4 What Farmers Should Do', page: 11 },
-    { lvl: 1, text: 'Recommended Peer-Reviewed Journals', page: 12 },
-    { lvl: 1, text: 'References', page: 13 },
+    { lvl: 1, text: 'Section 4: Antimicrobial Resistance (AMR)', page: 12 },
+    { lvl: 2, text: '4.1 What AMR Is and Why It Is a Hot Topic', page: 12 },
+    { lvl: 2, text: '4.2 What Canada and the Poultry Industry Are Doing About It', page: 12 },
+    { lvl: 2, text: '4.3 What It Means for Your Farm', page: 13 },
+    { lvl: 1, text: 'Recommended Peer-Reviewed Journals', page: 14 },
+    { lvl: 1, text: 'References', page: 15 },
   ].map((e, i) => ({ ...e, anchor: `_Toc${String(100000 + i).padStart(8, '0')}` }));
 
   function escapeXml(s) { return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;'); }
