@@ -30,8 +30,9 @@ export default function CourseGrid({ courses }: Props) {
   // Build a map for quick lookup by course_number
   const courseMap = new Map(courses.map(c => [c.course_number, c]))
 
-  // Render all 17 slots
-  const cards = Array.from({ length: 17 }, (_, i) => {
+  // Render one slot per course, at least 17 (more if higher-numbered courses exist)
+  const slotCount = courses.reduce((max, c) => Math.max(max, c.course_number), 17)
+  const cards = Array.from({ length: slotCount }, (_, i) => {
     const num = i + 1
     const course = courseMap.get(num)
 

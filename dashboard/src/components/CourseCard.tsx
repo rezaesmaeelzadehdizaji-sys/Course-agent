@@ -52,12 +52,15 @@ export default function CourseCard({ course }: Props) {
 
       {/* Actions */}
       <div className="flex gap-2 pt-1 border-t border-gray-100">
-        <Link
-          href={`/dashboard/courses/${course.id}`}
-          className="flex-1 text-center text-xs font-medium text-[#2E74B5] hover:text-[#1F3864] py-1.5 border border-[#2E74B5] rounded-lg hover:bg-blue-50 transition-colors"
-        >
-          {course.status === 'Planned' ? 'Add Content' : 'Edit'}
-        </Link>
+        {/* Static (DB-less) courses have no editable detail page; show download only */}
+        {!course.id.startsWith('static-') && (
+          <Link
+            href={`/dashboard/courses/${course.id}`}
+            className="flex-1 text-center text-xs font-medium text-[#2E74B5] hover:text-[#1F3864] py-1.5 border border-[#2E74B5] rounded-lg hover:bg-blue-50 transition-colors"
+          >
+            {course.status === 'Planned' ? 'Add Content' : 'Edit'}
+          </Link>
+        )}
         {course.status === 'Complete' && (
           <DownloadButton courseId={course.id} courseNumber={course.course_number} slug={course.slug} updatedAt={course.updated_at} />
         )}
