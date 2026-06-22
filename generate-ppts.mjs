@@ -792,7 +792,7 @@ async function buildCourse7() {
      '  2. Necrotic Enteritis (Clostridium perfringens)',
      '  3. Yolk Sac Infection',
      '  4. CRD and Infectious Bronchitis Virus (IBV)',
-     '  5. Infectious Bursal Disease (IBD / Gumboro)',
+     '  5. Infectious Bursal Disease (IBD)',
      '  6. Inclusion Body Hepatitis (IBH)',
      '  7. Ascites (Water Belly)',
      '',
@@ -879,7 +879,7 @@ async function buildCourse7() {
     { x: 5.9, y: 0.88, w: 3.8, h: 4.0, caption: 'Respiratory signs (sneezing, nasal discharge, higher mortality) in a broiler barn — CRD/IBV co-infection.' });
 
   // 13. IBD
-  contentSlide(pptx, 'Infectious Bursal Disease (IBD / Gumboro Disease)',
+  contentSlide(pptx, 'Infectious Bursal Disease (IBD)',
     ['Signs:',
      '  White, watery droppings — the red flag',
      '  Birds lose appetite, sit with ruffled feathers, look depressed',
@@ -895,7 +895,7 @@ async function buildCourse7() {
      '  Review your vaccination timing and method with your vet',
      '  Some newer IBD strains are more virulent — confirm your vaccine covers current field strains'],
     img(C7, 'IBD_final_droppings.png'),
-    { x: 5.9, y: 0.88, w: 3.8, h: 4.0, caption: 'White watery droppings and depressed birds with IBD (Gumboro disease) — birds 3-6 weeks old, sudden elevated mortality.' });
+    { x: 5.9, y: 0.88, w: 3.8, h: 4.0, caption: 'White watery droppings and depressed birds with IBD, birds 3-6 weeks old, sudden elevated mortality.' });
 
   // 14. IBH
   contentSlide(pptx, 'IBH — Inclusion Body Hepatitis (Adenovirus)',

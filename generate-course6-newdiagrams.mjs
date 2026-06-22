@@ -344,7 +344,7 @@ const immuneSVG = `<?xml version="1.0" encoding="UTF-8"?>
   <text class="small" x="504" y="261">A pouch just above the vent. Trains the</text>
   <text class="small" x="504" y="275">B-cells that make antibodies. Found ONLY</text>
   <text class="small" x="504" y="289">in birds, and only in young birds.</text>
-  <text class="small" x="504" y="303" style="fill:#AA2222;">Gumboro disease destroys it: wreck the</text>
+  <text class="small" x="504" y="303" style="fill:#AA2222;">IBD destroys it: wreck the</text>
   <text class="small" x="504" y="317" style="fill:#AA2222;">bursa early and every vaccine works poorly.</text>
 
   <!-- Legend (top-left, clear of the bird) -->

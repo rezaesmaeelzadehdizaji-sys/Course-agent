@@ -34,7 +34,7 @@ import { fileURLToPath } from 'url';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const OUT_DIR   = path.join(__dirname, 'Course 9');
-const OUT_FILE  = path.join(OUT_DIR, 'The_Value_of_Poultry_Diagnostics.docx');
+const OUT_FILE  = path.join(OUT_DIR, 'The_Value_of_Poultry_Diagnostics_revised.docx');
 const LOGO_PATH = path.join(__dirname, 'logo.png');
 
 function figBuf(name) {
@@ -387,7 +387,7 @@ function buildIntroSection() {
 
       h1('Introduction'),
       para('Keeping your flock healthy is the single best way to protect your farm\'s bottom line. But if you only call for help when you are already picking up dead birds, you are playing catch-up and losing money. Poultry diagnostics is the tool that lets you get ahead. It is the process of identifying diseases, nutritional gaps, feed issues, and environmental stress before they get out of hand. In this course, we will show you how diagnostics can work on your farm, whether you run a small family flock or a large commercial barn. You will learn to use lab tests, on-farm monitoring, and veterinary support to spot problems early, cut down on bird losses, and make sure your treatments are actually working [1,2].'),
-      para('Many growers view diagnostics as a final autopsy, an autopsy report that explains why birds died. That is a limited way to look at a powerful management tool. Routine monitoring, water tracking, and strategic blood screening act like a dashboard for your barn. They show you exactly where the flock stands and warn you of trouble days before you see a single sick bird. Once you know how to collect a clean sample, read a serology report with your vet, and tell the difference between a management problem and an infection, you get ahead of problems instead of chasing them.'),
+      para('Many growers view diagnostics as a final autopsy, an autopsy report that explains why birds died. That is a limited way to look at a powerful management tool. Routine monitoring, water tracking, and strategic blood screening act like a dashboard for your barn. They show you exactly where the flock stands and warn you of trouble days before you see a single sick bird. Once you know how to collect a clean sample, read a serology report with your veterinarian, and tell the difference between a management problem and an infection, you get ahead of problems instead of chasing them.'),
 
       h2('Learning Objectives'),
       bullet('Explain what poultry diagnostics are and why they are essential for keeping your birds healthy and your farm profitable.'),
@@ -413,12 +413,16 @@ function buildSection1() {
       h1('Section 1: Why Poultry Diagnostics Matter in Modern Farming'),
       h2('1.1 The Role of Diagnostics in Flock Health and Farm Viability'),
       para('In a modern commercial poultry house, everything runs on tight margins and tight timing. In a broiler barn holding 20,000 birds or more, a single disease outbreak can move through the house in days. In layers, a disease that damages egg production or shell quality can hurt profitability for months. Diagnostics is not a luxury in that environment. It is the steering wheel that keeps your flock on track [3,4].'),
-      para('Every dollar you spend on diagnostic monitoring works to protect your larger investments in chicks, feed, and labor. By tracking the immune status of the flock through serology (blood tests) or submitting early mortalities for necropsy, you establish a baseline of what is normal for your farm. When something shifts, you do not have to guess. You have hard data to guide your response. That stops a small virus problem from turning into a bacterial infection and keeps you out of expensive antibiotics.'),
+      para('Every dollar you spend on diagnostic monitoring protects the much bigger money already tied up in your chicks, feed, and labor. Think of it as three jobs working together to build a picture of what is normal for your farm:'),
+      bullet([{ text: 'Tracking the immune system. ', bold: true }, { text: 'Routine serology (blood tests) shows whether your birds are carrying the antibody protection you paid for in the vaccine program, and flags an early field challenge before birds ever look sick.' }]),
+      bullet([{ text: 'Monitoring and recording the environment. ', bold: true }, { text: 'Logging daily water, feed, temperature, and ventilation gives you the numbers to catch a problem the moment a trend bends the wrong way, instead of relying on your gut.' }]),
+      bullet([{ text: 'Submitting early mortalities. ', bold: true }, { text: 'Sending in the first few fresh dead birds for necropsy tells you what is actually killing them, days before the rest of the flock follows.' }]),
+      para('Once you have that baseline, you do not have to guess when a number moves the wrong way. You know exactly what to watch for: water intake dropping overnight, daily mortality ticking up, weekly gains stalling, or egg production slipping. When one of those shifts, you have hard data to guide your response. That is what stops a small virus problem from turning into a costly bacterial infection and keeps you out of expensive blanket antibiotics.'),
       ...image(figBuf('fig9_1.png'), 'Figure 1.1: The continuous diagnostic and farm health feedback loop. Monitoring feed and water trends informs veterinary testing, which results in targeted on-farm action plans. Source: CPC Short Courses.'),
       para('Diagnostics is a routine part of farm management, not just something you reach for in a crisis. When your barn decisions are driven by what the lab tells you, subclinical problems show up earlier, you adjust ventilation before birds are stressed, and you know your vaccination program is actually working [1].'),
 
       h2('1.2 Common Misconceptions: Cost vs. Investment, Diagnostics vs. Autopsy'),
-      para('The most common reason growers skip diagnostic work is the belief that lab testing is too expensive. This is a misunderstanding of farm economics. A standard diagnostic submission, including necropsy and basic PCR testing, costs a few hundred dollars. In contrast, losing even one percent of a 20,000-bird broiler flock to a preventable disease like Gumboro or Infectious Bronchitis means thousands of dollars gone in lost market weight, plus all the feed those birds ate while they were going downhill [2,4].'),
+      para('The most common reason growers skip diagnostic work is the belief that lab testing is too expensive. Here is the honest version: testing can be a waste of money, but only if you never use the information it gives you and never change how you manage the barn because of it. Used properly, it is the opposite of a cost. Everything we do in farming is risk management. So the real question is this: what are you doing right now to manage the risk of losing one or two percent of your flock, and what is that loss actually worth to you? A standard diagnostic submission, including necropsy and basic PCR testing, costs a few hundred dollars. Losing even one percent of a 20,000-bird broiler flock to a preventable disease like Infectious Bursal Disease (IBD) or Infectious Bronchitis means thousands of dollars gone in lost market weight, plus all the feed those birds ate while they were going downhill [2,4].'),
       para('The table below compares the two approaches.'),
 
       new Paragraph({ spacing: { before: 160, after: 0 } }),
@@ -475,7 +479,7 @@ function buildSection2() {
     children: [
       h1('Section 2: What Poultry Diagnostics Involves'),
       h2('2.1 Types of Diagnostic Tests'),
-      para('There are several diagnostic tools available, and each one is built to find a different type of problem. Knowing what each test does means you and your vet can pick the right one the first time [1,3].'),
+      para('There are several diagnostic tools available, and each one is built to find a different type of problem. Knowing what each test does means you and your veterinarian can pick the right one the first time [1,3].'),
       ...image(figBuf('fig9_2.png'), 'Figure 2.1: Diagnostic methods matrix detailing Serology, Necropsy, Histopathology, PCR, and Bacteriology applications. Source: CPC Short Courses.'),
       para('Each method has a specific role:'),
       bullet([
@@ -487,21 +491,28 @@ function buildSection2() {
       ]),
       bullet([{ text: 'Necropsy: ', bold: true }, { text: 'An examination of a fresh bird carcass after death. The pathologist looks for visible changes inside the bird, such as fluid in the air sacs, bleeding in the gut, swollen kidneys, or signs of septicemia: infection and inflammation across different organs. Within hours, you have clues about what is hitting your birds [5].' }]),
       bullet([{ text: 'Histopathology: ', bold: true }, { text: 'Examining thin slices of tissue under a microscope. If a necropsy shows swollen kidneys, histopathology lets the pathologist look at those kidney cells and confirm whether a specific virus or a nutritional problem caused the damage [5].' }]),
-      bullet([{ text: 'PCR (Polymerase Chain Reaction): ', bold: true }, { text: 'Finds the DNA or RNA fingerprint of a virus or bacterium in the sample. It catches pathogens in tiny amounts and returns a result in 24 to 48 hours. PCR is particularly useful for identifying which strain of Infectious Bronchitis Virus (IBV) or Inclusion Body Hepatitis virus (IBHV, a Fowl Adenovirus) you are dealing with [1,3]. For IBV, knowing the strain lets your vet pick the right vaccine strain. For IBH, strain typing guides the development of an autogenous vaccine, a custom vaccine prepared from your specific field isolate, because no single commercial vaccine covers all IBH serotypes [3].' }]),
+      bullet([{ text: 'PCR (Polymerase Chain Reaction): ', bold: true }, { text: 'Finds the DNA or RNA fingerprint of a virus or bacterium in the sample. It catches pathogens in tiny amounts and returns a result in 24 to 48 hours. PCR is particularly useful for identifying which strain of Infectious Bronchitis Virus (IBV) or Inclusion Body Hepatitis virus (IBHV, a Fowl Adenovirus) you are dealing with [1,3]. For IBV, knowing the strain lets your veterinarian pick the right vaccine strain. For IBH, strain typing guides the development of an autogenous vaccine, a custom vaccine prepared from your specific field isolate, because no single commercial vaccine covers all IBH serotypes [3].' }]),
       bullet([{ text: 'Bacteriology (Culture and Sensitivity): ', bold: true }, { text: 'Grows bacteria from tissue samples on lab plates to identify what species is present, then tests which antibiotics will actually kill it. That sensitivity result stops you from treating with the wrong drug and helps cut down on antimicrobial resistance [3].' }]),
+      para('That last test, bacteriology with culture and sensitivity, deserves a closer look, because it is not just useful to you. Your veterinarian needs this lab data to do their job properly, in two specific ways:'),
+      bullet([{ text: 'To diagnose the problem and prescribe targeted therapy. ', bold: true }, { text: 'A veterinarian cannot responsibly hand you an antibiotic on a hunch. Since December 2018, every medically important antibiotic in Canada is prescription-only, and a sound prescription rests on knowing exactly which bug you are dealing with and which drug will actually kill it. Culture and sensitivity is what turns a guess into a targeted treatment [6].' }]),
+      bullet([{ text: 'To meet CFIA requirements at audit and before slaughter. ', bold: true }, { text: 'When a flock is treated with an extra-label drug, the CFIA Food Animal Information Document requires the operator to keep the veterinary prescription with its withdrawal time, plus, where residue testing applies, a test report from a Standards Council of Canada accredited laboratory with samples collected under veterinary supervision. That paperwork has to follow the flock to the plant. Without the supporting lab work behind it, a veterinary recommendation does not hold up at a CFIA audit [7].' }]),
 
       h2('2.2 Sample Collection and Handling'),
       para('The accuracy of any lab test depends on the quality of the sample you submit. In veterinary medicine, the rule is "garbage in, garbage out." A degraded or contaminated sample will lead to incorrect results, wasting your money and delaying treatment [2]. The best approach is to have your veterinarian collect and submit the samples. They know exactly what to collect, how to package it, and which lab to send it to for the specific disease you are investigating. This matters especially when specific tissues need to be taken from the right location and in the right condition.'),
       ...image(figBuf('fig9_3.png'), 'Figure 2.2: Guidelines for collecting and submitting fecal, blood, water/feed, and mortality samples. Source: CPC Short Courses.'),
       para('Here is how to collect each type of sample:'),
       bullet([{ text: 'Fecal / Litter samples: ', bold: true }, { text: 'Collect fresh droppings from multiple spots around the barn. Skip dry crust and clean litter. Put the droppings in a sealed plastic bag and keep them cool. Do not freeze fecal samples. Freezing kills parasite eggs (coccidia oocysts) and throws off the bacterial counts.' }]),
-      bullet([{ text: 'Water and Feed samples: ', bold: true }, { text: 'Collect water from the very end of the drinker lines. That is the water the birds actually drink, not the cleaner water sitting at the header. If you are on a well, send a water sample to the lab at least once a year. For feed, take samples from the center of the feed bin or feeders, not from the edges where dust or wet clumps collect. Use sterile containers for water [6,7].' }]),
+      bullet([{ text: 'Water and Feed samples: ', bold: true }, { text: 'Collect water from the very end of the drinker lines. That is the water the birds actually drink, not the cleaner water sitting at the header. If you are on a well, send a water sample to the lab at least once a year. For feed, take samples from the center of the feed bin or feeders, not from the edges where dust or wet clumps collect. Use sterile containers for water [8,9].' }]),
       bullet([{ text: 'Blood in tubes (preferred): ', bold: true }, { text: 'The most reliable blood sample for serology is venous blood drawn into plain red-top or serum separator tubes. Because this requires a clean venipuncture and correct handling to prevent hemolysis, your CPC technician or veterinarian will typically collect and submit this type of sample on your behalf. If the CPC team is visiting your farm, request a blood-in-tube submission at the same visit [1].' }]),
-      bullet([{ text: 'Blood cards (farmer alternative): ', bold: true }, { text: 'If a vet visit is not possible right away, you can collect blood yourself using wing-vein pricks from 12 to 24 representative birds and filling the circles on a filter card. Air-dry the cards completely at room temperature before bagging them. Damp cards will mold and destroy the proteins the lab needs for serology [1].' }]),
+      bullet([{ text: 'Blood cards (farmer alternative): ', bold: true }, { text: 'If a veterinarian visit is not possible right away, you can collect blood yourself using wing-vein pricks from 12 to 24 representative birds and filling the circles on a filter card. Air-dry the cards completely at room temperature before bagging them. Damp cards will mold and destroy the proteins the lab needs for serology [1].' }]),
       ...image(figBuf('Blood sampleing.png'), 'Photo 2.1: Red-top blood tubes, syringes, and dried blood spot cards set up for flock serology sampling in a commercial broiler barn. Source: CPC Short Courses.'),
       bullet([{ text: 'Fresh Mortalities: ', bold: true }, { text: 'Submit 10 to 12 fresh birds for necropsy. Choose recent mortalities or live birds showing the same signs as the problem flock. Keep them chilled at 4°C in transport. Do not freeze them. Freezing tears apart the cell walls and destroys the tissue detail the pathologist needs [5].' }]),
 
-      para('Never forget that you are handling live pathogens during collection. Put on disposable gloves, use your farm-dedicated boots, and wash your hands before and after [4].'),
+      para([
+        { text: 'Never forget that you are handling live pathogens during collection. This matters for two reasons. First, whatever is making these birds sick can ride out of the barn on your hands, boots, or clothing and walk straight into the next flock you visit, so sloppy sampling spreads the very disease you are trying to pin down. Second, some poultry bugs, including ' },
+        { text: 'Salmonella', italics: true },
+        { text: ' and avian influenza, can make people sick too, so protecting yourself is part of the job. Put on disposable gloves, use your farm-dedicated boots, and wash your hands before and after [4].' },
+      ]),
       para('Have these basic supplies ready at the barn door and before your sampling kit leaves the property:'),
       ...productImage(productBuf('elastic_top_boots'), 'Photo 2.2: Elastic Top Boots. Durable rubber boots designed for quick sanitation and dedicated barn use during sample collection. Source: canadianpoultry.ca/shop.'),
       ...productImage(productBuf('chlorinated_evo_wash'), 'Photo 2.3: Chlorinated EVO Wash. A foaming chlorine-based sanitizer for disinfecting sampling kits and transport containers. Source: canadianpoultry.ca/shop.'),
@@ -524,7 +535,7 @@ function buildSection3() {
       para('Commercial birds live in tight groups. A disease challenge can move through a house in days. Catching it early is everything. Long before birds start coughing, huddling, or looking lethargic, their behavior shifts. Your daily water and feed meters are the most sensitive early indicators of that shift [2].'),
       para('Water consumption is particularly sensitive. The CPC Learning Centre \'Spotting Disease Early\' guide identifies when disease or stress hits the flock, water intake drops before feed intake, often a full day or two before birds start coughing or show other signs. A notable unexplained drop in your water meter on a single day is a strong early warning. If you wait until you have sick birds or high mortalities, you have already lost days you cannot get back [2].'),
       para([
-        { text: 'When the meters drop, call your vet and, based on their consultation, get birds or blood cards to the lab that day. Getting that diagnosis early lets you start treatment or fix the ventilation before ' },
+        { text: 'When the meters drop, call your veterinarian and, based on their consultation, get birds or blood cards to the lab that day. Getting that diagnosis early lets you start treatment or fix the ventilation before ' },
         { text: 'E. coli', italics: true },
         { text: ' moves in behind the virus and causes the real damage [2,3].' },
       ]),
@@ -538,14 +549,14 @@ function buildSection3() {
       para('Common subclinical challenges include:'),
       bullet([{ text: 'Subclinical Coccidiosis: ', bold: true }, { text: 'Tiny protozoan parasites damage the gut lining so the bird cannot absorb what it eats. Feed goes in, but it does not come out as weight. The FCR climbs and flock uniformity drops.' }]),
       bullet([
-        { text: 'Subclinical Gumboro (IBD): ', bold: true },
+        { text: 'Subclinical Infectious Bursal Disease (IBD): ', bold: true },
         { text: 'The virus hits the bursa of Fabricius, the organ that builds the chick\'s immune system. Young birds that survive can suffer lasting immune damage. They pick up ' },
         { text: 'E. coli', italics: true },
         { text: ' easily and do not respond properly to the next round of vaccinations [3].' },
       ]),
       bullet([{ text: 'Mycoplasma: ', bold: true }, { text: 'MG and MS quietly inflame the air sacs and joints without killing a single bird. Growth slows and you start seeing more condemnations at the plant [3].' }]),
 
-      para('Routine diagnostics is the only way to catch these problems. Regular coccidia oocyst counts on fecal samples and IBD titer checks on blood cards let you find these performance-drainers before they cost you the whole flock\'s margin. Fix your vaccination or coccidiostat program early, not after the damage is done [1,2]. For full disease profiles on Gumboro, Mycoplasma, and the other common subclinical pathogens, see Course 7 (Common Poultry Diseases) in this series.'),
+      para('Routine diagnostics is the only way to catch these problems. Regular coccidia oocyst counts on fecal samples and IBD titer checks on blood cards let you find these performance-drainers before they cost you the whole flock\'s margin. Fix your vaccination or coccidiostat program early, not after the damage is done [1,2]. For full disease profiles on IBD, Mycoplasma, and the other common subclinical pathogens, see Course 7 (Common Poultry Diseases) in this series.'),
     ],
   };
 }
@@ -559,7 +570,7 @@ function buildSection4() {
     headers: { default: buildHeader() },
     footers: { default: buildFooter() },
     children: [
-      h1('Section 4: Using Diagnostics for Decision-Making'),
+      h1('Section 4: Quality Decisions Need Quality Diagnostics'),
       h2('4.1 When to Call for Support: Knowing Your Baseline'),
       para('To recognize when a flock is in trouble, you must know what is normal for your barn. Every farm has a baseline: normal daily water intake, typical flock behavior at different ages, and normal daily mortality (typically under 0.05% per day after the first week) [2,4].'),
       para('The CPC Learning Centre \'Spotting Disease Early\' guide recommends contacting your veterinarian or service representative immediately if you observe any of the following triggers [2,4]:'),
@@ -570,10 +581,11 @@ function buildSection4() {
       bullet('In layers, a drop of 5% or more in daily production, or a sudden increase in cracked or soft-shelled eggs.'),
 
       h2('4.2 Interpreting Lab Reports: Mean Titers and Uniformity'),
-      para('When your serology report comes back, focus on two numbers: the Mean Titer and the Coefficient of Variation (%CV). The mean titer is the average antibody level across the flock. Your vet or vaccine manufacturer will give you the target range to compare it against. The %CV tells you how evenly the flock responded. A low %CV means birds are all at similar levels and coverage is solid. A high %CV means the flock is split: some birds are well-protected, others barely have any coverage at all. Interpreting these numbers correctly takes technical knowledge, so always go through the results with your veterinarian rather than acting on them alone. For a full walkthrough of reading serology reports, interpreting %CV thresholds, and acting on the results, see Course 15 (Serology 101) in this series [1].'),
+      para('When your serology report comes back, focus on two numbers: the Mean Titer and the Coefficient of Variation (%CV). The mean titer is the average antibody level across the flock. Your veterinarian or vaccine manufacturer will give you the target range to compare it against. The %CV tells you how evenly the flock responded. A low %CV means birds are all at similar levels and coverage is solid. A high %CV means the flock is split: some birds are well-protected, others barely have any coverage at all. Interpreting these numbers correctly takes technical knowledge, so always go through the results with your veterinarian rather than acting on them alone. For a full walkthrough of reading serology reports, interpreting %CV thresholds, and acting on the results, see Course 15 (Serology 101) in this series [1].'),
 
       h2('4.3 Confirming a Field Challenge: Paired Samples'),
       para('A single blood sample showing high titers cannot tell you whether the birds responded well to vaccination or are actively fighting a field virus. To answer that, the lab needs two sets of blood from the same barn: one taken as soon as you notice something is off, and another from the same birds 10 to 14 days later. If titers hold steady, the high level came from the vaccine. If they jump significantly between the two samples, you have confirmed an active field challenge [1].'),
+      para('Be realistic about the timing, though. Because that second sample comes 10 to 14 days after the first, the confirmed answer usually lands too late to save the flock standing in the barn right now. This is still super useful information, but its real payoff is going forward. It becomes part of your farm\'s health history, and more importantly it shapes the vaccination program for the next flock placed in that barn. Case Study A later in this course shows exactly that: the paired titers did not rescue the flock they were drawn from, but they drove the breeder vaccination change and the tighter clean-out that turned the following flocks around [1].'),
 
       h2('4.4 Management Errors vs. Infections'),
       para('When a flock performance issue occurs, growers often assume an infectious disease is responsible. The CPC Learning Centre \'Spotting Disease Early\' guide notes that a high percentage of bird submissions to the laboratory are in fact non-infectious conditions linked to management errors. Walk your barn and check the basics before you submit anything [2].'),
@@ -596,7 +608,7 @@ function buildSection5() {
     footers: { default: buildFooter() },
     children: [
       h1('Section 5: Case Studies and Practical Examples'),
-      h2('5.1 Case Study A: Catching Subclinical Gumboro (IBD)'),
+      h2('5.1 Case Study A: Catching Subclinical Infectious Bursal Disease (IBD)'),
       para([
         { text: 'What this grower was seeing: ', bold: true },
         { text: 'A broiler grower in Ontario noticed performance slipping, even though the birds did not look obviously sick.' },
@@ -606,21 +618,21 @@ function buildSection5() {
       para('The main concern showed up at the plant: birds came in with a wide spread in body weights, with too many smaller birds in each load. On day-to-day checks the flock looked healthy, but the numbers and the lack of uniformity pointed to something quietly holding part of the flock back.'),
       para([
         { text: 'What was done to investigate: ', bold: true },
-        { text: 'By the fourth flock, the grower and their veterinarian decided to dig in rather than accept the new "normal." They pulled blood samples at 14 days and again at 28 days to check IBD (Gumboro) antibody levels and how even the response was across the flock.' },
+        { text: 'By the fourth flock, the grower and their veterinarian decided to dig in rather than accept the new "normal." They pulled blood samples at 14 days and again at 28 days to check IBD antibody levels and how even the response was across the flock.' },
       ]),
       bullet('Day 14: %CV came back at 25%, a fairly even response.'),
       bullet('Day 28: %CV jumped to 92%, a sign the flock had split into two very different groups, some birds still tracking the vaccine response and others showing a much higher exposure.'),
       para('To connect these numbers with what was happening inside the birds, three smaller, poor-growing birds were sent for necropsy. The pathologist found the bursa of Fabricius severely shrunken in all three birds. Histopathology showed most of the immune tissue inside the bursa had been destroyed, the hallmark of subclinical infectious bursal disease [3,5].'),
-      para('The conclusion: subclinical Gumboro was quietly wrecking the birds\' immune systems without ever causing obvious clinical signs.'),
+      para('The conclusion: subclinical IBD was quietly wrecking the birds\' immune systems without ever causing obvious clinical signs.'),
       para([
         { text: 'What changed on the farm: ', bold: true },
-        { text: 'With a clear diagnosis in hand, the vet and grower focused on two things: stronger early immunity and less virus pressure in the barn. The breeder flock vaccination program was adjusted so chicks arrived with stronger, more consistent maternal antibody levels against IBD. On the broiler side, the grower tightened up cleaning and disinfection between flocks, including a thorough scrub of the concrete floor with a chlorine-based sanitizer effective against IBD virus.' },
+        { text: 'With a clear diagnosis in hand, the veterinarian and grower focused on two things: stronger early immunity and less virus pressure in the barn. The breeder flock vaccination program was adjusted so chicks arrived with stronger, more consistent maternal antibody levels against IBD. On the broiler side, the grower tightened up cleaning and disinfection between flocks, including a thorough scrub of the concrete floor with a chlorine-based sanitizer effective against IBD virus.' },
       ]),
       para([
         { text: 'The result: ', bold: true },
         { text: 'FCR on the next flock came back at 1.62. Birds were noticeably more uniform at catching, with far fewer small, lagging birds. That feed efficiency gain alone was worth more than $3,800 in feed savings on that flock.' },
       ]),
-      para('The lesson holds for big and small operations alike. A "quiet" immunosuppressive problem like subclinical Gumboro can chip away at performance flock after flock. Pulling flock records, running basic diagnostics, and acting on what they show can turn that around.'),
+      para('The lesson holds for big and small operations alike. A "quiet" immunosuppressive problem like subclinical IBD can chip away at performance flock after flock. Pulling flock records, running basic diagnostics, and acting on what they show can turn that around.'),
 
       h2('5.2 Case Study B: Waiting On A Water Drop'),
       para([
@@ -629,7 +641,7 @@ function buildSection5() {
       ]),
       para([
         { text: 'What happened next: ', bold: true },
-        { text: 'By day 24, feed intake was down about 15% and birds were noticeably quieter and more lethargic. On day 25, the daily dead count jumped from 8 birds to 45. At that point the grower called their vet, who picked up 10 fresh dead birds and got them to the lab the same afternoon [2].' },
+        { text: 'By day 24, feed intake was down about 15% and birds were noticeably quieter and more lethargic. On day 25, the daily dead count jumped from 8 birds to 45. At that point the grower called their veterinarian, who picked up 10 fresh dead birds and got them to the lab the same afternoon [2].' },
       ]),
       para([
         { text: 'At necropsy, the lab found a heavy layer of fibrin around the heart and liver, cloudy fluid in the air sacs, and clear signs of septicemia. PCR testing came back positive for Infectious Bronchitis Virus, and ' },
@@ -643,7 +655,7 @@ function buildSection5() {
         { text: ' moved in and went septic, hitting the flock hard. Emergency antibiotics cost around $1,500. By the end of the flock, mortality had climbed to 4.5%, and the poorer FCR pushed the total loss for that cycle to over $5,200.' },
       ]),
       para([
-        { text: 'If the grower had sent in a few fresh mortalities as soon as the water curve dropped on day 22, the vet could have reacted earlier. With quick lab results, plus supportive steps like electrolytes, tighter ventilation control, and a targeted plan, they likely could have kept that ' },
+        { text: 'If the grower had sent in a few fresh mortalities as soon as the water curve dropped on day 22, the veterinarian could have reacted earlier. With quick lab results, plus supportive steps like electrolytes, tighter ventilation control, and a targeted plan, they likely could have kept that ' },
         { text: 'E. coli', italics: true },
         { text: ' problem much smaller. In this case, the difference between acting on the first water warning and waiting three days was roughly a $5,200 lesson [2].' },
       ]),
@@ -686,6 +698,8 @@ function buildReferencesSection() {
       numberedRef('Diseases of Poultry. Swayne DE, editor. 14th ed. Hoboken, NJ: Wiley-Blackwell; 2020.'),
       numberedRef('Ross Broiler Management Handbook. Huntsville, AL: Aviagen; 2025.'),
       numberedRef('Dinev I. Ceva Handbook of Poultry Diseases. 1st ed. Libourne, France: Ceva Santé Animale; 2014.'),
+      numberedRef('Health Canada. Responsible use of Medically Important Antimicrobials in animals. Ottawa: Health Canada; 2018 [cited 2026 Jun]. Available from: canada.ca.'),
+      numberedRef('Canadian Food Inspection Agency. Food Animal Information Document for Poultry. Ottawa: CFIA [cited 2026 Jun]. Available from: inspection.canada.ca.'),
       numberedRef('Aviagen. Aviagen Brief: Water Quality. Huntsville, AL: Aviagen; 2025.'),
       numberedRef('Managing the Nipple Drinker Line [Technical Bulletin]. CPC Learning Centre. Available from: cpclearningcentre.ca.'),
     ],
@@ -815,13 +829,13 @@ async function main() {
     { lvl: 2, text: '3.1 Preventing Massive Losses: Early Warnings in Water and Feed Consumption',    page: 11 },
     { lvl: 2, text: '3.2 Stopping Disease Transmission and Protecting Neighboring Barns',              page: 11 },
     { lvl: 2, text: '3.3 Enhancing Performance: Uncovering Subclinical Disease',                       page: 11 },
-    { lvl: 1, text: 'Section 4: Using Diagnostics for Decision-Making',                                page: 13 },
+    { lvl: 1, text: 'Section 4: Quality Decisions Need Quality Diagnostics',                            page: 13 },
     { lvl: 2, text: '4.1 When to Call for Support: Knowing Your Baseline',                             page: 13 },
     { lvl: 2, text: '4.2 Interpreting Lab Reports: Mean Titers and Uniformity',                         page: 13 },
     { lvl: 2, text: '4.3 Confirming a Field Challenge: Paired Samples',                                 page: 13 },
     { lvl: 2, text: '4.4 Management Errors vs. Infections',                                            page: 14 },
     { lvl: 1, text: 'Section 5: Case Studies and Practical Examples',                                  page: 15 },
-    { lvl: 2, text: '5.1 Case Study A: Catching Subclinical Gumboro (IBD)',                            page: 15 },
+    { lvl: 2, text: '5.1 Case Study A: Catching Subclinical Infectious Bursal Disease (IBD)',           page: 15 },
     { lvl: 2, text: '5.2 Case Study B: Waiting On A Water Drop',                                      page: 16 },
     { lvl: 1, text: 'Recommended Peer-Reviewed Journals',                                              page: 17 },
     { lvl: 1, text: 'References',                                                                      page: 18 },

@@ -158,7 +158,7 @@ const PHOTOS = [
     rId: "rId38", imgId: 38,
     insertAt: "H2", anchor: "IBD (Infectious Bursal Disease):",
     h2Section: "Common Diseases in Broilers",
-    caption: "Photo: Watery diarrhoea and soiled vent associated with IBD (Gumboro disease) — birds are 3–6 weeks old and show sudden elevated mortality."
+    caption: "Photo: Watery diarrhea and soiled vent associated with IBD, birds are 3 to 6 weeks old and show sudden elevated mortality."
   },
   {
     file: "ibh_broiler_outbreak.png",

@@ -229,6 +229,12 @@ function buildBody() {
   const photoIBD = figBuf('photo_ibd_muscle_hemorrhage.jpg');
   const photoMar = figBuf('photo_mareks_cutaneous.jpg');
   const figEim   = figBuf('fig_eimeria_lifecycle_usda.jpg');
+  const photoNE     = figBuf('photo_necrotic_enteritis.jpg');
+  const photoBursa  = figBuf('photo_ibd_bursa.jpg');
+  const photoND     = figBuf('photo_newcastle_proventriculus.jpg');
+  const photoCocci  = figBuf('photo_coccidiosis_ceca.jpg');
+  const photoChol   = figBuf('photo_fowl_cholera_liver.jpg');
+  const organMap    = figBuf('chicken_systems_overview.jpeg');
 
   return [
     // TOC PAGE
@@ -246,7 +252,7 @@ function buildBody() {
     para('Learning Objectives', { bold: true }),
     bullet('Recognize abnormal lesions associated with major poultry diseases.'),
     bullet('Distinguish between bacterial, viral, parasitic, and nutritional lesions.'),
-    bullet('Identify the most common disease indicators in meat birds, including airsacculitis, coccidiosis, and Gumboro.'),
+    bullet('Identify the most common disease indicators in meat birds, including airsacculitis, coccidiosis, and IBD.'),
     bullet('Identify the most common disease indicators in layers and breeders, including salpingitis, Marek\'s disease, and fatty liver syndrome.'),
     bullet('Collect appropriate tissue samples for diagnostic laboratory testing.'),
     bullet('Interpret necropsy findings alongside flock history and clinical signs.'),
@@ -318,7 +324,7 @@ function buildBody() {
         ['Liver', 'Firm, dark red-brown, no spots', 'Pale, friable, hemorrhagic, yellow spots, or swollen', 'Colibacillosis, IBH, FLHS, Fowl Cholera'],
         ['Small intestine', 'Thin wall, pink, content visible', 'Ballooned, friable, pseudomembrane, bloody content', 'Necrotic Enteritis, Coccidiosis'],
         ['Ceca', 'Light orange-brown content', 'Blood-filled, cecal cores of clotted blood', 'E. tenella coccidiosis'],
-        ['Bursa of Fabricius', 'Firm, cream-colored, smooth', 'Enlarged and hemorrhagic (acute IBD) or shrunken (chronic)', 'IBD/Gumboro'],
+        ['Bursa of Fabricius', 'Firm, cream-colored, smooth', 'Enlarged and hemorrhagic (acute IBD) or shrunken (chronic)', 'IBD'],
         ['Kidneys', 'Dark red, smooth', 'Swollen, pale, urate deposits (chalky white tubules)', 'IBV renal form, IBD, dehydration'],
         ['Peripheral nerves (sciatic)', 'Uniform white, symmetric', 'Enlarged, asymmetric, loss of striations', "Marek's Disease"],
         ['Abdominal cavity', 'No free fluid', 'Yellow/orange fluid (yolk), straw-colored fluid (ascites), caseous material', 'Ascites, Egg Peritonitis'],
@@ -352,6 +358,7 @@ function buildBody() {
     bullet([{ text: 'Pseudomembrane:', bold: true }, { text: ' A tan to yellow diphtheritic membrane lines the intestinal surface. In severe cases this membrane sloughs off in sheets as you open the gut.' }]),
     bullet([{ text: 'Intestinal wall:', bold: true }, { text: ' Paper-thin and easily torn, containing brown or blood-tinged fluid.' }]),
     para('Necrotic enteritis almost never starts on its own. Coccidiosis, especially Eimeria maxima infection, is the most common predisposing factor. High fishmeal or grain-heavy diets (wheat, barley, oats) also create the intestinal environment that Clostridium perfringens exploits. When you find necrotic enteritis lesions, check the intestine for concurrent coccidial lesions [6].'),
+    ...image(photoNE, 'Photo 4.1: Necrotic enteritis in the small intestine of a broiler. The gut has been cut open to show the thickened wall and the loose yellow false membrane lining the inner surface, the hallmark lesion of this disease. Source: Vegad JL, A Colour Atlas of Poultry Diseases.', 5.0),
     callout('Practical Tip', 'Necrotic enteritis birds often die before you see obvious clinical signs in the barn. If you open a bird with that smell (sulfurous, foul) before you see any other changes, take it seriously. Check the intestine from duodenum to cloaca before concluding the necropsy.', 'EAF2EA', '538135'),
     spacer(120),
 
@@ -372,15 +379,16 @@ function buildBody() {
     para('IBV in broilers often presents as a flock that falls off feed and water quickly, with coughing and rales. At necropsy, always check the kidneys in addition to the respiratory tract. The renal form can appear with minimal respiratory signs and is easily missed without a thorough organ check.'),
 
     spacer(40),
-    para([{ text: 'Infectious Bursal Disease (IBD/Gumboro)', bold: true }]),
-    para('Gumboro hits broilers hardest at three to six weeks of age. The CPC Learning Centre IBD disease profile describes the lesion progression precisely [8]:'),
+    para([{ text: 'Infectious Bursal Disease (IBD)', bold: true }]),
+    para('IBD hits broilers hardest at three to six weeks of age. The CPC Learning Centre IBD disease profile describes the lesion progression precisely [8]:'),
     bullet([{ text: 'Day 3 to 4 after infection:', bold: true }, { text: ' The bursa of Fabricius doubles in size. It is pale, with a straw-colored transudate between folds and hemorrhages in the follicles.' }]),
     bullet([{ text: 'Day 5 onward:', bold: true }, { text: ' The bursa shrinks to one-third of its normal size. The edema resolves and lymphoid tissue begins to deplete.' }]),
     bullet([{ text: 'Muscle hemorrhages:', bold: true }, { text: ' Ecchymotic (blotchy) hemorrhages in the breast and thigh muscles. This is one of the most visible gross findings.' }]),
     bullet([{ text: 'Proventriculus-gizzard junction:', bold: true }, { text: ' Hemorrhages at the mucosal junction between proventriculus and gizzard.' }]),
     bullet([{ text: 'Kidneys:', bold: true }, { text: ' Enlarged with urate deposits in tubules, similar to the IBV renal form.' }]),
     para('The classic strain presents with visible morbidity and mortality. The variant strain, which is immunosuppressive, may not produce classic lesions: the bursa shows lymphoid depletion without obvious inflammation, and the main problem is secondary infections that follow [8].'),
-    ...image(photoIBD, 'Photo 4.1: Intramuscular hemorrhage in the breast muscle of a broiler affected by Infectious Bursal Disease (Gumboro). The ecchymotic hemorrhages are visible as dark streaks within pale muscle tissue. Source: Wikimedia Commons (Public Domain).', 4.5),
+    ...image(photoBursa, 'Photo 4.2: Bursa of Fabricius in a broiler with acute IBD (arrow). Opened up, the bursa is congested and hemorrhagic. The bursa is the first place to look in any young bird you suspect of IBD. Source: Vegad JL, A Colour Atlas of Poultry Diseases.', 4.5),
+    ...image(photoIBD, 'Photo 4.3: Intramuscular hemorrhage in the breast muscle of a broiler affected by Infectious Bursal Disease (IBD). The ecchymotic hemorrhages are visible as dark streaks within pale muscle tissue. Source: Wikimedia Commons (Public Domain).', 4.5),
 
     spacer(40),
     para([{ text: 'Newcastle Disease (ND)', bold: true }]),
@@ -388,6 +396,7 @@ function buildBody() {
     bullet([{ text: 'Velogenic viscerotropic ND:', bold: true }, { text: ' The most severe form. Hemorrhages at the proventricular mucosa (especially at the junction with the gizzard), cecal tonsils, and Peyer\'s patches. Necrotic plaques on the intestinal mucosa. Petechiae on serous membranes. This is the presentation you report to your veterinarian immediately.' }]),
     bullet([{ text: 'Velogenic neurotropic ND:', bold: true }, { text: ' Nervous signs dominate: torticollis (twisted neck), wing paralysis, tremors, and star-gazing. Gross lesions in the brain are subtle (meningeal hyperemia and mild petechiae). The clinical signs are the diagnostic clue here.' }]),
     bullet([{ text: 'Mesogenic / Lentogenic ND:', bold: true }, { text: ' Mild respiratory disease. Lesions are limited to congestion and mucoid exudate in the trachea and slight air sac haze. Low mortality. Most commercial flocks with proper vaccination do not progress beyond this.' }]),
+    ...image(photoND, 'Photo 4.4: Opened proventriculus of a broiler with virulent Newcastle disease. Note the pinpoint hemorrhages on the tips of the glands, especially at the junction with the gizzard. This is one of the most diagnostic lesions of the viscerotropic form. Source: Vegad JL, A Colour Atlas of Poultry Diseases.', 4.2),
     para('Peracute Newcastle deaths may have no gross lesions at all. If you have unexplained rapid mortality in a well-vaccinated flock, Newcastle is on the differential alongside Avian Influenza. Both require immediate veterinary contact.'),
 
     spacer(40),
@@ -414,6 +423,8 @@ function buildBody() {
         ['E. brunetti', 'Lower small intestine, rectum', 'Hemorrhagic, necrotic mucosa in the lower gut. Watery bloody content.'],
       ]
     ),
+    spacer(120),
+    ...image(photoCocci, 'Photo 4.5: Cecal coccidiosis caused by Eimeria tenella in a young broiler. Both ceca are greatly enlarged and distended with blood, the most visually dramatic lesion in poultry coccidiosis. Source: Vegad JL, A Colour Atlas of Poultry Diseases.', 4.0),
     spacer(120),
     ...image(figEim, 'Figure 4.1: The Eimeria life cycle showing how oocysts ingested from litter cause intestinal damage through repeated rounds of merozoite multiplication and cell lysis. Source: USDA Agricultural Research Service (Public Domain).', 5.2),
 
@@ -475,6 +486,7 @@ function buildBody() {
     bullet([{ text: 'Acute form:', bold: true }, { text: ' Hemorrhages around the heart and on the lungs. Yellow-white pinpoint spots on the liver surface (multifocal hepatic necrosis). Excess clear fluid in the pericardial sac and abdominal cavity. General reddening of tissues from septicemia. Birds often found dead with no prior illness.' }]),
     bullet([{ text: 'Chronic form:', bold: true }, { text: ' Swollen, hot wattles. Swollen eyes (periorbital edema). Respiratory involvement with mucoid exudate in trachea and air sacs. Arthritis in joints with caseous deposits. The wattle and eye swelling are classic visual signs, and you will see fibrinous adhesions and caseous material in the joints when you open them.' }]),
     para('Acute fowl cholera in a flock with good birds suddenly dead is a production emergency. Culture from fresh liver and heart blood confirms the diagnosis. Pasteurella multocida grows readily on standard culture media within 24 hours [17].'),
+    ...image(photoChol, 'Photo 5.1: Liver from a chicken with acute fowl cholera. The surface is dotted with tiny white necrotic spots (multifocal hepatic necrosis), the classic liver lesion of this disease. Source: Vegad JL, A Colour Atlas of Poultry Diseases.', 4.2),
 
     spacer(40),
     para([{ text: 'Mycoplasmosis (MG and MS)', bold: true }]),
@@ -495,7 +507,7 @@ function buildBody() {
     bullet([{ text: 'Neural form:', bold: true }, { text: ' Enlarged peripheral nerves. The sciatic nerves are the most accessible: after removing the abdominal organs, find them running bilaterally in the sacral region alongside the vertebral column, just under the kidneys. In a healthy bird they are uniform, slightly striated, and bilaterally symmetric. In Marek\'s neural form, one or both are obviously enlarged, swollen, and have lost their normal striations. Compare left to right. Asymmetry is the key finding. The vagus, brachial, and femoral nerves may also be affected.' }]),
     bullet([{ text: 'Visceral form:', bold: true }, { text: ' Whitish lymphoma nodules in multiple organs: liver, spleen, gonads, kidney, heart, proventriculus, and intestine. Tumor nodules range from pinpoint to several centimeters. The liver may be diffusely enlarged with a mottled appearance or studded with discrete white nodules. This form has 10 to 70% mortality depending on the strain and immune status of the flock [20].' }]),
     bullet([{ text: 'Cutaneous form:', bold: true }, { text: ' Enlarged, reddened feather follicles visible as nodular skin lesions, usually on the neck and back. Less common in well-vaccinated commercial flocks.' }]),
-    ...image(photoMar, "Photo 5.1: Cutaneous form of Marek's disease in a broiler showing enlarged, reddened feather follicles on the skin surface. Source: Roman Halouzka, Wikimedia Commons (CC BY-SA 3.0).", 4.5),
+    ...image(photoMar, "Photo 5.2: Cutaneous form of Marek's disease in a broiler showing enlarged, reddened feather follicles on the skin surface. Source: Roman Halouzka, Wikimedia Commons (CC BY-SA 3.0).", 4.5),
 
     para("Marek's disease in a vaccinated flock is a vaccination failure investigation. Check: Was the vaccine kept at the right temperature? Was the dose correct? Were birds exposed to field virus before the vaccine had time to protect them? Vaccination does not prevent infection. It prevents tumor development. Course 7 covers the full disease profile and vaccination strategy in detail."),
 
@@ -536,7 +548,7 @@ function buildBody() {
         ['Lungs', 'Color, texture, nodules', 'Congested, edematous; gray-white nodules', 'AI, Aspergillosis, Colibacillosis'],
         ['Air sacs (thoracic and abdominal)', 'Transparency, exudate', 'Cloudy, thickened; caseous yellow exudate', 'Colibacillosis, MG, IBV'],
         ['Proventriculus-gizzard junction', 'Mucosal hemorrhage', 'Petechiae, ecchymoses at junction', 'Newcastle Disease (velogenic), IBD'],
-        ['Bursa of Fabricius', 'Size vs. age-expected; texture', 'Enlarged/hemorrhagic (acute IBD); shrunken (chronic IBD)', 'IBD/Gumboro'],
+        ['Bursa of Fabricius', 'Size vs. age-expected; texture', 'Enlarged/hemorrhagic (acute IBD); shrunken (chronic IBD)', 'IBD'],
         ['Small intestine (jejunum/ileum)', 'Wall thickness, content, smell', 'Ballooned, friable, pseudomembrane, foul odor', 'Necrotic Enteritis'],
         ['Intestine (by segment)', 'Mucosal lesions', 'White plaques (duodenum), bloody ceca, orange mucus', 'Coccidiosis (species-specific)'],
         ['Cecal tonsils and Peyer\'s patches', 'Hemorrhage, necrosis', 'Necrotic foci, hemorrhage', 'Newcastle Disease (viscerotropic)'],
@@ -550,11 +562,11 @@ function buildBody() {
         ['Skin and feather follicles', 'Nodules, color', 'Enlarged reddened follicles; hemorrhagic or necrotic patches', "Marek's (cutaneous), Fowl Pox"],
         ['Hock and foot pad joints', 'Swelling, exudate', 'Swollen joint with cream exudate', [{ text: 'Mycoplasma synoviae', italics: true }, { text: ' (MS)' }]],
         ['Bone (cross-section)', 'Cortical thickness', 'Thin cortex, fragile, cancellous replacement', 'Calcium deficiency, cage layer fatigue'],
-        ['Skeletal muscles (breast/thigh)', 'Color, texture, hemorrhage', 'Ecchymotic hemorrhages in muscle', 'IBD/Gumboro'],
+        ['Skeletal muscles (breast/thigh)', 'Color, texture, hemorrhage', 'Ecchymotic hemorrhages in muscle', 'IBD'],
       ]
     ),
     spacer(160),
-    ...image(fig11_2, 'Figure 6.1: Body system overview showing the main lesion sites examined during a standard necropsy in commercial poultry. Source: CPC Short Courses.'),
+    ...image(organMap, 'Figure 6.1: Internal anatomy of the chicken showing where each organ system sits in the body. Use it to place the organs named in the lesion table above when you are working at the necropsy table. Source: Purina Animal Nutrition LLC.', 5.4),
     pageBreak(),
 
     // ─── SECTION 7 ───
@@ -576,8 +588,8 @@ function buildBody() {
     h2('7.3  Case 3: Young Broiler Flock, Sudden Mortality at 3 Weeks'),
     para([{ text: 'Flock history:', bold: true }, { text: ' Ross 308 broilers, 21 days old, 60,000 birds. Mortality jumped from 0.1% to 2.5% in a 36-hour period. Birds found dead and dying with loose, watery droppings and some vent staining. No prior problems. Litter moisture has been high this week.' }]),
     para([{ text: 'Necropsy findings (6 birds):', bold: true }, { text: ' Bursa of Fabricius: enlarged and pale in 4 birds, with hemorrhagic follicles visible on incision. Hemorrhages in breast muscles in 5 of 6 birds. Kidneys swollen with urate deposits in 3 of 6 birds. Proventriculus-gizzard junction: small hemorrhages in 3 birds. No significant respiratory or intestinal findings.' }]),
-    para([{ text: 'Interpretation:', bold: true }, { text: ' Classic acute IBD/Gumboro. The enlarged, hemorrhagic bursa, intramuscular hemorrhages, and renal lesions match the CPC Learning Centre IBD disease profile exactly [8]. The rapid onset, age at peak IBD susceptibility, and high-moisture litter environment support the diagnosis.' }]),
-    para([{ text: 'Next steps:', bold: true }, { text: ' Submit fresh bursa from 3 birds to lab for IBD virus isolation and strain identification. Review Gumboro vaccination timing and maternal antibody data for this breeder flock. Check water quality and litter management. Flag for potential viral variant involvement if variant strains have been circulating in your region [8].' }]),
+    para([{ text: 'Interpretation:', bold: true }, { text: ' Classic acute IBD. The enlarged, hemorrhagic bursa, intramuscular hemorrhages, and renal lesions match the CPC Learning Centre IBD disease profile exactly [8]. The rapid onset, age at peak IBD susceptibility, and high-moisture litter environment support the diagnosis.' }]),
+    para([{ text: 'Next steps:', bold: true }, { text: ' Submit fresh bursa from 3 birds to lab for IBD virus isolation and strain identification. Review IBD vaccination timing and maternal antibody data for this breeder flock. Check water quality and litter management. Flag for potential viral variant involvement if variant strains have been circulating in your region [8].' }]),
     pageBreak(),
 
     // ─── SECTION 8 ───
@@ -607,7 +619,7 @@ function buildBody() {
     bullet([{ text: 'Airsacculitis with fibrinous pericarditis:', bold: true }, { text: ' Colibacillosis is the primary differential. Review ventilation quality, stocking density, and litter moisture. Colibacillosis secondary to a primary virus means you need to look for the underlying cause.' }]),
     bullet([{ text: 'Ballooned intestine with pseudomembrane:', bold: true }, { text: ' Necrotic enteritis. Look at the coccidiosis control program and the diet composition immediately. This cannot wait for lab confirmation.' }]),
     bullet([{ text: 'Blood-filled ceca:', bold: true }, { text: ' Eimeria tenella coccidiosis. Check your anticoccidial program: is resistance developing? Wet litter accelerates oocyst cycling and drives heavier challenge. Tighten litter management alongside the treatment response.' }]),
-    bullet([{ text: 'Enlarged bursa with muscle hemorrhages:', bold: true }, { text: ' Gumboro. Notify your veterinarian and review maternal antibody data and vaccination timing. Check the rest of the flock for signs of immunosuppression, because other diseases often follow.' }]),
+    bullet([{ text: 'Enlarged bursa with muscle hemorrhages:', bold: true }, { text: ' IBD. Notify your veterinarian and review maternal antibody data and vaccination timing. Check the rest of the flock for signs of immunosuppression, because other diseases often follow.' }]),
     bullet([{ text: 'Yellow yolk in the abdominal cavity:', bold: true }, { text: ' Egg peritonitis. Assess diet, body condition, and whether stressors (heat, handling, overcrowding) have been triggering follicular rupture or reverse peristalsis.' }]),
     bullet([{ text: 'Pale yellow friable liver with blood clot:', bold: true }, { text: ' FLHS. This is almost always a nutritional and management problem. Review body weight targets, feed energy, and whether hens are under-exercised.' }]),
     ...image(fig11_3, 'Figure 8.1: Field diagnostic pathway connecting necropsy findings to immediate on-farm response. Use this flowchart at the necropsy table to guide your next steps while waiting for laboratory confirmation. Source: CPC Short Courses.'),
@@ -632,7 +644,7 @@ function buildBody() {
     numberedRef('Merck Veterinary Manual. Colibacillosis in Poultry. Kenilworth, NJ: Merck & Co.; 2024 [cited 2026 Jun]. Available from: merckvetmanual.com/poultry/colibacillosis/colibacillosis-in-poultry'),
     numberedRef('Merck Veterinary Manual. Necrotic Enteritis in Poultry. Kenilworth, NJ: Merck & Co.; 2024 [cited 2026 Jun]. Available from: merckvetmanual.com/poultry/necrotic-enteritis/necrotic-enteritis-in-poultry'),
     numberedRef('CPC Learning Centre. Infectious Bronchitis Virus (IBV) [Disease Profile]. CPC Learning Centre. Available from: cpclearningcentre.ca'),
-    numberedRef('CPC Learning Centre. Infectious Bursal Disease (IBD/Gumboro) [Disease Profile]. CPC Learning Centre. Available from: cpclearningcentre.ca'),
+    numberedRef('CPC Learning Centre. Infectious Bursal Disease (IBD) [Disease Profile]. CPC Learning Centre. Available from: cpclearningcentre.ca'),
     numberedRef('Merck Veterinary Manual. Newcastle Disease in Poultry. Kenilworth, NJ: Merck & Co.; 2024 [cited 2026 Jun]. Available from: merckvetmanual.com/poultry/newcastle-disease-and-other-paramyxovirus-infections/newcastle-disease-in-poultry'),
     numberedRef('Merck Veterinary Manual. Avian Influenza in Poultry and Wild Birds. Kenilworth, NJ: Merck & Co.; 2024 [cited 2026 Jun]. Available from: merckvetmanual.com/poultry/avian-influenza-in-poultry-and-wild-birds/avian-influenza-in-poultry-and-wild-birds'),
     numberedRef('Merck Veterinary Manual. Coccidiosis in Poultry. Kenilworth, NJ: Merck & Co.; 2024 [cited 2026 Jun]. Available from: merckvetmanual.com/poultry/coccidiosis-in-poultry/coccidiosis-in-poultry'),
