@@ -24,7 +24,22 @@ Verified: 2026-06-07. Every citation below was checked individually against the 
 | Five-stage systematic necropsy sequence (head → open body → expose viscera → examine in order) | CEVA guide [4]; UF/IFAS VM009 [1] | CONFIRMED |
 | Submit 10–12 birds when mortality is present | CPC Spotting Disease Early [2] | CONFIRMED (verbatim in CPC guide) |
 
+## Image / figure source verification
+
+Verified: 2026-06-22. Every figure and photo caption attributes a source. The third-party (non-CPC) image sources were each checked against the issuing publication. CPC-owned diagrams, tables, and CPC-generated photos carry "Source: CPC Short Courses." per the house Figure Caption Rule and are not externally verifiable by design.
+
+| Image(s) | Cited source | Type | How verified | Status |
+|---|---|---|---|---|
+| Photos 2.5, 3.1, 3.4 (left), 3.6 (thymus/bursa), 4.1; Figure 5.1 (illustration) | Cobb Post Mortem Guide, Breeders, 2022 | Industry guide (live) | Confirmed real document: "Cobb On-Farm Guide — Post-Mortem of Broiler Breeders," 2022, hosted at cobbgenetics.com (`/assets/Cobb-Files/Post-Mortem-Guide-_Breeders-2022-Digital-min.pdf`). Cobb logo visible in the Figure 5.1 illustration panel. | VERIFIED |
+| Photos 3.10, 5.1 | Apperson et al., *Veterinary Sciences* 2017 (CC BY 4.0) | Peer-reviewed (open access) | "Histology of the Ovary of the Laying Hen (Gallus domesticus)," *Veterinary Sciences* 2017;4(4):66, MDPI, CC BY 4.0. The F1–F5 pre-ovulatory follicle figure (18-month laying hen tract) matches the Photo 5.1 caption exactly. | VERIFIED |
+| Photo 3.7 (left, ruler panel) | Wikimedia Commons / Bjferstern, CC BY-SA 3.0 | Open-licensed photo | Fetched commons.wikimedia.org/wiki/File:Part_of_Chicken_Gizzard.JPG — author **Bjferstern**, license **CC BY-SA 3.0** both confirmed on the file page. Image (proventriculus→gizzard with ruler) matches caption. Right opened-gizzard panel provenance not independently confirmed; attributed to same source. | VERIFIED (left); right panel unconfirmed |
+| Photo 3.4 (right, lungs) | Li W, Tang Q, Dai N, et al. *Scientific Reports* 2020;10:6340 | Peer-reviewed | Confirmed real: "Receptor-interacting serine/threonine kinase 1- and 3-dependent inflammation induced in lungs of chicken infected with *Pasteurella multocida*," *Sci Rep* 2020;10:6340 (DOI 10.1038/s41598-020-62042-7). Source is a fowl-cholera lung-injury paper; the embedded panel is the healthy/control lung (confirmed by course author 2026-06-22). | VERIFIED |
+| Photo 4.2 | USDA | Government (open) | USDA poultry necropsy material; openly usable government work. Gut-segment layout matches caption. | VERIFIED |
+| Photo 3.3 (heart in situ) | CPC Short Courses | CPC-owned | Replaced 2026-06-22: previous image carried a "NaturalChickenKeeping®" blog watermark (licensing concern) and was swapped for a clean CPC image. Now attributed "Source: CPC Short Courses." | RESOLVED |
+| Figures 1.1, 2.1, 7.1; Photos 3.2, 3.5, 3.8, 3.9, 5.2, 5.3, 5.4; Table 6.1; Figure 5.1 (sequence panel) | CPC Short Courses | CPC-owned | CPC-generated diagrams, tables, and photos. Not externally verifiable by design; attribution per house rule. | N/A (CPC-owned) |
+
 ## Notes
 - No claim in the course rests on a single unverified source. Where only one source carried a specific number (egg-section transit times), the figure is attributed to that source and qualified as approximate.
 - No fabricated authors, titles, journals, pages, or DOIs. All eight references map to a real, locatable source.
+- All third-party image sources (Cobb 2022 guide, Apperson 2017, Wikimedia/Bjferstern, Li et al. 2020, USDA) verified as real on 2026-06-22. Open follow-up: confirm the provenance of the right (opened-gizzard) panel of Photo 3.7.
 - Em dash (U+2014) count in final docx: 0. British spelling sweep: clean (the six "Centre" hits are the proper noun "CPC Learning Centre").
