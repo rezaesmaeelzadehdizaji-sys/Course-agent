@@ -120,7 +120,7 @@ function fig1_1() {
 // FIGURE 2.1 — Necropsy toolkit
 // ============================================================
 function fig2_1() {
-  const W = 820, H = 420;
+  const W = 820, H = 510;
   const tools = [
     ['Sharp knife', '4 to 6 inch blade'],
     ['Poultry / bone shears', 'cut ribs and bone'],
@@ -128,8 +128,10 @@ function fig2_1() {
     ['Forceps with teeth', 'hold and lift tissue'],
     ['Disposable gloves', 'one pair per bird'],
     ['Cutting board / tray', 'cleanable surface'],
-    ['Formalin jars + labels', '10% buffered formalin'],
-    ['Disinfectant + bags', 'clean up and carcass disposal'],
+    ['Formalin jars + labels', '10% buffered, histology'],
+    ['Zip-top bags', 'fresh, chilled (culture)'],
+    ['Sterile swabs', 'air sacs, joints, culture'],
+    ['Disinfectant + bags', 'clean up and disposal'],
   ];
   const cols = 4, bw = 175, bh = 90, gx = 16, gy = 24;
   const startX = 40, startY = 80;
@@ -139,9 +141,9 @@ function fig2_1() {
     const cy = startY + Math.floor(i / cols) * (bh + gy);
     cells += box(cx, cy, bw, bh, i % 2 ? C.lightGold : C.lightBlue, i % 2 ? C.gold : C.medBlue, t[0], t[1], 8);
   });
-  const note = `<rect x="40" y="320" width="740" height="56" rx="8" fill="${C.lightGreen}" stroke="${C.green}" stroke-width="1.5"/>
-<text x="410" y="344" text-anchor="middle" fill="${C.gray}" font-family="Arial, sans-serif" font-size="12" font-weight="bold">Set out everything before you start.</text>
-<text x="410" y="363" text-anchor="middle" fill="${C.gray}" font-family="Arial, sans-serif" font-size="11">Stopping mid-bird to find a tool is how you contaminate samples and lose your place.</text>`;
+  const note = `<rect x="40" y="414" width="740" height="56" rx="8" fill="${C.lightGreen}" stroke="${C.green}" stroke-width="1.5"/>
+<text x="410" y="438" text-anchor="middle" fill="${C.gray}" font-family="Arial, sans-serif" font-size="12" font-weight="bold">Set out everything before you start.</text>
+<text x="410" y="457" text-anchor="middle" fill="${C.gray}" font-family="Arial, sans-serif" font-size="11">Stopping mid-bird to find a tool is how you contaminate samples and lose your place.</text>`;
   return `<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}">
   <rect width="${W}" height="${H}" fill="white"/>
   ${titleBar(W, 'The Necropsy Toolkit')}
@@ -155,29 +157,35 @@ function fig2_1() {
 // FIGURE 2.2 — Systematic 5-stage necropsy sequence
 // ============================================================
 function fig2_2() {
-  const W = 820, H = 470;
+  const W = 820, H = 642;
   const stages = [
-    ['1. Before you cut', 'Review flock history. Note clinical signs. Euthanize humanely. Look the bird over outside: skin, feathers, joints, feet, vent.'],
-    ['2. Start at the head', 'Wet the feathers. Open the mouth, throat, and windpipe. Check the sinuses. Follow the gullet down to the crop.'],
-    ['3. Open the body', 'Pop both hip joints so the legs lie flat. Reflect the breast skin back to expose the breast muscle and belly.'],
+    ['1. Before you cut', 'Flock history and clinical signs. Euthanize humanely (cervical dislocation or CO<tspan baseline-shift="sub" font-size="9">2</tspan> gas). Weigh the bird.', 'Outside: skin, feathers, joints, feet, vent. Crop: empty, full, or middle. Chicks: navel healed or open?'],
+    ['2. Start at the head', 'Wet the feathers. Check the nostrils (discharge or clean) and the eye color. Open the mouth and throat.', 'Open the trachea: note the mucosa color and any discharge inside. Check the sinuses. Follow the gullet to the crop.'],
+    ['3. Open the body', 'Pop both hip joints so the legs lie flat. Reflect the breast skin to expose the muscle and belly.', 'Check hydration: moist muscle is normal, dry or sticky means dehydrated. Smell: foul means decomposition or infection.'],
     ['4. Expose the organs', 'Cut along the breastbone and through the ribs. Lift the breast plate off to open the chest and belly in one view.'],
-    ['5. Examine in order', 'Work through every system the same way each time: liver, spleen, heart, lungs, air sacs, gut, kidneys, nerves, joints, brain.'],
+    ['5. Examine in order', 'Same order every time: liver, spleen, pancreas, heart, lungs, air sacs, then the gut.', 'Proventriculus, gizzard, small intestine, ceca. Cut the gut open and check the lumen. Bursa, nerves, kidneys, joints, brain.'],
   ];
-  const x = 40, bw = 740, bh = 70, gy = 14;
+  const x = 40, bw = 740, bh = 80, gy = 14;
   let y = 78;
   let rows = '';
   stages.forEach((s, i) => {
     rows += `<rect x="${x}" y="${y}" width="${bw}" height="${bh}" rx="8" fill="${i % 2 ? C.lightBlue : C.lightGold}" stroke="${i % 2 ? C.medBlue : C.gold}" stroke-width="1.5"/>
-<text x="${x + 18}" y="${y + 28}" fill="${C.darkBlue}" font-family="Arial, sans-serif" font-size="14" font-weight="bold">${s[0]}</text>
-<text x="${x + 18}" y="${y + 52}" fill="${C.gray}" font-family="Arial, sans-serif" font-size="11.5">${s[1]}</text>`;
+<text x="${x + 18}" y="${y + 26}" fill="${C.darkBlue}" font-family="Arial, sans-serif" font-size="14" font-weight="bold">${s[0]}</text>
+<text x="${x + 18}" y="${y + 48}" fill="${C.gray}" font-family="Arial, sans-serif" font-size="11.5">${s[1]}</text>`;
+    if (s[2]) rows += `<text x="${x + 18}" y="${y + 66}" fill="${C.gray}" font-family="Arial, sans-serif" font-size="11.5">${s[2]}</text>`;
     if (i < stages.length - 1) rows += dArrow(x + bw / 2, y + bh, x + bw / 2, y + bh + gy - 2, C.gray);
     y += bh + gy;
   });
+  const noteY = y + 2;
+  const note = `<rect x="40" y="${noteY}" width="740" height="52" rx="8" fill="${C.lightGreen}" stroke="${C.green}" stroke-width="1.5"/>
+<text x="410" y="${noteY + 22}" text-anchor="middle" fill="${C.gray}" font-family="Arial, sans-serif" font-size="12" font-weight="bold">Write it all down in your report.</text>
+<text x="410" y="${noteY + 40}" text-anchor="middle" fill="${C.gray}" font-family="Arial, sans-serif" font-size="11">Crop fill, the outside check, and every organ. Your report is only as good as the notes you take at the table.</text>`;
   return `<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}">
   <rect width="${W}" height="${H}" fill="white"/>
   ${DEFS(C.gray)}
   ${titleBar(W, 'A Good Necropsy Is the Same Every Time')}
   ${rows}
+  ${note}
   ${caption(W, H, 'The same five-stage routine, bird after bird, so nothing gets skipped. Source: CPC Short Courses.')}
 </svg>`;
 }
@@ -326,10 +334,10 @@ function wrap(text, max) {
 // ============================================================
 // BUILD ALL
 // ============================================================
-svgToPng(fig1_1(), 'fig10_1.png');
-svgToPng(fig2_1(), 'fig10_2.png');
-svgToPng(fig2_2(), 'fig10_3.png');
-svgToPng(fig5_1(), 'fig10_5.png');
-svgToPng(fig6_1(), 'fig10_6.png');
-svgToPng(fig7_1(), 'fig10_7.png');
+// Only the figures actually embedded in the course are generated.
+// fig10_2 (toolkit), fig10_5 (repro tract), fig10_6 (broiler vs layer) were
+// replaced in the body by photos / inline tables, so they are no longer built.
+svgToPng(fig1_1(), 'fig10_1.png');   // Figure 1.1
+svgToPng(fig2_2(), 'fig10_3.png');   // Figure 2.1
+svgToPng(fig7_1(), 'fig10_7.png');   // Figure 7.1
 console.log('All Course 10 figures generated.');

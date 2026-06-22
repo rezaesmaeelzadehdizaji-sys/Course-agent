@@ -76,6 +76,8 @@ function run(text, opts = {}) {
     color:   opts.color   || BODY_GRAY,
     size:    opts.size    || 24,
     font:    'Calibri',
+    subScript:   opts.subScript   || false,
+    superScript: opts.superScript || false,
   });
 }
 function para(text, opts = {}) {
@@ -109,8 +111,11 @@ function bullet(text, lvl = 0) {
   return new Paragraph({ children, numbering: { reference: 'bullet-list', level: lvl }, spacing: { after: 80, line: 276, lineRule: 'auto' } });
 }
 function numbered(text) {
+  const children = Array.isArray(text)
+    ? text
+    : [new TextRun({ text, color: BODY_GRAY, size: 24, font: 'Calibri' })];
   return new Paragraph({
-    children: [new TextRun({ text, color: BODY_GRAY, size: 24, font: 'Calibri' })],
+    children,
     numbering: { reference: 'numbered-list', level: 0 },
     spacing: { after: 80, line: 276, lineRule: 'auto' },
   });
@@ -328,6 +333,7 @@ function buildIntroSection() {
       para('A necropsy, the careful post-mortem examination of a bird, is one of the most useful tools you have for understanding what is really going on in your flock [1]. But here is the part farmers often miss. You cannot recognize a sick organ until you know exactly what a healthy one looks like. A swollen liver only looks swollen if you have handled dozens of normal livers first. A cloudy air sac only stands out if you know an air sac should be clear enough to read through. This course is about building that eye.'),
       para('The CPC Learning Centre \'Spotting Disease Early\' guide says it plainly: knowing what is normal, and how to detect what is abnormal, is the heart of good flock management [2]. So before we ever talk about lesions and disease, which is the job of Course 11, we are going to open healthy birds on purpose. We will walk through a clean, systematic necropsy and look at every organ the way it should look in a bird that was doing fine.'),
       para('Because a fast-growing meat bird and a hen in full lay are built for completely different jobs, their insides look different too. A normal broiler is mostly muscle. A normal layer is mostly a working egg factory. This course covers both, so you can read either bird with confidence and tell the difference between a true problem and a perfectly normal feature. That skill helps you catch disease early, spot a feed or management issue, and talk clearly with your veterinarian and the diagnostic lab.'),
+      para('One thing to be clear about from the start. A full necropsy is a skilled job, and your veterinarian has spent years learning to read a bird on the table. The proper place to do it is a dedicated necropsy room: an isolated, biosecure space built to keep pathogens away from your live birds. That work belongs to your vet first. Whenever you can manage it, the right move is to send the dead bird or the samples to your veterinarian or the diagnostic lab, or to have your vet come out to the farm in person. Opening a bird yourself in the barn is the fallback, for the times when you cannot get samples away fast enough or no vet can get to you. This course builds the eye and the routine for those moments, and it makes you a sharper partner for your vet the rest of the time.'),
       para('This is a hands-on module. The lecture builds the picture in your head, and the workshop puts a knife in your hand. By the end, opening a bird should feel routine, and a healthy organ should look familiar enough that an abnormal one jumps right out at you.'),
 
       h2('Learning Objectives'),
@@ -375,25 +381,30 @@ function buildSection2() {
       h1('Section 2: General Necropsy Procedure'),
 
       h2('2.1 Needed Tools, Preparation, and Biosecurity'),
-      para('You do not need a fancy lab to do a good farm necropsy. You need a few sharp tools, a cleanable surface, and a plan. A basic kit covers most birds: a sharp knife with a 4 to 6 inch blade, a pair of poultry or bone shears for cutting ribs, tissue scissors, forceps with teeth for holding tissue, and disposable gloves [1]. If you plan to send anything to the lab, add some jars of 10 percent buffered formalin, a marker, and labeling tape so samples are ready to go [1].'),
-      ...image(figBuf('fig10_2.png'), 'Figure 2.1: A simple, reliable necropsy kit. Lay it all out before you start so you never have to stop mid-bird to hunt for a tool. Source: CPC Short Courses.'),
+      para('You do not need a fancy lab to do a good farm necropsy. You need a few sharp tools, a cleanable surface, and a plan. A basic kit covers most birds: a sharp knife with a 4 to 6 inch blade, a pair of poultry or bone shears for cutting ribs, tissue scissors, forceps with teeth for holding tissue, and disposable gloves [1]. If you plan to send anything to the lab, add some jars of 10 percent buffered formalin for tissues going to histology, a marker, and labeling tape so samples are ready to go [1]. Keep a box of clean zip-top bags on hand as well. Anything headed for culture has to stay fresh and chilled, not sitting in formalin, because formalin kills the very bacteria the lab is trying to grow. A few sterile swabs are worth adding too, for sampling air sacs, joints, or any spot you want cultured.'),
+      ...image(figBuf('photo2_1_necropsy_kit.png'), 'Photo 2.1: A basic farm necropsy kit laid out on a clean, disinfectable surface before you start. Having everything ready, from the knife and shears to formalin jars for histology and zip-top bags and sterile swabs for fresh culture samples, means you never have to stop mid-bird to hunt for a tool. Source: CPC Short Courses.'),
       para('Set out everything before the first cut. Once your hands are dirty and you are inside the bird, stopping to find a tool is how samples get contaminated and how you lose your place in the routine. Work on a surface you can disinfect, or lay down a fresh plastic sheet for each session.'),
-      para('Biosecurity runs the whole time. A dead bird can still carry live pathogens, and some of them can make people sick. Wear dedicated barn footwear and disposable gloves, keep the work area away from live birds and feed, and wash your hands before and after [1]. If you ever suspect a serious reportable disease or a bug that infects people, stop, close the bird up, and call your veterinarian rather than carrying on. Dedicated boots keep what is on the necropsy floor from walking back into your barns.'),
-      ...productImage(productBuf('elastic_top_boots'), 'Photo 2.1: Elastic Top Boots. Durable rubber boots kept just for the necropsy and barn-entry routine, easy to wash and disinfect. Source: canadianpoultry.ca/shop.'),
+      para('Biosecurity runs the whole time. A dead bird can still carry live pathogens, and some of them can make people sick. This is exactly why your veterinarian works in a dedicated necropsy room, an isolated space set well apart from any live birds. On the farm you will not have that room, so the next best thing is to pick a spot as far from your barns as you can manage, on a surface you can clean, and never inside or right beside a house full of live birds. Wear dedicated barn footwear and disposable gloves, keep the work area away from live birds and feed, and wash your hands before and after [1]. If you ever suspect a serious reportable disease or a bug that infects people, stop, close the bird up, and call your veterinarian rather than carrying on. Remember that sending the bird or the samples to your vet or the lab is always the first choice, and opening it yourself is the backup for when that is not possible. Dedicated boots keep what is on the necropsy floor from walking back into your barns.'),
+      ...productImage(productBuf('elastic_top_boots'), 'Photo 2.2: Elastic Top Boots. Durable rubber boots kept just for the necropsy and barn-entry routine, easy to wash and disinfect. Source: canadianpoultry.ca/shop.'),
       para('When you are done, clean up like you mean it. Bag the carcass and tissues for proper disposal under your farm plan, then wash and disinfect every tool, the table, and your boots. A foaming chlorine wash lifts the organic muck off tools and surfaces, and a broad-spectrum disinfectant finishes the job on anything that touched the bird.'),
-      ...productImage(productBuf('chlorinated_evo_wash'), 'Photo 2.2: Chlorinated EVO Wash. A foaming chlorine-based wash for cleaning organic matter off necropsy tools and surfaces before disinfection. Source: canadianpoultry.ca/shop.'),
-      ...productImage(productBuf('virocid'), 'Photo 2.3: Virocid. A broad-spectrum disinfectant for the final wipe-down of tools, the table, and footwear after a necropsy session. Source: canadianpoultry.ca/shop.'),
+      ...productImage(productBuf('chlorinated_evo_wash'), 'Photo 2.3: Chlorinated EVO Wash. A foaming chlorine-based wash for cleaning organic matter off necropsy tools and surfaces before disinfection. Source: canadianpoultry.ca/shop.'),
+      ...productImage(productBuf('virocid'), 'Photo 2.4: Virocid. A broad-spectrum disinfectant for the final wipe-down of tools, the table, and footwear after a necropsy session. Source: canadianpoultry.ca/shop.'),
 
       h2('2.2 Opening the Bird and Exposing the Organ Systems'),
       para('A good necropsy is one you do the same way every single time. When the routine never changes, you never skip an organ, and your normal picture stays consistent from bird to bird [4]. The systematic method below follows the standard field sequence used in poultry practice [1,4].'),
-      ...image(figBuf('fig10_3.png'), 'Figure 2.2: The same five-stage routine, bird after bird. A fixed order is what keeps you from missing something. Source: CPC Short Courses.'),
+      ...image(figBuf('fig10_3.png'), 'Figure 2.1: The same five-stage routine, bird after bird. A fixed order is what keeps you from missing something. Source: CPC Short Courses.'),
       para('Here is the routine, stage by stage:'),
-      numbered('Before you cut. Review the flock history and note what the live birds were doing. Euthanize the bird humanely by cervical dislocation if it is not already dead. Then look it over from the outside, head to toe, before you open anything [1,2].'),
-      numbered('Start at the head. Wet the feathers down so they do not get in the way. Lay the bird on its back. Open the mouth and look in. Follow the throat down, open the windpipe, and check the sinuses just under the eyes. This is where you catch early airway changes [1,4].'),
-      numbered('Open the body. Cut the skin between each leg and the belly, then pull and twist the legs outward until both hips pop free and the bird lies flat. Cut and peel the breast skin back to expose the big breast muscles and the belly wall [4].'),
+      numbered([
+        run('Before you cut. Review the flock history and note what the live birds were doing. Euthanize the bird humanely by cervical dislocation or carbon dioxide ('),
+        run('CO'), run('2', { subScript: true }),
+        run(') gas if it is not already dead. Weigh the bird and write down the weight, because body weight against the target for that age and type tells you a lot about how the bird was doing. Then look it over from the outside, head to toe, and feel the crop to see how full it is, empty, full, or somewhere in the middle. In newly hatched chicks, check the navel too: a clean, healed navel is normal, while an open, unhealed, or scabby navel points to a problem. Do all of this before you open anything [1,2].'),
+      ]),
+      numbered('Start at the head. Wet the feathers down so they do not get in the way. Lay the bird on its back. Check the nostrils first: are they clean and dry, or is there discharge coming out? Look at the eyes too, noting their color and whether they are bright and clear or dull, cloudy, or sunken. Open the mouth and look in. Follow the throat down and open the windpipe, which is the trachea. Look at the lining inside: a healthy tracheal mucosa is pale and moist, so note any reddening or color change and whether there is mucus or discharge sitting in the tube. Check the sinuses just under the eyes. This is where you catch early airway changes [1,4].'),
+      numbered('Open the body. Cut the skin between each leg and the belly, then pull and twist the legs outward until both hips pop free and the bird lies flat. Cut and peel the breast skin back to expose the big breast muscles and the belly wall. With the muscle exposed, check the carcass for hydration: well-hydrated muscle looks moist and glistens, while dry, dark, sticky, or tacky muscle tells you the bird was dehydrated. As you open the skin, use your nose. A strong, foul smell can mean the carcass is already decomposing, or it can point to infection, so make a note of it [4].'),
       numbered('Expose the organs. Cut along both sides of the breastbone and through the ribs, then lift the whole breast plate off. Now the chest and belly are open in one clean view. Look at the surface of everything before you start moving organs around [4].'),
-      numbered('Examine in order. Work through every system the same way each time: liver, spleen, and pancreas, then heart and lungs, then the air sacs, then the full gut from crop to vent including the cecal tonsils, then the kidneys, the sciatic nerves in the legs, the joints, and finally the brain [1,4].'),
-      para('Take it slow the first few times. Speed comes on its own once the order is burned into your hands. The goal is not to be fast. The goal is to see every organ, every time.'),
+      numbered('Examine in order. Work through every system the same way each time: liver, spleen, and pancreas, then heart and lungs, then the air sacs. Then work the full gut from crop to vent. Note the outside appearance of the proventriculus and gizzard, the small intestine, and the ceca with their cecal tonsils, then cut each section open and check the lining and the contents inside the lumen. Check the bursa of Fabricius too, the round immune organ just above the vent, and size it against the bird\'s age. Finish with the sciatic nerves in the legs, the kidneys, the joints, and finally the brain [1,4].'),
+      ...image(figBuf('photo2_5_necropsy_steps.jpg'), 'Photo 2.5: The necropsy routine in pictures, step by step. (1) Euthanize the bird humanely by cervical dislocation. (2) Start at the head: open the beak and check the mouth and throat. (3) Open the body wall. (4) Lift the breast plate to bring the heart, liver, and intestinal tract into full view. (5) Work through the organs and find the proventriculus and gizzard. (6) Open the skull to examine the brain. Source: Cobb Post Mortem Guide, Breeders, 2022.', 5.9),
+      para('Take it slow the first few times. Speed comes on its own once the order is burned into your hands. The goal is not to be fast. The goal is to see every organ, every time. And write down what you find at each stage, starting with that crop fill, because your report is only as good as the notes you take at the table.'),
     ],
   };
 }
@@ -411,27 +422,36 @@ function buildSection3() {
       para('The necropsy starts before you open the bird. The outside tells you a lot, and it is the same head-to-toe check the CPC Learning Centre \'Spotting Disease Early\' guide uses on live birds [2]. Run your eye and your hands over the whole carcass first.'),
       bullet([{ text: 'Skin and feathers: ', bold: true }, { text: 'Healthy skin is a soft, even cream to pale yellow, depending on diet, with no scabs, bruising, or swelling. Feathers should be clean, well-set, and full for the bird\'s age. Note any bare patches, soiling around the vent, or caked litter on the feet.' }]),
       bullet([{ text: 'Head: ', bold: true }, { text: 'Eyes bright and clear, nostrils clean and dry, comb and wattles a normal full color for the bird type. The sinuses just below the eyes should be flat, not puffed up.' }]),
-      bullet([{ text: 'Joints and legs: ', bold: true }, { text: 'Hocks and feet should be cool, smooth, and the same size on both sides. A normal joint is not hot, swollen, or hard. Footpads should be smooth, without deep cracks or black scabs.' }]),
+      bullet([{ text: 'Joints and legs: ', bold: true }, { text: 'Hocks and feet should be cool, smooth, and the same size on both sides. A normal joint is not hot, swollen, or hard. Footpads should be smooth, without deep cracks or black scabs. If you cut lengthwise through the top of the shin bone, the growth plate should be even and smooth, with no thick, irregular plug of pale cartilage.' }]),
       bullet([{ text: 'Body condition: ', bold: true }, { text: 'Run a finger along the keel bone in the center of the breast. In a well-conditioned bird the breast muscle is full and rounds out on either side of the keel. A sharp, prominent keel with sunken muscle means the bird was thin.' }]),
-      ...image(figBuf('photo3_1_broiler_external.jpg'), 'Photo 3.1: A healthy eight-week-old broiler. Clean, well-set feathers, a bright clear eye, and a full breast. Get your eye used to a normal bird on the outside before you ever open one. Source: AJ. Adekunle, Wikimedia Commons (CC BY-SA 4.0).', 3.3),
+      ...image(figBuf('necrospy external.jpg'), 'Photo 3.1: The head-to-toe outside check, done before the bird is ever opened. Run your hands over the feathers and skin, look over the head (eyes, comb, and beak), check the legs and feet, feeling the hock joints (labeled) and footpads for heat or swelling, and run a finger along the keel (arrowed) to judge body condition. This outside check is where many problems first show up. Source: Cobb Post Mortem Guide, Breeders, 2022.', 5.9),
 
-      h2('3.2 Internal Organs: Heart, Lungs, Liver, Spleen, and Intestines'),
+      h2('3.2 Internal Organs: Heart, Lungs, Liver, Spleen, Intestines, and Reproductive Organs'),
       para('Once the breast plate is off, the chest and belly open up in front of you. Before you move anything, take in where each organ sits and how it looks. Photo 3.2 shows the normal layout you should expect [3,4].'),
-      ...image(figBuf('photo3_2_necropsy_organs.png'), 'Photo 3.2: The chest and belly of a healthy bird with the breast plate lifted. Knowing where each organ belongs is half the battle. Source: CPC Short Courses.'),
+      ...image(figBuf('necrospy view.jpg'), 'Photo 3.2: The chest and belly of a healthy broiler with the breast plate lifted. The heart sits high and central, the large red-brown liver just below it, with the gizzard off to the side and the coiled loops of intestine filling the lower belly. Knowing where each organ belongs is half the battle. Source: CPC Short Courses.'),
       para('Here is what normal looks like, organ by organ:'),
       bullet([{ text: 'Heart: ', bold: true }, { text: 'Sits high and central, tucked in a thin clear sac. It is a firm, pale to medium red cone with smooth surfaces. The sac around it (the pericardium) holds only a tiny amount of clear fluid. Cloudy fluid or a thick coating is not normal [4].' }]),
-      bullet([{ text: 'Lungs: ', bold: true }, { text: 'A pair of bright pink, spongy organs pressed up against the ribs along the back. In a healthy bird they sit flush against the back wall and spring back when pressed. They should not be firm, dark, or wet [3].' }]),
-      bullet([{ text: 'Liver: ', bold: true }, { text: 'The biggest organ in the belly, in two lobes, a deep red-brown with smooth, sharp edges. In a young bird right after a meal it can carry a normal tan, slightly fatty look. A liver that is pale, yellow and greasy, or crumbly, or that has a coating on it, is worth a closer look [3,4].' }]),
-      bullet([{ text: 'Spleen: ', bold: true }, { text: 'A small, round, dark red to purple organ, about the size of a cherry, sitting near the junction of the proventriculus and gizzard. Normal is small and firm. A spleen swollen to two or three times that size points to a problem [3,4].' }]),
+      ...image(figBuf('Gemini_Generated_Image_22tdzn22tdzn22td.png'), 'Photo 3.3: The heart in place at the front of the opened chest, sitting high and central just behind the breastbone. Knowing exactly where it sits lets you find it first, every time. Source: CPC Short Courses.', 4.6),
+      bullet([{ text: 'Lungs and airway: ', bold: true }, { text: 'A pair of bright pink, spongy organs pressed up against the ribs along the back. In a healthy bird they sit flush against the back wall and spring back when pressed. They should not be firm, dark, or wet [3]. Leading into them is the windpipe, or trachea, a pale, open tube with a clean, moist lining. The point where it divides to enter the lungs is the syrinx, the bird\'s voice box.' }]),
+      ...image(figBuf('photo3_5_lungs.jpg'), 'Photo 3.4: Left, the syrinx exposed at the point where the windpipe (trachea) splits to enter the lungs, with the heart just above it. Right, a pair of lungs lifted out: healthy lungs are light and spongy and spring back when pressed, and in the bird they sit tucked up high against the ribs. Source: Cobb Post Mortem Guide, Breeders, 2022 (left); Li W, Tang Q, Dai N, et al. Scientific Reports. 2020;10:6340 (right).', 5.9),
+      bullet([{ text: 'Liver: ', bold: true }, { text: 'The biggest organ in the belly, in two main lobes, a deep red-brown with smooth, sharp edges. In a young bird right after a meal it can carry a normal tan, slightly fatty look. A liver that is pale, yellow and greasy, or crumbly, or that has a coating on it, is worth a closer look [3,4].' }]),
+      ...image(figBuf('Liver-chicken.png'), 'Photo 3.5: Two chicken livers showing the normal color range. Both have the typical two-lobed shape with smooth, sharp edges. Color runs from a deep reddish-brown (left) to a paler tan-orange (right), depending on how much fat the liver is carrying. Source: CPC Short Courses.', 4.8),
+      bullet([{ text: 'Spleen and immune organs: ', bold: true }, { text: 'The spleen is a small, round, dark red to purple organ, about the size of a cherry, sitting near the junction of the proventriculus and gizzard. Normal is small and firm, and a spleen swollen to two or three times that size points to a problem [3,4]. The spleen is part of the bird\'s immune system, along with two other organs worth knowing. The thymus runs as a chain of pale lobules down both sides of the neck, and the bursa of Fabricius is a round pouch just above the vent. Both are largest in young birds and shrink as the bird matures, so judge their size against the bird\'s age.' }]),
+      ...image(figBuf('photo3_6_immune_organs.png'), 'Photo 3.6: The three immune organs. (1) The spleen (circled), a small, round, dark organ near the proventriculus and gizzard. (2) The thymus, a chain of pale lobules running down the neck, shown in a 3-week-old and a 14-week-old broiler breeder. (3) The bursa of Fabricius, a round pouch just above the vent. Source: CPC Short Courses (spleen); Cobb Post Mortem Guide, Breeders, 2022 (thymus and bursa).', 5.9),
       bullet([{ text: 'Gizzard and proventriculus: ', bold: true }, { text: 'The proventriculus is the glandular stomach, a short tube before the gizzard. The gizzard is the thick muscular grinder, pale and very firm, usually holding grit and feed. Its tough inner lining peels back to a green-yellow surface, which is normal [5].' }]),
-      bullet([{ text: 'Intestines and ceca: ', bold: true }, { text: 'A soft, coiled, pink-tan tube running from the gizzard to the vent. Chickens have two blind pouches called ceca that branch off near the end and normally hold pasty, mustard-brown contents. A small bump partway down the small intestine, called Meckel\'s diverticulum, is a normal leftover from the embryo, not a lesion [5].' }]),
+      ...image(figBuf('photo3_6_proventriculus_gizzard.jpg'), 'Photo 3.7: Left, the proventriculus (the narrow glandular tube) leading into the gizzard (the rounded, dark, muscular grinder), with a ruler for scale. Right, a gizzard cut open to show its thick muscular wall and the tough yellow koilin lining that peels back, which is normal. Source: Wikimedia Commons / Bjferstern, CC BY-SA 3.0.', 5.5),
+      bullet([{ text: 'Intestines and ceca: ', bold: true }, { text: 'A soft, coiled, pink-tan tube running from the gizzard to the vent. The first loop, the duodenum, cradles the pale, slender pancreas, a normal part of the digestive system that feeds enzymes into the gut to break down feed. Chickens have two blind pouches called ceca that branch off near the end and normally hold pasty, mustard-brown contents. A small bump partway down the small intestine, called Meckel\'s diverticulum, is a normal leftover from the embryo, not a lesion [5].' }]),
+      ...image(figBuf('Gemini_Generated_Image_fwgvbkfwgvbkfwgv.png'), 'Photo 3.8: The full digestive tract laid out from front to back. The gizzard leads into the duodenal loop, which cradles the pale pancreas, then the long jejunum and ileum, with the small bump of Meckel\'s diverticulum partway along. The two blind ceca branch off near the end, with the colon running down to the cloaca. The spleen sits up by the gizzard. Source: CPC Short Courses.', 5.9),
       bullet([{ text: 'Kidneys: ', bold: true }, { text: 'Deep red-brown organs set into the bone along the back, in three sections on each side. You see them after the gut is lifted out. Pale, swollen kidneys with white urate streaks running through them can signal a problem, though a little white urate is normal [3].' }]),
+      ...image(figBuf('kidney-poultry.jpg'), 'Photo 3.9: Both kidneys in place along the backbone, seen after the gut has been lifted out. Each one is a deep red-brown organ set into the bone in three lobes, anterior (front), middle, and posterior (back), with the thin ureter running down the middle to carry urates away. A little white urate is normal, but pale, swollen kidneys with heavy white streaks point to a problem. Source: CPC Short Courses.', 3.4),
+      bullet([{ text: 'Reproductive organs: ', bold: true }, { text: 'These change more than any other organ with the bird\'s sex, type, and age. In a hen in lay, the left ovary carries a graded cluster of yellow yolks, like a small bunch of grapes, and the oviduct is a long, wide, folded tube that builds the egg as it travels down. In a young broiler or a hen out of lay, the ovary is just a small, flat, pale patch and the oviduct is a thin thread. In almost all birds only the left side develops; the right side stays as a tiny remnant. The laying hen\'s tract is covered in full in Section 5.' }]),
+      ...image(figBuf('photo8_1_hen_insitu.png'), 'Photo 3.10: A laying hen opened up with the reproductive tract still in place. The cluster of yellow pre-ovulatory follicles sits on the ovary, and the wide, active oviduct (infundibulum, magnum, shell gland) fills much of the body cavity. A young broiler or a hen out of lay has almost nothing here. Source: Apperson et al., Veterinary Sciences 2017 (CC BY 4.0).', 5.0),
 
       h2('3.3 Normal Colors, Textures, and Organ Sizes'),
       para('Color, texture, and size are your three quick checks on any organ. With a healthy bird in front of you, these become second nature. The table below is a pocket reference for what normal looks and feels like in a chicken [3,4,5].'),
       normalOrganTable(),
       new Paragraph({ spacing: { before: 80, after: 0 } }),
-      para('Two cautions on color. First, diet changes things. Birds on high-corn diets store more yellow pigment, so skin and fat run more yellow, which is normal. Second, a recently dead bird that has sat too long will discolor on its own as it breaks down. That is why fresh birds give the truest picture, and why a bird that has been dead for hours can fool you into seeing problems that were never there [1].'),
+      para('Two cautions on color. First, diet changes things. Birds on high-corn diets store more yellow pigment, so skin and fat run more yellow, which is normal. Second, a recently dead bird that has sat too long will discolor on its own as it breaks down. That is why fresh birds give the truest picture, and why a bird that has been dead for days can fool you into seeing problems that were never there [1].'),
     ],
   };
 }
@@ -461,6 +481,10 @@ function normalOrganTable() {
     ['Gizzard', 'Pale tan muscle', 'Very firm, hard', 'Large, thick-walled'],
     ['Intestines', 'Pink-tan', 'Soft, pliable', 'Long, coiled'],
     ['Kidneys', 'Red-brown', 'Soft, lobed', 'Set into the backbone'],
+    ['Thymus', 'Pale pink', 'Soft, lobulated', 'Lobes along neck, bigger when young'],
+    ['Bursa of Fabricius', 'Pale cream', 'Firm, round', 'Pouch above vent, bigger when young'],
+    ['Ovary (hen in lay)', 'Yellow yolks', 'Soft, grape-like', 'Graded yolk cluster; tiny when immature'],
+    ['Oviduct (hen in lay)', 'Pale pink to white', 'Soft, folded tube', 'Long and wide; thread when immature'],
   ];
   return new Table({
     width: { size: 100, type: WidthType.PERCENTAGE },
@@ -469,6 +493,49 @@ function normalOrganTable() {
       new TableRow({ children: headers.map((h, i) => hdrCell(h, i)), tableHeader: true }),
       ...rows.map((row, ri) => new TableRow({ children: row.map((cell, ci) => dataCell(cell, ci, ri % 2 === 1)) })),
     ],
+  });
+}
+
+function birdTypeTable() {
+  const colW = [2640, 3000, 3000];
+  const hdrBg = '2E74B5';
+  const altBg = 'EBF2FA';
+  const bdr = { style: BorderStyle.SINGLE, size: 2, color: 'AAAAAA' };
+  const cellBorders = { top: bdr, bottom: bdr, left: bdr, right: bdr };
+  const hdrCell = (text, i) => new TableCell({
+    width: { size: colW[i], type: WidthType.DXA }, borders: cellBorders,
+    shading: { type: ShadingType.SOLID, color: hdrBg },
+    children: [new Paragraph({ alignment: AlignmentType.LEFT, spacing: { before: 60, after: 60 }, children: [run(text, { bold: true, size: 18, color: 'FFFFFF' })] })],
+  });
+  const dataCell = (text, i, shade) => new TableCell({
+    width: { size: colW[i], type: WidthType.DXA }, borders: cellBorders,
+    shading: { type: ShadingType.SOLID, color: shade ? altBg : 'FFFFFF' },
+    children: [new Paragraph({ alignment: AlignmentType.LEFT, spacing: { before: 50, after: 50 }, children: [run(text, { size: 18, color: BODY_GRAY, bold: i === 0 })] })],
+  });
+  const headers = ['What you are looking at', 'Meat bird (broiler)', 'Layer / breeder hen'];
+  const rows = [
+    ['Breast muscle', 'Huge, deep, pale', 'Moderate, leaner'],
+    ['Body fat', 'Fat pad in belly', 'Fat shifts with lay'],
+    ['Ovary / oviduct', 'Tiny, thread-like', 'Active: yolks and wide oviduct'],
+    ['Liver', 'Large, can be fatty', 'Enlarged, yolk-color in lay'],
+    ['Keel / bones', 'Soft, fast-grown', 'Tested by egg calcium demand'],
+    ['Typical age seen', 'Days to ~6 weeks', 'Months, in full production'],
+  ];
+  return new Table({
+    width: { size: 100, type: WidthType.PERCENTAGE },
+    margins: { top: 0, bottom: 0, left: 0, right: 0 },
+    rows: [
+      new TableRow({ children: headers.map((h, i) => hdrCell(h, i)), tableHeader: true }),
+      ...rows.map((row, ri) => new TableRow({ children: row.map((cell, ci) => dataCell(cell, ci, ri % 2 === 1)) })),
+    ],
+  });
+}
+
+function tableCaption(text) {
+  return new Paragraph({
+    children: [new TextRun({ text, italics: true, color: '555555', size: 20, font: 'Calibri' })],
+    alignment: AlignmentType.CENTER,
+    spacing: { before: 60, after: 240 },
   });
 }
 
@@ -485,7 +552,7 @@ function buildSection4() {
       h2('4.1 Musculoskeletal Development and the Large Breast Muscles'),
       para('The first thing that hits you in a broiler is the breast. The two breast muscles are huge, deep, and pale pink, far bigger in proportion than anything you see in a laying hen. That is the whole point of the bird, and it is completely normal [6]. Healthy breast muscle is firm, evenly colored, and dry to the touch.'),
       para('Because broilers grow so fast, the skeleton is racing to keep up. Leg and wing bones are still relatively soft and the growth plates are active. This is normal for a young, fast-growing bird, but it is also why leg and skeletal issues show up in this class of bird. Look for legs that are straight and even, and breast muscle that is clean. Pale streaks or hard pale patches in the breast are not normal and are worth sampling [7].'),
-      ...image(figBuf('photo4_1_broiler_breast.jpg'), 'Photo 4.1: The deep, pale, firm breast muscle of a meat bird. That heavy breast, far bigger in proportion than anything on a laying hen, is the normal signature of a broiler. Source: Wikimedia Commons (public domain).', 5.0),
+      ...image(figBuf('necrospy breast.jpg'), 'Photo 4.1: The musculoskeletal signature of a meat bird, in three views. Left, the breast skin reflected back to show the two large, pale pink breast muscles filling out on either side of the white keel bone; healthy breast is full, firm, evenly colored, and dry. Center, the leg and foot checked for straight, even bones and smooth, clean footpads. Right, a long leg bone cut lengthwise to show the growth plate (arrowed, P) at the end of the bone; in a fast-growing young broiler this plate is wide and active, which is normal for its age. Source: Cobb Post Mortem Guide, Breeders, 2022.', 5.9),
 
       h2('4.2 Heart, Liver, and Metabolic Features in Fast-Growing Birds'),
       para('Pushing that much growth puts a real load on the heart and the liver, and a normal broiler shows it. The heart is working hard to feed all that muscle with oxygen. In a healthy bird it is still a firm, clean red cone, but this is the class of bird where heart and circulation problems turn up, so it pays to know the normal heart well [7].'),
@@ -494,6 +561,7 @@ function buildSection4() {
       h2('4.3 Typical Gastrointestinal Tract Condition'),
       para('Open the gut of a healthy, well-fed broiler and it should look busy and full. The crop at the base of the neck often holds feed and water. The gizzard is packed with ground feed and grit. The intestines are full, soft, and pink-tan, with normal pasty contents moving through [5].'),
       para('The ceca, the two blind pouches near the back end, normally hold a pasty mustard-brown material, and they empty out a looser dropping every so often, which is normal cecal dropping and not diarrhea. A healthy gut wall is thin enough that you can almost see the contents through it. A thick, reddened, or ballooned gut is a change worth noting, but in a normal bird the whole tract simply looks like a working food line [5].'),
+      ...image(figBuf('broiler gut parts.png'), 'Photo 4.2: The gut opened along its length, segment by segment, to show normal inner lining and contents. From left: the crop, a thin-walled holding pouch; the duodenum, with its pale, smooth mucosa; the jejunum, a little finer-textured with normal pasty contents; the ileum, holding firmer feed material; and the ceca, with their typical pasty mustard-brown material. A healthy gut wall is thin, with no thickening, reddening, or ballooning. Source: USDA.', 5.9),
 
       h2('4.4 Normal Reproductive Structures'),
       para('Here is where a young broiler looks very different from a laying hen, and it trips up a lot of beginners. In a young meat bird, the reproductive organs are tiny and undeveloped, because the bird is harvested long before it would ever mature [8]. In a young female, the ovary is a small, flat, pale patch up against the backbone, with no visible yolks. In a young male, the testes are two small, pale, bean-shaped organs in the same area.'),
@@ -515,17 +583,21 @@ function buildSection5() {
       h2('5.1 Reproductive System: Ovary, Oviduct, and Egg Development'),
       para('In almost all birds, only the left ovary and oviduct develop and work. The right side regresses before the bird ever hatches and stays as a tiny remnant, which is completely normal [8]. So when you open a hen and find a working tract on the left side only, that is exactly right.'),
       para('The ovary in a hen in lay looks like a small bunch of grapes: a cluster of yolks at different sizes, from tiny pale ones up to a full yellow yolk ready to be released. The biggest one ovulates next, and the smaller ones are waiting their turn. This graded cluster is the normal sign of a productive hen [8].'),
-      ...image(figBuf('fig10_5.png'), 'Figure 5.1: The normal working hen. A graded cluster of yolks on the ovary feeds into the five sections of the oviduct, which build the egg over about a day. Source: CPC Short Courses.'),
+      ...image(figBuf('Reproductive sys-necrospy2.png'), 'Photo 5.1: The hen\'s reproductive tract lifted out and laid flat. The left ovary carries its graded cluster of follicles, the largest (F1) ready to ovulate next, down through F2, F3, F4 to the smallest (F5), the mark of a hen in full lay. The nerves and blood vessels run into the ovary along its stalk. The oviduct stretches out to the right, ending in the muscular shell gland where the hard shell is laid down. Source: Apperson et al., Veterinary Sciences 2017 (CC BY 4.0).', 5.9),
       para('Once a yolk is released, it travels down the oviduct, a long folded tube with five sections that each do one job. The infundibulum catches the yolk. The magnum wraps it in egg white. The isthmus adds the shell membranes. The shell gland lays down the hard shell, which takes the longest, around 18 to 21 hours. The vagina passes the finished egg out. Start to finish, building one egg takes about 24 to 26 hours [8].'),
       para('In a hen mid-cycle you may well find a soft, forming egg or a fully shelled egg sitting in the tract. That is normal. The whole tube will look wide, fleshy, and active in a hen at peak lay, and it shrinks right down again when she stops laying.'),
+      ...image(figBuf('fig5_1_repro_tract.jpg'), 'Figure 5.1: The normal working hen\'s reproductive tract. Left, the ovary with its graded follicles feeding into the oviduct: the infundibulum, magnum, isthmus, shell gland (uterus), and vagina, running down to the cloaca. Right, what each section does and how long it takes, building one egg over about 24 to 26 hours. Source: Cobb Post Mortem Guide, Breeders, 2022 (illustration); CPC Short Courses (sequence).'),
 
       h2('5.2 Bone Health and Keel Evaluation'),
       para('A laying hen pulls a huge amount of calcium out of her own body every day to build shells, so her skeleton tells an important story. Healthy laying birds carry a special store of bone, called medullary bone, inside the leg bones that acts as a calcium bank for shell-making. Crack a normal leg bone and that spongy inner bone is a normal finding in a hen in lay [3].'),
+      ...image(figBuf('medullary.png'), 'Photo 5.2: A hen leg bone broken open to show the spongy medullary bone filling the shaft. This is the calcium bank a laying hen draws on every night to build her shell. Finding this spongy bone inside the leg of a hen in lay is normal, not a lesion. Source: CPC Short Courses.', 4.5),
       para('The keel, the long breastbone down the center of the chest, is your quick body-condition check and also a calcium check. Run a finger down it. In a well-managed hen it is straight and firm with good muscle on both sides. Some older laying hens show a slightly bent or dented keel, which is common in the field. A keel and ribs that flex too easily, though, point to a calcium or bone problem rather than normal lay [3,7].'),
+      ...image(figBuf('Layer welfare.jpg'), 'Photo 5.3: The breast opened to judge body condition. The dashed line runs along the keel, and the arrows point to the breast muscle filling out on either side. Good muscle cover on both sides of a straight keel is a key welfare check in laying hens. A sharp, bare keel with little muscle, or a bent or fractured keel, points to poor body condition or a calcium drain and is a common welfare problem in long-cycle layers. Source: CPC Short Courses.', 4.7),
 
       h2('5.3 Organ Size and Fat Distribution in Productive Hens'),
       para('A hen in full lay reads differently from a broiler in almost every organ. The liver is large and works hard turning feed into yolk, and under the influence of laying hormones a normal laying-hen liver takes on a yellow, slightly fatty look. A bit of that is normal in a productive hen, which is the opposite of what you would call normal in a young broiler [3,7].'),
       para('Fat sits differently too. A productive hen keeps a fat pad in the lower belly and fat around the working tract, and that ebbs and flows with where she is in her laying cycle. A leaner breast on a laying hen is normal, because her body is spending its energy on eggs, not on packing muscle. Read each organ against the job the bird is doing, and a hen in lay makes perfect sense [8].'),
+      ...image(figBuf('fat pad layer2.jpg'), 'Photo 5.4: The opened lower belly of a laying hen, showing the yellow abdominal fat pad around the gut and reproductive tract. A moderate, soft fat pad like this is normal in a productive hen and rises and falls with her laying cycle. Very thick or bulging pads, especially with a pale, greasy liver, can signal obesity and risk of fatty liver problems. Source: CPC Short Courses.', 2.4),
     ],
   };
 }
@@ -541,7 +613,9 @@ function buildSection6() {
 
       h2('6.1 Growth Versus Reproduction Priorities'),
       para('The single best trick for reading a bird on the table is to ask what job that bird was built for. A broiler is built for growth. A layer is built for eggs. Once you hold that in your head, the differences inside stop being confusing and start making sense [6,8].'),
-      ...image(figBuf('fig10_6.png'), 'Figure 6.1: Same species, two different normals. A broiler is built for growth and a hen for eggs, so read each bird against its job. Source: CPC Short Courses.'),
+      new Paragraph({ spacing: { before: 80, after: 0 } }),
+      birdTypeTable(),
+      tableCaption('Table 6.1: Same species, two different normals. A broiler is built for growth and a hen for eggs, so read each bird against its job. Source: CPC Short Courses.'),
       para('A broiler pours everything into muscle and grows out in weeks, so it is heavy in the breast with an immature tract. A layer pours everything into egg production over months, so she is leaner in the breast with a big, busy reproductive tract. Neither is wrong. They are two normal endpoints of two different jobs.'),
 
       h2('6.2 Body Fat, Muscle Mass, and Organ Development'),
@@ -594,12 +668,11 @@ function buildSection8() {
       h2('8.1 Walk-Through Necropsy of a Broiler and a Layer'),
       para('We run the exact same five-stage routine on both birds, side by side. Outside check first, then head and airway, then open the body, lift the breast plate, and work through every organ in the same order. Doing them back to back is the whole point, because the contrasts teach faster than either bird alone [4].'),
       para('On the broiler, expect the signature of a meat bird: a big pale breast, a busy full gut, a large working liver, and a tiny undeveloped reproductive tract. On the layer, expect the signature of an egg producer: a leaner breast, a grape-like cluster of yolks on the ovary, a wide active oviduct that may hold a forming egg, and calcium-rich leg bones. Two healthy birds, two completely different normal pictures.'),
-      ...image(figBuf('photo8_1_hen_insitu.png'), 'Photo 8.1: The layer half of the comparison, opened up with the organs still in place. The standout in a productive hen is the reproductive tract: the cluster of yellow pre-ovulatory follicles on the ovary and the wide, active oviduct (magnum, infundibulum, shell gland) filling the body cavity. A broiler the same age has almost nothing here. Source: Apperson et al., Veterinary Sciences 2017 (CC BY 4.0).', 5.0),
 
       h2('8.2 Identifying Healthy Organs in Both Types'),
       para('As we work, name each organ out loud and call its color, texture, and size before moving on. Heart firm and clean. Liver deep red-brown with sharp edges. Spleen small, round, and firm. Lungs bright pink and spongy. Gut soft and full. This habit of naming and grading each organ is the same skill the lab uses, and it is what you will carry back to your own barn [3,4].'),
       para('By the end of the session, opening a bird should feel routine and a healthy organ should look familiar. That is the finish line for this course. You now have a clear picture of normal in both a broiler and a hen, which is the foundation you need before moving on to diseased birds. Course 11 (Necropsy of Common Diseases) in this series picks up from here and shows you what happens to these same organs when disease strikes.'),
-      ...image(figBuf('photo8_2_hen_ovary.png'), 'Photo 8.2: The same tract lifted out and laid flat. The graded cluster of developing yolks on the ovary, biggest down to smallest, is the mark of a hen in full lay, with the oviduct stretched out below. Source: Apperson et al., Veterinary Sciences 2017 (CC BY 4.0).', 5.5),
+      para('One last reminder, the same one we opened with. A full necropsy is your veterinarian\'s job first. Whenever you can, send the dead bird or the samples to your vet or the diagnostic lab, or have your vet come out to the farm in person. Opening a bird yourself in the barn is the fallback, for the times when your vet cannot visit in person, or you cannot get the mortalities to the lab or to your vet\'s clinic. This course builds the eye and the routine for those moments, and it makes you a sharper partner for your vet the rest of the time.'),
     ],
   };
 }
@@ -719,7 +792,7 @@ async function main() {
     { lvl: 2, text: '2.2 Opening the Bird and Exposing the Organ Systems', page: 8 },
     { lvl: 1, text: 'Section 3: Normal Anatomy Overview (All Bird Types)', page: 10 },
     { lvl: 2, text: '3.1 External Examination: Skin, Feathers, Joints, and Feet', page: 10 },
-    { lvl: 2, text: '3.2 Internal Organs: Heart, Lungs, Liver, Spleen, and Intestines', page: 11 },
+    { lvl: 2, text: '3.2 Internal Organs: Heart, Lungs, Liver, Spleen, Intestines, and Reproductive Organs', page: 11 },
     { lvl: 2, text: '3.3 Normal Colors, Textures, and Organ Sizes', page: 13 },
     { lvl: 1, text: 'Section 4: Normal Meat Bird Features (Broilers)', page: 14 },
     { lvl: 2, text: '4.1 Musculoskeletal Development and the Large Breast Muscles', page: 14 },
