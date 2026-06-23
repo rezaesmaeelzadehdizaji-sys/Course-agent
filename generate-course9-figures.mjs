@@ -261,7 +261,7 @@ function fig9_3() {
   <rect x="219" y="189" width="162" height="82" rx="4" fill="${C.medBlue}" opacity="0.08" stroke="${C.medBlue}" stroke-width="1"/>
   <rect x="219" y="189" width="162" height="20" rx="4" fill="${C.medBlue}" opacity="0.3"/>
   <text x="300" y="203" text-anchor="middle" fill="${C.darkBlue}" font-family="Arial, sans-serif" font-size="10" font-weight="bold">★ PREFERRED: Blood in Tubes</text>
-  <text x="225" y="222" fill="${C.gray}" font-family="Arial, sans-serif" font-size="10">• CPC team / vet collects</text>
+  <text x="225" y="222" fill="${C.gray}" font-family="Arial, sans-serif" font-size="10">• Veterinarian/CPC collects</text>
   <text x="225" y="237" fill="${C.gray}" font-family="Arial, sans-serif" font-size="10">• Plain red-top serum tubes</text>
   <text x="225" y="252" fill="${C.gray}" font-family="Arial, sans-serif" font-size="10">• Prevents hemolysis</text>
   <!-- Farmer option: cards — full sub-box enclosing header + bullets -->

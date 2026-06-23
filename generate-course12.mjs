@@ -314,9 +314,9 @@ const decisionTreeSvg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80
   <!-- Arrow down: Unsure -->
   <line x1="400" y1="360" x2="400" y2="390" stroke="#555" stroke-width="2" marker-end="url(#arr)"/>
   <text x="420" y="380" font-size="12" fill="#555">Unsure?</text>
-  <!-- Bottom box: Call your vet -->
+  <!-- Bottom box: Call your veterinarian -->
   <rect x="250" y="395" width="300" height="50" rx="8" fill="#2E74B5"/>
-  <text x="400" y="418" text-anchor="middle" font-size="13" fill="white" font-weight="bold">Call your vet or barn supervisor</text>
+  <text x="400" y="418" text-anchor="middle" font-size="13" fill="white" font-weight="bold">Call your veterinarian or barn supervisor</text>
   <text x="400" y="436" text-anchor="middle" font-size="12" fill="white">Get guidance before the bird suffers longer</text>
   <!-- Rule box at bottom -->
   <rect x="80" y="470" width="640" height="90" rx="6" fill="#FFF3E0" stroke="#C9A84C" stroke-width="2"/>
@@ -476,7 +476,7 @@ function buildBody() {
       ['Condition', 'Manageable with Treatment', 'Euthanize Now'],
       [
         ['Leg / mobility problem', 'Mild leg weakness: bird can stand with encouragement, access feed and water on its own', 'Cannot stand, cannot reach feed or water, has been down for more than 1 day'],
-        ['Respiratory signs', 'Mild rattling in one or two birds: isolate, monitor, call vet', 'Gasping open-mouthed at rest, head pulled back, cyanotic comb in cool conditions'],
+        ['Respiratory signs', 'Mild rattling in one or two birds: isolate, monitor, call veterinarian', 'Gasping open-mouthed at rest, head pulled back, cyanotic comb in cool conditions'],
         ['Wound / injury', 'Minor superficial wound: clean, monitor', 'Open wound exposing muscle, bone, or viscera. Active pecking target.'],
         ['Body condition', 'Thin but mobile bird in a young flock: check management', 'Emaciated, keel bone fully palpable with no muscle cover, dehydrated'],
         ['Neurological signs', 'Mild incoordination in a young chick: move to recovery pen, recheck within a few hours', 'Full loss of righting reflex, circling, or star-gazing with no improvement in 10 min'],
@@ -504,7 +504,7 @@ function buildBody() {
         ['Non-penetrating captive bolt', 'Trained farm worker', 'Heavier birds: breeders, turkeys', 'Apply to the correct site on the skull. Confirm insensibility immediately. Follow with secondary method.'],
         ['CO2 euthanasia', 'Trained farm worker', 'Small groups, individual birds, hatchery culls', 'Minimum 80% CO2 for chicks; >50% for adults. Continue until all reflexes cease.'],
         ['Blunt force trauma', 'Trained farm worker', 'Neonatal chicks only', 'Single firm blow to top of skull. Technique-dependent. Seek alternatives where available.'],
-        ['Injectable barbiturate overdose', 'Licensed veterinarian only', 'Any bird when a vet is present', 'Intravenous injection. Fastest, most reliable. Not available for routine farm use.'],
+        ['Injectable barbiturate overdose', 'Licensed veterinarian only', 'Any bird when a veterinarian is present', 'Intravenous injection. Fastest, most reliable. Not available for routine farm use.'],
       ],
       [1800, 1800, 2160, 2880]
     ),

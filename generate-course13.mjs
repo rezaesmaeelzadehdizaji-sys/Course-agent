@@ -468,7 +468,7 @@ function buildWelfareIndicatorTable() {
     ['Hock burns', 'Brown burn lesions on hock joint skin', 'Extended contact with wet litter', 'Same as FPD: litter moisture and air quality'],
     ['Feather pecking', 'Bare patches, bleeding wounds on back or vent', 'Overcrowding, light, diet, stress, boredom', 'Investigate root cause; adjust light, space, diet'],
     ['Keel bone injury', 'Swollen, deformed, or fractured breastbone', 'Trauma in cage-free systems', 'Reduce perch height; manage pop-hole timing'],
-    ['Elevated mortality', 'Daily mortality above 0.2% or sudden spike', 'Disease, heat stress, trauma, management gap', 'Necropsy immediately; call your vet'],
+    ['Elevated mortality', 'Daily mortality above 0.2% or sudden spike', 'Disease, heat stress, trauma, management gap', 'Necropsy immediately; call your veterinarian'],
   ];
 
   return new Table({
@@ -791,7 +791,7 @@ function buildSection3(gaitBuf) {
       para('Your daily mortality record is a welfare dashboard. A sudden jump in daily mortality means something changed. The CPC Learning Centre Spotting Disease Early guide puts it clearly: water consumption drops before feed consumption drops, feed drops before you see sick birds, and sick birds appear before mortality climbs [11]. If you are waiting for mortality to tell you something is wrong, you are behind the problem by days.'),
       bullet('Target daily broiler mortality: below 0.2% of the flock per day.'),
       bullet('Cumulative mortality target at processing weight: below 4%.'),
-      bullet('Sudden increase in mortality: necropsy dead birds immediately. Do not wait. Call your vet if you cannot identify the cause within the first 24 hours.'),
+      bullet('Sudden increase in mortality: necropsy dead birds immediately. Do not wait. Call your veterinarian if you cannot identify the cause within the first 24 hours.'),
       para('Behavioral changes are welfare signals too. Birds that are piling in corners, not distributing evenly across the barn, sitting rather than walking, or showing reduced feeding activity are telling you something is wrong with the environment or their health, often before any other measurable indicator changes.'),
 
       h2('3.7 At-a-Glance: Key Welfare Indicators'),

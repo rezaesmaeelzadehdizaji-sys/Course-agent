@@ -245,7 +245,7 @@ function buildBody() {
 
     // ─── INTRODUCTION ───
     h1('Introduction'),
-    para('A well-performed necropsy is one of the most useful diagnostic tools on a commercial farm. Course 10 covered what a healthy bird looks like inside. This course covers what disease looks like: the specific lesions that point you toward a diagnosis before you pick up the phone to call your vet.'),
+    para('A well-performed necropsy is one of the most useful diagnostic tools on a commercial farm. Course 10 covered what a healthy bird looks like inside. This course covers what disease looks like: the specific lesions that point you toward a diagnosis before you pick up the phone to call your veterinarian.'),
     para('Mortality spikes, production drops, poor feed conversion, birds that look wrong but are hard to pin down. Opening a few fresh birds often answers those questions in 15 minutes. This course walks through the lesions associated with the most common bacterial, viral, parasitic, and metabolic diseases in broilers, layers, and breeders. You will also learn how to collect the right samples for the lab and how to translate your findings into immediate management decisions.'),
     para('Whether you are raising meat birds, layers, or breeders, early recognition of disease through the necropsy table can prevent large losses and give your veterinarian the information they need to act fast. For a full disease profile of each condition covered here, see Course 7 (Common Poultry Diseases) in this series.'),
     spacer(80),
@@ -291,7 +291,7 @@ function buildBody() {
     h2('2.1  Tools and Safety Precautions'),
     para('A proper field necropsy kit contains: a sharp scalpel or sturdy scissors, bone cutters or poultry shears, forceps, a cutting board or plastic-lined surface, leak-proof sample bags, permanent marker and labels, gloves, and a face mask. For a full list of equipment, refer to Course 10 (Necropsy of Normal Birds) in this series.'),
     para('Biosecurity at the necropsy table protects you and your remaining flock. Several poultry diseases can infect humans: Salmonella, Campylobacter, and Avian Influenza all pose real risks when handling fresh carcasses. Wear gloves every time. A face mask and eye protection are good habits, especially for respiratory presentations where aerosols may carry pathogens. Dispose of carcasses and contaminated material in sealed bags to prevent attracting scavengers and spreading infectious material [2].'),
-    para('Never perform a necropsy on a bird you suspect has Avian Influenza until you have contacted your veterinarian or the CFIA. The suspected-AI protocol is: isolate the barn, call your vet, do not move birds, and wait for guidance before any further investigation.'),
+    para('Never perform a necropsy on a bird you suspect has Avian Influenza until you have contacted your veterinarian or the CFIA. The suspected-AI protocol is: isolate the barn, call your veterinarian, do not move birds, and wait for guidance before any further investigation.'),
     callout('CRITICAL RULE', 'If you see: dark cyanotic comb/wattles, hemorrhages on shanks or feet, birds dying peracutely with no other obvious cause: STOP. Do not open additional birds. Call your veterinarian immediately. Avian Influenza requires CFIA involvement before any on-farm diagnostic work proceeds.', 'FDECEA', 'C0504D'),
     spacer(120),
 
@@ -597,13 +597,13 @@ function buildBody() {
     h2('8.1  When to Submit Samples'),
     para('Not every necropsy leads to a lab submission. But these situations always do:'),
     bullet('Daily mortality above 0.5% for two or more consecutive days without a known cause.'),
-    bullet('Any presentation that looks like Avian Influenza, Newcastle disease, or another reportable disease. Call your vet first, then follow their guidance on whether to submit and to which lab.'),
+    bullet('Any presentation that looks like Avian Influenza, Newcastle disease, or another reportable disease. Call your veterinarian first, then follow their guidance on whether to submit and to which lab.'),
     bullet('Mortality that is not responding to an ongoing treatment protocol after 48 hours.'),
     bullet('Any time the lesion pattern is unclear and you cannot connect the findings to a diagnosis.'),
     bullet('Routine flock health monitoring: some farms necropsy a set number of birds each week and submit quarterly for a clean bill of health and early pathogen detection.'),
     para('The earlier you submit, the better the result. Fresh samples give the lab the best chance of finding the pathogen. Decomposed samples yield unreliable culture results and cannot be used for histopathology or virus isolation [2].'),
 
-    h2('8.2  What to Tell the Vet or Diagnostic Lab'),
+    h2('8.2  What to Tell the Veterinarian or Diagnostic Lab'),
     para('The submission form is only as good as the information you put into it. A well-completed form gets your results faster and more accurately. Include:'),
     bullet([{ text: 'Flock identity:', bold: true }, { text: ' Species, breed/strain, age, flock size, production type (broiler/layer/breeder).' }]),
     bullet([{ text: 'Mortality data:', bold: true }, { text: ' Daily mortality for the past 14 days if possible, or at minimum the current rate and how long it has been elevated.' }]),
@@ -612,7 +612,7 @@ function buildBody() {
     bullet([{ text: 'Vaccination history:', bold: true }, { text: ' Full vaccination schedule with dates, routes, and vaccine products used.' }]),
     bullet([{ text: 'Your necropsy observations:', bold: true }, { text: ' What you found when you opened the birds. Use the language from this course: airsacculitis, pericarditis, enlarged bursa, cecal blood. Specific observations are more useful than "the insides looked bad."' }]),
     bullet([{ text: 'Recent treatments or feed changes:', bold: true }, { text: ' Any antibiotics, coccidiostats, or feed changes in the past 30 days.' }]),
-    para('Your veterinarian is your partner in this process. The CPC Learning Centre Spotting Disease Early guide emphasizes that the vet needs a full picture to make the right call [1]. A complete history dramatically improves diagnostic accuracy and speeds up the time from submission to result.'),
+    para('Your veterinarian is your partner in this process. The CPC Learning Centre Spotting Disease Early guide emphasizes that the veterinarian needs a full picture to make the right call [1]. A complete history dramatically improves diagnostic accuracy and speeds up the time from submission to result.'),
 
     h2('8.3  Using Necropsy Findings to Take Immediate Action'),
     para('You do not need a lab result to take preliminary action. Based on your necropsy findings, you can move immediately on several fronts:'),
@@ -696,7 +696,7 @@ const tocEntries = [
   { lvl: 2, text: '7.3  Case 3: Young Broiler Flock, Sudden Mortality at 3 Weeks', page: 35 },
   { lvl: 1, text: '8. Farmer-Friendly Diagnostic Pathway', page: 36 },
   { lvl: 2, text: '8.1  When to Submit Samples', page: 36 },
-  { lvl: 2, text: '8.2  What to Tell the Vet or Diagnostic Lab', page: 37 },
+  { lvl: 2, text: '8.2  What to Tell the Veterinarian or Diagnostic Lab', page: 37 },
   { lvl: 2, text: '8.3  Using Necropsy Findings to Take Immediate Action', page: 38 },
   { lvl: 1, text: 'Recommended Journals and Resources', page: 40 },
   { lvl: 1, text: 'References', page: 41 },

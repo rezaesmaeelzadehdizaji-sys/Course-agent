@@ -566,7 +566,7 @@ function fig7_1() {
   const s1 = { bx: 97,  by: 80,  num: '1', main: 'MEASURE',   sub: ['Record baseline FCR,', 'water, energy,', 'litter condition'], color: C.medBlue,  light: C.lightBlue };
   const s2 = { bx: 547, by: 80,  num: '2', main: 'IDENTIFY',  sub: ['Find the gap',          'Compare to targets', 'Rank by impact'],    color: C.orange,   light: C.lightOrange };
   const s3 = { bx: 547, by: 320, num: '3', main: 'IMPLEMENT', sub: ['One change per cycle',  'Keep it specific',  ''],                   color: C.green,    light: C.lightGreen };
-  const s4 = { bx: 97,  by: 320, num: '4', main: 'TRACK',     sub: ['Compare result to',     'baseline',          'Share with vet'],     color: C.amber,    light: C.lightAmber };
+  const s4 = { bx: 97,  by: 320, num: '4', main: 'TRACK',     sub: ['Compare result to',     'baseline',          'Share with veterinarian'],     color: C.amber,    light: C.lightAmber };
 
   function stepBox(s) {
     const mcx = s.bx + bw / 2;

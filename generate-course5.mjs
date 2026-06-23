@@ -735,7 +735,7 @@ function buildSection7() {
       bullet('Get your barn insulation checked and deal with the places where heat is escaping.'),
       bullet('Get a feasibility study for solar installation if your barn roof and provincial net metering rules make it potentially viable.'),
       bullet('Explore available provincial and federal programs for farm environmental improvements.'),
-      bullet('Talk to your vet about cutting antibiotic use through better preventive management.'),
+      bullet('Talk to your veterinarian about cutting antibiotic use through better preventive management.'),
 
       h2('7.3  A Simple Sustainability Action Plan'),
       para('The goal is not to change everything at once. The goal is to identify one or two specific improvements per grow-out cycle and track what happens when you make them. That gives you real data from your own operation, not theory, and it builds the habit of looking critically at your own numbers.'),
@@ -745,7 +745,7 @@ function buildSection7() {
       numbered('Write down your starting point before you change anything, such as your feed conversion, daily water use, monthly power bill per flock, or litter moisture.'),
       numbered('Make the change and keep a record of what happens, whether things get better or worse, so you know what to try next flock.'),
       numbered('At the end of the cycle, compare your results to where you started.'),
-      numbered('Share what you found with your vet, fieldperson or nutritionist, since their experience can help you make sense of the numbers.'),
+      numbered('Share what you found with your veterinarian, fieldperson or nutritionist, since their experience can help you make sense of the numbers.'),
       para('The farms that consistently improve their sustainability performance are not the ones that made one big investment and stopped. They are the ones that make small, tracked improvements every cycle and build the discipline of knowing their own numbers. That discipline is worth more than any single technology change.'),
       ...image(figBuf('fig7_1.png'), 'Figure 7.1: Farmer self-assessment cycle applied once per grow-out. Step 1: measure baseline performance (FCR, water, energy, litter). Step 2: identify the gap against targets. Step 3: implement one specific, measurable change. Step 4: track the result and share findings with the veterinarian or fieldperson. Repeat each cycle to build a continuous improvement habit.'),
       pageBreak(),

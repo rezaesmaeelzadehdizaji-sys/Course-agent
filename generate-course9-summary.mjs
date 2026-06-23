@@ -192,7 +192,7 @@ async function main() {
   children.push(subItem('c', 'Improving feed efficiency and performance'));
   children.push(numbered(4,  'Using Diagnostics for Decision-Making'));
   children.push(subItem('a', 'When to call for diagnostic support'));
-  children.push(subItem('b', 'Interpreting results with vets and extension workers'));
+  children.push(subItem('b', 'Interpreting results with veterinarians and extension workers'));
   children.push(subItem('c', 'Linking diagnostics to treatment and prevention plans'));
   children.push(numbered(5,  'Case Studies & Practical Examples'));
   children.push(subItem('a', 'Common farm problems diagnosed early'));

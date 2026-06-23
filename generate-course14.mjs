@@ -459,7 +459,7 @@ function buildBodySection() {
 
     para('The chain runs from the integrator\'s management and veterinary team, through you, to the grower and their birds. Your job is to be the most reliable, most consistent link in that chain.'),
 
-    para('The company veterinarian is your resource for disease diagnosis and treatment decisions. You are not the vet, but you are the vet\'s eyes and ears on farm. When you describe what you\'re seeing clearly and accurately, the vet can give you better guidance without having to drive to every farm.'),
+    para('The company veterinarian is your resource for disease diagnosis and treatment decisions. You are not the veterinarian, but you are the veterinarian\'s eyes and ears on farm. When you describe what you\'re seeing clearly and accurately, the veterinarian can give you better guidance without having to drive to every farm.'),
 
     para('Integrators track production closely: feed conversion, daily gain, mortality rate, and condemnations at the plant [1]. Margins in this business are tight enough that small shifts in any of these numbers matter. Your job is to turn those numbers into action on the farm. A flock with a slowly climbing mortality rate may look stable to management until someone on the ground identifies the feeding line that\'s running half-speed.'),
 
@@ -683,7 +683,7 @@ function buildBodySection() {
 
     h2('5.4  When to Call the Veterinarian'),
 
-    para('You are not the vet. Knowing when to escalate is as important as knowing how to assess.'),
+    para('You are not the veterinarian. Knowing when to escalate is as important as knowing how to assess.'),
 
     ...callout('Escalate to the veterinarian when you see:', [
       'Unexplained mortality increase: daily rate doubling over 2-3 days with no obvious management cause',
@@ -694,7 +694,7 @@ function buildBodySection() {
       'Unusual lesions found during an on-farm necropsy that do not match common management-related findings',
     ]),
 
-    para('When you call the vet, have your records ready. The veterinarian needs: the flock age, mortality trend over the past 5 to 7 days, vaccination and treatment history, water and feed consumption trend, what you saw during the barn walk, and what the birds look like on individual examination. A clear, organized briefing gets you a faster and more accurate response.'),
+    para('When you call the veterinarian, have your records ready. The veterinarian needs: the flock age, mortality trend over the past 5 to 7 days, vaccination and treatment history, water and feed consumption trend, what you saw during the barn walk, and what the birds look like on individual examination. A clear, organized briefing gets you a faster and more accurate response.'),
 
     para('For a full profile of common poultry diseases and the clinical signs that distinguish one from another, see Course 7 (Common Poultry Diseases) in this series.'),
 
