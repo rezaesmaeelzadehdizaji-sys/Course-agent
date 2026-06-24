@@ -184,6 +184,7 @@ const children = [
   bullet('Use the body-system lesion table as a practical field reference during necropsy.'),
   spacer(80),
   sectionHead('Important Notes'),
+  bullet('The necropsy and the diagnosis are the veterinarian\'s job. Reading disease lesions and confirming a cause takes science, training, experience, and a dedicated biosecure necropsy facility. This course builds the farmer\'s eye to recognize serious lesions, describe them accurately, and know when to stop and call. Whenever possible, send the birds or samples to your veterinarian or the diagnostic lab; opening birds on the farm is the fallback, not a replacement for professional diagnosis.'),
   bullet('This course builds directly on Course 10 (Necropsy of Normal Birds). Participants who have not taken Course 10 should review it before this session.'),
   bullet('Avian Influenza protocol: if any presentation suggests AI (cyanotic comb, hemorrhages on shanks, peracute unexplained mortality), stop the necropsy, isolate the barn, and call your veterinarian immediately. Do not continue the necropsy until you have guidance.'),
   bullet('All disease-specific findings in this course are supported by verifiable references from the Merck Veterinary Manual and CPC Learning Centre disease profiles.'),
