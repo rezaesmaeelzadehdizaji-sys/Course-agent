@@ -38,10 +38,32 @@ function run(text, opts = {}) {
     subScript: opts.subScript || false, superScript: opts.superScript || false,
   });
 }
+// Latin binomial italicization. Longer/multiword names listed first so the
+// regex matches the full binomial before the bare genus.
+const SPECIES_RE = /(Mycoplasma gallisepticum|Mycoplasma synoviae|Pasteurella multocida|Clostridium perfringens|Ascaridia galli|Heterakis gallinarum|Histomonas meleagridis|Aspergillus fumigatus|Eimeria maxima|Eimeria tenella|Eimeria acervulina|Eimeria necatrix|Eimeria brunetti|E\. coli|E\. tenella|E\. acervulina|E\. maxima|E\. necatrix|E\. brunetti|Eimeria|Clostridium|Mycoplasma|Pasteurella|Salmonella|Campylobacter|Capillaria|Enterococcus|Aspergillus)/g;
+// Split a text segment into runs, italicizing any Latin species names while
+// preserving the segment's existing bold/italics/color/size.
+function splitSci(text, base = {}) {
+  const out = []; let last = 0; let m; SPECIES_RE.lastIndex = 0;
+  while ((m = SPECIES_RE.exec(text))) {
+    if (m.index > last) out.push({ ...base, text: text.slice(last, m.index) });
+    out.push({ ...base, text: m[0], italics: true });
+    last = m.index + m[0].length;
+  }
+  if (last < text.length) out.push({ ...base, text: text.slice(last) });
+  if (out.length === 0) out.push({ ...base, text });
+  return out;
+}
+// Expand a string or array of segments into TextRuns, auto-italicizing species.
+function sciRuns(text, defaultSize = 24, baseOpts = {}) {
+  const segs = Array.isArray(text)
+    ? text.flatMap(s => splitSci(s.text, { bold: s.bold || false, italics: s.italics || false, color: s.color || BODY_GRAY, size: s.size || defaultSize }))
+    : splitSci(text, { bold: baseOpts.bold || false, italics: baseOpts.italics || false, color: baseOpts.color || BODY_GRAY, size: baseOpts.size || defaultSize });
+  return segs.map(s => new TextRun({ text: s.text, bold: s.bold || false, italics: s.italics || false, color: s.color || BODY_GRAY, size: s.size || defaultSize, font: 'Calibri' }));
+}
+
 function para(text, opts = {}) {
-  const children = Array.isArray(text)
-    ? text.map(s => new TextRun({ text: s.text, bold: s.bold || false, italics: s.italics || false, color: s.color || BODY_GRAY, size: s.size || 24, font: 'Calibri' }))
-    : [run(text, { bold: opts.bold, italics: opts.italics, color: opts.color, size: opts.size })];
+  const children = sciRuns(text, 24, { bold: opts.bold, italics: opts.italics, color: opts.color, size: opts.size });
   return new Paragraph({
     children,
     alignment: opts.alignment || AlignmentType.JUSTIFIED,
@@ -56,14 +78,12 @@ function h2(text) {
   return new Paragraph({ text, heading: HeadingLevel.HEADING_2, spacing: { before: 280, after: 120 } });
 }
 function bullet(text, lvl = 0) {
-  const children = Array.isArray(text)
-    ? text.map(s => new TextRun({ text: s.text, bold: s.bold || false, italics: s.italics || false, color: s.color || BODY_GRAY, size: 24, font: 'Calibri' }))
-    : [new TextRun({ text, color: BODY_GRAY, size: 24, font: 'Calibri' })];
+  const children = sciRuns(text, 24);
   return new Paragraph({ children, numbering: { reference: 'bullet-list', level: lvl }, spacing: { after: 80, line: 276, lineRule: 'auto' } });
 }
 function numberedRef(text) {
   return new Paragraph({
-    children: [new TextRun({ text, color: BODY_GRAY, size: 24, font: 'Calibri' })],
+    children: sciRuns(text, 24),
     numbering: { reference: 'references-list', level: 0 },
     spacing: { after: 80, line: 276, lineRule: 'auto' },
   });
@@ -197,12 +217,10 @@ function lesionTable(headers, rows) {
   const hdrCell = (t, i) => new TableCell({
     width: { size: colW[i], type: WidthType.DXA }, borders: cb,
     shading: { type: ShadingType.SOLID, color: hdrBg },
-    children: [new Paragraph({ alignment: AlignmentType.CENTER, spacing: { before: 60, after: 60 }, children: [run(t, { bold: true, size: 18, color: 'FFFFFF' })] })],
+    children: [new Paragraph({ alignment: AlignmentType.CENTER, spacing: { before: 60, after: 60 }, children: sciRuns(t, 18, { bold: true, color: 'FFFFFF' }) })],
   });
   const dataCell = (t, i, shade) => {
-    const kids = Array.isArray(t)
-      ? t.map(s => new TextRun({ text: s.text, italics: s.italics || false, bold: s.bold || false, color: BODY_GRAY, size: 18, font: 'Calibri' }))
-      : [run(t, { size: 18 })];
+    const kids = sciRuns(t, 18);
     return new TableCell({
       width: { size: colW[i], type: WidthType.DXA }, borders: cb,
       shading: { type: ShadingType.SOLID, color: shade ? altBg : 'FFFFFF' },
@@ -550,7 +568,7 @@ function buildBody() {
         ['Proventriculus-gizzard junction', 'Mucosal hemorrhage', 'Petechiae, ecchymoses at junction', 'Newcastle Disease (velogenic), IBD'],
         ['Bursa of Fabricius', 'Size vs. age-expected; texture', 'Enlarged/hemorrhagic (acute IBD); shrunken (chronic IBD)', 'IBD'],
         ['Small intestine (jejunum/ileum)', 'Wall thickness, content, smell', 'Ballooned, friable, pseudomembrane, foul odor', 'Necrotic Enteritis'],
-        ['Intestine (by segment)', 'Mucosal lesions', 'White plaques (duodenum), bloody ceca, orange mucus', 'Coccidiosis (species-specific)'],
+        ['Intestine (by segment)', 'Mucosal lesions', 'White plaques (duodenum), bloody ceca, blood-tinged fluid (mid-gut)', 'Coccidiosis (species-specific)'],
         ['Cecal tonsils and Peyer\'s patches', 'Hemorrhage, necrosis', 'Necrotic foci, hemorrhage', 'Newcastle Disease (viscerotropic)'],
         ['Liver', 'Color, texture, surface', 'Yellow spots (cholera), friable/pale (FLHS/IBH), fibrin coat', 'Fowl Cholera, FLHS, Colibacillosis, IBH'],
         ['Spleen', 'Size, nodules', 'Enlarged with white lymphoma nodules', "Marek's Disease (visceral)"],
@@ -575,7 +593,7 @@ function buildBody() {
 
     h2('7.1  Case 1: Broiler Mortality Spike at 28 Days'),
     para([{ text: 'Flock history:', bold: true }, { text: ' Ross 308 broilers, 28 days old, 40,000 birds. Mortality has been running 0.2% per day for 10 days and jumped to 0.8% yesterday. Birds look dull, are piling at feeders, and water consumption has dropped. No changes to feed, vaccination schedule completed on time.' }]),
-    para([{ text: 'Necropsy findings (6 birds):', bold: true }, { text: ' Air sacs cloudy and thickened with yellow exudate. White fibrin on the heart surface in 4 of 6 birds. Liver slightly swollen with fibrin coat. Kidneys pale, slightly swollen with urate deposits in 2 of 6 birds. Intestines: normal in 4 birds, slight thickening and orange mucus in the mid-jejunum in 2 birds.' }]),
+    para([{ text: 'Necropsy findings (6 birds):', bold: true }, { text: ' Air sacs cloudy and thickened with yellow exudate. White fibrin on the heart surface in 4 of 6 birds. Liver slightly swollen with fibrin coat. Kidneys pale, slightly swollen with urate deposits in 2 of 6 birds. Intestines: normal in 4 birds, slight thickening and blood-tinged fluid in the mid-jejunum in 2 birds.' }]),
     para([{ text: 'Interpretation:', bold: true }, { text: ' The airsacculitis-pericarditis-perihepatitis triad is classic colibacillosis. The renal involvement in 2 birds suggests IBV-renal may have been the primary trigger. The jejunal changes in 2 birds suggest low-grade E. maxima coccidiosis as a second contributing factor.' }]),
     para([{ text: 'Next steps:', bold: true }, { text: ' Submit 8 live birds to the provincial lab: air sac swabs for E. coli sensitivity, tracheal swabs for IBV PCR, intestinal scrapings for oocyst count. Review vaccination records for IBV coverage. Assess ventilation and stocking density as contributing factors.' }]),
 
@@ -631,7 +649,7 @@ function buildBody() {
     bullet([{ text: 'Poultry Science:', bold: true }, { text: ' Broad-scope journal covering production, health, and management. Frequent practical disease studies.' }]),
     bullet([{ text: 'Avian Pathology:', bold: true }, { text: ' European-based peer-reviewed journal. Strong coverage of infectious diseases, field diagnostics, and vaccination.' }]),
     bullet([{ text: 'Merck Veterinary Manual (merckvetmanual.com):', bold: true }, { text: ' Free online reference. Poultry disease profiles are accurate, regularly updated, and farmer-accessible.' }]),
-    bullet([{ text: 'Diseases of Poultry, 13th Edition (Swayne et al.):', bold: true }, { text: ' The standard textbook reference for poultry disease. Available in the CPC reference library.' }]),
+    bullet([{ text: 'Diseases of Poultry, 14th Edition (Swayne et al.):', bold: true }, { text: ' The standard textbook reference for poultry disease. Available in the CPC reference library.' }]),
     bullet([{ text: 'CPC Learning Centre (cpclearningcentre.ca):', bold: true }, { text: ' Disease profiles, flock management guides, and technical bulletins specific to Canadian commercial production. Free access.' }]),
     pageBreak(),
 

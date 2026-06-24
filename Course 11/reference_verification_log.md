@@ -57,16 +57,32 @@
 
 ---
 
-## Image/Photo Attribution
+## Image/Photo Attribution (updated 2026-06-24 to match final docx — 13 embedded images)
 
-| File | Caption | License | Source |
-|---|---|---|---|
-| photo_ibd_muscle_hemorrhage.jpg | Photo 4.1: IBD/Gumboro intramuscular hemorrhage in broiler | Public Domain | Wikimedia Commons |
-| photo_mareks_cutaneous.jpg | Photo 5.1: Marek's disease cutaneous form | CC BY-SA 3.0 (Roman Halouzka) | Wikimedia Commons |
-| fig_eimeria_lifecycle_usda.jpg | Figure 4.1: Eimeria life cycle | USDA Public Domain | USDA Agricultural Research Service |
-| fig11_1.png | Figure 3.1: Lesion timeline (acute to chronic) | CPC Short Courses | Generated SVG |
-| fig11_2.png | Figure 6.1: Body system lesion overview | CPC Short Courses | Generated SVG |
-| fig11_3.png | Figure 8.1: Diagnostic pathway flowchart | CPC Short Courses | Generated SVG |
+| File | Caption | License / Source |
+|---|---|---|
+| fig11_2_1.png | Figure 2.1: Laboratory sample submission guide | CPC Short Courses — Generated SVG |
+| fig11_1.png | Figure 3.1: Lesion timeline (acute to chronic) | CPC Short Courses — Generated SVG (created 2026-06-24) |
+| photo_necrotic_enteritis.jpg | Photo 4.1: Necrotic enteritis in small intestine | Vegad JL, A Colour Atlas of Poultry Diseases (use right confirmed by Reza, source named in caption) |
+| photo_ibd_bursa.jpg | Photo 4.2: Bursa of Fabricius, acute IBD | Vegad JL, A Colour Atlas of Poultry Diseases (use right confirmed by Reza) |
+| photo_ibd_muscle_hemorrhage.jpg | Photo 4.3: IBD intramuscular hemorrhage | Public Domain — Wikimedia Commons |
+| photo_newcastle_proventriculus.jpg | Photo 4.4: Proventricular hemorrhage, virulent ND | Vegad JL, A Colour Atlas of Poultry Diseases (use right confirmed by Reza) |
+| photo_coccidiosis_ceca.jpg | Photo 4.5: Cecal coccidiosis (E. tenella) | Vegad JL, A Colour Atlas of Poultry Diseases (use right confirmed by Reza) |
+| fig_eimeria_lifecycle_usda.jpg | Figure 4.1: Eimeria life cycle | USDA Public Domain — USDA Agricultural Research Service |
+| photo_fowl_cholera_liver.jpg | Photo 5.1: Liver, acute fowl cholera | Vegad JL, A Colour Atlas of Poultry Diseases (use right confirmed by Reza) |
+| photo_mareks_cutaneous.jpg | Photo 5.2: Marek's disease cutaneous form | CC BY-SA 3.0 (Roman Halouzka) — Wikimedia Commons |
+| chicken_systems_overview.jpeg | Figure 6.1: Internal anatomy of the chicken | Purina Animal Nutrition LLC (use right confirmed by Reza, source named in caption) |
+| fig11_3.png | Figure 8.1: Diagnostic pathway (finding → action) | CPC Short Courses — Generated SVG (created 2026-06-24) |
+
+## 2026-06-24 Double-Check Pass (corrections applied)
+
+| Issue | Fix |
+|---|---|
+| Figures 3.1 and 8.1 were referenced but the PNGs did not exist, so both silently dropped from the docx (11 of 13 images embedded) | Generated `fig11_1.png` (lesion timeline) and `fig11_3.png` (diagnostic pathway) in `generate-course11-figures.mjs`; docx now embeds all 13 images |
+| Latin binomials not italicized throughout (E. coli ×8, Eimeria species table, Clostridium, Pasteurella, Mycoplasma, Salmonella, Campylobacter, Ascaridia, Heterakis, Histomonas, Capillaria — all plain) | Added `splitSci`/`sciRuns` species-italicization helper applied in `para`, `bullet`, `numberedRef`, and both table cell renderers; 0 plain species runs remain; mandatory grep (MG/MS/C. perfringens/P. multocida) all italic |
+| "orange mucus" for E. maxima persisted in Case 1 and the Section 6 body-system table after being corrected in the main coccidiosis table | Changed both to "blood-tinged fluid" to match Merck [11] |
+| Recommended Resources listed Diseases of Poultry 13th Edition | Updated to 14th Edition (library standard) |
+| Image rights for the Vegad and Purina photos | Confirmed by Reza 2026-06-24: use permitted as long as the source is named in the caption (it is) |
 
 ---
 
