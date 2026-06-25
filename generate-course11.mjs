@@ -382,7 +382,7 @@ function buildBody() {
     bullet([{ text: 'Pericardium:', bold: true }, { text: ' White fibrin plaques on the heart surface, excess fluid in the pericardial sac. In chronic cases the fibrin becomes adherent and rubber-like.' }]),
     bullet([{ text: 'Liver:', bold: true }, { text: ' Yellow-white fibrin coating the liver surface (perihepatitis). In septicemic cases the liver is dark, swollen, and friable.' }]),
     bullet([{ text: 'Peritonitis:', bold: true }, { text: ' Yellow egg yolk-like material in the abdominal cavity in laying hens, fibrinous deposits on intestinal serosa in broilers.' }]),
-    para('Colibacillosis rarely acts alone. It enters through respiratory or intestinal mucosal damage caused by a primary virus or management problem. Look for the primary cause: IBV, IBD, or poor ventilation that opened the door for the E. coli. Confirm the diagnosis with air sac swab culture from multiple birds [5].'),
+    para('Colibacillosis rarely acts alone. It enters through respiratory or intestinal mucosal damage caused by a primary virus or management problem. Look for the primary cause: IBV, IBD, or poor ventilation that opened the door for the E. coli. Confirm the diagnosis with culture from multiple birds. Swab the air sacs and the fibrinous lesions on the heart, liver, and intestines, since the same E. coli is usually recovered from all of them [5].'),
 
     spacer(40),
     para([{ text: 'Necrotic Enteritis (', bold: true }, { text: 'Clostridium perfringens', italics: true }, { text: ')', bold: true }]),
