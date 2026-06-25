@@ -619,6 +619,34 @@ If text sounds:
 
 → Rewrite automatically before final output
 
+## Cut Redundancy — Say It Once (MANDATORY — ALL COURSES)
+
+**Every fact, figure, threshold, protocol step, definition, and instruction is stated once, in the section where it belongs. Everywhere else, reference it instead of restating it.** Repeated content pads the course, reads as AI-generated filler, and makes the document longer without adding value. This applies to every course, every draft, every revision, and does not require the user to ask.
+
+### What to cut
+
+- **Duplicate prose**: the same instruction or fact written out in two or more places (e.g. a full sample-submission checklist appearing in both the "sample handling" section and the "what to tell the lab" section). Keep the fullest version in its home section; elsewhere point to it ("Section 8.2 lists exactly what to put on the form").
+- **Paragraph + callout saying the same thing back-to-back**: pick one. Fold any unique detail from the paragraph into the callout (or vice versa) and delete the other.
+- **A figure/table that re-states what the body text already lists**: keep whichever is the better teaching tool; do not caption a figure with the same sentences that sit beside it.
+- **Two tables covering the same body-system-to-finding mapping**: consolidate into one, or give each a clearly distinct purpose and columns (e.g. one "normal vs abnormal" orientation table, one comprehensive field-reference table). If two tables genuinely overlap with no distinct angle, merge them.
+- **Restated thresholds**: a number like "mortality above 0.5% per day" belongs in one decision section; cross-reference it rather than repeating the figure.
+
+### What is NOT redundancy (do not cut these)
+
+- **Deliberate emphasis the user has explicitly asked for** (e.g. the "necropsy and diagnosis are the veterinarian's job" framing repeated across intro, biosecurity, and closing in the necropsy courses). Intentional reinforcement of a safety or responsibility message is allowed, but state it freshly each time, not by copy-pasting the same sentence.
+- **The same lesion or sign appearing under different diseases** (e.g. urate deposits under both IBV-renal and IBD): each is in its own disease context and is appropriate.
+- **One safety-critical warning restated once for prominence** (e.g. an Avian Influenza stop-rule): allowed, but consolidate near-identical statements that sit within a page of each other.
+- **Reciprocal cross-links** between two related topics (disease A predisposes to disease B, noted in both A's and B's section): useful bidirectional linkage, keep.
+
+### How to apply (pre-publish pass)
+
+1. Extract the paragraph texts from the built docx and scan for repeated key phrases and restated numbers across sections (a quick phrase-frequency check catches most of it).
+2. For each repeat, decide its home section, keep it there in full, and replace the other occurrences with a one-line cross-reference or delete them.
+3. Confirm nothing unique was lost when collapsing a duplicate (fold unique details into the surviving copy first).
+4. Re-run the citation-order check after any deletion, since removing a paragraph can drop a citation's first appearance.
+
+**Lesson from Course 11 (June 2026):** the Avian Influenza stop-rule appeared as a paragraph and an identical callout back-to-back in the biosecurity section, and the submission-form contents were listed in full in both Section 2.3 and Section 8.2. Both were collapsed: the paragraph was folded into the callout, and the 2.3 list now points to Section 8.2. The deliberate "veterinarian's job" emphasis was kept because the user asked for it.
+
 ## Citation and Reference Standard
 
 - Citation style: **Numbered (Vancouver-style)**
@@ -1212,6 +1240,7 @@ Before generating any course, run every step in order. Do not skip any step.
 19. Cover page check: confirm gold rule uses plain underscores (`___...___`) in GOLD (`C9A84C`), not Unicode box-drawing characters.
 20. Farmer-Flow Style Scoring System: minimum 24/30, no individual score below 4. Rewrite automatically if any score fails.
 21. Em dash check: `(xml.match(/—/g) || []).length === 0` must be true before publishing.
+22. Redundancy pass: scan paragraph texts for repeated facts, restated numbers, and duplicate prose; collapse each to one home location with cross-references elsewhere (see "Cut Redundancy — Say It Once"). Keep only deliberate, user-requested emphasis.
 
 ## Agent Behavior & Validation Protocol
 
