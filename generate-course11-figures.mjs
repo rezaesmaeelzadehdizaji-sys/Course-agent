@@ -278,7 +278,7 @@ function fig8_1() {
 
 if (!fs.existsSync(OUT_DIR)) fs.mkdirSync(OUT_DIR, { recursive: true });
 
-fig2_1();
+// fig2_1() removed June 2026 — Figure 2.1 is now a native Word table in the body, not an image.
 fig3_1();
 fig8_1();
 console.log('\nAll Course 11 figures generated.');

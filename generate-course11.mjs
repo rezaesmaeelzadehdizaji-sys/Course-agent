@@ -208,8 +208,8 @@ function buildCoverSection() {
 }
 
 // DISEASE LESION TABLE
-function lesionTable(headers, rows) {
-  const colW  = headers.map(() => Math.floor(8640 / headers.length));
+function lesionTable(headers, rows, colWOverride) {
+  const colW  = colWOverride || headers.map(() => Math.floor(8640 / headers.length));
   const hdrBg = MED_BLUE;
   const altBg = 'EBF2FA';
   const bdr   = { style: BorderStyle.SINGLE, size: 2, color: 'AAAAAA' };
@@ -240,7 +240,6 @@ function lesionTable(headers, rows) {
 // DOCUMENT CHILDREN
 // ============================================================
 function buildBody() {
-  const fig11_2_1 = figBuf('fig11_2_1.png');
   const fig11_1  = figBuf('fig11_1.png');
   const fig11_2  = figBuf('fig11_2.png');
   const fig11_3  = figBuf('fig11_3.png');
@@ -255,8 +254,7 @@ function buildBody() {
   const organMap    = figBuf('chicken_systems_overview.jpeg');
 
   return [
-    // TOC PAGE
-    pageBreak(),
+    // TOC PAGE (body section already starts on a new page after the cover; no leading page break)
     new Paragraph({ text: 'Table of Contents', heading: HeadingLevel.HEADING_1, spacing: { before: 200, after: 240 } }),
     new TableOfContents('Table of Contents', { hyperlink: true, headingStyleRange: '1-2', stylesWithLevels: [{ styleId: 'Heading1', level: 1 }, { styleId: 'Heading2', level: 2 }] }),
     pageBreak(),
@@ -327,7 +325,19 @@ function buildBody() {
     bullet('Include a completed submission form with the full flock history. Section 8.2 lists exactly what to put on it.'),
     para('The CFIA maintains a list of approved animal health diagnostic laboratories across Canada [3]. Your veterinarian will know which lab serves your region and what specific submission protocols apply.'),
     spacer(80),
-    ...image(fig11_2_1, 'Figure 2.1: Laboratory sample submission guide showing which sample type, test method, and pathogen or condition each submission is designed to identify. Source: CPC Short Courses.', 5.9),
+    lesionTable(
+      ['Sample Type', 'Diagnostic Test', 'Pathogen / Condition Identified'],
+      [
+        ['Live, clinically affected birds (minimum 6)', 'Full necropsy and diagnostic panel', 'Comprehensive pathogen identification across all body systems'],
+        ['Fresh tissue (bursa, liver, intestine, air sac), refrigerated, not frozen', 'Histopathology', 'Confirms tissue damage and intranuclear inclusion bodies; primary test for IBHV and ILTV'],
+        ['Tracheal or cloacal swabs in viral transport media', 'PCR or virus isolation', 'Confirms viral presence: IBV, NDV, AI, IBHV'],
+        ['Intestinal content, liver, spleen, yolk material, or air sac swab', 'Bacterial culture and sensitivity', 'Identifies E. coli, Salmonella, Enterococcus, Pasteurella multocida'],
+        ['Whole blood, red top (no anticoagulant)', 'Serology (ELISA / HI)*', 'Antibody titres: IBV, NDV, IBD, MG, AI'],
+      ],
+      [2920, 2300, 3420]
+    ),
+    para('* HI applies to NDV and AI only. IBD, IBV, and MG antibody titres are detected by ELISA.', { size: 18, italics: true, color: '555555', alignment: AlignmentType.LEFT, spaceAfter: 40 }),
+    new Paragraph({ children: [new TextRun({ text: 'Table 2.1: Laboratory sample submission guide showing which sample type, test method, and pathogen or condition each submission is designed to identify. Source: CPC Short Courses.', italics: true, color: '555555', size: 20, font: 'Calibri' })], alignment: AlignmentType.CENTER, spacing: { before: 60, after: 200 } }),
     pageBreak(),
 
     // ─── SECTION 3 ───
@@ -689,38 +699,38 @@ function buildBody() {
 // ============================================================
 const tocEntries = [
   { lvl: 1, text: 'Introduction', page: 3 },
-  { lvl: 1, text: '1. Purpose of Necropsy in Disease Diagnosis', page: 4 },
-  { lvl: 2, text: '1.1  How Necropsy Supports Early Detection', page: 4 },
-  { lvl: 2, text: '1.2  Linking Lesions to Flock History and Symptoms', page: 4 },
+  { lvl: 1, text: '1. Purpose of Necropsy in Disease Diagnosis', page: 5 },
+  { lvl: 2, text: '1.1  How Necropsy Supports Early Detection', page: 5 },
+  { lvl: 2, text: '1.2  Linking Lesions to Flock History and Symptoms', page: 5 },
   { lvl: 2, text: '1.3  When Necropsy Should Be Prioritized', page: 5 },
-  { lvl: 1, text: '2. Preparation and Biosecurity', page: 6 },
-  { lvl: 2, text: '2.1  Tools and Safety Precautions', page: 6 },
-  { lvl: 2, text: '2.2  Selecting Appropriate Birds', page: 6 },
-  { lvl: 2, text: '2.3  Sample Handling for Laboratory Submission', page: 7 },
-  { lvl: 1, text: '3. Overview of Common Necropsy Lesions', page: 8 },
-  { lvl: 2, text: '3.1  What Abnormal Findings Look Like', page: 8 },
+  { lvl: 1, text: '2. Preparation and Biosecurity', page: 7 },
+  { lvl: 2, text: '2.1  Tools and Safety Precautions', page: 7 },
+  { lvl: 2, text: '2.2  Selecting Appropriate Birds', page: 7 },
+  { lvl: 2, text: '2.3  Sample Handling for Laboratory Submission', page: 8 },
+  { lvl: 1, text: '3. Overview of Common Necropsy Lesions', page: 9 },
+  { lvl: 2, text: '3.1  What Abnormal Findings Look Like', page: 9 },
   { lvl: 2, text: '3.2  Acute vs Chronic Disease Lesions', page: 9 },
-  { lvl: 1, text: '4. Common Diseases in Meat Birds (Broilers)', page: 10 },
-  { lvl: 2, text: '4.1  Bacterial Diseases', page: 10 },
-  { lvl: 2, text: '4.2  Viral Diseases', page: 13 },
-  { lvl: 2, text: '4.3  Parasitic Conditions', page: 17 },
-  { lvl: 2, text: '4.4  Metabolic and Management Problems', page: 19 },
-  { lvl: 1, text: '5. Common Diseases in Layers and Breeders', page: 22 },
-  { lvl: 2, text: '5.1  Reproductive System Disorders', page: 22 },
-  { lvl: 2, text: '5.2  Bacterial Diseases', page: 24 },
-  { lvl: 2, text: '5.3  Viral Diseases', page: 26 },
-  { lvl: 2, text: '5.4  Nutritional and Metabolic Issues', page: 28 },
-  { lvl: 1, text: '6. Necropsy Lesion Recognition by Body System', page: 30 },
-  { lvl: 1, text: '7. Case Studies and Problem-Solving', page: 33 },
-  { lvl: 2, text: '7.1  Case 1: Broiler Mortality Spike at 28 Days', page: 33 },
-  { lvl: 2, text: '7.2  Case 2: Layer Flock with Production Drop and Deaths', page: 34 },
-  { lvl: 2, text: '7.3  Case 3: Young Broiler Flock, Sudden Mortality at 3 Weeks', page: 35 },
-  { lvl: 1, text: '8. Farmer-Friendly Diagnostic Pathway', page: 36 },
-  { lvl: 2, text: '8.1  When to Submit Samples', page: 36 },
-  { lvl: 2, text: '8.2  What to Tell the Veterinarian or Diagnostic Lab', page: 37 },
-  { lvl: 2, text: '8.3  Using Necropsy Findings to Take Immediate Action', page: 38 },
-  { lvl: 1, text: 'Recommended Journals and Resources', page: 40 },
-  { lvl: 1, text: 'References', page: 41 },
+  { lvl: 1, text: '4. Common Diseases in Meat Birds (Broilers)', page: 11 },
+  { lvl: 2, text: '4.1  Bacterial Diseases', page: 11 },
+  { lvl: 2, text: '4.2  Viral Diseases', page: 12 },
+  { lvl: 2, text: '4.3  Parasitic Conditions', page: 16 },
+  { lvl: 2, text: '4.4  Metabolic and Management Problems', page: 18 },
+  { lvl: 1, text: '5. Common Diseases in Layers and Breeders', page: 20 },
+  { lvl: 2, text: '5.1  Reproductive System Disorders', page: 20 },
+  { lvl: 2, text: '5.2  Bacterial Diseases', page: 20 },
+  { lvl: 2, text: '5.3  Viral Diseases', page: 22 },
+  { lvl: 2, text: '5.4  Nutritional and Metabolic Issues', page: 24 },
+  { lvl: 1, text: '6. Necropsy Lesion Recognition by Body System', page: 26 },
+  { lvl: 1, text: '7. Case Studies and Problem-Solving', page: 28 },
+  { lvl: 2, text: '7.1  Case 1: Broiler Mortality Spike at 28 Days', page: 28 },
+  { lvl: 2, text: '7.2  Case 2: Layer Flock with Production Drop and Deaths', page: 28 },
+  { lvl: 2, text: '7.3  Case 3: Young Broiler Flock, Sudden Mortality at 3 Weeks', page: 29 },
+  { lvl: 1, text: '8. Farmer-Friendly Diagnostic Pathway', page: 30 },
+  { lvl: 2, text: '8.1  When to Submit Samples', page: 30 },
+  { lvl: 2, text: '8.2  What to Tell the Veterinarian or Diagnostic Lab', page: 30 },
+  { lvl: 2, text: '8.3  Using Necropsy Findings to Take Immediate Action', page: 31 },
+  { lvl: 1, text: 'Recommended Journals and Resources', page: 33 },
+  { lvl: 1, text: 'References', page: 34 },
 ];
 
 // ============================================================
