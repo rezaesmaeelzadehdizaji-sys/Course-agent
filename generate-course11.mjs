@@ -660,7 +660,7 @@ function buildBody() {
     // ─── REFERENCES ───
     h1('References'),
     numberedRef('CPC Learning Centre. Spotting Disease Early [Flock Management Guide]. CPC Learning Centre. Available from: cpclearningcentre.ca'),
-    numberedRef('CEVA Animal Health. Poultry Necropsy Techniques [Technical Guide]. CEVA Sante Animale. Available via CPC Learning Centre: cpclearningcentre.ca'),
+    numberedRef('CEVA Animal Health. Necropsy Techniques [Technical Guide]. CEVA Sante Animale. Available via CPC Learning Centre: cpclearningcentre.ca'),
     numberedRef('Canadian Food Inspection Agency. CFIA-approved animal health diagnostic laboratories [cited 2026 Jun]. Available from: inspection.canada.ca/en/animal-health/terrestrial-animals/our-approved-laboratories'),
     numberedRef('CPC Learning Centre. Colibacillosis [Disease Profile]. CPC Learning Centre. Available from: cpclearningcentre.ca'),
     numberedRef('Merck Veterinary Manual. Colibacillosis in Poultry. Kenilworth, NJ: Merck & Co.; 2024 [cited 2026 Jun]. Available from: merckvetmanual.com/poultry/colibacillosis/colibacillosis-in-poultry'),

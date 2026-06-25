@@ -57,6 +57,48 @@
 
 ---
 
+## 2026-06-25 Full Re-Verification Pass (all 23 references — every one confirmed real)
+
+Every reference re-checked individually against its live source or the local library.
+
+**14 Merck Veterinary Manual pages — all fetched live, exact page title confirmed, key cited claims spot-checked:**
+
+| Ref | Page title (verified) | Claim spot-checked |
+|---|---|---|
+| 5 | Colibacillosis in Poultry | exists; rev. Apr 2024 |
+| 6 | Necrotic Enteritis in Poultry | "mortality is 2%–50%", persists 5–14 days — verbatim match |
+| 9 | Newcastle Disease in Poultry | exists |
+| 10 | Avian Influenza in Poultry and Wild Birds | exists (author D.E. Swayne) |
+| 11 | Coccidiosis in Poultry | exists |
+| 13 | Sudden Death Syndrome of Broiler Chickens | "ventricles are contracted, the atria are dilated and blood-filled" — match |
+| 14 | Noninfectious Skeletal Disorders in Poultry | TD + spondylolisthesis ("kinky back", T4) both confirmed |
+| 15 | Egg Peritonitis in Poultry | exists |
+| 16 | Salpingitis in Poultry | exists (dedicated page confirmed) |
+| 18 | Mycoplasma gallisepticum Infection in Poultry | exists |
+| 19 | Mycoplasma synoviae Infection in Poultry | exists |
+| 20 | Marek's Disease in Poultry | exists (corrected `marek-s-` URL resolves) |
+| 21 | Fatty Liver Hemorrhagic Syndrome in Poultry | "liver dry matter ... at least 40% fat" — match |
+| 22 | Calcium Metabolism Problems in Hens | exists |
+
+**8 CPC / CEVA local-library sources — files confirmed present:**
+
+| Ref | Source | Local file |
+|---|---|---|
+| 1 | Spotting Disease Early | CPC learning centre/.../Flock management/spotting_disease_early.pdf |
+| 2 | CEVA Necropsy Techniques | Avian medicine/CEVA-Animal-Health-Necropsy Techniques.pdf (title corrected 2026-06-25: dropped erroneous "Poultry" prefix to match the actual document title) |
+| 4 | Colibacillosis | CPC learning centre/Broilers-Disease Profiles/colibacillosis.pdf |
+| 7 | Infectious Bronchitis Virus (IBV) | .../infectious_bronchitis_virus_ibv.pdf |
+| 8 | Infectious Bursal Disease (IBD) | .../infectious_bursal_disease.pdf |
+| 12 | Ascites | .../ascites.pdf |
+| 17 | Fowl Cholera | .../fowl_cholera.pdf |
+| 23 | Inclusion Body Hepatitis | .../IBH_Final1.pdf |
+
+**1 government source:** Ref 3 — CFIA-approved animal health diagnostic laboratories — fetched live, title confirmed.
+
+**Consistency:** in-text citations run 1–22 with no gaps and in first-appearance order; ref 23 is bibliography-only (IBH listed as a liver-differential in the Section 6 table without a bracket, by design). No bare `&` in the reference XML (all `&amp;`). Result: **0 fabricated, 0 unverifiable, 0 broken links.**
+
+---
+
 ## Image/Photo Attribution (updated 2026-06-24 to match final docx — 13 embedded images)
 
 | File | Caption | License / Source |
