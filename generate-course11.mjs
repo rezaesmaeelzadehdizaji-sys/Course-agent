@@ -349,6 +349,8 @@ function buildBody() {
       ['Body System', 'Normal Appearance', 'Key Abnormal Signs', 'Common Causes'],
       [
         ['Air sacs', 'Clear, thin, invisible membranes', 'Cloudy, thickened, foamy, or caseous exudate', 'Colibacillosis, MG, IBV, ND'],
+        ['Trachea', 'Pale, translucent, clear lumen', 'Congested (reddened) mucosa; mucoid to caseous exudate in the lumen', 'IBV, ND'],
+        ['Lungs', 'Pink, spongy, well-aerated', 'Congested (dark red), edematous; caseous or fibrinous exudate', 'Colibacillosis (septicemia), AI'],
         ['Heart and pericardium', 'Clean surface, no excess fluid', 'White fibrin plaques on heart surface, excess fluid in pericardial sac', 'Colibacillosis, Fowl Cholera'],
         ['Liver', 'Firm, dark red-brown, no spots', 'Pale, friable, hemorrhagic, yellow spots, or swollen', 'Colibacillosis, IBH, FLHS, Fowl Cholera'],
         ['Small intestine', 'Thin wall, pink, content visible', 'Ballooned, friable, pseudomembrane, bloody content', 'Necrotic Enteritis, Coccidiosis'],
