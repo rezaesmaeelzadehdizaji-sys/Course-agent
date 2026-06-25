@@ -354,6 +354,7 @@ function buildBody() {
         ['Heart and pericardium', 'Clean surface, no excess fluid', 'White fibrin plaques on heart surface, excess fluid in pericardial sac; enlarged, dilated right heart (ascites); dilated, blood-filled atria (SDS)', 'Colibacillosis, Fowl Cholera, Ascites, SDS'],
         ['Liver', 'Firm, dark red-brown, no spots', 'Pale, friable, hemorrhagic, yellow spots, or swollen', 'Colibacillosis, IBH, FLHS, Fowl Cholera'],
         ['Spleen', 'Small, round, dark red, smooth', 'Enlarged, mottled, congested; white nodules or necrotic foci', "Marek's Disease, Fowl Cholera, Colibacillosis, AI"],
+        ['Proventriculus', 'Glandular, smooth, no hemorrhage', 'Hemorrhages at the gland tips and the proventriculus-gizzard junction', 'Newcastle Disease (velogenic), AI, IBD'],
         ['Small intestine', 'Thin wall, pink, content visible', 'Ballooned, friable, pseudomembrane, bloody content', 'Necrotic Enteritis, Coccidiosis'],
         ['Ceca', 'Light orange-brown content', 'Blood-filled, cecal cores of clotted blood', 'E. tenella coccidiosis'],
         ['Bursa of Fabricius', 'Firm, cream-colored, smooth', 'Enlarged and hemorrhagic (acute IBD) or shrunken (chronic)', 'IBD'],
