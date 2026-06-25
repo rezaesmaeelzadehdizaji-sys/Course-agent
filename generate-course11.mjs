@@ -356,7 +356,7 @@ function buildBody() {
         ['Bursa of Fabricius', 'Firm, cream-colored, smooth', 'Enlarged and hemorrhagic (acute IBD) or shrunken (chronic)', 'IBD'],
         ['Kidneys', 'Dark red, smooth', 'Swollen, pale, urate deposits (chalky white tubules)', 'IBV renal form, IBD, dehydration'],
         ['Peripheral nerves (sciatic)', 'Uniform white, symmetric', 'Enlarged, asymmetric, loss of striations', "Marek's Disease"],
-        ['Abdominal cavity', 'No free fluid', 'Yellow/orange fluid (yolk), straw-colored fluid (ascites), caseous material', 'Ascites, Egg Peritonitis'],
+        ['Abdominal cavity', 'No free fluid', 'Yellow/orange fluid (yolk), straw-colored fluid (ascites), caseous material, retained or infected yolk sac in chicks', 'Ascites, Egg Peritonitis, Yolk Sacculitis (navel infection)'],
         ['Oviduct', 'Thin-walled, normal lumen', 'Caseous exudate, impacted with abnormal egg material', 'Salpingitis'],
       ]
     ),
