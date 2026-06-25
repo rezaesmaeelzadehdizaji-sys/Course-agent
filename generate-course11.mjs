@@ -275,7 +275,7 @@ function buildBody() {
     bullet('Identify the most common disease indicators in layers and breeders, including salpingitis, Marek\'s disease, and fatty liver syndrome.'),
     bullet('Collect appropriate tissue samples for diagnostic laboratory testing.'),
     bullet('Interpret necropsy findings alongside flock history and clinical signs.'),
-    bullet('Use necropsy results to make practical management and treatment decisions.'),
+    bullet('Turn necropsy findings into practical management actions, and work with your veterinarian on diagnosis and any treatment decisions.'),
     pageBreak(),
 
     // ─── SECTION 1 ───
