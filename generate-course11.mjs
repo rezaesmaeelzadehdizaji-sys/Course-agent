@@ -459,7 +459,7 @@ function buildBody() {
 
     spacer(40),
     para([{ text: 'Inclusion Body Hepatitis (IBH)', bold: true }]),
-    para('IBH is a viral liver disease, caused by a fowl adenovirus, that usually hits broilers between three and seven weeks of age. Mortality climbs suddenly, peaks over a few days, then drops off. It often rides in behind IBD or another immunosuppressive disease. The CPC Learning Centre Inclusion Body Hepatitis disease profile and the necropsy picture line up well [14,15]:'),
+    para('IBH is a viral liver disease, caused by a fowl adenovirus, that usually hits broilers between three and seven weeks of age. The CPC Learning Centre Inclusion Body Hepatitis disease profile and the necropsy picture line up well [14,15]:'),
     bullet([{ text: 'Liver:', bold: true }, { text: ' Swollen, pale, and very friable, so it tears easily when you lift it. Pinpoint to blotchy hemorrhages and pale necrotic foci are scattered through it. The liver often looks yellow and greasy.' }]),
     bullet([{ text: 'Kidneys:', bold: true }, { text: ' Swollen and pale.' }]),
     bullet([{ text: 'Carcass:', bold: true }, { text: ' Pale, anemic muscles in some birds.' }]),
