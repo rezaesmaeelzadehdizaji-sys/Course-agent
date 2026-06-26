@@ -570,7 +570,7 @@ function buildBody() {
     bullet([{ text: 'Cutaneous form:', bold: true }, { text: ' Enlarged, reddened feather follicles visible as nodular skin lesions, usually on the neck and back. Less common in well-vaccinated commercial flocks.' }]),
     ...image(photoMar, "Photo 5.2: Cutaneous form of Marek's disease in a broiler showing enlarged, reddened feather follicles on the skin surface. Source: Roman Halouzka, Wikimedia Commons (CC BY-SA 3.0).", 4.5),
 
-    para("Marek's disease in a vaccinated flock is a vaccination failure investigation. Check: Was the vaccine kept at the right temperature? Was the dose correct? Were birds exposed to field virus before the vaccine had time to protect them? Vaccination does not prevent infection. It prevents tumor development. Course 7 covers the full disease profile and vaccination strategy in detail."),
+    para("So the investigation centers on the vaccine: Was it kept at the right temperature? Was the dose correct? Were birds exposed to field virus before the vaccine had time to protect them? Vaccination does not prevent infection. It prevents tumor development. Course 7 covers the full disease profile and vaccination strategy in detail."),
 
     spacer(40),
     para([{ text: 'Infectious Bronchitis and Newcastle Disease in Layers', bold: true }]),
@@ -590,7 +590,7 @@ function buildBody() {
     spacer(40),
     para([{ text: 'Avian Metapneumovirus (aMPV)', bold: true }]),
     para('Avian metapneumovirus drives swollen head syndrome in broilers and breeders and a respiratory, drop-in-production picture in layers. It attacks the upper airway first [29]:'),
-    bullet([{ text: 'Sinuses and head:', bold: true }, { text: ' Serous to thick mucus in the nasal cavity and infraorbital sinuses. As secondary bacteria move in, the head and face swell, which is where swollen head syndrome gets its name.' }]),
+    bullet([{ text: 'Sinuses and head:', bold: true }, { text: ' Serous to thick mucus in the nasal cavity and infraorbital sinuses. As secondary bacteria move in, the head and face swell.' }]),
     bullet([{ text: 'Airways:', bold: true }, { text: ' Mucus in the trachea.' }]),
     bullet([{ text: 'Secondary infection:', bold: true }, { text: ' E. coli moves in behind the virus and adds airsacculitis, pericarditis, and perihepatitis.' }]),
     bullet([{ text: 'Layers:', bold: true }, { text: ' Egg peritonitis, a regressed ovary and oviduct, and misshapen eggs.' }]),
