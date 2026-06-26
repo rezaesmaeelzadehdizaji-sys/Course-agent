@@ -247,7 +247,7 @@ function buildBody() {
   const photoMar = figBuf('photo_mareks_cutaneous.jpg');
   const figEim   = figBuf('fig_eimeria_lifecycle_usda.jpg');
   const photoColi   = figBuf('Colibacillosis.jpg');
-  const photoNE     = figBuf('photo_necrotic_enteritis.jpg');
+  const photoNE     = figBuf('NE.jpg');
   const photoBursa  = figBuf('photo_ibd_bursa.jpg');
   const photoND     = figBuf('photo_newcastle_proventriculus.jpg');
   const photoCocci  = figBuf('photo_coccidiosis_ceca.jpg');
@@ -393,7 +393,7 @@ function buildBody() {
     bullet([{ text: 'Small intestine:', bold: true }, { text: ' The jejunum and ileum are ballooned, thin-walled, and extremely fragile. The contents smell foul, a characteristic that is hard to miss.' }]),
     bullet([{ text: 'Pseudomembrane:', bold: true }, { text: ' A tan to yellow diphtheritic membrane lines the intestinal surface. In severe cases this membrane sloughs off in sheets as you open the gut.' }]),
     bullet([{ text: 'Intestinal wall:', bold: true }, { text: ' Paper-thin and easily torn, containing brown or blood-tinged fluid.' }]),
-    ...image(photoNE, 'Photo 4.2: Necrotic enteritis in the small intestine of a broiler. The gut has been cut open to show the thickened wall and the loose yellow false membrane lining the inner surface, the hallmark lesion of this disease. Source: Vegad JL, A Colour Atlas of Poultry Diseases.', 5.0),
+    ...image(photoNE, 'Photo 4.2: Necrotic enteritis lesions in the small intestine. The opened gut shows a dark, roughened diphtheritic membrane lining the mucosa (1), raised yellow-white necrotic plaques on the intestinal surface (2), and the thickened, necrotic mucosa of two opened segments (3). This loose false membrane is the hallmark lesion of the disease. Source: ASA Handbook on Poultry Diseases; Elanco Broiler Disease Reference Guide; Vegad JL, A Colour Atlas of Poultry Diseases.', 5.9),
     callout('Practical Tip', 'Necrotic enteritis birds often die before you see obvious clinical signs in the barn. If you open a bird with that smell (sulfurous, foul) before you see any other changes, take it seriously. Check the intestine from duodenum to cloaca before concluding the necropsy.', 'EAF2EA', '538135'),
     spacer(120),
 
