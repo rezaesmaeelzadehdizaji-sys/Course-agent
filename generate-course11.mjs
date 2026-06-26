@@ -368,7 +368,6 @@ function buildBody() {
         ['Oviduct', 'Thin-walled, normal lumen', 'Caseous exudate, impacted with abnormal egg material', 'Salpingitis'],
       ]
     ),
-    spacer(160),
 
     h2('3.2  Acute vs Chronic Disease Lesions'),
     para('Acute lesions look fresh and dramatic: bright red hemorrhages, yellow fibrin that peels off cleanly, swollen organs with clear borders. These birds died early in the disease process or from a fast-moving condition. Chronic lesions look organized and dull: gray-white fibrin that has become adherent and rubbery, shrunken or fibrosed organs, caseous (cheesy) material that has been there long enough to solidify. A flock with a mix of acute and chronic lesions tells you the disease has been present for some time, often a week or more depending on the disease.'),
