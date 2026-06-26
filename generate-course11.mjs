@@ -251,7 +251,7 @@ function buildBody() {
   const photoOmph   = figBuf('Omphalitis.jpg');
   const photoIBV    = figBuf('IBV-broiler.jpg');
   const photoNE     = figBuf('NE.jpg');
-  const photoBursa  = figBuf('photo_ibd_bursa.jpg');
+  const photoBursa  = figBuf('IBD.jpg');
   const photoND     = figBuf('photo_newcastle_proventriculus.jpg');
   const photoCocci  = figBuf('photo_coccidiosis_ceca.jpg');
   const photoChol   = figBuf('photo_fowl_cholera_liver.jpg');
@@ -432,8 +432,7 @@ function buildBody() {
     bullet([{ text: 'Muscle hemorrhages:', bold: true }, { text: ' Ecchymotic (blotchy) hemorrhages in the breast and thigh muscles. This is one of the most visible gross findings.' }]),
     bullet([{ text: 'Proventriculus-gizzard junction:', bold: true }, { text: ' Hemorrhages at the mucosal junction between proventriculus and gizzard.' }]),
     bullet([{ text: 'Kidneys:', bold: true }, { text: ' Enlarged with urate deposits in tubules, similar to the IBV renal form.' }]),
-    para('The classic strain presents with visible morbidity and mortality. The variant strain, which is immunosuppressive, may not produce classic lesions: the bursa shows lymphoid depletion without obvious inflammation, and the main problem is secondary infections that follow [9].'),
-    ...image(photoBursa, 'Photo 4.6: Bursa of Fabricius in a broiler with acute IBD (arrow). Opened up, the bursa is congested and hemorrhagic. The bursa is the first place to look in any young bird you suspect of IBD. Source: Vegad JL, A Colour Atlas of Poultry Diseases.', 4.5),
+    ...image(photoBursa, 'Photo 4.6: The range of IBD lesions. Hemorrhages in the thigh and breast muscle (top left) and at the proventriculus-gizzard junction (top center), a swollen versus a hemorrhagic bursa side by side (top right), a greatly swollen Bursa of Fabricius (bottom left), and a hemorrhagic bursa alongside enlarged kidneys studded with urate deposits (bottom right). The bursa is the first place to look in any young bird you suspect of IBD. Source: CEVA Handbook of Poultry Diseases; Diseases of Poultry, 14th ed.', 5.9),
     ...image(photoIBD, 'Photo 4.7: Intramuscular hemorrhage in the breast muscle of a broiler affected by Infectious Bursal Disease (IBD). The ecchymotic hemorrhages are visible as dark streaks within pale muscle tissue. Source: Wikimedia Commons (Public Domain).', 4.5),
 
     spacer(40),
