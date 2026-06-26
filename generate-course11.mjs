@@ -252,6 +252,7 @@ function buildBody() {
   const photoNE     = figBuf('NE.jpg');
   const photoBursa  = figBuf('IBD.jpg');
   const photoND     = figBuf('ND, Broilers.jpg');
+  const photoAI     = figBuf('AI.jpg');
   const photoCocci  = figBuf('photo_coccidiosis_ceca.jpg');
   const photoChol   = figBuf('photo_fowl_cholera_liver.jpg');
   const organMap    = figBuf('chicken_systems_overview.jpeg');
@@ -454,6 +455,7 @@ function buildBody() {
     bullet('Hemorrhages in the trachea, proventriculus, and on serosal surfaces.'),
     bullet('Birds dying peracutely with no obvious gross lesions at all.'),
     para('If you open a bird and see this combination, close the bird, secure the barn, and call your veterinarian immediately. Do not move any birds or equipment off the farm. Highly pathogenic AI is a federally reportable disease in Canada, and the response protocol requires CFIA involvement [3,12].'),
+    ...image(photoAI, "Photo 4.8: The hemorrhagic picture of highly pathogenic avian influenza. Facial swelling (top left), a cyanotic (blue-purple) comb and wattle (top center), and hemorrhages on the shanks and feet (top right), along with bleeding across the internal organs: heart, proventriculus, pancreas, intestinal Peyer's patches, and ovary. No single lesion confirms AI, but this combination with sudden high mortality is a stop-and-call-the-veterinarian picture. Source: Diseases of Poultry, 14th ed.; Picture Book of Infectious Poultry Diseases (FAO-CEVA); CEVA Handbook of Poultry Diseases.", 5.9),
 
     spacer(40),
     para([{ text: 'Inclusion Body Hepatitis (IBH)', bold: true }]),
@@ -486,7 +488,7 @@ function buildBody() {
       ]
     ),
     spacer(120),
-    ...image(photoCocci, 'Photo 4.8: Cecal coccidiosis caused by Eimeria tenella in a young broiler. Both ceca are greatly enlarged and distended with blood, the most visually dramatic lesion in poultry coccidiosis. Source: Vegad JL, A Colour Atlas of Poultry Diseases.', 4.0),
+    ...image(photoCocci, 'Photo 4.9: Cecal coccidiosis caused by Eimeria tenella in a young broiler. Both ceca are greatly enlarged and distended with blood, the most visually dramatic lesion in poultry coccidiosis. Source: Vegad JL, A Colour Atlas of Poultry Diseases.', 4.0),
     spacer(120),
     ...image(figEim, 'Figure 4.1: The Eimeria life cycle showing how oocysts ingested from litter cause intestinal damage through repeated rounds of merozoite multiplication and cell lysis. Source: USDA Agricultural Research Service (Public Domain).', 5.2),
 
