@@ -9,7 +9,7 @@ import {
   Document, Packer, Paragraph, TextRun, AlignmentType, PageBreak,
   Header, Footer, PageNumber, Table, TableRow, TableCell,
   WidthType, BorderStyle, ShadingType, convertInchesToTwip,
-  HeadingLevel, TableOfContents, ImageRun, LevelFormat,
+  HeadingLevel, TableOfContents, ImageRun, LevelFormat, VerticalAlign,
 } from 'docx';
 import JSZip from './node_modules/jszip/dist/jszip.js';
 import fs from 'fs';
@@ -236,6 +236,54 @@ function lesionTable(headers, rows, colWOverride) {
   });
 }
 
+// COCCIDIOSIS TABLE — last column holds a gross-lesion photo per species
+function cocciTable(headers, rows) {
+  const colW  = [1250, 1450, 3140, 2800]; // sum 8640
+  const hdrBg = MED_BLUE;
+  const altBg = 'EBF2FA';
+  const bdr   = { style: BorderStyle.SINGLE, size: 2, color: 'AAAAAA' };
+  const cb    = { top: bdr, bottom: bdr, left: bdr, right: bdr };
+  const hdrCell = (t, i) => new TableCell({
+    width: { size: colW[i], type: WidthType.DXA }, borders: cb,
+    shading: { type: ShadingType.SOLID, color: hdrBg },
+    children: [new Paragraph({ alignment: AlignmentType.CENTER, spacing: { before: 60, after: 60 }, children: sciRuns(t, 18, { bold: true, color: 'FFFFFF' }) })],
+  });
+  const textCell = (t, i, shade) => new TableCell({
+    width: { size: colW[i], type: WidthType.DXA }, borders: cb,
+    verticalAlign: VerticalAlign.CENTER,
+    shading: { type: ShadingType.SOLID, color: shade ? altBg : 'FFFFFF' },
+    children: [new Paragraph({ alignment: AlignmentType.LEFT, spacing: { before: 50, after: 50 }, children: sciRuns(t, 18) })],
+  });
+  const imgCell = (buf, shade) => {
+    let kids = [new Paragraph({ alignment: AlignmentType.CENTER, spacing: { before: 30, after: 30 }, children: [run('—', { size: 18, color: BODY_GRAY })] })];
+    if (buf) {
+      const wpx = 168; // ~1.75 in
+      let hpx = Math.round(wpx * 0.5);
+      const d = jpegDims(buf);
+      if (d && d.w > 0 && d.h > 0) hpx = Math.round(wpx * d.h / d.w);
+      kids = [new Paragraph({ alignment: AlignmentType.CENTER, spacing: { before: 30, after: 30 }, children: [new ImageRun({ data: buf, transformation: { width: wpx, height: hpx }, type: 'jpg' })] })];
+    }
+    return new TableCell({
+      width: { size: colW[3], type: WidthType.DXA }, borders: cb,
+      verticalAlign: VerticalAlign.CENTER,
+      shading: { type: ShadingType.SOLID, color: shade ? altBg : 'FFFFFF' },
+      children: kids,
+    });
+  };
+  return new Table({
+    width: { size: 100, type: WidthType.PERCENTAGE },
+    rows: [
+      new TableRow({ children: headers.map((h, i) => hdrCell(h, i)), tableHeader: true }),
+      ...rows.map((row, ri) => new TableRow({ children: [
+        textCell(row[0], 0, ri % 2 === 1),
+        textCell(row[1], 1, ri % 2 === 1),
+        textCell(row[2], 2, ri % 2 === 1),
+        imgCell(row[3], ri % 2 === 1),
+      ] })),
+    ],
+  });
+}
+
 // ============================================================
 // DOCUMENT CHILDREN
 // ============================================================
@@ -254,6 +302,11 @@ function buildBody() {
   const photoAI     = figBuf('AI.jpg');
   const photoIBH    = figBuf('IBH.jpg');
   const photoReo    = figBuf('Reo.jpg');
+  const eTen        = figBuf('E. tenella.jpg');
+  const eAcer       = figBuf('E. acervulina.jpg');
+  const eMax        = figBuf('E. maxima.jpg');
+  const eNec        = figBuf('E. necatrix.jpg');
+  const eBru        = figBuf('E.brunetti.jpg');
   const photoCocci  = figBuf('photo_coccidiosis_ceca.jpg');
   const photoChol   = figBuf('photo_fowl_cholera_liver.jpg');
   const organMap    = figBuf('chicken_systems_overview.jpeg');
@@ -480,16 +533,17 @@ function buildBody() {
     h2('4.3  Parasitic Conditions'),
     para([{ text: 'Coccidiosis', bold: true }]),
     para('Coccidiosis is one of the most common and costly diseases in floor-raised poultry worldwide, and some level of challenge is present on virtually every broiler farm [18]. The intestinal lesion from coccidiosis depends entirely on which Eimeria species is involved. Each species colonizes a specific segment of the intestine, and the gross appearance varies accordingly:'),
-    lesionTable(
-      ['Eimeria Species', 'Location in Gut', 'Gross Lesion at Necropsy'],
+    cocciTable(
+      ['Eimeria Species', 'Location in Gut', 'Gross Lesion at Necropsy', 'Gross Lesions'],
       [
-        ['E. tenella', 'Ceca only', 'Bright red blood-filled ceca. Cecal cores (clotted blood, tissue debris, oocysts) in surviving birds. Most visually dramatic.'],
-        ['E. acervulina', 'Duodenum', 'White longitudinal plaques or ladder-like striations on the duodenal mucosa. Pale, thickened duodenal wall.'],
-        ['E. maxima', 'Jejunum (mid-gut)', 'Ballooned intestine with thickened, congested wall and petechial hemorrhage. Intestinal lumen contains blood-tinged fluid. Lesions often precede necrotic enteritis.'],
-        ['E. necatrix', 'Jejunum (mid-gut)', 'White and red spots on the serosal surface. Interior shows petechiae and necrotic patches.'],
-        ['E. brunetti', 'Lower small intestine, rectum', 'Hemorrhagic, necrotic mucosa in the lower gut. Watery bloody content.'],
+        ['E. tenella', 'Ceca only', 'Bright red blood-filled ceca. Cecal cores (clotted blood, tissue debris, oocysts) in surviving birds. Most visually dramatic.', eTen],
+        ['E. acervulina', 'Duodenum', 'White longitudinal plaques or ladder-like striations on the duodenal mucosa. Pale, thickened duodenal wall.', eAcer],
+        ['E. maxima', 'Jejunum (mid-gut)', 'Ballooned intestine with thickened, congested wall and petechial hemorrhage. Intestinal lumen contains blood-tinged fluid. Lesions often precede necrotic enteritis.', eMax],
+        ['E. necatrix', 'Jejunum (mid-gut)', 'White and red spots on the serosal surface. Interior shows petechiae and necrotic patches.', eNec],
+        ['E. brunetti', 'Lower small intestine, rectum', 'Hemorrhagic, necrotic mucosa in the lower gut. Watery bloody content.', eBru],
       ]
     ),
+    para('Gross Lesions column photos: Elanco Broiler Disease Reference Guide.', { size: 18, italics: true, color: '555555', alignment: AlignmentType.LEFT, spaceAfter: 40 }),
     spacer(120),
     ...image(photoCocci, 'Photo 4.11: Cecal coccidiosis caused by Eimeria tenella in a young broiler. Both ceca are greatly enlarged and distended with blood, the most visually dramatic lesion in poultry coccidiosis. Source: Vegad JL, A Colour Atlas of Poultry Diseases.', 4.0),
     para('Coccidiosis causes direct intestinal damage and opens the door to necrotic enteritis. If you find any of the intestinal lesions above, look at the same segment carefully for early Clostridium overgrowth. Mixed Eimeria species infections are common in field conditions, so the picture may not fit a single species cleanly.'),
