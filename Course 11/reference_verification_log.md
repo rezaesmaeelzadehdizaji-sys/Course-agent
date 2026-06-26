@@ -57,7 +57,30 @@
 
 ---
 
-## 2026-06-25 Full Re-Verification Pass (all 23 references — every one confirmed real)
+## 2026-06-25 Course 7 Parity Expansion — 12 NEW references added (all verified live)
+
+Course expanded to full disease parity with Course 7 (added waterfowl, turkey, cross-species, and 5 chicken diseases). Reference list grew from 23 to 35. All 12 new references are Merck Veterinary Manual pages, each fetched live with exact title and key gross lesion confirmed:
+
+| New # | Page title (verified) | URL slug | Lesion claim checked |
+|---|---|---|---|
+| 7 | Omphalitis in Poultry | /poultry/omphalitis/omphalitis-in-poultry | unabsorbed/malodorous yolk sac, inflamed navel, caseous peritonitis |
+| 13 | Inclusion Body Hepatitis and Hepatitis Hydropericardium Syndrome in Poultry | /poultry/inclusion-body-hepatitis-and-hepatitis-hydropericardium-syndrome/...-in-poultry | basophilic intranuclear inclusion bodies in liver |
+| 14 | Viral Arthritis in Poultry | /poultry/viral-arthritis/viral-arthritis-in-poultry | swollen hock/tendons, gastrocnemius tendon rupture |
+| 25 | Infectious Laryngotracheitis in Poultry | /poultry/infectious-laryngotracheitis/...-in-poultry | hemorrhagic trachea, bloody mucus, syncytia + intranuclear inclusions |
+| 26 | Avian Metapneumovirus Infection in Poultry | /poultry/avian-metapneumovirus/avian-metapneumovirus | swollen sinuses/head, secondary E. coli airsacculitis |
+| 29 | Duck Viral Enteritis | /poultry/duck-viral-enteritis/duck-viral-enteritis | paint-brush hemorrhages, diphtheritic gut plaques, annular bands |
+| 30 | Duck Viral Hepatitis | /poultry/duck-viral-hepatitis/duck-viral-hepatitis | enlarged liver with hemorrhagic foci, opisthotonos |
+| 31 | Parvovirus Infection of Waterfowl | /poultry/parvovirus-infection-of-waterfowl/... | rounded pale heart, ascites (penguin posture), Cowdry type A inclusions |
+| 32 | Riemerella anatipestifer Infection in Birds | /poultry/riemerella-anatipestifer-infection/...-in-birds | fibrinous pericarditis + perihepatitis (note: -in-poultry URL 404s; -in-birds is correct) |
+| 33 | Botulism in Poultry | /poultry/botulism/botulism-in-poultry | NO gross lesions (intoxication; limberneck); maggots in crop |
+| 34 | Hemorrhagic Enteritis and Marble Spleen Disease in Poultry | /poultry/hemorrhagic-enteritis-and-marble-spleen-disease/...-in-poultry | enlarged friable mottled spleen, duodenal hemorrhage |
+| 35 | Histomoniasis in Poultry | /poultry/histomoniasis/histomoniasis-in-poultry | cecal cores + target/bullseye liver lesions (pathognomonic) |
+
+IBH also cites existing CPC profile (ref 12). PPMV-1 cites the existing Newcastle reference (ref 10) — PPMV-1 is the pigeon-adapted strain of APMV-1; Merck covers it under Newcastle, not the "Other Avian Paramyxovirus" page. Citations fully renumbered to Vancouver first-appearance order; verified sequential 1..35 in the built docx.
+
+---
+
+## 2026-06-25 Full Re-Verification Pass (original 23 references — every one confirmed real)
 
 Every reference re-checked individually against its live source or the local library.
 
