@@ -463,7 +463,6 @@ function buildBody() {
     bullet([{ text: 'Liver:', bold: true }, { text: ' Swollen, pale, and very friable, so it tears easily when you lift it. Pinpoint to blotchy hemorrhages and pale necrotic foci are scattered through it. The liver often looks yellow and greasy.' }]),
     bullet([{ text: 'Kidneys:', bold: true }, { text: ' Swollen and pale.' }]),
     bullet([{ text: 'Carcass:', bold: true }, { text: ' Pale, anemic muscles in some birds.' }]),
-    para('On histology the lab finds the giveaway: large intranuclear inclusion bodies in the liver cells [15]. Because IBH so often follows IBD or chicken anemia, a flock with IBH is also telling you to check its immunosuppression status and where the chicks came from [14].'),
     para('IBH has become a leading cause of liver disease in Canadian broilers: diagnostic data from 2008 to 2024 show it as the main fowl adenovirus presentation, most often in Ontario, with the FAdV-8b strain dominant since 2015 [16].'),
 
     spacer(40),
