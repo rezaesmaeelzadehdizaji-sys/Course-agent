@@ -244,7 +244,6 @@ function buildBody() {
   const fig11_2  = figBuf('fig11_2.png');
   const fig11_3  = figBuf('fig11_3.png');
   const photoMar = figBuf('photo_mareks_cutaneous.jpg');
-  const figEim   = figBuf('fig_eimeria_lifecycle_usda.jpg');
   const photoColi   = figBuf('Colibacillosis.jpg');
   const photoAir    = figBuf('airsacculitis.jpg');
   const photoOmph   = figBuf('Omphalitis.jpg');
@@ -493,9 +492,6 @@ function buildBody() {
     ),
     spacer(120),
     ...image(photoCocci, 'Photo 4.11: Cecal coccidiosis caused by Eimeria tenella in a young broiler. Both ceca are greatly enlarged and distended with blood, the most visually dramatic lesion in poultry coccidiosis. Source: Vegad JL, A Colour Atlas of Poultry Diseases.', 4.0),
-    spacer(120),
-    ...image(figEim, 'Figure 4.1: The Eimeria life cycle showing how oocysts ingested from litter cause intestinal damage through repeated rounds of merozoite multiplication and cell lysis. Source: USDA Agricultural Research Service (Public Domain).', 5.2),
-
     para('Coccidiosis causes direct intestinal damage and opens the door to necrotic enteritis. If you find any of the intestinal lesions above, look at the same segment carefully for early Clostridium overgrowth. Mixed Eimeria species infections are common in field conditions, so the picture may not fit a single species cleanly.'),
 
     spacer(40),
