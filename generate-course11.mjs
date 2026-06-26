@@ -249,6 +249,7 @@ function buildBody() {
   const photoColi   = figBuf('Colibacillosis.jpg');
   const photoAir    = figBuf('airsacculitis.jpg');
   const photoOmph   = figBuf('Omphalitis.jpg');
+  const photoIBV    = figBuf('IBV-broiler.jpg');
   const photoNE     = figBuf('NE.jpg');
   const photoBursa  = figBuf('photo_ibd_bursa.jpg');
   const photoND     = figBuf('photo_newcastle_proventriculus.jpg');
@@ -420,6 +421,7 @@ function buildBody() {
     para('The CPC Learning Centre IBV disease profile notes an incubation period of 18 to 36 hours and primary respiratory signs in young birds [8]. The necropsy reflects the form of IBV involved:'),
     bullet([{ text: 'Respiratory form:', bold: true }, { text: ' Mucus and exudate in the trachea and bronchi. Air sacs cloudy and thickened. In young birds the tracheal mucosa is congested and reddened. Sinuses may be swollen and full of mucus.' }]),
     bullet([{ text: 'Renal form:', bold: true }, { text: ' Swollen, pale kidneys with white urate deposits in the tubules. Ureters distended. Gout-like deposits on visceral surfaces in severe cases. Mortality in the renal form can reach 25% in susceptible young flocks [8].' }]),
+    ...image(photoIBV, 'Photo 4.5: Infectious bronchitis in broilers. A swollen, wet face and sinus with open-mouth breathing (left), and the renal form with swollen, pale, mottled kidneys studded with white urate deposits in the abdomen (top right). The opened trachea is congested and reddened with mucoid exudate (bottom). Source: Picture Book of Infectious Poultry Diseases (FAO-CEVA); Important Poultry Diseases, Intervet; CEVA Handbook of Poultry Diseases.', 5.9),
     para('At necropsy, always check the kidneys in addition to the respiratory tract. The renal form can appear with minimal respiratory signs and is easily missed without a thorough organ check.'),
 
     spacer(40),
@@ -431,8 +433,8 @@ function buildBody() {
     bullet([{ text: 'Proventriculus-gizzard junction:', bold: true }, { text: ' Hemorrhages at the mucosal junction between proventriculus and gizzard.' }]),
     bullet([{ text: 'Kidneys:', bold: true }, { text: ' Enlarged with urate deposits in tubules, similar to the IBV renal form.' }]),
     para('The classic strain presents with visible morbidity and mortality. The variant strain, which is immunosuppressive, may not produce classic lesions: the bursa shows lymphoid depletion without obvious inflammation, and the main problem is secondary infections that follow [9].'),
-    ...image(photoBursa, 'Photo 4.5: Bursa of Fabricius in a broiler with acute IBD (arrow). Opened up, the bursa is congested and hemorrhagic. The bursa is the first place to look in any young bird you suspect of IBD. Source: Vegad JL, A Colour Atlas of Poultry Diseases.', 4.5),
-    ...image(photoIBD, 'Photo 4.6: Intramuscular hemorrhage in the breast muscle of a broiler affected by Infectious Bursal Disease (IBD). The ecchymotic hemorrhages are visible as dark streaks within pale muscle tissue. Source: Wikimedia Commons (Public Domain).', 4.5),
+    ...image(photoBursa, 'Photo 4.6: Bursa of Fabricius in a broiler with acute IBD (arrow). Opened up, the bursa is congested and hemorrhagic. The bursa is the first place to look in any young bird you suspect of IBD. Source: Vegad JL, A Colour Atlas of Poultry Diseases.', 4.5),
+    ...image(photoIBD, 'Photo 4.7: Intramuscular hemorrhage in the breast muscle of a broiler affected by Infectious Bursal Disease (IBD). The ecchymotic hemorrhages are visible as dark streaks within pale muscle tissue. Source: Wikimedia Commons (Public Domain).', 4.5),
 
     spacer(40),
     para([{ text: 'Newcastle Disease (ND)', bold: true }]),
@@ -440,7 +442,7 @@ function buildBody() {
     bullet([{ text: 'Velogenic viscerotropic ND:', bold: true }, { text: ' The most severe form. Hemorrhages at the proventricular mucosa (especially at the junction with the gizzard), cecal tonsils, and Peyer\'s patches. Necrotic plaques on the intestinal mucosa. Petechiae on serous membranes. This is the presentation you report to your veterinarian immediately.' }]),
     bullet([{ text: 'Velogenic neurotropic ND:', bold: true }, { text: ' Nervous signs dominate: torticollis (twisted neck), wing paralysis, tremors, and star-gazing. Gross lesions in the brain are subtle (meningeal hyperemia and mild petechiae). The clinical signs are the diagnostic clue here.' }]),
     bullet([{ text: 'Mesogenic / Lentogenic ND:', bold: true }, { text: ' Mild respiratory disease. Lesions are limited to congestion and mucoid exudate in the trachea and slight air sac haze. Low mortality. Most commercial flocks with proper vaccination do not progress beyond this.' }]),
-    ...image(photoND, 'Photo 4.7: Opened proventriculus of a broiler with virulent Newcastle disease. Note the pinpoint hemorrhages on the tips of the glands, especially at the junction with the gizzard. This is one of the most diagnostic lesions of the viscerotropic form. Source: Vegad JL, A Colour Atlas of Poultry Diseases.', 4.2),
+    ...image(photoND, 'Photo 4.8: Opened proventriculus of a broiler with virulent Newcastle disease. Note the pinpoint hemorrhages on the tips of the glands, especially at the junction with the gizzard. This is one of the most diagnostic lesions of the viscerotropic form. Source: Vegad JL, A Colour Atlas of Poultry Diseases.', 4.2),
     para('Peracute Newcastle deaths may have no gross lesions at all. If you have unexplained rapid mortality in a well-vaccinated flock, Newcastle is on the differential alongside Avian Influenza. Both require immediate veterinary contact.'),
     para('For Canadian context: virulent Newcastle disease had been absent from Canada since 1973, but in June 2025 the CFIA confirmed PPMV-1, a pigeon-adapted Newcastle strain, in commercial squab pigeon farms in British Columbia\'s Fraser Valley, the first Canadian case in over fifty years [11].'),
 
@@ -487,7 +489,7 @@ function buildBody() {
       ]
     ),
     spacer(120),
-    ...image(photoCocci, 'Photo 4.8: Cecal coccidiosis caused by Eimeria tenella in a young broiler. Both ceca are greatly enlarged and distended with blood, the most visually dramatic lesion in poultry coccidiosis. Source: Vegad JL, A Colour Atlas of Poultry Diseases.', 4.0),
+    ...image(photoCocci, 'Photo 4.9: Cecal coccidiosis caused by Eimeria tenella in a young broiler. Both ceca are greatly enlarged and distended with blood, the most visually dramatic lesion in poultry coccidiosis. Source: Vegad JL, A Colour Atlas of Poultry Diseases.', 4.0),
     spacer(120),
     ...image(figEim, 'Figure 4.1: The Eimeria life cycle showing how oocysts ingested from litter cause intestinal damage through repeated rounds of merozoite multiplication and cell lysis. Source: USDA Agricultural Research Service (Public Domain).', 5.2),
 
