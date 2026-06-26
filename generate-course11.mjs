@@ -254,6 +254,7 @@ function buildBody() {
   const photoND     = figBuf('ND, Broilers.jpg');
   const photoAI     = figBuf('AI.jpg');
   const photoIBH    = figBuf('IBH.jpg');
+  const photoReo    = figBuf('Reo.jpg');
   const photoCocci  = figBuf('photo_coccidiosis_ceca.jpg');
   const photoChol   = figBuf('photo_fowl_cholera_liver.jpg');
   const organMap    = figBuf('chicken_systems_overview.jpeg');
@@ -473,6 +474,8 @@ function buildBody() {
     bullet([{ text: 'Hock joint:', bold: true }, { text: ' Swollen, with extra straw-colored to blood-tinged fluid inside when you open it.' }]),
     bullet([{ text: 'Tendons:', bold: true }, { text: ' The digital flexor and gastrocnemius (Achilles) tendons above the hock are swollen and edematous. In chronic cases the tendon sheaths thicken and harden.' }]),
     bullet([{ text: 'Ruptured tendon:', bold: true }, { text: ' In older birds the gastrocnemius tendon can rupture outright, leaving a green-bruised swelling at the back of the hock. That bird is finished.' }]),
+    bullet([{ text: 'Malabsorption syndrome (helicopter disease):', bold: true }, { text: ' Reovirus is also one of the agents behind malabsorption, or runting-stunting syndrome. Look for stunted, uneven birds with abnormal wing feathers that stick straight out (the reason it is nicknamed helicopter disease), a shrunken pancreas, and pale, undigested feed in the gut.' }]),
+    ...image(photoReo, 'Photo 4.10: Reovirus across two presentations. Top row, viral arthritis and tenosynovitis: a swollen, scaly hock and the tendon sheath above it filled with straw-colored then fibrinous exudate. Bottom row, malabsorption (helicopter disease): a chick with wing feathers sticking out sideways, a shrunken pancreas, and pale, undigested feed in the gut. Source: CEVA Handbook of Poultry Diseases.', 5.9),
     para('Viral arthritis spreads early in life and gives a swollen-hock picture very similar to Mycoplasma synoviae. Open the joint and check the tendons. Reovirus hits the tendons hardest; MS gives you the creamy joint exudate. The lab sorts out which is which [17].'),
 
     h2('4.3  Parasitic Conditions'),
@@ -489,7 +492,7 @@ function buildBody() {
       ]
     ),
     spacer(120),
-    ...image(photoCocci, 'Photo 4.10: Cecal coccidiosis caused by Eimeria tenella in a young broiler. Both ceca are greatly enlarged and distended with blood, the most visually dramatic lesion in poultry coccidiosis. Source: Vegad JL, A Colour Atlas of Poultry Diseases.', 4.0),
+    ...image(photoCocci, 'Photo 4.11: Cecal coccidiosis caused by Eimeria tenella in a young broiler. Both ceca are greatly enlarged and distended with blood, the most visually dramatic lesion in poultry coccidiosis. Source: Vegad JL, A Colour Atlas of Poultry Diseases.', 4.0),
     spacer(120),
     ...image(figEim, 'Figure 4.1: The Eimeria life cycle showing how oocysts ingested from litter cause intestinal damage through repeated rounds of merozoite multiplication and cell lysis. Source: USDA Agricultural Research Service (Public Domain).', 5.2),
 
