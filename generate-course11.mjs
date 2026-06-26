@@ -253,6 +253,7 @@ function buildBody() {
   const photoBursa  = figBuf('IBD.jpg');
   const photoND     = figBuf('ND, Broilers.jpg');
   const photoAI     = figBuf('AI.jpg');
+  const photoIBH    = figBuf('IBH.jpg');
   const photoCocci  = figBuf('photo_coccidiosis_ceca.jpg');
   const photoChol   = figBuf('photo_fowl_cholera_liver.jpg');
   const organMap    = figBuf('chicken_systems_overview.jpeg');
@@ -463,6 +464,7 @@ function buildBody() {
     bullet([{ text: 'Liver:', bold: true }, { text: ' Swollen, pale, and very friable, so it tears easily when you lift it. Pinpoint to blotchy hemorrhages and pale necrotic foci are scattered through it. The liver often looks yellow and greasy.' }]),
     bullet([{ text: 'Kidneys:', bold: true }, { text: ' Swollen and pale.' }]),
     bullet([{ text: 'Carcass:', bold: true }, { text: ' Pale, anemic muscles in some birds.' }]),
+    ...image(photoIBH, 'Photo 4.9: Inclusion body hepatitis lesions. A swollen, pale, friable liver with hemorrhages and pale necrotic foci, shown in two birds (top left and right), and swollen kidneys (bottom left). The greasy yellow, easily torn liver is the lesion that points you toward IBH. Source: CPC Learning Centre.', 5.9),
     para('IBH has become a leading cause of liver disease in Canadian broilers: diagnostic data from 2008 to 2024 show it as the main fowl adenovirus presentation, most often in Ontario, with the FAdV-8b strain dominant since 2015 [16].'),
 
     spacer(40),
@@ -487,7 +489,7 @@ function buildBody() {
       ]
     ),
     spacer(120),
-    ...image(photoCocci, 'Photo 4.9: Cecal coccidiosis caused by Eimeria tenella in a young broiler. Both ceca are greatly enlarged and distended with blood, the most visually dramatic lesion in poultry coccidiosis. Source: Vegad JL, A Colour Atlas of Poultry Diseases.', 4.0),
+    ...image(photoCocci, 'Photo 4.10: Cecal coccidiosis caused by Eimeria tenella in a young broiler. Both ceca are greatly enlarged and distended with blood, the most visually dramatic lesion in poultry coccidiosis. Source: Vegad JL, A Colour Atlas of Poultry Diseases.', 4.0),
     spacer(120),
     ...image(figEim, 'Figure 4.1: The Eimeria life cycle showing how oocysts ingested from litter cause intestinal damage through repeated rounds of merozoite multiplication and cell lysis. Source: USDA Agricultural Research Service (Public Domain).', 5.2),
 
