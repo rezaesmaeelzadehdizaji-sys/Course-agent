@@ -57,6 +57,20 @@
 
 ---
 
+## 2026-06-26 Canadian Disease-Prevalence Notes — 3 NEW references added (all verified live)
+
+Added one-sentence Canadian/global prevalence notes for farmers to the key diseases. Endemic-disease notes (necrotic enteritis, coccidiosis, Marek's, histomoniasis) cite the disease's existing reference. Three current Canadian-status claims required new, verified sources:
+
+| New # | Citation | Verification |
+|---|---|---|
+| 11 | Canadian Food Inspection Agency. Industry notice: ... detects Newcastle disease in BC pigeons; 2025 Jun 19. inspection.canada.ca/.../newcastle-disease/industry-notice-2025-06-19 | Fetched live: confirms PPMV-1 (pigeon-adapted Newcastle) in commercial squab pigeons, Fraser Valley BC, June 4 2025, first Canadian ND case since 1973 |
+| 13 | Canadian Food Inspection Agency. Status of ongoing avian influenza response by province. inspection.canada.ca/.../avian-influenza/latest-bird-flu-situation/status-province | CFIA live tracker of HPAI H5 in domestic flocks by province; corroborated by 2025 reports of commercial outbreaks in BC, AB, MB, ON, QC |
+| 16 | Ojkic D, Lopes J, Sandrock C, Ratsep E, Brouwer E, Brooks A, Rossi T, Martin E. Fowl adenovirus infection and inclusion body hepatitis in Canada: genotyping trends from 2008 to 2024. J Vet Diagn Invest. 2026. doi:10.1177/10406387251412366 | Fetched PMC12823366: full author list, title, journal, year, DOI confirmed verbatim; IBH = main FAdV presentation, Ontario-heavy, FAdV-8b dominant since 2015 |
+
+Citations renumbered to 38 (Vancouver first-appearance order verified sequential 1..38). All earlier 35 references retain their content; only their numbers shifted.
+
+---
+
 ## 2026-06-25 Course 7 Parity Expansion — 12 NEW references added (all verified live)
 
 Course expanded to full disease parity with Course 7 (added waterfowl, turkey, cross-species, and 5 chicken diseases). Reference list grew from 23 to 35. All 12 new references are Merck Veterinary Manual pages, each fetched live with exact title and key gross lesion confirmed:
