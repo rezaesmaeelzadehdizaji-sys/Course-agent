@@ -420,7 +420,6 @@ function buildBody() {
     para('The CPC Learning Centre IBV disease profile notes an incubation period of 18 to 36 hours and primary respiratory signs in young birds [8]. The necropsy reflects the form of IBV involved:'),
     bullet([{ text: 'Respiratory form:', bold: true }, { text: ' Mucus and exudate in the trachea and bronchi. Air sacs cloudy and thickened. In young birds the tracheal mucosa is congested and reddened. Sinuses may be swollen and full of mucus.' }]),
     bullet([{ text: 'Renal form:', bold: true }, { text: ' Swollen, pale kidneys with white urate deposits in the tubules. Ureters distended. Gout-like deposits on visceral surfaces in severe cases. Mortality in the renal form can reach 25% in susceptible young flocks [8].' }]),
-    bullet([{ text: 'Reproductive form (layers):', bold: true }, { text: ' Cystic oviduct from early infection. False layers: birds appear to be producing but the oviduct is blocked, filled with watery fluid rather than a normal egg.' }]),
     para('IBV in broilers often presents as a flock that falls off feed and water quickly, with coughing and rales. At necropsy, always check the kidneys in addition to the respiratory tract. The renal form can appear with minimal respiratory signs and is easily missed without a thorough organ check.'),
 
     spacer(40),
