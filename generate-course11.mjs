@@ -307,7 +307,6 @@ function buildBody() {
   const eMax        = figBuf('E. maxima.jpg');
   const eNec        = figBuf('E. necatrix.jpg');
   const eBru        = figBuf('E.brunetti.jpg');
-  const photoCocci  = figBuf('photo_coccidiosis_ceca.jpg');
   const photoChol   = figBuf('photo_fowl_cholera_liver.jpg');
   const organMap    = figBuf('chicken_systems_overview.jpeg');
 
@@ -544,9 +543,6 @@ function buildBody() {
       ]
     ),
     para('Gross Lesions column photos: Elanco Broiler Disease Reference Guide.', { size: 18, italics: true, color: '555555', alignment: AlignmentType.LEFT, spaceAfter: 40 }),
-    spacer(120),
-    ...image(photoCocci, 'Photo 4.11: Cecal coccidiosis caused by Eimeria tenella in a young broiler. Both ceca are greatly enlarged and distended with blood, the most visually dramatic lesion in poultry coccidiosis. Source: Vegad JL, A Colour Atlas of Poultry Diseases.', 4.0),
-    para('Coccidiosis causes direct intestinal damage and opens the door to necrotic enteritis. If you find any of the intestinal lesions above, look at the same segment carefully for early Clostridium overgrowth. Mixed Eimeria species infections are common in field conditions, so the picture may not fit a single species cleanly.'),
 
     spacer(40),
     para([{ text: 'Worms (Internal Parasites)', bold: true }]),
