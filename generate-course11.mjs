@@ -251,7 +251,7 @@ function buildBody() {
   const photoIBV    = figBuf('IBV-broiler.jpg');
   const photoNE     = figBuf('NE.jpg');
   const photoBursa  = figBuf('IBD.jpg');
-  const photoND     = figBuf('photo_newcastle_proventriculus.jpg');
+  const photoND     = figBuf('ND, Broilers.jpg');
   const photoCocci  = figBuf('photo_coccidiosis_ceca.jpg');
   const photoChol   = figBuf('photo_fowl_cholera_liver.jpg');
   const organMap    = figBuf('chicken_systems_overview.jpeg');
@@ -439,7 +439,7 @@ function buildBody() {
     bullet([{ text: 'Velogenic viscerotropic ND:', bold: true }, { text: ' The most severe form. Hemorrhages at the proventricular mucosa (especially at the junction with the gizzard), cecal tonsils, and Peyer\'s patches. Necrotic plaques on the intestinal mucosa. Petechiae on serous membranes. This is the presentation you report to your veterinarian immediately.' }]),
     bullet([{ text: 'Velogenic neurotropic ND:', bold: true }, { text: ' Nervous signs dominate: torticollis (twisted neck), wing paralysis, tremors, and star-gazing. Gross lesions in the brain are subtle (meningeal hyperemia and mild petechiae). The clinical signs are the diagnostic clue here.' }]),
     bullet([{ text: 'Mesogenic / Lentogenic ND:', bold: true }, { text: ' Mild respiratory disease. Lesions are limited to congestion and mucoid exudate in the trachea and slight air sac haze. Low mortality. Most commercial flocks with proper vaccination do not progress beyond this.' }]),
-    ...image(photoND, 'Photo 4.7: Opened proventriculus of a broiler with virulent Newcastle disease. Note the pinpoint hemorrhages on the tips of the glands, especially at the junction with the gizzard. This is one of the most diagnostic lesions of the viscerotropic form. Source: Vegad JL, A Colour Atlas of Poultry Diseases.', 4.2),
+    ...image(photoND, 'Photo 4.7: The range of virulent Newcastle disease lesions. Torticollis, the twisted-neck nervous sign, in a live bird (top left), pinpoint hemorrhages on the proventricular glands (top center), hemorrhagic and necrotic tracheal mucosa (top right), hemorrhages on the intestinal serosa (bottom left), and bleeding cecal tonsils (bottom center and right). The proventricular hemorrhages are among the most diagnostic lesions of the viscerotropic form. Source: CEVA Handbook of Poultry Diseases; Diseases of Poultry, 14th ed.', 5.9),
     para('Peracute Newcastle deaths may have no gross lesions at all. If you have unexplained rapid mortality in a well-vaccinated flock, Newcastle is on the differential alongside Avian Influenza. Both require immediate veterinary contact.'),
     para('For Canadian context: virulent Newcastle disease had been absent from Canada since 1973, but in June 2025 the CFIA confirmed PPMV-1, a pigeon-adapted Newcastle strain, in commercial squab pigeon farms in British Columbia\'s Fraser Valley, the first Canadian case in over fifty years [11].'),
 
