@@ -246,6 +246,7 @@ function buildBody() {
   const photoIBD = figBuf('photo_ibd_muscle_hemorrhage.jpg');
   const photoMar = figBuf('photo_mareks_cutaneous.jpg');
   const figEim   = figBuf('fig_eimeria_lifecycle_usda.jpg');
+  const photoColi   = figBuf('Colibacillosis.jpg');
   const photoNE     = figBuf('photo_necrotic_enteritis.jpg');
   const photoBursa  = figBuf('photo_ibd_bursa.jpg');
   const photoND     = figBuf('photo_newcastle_proventriculus.jpg');
@@ -383,6 +384,7 @@ function buildBody() {
     bullet([{ text: 'Pericardium:', bold: true }, { text: ' White fibrin plaques on the heart surface, excess fluid in the pericardial sac. In chronic cases the fibrin becomes adherent and rubber-like.' }]),
     bullet([{ text: 'Liver:', bold: true }, { text: ' Yellow-white fibrin coating the liver surface (perihepatitis). In septicemic cases the liver is dark, swollen, and friable.' }]),
     bullet([{ text: 'Peritonitis:', bold: true }, { text: ' Yellow egg yolk-like material in the abdominal cavity in laying hens, fibrinous deposits on intestinal serosa in broilers.' }]),
+    ...image(photoColi, 'Photo 4.1: The lesions of colibacillosis in one view. Moderate airsacculitis (top left), fibrinous pericarditis and perihepatitis coating the heart and liver (right), and peritonitis in the abdominal cavity (bottom left). The same E. coli is usually recovered from all of these surfaces. Source: Diseases of Poultry, 14th ed.; Elanco Broiler Disease Reference Guide.', 5.9),
     para('Colibacillosis rarely acts alone. It enters through respiratory or intestinal mucosal damage caused by a primary virus or management problem. Look for the primary cause: IBV, IBD, or poor ventilation that opened the door for the E. coli. Confirm the diagnosis with culture from multiple birds. Swab the air sacs and the fibrinous lesions on the heart, liver, and intestines, since the same E. coli is usually recovered from all of them [5].'),
 
     spacer(40),
@@ -392,7 +394,7 @@ function buildBody() {
     bullet([{ text: 'Pseudomembrane:', bold: true }, { text: ' A tan to yellow diphtheritic membrane lines the intestinal surface. In severe cases this membrane sloughs off in sheets as you open the gut.' }]),
     bullet([{ text: 'Intestinal wall:', bold: true }, { text: ' Paper-thin and easily torn, containing brown or blood-tinged fluid.' }]),
     para('Necrotic enteritis almost never starts on its own. Coccidiosis, especially Eimeria maxima infection, is the most common predisposing factor. High fishmeal or grain-heavy diets (wheat, barley, oats) also create the intestinal environment that Clostridium perfringens exploits. When you find necrotic enteritis lesions, check the intestine for concurrent coccidial lesions [6].'),
-    ...image(photoNE, 'Photo 4.1: Necrotic enteritis in the small intestine of a broiler. The gut has been cut open to show the thickened wall and the loose yellow false membrane lining the inner surface, the hallmark lesion of this disease. Source: Vegad JL, A Colour Atlas of Poultry Diseases.', 5.0),
+    ...image(photoNE, 'Photo 4.2: Necrotic enteritis in the small intestine of a broiler. The gut has been cut open to show the thickened wall and the loose yellow false membrane lining the inner surface, the hallmark lesion of this disease. Source: Vegad JL, A Colour Atlas of Poultry Diseases.', 5.0),
     callout('Practical Tip', 'Necrotic enteritis birds often die before you see obvious clinical signs in the barn. If you open a bird with that smell (sulfurous, foul) before you see any other changes, take it seriously. Check the intestine from duodenum to cloaca before concluding the necropsy.', 'EAF2EA', '538135'),
     spacer(120),
 
@@ -429,8 +431,8 @@ function buildBody() {
     bullet([{ text: 'Proventriculus-gizzard junction:', bold: true }, { text: ' Hemorrhages at the mucosal junction between proventriculus and gizzard.' }]),
     bullet([{ text: 'Kidneys:', bold: true }, { text: ' Enlarged with urate deposits in tubules, similar to the IBV renal form.' }]),
     para('The classic strain presents with visible morbidity and mortality. The variant strain, which is immunosuppressive, may not produce classic lesions: the bursa shows lymphoid depletion without obvious inflammation, and the main problem is secondary infections that follow [9].'),
-    ...image(photoBursa, 'Photo 4.2: Bursa of Fabricius in a broiler with acute IBD (arrow). Opened up, the bursa is congested and hemorrhagic. The bursa is the first place to look in any young bird you suspect of IBD. Source: Vegad JL, A Colour Atlas of Poultry Diseases.', 4.5),
-    ...image(photoIBD, 'Photo 4.3: Intramuscular hemorrhage in the breast muscle of a broiler affected by Infectious Bursal Disease (IBD). The ecchymotic hemorrhages are visible as dark streaks within pale muscle tissue. Source: Wikimedia Commons (Public Domain).', 4.5),
+    ...image(photoBursa, 'Photo 4.3: Bursa of Fabricius in a broiler with acute IBD (arrow). Opened up, the bursa is congested and hemorrhagic. The bursa is the first place to look in any young bird you suspect of IBD. Source: Vegad JL, A Colour Atlas of Poultry Diseases.', 4.5),
+    ...image(photoIBD, 'Photo 4.4: Intramuscular hemorrhage in the breast muscle of a broiler affected by Infectious Bursal Disease (IBD). The ecchymotic hemorrhages are visible as dark streaks within pale muscle tissue. Source: Wikimedia Commons (Public Domain).', 4.5),
 
     spacer(40),
     para([{ text: 'Newcastle Disease (ND)', bold: true }]),
@@ -438,7 +440,7 @@ function buildBody() {
     bullet([{ text: 'Velogenic viscerotropic ND:', bold: true }, { text: ' The most severe form. Hemorrhages at the proventricular mucosa (especially at the junction with the gizzard), cecal tonsils, and Peyer\'s patches. Necrotic plaques on the intestinal mucosa. Petechiae on serous membranes. This is the presentation you report to your veterinarian immediately.' }]),
     bullet([{ text: 'Velogenic neurotropic ND:', bold: true }, { text: ' Nervous signs dominate: torticollis (twisted neck), wing paralysis, tremors, and star-gazing. Gross lesions in the brain are subtle (meningeal hyperemia and mild petechiae). The clinical signs are the diagnostic clue here.' }]),
     bullet([{ text: 'Mesogenic / Lentogenic ND:', bold: true }, { text: ' Mild respiratory disease. Lesions are limited to congestion and mucoid exudate in the trachea and slight air sac haze. Low mortality. Most commercial flocks with proper vaccination do not progress beyond this.' }]),
-    ...image(photoND, 'Photo 4.4: Opened proventriculus of a broiler with virulent Newcastle disease. Note the pinpoint hemorrhages on the tips of the glands, especially at the junction with the gizzard. This is one of the most diagnostic lesions of the viscerotropic form. Source: Vegad JL, A Colour Atlas of Poultry Diseases.', 4.2),
+    ...image(photoND, 'Photo 4.5: Opened proventriculus of a broiler with virulent Newcastle disease. Note the pinpoint hemorrhages on the tips of the glands, especially at the junction with the gizzard. This is one of the most diagnostic lesions of the viscerotropic form. Source: Vegad JL, A Colour Atlas of Poultry Diseases.', 4.2),
     para('Peracute Newcastle deaths may have no gross lesions at all. If you have unexplained rapid mortality in a well-vaccinated flock, Newcastle is on the differential alongside Avian Influenza. Both require immediate veterinary contact.'),
     para('For Canadian context: virulent Newcastle disease had been absent from Canada since 1973, but in June 2025 the CFIA confirmed PPMV-1, a pigeon-adapted Newcastle strain, in commercial squab pigeon farms in British Columbia\'s Fraser Valley, the first Canadian case in over fifty years [11].'),
 
@@ -485,7 +487,7 @@ function buildBody() {
       ]
     ),
     spacer(120),
-    ...image(photoCocci, 'Photo 4.5: Cecal coccidiosis caused by Eimeria tenella in a young broiler. Both ceca are greatly enlarged and distended with blood, the most visually dramatic lesion in poultry coccidiosis. Source: Vegad JL, A Colour Atlas of Poultry Diseases.', 4.0),
+    ...image(photoCocci, 'Photo 4.6: Cecal coccidiosis caused by Eimeria tenella in a young broiler. Both ceca are greatly enlarged and distended with blood, the most visually dramatic lesion in poultry coccidiosis. Source: Vegad JL, A Colour Atlas of Poultry Diseases.', 4.0),
     spacer(120),
     ...image(figEim, 'Figure 4.1: The Eimeria life cycle showing how oocysts ingested from litter cause intestinal damage through repeated rounds of merozoite multiplication and cell lysis. Source: USDA Agricultural Research Service (Public Domain).', 5.2),
 
