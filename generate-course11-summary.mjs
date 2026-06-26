@@ -139,7 +139,7 @@ const children = [
   sectionHead('Introduction'),
   para('You already know how to run a necropsy. This course shows you what disease looks like when you get in there. From a bloody cecum that screams coccidiosis to an enlarged sciatic nerve that confirms Marek\'s, the lesions in this course are the ones you will actually find on your farm.'),
   para('The key is connecting what you see at the necropsy table to what is happening in the barn. A bird opening with fibrin on the heart and cloudy air sacs tells a specific story. So does a pale, falling-apart liver with a blood clot on top. Each lesion points to a short list of differentials, and from there to an action. This course builds that visual vocabulary.'),
-  para('We cover bacterial, viral, parasitic, and metabolic disease presentations in broilers, layers, and breeders. Three case walkthroughs give you practice connecting lesion patterns to real diagnostic decisions and management responses.'),
+  para('We cover bacterial, viral, parasitic, and metabolic disease presentations across broilers, layers, breeders, ducks, geese, and turkeys, plus the cross-species concerns that move between them. Three case walkthroughs give you practice connecting lesion patterns to real diagnostic decisions and management responses.'),
   spacer(80),
   sectionHead('Agenda'),
   numbered('Course Overview and Objectives', 0),
