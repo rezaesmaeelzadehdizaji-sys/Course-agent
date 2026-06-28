@@ -416,9 +416,9 @@ function buildBody() {
       ['Body System', 'Normal Appearance', 'Key Abnormal Signs', 'Common Causes'],
       [
         ['Air sacs', 'Clear, thin, invisible membranes', 'Cloudy, thickened, foamy, or caseous exudate', 'Colibacillosis, MG, IBV, ND'],
-        ['Trachea', 'Pale, translucent, clear lumen', 'Congested (reddened) mucosa; mucoid to caseous exudate in the lumen', 'ILT, IBV, ND'],
-        ['Lungs', 'Pink, spongy, well-aerated', 'Congested (dark red), edematous; caseous or fibrinous exudate', 'Colibacillosis (septicemia), AI'],
-        ['Heart and pericardium', 'Clean surface, no excess fluid', 'White fibrin plaques on heart surface, excess fluid in pericardial sac; enlarged, dilated right heart (ascites); dilated, blood-filled atria (SDS)', 'Colibacillosis, Fowl Cholera, Ascites, SDS'],
+        ['Trachea', 'Pale, translucent, clear lumen', 'Congested (reddened) mucosa; mucoid to caseous exudate in the lumen', 'ILT, IBV, ND, AI'],
+        ['Lungs', 'Pink, spongy, well-aerated', 'Congested (dark red), edematous; caseous or fibrinous exudate', 'Colibacillosis (septicemia), AI, Fowl Cholera'],
+        ['Heart and pericardium', 'Clean surface, no excess fluid', 'White fibrin plaques on heart surface, excess fluid in pericardial sac; enlarged, dilated right heart (ascites); dilated, blood-filled atria (SDS)', 'Colibacillosis, Fowl Cholera, Ascites, SDS, AI'],
         ['Liver', 'Firm, dark red-brown, no spots', 'Pale, friable, hemorrhagic, yellow spots, or swollen', 'Colibacillosis, IBH, FLHS, Fowl Cholera'],
         ['Spleen', 'Small, round, dark red, smooth', 'Enlarged, mottled, congested; white nodules or necrotic foci', "Marek's Disease, Fowl Cholera, Colibacillosis, AI"],
         ['Proventriculus', 'Glandular, smooth, no hemorrhage', 'Hemorrhages at the gland tips and the proventriculus-gizzard junction', 'Newcastle Disease (velogenic), AI, IBD'],
@@ -428,7 +428,7 @@ function buildBody() {
         ['Kidneys', 'Dark red, smooth', 'Swollen, pale, urate deposits (chalky white tubules)', 'IBV renal form, IBD, dehydration'],
         ['Peripheral nerves (sciatic)', 'Uniform white, symmetric', 'Enlarged, asymmetric, loss of striations', "Marek's Disease"],
         ['Abdominal cavity', 'No free fluid', 'Yellow/orange fluid (yolk), straw-colored fluid (ascites), caseous material, retained or infected yolk sac in chicks', 'Ascites, Egg Peritonitis, Yolk Sacculitis (navel infection)'],
-        ['Oviduct', 'Thin-walled, normal lumen', 'Caseous exudate, impacted with abnormal egg material', 'Salpingitis'],
+        ['Oviduct', 'Thin-walled, normal lumen', 'Caseous exudate, impacted with abnormal egg material; cystic (fluid-filled) oviduct', 'Salpingitis, IBV'],
       ]
     ),
 
