@@ -292,6 +292,7 @@ function buildBody() {
   const fig11_2  = figBuf('fig11_2.png');
   const fig11_3  = figBuf('fig11_3.png');
   const photoMar = figBuf('Marek.jpg');
+  const photoIBVND = figBuf('IBV-NDV.jpg');
   const photoColi   = figBuf('Colibacillosis.jpg');
   const photoAir    = figBuf('airsacculitis.jpg');
   const photoOmph   = figBuf('Omphalitis.jpg');
@@ -645,6 +646,7 @@ function buildBody() {
     para('IBV and ND in laying flocks present differently than in broilers because egg production amplifies the consequences:'),
     bullet([{ text: 'IBV in layers:', bold: true }, { text: ' A production drop of 25 to 50% or more during a field infection. At necropsy, birds infected as chicks may have cystic or regressed oviducts: the virus permanently damaged the reproductive tract, creating "false layers" that produce no eggs despite going through the laying cycle. Ovarian follicles may be shrunken or inactive.' }]),
     bullet([{ text: 'ND in layers:', bold: true }, { text: ' Neurological signs and an acute production drop. Velogenic ND in a layer flock produces hemorrhagic lesions in the ovary, oviduct, and intestine. In the oviduct, thin-shelled and soft-shelled eggs accumulate before the bird stops laying altogether.' }]),
+    ...image(photoIBVND, 'Photo 5.6: Egg-production diseases in layers. A fluid-filled cystic oviduct from early IBV infection (top left) and hemorrhagic ovarian follicles from Newcastle disease (top right). The lower panels contrast normal, smooth-shelled eggs (bottom left) with the rough, misshapen, depigmented shells these infections produce (bottom right). Source: CPC Learning Centre; Picture Book of Infectious Poultry Diseases (FAO-CEVA).', 5.9),
     para('Both conditions require rapid veterinary involvement. ND is a reportable disease in Canada. Confirm with laboratory testing before treating or adjusting vaccination protocols.'),
 
     spacer(40),
