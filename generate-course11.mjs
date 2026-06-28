@@ -655,7 +655,7 @@ function buildBody() {
     bullet([{ text: 'Trachea (severe form):', bold: true }, { text: ' Congested, reddened, and roughened, with the lumen full of blood and mucus or a blood-streaked plug. Some birds suffocate on it.' }]),
     bullet([{ text: 'Trachea (mild form):', bold: true }, { text: ' Just serous to mucoid exudate, mucosal swelling, and congestion.' }]),
     bullet([{ text: 'Larynx:', bold: true }, { text: ' Inflamed and hemorrhagic.' }]),
-    para('A bird found dead with blood in the windpipe and no obvious heart or liver disease should put ILT near the top of your list. On histology the lab finds syncytia and intranuclear inclusion bodies in the tracheal lining [30]. ILT spreads on equipment, clothing, and contaminated litter, so a positive flock is also a biosecurity wake-up call.'),
+    para('A bird found dead with blood in the windpipe and no obvious heart or liver disease should put ILT near the top of your list.'),
 
     spacer(40),
     para([{ text: 'Avian Metapneumovirus (aMPV)', bold: true }]),
