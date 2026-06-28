@@ -314,6 +314,7 @@ function buildBody() {
   const photoEgg    = figBuf('egg peritonitis.jpg');
   const photoSalp   = figBuf('Salpingitis.png');
   const photoFC     = figBuf('Fowl-cholera.jpg');
+  const photoMGMS   = figBuf('MG-MS.jpg');
   const organMap    = figBuf('chicken_systems_overview.jpeg');
 
   return [
@@ -626,6 +627,7 @@ function buildBody() {
     para('At necropsy, the lesions depend on which organism is involved and how far the disease has progressed:'),
     bullet([{ text: 'MG (respiratory form):', bold: true }, { text: ' Cloudy, thickened air sacs ranging from slightly hazy to opaque. Mucoid or caseous exudate in the air sac lumen. Tracheal mucosa congested and thickened. Swollen infraorbital sinuses, sometimes with caseous plugs. Concurrent E. coli infection (from the immunosuppression MG causes) adds pericarditis and perihepatitis to the picture.' }]),
     bullet([{ text: 'MS (synovitis form):', bold: true }, { text: ' Swollen hock joints and foot pads. Open the joint to find a creamy, viscous fluid (synovial exudate) instead of the thin, clear joint lubricant you see in a healthy bird. The tendon sheaths may also be thickened. This is one of the cleanest diagnostic presentations in poultry: swollen joint, open it, find cream-colored exudate, and MS is your primary differential.' }]),
+    ...image(photoMGMS, 'Photo 5.4: Mycoplasma lesions in chickens. MG (respiratory form): a swollen infraorbital sinus (sinusitis, top left) and fibrinous-caseous airsacculitis (top center and right). MS (synovitis form): a swollen, edematous hock joint (bottom left) and gelatinous, cream-colored exudate in the opened synovial sheath (bottom center and right). Source: CEVA Handbook of Poultry Diseases.', 5.9),
     para('MG and MS are often present together. PCR testing of tracheal or choanal swabs from live birds is the most sensitive diagnostic method, but the gross lesions at necropsy give you strong evidence to work with while you wait for lab results [27,28].'),
 
     h2('5.3  Viral Diseases'),
@@ -634,7 +636,7 @@ function buildBody() {
     bullet([{ text: 'Neural form:', bold: true }, { text: ' Enlarged peripheral nerves. The sciatic nerves are the most accessible: after removing the abdominal organs, find them running bilaterally in the sacral region alongside the vertebral column, just under the kidneys. In a healthy bird they are uniform, slightly striated, and bilaterally symmetric. In Marek\'s neural form, one or both are obviously enlarged, swollen, and have lost their normal striations. Compare left to right. Asymmetry is the key finding. The vagus, brachial, and femoral nerves may also be affected.' }]),
     bullet([{ text: 'Visceral form:', bold: true }, { text: ' Whitish lymphoma nodules in multiple organs: liver, spleen, gonads, kidney, heart, proventriculus, and intestine. Tumor nodules range from pinpoint to several centimeters. The liver may be diffusely enlarged with a mottled appearance or studded with discrete white nodules. This form has 10 to 70% mortality depending on the strain and immune status of the flock [29].' }]),
     bullet([{ text: 'Cutaneous form:', bold: true }, { text: ' Enlarged, reddened feather follicles visible as nodular skin lesions, usually on the neck and back. Less common in well-vaccinated commercial flocks.' }]),
-    ...image(photoMar, "Photo 5.4: Cutaneous form of Marek's disease in a broiler showing enlarged, reddened feather follicles on the skin surface. Source: Roman Halouzka, Wikimedia Commons (CC BY-SA 3.0).", 4.5),
+    ...image(photoMar, "Photo 5.5: Cutaneous form of Marek's disease in a broiler showing enlarged, reddened feather follicles on the skin surface. Source: Roman Halouzka, Wikimedia Commons (CC BY-SA 3.0).", 4.5),
 
     para("So the investigation centers on the vaccine: Was it kept at the right temperature? Was the dose correct? Were birds exposed to field virus before the vaccine had time to protect them? Vaccination does not prevent infection. It prevents tumor development. Course 7 covers the full disease profile and vaccination strategy in detail."),
 
