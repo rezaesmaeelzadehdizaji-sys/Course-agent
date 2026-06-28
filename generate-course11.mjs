@@ -535,11 +535,11 @@ function buildBody() {
     cocciTable(
       ['Eimeria Species', 'Location in Gut', 'Gross Lesion at Necropsy', 'Gross Lesions'],
       [
-        ['E. tenella', 'Ceca only', 'Bright red blood-filled ceca. Cecal cores (clotted blood, tissue debris, oocysts) in surviving birds. Most visually dramatic.', eTen],
         ['E. acervulina', 'Duodenum', 'White longitudinal plaques or ladder-like striations on the duodenal mucosa. Pale, thickened duodenal wall.', eAcer],
         ['E. maxima', 'Jejunum (mid-gut)', 'Ballooned intestine with thickened, congested wall and petechial hemorrhage. Intestinal lumen contains blood-tinged fluid. Lesions often precede necrotic enteritis.', eMax],
         ['E. necatrix', 'Jejunum (mid-gut)', 'White and red spots on the serosal surface. Interior shows petechiae and necrotic patches.', eNec],
         ['E. brunetti', 'Lower small intestine, rectum', 'Hemorrhagic, necrotic mucosa in the lower gut. Watery bloody content.', eBru],
+        ['E. tenella', 'Ceca only', 'Bright red blood-filled ceca. Cecal cores (clotted blood, tissue debris, oocysts) in surviving birds. Most visually dramatic.', eTen],
       ]
     ),
     para('Gross Lesions column photos: Elanco Broiler Disease Reference Guide.', { size: 18, italics: true, color: '555555', alignment: AlignmentType.LEFT, spaceAfter: 40 }),
