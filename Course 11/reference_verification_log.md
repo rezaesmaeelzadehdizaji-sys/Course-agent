@@ -186,3 +186,13 @@ Every reference re-checked individually against its live source or the local lib
 - [x] Farmer-flow tone applied throughout
 - [x] American English only
 - [x] Cross-references: Course 7 (Section 4.2), Course 10 (Section 2.1) — 2 total, within 2–3 max
+
+---
+
+## Addition (2026-06-27): Internal Parasites section citation — ref [19]
+
+The "Worms (Internal Parasites)" section (Section 4.3) was previously uncited. After confirming with the user that the section should be kept (internal parasites are a legitimate, source-backed gross necropsy finding for the layer/breeder/turkey/outdoor flocks the course covers), the Merck Helminthiasis page was added as a new reference [19].
+
+- **[19] Merck Veterinary Manual. Helminthiasis in Poultry.** merckvetmanual.com/poultry/helminthiasis/helminthiasis-in-poultry — VERIFIED 2026-06-27. Page exists with exact title; confirms Ascaridia, Heterakis, and Capillaria spp as the widely-distributed poultry helminths and supports the Ascaridia (small intestine roundworm), Heterakis (cecal worm, Histomonas vector), and Capillaria (mucosal hairworm) bullets in the section.
+
+**Renumbering:** New ref inserted at first-appearance position 19 (Worms section appears between coccidiosis [18] and ascites). All in-text citations old [19]–[38] cascaded to new [20]–[39]; bibliography auto-renumbers by position. Verified: in-text first-appearance order now contiguous 1–39; bibliography physical order matches (17 Viral Arthritis, 18 Coccidiosis, 19 Helminthiasis, 20 Ascites, …, 39 Histomoniasis). 0 em dashes, 0 w:dirty flags.
