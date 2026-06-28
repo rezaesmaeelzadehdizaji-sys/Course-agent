@@ -312,7 +312,7 @@ function buildBody() {
   const eNec        = figBuf('E. necatrix.jpg');
   const eBru        = figBuf('E.brunetti.jpg');
   const photoEgg    = figBuf('egg peritonitis.jpg');
-  const photoSalp   = figBuf('Salpingitis.jpg');
+  const photoSalp   = figBuf('Salpingitis.png');
   const photoChol   = figBuf('photo_fowl_cholera_liver.jpg');
   const organMap    = figBuf('chicken_systems_overview.jpeg');
 
