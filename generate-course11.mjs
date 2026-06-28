@@ -293,6 +293,7 @@ function buildBody() {
   const fig11_3  = figBuf('fig11_3.png');
   const photoMar = figBuf('Marek.jpg');
   const photoIBVND = figBuf('IBV-NDV.jpg');
+  const photoILT = figBuf('ILTV.jpg');
   const photoColi   = figBuf('Colibacillosis.jpg');
   const photoAir    = figBuf('airsacculitis.jpg');
   const photoOmph   = figBuf('Omphalitis.jpg');
@@ -655,6 +656,7 @@ function buildBody() {
     bullet([{ text: 'Trachea (severe form):', bold: true }, { text: ' Congested, reddened, and roughened, with the lumen full of blood and mucus or a blood-streaked plug. Some birds suffocate on it.' }]),
     bullet([{ text: 'Trachea (mild form):', bold: true }, { text: ' Just serous to mucoid exudate, mucosal swelling, and congestion.' }]),
     bullet([{ text: 'Larynx:', bold: true }, { text: ' Inflamed and hemorrhagic.' }]),
+    ...image(photoILT, 'Photo 5.7: Infectious laryngotracheitis (ILT) lesions. Conjunctivitis with swollen, inflamed eyes (top left), and opened tracheas showing the range of exudate: bloody mucus and blood-streaked plugs (top right and bottom right) and a yellow caseous plug in the milder form (bottom left). Source: Diseases of Poultry, 14th ed.; CEVA Handbook of Poultry Diseases.', 5.9),
     para('A bird found dead with blood in the windpipe and no obvious heart or liver disease should put ILT near the top of your list.'),
 
     spacer(40),
