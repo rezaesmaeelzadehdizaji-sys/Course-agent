@@ -542,8 +542,8 @@ function buildBody() {
       [
         ['E. acervulina', 'Duodenum', 'White longitudinal plaques or ladder-like striations on the duodenal mucosa. Pale, thickened duodenal wall.', eAcer],
         ['E. maxima', 'Jejunum (mid-gut)', 'Ballooned intestine with thickened, congested wall and petechial hemorrhage. Intestinal lumen contains blood-tinged fluid. Lesions often precede necrotic enteritis.', eMax],
-        ['E. necatrix', 'Jejunum (mid-gut)', 'White and red spots on the serosal surface. Interior shows petechiae and necrotic patches.', eNec],
-        ['E. brunetti', 'Lower small intestine, rectum', 'Hemorrhagic, necrotic mucosa in the lower gut. Watery bloody content. Mainly affects older birds (over 8 to 9 weeks), so it shows up in broiler breeders rather than young market broilers [19].', eBru],
+        ['E. necatrix', 'Jejunum (mid-gut)', 'White and red spots on the serosal surface. Interior shows petechiae and necrotic patches. Mainly affects older birds (over 8 to 9 weeks), so it is more a problem in broiler breeders and layers than in young market broilers [19].', eNec],
+        ['E. brunetti', 'Lower small intestine, rectum', 'Hemorrhagic, necrotic mucosa in the lower gut. Watery bloody content. Like E. necatrix, it affects older birds, so it shows up in broiler breeders and layers rather than young market broilers [19].', eBru],
         ['E. tenella', 'Ceca only', 'Bright red blood-filled ceca. Cecal cores (clotted blood, tissue debris, oocysts) in surviving birds. Most visually dramatic.', eTen],
       ]
     ),

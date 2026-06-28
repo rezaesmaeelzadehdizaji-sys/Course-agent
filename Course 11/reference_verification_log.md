@@ -212,3 +212,7 @@ Added a note to the coccidiosis table (E. brunetti row, Gross Lesion column): "M
 **Renumbering:** New ref inserted at first-appearance position 19 (E. brunetti row in the coccidiosis table appears before the Worms section). All in-text citations old [19]-[39] cascaded to new [20]-[40]; bibliography auto-renumbers by position. Verified: in-text first-appearance order contiguous 1-40; bibliography physical order matches (18 Coccidiosis, 19 HIPRA, 20 Helminthiasis, 21 Ascites, ..., 40 Histomoniasis).
 
 **Layout:** Coccidiosis table set to keep all rows together (cantSplit on every row) and the parasitic-conditions block now starts on a fresh page, so the whole table renders on one page (confirmed page 22 in PDF render). 0 em dashes, 0 w:dirty flags.
+
+### Update (2026-06-28): E. necatrix age/host note added; "and layers" added to both
+
+The same age/host note was extended to the E. necatrix row (HIPRA states E. necatrix AND E. brunetti both mainly affect birds >8-9 weeks), and both rows now read "broiler breeders and layers" (HIPRA lists both as long life-cycle hosts). Both cite the existing [19] HIPRA ref; no renumber. Coccidiosis table still renders on one page (confirmed page 22). Citation order remains contiguous 1-40.
