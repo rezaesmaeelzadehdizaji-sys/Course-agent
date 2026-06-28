@@ -302,6 +302,7 @@ function buildBody() {
   const photoAI     = figBuf('AI.jpg');
   const photoIBH    = figBuf('IBH.jpg');
   const photoReo    = figBuf('Reo.jpg');
+  const photoAsc    = figBuf('ascites.jpg');
   const eTen        = figBuf('E. tenella.jpg');
   const eAcer       = figBuf('E. acervulina.jpg');
   const eMax        = figBuf('E. maxima.jpg');
@@ -559,6 +560,7 @@ function buildBody() {
     bullet([{ text: 'Heart:', bold: true }, { text: ' Right ventricle is dilated and hypertrophied. The right atrium is enlarged. In acute deaths the right ventricle may be blood-filled and flaccid.' }]),
     bullet([{ text: 'Liver:', bold: true }, { text: ' Congested, swollen, and dark. The capsule may be thickened. In chronic cases the liver takes on a nutmeg appearance from back-pressure venous congestion.' }]),
     bullet([{ text: 'Lungs:', bold: true }, { text: ' Congested and edematous. Pulmonary capillary hypertension is the driving mechanism, so the lungs show the consequences of increased vascular resistance.' }]),
+    ...image(photoAsc, 'Photo 4.11: Ascites (water belly) in broilers. The opened abdomen is filled with clear straw-colored fluid (left and top center), the live bird shows the swollen, distended abdomen from outside (top right), and a normal heart sits beside an enlarged heart with right-ventricular dilation and hypertrophy, the cardiovascular change that drives the fluid buildup (bottom). Source: Elanco Broiler Disease Reference Guide; Diseases of Poultry, 14th ed.', 5.9),
     para('An ascitic bird opens looking like it is full of water. The intestines are pushed aside by free abdominal fluid. If you find a sudden-death bird with no free fluid, no infectious lesions, and a well-filled gut, think SDS (sudden death syndrome) rather than ascites. Check the heart carefully to tell the two apart.'),
 
     spacer(40),
