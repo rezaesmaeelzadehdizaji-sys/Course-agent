@@ -313,7 +313,7 @@ function buildBody() {
   const eBru        = figBuf('E.brunetti.jpg');
   const photoEgg    = figBuf('egg peritonitis.jpg');
   const photoSalp   = figBuf('Salpingitis.png');
-  const photoChol   = figBuf('photo_fowl_cholera_liver.jpg');
+  const photoFC     = figBuf('Fowl-cholera.jpg');
   const organMap    = figBuf('chicken_systems_overview.jpeg');
 
   return [
@@ -612,8 +612,8 @@ function buildBody() {
     para('Fowl cholera hits layers and breeders harder than broilers, and it kills fast in the acute form. The CPC Learning Centre Fowl Cholera disease profile describes the acute lesion set clearly [26]:'),
     bullet([{ text: 'Acute form:', bold: true }, { text: ' Hemorrhages around the heart and on the lungs. Yellow-white pinpoint spots on the liver surface (multifocal hepatic necrosis). Excess clear fluid in the pericardial sac and abdominal cavity. General reddening of tissues from septicemia. Birds often found dead with no prior illness.' }]),
     bullet([{ text: 'Chronic form:', bold: true }, { text: ' Swollen, hot wattles. Swollen eyes (periorbital edema). Respiratory involvement with mucoid exudate in trachea and air sacs. Arthritis in joints with caseous deposits. The wattle and eye swelling are classic visual signs, and you will see fibrinous adhesions and caseous material in the joints when you open them.' }]),
+    ...image(photoFC, 'Photo 5.3: The range of fowl cholera (Pasteurella multocida) lesions. A swollen wattle packed with fibrinous-caseous material (chronic form, top left), hemorrhage around the heart (top center), multifocal white necrotic spots on the liver (top right), pleuropneumonia in the lungs (bottom left), a hyperemic, reddened duodenum (bottom center), and regressing ovarian follicles (bottom right). Source: CEVA Handbook of Poultry Diseases; Diseases of Poultry, 14th ed.', 5.9),
     para('Acute fowl cholera in a flock with good birds suddenly dead is a production emergency. Culture from fresh liver and heart blood confirms the diagnosis. Pasteurella multocida grows readily on standard culture media within 24 hours [26].'),
-    ...image(photoChol, 'Photo 5.3: Liver from a chicken with acute fowl cholera. The surface is dotted with tiny white necrotic spots (multifocal hepatic necrosis), the classic liver lesion of this disease. Source: Vegad JL, A Colour Atlas of Poultry Diseases.', 4.2),
 
     spacer(40),
     para([{ text: 'Mycoplasmosis (MG and MS)', bold: true }]),
