@@ -196,3 +196,19 @@ The "Worms (Internal Parasites)" section (Section 4.3) was previously uncited. A
 - **[19] Merck Veterinary Manual. Helminthiasis in Poultry.** merckvetmanual.com/poultry/helminthiasis/helminthiasis-in-poultry — VERIFIED 2026-06-27. Page exists with exact title; confirms Ascaridia, Heterakis, and Capillaria spp as the widely-distributed poultry helminths and supports the Ascaridia (small intestine roundworm), Heterakis (cecal worm, Histomonas vector), and Capillaria (mucosal hairworm) bullets in the section.
 
 **Renumbering:** New ref inserted at first-appearance position 19 (Worms section appears between coccidiosis [18] and ascites). All in-text citations old [19]–[38] cascaded to new [20]–[39]; bibliography auto-renumbers by position. Verified: in-text first-appearance order now contiguous 1–39; bibliography physical order matches (17 Viral Arthritis, 18 Coccidiosis, 19 Helminthiasis, 20 Ascites, …, 39 Histomoniasis). 0 em dashes, 0 w:dirty flags.
+
+---
+
+## Addition (2026-06-28): E. brunetti age/host note — ref [19] HIPRA
+
+Added a note to the coccidiosis table (E. brunetti row, Gross Lesion column): "Mainly affects older birds (over 8 to 9 weeks), so it shows up in broiler breeders rather than young market broilers."
+
+- **Claim verified** against two authoritative sources:
+  - HIPRA. Eimeria Species in Long Life-Cycle Birds — states verbatim "Eimeria necatrix and Eimeria brunetti mainly affect birds of more than 8-9 weeks of age" and lists E. brunetti among the species causing outbreaks in long life-cycle birds (breeders and layers). VERIFIED 2026-06-28.
+  - PoultryMed (Coccidiosis in Poultry) — corroborates E. necatrix and E. brunetti mainly affect birds >8-9 weeks.
+  - Merck/MSD Coccidiosis page checked and does NOT state the age association, so it was not used as the citation for this claim.
+- **[19] HIPRA. Eimeria Species in Long Life-Cycle Birds: Focus on Eimeria tenella.** hipra.com/en/animal-health/knowledge/eimeria-species-long-life-cycle-birds-focus-eimeria-tenella — new reference cited for this claim.
+
+**Renumbering:** New ref inserted at first-appearance position 19 (E. brunetti row in the coccidiosis table appears before the Worms section). All in-text citations old [19]-[39] cascaded to new [20]-[40]; bibliography auto-renumbers by position. Verified: in-text first-appearance order contiguous 1-40; bibliography physical order matches (18 Coccidiosis, 19 HIPRA, 20 Helminthiasis, 21 Ascites, ..., 40 Histomoniasis).
+
+**Layout:** Coccidiosis table set to keep all rows together (cantSplit on every row) and the parasitic-conditions block now starts on a fresh page, so the whole table renders on one page (confirmed page 22 in PDF render). 0 em dashes, 0 w:dirty flags.
