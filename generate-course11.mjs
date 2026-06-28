@@ -291,7 +291,7 @@ function buildBody() {
   const fig11_1  = figBuf('fig11_1.png');
   const fig11_2  = figBuf('fig11_2.png');
   const fig11_3  = figBuf('fig11_3.png');
-  const photoMar = figBuf('photo_mareks_cutaneous.jpg');
+  const photoMar = figBuf('Marek.jpg');
   const photoColi   = figBuf('Colibacillosis.jpg');
   const photoAir    = figBuf('airsacculitis.jpg');
   const photoOmph   = figBuf('Omphalitis.jpg');
@@ -636,9 +636,9 @@ function buildBody() {
     bullet([{ text: 'Neural form:', bold: true }, { text: ' Enlarged peripheral nerves. The sciatic nerves are the most accessible: after removing the abdominal organs, find them running bilaterally in the sacral region alongside the vertebral column, just under the kidneys. In a healthy bird they are uniform, slightly striated, and bilaterally symmetric. In Marek\'s neural form, one or both are obviously enlarged, swollen, and have lost their normal striations. Compare left to right. Asymmetry is the key finding. The vagus, brachial, and femoral nerves may also be affected.' }]),
     bullet([{ text: 'Visceral form:', bold: true }, { text: ' Whitish lymphoma nodules in multiple organs: liver, spleen, gonads, kidney, heart, proventriculus, and intestine. Tumor nodules range from pinpoint to several centimeters. The liver may be diffusely enlarged with a mottled appearance or studded with discrete white nodules. This form has 10 to 70% mortality depending on the strain and immune status of the flock [29].' }]),
     bullet([{ text: 'Cutaneous form:', bold: true }, { text: ' Enlarged, reddened feather follicles visible as nodular skin lesions, usually on the neck and back. Less common in well-vaccinated commercial flocks.' }]),
-    ...image(photoMar, "Photo 5.5: Cutaneous form of Marek's disease in a broiler showing enlarged, reddened feather follicles on the skin surface. Source: Roman Halouzka, Wikimedia Commons (CC BY-SA 3.0).", 4.5),
+    ...image(photoMar, "Photo 5.5: The range of Marek's disease lesions. A gray, discolored iris (ocular form, top left), thickened skin and feather follicles (cutaneous form, top center), tumor nodules in the mesentery (top right), an ovarian tumor (bottom left), unilateral sciatic nerve swelling (neural form, bottom center), and a liver tumor (bottom right). Source: CPC Learning Centre; Roman Halouzka, Wikimedia Commons (CC BY-SA 3.0).", 5.9),
 
-    para("So the investigation centers on the vaccine: Was it kept at the right temperature? Was the dose correct? Were birds exposed to field virus before the vaccine had time to protect them? Vaccination does not prevent infection. It prevents tumor development. Course 7 covers the full disease profile and vaccination strategy in detail."),
+    para("Vaccination does not prevent infection. It prevents tumor development. Course 7 covers the full disease profile and vaccination strategy in detail."),
 
     spacer(40),
     para([{ text: 'Infectious Bronchitis and Newcastle Disease in Layers', bold: true }]),
