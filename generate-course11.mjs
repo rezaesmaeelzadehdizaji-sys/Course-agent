@@ -571,9 +571,9 @@ function buildBody() {
     spacer(40),
     para([{ text: 'Sudden Death Syndrome (SDS)', bold: true }]),
     para('Sudden death syndrome kills fast-growing, well-conditioned broilers, usually males, with a brief wing-beating convulsion before death. At necropsy the findings are characteristically minimal [22]:'),
-    bullet([{ text: 'Heart:', bold: true }, { text: ' Contracted ventricles and dilated, blood-filled atria. The cardiac finding is opposite to what you expect from a normal post-mortem relaxation. The ventricular contraction at death is a cardiac arrhythmia event.' }]),
-    bullet([{ text: 'Lungs:', bold: true }, { text: ' Congested, sometimes edematous. This changes quickly post-mortem, so examine the lungs before any autolytic changes set in.' }]),
-    bullet([{ text: 'Gastrointestinal tract:', bold: true }, { text: ' Full of ingesta. These birds were eating and growing normally right up to the moment they died. This is the tell: a well-nourished bird with no obvious disease lesions.' }]),
+    bullet([{ text: 'Heart:', bold: true }, { text: ' The lower chambers are contracted and tight, while the upper chambers are dilated and full of blood. This is the opposite of what you normally see after death, and it tells you the heart seized in mid-contraction during a fatal arrhythmia.' }]),
+    bullet([{ text: 'Lungs:', bold: true }, { text: ' Congested, sometimes fluid-filled. These changes happen quickly after death, so examine the lungs first before the carcass starts to break down.' }]),
+    bullet([{ text: 'Gastrointestinal tract:', bold: true }, { text: ' Full of feed. These birds were eating and growing normally right up to the moment they died. This is the tell: a well-nourished bird with no obvious disease lesions.' }]),
     ...image(photoSDS, 'Photo 4.13: Sudden death syndrome findings. The heart shows contracted ventricles with dilated, blood-filled atria (left), and the lungs are congested and edematous (right). On a well-nourished bird with a full gut and no infectious lesions, these are the only clues you get. Source: CPC Learning Centre.', 4.5),
     para('SDS is a diagnosis of exclusion at the necropsy table. You see very little. The key is the cardiac finding and the absence of infectious lesions elsewhere. SDS mortality spikes often follow a period of rapid growth, hot weather stress, or a growth catch-up after feed restriction.'),
 
