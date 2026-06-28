@@ -311,6 +311,7 @@ function buildBody() {
   const eMax        = figBuf('E. maxima.jpg');
   const eNec        = figBuf('E. necatrix.jpg');
   const eBru        = figBuf('E.brunetti.jpg');
+  const photoEgg    = figBuf('egg peritonitis.jpg');
   const photoSalp   = figBuf('Salpingitis.jpg');
   const photoChol   = figBuf('photo_fowl_cholera_liver.jpg');
   const organMap    = figBuf('chicken_systems_overview.jpeg');
@@ -595,6 +596,7 @@ function buildBody() {
     bullet([{ text: 'Abdominal cavity:', bold: true }, { text: ' Yellow or orange egg yolk loose in the belly. In fresh cases it is fluid and oily. In older cases it has "cooked" into a solid, cheesy mass with a strong cooked-egg smell.' }]),
     bullet([{ text: 'Abdominal lining:', bold: true }, { text: ' Thickened, inflamed, and often covered in fibrin from a secondary E. coli infection. In long-standing cases, the organs and inner surfaces are matted together with scar-like adhesions.' }]),
     bullet([{ text: 'Ovary:', bold: true }, { text: ' Shrunken or damaged follicles, ruptured follicles, or bleeding around the follicles depending on how far the problem has progressed. In very early cases the ovary can still look close to normal.' }]),
+    ...image(photoEgg, 'Photo 5.1: Egg yolk peritonitis and ovarian changes in a hen. Hemorrhagic (bleeding) ovarian follicles (top left), yolk material and inflammation filling the abdomen (bottom left), and shrunken, regressed (atretic) follicles (right). Source: CPC Learning Centre; Vegad JL, A Colour Atlas of Poultry Diseases: An Aid to Farmers and Poultry Professionals.', 5.5),
     para('Egg yolk peritonitis often starts when yolk goes the wrong way, back out of the oviduct into the belly, or when a follicle bursts into the body cavity instead of being caught properly by the oviduct. Once yolk is sitting in the warm abdominal cavity, E. coli almost always moves in and infection follows [24].'),
 
     spacer(40),
@@ -603,7 +605,7 @@ function buildBody() {
     bullet([{ text: 'Oviduct:', bold: true }, { text: ' Thickened, inflamed walls. The lumen contains yellow or white caseous exudate instead of normal secretions. In severe cases the entire oviduct is packed solid with pus or necrotic material (a "lash egg").' }]),
     bullet([{ text: 'Impacted oviduct:', bold: true }, { text: ' The oviduct fills with a large mass of albumin, yolk, and inflammatory debris. The bird stops laying but the abdomen becomes enlarged. This is a chronic end-stage presentation.' }]),
     bullet([{ text: 'Bacterial involvement:', bold: true }, { text: ' E. coli, ' }, { text: 'Mycoplasma', italics: true }, { text: ', Salmonella, and Pasteurella are all associated with salpingitis. Swab the oviduct contents for culture to identify the primary organism.' }]),
-    ...image(photoSalp, 'Photo 5.1: Salpingitis in a laying hen. The opened oviduct is inflamed and lined with yellow caseous exudate instead of normal secretions (left), and in a severe case the oviduct is packed with a large mass of cheesy, layered material (right). Source: Diseases of Poultry, 14th ed.', 5.5),
+    ...image(photoSalp, 'Photo 5.2: Salpingitis in a laying hen. The opened oviduct is inflamed and lined with yellow caseous exudate instead of normal secretions (left), and in a severe case the oviduct is packed with a large mass of cheesy, layered material (right). Source: Diseases of Poultry, 14th ed.', 5.5),
 
     h2('5.2  Bacterial Diseases'),
     para([{ text: 'Fowl Cholera (', bold: true }, { text: 'Pasteurella multocida', italics: true }, { text: ')', bold: true }]),
@@ -611,7 +613,7 @@ function buildBody() {
     bullet([{ text: 'Acute form:', bold: true }, { text: ' Hemorrhages around the heart and on the lungs. Yellow-white pinpoint spots on the liver surface (multifocal hepatic necrosis). Excess clear fluid in the pericardial sac and abdominal cavity. General reddening of tissues from septicemia. Birds often found dead with no prior illness.' }]),
     bullet([{ text: 'Chronic form:', bold: true }, { text: ' Swollen, hot wattles. Swollen eyes (periorbital edema). Respiratory involvement with mucoid exudate in trachea and air sacs. Arthritis in joints with caseous deposits. The wattle and eye swelling are classic visual signs, and you will see fibrinous adhesions and caseous material in the joints when you open them.' }]),
     para('Acute fowl cholera in a flock with good birds suddenly dead is a production emergency. Culture from fresh liver and heart blood confirms the diagnosis. Pasteurella multocida grows readily on standard culture media within 24 hours [26].'),
-    ...image(photoChol, 'Photo 5.2: Liver from a chicken with acute fowl cholera. The surface is dotted with tiny white necrotic spots (multifocal hepatic necrosis), the classic liver lesion of this disease. Source: Vegad JL, A Colour Atlas of Poultry Diseases.', 4.2),
+    ...image(photoChol, 'Photo 5.3: Liver from a chicken with acute fowl cholera. The surface is dotted with tiny white necrotic spots (multifocal hepatic necrosis), the classic liver lesion of this disease. Source: Vegad JL, A Colour Atlas of Poultry Diseases.', 4.2),
 
     spacer(40),
     para([{ text: 'Mycoplasmosis (MG and MS)', bold: true }]),
@@ -632,7 +634,7 @@ function buildBody() {
     bullet([{ text: 'Neural form:', bold: true }, { text: ' Enlarged peripheral nerves. The sciatic nerves are the most accessible: after removing the abdominal organs, find them running bilaterally in the sacral region alongside the vertebral column, just under the kidneys. In a healthy bird they are uniform, slightly striated, and bilaterally symmetric. In Marek\'s neural form, one or both are obviously enlarged, swollen, and have lost their normal striations. Compare left to right. Asymmetry is the key finding. The vagus, brachial, and femoral nerves may also be affected.' }]),
     bullet([{ text: 'Visceral form:', bold: true }, { text: ' Whitish lymphoma nodules in multiple organs: liver, spleen, gonads, kidney, heart, proventriculus, and intestine. Tumor nodules range from pinpoint to several centimeters. The liver may be diffusely enlarged with a mottled appearance or studded with discrete white nodules. This form has 10 to 70% mortality depending on the strain and immune status of the flock [29].' }]),
     bullet([{ text: 'Cutaneous form:', bold: true }, { text: ' Enlarged, reddened feather follicles visible as nodular skin lesions, usually on the neck and back. Less common in well-vaccinated commercial flocks.' }]),
-    ...image(photoMar, "Photo 5.3: Cutaneous form of Marek's disease in a broiler showing enlarged, reddened feather follicles on the skin surface. Source: Roman Halouzka, Wikimedia Commons (CC BY-SA 3.0).", 4.5),
+    ...image(photoMar, "Photo 5.4: Cutaneous form of Marek's disease in a broiler showing enlarged, reddened feather follicles on the skin surface. Source: Roman Halouzka, Wikimedia Commons (CC BY-SA 3.0).", 4.5),
 
     para("So the investigation centers on the vaccine: Was it kept at the right temperature? Was the dose correct? Were birds exposed to field virus before the vaccine had time to protect them? Vaccination does not prevent infection. It prevents tumor development. Course 7 covers the full disease profile and vaccination strategy in detail."),
 
