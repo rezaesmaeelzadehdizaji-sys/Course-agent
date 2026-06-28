@@ -305,6 +305,7 @@ function buildBody() {
   const photoWorms  = figBuf('internal worms.jpg');
   const photoAsc    = figBuf('ascites.jpg');
   const photoSDS    = figBuf('SDS.jpg');
+  const photoDev    = figBuf('Developmental Dis.jpg');
   const eTen        = figBuf('E. tenella.jpg');
   const eAcer       = figBuf('E. acervulina.jpg');
   const eMax        = figBuf('E. maxima.jpg');
@@ -581,6 +582,7 @@ function buildBody() {
     bullet([{ text: 'Tibial dyschondroplasia (TD):', bold: true }, { text: ' A plug of firm, white avascular cartilage in the proximal tibiotarsus. The bird may have walked poorly for days before dying. Visible on cross-section of the tibia as an abnormal cartilage mass extending into the bone.' }]),
     bullet([{ text: 'Valgus/varus deformity:', bold: true }, { text: ' Lateral or medial deviation of the tibiotarsus (bowed or knock-kneed legs). Visible externally and confirmed on bone examination. Causes include genetics, fast growth, and nutritional imbalances.' }]),
     bullet([{ text: 'Spondylolisthesis (kinky back):', bold: true }, { text: ' Compression of the spinal cord by a displaced thoracic vertebra. Birds sit on their hocks and kick frantically. At necropsy, examine the spine at the thoracic level: you will find a displaced or fractured vertebra with spinal cord compression.' }]),
+    ...image(photoDev, 'Photo 4.14: Developmental skeletal conditions of broilers. Spondylolisthesis (kinky back): a bird sitting back on its hocks (top left) and a sagittal cut of the spine showing the displaced thoracic vertebra pinching the spinal cord (top right). Valgus deformity: an outward-deviated leg in a live bird (bottom left). Tibial dyschondroplasia: cut sections of the proximal tibia showing the abnormal white cartilage plug extending into the bone (bottom right). Source: Diseases of Poultry, 14th ed.', 5.5),
     pageBreak(),
 
     // ─── SECTION 5 ───
