@@ -300,6 +300,7 @@ function buildBody() {
   const photoAsperg = figBuf('Aspergillosis.jpg');
   const photoDVE = figBuf('DVE.jpg');
   const photoDHV = figBuf('DHV.jpg');
+  const photoDerzsy = figBuf("Derzsy's Disease.jpg");
   const photoColi   = figBuf('Colibacillosis.jpg');
   const photoAir    = figBuf('airsacculitis.jpg');
   const photoOmph   = figBuf('Omphalitis.jpg');
@@ -733,6 +734,7 @@ function buildBody() {
     bullet([{ text: 'Body cavity:', bold: true }, { text: ' Ascites, so the gosling stands in a penguin-like upright posture from the fluid in its belly.' }]),
     bullet([{ text: 'Liver and serosa:', bold: true }, { text: ' Perihepatitis, pericarditis, and a fibrinous pseudomembrane over the tongue, mouth, and small intestine.' }]),
     bullet([{ text: 'Gut:', bold: true }, { text: ' Inflamed, mucusy intestine (catarrhal enteritis).' }]),
+    ...image(photoDerzsy, "Photo 6.3: Derzsy's disease (goose parvovirus) lesions. A pale, dilated heart (left), an enlarged, congested liver coated in fibrinous exudate (center), and an inflamed, mucusy intestine (right). Source: Diseases of Poultry, 14th ed.", 5.9),
     para("A cluster of young goslings with rounded pale hearts, ascites, and that penguin stance points at Derzsy's disease. On histology the lab finds intranuclear inclusion bodies in the heart muscle [38]."),
 
     h2('6.2  Bacterial and Toxic Conditions'),
