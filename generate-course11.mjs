@@ -691,7 +691,7 @@ function buildBody() {
     bullet([{ text: 'Digestive tract:', bold: true }, { text: ' The esophagus and intestine develop crusted yellowish plaques that organize into green scabby diphtheritic membranes. Ring-like (annular) bands of necrosis and hemorrhage show up along the gut.' }]),
     bullet([{ text: 'Liver:', bold: true }, { text: ' Enlarged, pale copper-colored, with pinpoint hemorrhages mixed with white necrotic foci.' }]),
     bullet([{ text: 'Gut content:', bold: true }, { text: ' Blood in the intestinal lumen.' }]),
-    ...image(photoDVE, 'Photo 6.1: Duck viral enteritis (duck plague) lesions. Hemorrhage into the proventriculus (top left), hemorrhage and diphtheritic membranes in the esophagus (top right), ulcers and bleeding on the intestinal mucosa (bottom left), and an enlarged, necrotic spleen (bottom center and right). Source: Merck Veterinary Manual (merckvetmanual.com).', 5.9),
+    ...image(photoDVE, 'Photo 6.1: Duck viral enteritis (duck plague) lesions. Hemorrhage into the proventriculus (top left), hemorrhage and diphtheritic membranes in the esophagus (top right), ulcers and bleeding on the intestinal mucosa (bottom left), and an enlarged, necrotic liver (bottom center) and spleen (bottom right). Source: Merck Veterinary Manual (merckvetmanual.com).', 5.9),
     para('Sudden heavy death in ducks or geese with these hemorrhagic, plaque-covered guts is duck plague until the lab says otherwise. Get your veterinarian involved early so the right samples reach the lab fresh [34].'),
 
     spacer(40),
