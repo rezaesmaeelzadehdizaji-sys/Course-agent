@@ -246,3 +246,9 @@ NOTE: TOC page numbers are now stale again (expanded text shifts pages); refresh
 ## Structural edit (2026-06-29): merged Section 3.1 table into Section 9
 
 The Section 3.1 "What Abnormal Findings Look Like" body-system table duplicated the Section 9 lesion-by-system table (3.1 was a subset of 9). Per the "say it once" rule, they were merged: Section 3.1 deleted entirely, 3.2 renamed to 3.1 (Acute vs Chronic). The Section 9 table was rebuilt as the single comprehensive reference with columns Body System | Normal Appearance | Abnormal Finding | Disease(s) to Consider, carrying over 3.1's Normal Appearance column and its disease additions (AI on trachea/heart/proventriculus, Fowl Cholera on lungs, cystic oviduct+IBV, yolk sacculitis) on Section 9's fuller 19-row set. No references changed; citation order remains 1-42. TOC refreshed (40 entries; 3.1 Acute vs Chronic p10, Section 9 p44, References p52). 40 hyperlinks = 40 bookmarks, 0 dirty flags, 0 em dashes.
+
+---
+
+## Structural edit (2026-06-29): moved PPMV-1 Canadian-context sentence to Section 8.1
+
+The "For Canadian context: ... CFIA confirmed PPMV-1 ... Fraser Valley ..." sentence was moved from the Newcastle section (4.2) to Section 8.1 (Pigeon Paramyxovirus), where it belongs. Its source (CFIA pigeon industry notice, formerly ref [11]) was the only citation in that sentence, so moving it changed first-appearance order. Renumbered: old [12]-[42] -> [11]-[41]; the CFIA pigeon notice moved to the end as [42] (bibliography paragraph physically relocated after Histomoniasis so auto-numbering matches). Verified: in-text first-appearance order contiguous 1-42; bibliography 42 entries with 42 = CFIA pigeon notice. No references changed in content. 0 em dashes, TOC page numbers unaffected.
