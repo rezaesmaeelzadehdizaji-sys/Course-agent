@@ -296,6 +296,7 @@ function buildBody() {
   const photoILT = figBuf('ILTV.jpg');
   const photoAMPV = figBuf('aMPV.jpg');
   const photoFLHS = figBuf('flhs.jpg');
+  const photoOsteo = figBuf('osteoporosis.jpg');
   const photoColi   = figBuf('Colibacillosis.jpg');
   const photoAir    = figBuf('airsacculitis.jpg');
   const photoOmph   = figBuf('Omphalitis.jpg');
@@ -688,6 +689,7 @@ function buildBody() {
     bullet([{ text: 'Keel bone:', bold: true }, { text: ' Palpable fractures in the keel (sternum). Keel fractures are extremely common in commercial laying hens and can be detected by running your finger along the keel surface.' }]),
     bullet([{ text: 'Cage layer fatigue:', bold: true }, { text: ' Birds found unable to stand in cage systems. At necropsy, spinal cord compression or pathological fractures from severely osteoporotic bone. The cord compression is visible at the thoracic vertebrae.' }]),
     bullet([{ text: 'Egg signs come first:', bold: true }, { text: ' Thin or soft shells show up before the birds go down. Thin shells, then broken shells, then a drop in lay is the pattern to look for in your records.' }]),
+    ...image(photoOsteo, 'Photo 5.10: Calcium deficiency and cage layer fatigue. A hen down and unable to stand (top left), thin and broken eggshells (bottom left), and a soft, deformed keel bone (right). Source: Merck Veterinary Manual (msdvetmanual.com); guideofgreece.com.', 5.9),
     para('Calcium deficiency responds well to dietary correction when caught early. If multiple hens in the same stage of lay are showing this pattern, audit the diet formulation, calcium source particle size (large particles are absorbed more slowly and support overnight shell formation), and light programs.'),
     pageBreak(),
 
