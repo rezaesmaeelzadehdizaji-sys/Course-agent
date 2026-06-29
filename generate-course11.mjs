@@ -783,8 +783,9 @@ function buildBody() {
         ['Heart/pericardium', 'Clean surface, no excess fluid', 'Fibrin plaques; dilated right heart; contracted ventricles', 'Colibacillosis, Fowl Cholera, Ascites, SDS, AI'],
         ['Abdominal cavity', 'No free fluid', 'Straw fluid (ascites); yolk material (egg peritonitis); caseous material', 'Ascites, Egg Peritonitis, Yolk Sacculitis'],
         ['Oviduct', 'Thin-walled, normal lumen', 'Caseous exudate; impacted; inflamed wall; cystic (fluid-filled) oviduct', 'Salpingitis, IBV'],
+        ['Ovary', 'Orderly cluster of developing yellow follicles', 'Hemorrhagic, regressed, or atretic follicles; ruptured follicles; tumor nodules', 'ND, AI, Marek\'s Disease, Fowl Cholera, Egg Peritonitis'],
         ['Skin and feather follicles', 'Smooth, flat follicles', 'Enlarged reddened follicles; hemorrhagic or necrotic patches', 'Marek\'s (cutaneous), Fowl Pox'],
-        ['Hock and foot pad joints', 'Smooth, clear joint fluid', 'Swollen joint with cream exudate', 'Mycoplasma synoviae (MS)'],
+        ['Hock and foot pad joints', 'Smooth, clear joint fluid', 'Swollen joint with cream exudate; swollen tendon sheaths', 'Mycoplasma synoviae (MS), Reovirus'],
         ['Bone (cross-section)', 'Thick, hard cortex', 'Thin cortex, fragile, cancellous replacement', 'Calcium deficiency, cage layer fatigue'],
         ['Skeletal muscles (breast/thigh)', 'Firm, pink, no hemorrhage', 'Ecchymotic hemorrhages in muscle', 'IBD'],
       ]
