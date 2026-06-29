@@ -771,7 +771,6 @@ function buildBody() {
     para('Blackhead, or histomoniasis, is caused by the protozoan Histomonas meleagridis. It is devastating in turkeys, where mortality often runs 80 to 100% [42]. Chickens usually carry it quietly and pass it on. The lesions are so specific they confirm the diagnosis on sight:'),
     bullet([{ text: 'Ceca:', bold: true }, { text: ' Thickened, ulcerated cecal walls with a yellow-green caseous core inside. Severe cases erode right through the cecal wall into peritonitis.' }]),
     bullet([{ text: 'Liver:', bold: true }, { text: ' Round, sunken, target-like (bullseye) necrotic lesions up to a few centimeters across, green to tan. Together with the cecal cores, these are pathognomonic, meaning they confirm the diagnosis on their own [42].' }]),
-    para('The cecal worm Heterakis gallinarum carries Histomonas from bird to bird, which is why mixing chickens and turkeys, or running turkeys on ground that held chickens, is so risky. For the worm side of this, see the internal parasite notes in Section 4.'),
     para('Blackhead has been re-emerging in recent years because there are no longer any approved drugs or vaccines to prevent or treat it, which keeps it a serious threat wherever turkeys are raised or share ground with chickens [42].'),
     pageBreak(),
 
