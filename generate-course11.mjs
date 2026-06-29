@@ -327,7 +327,6 @@ function buildBody() {
   const photoSalp   = figBuf('Salpingitis.png');
   const photoFC     = figBuf('Fowl-cholera.jpg');
   const photoMGMS   = figBuf('MG-MS.jpg');
-  const organMap    = figBuf('chicken_systems_overview.jpeg');
 
   return [
     // TOC PAGE (body section already starts on a new page after the cover; no leading page break)
@@ -793,7 +792,6 @@ function buildBody() {
       ]
     ),
     spacer(160),
-    ...image(organMap, 'Figure 9.1: Internal anatomy of the chicken showing where each organ system sits in the body. Use it to place the organs named in the lesion table above when you are working at the necropsy table. Source: Purina Animal Nutrition LLC.', 5.4),
     pageBreak(),
 
     // ─── SECTION 7 ───
