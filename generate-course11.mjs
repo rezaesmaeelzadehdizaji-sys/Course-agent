@@ -417,8 +417,7 @@ function buildBody() {
     pageBreak(),
 
     // ─── SECTION 3 ───
-    h1('3. Overview of Common Necropsy Lesions'),
-    h2('3.1  Acute vs Chronic Disease Lesions'),
+    h1('3. Acute vs Chronic Disease Lesions'),
     para('Acute lesions look fresh and dramatic: bright red hemorrhages, yellow fibrin that peels off cleanly, swollen organs with clear borders. These birds died early in the disease process or from a fast-moving condition. Chronic lesions look organized and dull: gray-white fibrin that has become adherent and rubbery, shrunken or fibrosed organs, caseous (cheesy) material that has been there long enough to solidify. A flock with a mix of acute and chronic lesions tells you the disease has been present for some time, often a week or more depending on the disease.'),
     para('Differentiating acute from chronic also changes your response. Acute disease calls for immediate sampling and rapid diagnosis. Chronic disease suggests the pathogen has been circulating for a while, secondary infections have set in, and vaccination or management failures may be part of the picture. Let the lesion guide your urgency.'),
     ...image(fig11_1, 'Figure 3.1: Lesion timeline from acute to chronic. Lesion character changes as disease progresses from initial infection through peak mortality to resolution. Source: CPC Short Courses.'),
@@ -922,8 +921,7 @@ const tocEntries = [
   { lvl: 2, text: "2.1  Tools and Safety Precautions", page: 8 },
   { lvl: 2, text: "2.2  Selecting Appropriate Birds", page: 8 },
   { lvl: 2, text: "2.3  Sample Handling for Laboratory Submission", page: 9 },
-  { lvl: 1, text: "3. Overview of Common Necropsy Lesions", page: 10 },
-  { lvl: 2, text: "3.1  Acute vs Chronic Disease Lesions", page: 10 },
+  { lvl: 1, text: "3. Acute vs Chronic Disease Lesions", page: 10 },
   { lvl: 1, text: "4. Common Diseases in Meat Birds (Broilers)", page: 11 },
   { lvl: 2, text: "4.1  Bacterial Diseases", page: 11 },
   { lvl: 2, text: "4.2  Viral Diseases", page: 14 },
