@@ -302,6 +302,7 @@ function buildBody() {
   const photoDHV = figBuf('DHV.jpg');
   const photoDerzsy = figBuf("Derzsy's Disease.jpg");
   const photoRiem = figBuf('rimerella.jpg');
+  const photoHE = figBuf('HE.jpg');
   const photoHisto = figBuf('histomoniasis.jpg');
   const photoColi   = figBuf('Colibacillosis.jpg');
   const photoAir    = figBuf('airsacculitis.jpg');
@@ -765,6 +766,7 @@ function buildBody() {
     para('Hemorrhagic enteritis is an adenovirus disease of turkeys, usually around six to eleven weeks of age. It causes sudden death, sometimes with bloody droppings [41]:'),
     bullet([{ text: 'Spleen:', bold: true }, { text: ' Enlarged, friable, and mottled. The splenic change is the most consistent finding, even when the gut looks near normal.' }]),
     bullet([{ text: 'Intestine:', bold: true }, { text: ' Congestion and sometimes bloody content in the upper small intestine. The dramatic hemorrhagic gut shows up more in sharp outbreaks than in everyday field cases.' }]),
+    ...image(photoHE, 'Photo 7.1: Hemorrhagic enteritis in a turkey. Severe bleeding in the duodenum and upper small intestine (left), and an enlarged, mottled spleen (right). The big mottled spleen is the most consistent finding, even when the gut looks near normal. Source: Diseases of Poultry, 14th ed.', 5.9),
     para('HE also knocks down the immune system, opening the door to secondary E. coli. A turkey flock with sudden deaths and big mottled spleens fits HE. On histology the lab finds intranuclear inclusion bodies in the spleen [41].'),
 
     spacer(40),
@@ -772,7 +774,7 @@ function buildBody() {
     para('Blackhead, or histomoniasis, is caused by the protozoan Histomonas meleagridis. It is devastating in turkeys, where mortality often runs 80 to 100% [42]. Chickens usually carry it quietly and pass it on. The lesions are so specific they confirm the diagnosis on sight:'),
     bullet([{ text: 'Ceca:', bold: true }, { text: ' Thickened, ulcerated cecal walls with a yellow-green caseous core inside. Severe cases erode right through the cecal wall into peritonitis.' }]),
     bullet([{ text: 'Liver:', bold: true }, { text: ' Round, sunken, target-like (bullseye) necrotic lesions up to a few centimeters across, green to tan. Together with the cecal cores, these are pathognomonic, meaning they confirm the diagnosis on their own [42].' }]),
-    ...image(photoHisto, 'Photo 7.1: Blackhead (histomoniasis) lesions in a turkey. Round, target-like necrotic nodules across the liver (left), caseous cores filling the opened ceca (center), and necrosis in the pancreas (right). The liver bullseyes and cecal cores together are diagnostic. Source: Diseases of Poultry, 14th ed.', 5.9),
+    ...image(photoHisto, 'Photo 7.2: Blackhead (histomoniasis) lesions in a turkey. Round, target-like necrotic nodules across the liver (left), caseous cores filling the opened ceca (center), and necrosis in the pancreas (right). The liver bullseyes and cecal cores together are diagnostic. Source: Diseases of Poultry, 14th ed.', 5.9),
     para('Blackhead has been re-emerging in recent years because there are no longer any approved drugs or vaccines to prevent or treat it, which keeps it a serious threat wherever turkeys are raised or share ground with chickens [42].'),
     pageBreak(),
 
