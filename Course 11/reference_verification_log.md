@@ -240,3 +240,9 @@ The Calcium Deficiency and Cage Layer Fatigue section (5.4) was expanded per use
 **Renumbering:** New ref inserted at first-appearance position 35 (calcium section appears after [34] and before the Section 6 duck refs). In-text citations old [35]-[41] cascaded to new [36]-[42]; bibliography auto-renumbers by position (verified: 34 Calcium, 35 Webster, 36 Duck Viral Enteritis ... 42 Histomoniasis). In-text first-appearance order contiguous 1-42. 0 em dashes. Photo 5.10 and the closing management paragraph retained.
 
 NOTE: TOC page numbers are now stale again (expanded text shifts pages); refresh TOC before final publish.
+
+---
+
+## Structural edit (2026-06-29): merged Section 3.1 table into Section 9
+
+The Section 3.1 "What Abnormal Findings Look Like" body-system table duplicated the Section 9 lesion-by-system table (3.1 was a subset of 9). Per the "say it once" rule, they were merged: Section 3.1 deleted entirely, 3.2 renamed to 3.1 (Acute vs Chronic). The Section 9 table was rebuilt as the single comprehensive reference with columns Body System | Normal Appearance | Abnormal Finding | Disease(s) to Consider, carrying over 3.1's Normal Appearance column and its disease additions (AI on trachea/heart/proventriculus, Fowl Cholera on lungs, cystic oviduct+IBV, yolk sacculitis) on Section 9's fuller 19-row set. No references changed; citation order remains 1-42. TOC refreshed (40 entries; 3.1 Acute vs Chronic p10, Section 9 p44, References p52). 40 hyperlinks = 40 bookmarks, 0 dirty flags, 0 em dashes.
