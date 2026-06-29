@@ -216,3 +216,15 @@ Added a note to the coccidiosis table (E. brunetti row, Gross Lesion column): "M
 ### Update (2026-06-28): E. necatrix age/host note added; "and layers" added to both
 
 The same age/host note was extended to the E. necatrix row (HIPRA states E. necatrix AND E. brunetti both mainly affect birds >8-9 weeks), and both rows now read "broiler breeders and layers" (HIPRA lists both as long life-cycle hosts). Both cite the existing [19] HIPRA ref; no renumber. Coccidiosis table still renders on one page (confirmed page 22). Citation order remains contiguous 1-40.
+
+---
+
+## Addition (2026-06-28): Aspergillosis section + ref [24]
+
+Aspergillosis was listed in the Section 9 lesion-by-system table (Lungs row) but never covered in the body. Added a short "4.5 Fungal Disease" subsection (Aspergillosis / brooder pneumonia) so the table reference is backed by real content.
+
+- **[24] Merck Veterinary Manual. Aspergillosis in Poultry.** merckvetmanual.com/poultry/aspergillosis/aspergillosis-in-poultry — VERIFIED 2026-06-28. Confirms Aspergillus fumigatus as cause, severe disease in young birds 7-40 days (brooder pneumonia), exposure via hatchery/contaminated litter and feed, and the hallmark lesions: firm white-to-yellow granulomas/nodules (mm to cm) throughout lungs and air sacs, occasional mycelial mats in the respiratory tract. All section claims match this source.
+
+**Renumbering:** New ref inserted at first-appearance position 24 (Section 4.5 appears after skeletal [23] and before egg peritonitis). All in-text citations old [24]-[40] cascaded to new [25]-[41]; bibliography auto-renumbers by position (verified: 23 Skeletal, 24 Aspergillosis, 25 Egg Peritonitis ... 41 Histomoniasis). In-text first-appearance order contiguous 1-41.
+
+**TOC:** Added "4.5  Fungal Disease" entry and refreshed all 41 TOC page numbers against a fresh PDF render. 41 cached rows, 41 hyperlinks = 41 bookmarks (clickable), 0 w:dirty flags, updateFields=false. 0 em dashes. Photos intact (4.1-4.14, 5.1-5.10).
