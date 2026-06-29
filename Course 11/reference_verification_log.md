@@ -252,3 +252,14 @@ The Section 3.1 "What Abnormal Findings Look Like" body-system table duplicated 
 ## Structural edit (2026-06-29): moved PPMV-1 Canadian-context sentence to Section 8.1
 
 The "For Canadian context: ... CFIA confirmed PPMV-1 ... Fraser Valley ..." sentence was moved from the Newcastle section (4.2) to Section 8.1 (Pigeon Paramyxovirus), where it belongs. Its source (CFIA pigeon industry notice, formerly ref [11]) was the only citation in that sentence, so moving it changed first-appearance order. Renumbered: old [12]-[42] -> [11]-[41]; the CFIA pigeon notice moved to the end as [42] (bibliography paragraph physically relocated after Histomoniasis so auto-numbering matches). Verified: in-text first-appearance order contiguous 1-42; bibliography 42 entries with 42 = CFIA pigeon notice. No references changed in content. 0 em dashes, TOC page numbers unaffected.
+
+---
+
+## Addition (2026-06-29): Fowl Pox section + ref [31]; full TOC refresh
+
+Fowl Pox was named in the Section 9 skin/feather-follicle row but not covered in the body. Added a short Fowl Pox entry at the end of Section 5.3 (Viral Diseases, layers/breeders, where it is most relevant): cutaneous (dry) scabby-skin form and diphtheritic (wet) mouth/throat/trachea form, mosquito spread.
+
+- **[31] Merck Veterinary Manual. Fowlpox in Chickens and Turkeys.** merckvetmanual.com/poultry/fowlpox/fowlpox-in-chickens-and-turkeys - VERIFIED 2026-06-29. Confirms cutaneous proliferative skin nodules/scabs on unfeathered skin, diphtheritic lesions from mouth to esophagus and tracheal mucosa, and transmission by biting insects (mosquitoes). Section claims match.
+
+**Renumbering:** new ref at first-appearance position 31 (end of 5.3, after aMPV [30], before FLHS); old [31]-[41] -> [32]-[42]; bibliography auto-renumbers (30 aMPV, 31 Fowlpox, 32 FLHS ... 42 CFIA pigeon). In-text order contiguous 1-42.
+**TOC:** full refresh after this addition and the earlier redundancy cuts: 2.3 now p8, Section 6 onward +1 (References p53). 39 TOC rows = 39 hyperlinks = 39 bookmarks, 0 dirty flags, 0 em dashes.
