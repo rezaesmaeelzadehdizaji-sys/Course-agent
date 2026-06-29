@@ -302,6 +302,7 @@ function buildBody() {
   const photoDHV = figBuf('DHV.jpg');
   const photoDerzsy = figBuf("Derzsy's Disease.jpg");
   const photoRiem = figBuf('rimerella.jpg');
+  const photoHisto = figBuf('histomoniasis.jpg');
   const photoColi   = figBuf('Colibacillosis.jpg');
   const photoAir    = figBuf('airsacculitis.jpg');
   const photoOmph   = figBuf('Omphalitis.jpg');
@@ -771,6 +772,7 @@ function buildBody() {
     para('Blackhead, or histomoniasis, is caused by the protozoan Histomonas meleagridis. It is devastating in turkeys, where mortality often runs 80 to 100% [42]. Chickens usually carry it quietly and pass it on. The lesions are so specific they confirm the diagnosis on sight:'),
     bullet([{ text: 'Ceca:', bold: true }, { text: ' Thickened, ulcerated cecal walls with a yellow-green caseous core inside. Severe cases erode right through the cecal wall into peritonitis.' }]),
     bullet([{ text: 'Liver:', bold: true }, { text: ' Round, sunken, target-like (bullseye) necrotic lesions up to a few centimeters across, green to tan. Together with the cecal cores, these are pathognomonic, meaning they confirm the diagnosis on their own [42].' }]),
+    ...image(photoHisto, 'Photo 7.1: Blackhead (histomoniasis) lesions in a turkey. Round, target-like necrotic nodules across the liver (left), caseous cores filling the opened ceca (center), and necrosis in the pancreas (right). The liver bullseyes and cecal cores together are diagnostic. Source: Diseases of Poultry, 14th ed.', 5.9),
     para('Blackhead has been re-emerging in recent years because there are no longer any approved drugs or vaccines to prevent or treat it, which keeps it a serious threat wherever turkeys are raised or share ground with chickens [42].'),
     pageBreak(),
 
