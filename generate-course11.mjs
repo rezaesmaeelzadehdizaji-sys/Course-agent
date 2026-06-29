@@ -294,6 +294,7 @@ function buildBody() {
   const photoMar = figBuf('Marek.jpg');
   const photoIBVND = figBuf('IBV-NDV.jpg');
   const photoILT = figBuf('ILTV.jpg');
+  const photoAMPV = figBuf('aMPV.jpg');
   const photoColi   = figBuf('Colibacillosis.jpg');
   const photoAir    = figBuf('airsacculitis.jpg');
   const photoOmph   = figBuf('Omphalitis.jpg');
@@ -666,6 +667,7 @@ function buildBody() {
     bullet([{ text: 'Airways:', bold: true }, { text: ' Mucus in the trachea.' }]),
     bullet([{ text: 'Secondary infection:', bold: true }, { text: ' E. coli moves in behind the virus and adds airsacculitis, pericarditis, and perihepatitis.' }]),
     bullet([{ text: 'Layers:', bold: true }, { text: ' Egg peritonitis, a regressed ovary and oviduct, and misshapen eggs.' }]),
+    ...image(photoAMPV, 'Photo 5.8: Avian metapneumovirus (swollen head syndrome). Swollen heads in broilers and breeders and infraorbital sinusitis in turkeys (top row), with serofibrinous to caseous exudate building up in the head and submandibular region as secondary bacteria move in (bottom left and center). In layers the virus also inflames the ovary (serofibrinous oophoritis, bottom right). Source: CEVA Handbook of Poultry Diseases.', 5.9),
     para('aMPV rarely kills on its own. The damage comes from the E. coli that follows it through the broken airway lining. A flock with swollen heads and a colibacillosis necropsy picture, especially alongside a production drop, should make you think aMPV underneath it [31].'),
 
     h2('5.4  Nutritional and Metabolic Issues'),
