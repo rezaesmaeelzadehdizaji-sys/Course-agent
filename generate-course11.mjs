@@ -297,6 +297,7 @@ function buildBody() {
   const photoAMPV = figBuf('aMPV.jpg');
   const photoFLHS = figBuf('flhs.jpg');
   const photoOsteo = figBuf('osteoporosis.jpg');
+  const photoAsperg = figBuf('Aspergillosis.jpg');
   const photoColi   = figBuf('Colibacillosis.jpg');
   const photoAir    = figBuf('airsacculitis.jpg');
   const photoOmph   = figBuf('Omphalitis.jpg');
@@ -597,6 +598,7 @@ function buildBody() {
     para('Aspergillosis is a fungal lung disease caused by Aspergillus fumigatus. It hits young chicks hardest, usually between 7 and 40 days old, while their immune system is still developing. Chicks pick up the spores at the hatchery or off damp, moldy litter, and older birds breathe in spore-laden dust from contaminated litter or feed. Wet bedding that has dried out is the classic setup, because the mold grows in the damp and then puffs spores into the air [24]:'),
     bullet([{ text: 'Lungs:', bold: true }, { text: ' Firm white to yellow nodules, from a few millimeters up to a couple of centimeters across, scattered through the lung tissue. This is the hallmark finding.' }]),
     bullet([{ text: 'Air sacs:', bold: true }, { text: ' Thickened, carrying the same white-to-yellow plaques and nodules. In heavy cases you can see fuzzy mold growth on the air sac surface.' }]),
+    ...image(photoAsperg, 'Photo 4.15: Aspergillosis lesions. Caseous exudate plugging the syrinx (top left), white-to-yellow granulomas studding the air sacs (top right), firm white nodules scattered through the lung (bottom left), and a granuloma in the brain in a disseminated case (bottom right). Source: Elanco Broiler Disease Reference Guide; Diseases of Poultry, 14th ed.', 5.5),
     para('A cluster of young chicks with these firm lung nodules points straight back to the hatchery or the litter. Pull a sample of the suspect litter or feed and check your brooding setup for damp, moldy spots [24].'),
     pageBreak(),
 
