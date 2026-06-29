@@ -299,6 +299,7 @@ function buildBody() {
   const photoOsteo = figBuf('osteoporosis.jpg');
   const photoAsperg = figBuf('Aspergillosis.jpg');
   const photoDVE = figBuf('DVE.jpg');
+  const photoDHV = figBuf('DHV.jpg');
   const photoColi   = figBuf('Colibacillosis.jpg');
   const photoAir    = figBuf('airsacculitis.jpg');
   const photoOmph   = figBuf('Omphalitis.jpg');
@@ -722,6 +723,7 @@ function buildBody() {
     bullet([{ text: 'Posture:', bold: true }, { text: ' Ducklings die quickly, paddling, then arch the head and neck back over the body (opisthotonos). Many are found dead in that arched position.' }]),
     bullet([{ text: 'Liver:', bold: true }, { text: ' Enlarged and covered with hemorrhagic foci, ranging from pinpoint to blotchy bleeds.' }]),
     bullet([{ text: 'Spleen and kidneys:', bold: true }, { text: ' Spleen may be enlarged and mottled; kidneys swollen with congested vessels.' }]),
+    ...image(photoDHV, 'Photo 6.2: Duck virus hepatitis lesions. Bleeding from the nares (left) and an enlarged liver studded with hemorrhagic foci, from pinpoint to blotchy bleeds (right). Source: ASA Handbook on Poultry Diseases; Diseases of Poultry, 14th ed.', 5.9),
     para('A batch of young ducklings dying within minutes, arched backward, with spotted-hemorrhage livers, is the classic DVH picture. Rapid diagnosis drives the response, so call your veterinarian fast [37].'),
 
     spacer(40),
