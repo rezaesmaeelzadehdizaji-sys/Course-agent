@@ -301,6 +301,7 @@ function buildBody() {
   const photoDVE = figBuf('DVE.jpg');
   const photoDHV = figBuf('DHV.jpg');
   const photoDerzsy = figBuf("Derzsy's Disease.jpg");
+  const photoRiem = figBuf('rimerella.jpg');
   const photoColi   = figBuf('Colibacillosis.jpg');
   const photoAir    = figBuf('airsacculitis.jpg');
   const photoOmph   = figBuf('Omphalitis.jpg');
@@ -744,6 +745,7 @@ function buildBody() {
     bullet([{ text: 'Air sacs:', bold: true }, { text: ' Fibrinous airsacculitis.' }]),
     bullet([{ text: 'Brain:', bold: true }, { text: ' Fibrinous meningitis in some birds, though it is rarely obvious to the naked eye.' }]),
     bullet([{ text: 'Spleen and liver:', bold: true }, { text: ' Swollen, mottled red and tan.' }]),
+    ...image(photoRiem, 'Photo 6.4: Riemerellosis (new duck disease) lesions. Fibrinous exudate coating the heart (left) and spread over both the liver and heart surfaces (right). This is the same fibrinous picture colibacillosis produces, so culture is needed to tell them apart. Source: Diseases of Poultry, 14th ed.; Merck Veterinary Manual (merckvetmanual.com).', 5.9),
     para('Because Riemerellosis and colibacillosis produce almost the same fibrinous picture, culture is the only way to tell them apart. Swab the pericardium, liver, and air sacs for the lab [39].'),
 
     spacer(40),
