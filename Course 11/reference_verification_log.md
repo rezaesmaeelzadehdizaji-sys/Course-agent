@@ -228,3 +228,15 @@ Aspergillosis was listed in the Section 9 lesion-by-system table (Lungs row) but
 **Renumbering:** New ref inserted at first-appearance position 24 (Section 4.5 appears after skeletal [23] and before egg peritonitis). All in-text citations old [24]-[40] cascaded to new [25]-[41]; bibliography auto-renumbers by position (verified: 23 Skeletal, 24 Aspergillosis, 25 Egg Peritonitis ... 41 Histomoniasis). In-text first-appearance order contiguous 1-41.
 
 **TOC:** Added "4.5  Fungal Disease" entry and refreshed all 41 TOC page numbers against a fresh PDF render. 41 cached rows, 41 hyperlinks = 41 bookmarks (clickable), 0 w:dirty flags, updateFields=false. 0 em dashes. Photos intact (4.1-4.14, 5.1-5.10).
+
+---
+
+## Addition (2026-06-29): Expanded Calcium/Cage Layer Fatigue section + ref [35] Webster
+
+The Calcium Deficiency and Cage Layer Fatigue section (5.4) was expanded per user-provided text: clearer osteoporosis mechanism, separate Long bones / Keel bone / Cage layer fatigue / Eggs bullets, plus a "Note for free-run and aviary producers" on keel fractures outside cages. A welfare reference was added and cited in the Eggs bullet and the free-run Note.
+
+- **[35] Webster AB. Welfare implications of avian osteoporosis. Poult Sci. 2004;83(2):184-92. doi:10.1093/ps/83.2.184. PMID 14979568** — VERIFIED 2026-06-29 against PubMed (PMID 14979568) and the resolving DOI: title, author (A.B. Webster), journal (Poult Sci), year (2004), volume 83, issue 2, pages 184-192, DOI all match exactly. Review of housing and bone density/welfare in laying hens; supports the osteoporosis/keel-fracture welfare claims.
+
+**Renumbering:** New ref inserted at first-appearance position 35 (calcium section appears after [34] and before the Section 6 duck refs). In-text citations old [35]-[41] cascaded to new [36]-[42]; bibliography auto-renumbers by position (verified: 34 Calcium, 35 Webster, 36 Duck Viral Enteritis ... 42 Histomoniasis). In-text first-appearance order contiguous 1-42. 0 em dashes. Photo 5.10 and the closing management paragraph retained.
+
+NOTE: TOC page numbers are now stale again (expanded text shifts pages); refresh TOC before final publish.
