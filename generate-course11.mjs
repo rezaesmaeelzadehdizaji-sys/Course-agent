@@ -295,6 +295,7 @@ function buildBody() {
   const photoIBVND = figBuf('IBV-NDV.jpg');
   const photoILT = figBuf('ILTV.jpg');
   const photoAMPV = figBuf('aMPV.jpg');
+  const photoFLHS = figBuf('flhs.jpg');
   const photoColi   = figBuf('Colibacillosis.jpg');
   const photoAir    = figBuf('airsacculitis.jpg');
   const photoOmph   = figBuf('Omphalitis.jpg');
@@ -677,6 +678,7 @@ function buildBody() {
     bullet([{ text: 'Blood clot:', bold: true }, { text: ' A large blood clot sitting just under the membrane on top of the right liver lobe. This is the giveaway: a dark red clot on a pale, crumbly liver is FLHS until proven otherwise.' }]),
     bullet([{ text: 'Abdominal fat:', bold: true }, { text: ' Excessive oily, unsaturated fat deposits throughout the abdominal cavity. The bird looks obese internally.' }]),
     bullet([{ text: 'Pallor:', bold: true }, { text: ' Pale comb, pale mucous membranes from internal blood loss into the hematoma or free abdominal hemorrhage.' }]),
+    ...image(photoFLHS, 'Photo 5.9: Fatty liver hemorrhagic syndrome in a hen. A large dark blood clot sits on the pale, fat-laden liver, surrounded by heavy abdominal fat. That clot on a greasy, crumbly liver is the giveaway for FLHS. Source: CEVA Handbook of Poultry Diseases.', 4.0),
     para('An FLHS liver is at least 40% fat by dry weight, which is why it falls apart so easily [32]. These birds are usually the heaviest in the flock. What to do: look at how rich the feed is, check body weights against target, and make sure any feed-restriction program is actually being followed.'),
 
     spacer(40),
