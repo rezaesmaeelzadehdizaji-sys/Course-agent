@@ -297,6 +297,7 @@ function buildBody() {
   const photoAMPV = figBuf('aMPV.jpg');
   const photoFLHS = figBuf('flhs.jpg');
   const photoOsteo = figBuf('osteoporosis.jpg');
+  const photoFP = figBuf('FP.jpg');
   const photoAsperg = figBuf('Aspergillosis.jpg');
   const photoDVE = figBuf('DVE.jpg');
   const photoDHV = figBuf('DHV.jpg');
@@ -663,6 +664,7 @@ function buildBody() {
     para('Fowl pox is a slow-spreading viral disease seen more in layers, breeders, and backyard or free-range birds than in fast-grown broilers. Biting insects, especially mosquitoes, carry it from bird to bird, so outbreaks often track with mosquito season [31]. It shows up in two forms:'),
     bullet([{ text: 'Cutaneous (dry) form:', bold: true }, { text: ' Wart-like nodules and dark scabs on the unfeathered skin, mainly the comb, wattles, and face. They start as small raised bumps and crust over. This is the common, milder form.' }]),
     bullet([{ text: 'Diphtheritic (wet) form:', bold: true }, { text: ' Raised yellow, cheesy canker-like plaques lining the mouth, throat, and trachea. Affected birds may struggle to breathe or eat. This form is more serious and can kill.' }]),
+    ...image(photoFP, 'Photo 5.9: Fowl pox in two forms. The cutaneous (dry) form shows scabby nodules on the comb, face, and around the eyes (left). The diphtheritic (wet) form shows yellow caseous plaques lining the mouth and throat (right). Source: CEVA Handbook of Poultry Diseases.', 5.9),
     para('Scabby combs and wattles spreading slowly through the flock over weeks, especially after a wet mosquito season, point to fowl pox. The lesions are distinctive on sight, but the lab confirms it [31].'),
 
     h2('5.4  Nutritional and Metabolic Issues'),
@@ -672,7 +674,7 @@ function buildBody() {
     bullet([{ text: 'Blood clot:', bold: true }, { text: ' A large blood clot sitting just under the membrane on top of the right liver lobe. This is the giveaway: a dark red clot on a pale, crumbly liver is FLHS until proven otherwise.' }]),
     bullet([{ text: 'Abdominal fat:', bold: true }, { text: ' Excessive oily, unsaturated fat deposits throughout the abdominal cavity. The bird looks obese internally.' }]),
     bullet([{ text: 'Pallor:', bold: true }, { text: ' Pale comb, pale mucous membranes from internal blood loss into the hematoma or free abdominal hemorrhage.' }]),
-    ...image(photoFLHS, 'Photo 5.9: Fatty liver hemorrhagic syndrome in a hen. A large dark blood clot sits on the pale, fat-laden liver, surrounded by heavy abdominal fat. That clot on a greasy, crumbly liver is the giveaway for FLHS. Source: CEVA Handbook of Poultry Diseases.', 4.0),
+    ...image(photoFLHS, 'Photo 5.10: Fatty liver hemorrhagic syndrome in a hen. A large dark blood clot sits on the pale, fat-laden liver, surrounded by heavy abdominal fat. That clot on a greasy, crumbly liver is the giveaway for FLHS. Source: CEVA Handbook of Poultry Diseases.', 4.0),
     para('An FLHS liver is at least 40% fat by dry weight, which is why it falls apart so easily [32]. These birds are usually the heaviest in the flock. What to do: look at how rich the feed is, check body weights against target, and make sure any feed-restriction program is actually being followed.'),
 
     spacer(40),
@@ -682,7 +684,7 @@ function buildBody() {
     bullet([{ text: 'Keel bone:', bold: true }, { text: ' Run your finger along the keel (the breastbone). Bumps, misalignments, or a grating feel under your finger all point to fractures. Keel fractures are very common in laying hens and are often there even in birds that are still producing eggs.' }]),
     bullet([{ text: 'Cage layer fatigue:', bold: true }, { text: ' Birds are found flat on the cage floor, unable to get up. At necropsy, look for bones that have broken from weakness rather than injury, especially ribs and vertebrae. In bad cases, a broken vertebra in the mid-back area may be pinching the spinal cord.' }]),
     bullet([{ text: 'Eggs:', bold: true }, { text: ' Your eggs will warn you before your birds go down. Thin shells show up first, then cracked shells, then production starts to drop. That sequence in your records is your early warning system. Counting thin or cracked shells per 100 hens each day is one of the simplest ways to catch a calcium problem before it gets serious [33,34].' }]),
-    ...image(photoOsteo, 'Photo 5.10: Calcium deficiency and cage layer fatigue. A hen down and unable to stand (top left), thin and broken eggshells (bottom left), and a soft, deformed keel bone (right). Source: Merck Veterinary Manual (msdvetmanual.com); guideofgreece.com.', 5.9),
+    ...image(photoOsteo, 'Photo 5.11: Calcium deficiency and cage layer fatigue. A hen down and unable to stand (top left), thin and broken eggshells (bottom left), and a soft, deformed keel bone (right). Source: Merck Veterinary Manual (msdvetmanual.com); guideofgreece.com.', 5.9),
     para([{ text: 'Note for free-run and aviary producers: ', bold: true }, { text: 'Keel fractures are just as common outside of cages, and often more so, because birds collide with perches and landing areas on top of already weakened bones. Whether your birds are caged or not, checking the keel at necropsy and during live flock handling is worth making a habit [34].' }]),
     pageBreak(),
 
@@ -938,7 +940,7 @@ const tocEntries = [
   { lvl: 2, text: "5.1  Reproductive System Disorders", page: 27 },
   { lvl: 2, text: "5.2  Bacterial Diseases", page: 28 },
   { lvl: 2, text: "5.3  Viral Diseases", page: 30 },
-  { lvl: 2, text: "5.4  Nutritional and Metabolic Issues", page: 34 },
+  { lvl: 2, text: "5.4  Nutritional and Metabolic Issues", page: 35 },
   { lvl: 1, text: "6. Common Diseases in Ducks and Geese", page: 38 },
   { lvl: 2, text: "6.1  Viral Diseases", page: 38 },
   { lvl: 2, text: "6.2  Bacterial and Toxic Conditions", page: 40 },
