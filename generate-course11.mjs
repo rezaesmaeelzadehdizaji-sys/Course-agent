@@ -71,8 +71,8 @@ function para(text, opts = {}) {
     indent: opts.indent ? { left: convertInchesToTwip(opts.indent) } : undefined,
   });
 }
-function h1(text) {
-  return new Paragraph({ text, heading: HeadingLevel.HEADING_1, spacing: { before: 360, after: 160 } });
+function h1(text, opts = {}) {
+  return new Paragraph({ text, heading: HeadingLevel.HEADING_1, spacing: { before: 360, after: 160 }, pageBreakBefore: opts.pageBreakBefore });
 }
 function h2(text) {
   return new Paragraph({ text, heading: HeadingLevel.HEADING_2, spacing: { before: 280, after: 120 } });
@@ -334,7 +334,6 @@ function buildBody() {
     // TOC PAGE (body section already starts on a new page after the cover; no leading page break)
     new Paragraph({ text: 'Table of Contents', heading: HeadingLevel.HEADING_1, spacing: { before: 200, after: 240 } }),
     new TableOfContents('Table of Contents', { hyperlink: true, headingStyleRange: '1-2', stylesWithLevels: [{ styleId: 'Heading1', level: 1 }, { styleId: 'Heading2', level: 2 }] }),
-    pageBreak(),
 
     // ─── INTRODUCTION ───
     h1('Introduction'),
@@ -835,10 +834,9 @@ function buildBody() {
     bullet('Pull the breeder flock\'s IBD vaccination records and maternal antibody data for these chicks. Knowing what level of protection they came in with helps explain why things broke down when they did.'),
     bullet('Take a close look at your IBD vaccination timing for this flock. If maternal antibody levels were on the higher side, a live vaccine given too early can get neutralized before it does its job, leaving a gap right around 3 weeks of age.'),
     bullet('Get on top of the litter moisture and check your water lines for leaks or drips contributing to the wet spots.'),
-    pageBreak(),
 
-    // ─── SECTION 8 ───
-    h1('11. Farmer-Friendly Diagnostic Pathway'),
+    // ─── SECTION 11 ───
+    h1('11. Farmer-Friendly Diagnostic Pathway', { pageBreakBefore: true }),
     h2('11.1  When to Submit Samples'),
     para('Not every necropsy leads to a lab submission. But these situations always do:'),
     bullet('Daily mortality above 0.5% for two or more consecutive days without a known cause.'),
@@ -867,8 +865,6 @@ function buildBody() {
     bullet([{ text: 'Enlarged bursa with muscle hemorrhages:', bold: true }, { text: ' IBD. Notify your veterinarian and review maternal antibody data and vaccination timing. Check the rest of the flock for signs of immunosuppression, because other diseases often follow.' }]),
     bullet([{ text: 'Yellow yolk in the abdominal cavity:', bold: true }, { text: ' Egg peritonitis. Assess diet, body condition, and whether stressors (heat, handling, overcrowding) have been triggering follicular rupture or reverse peristalsis.' }]),
     bullet([{ text: 'Pale yellow friable liver with blood clot:', bold: true }, { text: ' FLHS. This is almost always a nutritional and management problem. Review body weight targets, feed energy, and whether hens are under-exercised.' }]),
-    ...image(fig11_3, 'Figure 11.1: Field diagnostic pathway connecting necropsy findings to immediate on-farm response. Use this flowchart at the necropsy table to guide your next steps while waiting for laboratory confirmation. Source: CPC Short Courses.'),
-    spacer(80),
     para('One last reminder, the same one we opened with. The necropsy and the diagnosis are your veterinarian\'s job first. The steps above buy you time and limit losses, but they do not replace a confirmed diagnosis, which takes the science, the experience, and the laboratory backup that your veterinarian brings. Whenever you can, send the dead birds or the samples to your veterinarian or the diagnostic lab, or have your veterinarian come to the farm in person. Opening birds yourself in the barn is the fallback, for the times when you cannot get samples away fast enough or no veterinarian can reach you. What this course gives you is the trained eye to recognize a serious lesion, describe it clearly, and know when to stop and call. Use it to be a sharper partner for your veterinarian, and let them make the final call.'),
     pageBreak(),
 
@@ -935,45 +931,45 @@ function buildBody() {
 // TOC ENTRIES
 // ============================================================
 const tocEntries = [
-  { lvl: 1, text: "Introduction", page: 4 },
-  { lvl: 1, text: "1. Purpose of Necropsy in Disease Diagnosis", page: 6 },
-  { lvl: 2, text: "1.1  How Necropsy Supports Early Detection", page: 6 },
-  { lvl: 2, text: "1.2  Linking Lesions to Flock History and Symptoms", page: 6 },
-  { lvl: 2, text: "1.3  When Necropsy Should Be Prioritized", page: 6 },
-  { lvl: 1, text: "2. Preparation and Biosecurity", page: 8 },
-  { lvl: 2, text: "2.1  Tools and Safety Precautions", page: 8 },
-  { lvl: 2, text: "2.2  Selecting Appropriate Birds", page: 8 },
-  { lvl: 2, text: "2.3  Sample Handling for Laboratory Submission", page: 8 },
-  { lvl: 1, text: "3. Acute vs Chronic Disease Lesions", page: 10 },
-  { lvl: 1, text: "4. Common Diseases in Meat Birds (Broilers)", page: 11 },
-  { lvl: 2, text: "4.1  Bacterial Diseases", page: 11 },
-  { lvl: 2, text: "4.2  Viral Diseases", page: 14 },
-  { lvl: 2, text: "4.3  Parasitic Conditions", page: 21 },
-  { lvl: 2, text: "4.4  Metabolic and Management Problems", page: 22 },
-  { lvl: 2, text: "4.5  Fungal Disease", page: 25 },
-  { lvl: 1, text: "5. Common Diseases in Layers and Breeders", page: 27 },
-  { lvl: 2, text: "5.1  Reproductive System Disorders", page: 27 },
-  { lvl: 2, text: "5.2  Bacterial Diseases", page: 28 },
-  { lvl: 2, text: "5.3  Viral Diseases", page: 30 },
-  { lvl: 2, text: "5.4  Nutritional and Metabolic Issues", page: 35 },
-  { lvl: 1, text: "6. Common Diseases in Ducks and Geese", page: 38 },
-  { lvl: 2, text: "6.1  Viral Diseases", page: 38 },
-  { lvl: 2, text: "6.2  Bacterial and Toxic Conditions", page: 40 },
-  { lvl: 1, text: "7. Common Diseases in Turkeys", page: 42 },
-  { lvl: 2, text: "7.1  Hemorrhagic Enteritis and Blackhead", page: 42 },
-  { lvl: 1, text: "8. Cross-Species Disease Concerns", page: 44 },
-  { lvl: 2, text: "8.1  Pigeon Paramyxovirus (PPMV-1)", page: 44 },
-  { lvl: 1, text: "9. Necropsy Lesion Recognition by Body System", page: 45 },
-  { lvl: 1, text: "10. Case Studies and Problem-Solving", page: 47 },
-  { lvl: 2, text: "10.1  Case 1: Broiler Mortality Spike at 28 Days", page: 47 },
-  { lvl: 2, text: "10.2  Case 2: Layer Flock with Mortality and Production Drop", page: 47 },
-  { lvl: 2, text: "10.3  Case 3: Sudden Mortality in Young Broilers at 3 Weeks", page: 48 },
-  { lvl: 1, text: "11. Farmer-Friendly Diagnostic Pathway", page: 50 },
-  { lvl: 2, text: "11.1  When to Submit Samples", page: 50 },
-  { lvl: 2, text: "11.2  What to Tell the Veterinarian or Diagnostic Lab", page: 50 },
-  { lvl: 2, text: "11.3  Using Necropsy Findings to Take Immediate Action", page: 51 },
-  { lvl: 1, text: "Recommended Journals and Resources", page: 53 },
-  { lvl: 1, text: "References", page: 54 },
+  { lvl: 1, text: "Introduction", page: 3 },
+  { lvl: 1, text: "1. Purpose of Necropsy in Disease Diagnosis", page: 5 },
+  { lvl: 2, text: "1.1  How Necropsy Supports Early Detection", page: 5 },
+  { lvl: 2, text: "1.2  Linking Lesions to Flock History and Symptoms", page: 5 },
+  { lvl: 2, text: "1.3  When Necropsy Should Be Prioritized", page: 5 },
+  { lvl: 1, text: "2. Preparation and Biosecurity", page: 7 },
+  { lvl: 2, text: "2.1  Tools and Safety Precautions", page: 7 },
+  { lvl: 2, text: "2.2  Selecting Appropriate Birds", page: 7 },
+  { lvl: 2, text: "2.3  Sample Handling for Laboratory Submission", page: 7 },
+  { lvl: 1, text: "3. Acute vs Chronic Disease Lesions", page: 9 },
+  { lvl: 1, text: "4. Common Diseases in Meat Birds (Broilers)", page: 10 },
+  { lvl: 2, text: "4.1  Bacterial Diseases", page: 10 },
+  { lvl: 2, text: "4.2  Viral Diseases", page: 13 },
+  { lvl: 2, text: "4.3  Parasitic Conditions", page: 20 },
+  { lvl: 2, text: "4.4  Metabolic and Management Problems", page: 21 },
+  { lvl: 2, text: "4.5  Fungal Disease", page: 24 },
+  { lvl: 1, text: "5. Common Diseases in Layers and Breeders", page: 26 },
+  { lvl: 2, text: "5.1  Reproductive System Disorders", page: 26 },
+  { lvl: 2, text: "5.2  Bacterial Diseases", page: 27 },
+  { lvl: 2, text: "5.3  Viral Diseases", page: 29 },
+  { lvl: 2, text: "5.4  Nutritional and Metabolic Issues", page: 34 },
+  { lvl: 1, text: "6. Common Diseases in Ducks and Geese", page: 37 },
+  { lvl: 2, text: "6.1  Viral Diseases", page: 37 },
+  { lvl: 2, text: "6.2  Bacterial and Toxic Conditions", page: 39 },
+  { lvl: 1, text: "7. Common Diseases in Turkeys", page: 41 },
+  { lvl: 2, text: "7.1  Hemorrhagic Enteritis and Blackhead", page: 41 },
+  { lvl: 1, text: "8. Cross-Species Disease Concerns", page: 43 },
+  { lvl: 2, text: "8.1  Pigeon Paramyxovirus (PPMV-1)", page: 43 },
+  { lvl: 1, text: "9. Necropsy Lesion Recognition by Body System", page: 44 },
+  { lvl: 1, text: "10. Case Studies and Problem-Solving", page: 46 },
+  { lvl: 2, text: "10.1  Case 1: Broiler Mortality Spike at 28 Days", page: 46 },
+  { lvl: 2, text: "10.2  Case 2: Layer Flock with Mortality and Production Drop", page: 46 },
+  { lvl: 2, text: "10.3  Case 3: Sudden Mortality in Young Broilers at 3 Weeks", page: 47 },
+  { lvl: 1, text: "11. Farmer-Friendly Diagnostic Pathway", page: 48 },
+  { lvl: 2, text: "11.1  When to Submit Samples", page: 48 },
+  { lvl: 2, text: "11.2  What to Tell the Veterinarian or Diagnostic Lab", page: 48 },
+  { lvl: 2, text: "11.3  Using Necropsy Findings to Take Immediate Action", page: 49 },
+  { lvl: 1, text: "Recommended Journals and Resources", page: 51 },
+  { lvl: 1, text: "References", page: 52 },
 ];
 
 // ============================================================
