@@ -263,3 +263,32 @@ Fowl Pox was named in the Section 9 skin/feather-follicle row but not covered in
 
 **Renumbering:** new ref at first-appearance position 31 (end of 5.3, after aMPV [30], before FLHS); old [31]-[41] -> [32]-[42]; bibliography auto-renumbers (30 aMPV, 31 Fowlpox, 32 FLHS ... 42 CFIA pigeon). In-text order contiguous 1-42.
 **TOC:** full refresh after this addition and the earlier redundancy cuts: 2.3 now p8, Section 6 onward +1 (References p53). 39 TOC rows = 39 hyperlinks = 39 bookmarks, 0 dirty flags, 0 em dashes.
+
+---
+
+## Full Claims Audit (2026-06-30): every quantitative/factual claim cross-checked against live cited sources
+
+User request: "go through the course and make sure that every claim is correct." Performed a number-by-number audit of ages, mortality rates, percentages, incubation periods, and lesion descriptions against the cited live Merck pages (and CPC profiles). The large majority verified exactly. The following were checked live and confirmed correct: NE 2-5 wk; DVH up to 95%; blackhead 80-100% + pathognomonic bullseye liver (up to 4 cm); Derzsy's goslings/Muscovy 2-4 wk + rounded pale heart + penguin-posture ascites; aspergillosis A. fumigatus 7-40 days + lung/air-sac granulomas; IBD 3-6 wk susceptibility + enlarge-then-atrophy + vvIBDV muscle hemorrhage; reovirus digital-flexor/gastrocnemius tendons + gastrocnemius rupture + malabsorption link; coccidiosis species/segment map; FLHS >40% liver fat; SDS cardiac finding; PPMV-1 Canada (1973 / June 2025 Fraser Valley); HPAI H5N1 since 2022 in BC/AB/MB/ON/QC.
+
+**Four claims corrected; two new Merck references added (in-text + bibliography renumbered 1-42 -> 1-44, first-appearance order verified contiguous):**
+
+| # | Claim (location) | Was | Now | Source basis |
+|---|---|---|---|---|
+| 1 | Marek's visceral mortality (Section 5.3, visceral-form bullet) | "10 to 70% mortality" cited to Merck [28] | "varies widely with strain and flock immune status, and can reach 40 to 80% in severe, poorly protected outbreaks" | Merck Marek's page states 40-80% (8-17 wk birds, severe outbreaks); the old 10-70% was not supported by the cited source |
+| 2 | Hemorrhagic enteritis age (Section 7.1) | "six to eleven weeks" | "six to twelve weeks" | Merck HE page: 6-12 wk (most common 7-9 wk) |
+| 3 | IBV incubation period (Section 4.2) | "18 to 36 hours" attributed to CPC IBV profile [8] | "usually within 24 to 48 hours of infection" cited to new Merck ref [9]; CPC [8] retained for respiratory-signs description | User decision: Merck more current than the local CPC profile. Merck Infectious Bronchitis page: 24-48 h |
+| 4 | IBD bursal atrophy timing (Section 4.2) | "Day 5 onward: bursa shrinks" cited to CPC IBD profile [9->10] | "Day 7 to 10 after infection: bursa atrophies and shrinks" cited to new Merck ref [11] | User decision: Merck more current. Merck IBD page: bursal atrophy ~7-10 days post-infection |
+
+**Two new references added (both fetched live, exact page titles confirmed):**
+- **[9] Merck Veterinary Manual. Infectious Bronchitis in Poultry.** merckvetmanual.com/poultry/infectious-bronchitis/infectious-bronchitis-in-poultry — VERIFIED 2026-06-30, incubation 24-48 h confirmed.
+- **[11] Merck Veterinary Manual. Infectious Bursal Disease in Poultry.** merckvetmanual.com/poultry/infectious-bursal-disease/infectious-bursal-disease-in-poultry — VERIFIED 2026-06-30, bursal atrophy 7-10 days post-infection confirmed.
+
+**Renumbering:** Merck IBV inserted at first-appearance position 9 (CPC IBV [8] now followed by Merck IBV [9]); Merck IBD at position 11 (CPC IBD now [10], Merck IBD [11]). Map: old 1-8 unchanged; old 9 (CPC IBD) -> 10; old >=10 -> +2 (Marek's 28->30, HE 40->42, CFIA pigeon 42->44). Verified: in-text first-appearance order contiguous 1-44; 44 bibliography entries; no orphans; photos 4.1-4.15, 5.1-5.11, 6.1-6.4, 7.1-7.2 all sequential; 0 em dashes; 0 w:dirty; all 39 TOC page numbers confirmed against fresh PDF render.
+
+**CPC notes:** The two CPC-profile figures (IBV incubation, IBD atrophy timing) were the only points where the local CPC disease profiles disagreed with current Merck values. Per user instruction, Merck (more up-to-date) was used and cited; the CPC profile citations were retained for the descriptive content they still support.
+
+---
+
+## Photo 4.15 replacement (2026-06-30): new Aspergillosis.jpg layout
+
+User replaced `Course 11/Aspergillosis.jpg` with a new 4-panel image; panel one changed from tracheal/syrinx exudate to lung nodules. Caption updated to match: "Caseous white nodules studding the lung in place (top left), white-to-yellow granulomas in the air sacs (top right), firm white nodules scattered through an excised lung (bottom left), and a cerebral granuloma in a disseminated case (bottom right)." Source unchanged: Elanco Broiler Disease Reference Guide; Diseases of Poultry, 14th ed.
