@@ -817,7 +817,7 @@ function buildBody() {
     bullet('Check ventilation, air speed, relative humidity, and litter moisture.'),
 
     h2('10.2  Case 2: Layer Flock with Mortality and Production Drop'),
-    para([{ text: 'Flock history:', bold: true }, { text: ' ISA Brown layers, 20,000 birds in conventional cages, 42 weeks old. Production fell 18% over 10 days. Ten to fifteen birds dying per day. Some birds have distended abdomens.' }]),
+    para([{ text: 'Flock history:', bold: true }, { text: ' Hy-Line Brown layers, 20,000 birds in conventional cages, 42 weeks old. Production fell 18% over 10 days. Ten to fifteen birds dying per day. Some birds have distended abdomens.' }]),
     para([{ text: 'Necropsy findings (8 birds):', bold: true }, { text: ' Distended abdomen with yellow-orange fluid and solid cooked-egg material in 6 of 8 birds. Inflamed oviduct with caseous exudate in 4 of 8. Pale, enlarged liver in 3 of 8. One bird had a swollen left sciatic nerve and 3 white liver nodules. Atretic ovarian follicles in most birds.' }]),
     para([{ text: 'What this tells us:', bold: true }, { text: ' Egg peritonitis and salpingitis are the primary findings, almost always driven by E. coli ascending the reproductive tract. The single bird with an enlarged sciatic nerve and white liver nodules is the classic gross picture of Marek\'s disease. The key question is not whether Marek\'s virus is present, because in a commercial flock it almost certainly is. The real question is whether the vaccination program gave these birds adequate protection.' }]),
     para([{ text: 'Next steps:', bold: true }]),
