@@ -835,8 +835,6 @@ function buildBody() {
     bullet('Pull the breeder flock\'s IBD vaccination records and maternal antibody data for these chicks. Knowing what level of protection they came in with helps explain why things broke down when they did.'),
     bullet('Take a close look at your IBD vaccination timing for this flock. If maternal antibody levels were on the higher side, a live vaccine given too early can get neutralized before it does its job, leaving a gap right around 3 weeks of age.'),
     bullet('Get on top of the litter moisture and check your water lines for leaks or drips contributing to the wet spots.'),
-    spacer(60),
-    para('These cases are based on common field presentations in Canadian commercial poultry and are consistent with Merck Veterinary Manual guidance, CPC Learning Centre disease profiles, and Canadian diagnostic laboratory practice.'),
     pageBreak(),
 
     // ─── SECTION 8 ───
