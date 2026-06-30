@@ -292,3 +292,15 @@ User request: "go through the course and make sure that every claim is correct."
 ## Photo 4.15 replacement (2026-06-30): new Aspergillosis.jpg layout
 
 User replaced `Course 11/Aspergillosis.jpg` with a new 4-panel image; panel one changed from tracheal/syrinx exudate to lung nodules. Caption updated to match: "Caseous white nodules studding the lung in place (top left), white-to-yellow granulomas in the air sacs (top right), firm white nodules scattered through an excised lung (bottom left), and a cerebral granuloma in a disseminated case (bottom right)." Source unchanged: Elanco Broiler Disease Reference Guide; Diseases of Poultry, 14th ed.
+
+---
+
+## Photo 8.1 added (2026-06-30): PPMV-1 in pigeons + Section 9 skin-row AI addition
+
+**Photo 8.1** added to Section 8.1 after the PPMV-1 "Lesions" bullet: `Course 11/ppmv1.jpg`, a 4-panel image (nervous-sign torticollis posture in pigeons, left; spinal-cord hemorrhage cross-sections, right). Caption sources: CEVA Handbook of Poultry Diseases; Oltramari de Souza et al., Pesq Vet Bras 2018.
+
+- **Photo-source paper VERIFIED real (2026-06-30):** Oltramari de Souza S, Fredo G, Dupont P, Viana Leite Filho R, Teifke J, Petinatti Pavarini S, Canal C, Driemeier D. "Pathological and molecular findings of avian avulavirus type 1 outbreak in pigeons (Columba livia) of southern Brazil." Pesq Vet Bras. 2018;38(12):2254-61. doi:10.1590/1678-5150-PVB-5528 — confirmed on SciELO Brazil (scielo.br/j/pvb) and UFRGS Lume repository. NOTE: user supplied the year as 2019; the actual publication is volume 38 = **2018**, so the caption uses 2018 (corrected for accuracy). This is a photo-source attribution in the caption only, not a numbered bibliography entry (consistent with all other photo sources in the course), so no citation renumbering.
+
+**Section 9 lesion table — skin/feather-follicle row:** added AI to the differentials and "hemorrhages on shank and foot skin" to the abnormal-finding column (AI's skin sign is the shank/foot hemorrhage, not feather-follicle change). Row now: Disease(s) to Consider = "Marek's (cutaneous), Fowl Pox, AI". No reference change.
+
+**Verification:** photos sequential 4.1-4.15, 5.1-5.11, 6.1-6.4, 7.1-7.2, 8.1; refs 1-44 contiguous, no orphans; all 39 TOC page numbers correct against fresh PDF render; 0 em dashes; 0 w:dirty.

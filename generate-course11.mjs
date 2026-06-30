@@ -327,6 +327,7 @@ function buildBody() {
   const photoEgg    = figBuf('egg peritonitis.jpg');
   const photoSalp   = figBuf('Salpingitis.png');
   const photoFC     = figBuf('Fowl-cholera.jpg');
+  const photoPPMV   = figBuf('ppmv1.jpg');
   const photoMGMS   = figBuf('MG-MS.jpg');
 
   return [
@@ -766,6 +767,7 @@ function buildBody() {
     para('For Canadian context: virulent Newcastle disease had been absent from Canada since 1973, but in June 2025 the CFIA confirmed PPMV-1 in commercial squab pigeon farms in British Columbia\'s Fraser Valley, the first Canadian case in over fifty years [44].'),
     bullet([{ text: 'Signs:', bold: true }, { text: ' Nervous signs dominate, including a twisted neck (torticollis), trembling, and wings or legs that do not work right, along with greenish watery droppings.' }]),
     bullet([{ text: 'Lesions:', bold: true }, { text: ' As with other Newcastle-type infections, gross lesions can be sparse. The pancreas may show focal necrosis. The diagnosis leans on the nervous signs, flock history, and lab testing.' }]),
+    ...image(photoPPMV, 'Photo 8.1: Pigeon paramyxovirus (PPMV-1) in pigeons. Nervous signs, including the twisted-neck (torticollis) posture (left), and cross-sections of the spinal column showing hemorrhage in and around the spinal cord (right). Source: CEVA Handbook of Poultry Diseases; Oltramari de Souza et al., Pesq Vet Bras 2018.', 5.9),
     para('Because PPMV-1 is so closely related to Newcastle disease virus, a suspicious nervous-disease outbreak gets the same response: call your veterinarian and let the lab confirm it. Keeping wild pigeons out of feed and barns is the practical control [12].'),
     pageBreak(),
 
@@ -792,7 +794,7 @@ function buildBody() {
         ['Abdominal cavity', 'No free fluid', 'Straw fluid (ascites); yolk material (egg peritonitis); caseous material', 'Ascites, Egg Peritonitis, Yolk Sacculitis'],
         ['Oviduct', 'Thin-walled, normal lumen', 'Caseous exudate; impacted; inflamed wall; cystic (fluid-filled) oviduct', 'Salpingitis, IBV'],
         ['Ovary', 'Orderly cluster of developing yellow follicles', 'Hemorrhagic, regressed, or atretic follicles; ruptured follicles; tumor nodules', 'ND, AI, Marek\'s Disease, Fowl Cholera, Egg Peritonitis'],
-        ['Skin and feather follicles', 'Smooth, flat follicles', 'Enlarged reddened follicles; hemorrhagic or necrotic patches', 'Marek\'s (cutaneous), Fowl Pox'],
+        ['Skin and feather follicles', 'Smooth, flat follicles', 'Enlarged reddened follicles; hemorrhagic or necrotic patches; hemorrhages on shank and foot skin', 'Marek\'s (cutaneous), Fowl Pox, AI'],
         ['Hock and foot pad joints', 'Smooth, clear joint fluid', 'Swollen joint with cream exudate; swollen tendon sheaths', 'Mycoplasma synoviae (MS), Reovirus'],
         ['Bone (cross-section)', 'Thick, hard cortex', 'Thin cortex, fragile, cancellous replacement', 'Calcium deficiency, cage layer fatigue'],
         ['Skeletal muscles (breast/thigh)', 'Firm, pink, no hemorrhage', 'Ecchymotic hemorrhages in muscle', 'IBD'],
