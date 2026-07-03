@@ -402,6 +402,7 @@ function buildBody() {
     bullet('For serology and virology: whole blood in a red-top tube (no anticoagulant) or tracheal/cloacal swabs in viral transport media.'),
     bullet('Include a completed submission form with the full flock history. Section 11.2 lists exactly what to put on it.'),
     para('The CFIA maintains a list of approved animal health diagnostic laboratories across Canada [3]. Your veterinarian will know which lab serves your region and what specific submission protocols apply.'),
+    para('The table below pulls this together. It matches each sample type to the test it feeds and what that test can confirm, so you can decide what to collect before anything ships to the lab.'),
     spacer(80),
     lesionTable(
       ['Sample Type', 'Diagnostic Test', 'Pathogen / Condition Identified'],
