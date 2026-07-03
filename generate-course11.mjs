@@ -375,8 +375,8 @@ function buildBody() {
     bullet('Two or more consecutive days of rising mortality without a clear cause.'),
     bullet('Birds dying with unusual neurological signs: head shaking, star-gazing, circling, or wing paralysis.'),
     bullet('Sudden drop in feed or water intake without a management explanation.'),
-    bullet('Any bird showing facial swelling, cyanosis of the comb and wattles, or hemorrhages on unfeathered skin. These are Avian Influenza red flags. Stop, call your veterinarian, and do not open the bird until you have guidance.'),
     bullet('Pre-slaughter weight checks that fall short: high coefficient of variation or poor uniformity often traces back to a disease event that necropsy can identify.'),
+    para([{ text: 'One red flag is the exception to this whole list. ', bold: true }, { text: 'If you see facial swelling, a blue-purple (cyanotic) comb and wattles, or hemorrhages on the unfeathered skin of the shanks and feet, do not open the bird. These are Avian Influenza warning signs. Stop, keep the barn secured, and call your veterinarian right away. Avian Influenza is reportable, and the CFIA has to be involved before anyone opens a bird.' }]),
     para('Opening five to six fresh, recently dead or euthanized birds gives you a representative picture of what is happening in the flock. One or two birds is not enough to trust. A single bird can show a problem that belongs to that one bird alone, not the flock. The lesions you can act on are the ones that repeat. On a larger operation, keep opening birds, often ten to twenty depending on flock size, until a clear, dominant pattern shows up across the birds you examine. When the same picture keeps appearing bird after bird, that consistent pattern is your real flock-level finding. When the findings stay scattered and inconsistent, keep going, or get your veterinarian and the diagnostic lab involved before you draw any conclusion.'),
     pageBreak(),
 
