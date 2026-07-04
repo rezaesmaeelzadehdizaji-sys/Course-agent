@@ -304,3 +304,13 @@ User replaced `Course 11/Aspergillosis.jpg` with a new 4-panel image; panel one 
 **Section 9 lesion table — skin/feather-follicle row:** added AI to the differentials and "hemorrhages on shank and foot skin" to the abnormal-finding column (AI's skin sign is the shank/foot hemorrhage, not feather-follicle change). Row now: Disease(s) to Consider = "Marek's (cutaneous), Fowl Pox, AI". No reference change.
 
 **Verification:** photos sequential 4.1-4.15, 5.1-5.11, 6.1-6.4, 7.1-7.2, 8.1; refs 1-44 contiguous, no orphans; all 39 TOC page numbers correct against fresh PDF render; 0 em dashes; 0 w:dirty.
+
+---
+
+## Addition (2026-07-03): H5N2/H5N5 Canadian subtypes + ref [15] CFIA Facts
+
+User flagged that H5N2 and H5N5 are now also present in Canada (H5N1 still dominant). Added a sentence to the AI section (4.2) after the H5N1 provinces line: H5N2 confirmed in BC poultry Nov 8 2024 (first Canadian detection), H5N5 in Newfoundland and Labrador poultry Feb 12 2025; all three share the H5 gene, are highly pathogenic, cause the same clinical picture, and get the same CFIA response.
+
+- **[15] Canadian Food Inspection Agency. Facts about avian influenza.** inspection.canada.ca/en/animal-health/terrestrial-animals/diseases/reportable/avian-influenza/facts-about-avian-influenza [cited 2026 Jul] - VERIFIED LIVE 2026-07-03: page confirms H5N2 (Nov 8 2024, BC, first Canadian detection), H5N5 (Feb 12 2025, NL), H5N1 predominant, and that H5N2/H5N5 share the H gene with H5N1 and are highly pathogenic. All course-stated facts match the source verbatim.
+
+**Renumbering:** new ref inserted at first-appearance position 15 (AI subtypes sentence in 4.2, right after CFIA AI-status ref [14]). Body in-text [N] with N>=15 cascaded +1; bibliography auto-numbered by position (14 CFIA status-by-province, 15 CFIA Facts, 16 CPC IBH ... 45 CFIA pigeon notice). Verified: in-text first-appearance order contiguous 1-45, 45 bib entries, no orphans; all 39 TOC pages correct; 55 pages, 0 blank; 0 em dashes; 0 w:dirty.
