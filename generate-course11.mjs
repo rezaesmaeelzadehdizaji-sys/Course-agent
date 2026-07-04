@@ -547,7 +547,7 @@ function buildBody() {
     bullet([{ text: 'Ascaridia galli', bold: true }, { text: ' (large roundworm): Cream-colored worms 5 to 10 cm long in the small intestine lumen. Heavy burdens cause intestinal thickening, reduced feed efficiency, and competition for nutrients.' }]),
     bullet([{ text: 'Heterakis gallinarum', bold: true }, { text: ' (cecal worm): Small worms in the ceca. Clinically mild in themselves, but important as the vector for Histomonas meleagridis (blackhead in turkeys).' }]),
     bullet([{ text: 'Capillaria', bold: true }, { text: ' (hairworms): Very fine worms embedded in the mucosal surface of the upper intestine or crop. Cause mucosal thickening and erosion. Easy to miss without careful scraping of the mucosa.' }]),
-    ...image(photoWorms, 'Photo 4.11: Internal parasites seen at necropsy. Masses of large Ascaridia roundworms in the opened small intestine (top left), fine thread-like Capillaria hairworms (bottom left), and small Heterakis cecal worms in the opened cecum (right). Source: Elanco Broiler Disease Reference Guide; Aviagen; Chicken Scratch (The Foundry), cs-tf.com.', 5.9),
+    ...image(photoWorms, 'Photo 4.11: Internal parasites seen at necropsy. Masses of large Ascaridia roundworms in the opened small intestine (top left), fine thread-like Capillaria hairworms (bottom left), and small Heterakis cecal worms in the opened cecum (right). Source: Elanco Broiler Disease Reference Guide; Aviagen; Chicken Scratch (The Foundry, cs-tf.com).', 5.9),
     para('Worm identification at necropsy is largely visual. Collect a segment of affected intestine with the parasites inside for laboratory confirmation.'),
 
     h2('4.4  Metabolic and Management Problems'),
