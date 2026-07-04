@@ -603,7 +603,7 @@ function buildBody() {
     bullet([{ text: 'Oviduct:', bold: true }, { text: ' Thickened, inflamed walls. The lumen contains yellow or white caseous exudate instead of normal secretions. In severe cases the entire oviduct is packed solid with pus or necrotic material (a "lash egg").' }]),
     bullet([{ text: 'Impacted oviduct:', bold: true }, { text: ' The oviduct fills with a large mass of albumin, yolk, and inflammatory debris. The bird stops laying but the abdomen becomes enlarged. This is a chronic end-stage presentation.' }]),
     bullet([{ text: 'Bacterial involvement:', bold: true }, { text: ' E. coli, ' }, { text: 'Mycoplasma', italics: true }, { text: ', Salmonella, and Pasteurella are all associated with salpingitis. Swab the oviduct contents for culture to identify the primary organism.' }]),
-    ...image(photoSalp, 'Photo 5.2: Salpingitis in a laying hen. The opened oviduct is inflamed and lined with yellow caseous exudate instead of normal secretions (left), and in a severe case the oviduct is packed with a large mass of cheesy, layered material (right). Source: Diseases of Poultry, 14th ed.', 5.5),
+    ...image(photoSalp, 'Photo 5.2: Salpingitis in a laying hen. The opened oviduct is inflamed and full of yellow caseous pus rather than normal secretions (left), and in a severe case it is packed with a large mass of cheesy, layered material, a "lash egg" (right). Source: Diseases of Poultry, 14th ed.', 5.5),
 
     h2('5.2  Bacterial Diseases'),
     para([{ text: 'Fowl Cholera (', bold: true }, { text: 'Pasteurella multocida', italics: true }, { text: ')', bold: true }]),
