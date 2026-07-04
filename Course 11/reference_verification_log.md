@@ -365,3 +365,15 @@ Added to the fowl cholera acute-form bullet: "In laying hens, the ovary is infla
 - VERIFIED against Diseases of Poultry (via The Poultry Site), ScienceDirect, and Merck: "In turkeys a common finding is the unilateral or bilateral croupous pleuropneumonia"; "In layers... acute oophoritis with regressing follicles." Cited to the existing Diseases of Poultry ref.
 
 **Renumbering:** Diseases of Poultry now first appears in fowl cholera (5.2), earlier than its previous first use in Marek's (5.3), so it was renumbered from 33 to 30 and physically moved after CPC Fowl Cholera [29]. Localized shift only: MG 30->31, MS 31->32, Marek's 32->33; all other refs unchanged. Verified: in-text first-appearance order contiguous 1-47, no orphans; bibliography entry 30 = Diseases of Poultry (direct extraction confirmed); all 39 TOC pages correct; 56 pages 0 blank; 0 em dashes; 0 w:dirty.
+
+---
+
+## Addition (2026-07-04): Staphylococcosis section (4.1) + refs [9,10]
+
+After investigating importance (BCO/femoral head necrosis is "the most common cause of lameness in broiler chickens" per Merck Infectious Skeletal Disorders and the Avian Pathology review; S. aureus ~51% of arthritis isolates in field studies), added a short Staphylococcosis section to Section 4.1 Bacterial Diseases (after Omphalitis). Covers: septic arthritis/synovitis (MS/reovirus differential), femoral head necrosis/BCO, bumblefoot, gangrenous dermatitis, acute septicemic form (green liver, big spleen).
+
+Two new refs (both verified live 2026-07-04):
+- **[9] Merck Veterinary Manual. Staphylococcosis in Poultry.** merckvetmanual.com/poultry/staphylococcosis/staphylococcosis-in-poultry - confirms S. aureus, bumblefoot, omphalitis (green doughy yolk), arthritis/osteomyelitis of femoral head/tibiotarsus, gangrenous dermatitis (mixed with Clostridium/E. coli), septicemic form green liver/spleen in old layers.
+- **[10] Merck Veterinary Manual. Infectious Skeletal Disorders in Poultry.** merckvetmanual.com/poultry/disorders-of-the-skeletal-system-in-poultry/infectious-skeletal-disorders-in-poultry - "femoral head necrosis, which is the most common cause of lameness in broiler chickens"; S. aureus and E. coli frequent causes (multifactorial, so course says staph is the usual culprit but E. coli/Enterococcus can also seed the bone).
+
+**Renumbering:** two refs inserted at first-appearance position 9,10 (staph intro in 4.1, after Omphalitis [8], before IBV). All body [N] with N>=9 cascaded +2; bibliography now 49 entries. Verified: in-text first-appearance order contiguous 1-49, no orphans; Staphylococcus aureus full binomial added to species-italics list (now italic); all 39 TOC pages correct; 56 pages 0 blank; 0 em dashes; 0 w:dirty. Photos unchanged (4.1-4.15) - PHOTO 4.5 RESERVED for the staph image the user will supply; adding it will shift Photos 4.5-4.15 to 4.6-4.16.
