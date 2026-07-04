@@ -327,3 +327,21 @@ Restored, cited to the existing coccidiosis reference (no new ref, no renumber):
 - Case 1 necropsy findings: "orange-pink fluid in 2 birds" (was "blood-tinged fluid"), consistent with the case's E. maxima interpretation.
 
 Verified: refs 1-45 contiguous, all 39 TOC pages correct, 55 pages 0 blank, 0 em dashes, 0 w:dirty.
+
+---
+
+## Systematic hallmark-lesion audit (2026-07-03): 3 classic descriptors added + Marek's miscount fixed
+
+After the coccidiosis gaps (E. maxima orange fluid, E. necatrix salt-and-pepper) were caught by the user, ran a full pathognomonic/hallmark-term sweep across every disease. Genuine gaps found and fixed (each verified against an authoritative source before adding):
+
+1. **Necrotic enteritis "Turkish towel" mucosa** - NOT in the cited Merck NE page (Merck says "tan to yellow pseudomembrane, diphtheritic-like"), so cited to a new source: Penn State Extension Avian Necrotic Enteritis (also confirmed by The Poultry Site and AAAP/Abdul-Aziz). Added to the NE pseudomembrane bullet.
+2. **Marek's ocular form ("grey eye")** - the photo already showed it (CPC), but the body text omitted it AND said "two distinct lesion patterns" while listing three (neural/visceral/cutaneous). Fixed to "several," and added an Ocular form bullet: iris fades orange-red to gray, irregular/eccentric pupil, unequal eyes, partial/total blindness, older birds. Not on the current Merck Marek's page, so cited to Diseases of Poultry, 14th ed. (Swayne et al.), the standard text already in the CPC library. Corroborated by ScienceDirect, PMC, Engormix ("Gray Eye").
+3. **SDS "found dead on their backs"** - classic field sign confirmed verbatim on the existing Merck SDS page ("frequently flip onto their backs ... rare in death from other causes"). Added to the SDS intro; cited to the existing SDS reference, no new ref.
+
+**Two new references added:**
+- **[7] Penn State Extension. Avian Necrotic Enteritis.** extension.psu.edu/avian-necrotic-enteritis [cited 2026 Jul] - VERIFIED via search; university extension source using the "Turkish towel" descriptor.
+- **[33] Swayne DE, et al., editors. Diseases of Poultry. 14th ed. Hoboken (NJ): Wiley-Blackwell; 2020.** - standard poultry disease textbook, in the CPC library; covers ocular Marek's.
+
+**Renumbering:** Penn State inserted at first-appearance position 7 (NE section); Diseases of Poultry at 33 (right after Merck Marek's, orig 31 -> 32). Map: orig <=6 same; 7-31 -> +1; >=32 -> +2. Verified: in-text first-appearance order contiguous 1-47, 47 bib entries, no orphans; all 39 TOC pages correct; 56 pages, 0 blank; 0 em dashes; 0 w:dirty.
+
+Full hallmark coverage now confirmed across all ~30 diseases (triad, false layers, bursal swell-then-atrophy, proventricular hemorrhage, greasy friable liver, tendon rupture/helicopter, nutmeg liver, lash egg, cream joint exudate, neural asymmetry + grey eye, bloody trachea, annular bands + paint-brush, opisthotonos, penguin/rounded-pale-heart, limberneck/no-lesions, mottled friable spleen, bullseye liver + cecal cores, salt-and-pepper, orange E. maxima fluid).
