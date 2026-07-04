@@ -431,7 +431,7 @@ function buildBody() {
     h2('4.1  Bacterial Diseases'),
 
     para([{ text: 'Colibacillosis (', bold: true }, { text: 'E. coli' }, { text: ')', bold: true }]),
-    para('Colibacillosis is the most common bacterial septicemia in commercial broilers and the single most frequent reason for condemnation at the processing plant [4]. The CPC Learning Centre Colibacillosis disease profile identifies the classic lesion triad: airsacculitis, pericarditis, and perihepatitis [4]. At the necropsy table you will see:'),
+    para('Colibacillosis, also called colisepticemia, is the most common bacterial septicemia in commercial broilers and the single most frequent reason for condemnation at the processing plant [4]. The CPC Learning Centre Colibacillosis disease profile identifies the classic lesion triad: airsacculitis, pericarditis, and perihepatitis [4]. At the necropsy table you will see:'),
     bullet([{ text: 'Air sacs:', bold: true }, { text: ' Cloudy, thickened, with yellow-white foamy or creamy exudate. In mild cases, the air sac is slightly hazy. In severe cases, it is packed with caseous material.' }]),
     bullet([{ text: 'Pericardium:', bold: true }, { text: ' White fibrin plaques on the heart surface, excess fluid in the pericardial sac. In chronic cases the fibrin becomes adherent and rubber-like.' }]),
     bullet([{ text: 'Liver:', bold: true }, { text: ' Yellow-white fibrin coating the liver surface (perihepatitis). In septicemic cases the liver is dark, swollen, and friable.' }]),
