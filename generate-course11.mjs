@@ -514,6 +514,7 @@ function buildBody() {
     bullet([{ text: 'Kidneys:', bold: true }, { text: ' Swollen and pale.' }]),
     bullet([{ text: 'Carcass:', bold: true }, { text: ' Pale, anemic muscles in some birds.' }]),
     ...image(photoIBH, 'Photo 4.9: Inclusion body hepatitis lesions. A swollen, pale, friable liver with hemorrhages and pale necrotic foci, shown in two birds (top left and right), and swollen kidneys (bottom left). The greasy yellow, easily torn liver is the lesion that points you toward IBH. Source: CPC Learning Centre.', 5.9),
+    para('The name comes from what the lab sees under the microscope: basophilic intranuclear inclusion bodies inside the liver cells. Those inclusions confirm the diagnosis, so send fresh liver for histology [18].'),
 
     spacer(40),
     para([{ text: 'Reovirus (Viral Arthritis / Tenosynovitis)', bold: true }]),
