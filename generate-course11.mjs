@@ -308,6 +308,7 @@ function buildBody() {
   const photoColi   = figBuf('Colibacillosis.jpg');
   const photoAir    = figBuf('airsacculitis.jpg');
   const photoOmph   = figBuf('Omphalitis.jpg');
+  const photoStaph  = figBuf('Staph.jpg');
   const photoIBV    = figBuf('IBV-broiler.jpg');
   const photoNE     = figBuf('NE.jpg');
   const photoBursa  = figBuf('IBD.jpg');
@@ -474,6 +475,7 @@ function buildBody() {
     bullet([{ text: 'Bumblefoot (pododermatitis):', bold: true }, { text: ' A swollen, hot footpad with a dark scab over a pocket of caseous pus underneath. Heavier birds and males are hit hardest.' }]),
     bullet([{ text: 'Gangrenous dermatitis:', bold: true }, { text: ' Dark red to green-black, wet, crackly skin over the wings, thighs, or breast, sometimes with gas trapped under it. Staph teams up with Clostridium and E. coli here, and it moves fast.' }]),
     bullet([{ text: 'Acute septicemic form:', bold: true }, { text: ' Sudden deaths with a green-tinged, swollen liver and an enlarged spleen. Seen most in old layers and breeders.' }]),
+    ...image(photoStaph, 'Photo 4.5: Staphylococcosis lesions. Excessive synovial fluid in an opened joint (top left), bilateral femoral head necrosis (top center) and osteomyelitis in a cut long bone (top right), green discoloration of the liver in the septicemic form (bottom left), gangrenous dermatitis over the body wall (bottom center), and bumblefoot with dark scabs over the footpads (bottom right). Source: Merck Veterinary Manual (merckvetmanual.com); Diseases of Poultry, 14th ed.; Elanco Broiler Disease Reference Guide.', 5.9),
     para('Staph, MS, and reovirus can all give you a swollen joint, so the joint alone confirms nothing. Culture the joint fluid or bone to pin down staph [9].'),
 
     h2('4.2  Viral Diseases'),
@@ -481,7 +483,7 @@ function buildBody() {
     para('The CPC Learning Centre IBV disease profile describes the primary respiratory signs in young birds [11]. Signs come on fast, usually within 24 to 48 hours of infection [12]. The necropsy reflects the form of IBV involved:'),
     bullet([{ text: 'Respiratory form:', bold: true }, { text: ' Mucus and exudate in the trachea and bronchi. Air sacs cloudy and thickened. In young birds the tracheal mucosa is congested and reddened. Sinuses may be swollen and full of mucus.' }]),
     bullet([{ text: 'Renal form:', bold: true }, { text: ' Swollen, pale kidneys with white urate deposits in the tubules. Ureters distended. Gout-like deposits on visceral surfaces in severe cases. Mortality in the renal form can reach 25% in susceptible young flocks [11].' }]),
-    ...image(photoIBV, 'Photo 4.5: Infectious bronchitis in broilers. A swollen, wet face and sinus with open-mouth breathing (left), and the renal form with swollen, pale, mottled kidneys studded with white urate deposits in the abdomen (top right). The opened trachea is congested and reddened with mucoid exudate (bottom). Source: Picture Book of Infectious Poultry Diseases (FAO-CEVA); Important Poultry Diseases, Intervet; CEVA Handbook of Poultry Diseases.', 5.9),
+    ...image(photoIBV, 'Photo 4.6: Infectious bronchitis in broilers. A swollen, wet face and sinus with open-mouth breathing (left), and the renal form with swollen, pale, mottled kidneys studded with white urate deposits in the abdomen (top right). The opened trachea is congested and reddened with mucoid exudate (bottom). Source: Picture Book of Infectious Poultry Diseases (FAO-CEVA); Important Poultry Diseases, Intervet; CEVA Handbook of Poultry Diseases.', 5.9),
     para('At necropsy, always check the kidneys in addition to the respiratory tract. The renal form can appear with minimal respiratory signs and is easily missed without a thorough organ check.'),
 
     spacer(40),
@@ -492,7 +494,7 @@ function buildBody() {
     bullet([{ text: 'Muscle hemorrhages:', bold: true }, { text: ' Ecchymotic (blotchy) hemorrhages in the breast and thigh muscles. This is one of the most visible gross findings.' }]),
     bullet([{ text: 'Proventriculus-gizzard junction:', bold: true }, { text: ' Hemorrhages at the mucosal junction between proventriculus and gizzard.' }]),
     bullet([{ text: 'Kidneys:', bold: true }, { text: ' Enlarged with urate deposits in tubules, similar to the IBV renal form.' }]),
-    ...image(photoBursa, 'Photo 4.6: The range of IBD lesions. Hemorrhages in the thigh and breast muscle (top left) and at the proventriculus-gizzard junction (top center), a swollen versus a hemorrhagic bursa side by side (top right), a greatly swollen Bursa of Fabricius (bottom left), and a hemorrhagic bursa alongside enlarged kidneys studded with urate deposits (bottom right). The bursa is the first place to look in any young bird you suspect of IBD. Source: CEVA Handbook of Poultry Diseases; Diseases of Poultry, 14th ed.', 5.9),
+    ...image(photoBursa, 'Photo 4.7: The range of IBD lesions. Hemorrhages in the thigh and breast muscle (top left) and at the proventriculus-gizzard junction (top center), a swollen versus a hemorrhagic bursa side by side (top right), a greatly swollen Bursa of Fabricius (bottom left), and a hemorrhagic bursa alongside enlarged kidneys studded with urate deposits (bottom right). The bursa is the first place to look in any young bird you suspect of IBD. Source: CEVA Handbook of Poultry Diseases; Diseases of Poultry, 14th ed.', 5.9),
 
     spacer(40),
     para([{ text: 'Newcastle Disease (ND)', bold: true }]),
@@ -500,7 +502,7 @@ function buildBody() {
     bullet([{ text: 'Velogenic viscerotropic ND:', bold: true }, { text: ' The most severe form. Hemorrhages at the proventricular mucosa (especially at the junction with the gizzard), cecal tonsils, and Peyer\'s patches. Necrotic plaques on the intestinal mucosa. Petechiae on serous membranes. This is the presentation you report to your veterinarian immediately.' }]),
     bullet([{ text: 'Velogenic neurotropic ND:', bold: true }, { text: ' Nervous signs dominate: torticollis (twisted neck), wing paralysis, tremors, and star-gazing. Gross lesions in the brain are subtle (meningeal hyperemia and mild petechiae). The clinical signs are the diagnostic clue here.' }]),
     bullet([{ text: 'Mesogenic / Lentogenic ND:', bold: true }, { text: ' Mild respiratory disease. Lesions are limited to congestion and mucoid exudate in the trachea and slight air sac haze. Low mortality. Most commercial flocks with proper vaccination do not progress beyond this.' }]),
-    ...image(photoND, 'Photo 4.7: The range of virulent Newcastle disease lesions. Torticollis, the twisted-neck nervous sign, in a live bird (top left), pinpoint hemorrhages on the proventricular glands (top center), hemorrhagic and necrotic tracheal mucosa (top right), hemorrhages on the intestinal serosa (bottom left), and bleeding cecal tonsils (bottom center and right). The proventricular hemorrhages are among the most diagnostic lesions of the viscerotropic form. Source: CEVA Handbook of Poultry Diseases; Diseases of Poultry, 14th ed.', 5.9),
+    ...image(photoND, 'Photo 4.8: The range of virulent Newcastle disease lesions. Torticollis, the twisted-neck nervous sign, in a live bird (top left), pinpoint hemorrhages on the proventricular glands (top center), hemorrhagic and necrotic tracheal mucosa (top right), hemorrhages on the intestinal serosa (bottom left), and bleeding cecal tonsils (bottom center and right). The proventricular hemorrhages are among the most diagnostic lesions of the viscerotropic form. Source: CEVA Handbook of Poultry Diseases; Diseases of Poultry, 14th ed.', 5.9),
     para('Peracute Newcastle deaths may have no gross lesions at all. If you have unexplained rapid mortality in a well-vaccinated flock, Newcastle is on the differential alongside Avian Influenza. Both require immediate veterinary contact.'),
 
     spacer(40),
@@ -514,7 +516,7 @@ function buildBody() {
     bullet('Hemorrhages or petechiae on the skin of the shanks and feet.'),
     bullet('Hemorrhages in the trachea, proventriculus, and on serosal surfaces.'),
     bullet('Birds dying peracutely with no obvious gross lesions at all.'),
-    ...image(photoAI, "Photo 4.8: The hemorrhagic picture of highly pathogenic avian influenza. Facial swelling (top left), a cyanotic (blue-purple) comb and wattle (top center), and hemorrhages on the shanks and feet (top right), along with bleeding across the internal organs: trachea, proventriculus, heart, pancreas, and intestinal Peyer's patches. No single lesion confirms AI, but this combination with sudden high mortality is a stop-and-call-the-veterinarian picture. Source: Diseases of Poultry, 14th ed.; Picture Book of Infectious Poultry Diseases (FAO-CEVA); CEVA Handbook of Poultry Diseases; ASA Handbook on Poultry Diseases.", 5.9),
+    ...image(photoAI, "Photo 4.9: The hemorrhagic picture of highly pathogenic avian influenza. Facial swelling (top left), a cyanotic (blue-purple) comb and wattle (top center), and hemorrhages on the shanks and feet (top right), along with bleeding across the internal organs: trachea, proventriculus, heart, pancreas, and intestinal Peyer's patches. No single lesion confirms AI, but this combination with sudden high mortality is a stop-and-call-the-veterinarian picture. Source: Diseases of Poultry, 14th ed.; Picture Book of Infectious Poultry Diseases (FAO-CEVA); CEVA Handbook of Poultry Diseases; ASA Handbook on Poultry Diseases.", 5.9),
     para('If you open a bird and see this combination, close the bird, secure the barn, and call your veterinarian immediately. Do not move any birds or equipment off the farm. Highly pathogenic AI is a federally reportable disease in Canada, and the response protocol requires CFIA involvement [3,16].'),
 
     spacer(40),
@@ -523,7 +525,7 @@ function buildBody() {
     bullet([{ text: 'Liver:', bold: true }, { text: ' Swollen, pale, and very friable, so it tears easily when you lift it. Pinpoint to blotchy hemorrhages and pale necrotic foci are scattered through it. The liver often looks yellow and greasy.' }]),
     bullet([{ text: 'Kidneys:', bold: true }, { text: ' Swollen and pale.' }]),
     bullet([{ text: 'Carcass:', bold: true }, { text: ' Pale, anemic muscles in some birds.' }]),
-    ...image(photoIBH, 'Photo 4.9: Inclusion body hepatitis lesions. A swollen, pale, friable liver with hemorrhages and pale necrotic foci, shown in two birds (top left and right), and swollen kidneys (bottom left). The greasy yellow, easily torn liver is the lesion that points you toward IBH. Source: CPC Learning Centre.', 5.9),
+    ...image(photoIBH, 'Photo 4.10: Inclusion body hepatitis lesions. A swollen, pale, friable liver with hemorrhages and pale necrotic foci, shown in two birds (top left and right), and swollen kidneys (bottom left). The greasy yellow, easily torn liver is the lesion that points you toward IBH. Source: CPC Learning Centre.', 5.9),
     para('The name comes from what the lab sees under the microscope: basophilic intranuclear inclusion bodies inside the liver cells. Those inclusions confirm the diagnosis, so send fresh liver for histology [20].'),
 
     spacer(40),
@@ -533,7 +535,7 @@ function buildBody() {
     bullet([{ text: 'Tendons:', bold: true }, { text: ' The digital flexor and gastrocnemius (Achilles) tendons above the hock are swollen and edematous. In chronic cases the tendon sheaths thicken and harden.' }]),
     bullet([{ text: 'Ruptured tendon:', bold: true }, { text: ' In older birds the gastrocnemius tendon can rupture outright, leaving a green-bruised swelling at the back of the hock. That bird is finished.' }]),
     bullet([{ text: 'Malabsorption syndrome (helicopter disease):', bold: true }, { text: ' Reovirus is also one of the agents behind malabsorption, or runting-stunting syndrome. Look for stunted, uneven birds with abnormal wing feathers that stick straight out (the reason it is nicknamed helicopter disease), a shrunken pancreas, and pale, undigested feed in the gut.' }]),
-    ...image(photoReo, 'Photo 4.10: Reovirus across two presentations. Top row, viral arthritis and tenosynovitis: a swollen, scaly hock and the tendon sheath above it filled with straw-colored then fibrinous exudate. Bottom row, malabsorption (helicopter disease): a chick with wing feathers sticking out sideways, a shrunken pancreas, and pale, undigested feed in the gut. Source: CEVA Handbook of Poultry Diseases.', 5.9),
+    ...image(photoReo, 'Photo 4.11: Reovirus across two presentations. Top row, viral arthritis and tenosynovitis: a swollen, scaly hock and the tendon sheath above it filled with straw-colored then fibrinous exudate. Bottom row, malabsorption (helicopter disease): a chick with wing feathers sticking out sideways, a shrunken pancreas, and pale, undigested feed in the gut. Source: CEVA Handbook of Poultry Diseases.', 5.9),
     para('Viral arthritis spreads early in life and gives a swollen-hock picture very similar to Mycoplasma synoviae. Open the joint and check the tendons. Reovirus hits the tendons hardest; MS gives you the creamy joint exudate. The lab sorts out which is which [21].'),
 
     pageBreak(),
@@ -558,7 +560,7 @@ function buildBody() {
     bullet([{ text: 'Ascaridia galli', bold: true }, { text: ' (large roundworm): Cream-colored worms 5 to 10 cm long in the small intestine lumen. Heavy burdens cause intestinal thickening, reduced feed efficiency, and competition for nutrients.' }]),
     bullet([{ text: 'Heterakis gallinarum', bold: true }, { text: ' (cecal worm): Small worms in the ceca. Clinically mild in themselves, but important as the vector for Histomonas meleagridis (blackhead in turkeys).' }]),
     bullet([{ text: 'Capillaria', bold: true }, { text: ' (hairworms): Very fine worms embedded in the mucosal surface of the upper intestine or crop. Cause mucosal thickening and erosion. Easy to miss without careful scraping of the mucosa.' }]),
-    ...image(photoWorms, 'Photo 4.11: Internal parasites seen at necropsy. Masses of large Ascaridia roundworms in the opened small intestine (top left), fine thread-like Capillaria hairworms (bottom left), and small Heterakis cecal worms in the opened cecum (right). Source: Elanco Broiler Disease Reference Guide; Aviagen; Chicken Scratch (The Foundry, cs-tf.com).', 5.9),
+    ...image(photoWorms, 'Photo 4.12: Internal parasites seen at necropsy. Masses of large Ascaridia roundworms in the opened small intestine (top left), fine thread-like Capillaria hairworms (bottom left), and small Heterakis cecal worms in the opened cecum (right). Source: Elanco Broiler Disease Reference Guide; Aviagen; Chicken Scratch (The Foundry, cs-tf.com).', 5.9),
     para('Worm identification at necropsy is largely visual. Collect a segment of affected intestine with the parasites inside for laboratory confirmation.'),
 
     h2('4.4  Metabolic and Management Problems'),
@@ -568,7 +570,7 @@ function buildBody() {
     bullet([{ text: 'Heart:', bold: true }, { text: ' The right side of the heart is enlarged and thickened from overwork. In birds that died quickly, it may look stretched out and flabby rather than firm.' }]),
     bullet([{ text: 'Liver:', bold: true }, { text: ' Congested, swollen, and dark. The outer surface may be thickened. In chronic cases the liver takes on a mottled, dark-and-pale look, sometimes called a nutmeg appearance, caused by backed-up blood pressure building in the liver over time.' }]),
     bullet([{ text: 'Lungs:', bold: true }, { text: ' Congested and fluid-filled. The lungs are under pressure from the backed-up circulation, and that pressure is what drives the whole disease process.' }]),
-    ...image(photoAsc, 'Photo 4.12: Ascites (water belly) in broilers. The opened abdomen is filled with clear straw-colored fluid (left and top center), the live bird shows the swollen, distended abdomen from outside (top right), and a normal heart sits beside an enlarged heart with right-ventricular dilation and hypertrophy, the cardiovascular change that drives the fluid buildup (bottom). Source: Elanco Broiler Disease Reference Guide; Diseases of Poultry, 14th ed.', 5.9),
+    ...image(photoAsc, 'Photo 4.13: Ascites (water belly) in broilers. The opened abdomen is filled with clear straw-colored fluid (left and top center), the live bird shows the swollen, distended abdomen from outside (top right), and a normal heart sits beside an enlarged heart with right-ventricular dilation and hypertrophy, the cardiovascular change that drives the fluid buildup (bottom). Source: Elanco Broiler Disease Reference Guide; Diseases of Poultry, 14th ed.', 5.9),
     para('An ascitic bird opens looking like it is full of water. The intestines are pushed aside by free abdominal fluid. If you find a sudden-death bird with no free fluid, no infectious lesions, and a well-filled gut, think SDS (sudden death syndrome) rather than ascites. Check the heart carefully to tell the two apart.'),
 
     spacer(40),
@@ -577,7 +579,7 @@ function buildBody() {
     bullet([{ text: 'Heart:', bold: true }, { text: ' The lower chambers are contracted and tight, while the upper chambers are dilated and full of blood. This is the opposite of what you normally see after death, and it tells you the heart seized in mid-contraction during a fatal arrhythmia.' }]),
     bullet([{ text: 'Lungs:', bold: true }, { text: ' Congested, sometimes fluid-filled. These changes happen quickly after death, so examine the lungs first before the carcass starts to break down.' }]),
     bullet([{ text: 'Gastrointestinal tract:', bold: true }, { text: ' Full of feed. These birds were eating and growing normally right up to the moment they died. This is the tell: a well-nourished bird with no obvious disease lesions.' }]),
-    ...image(photoSDS, 'Photo 4.13: Sudden death syndrome findings. The heart shows contracted ventricles with dilated, blood-filled atria (left), and the lungs are congested and edematous (right). On a well-nourished bird with a full gut and no infectious lesions, these are the only clues you get. Source: CPC Learning Centre.', 3.2),
+    ...image(photoSDS, 'Photo 4.14: Sudden death syndrome findings. The heart shows contracted ventricles with dilated, blood-filled atria (left), and the lungs are congested and edematous (right). On a well-nourished bird with a full gut and no infectious lesions, these are the only clues you get. Source: CPC Learning Centre.', 3.2),
     para('SDS mortality spikes often follow a period of rapid growth, hot weather stress, or a growth catch-up after feed restriction.'),
 
     spacer(40),
@@ -586,13 +588,13 @@ function buildBody() {
     bullet([{ text: 'Tibial dyschondroplasia (TD):', bold: true }, { text: ' A plug of firm, white cartilage in the upper leg bone that never hardened into proper bone and has no blood supply. The bird may have walked poorly for days before dying. Visible on cross-section of the tibia as an abnormal cartilage mass extending into the bone.' }]),
     bullet([{ text: 'Valgus/varus deformity:', bold: true }, { text: ' Outward or inward bowing of the lower leg (bowed or knock-kneed). Visible on the outside, confirmed on examination of the bone. Causes include genetics, rapid growth, and nutritional imbalances.' }]),
     bullet([{ text: 'Kinky back (spondylolisthesis):', bold: true }, { text: ' Compression of the spinal cord by a displaced vertebra in the mid-back. Birds sit on their hocks and kick frantically. At necropsy, examine the spine at the thoracic level: you will find a displaced or fractured vertebra pressing on the spinal cord.' }]),
-    ...image(photoDev, 'Photo 4.14: Developmental skeletal conditions of broilers. Spondylolisthesis (kinky back): a bird sitting back on its hocks (top left) and a sagittal cut of the spine showing the displaced thoracic vertebra pinching the spinal cord (top right). Valgus deformity: an outward-deviated leg in a live bird (bottom left). Tibial dyschondroplasia: cut sections of the proximal tibia showing the abnormal white cartilage plug extending into the bone (bottom right). Source: Diseases of Poultry, 14th ed.', 5.5),
+    ...image(photoDev, 'Photo 4.15: Developmental skeletal conditions of broilers. Spondylolisthesis (kinky back): a bird sitting back on its hocks (top left) and a sagittal cut of the spine showing the displaced thoracic vertebra pinching the spinal cord (top right). Valgus deformity: an outward-deviated leg in a live bird (bottom left). Tibial dyschondroplasia: cut sections of the proximal tibia showing the abnormal white cartilage plug extending into the bone (bottom right). Source: Diseases of Poultry, 14th ed.', 5.5),
     h2('4.5  Fungal Disease'),
     para([{ text: 'Aspergillosis (Brooder Pneumonia)', bold: true }]),
     para('Aspergillosis is a fungal lung disease caused by Aspergillus fumigatus. It hits young chicks hardest, usually between 7 and 40 days old, while their immune system is still developing. Chicks pick up the spores at the hatchery or off damp, moldy litter, and older birds breathe in spore-laden dust from contaminated litter or feed. Wet bedding that has dried out is the classic setup, because the mold grows in the damp and then puffs spores into the air [28]:'),
     bullet([{ text: 'Lungs:', bold: true }, { text: ' Firm white to yellow nodules, from a few millimeters up to a couple of centimeters across, scattered through the lung tissue. This is the hallmark finding.' }]),
     bullet([{ text: 'Air sacs:', bold: true }, { text: ' Thickened, carrying the same white-to-yellow plaques and nodules. In heavy cases you can see fuzzy mold growth on the air sac surface.' }]),
-    ...image(photoAsperg, 'Photo 4.15: Aspergillosis lesions. Caseous white nodules studding the lung in place (top left), white-to-yellow granulomas in the air sacs (top right), firm white nodules scattered through an excised lung (bottom left), and a cerebral granuloma in a disseminated case (bottom right). Source: Elanco Broiler Disease Reference Guide; Diseases of Poultry, 14th ed.', 5.5),
+    ...image(photoAsperg, 'Photo 4.16: Aspergillosis lesions. Caseous white nodules studding the lung in place (top left), white-to-yellow granulomas in the air sacs (top right), firm white nodules scattered through an excised lung (bottom left), and a cerebral granuloma in a disseminated case (bottom right). Source: Elanco Broiler Disease Reference Guide; Diseases of Poultry, 14th ed.', 5.5),
     para('A cluster of young chicks with these firm lung nodules points straight back to the hatchery or the litter. Pull a sample of the suspect litter or feed and check your brooding setup for damp, moldy spots [28].'),
     pageBreak(),
 
@@ -964,32 +966,32 @@ const tocEntries = [
   { lvl: 1, text: "4. Common Diseases in Meat Birds (Broilers)", page: 10 },
   { lvl: 2, text: "4.1  Bacterial Diseases", page: 10 },
   { lvl: 2, text: "4.2  Viral Diseases", page: 14 },
-  { lvl: 2, text: "4.3  Parasitic Conditions", page: 20 },
-  { lvl: 2, text: "4.4  Metabolic and Management Problems", page: 21 },
-  { lvl: 2, text: "4.5  Fungal Disease", page: 24 },
-  { lvl: 1, text: "5. Common Diseases in Layers and Breeders", page: 26 },
-  { lvl: 2, text: "5.1  Reproductive System Disorders", page: 26 },
-  { lvl: 2, text: "5.2  Bacterial Diseases", page: 27 },
-  { lvl: 2, text: "5.3  Viral Diseases", page: 29 },
-  { lvl: 2, text: "5.4  Nutritional and Metabolic Issues", page: 34 },
-  { lvl: 1, text: "6. Common Diseases in Ducks and Geese", page: 37 },
-  { lvl: 2, text: "6.1  Viral Diseases", page: 37 },
-  { lvl: 2, text: "6.2  Bacterial and Toxic Conditions", page: 39 },
-  { lvl: 1, text: "7. Common Diseases in Turkeys", page: 41 },
-  { lvl: 2, text: "7.1  Hemorrhagic Enteritis and Blackhead", page: 41 },
-  { lvl: 1, text: "8. Cross-Species Disease Concerns", page: 43 },
-  { lvl: 2, text: "8.1  Pigeon Paramyxovirus (PPMV-1)", page: 43 },
-  { lvl: 1, text: "9. Necropsy Lesion Recognition by Body System", page: 44 },
-  { lvl: 1, text: "10. Case Studies and Problem-Solving", page: 46 },
-  { lvl: 2, text: "10.1  Case 1: Broiler Mortality Spike at 28 Days", page: 46 },
-  { lvl: 2, text: "10.2  Case 2: Layer Flock with Mortality and Production Drop", page: 46 },
-  { lvl: 2, text: "10.3  Case 3: Sudden Mortality in Young Broilers at 3 Weeks", page: 47 },
-  { lvl: 1, text: "11. Farmer-Friendly Diagnostic Pathway", page: 48 },
-  { lvl: 2, text: "11.1  When to Submit Samples", page: 48 },
-  { lvl: 2, text: "11.2  What to Tell the Veterinarian or Diagnostic Lab", page: 48 },
-  { lvl: 2, text: "11.3  Using Necropsy Findings to Take Immediate Action", page: 49 },
-  { lvl: 1, text: "Recommended Journals and Resources", page: 51 },
-  { lvl: 1, text: "References", page: 52 },
+  { lvl: 2, text: "4.3  Parasitic Conditions", page: 21 },
+  { lvl: 2, text: "4.4  Metabolic and Management Problems", page: 22 },
+  { lvl: 2, text: "4.5  Fungal Disease", page: 25 },
+  { lvl: 1, text: "5. Common Diseases in Layers and Breeders", page: 27 },
+  { lvl: 2, text: "5.1  Reproductive System Disorders", page: 27 },
+  { lvl: 2, text: "5.2  Bacterial Diseases", page: 28 },
+  { lvl: 2, text: "5.3  Viral Diseases", page: 30 },
+  { lvl: 2, text: "5.4  Nutritional and Metabolic Issues", page: 35 },
+  { lvl: 1, text: "6. Common Diseases in Ducks and Geese", page: 38 },
+  { lvl: 2, text: "6.1  Viral Diseases", page: 38 },
+  { lvl: 2, text: "6.2  Bacterial and Toxic Conditions", page: 40 },
+  { lvl: 1, text: "7. Common Diseases in Turkeys", page: 42 },
+  { lvl: 2, text: "7.1  Hemorrhagic Enteritis and Blackhead", page: 42 },
+  { lvl: 1, text: "8. Cross-Species Disease Concerns", page: 44 },
+  { lvl: 2, text: "8.1  Pigeon Paramyxovirus (PPMV-1)", page: 44 },
+  { lvl: 1, text: "9. Necropsy Lesion Recognition by Body System", page: 45 },
+  { lvl: 1, text: "10. Case Studies and Problem-Solving", page: 47 },
+  { lvl: 2, text: "10.1  Case 1: Broiler Mortality Spike at 28 Days", page: 47 },
+  { lvl: 2, text: "10.2  Case 2: Layer Flock with Mortality and Production Drop", page: 47 },
+  { lvl: 2, text: "10.3  Case 3: Sudden Mortality in Young Broilers at 3 Weeks", page: 48 },
+  { lvl: 1, text: "11. Farmer-Friendly Diagnostic Pathway", page: 49 },
+  { lvl: 2, text: "11.1  When to Submit Samples", page: 49 },
+  { lvl: 2, text: "11.2  What to Tell the Veterinarian or Diagnostic Lab", page: 49 },
+  { lvl: 2, text: "11.3  Using Necropsy Findings to Take Immediate Action", page: 50 },
+  { lvl: 1, text: "Recommended Journals and Resources", page: 52 },
+  { lvl: 1, text: "References", page: 53 },
 ];
 
 // ============================================================
