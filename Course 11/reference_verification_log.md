@@ -314,3 +314,16 @@ User flagged that H5N2 and H5N5 are now also present in Canada (H5N1 still domin
 - **[15] Canadian Food Inspection Agency. Facts about avian influenza.** inspection.canada.ca/en/animal-health/terrestrial-animals/diseases/reportable/avian-influenza/facts-about-avian-influenza [cited 2026 Jul] - VERIFIED LIVE 2026-07-03: page confirms H5N2 (Nov 8 2024, BC, first Canadian detection), H5N5 (Feb 12 2025, NL), H5N1 predominant, and that H5N2/H5N5 share the H gene with H5N1 and are highly pathogenic. All course-stated facts match the source verbatim.
 
 **Renumbering:** new ref inserted at first-appearance position 15 (AI subtypes sentence in 4.2, right after CFIA AI-status ref [14]). Body in-text [N] with N>=15 cascaded +1; bibliography auto-numbered by position (14 CFIA status-by-province, 15 CFIA Facts, 16 CPC IBH ... 45 CFIA pigeon notice). Verified: in-text first-appearance order contiguous 1-45, 45 bib entries, no orphans; all 39 TOC pages correct; 55 pages, 0 blank; 0 em dashes; 0 w:dirty.
+
+---
+
+## Correction (2026-07-03): E. maxima orange-pink viscous fluid restored (matches current Merck)
+
+An earlier pass (2026-06-09/24) had removed "orange-pink mucus" from the E. maxima descriptions and changed them to "blood-tinged fluid," on the basis that the Merck coccidiosis page did not state it. Re-fetching the current Merck coccidiosis page on 2026-07-03 shows it DOES state it verbatim: "E maxima develops in the small intestine, where it causes dilatation and thickening of the wall, petechial hemorrhage, and a reddish orange/pink viscous fluid exudate." Corroborated by Penn State Extension (Avian Coccidiosis) and The Poultry Site (E. maxima mid-intestinal), which describe abundant yellow/orange mucoid-to-bloody luminal content as the hallmark.
+
+Restored, cited to the existing coccidiosis reference (no new ref, no renumber):
+- Coccidiosis table, E. maxima row: lumen now "a characteristic reddish orange to pink viscous fluid, and that orange color is a key hallmark of this species" (was "blood-tinged fluid").
+- Section 9 body-system table, mid-gut descriptor: "orange-pink viscous fluid (mid-gut)" (was "blood-tinged fluid (mid-gut)").
+- Case 1 necropsy findings: "orange-pink fluid in 2 birds" (was "blood-tinged fluid"), consistent with the case's E. maxima interpretation.
+
+Verified: refs 1-45 contiguous, all 39 TOC pages correct, 55 pages 0 blank, 0 em dashes, 0 w:dirty.

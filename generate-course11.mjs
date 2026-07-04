@@ -533,7 +533,7 @@ function buildBody() {
       ['Eimeria Species', 'Location in Gut', 'Gross Lesion at Necropsy', 'Gross Lesions'],
       [
         ['E. acervulina', 'Duodenum', 'White longitudinal plaques or ladder-like striations on the duodenal mucosa. Pale, thickened duodenal wall.', eAcer],
-        ['E. maxima', 'Jejunum (mid-gut)', 'Ballooned intestine with thickened, congested wall and petechial hemorrhage. Intestinal lumen contains blood-tinged fluid. Lesions often precede necrotic enteritis.', eMax],
+        ['E. maxima', 'Jejunum (mid-gut)', 'Ballooned intestine with thickened, congested wall and petechial hemorrhage. The lumen holds a characteristic reddish orange to pink viscous fluid, and that orange color is a key hallmark of this species. Lesions often precede necrotic enteritis.', eMax],
         ['E. necatrix', 'Jejunum (mid-gut)', 'White and red spots on the serosal surface. Interior shows petechiae and necrotic patches. Mainly affects older birds (over 8 to 9 weeks), so it is more a problem in broiler breeders and layers than in young market broilers [20].', eNec],
         ['E. brunetti', 'Lower small intestine, rectum', 'Hemorrhagic, necrotic mucosa in the lower gut. Watery bloody content. Like E. necatrix, it affects older birds, so it shows up in broiler breeders and layers rather than young market broilers [20].', eBru],
         ['E. tenella', 'Ceca only', 'Bright red blood-filled ceca. Cecal cores (clotted blood, tissue debris, oocysts) in surviving birds. Most visually dramatic.', eTen],
@@ -786,7 +786,7 @@ function buildBody() {
         ['Proventriculus-gizzard junction', 'Smooth glandular mucosa, no hemorrhage', 'Petechiae, ecchymoses at junction', 'Newcastle Disease (velogenic), IBD, AI'],
         ['Bursa of Fabricius', 'Firm, cream-colored, smooth', 'Enlarged/hemorrhagic (acute IBD); shrunken (chronic IBD)', 'IBD'],
         ['Small intestine (jejunum/ileum)', 'Thin wall, pink, content visible', 'Ballooned, friable, pseudomembrane, foul odor', 'Necrotic Enteritis'],
-        ['Intestine (by segment)', 'Pink mucosa, no plaques or blood', 'White plaques (duodenum), bloody ceca, blood-tinged fluid (mid-gut)', 'Coccidiosis (species-specific)'],
+        ['Intestine (by segment)', 'Pink mucosa, no plaques or blood', 'White plaques (duodenum), bloody ceca, orange-pink viscous fluid (mid-gut)', 'Coccidiosis (species-specific)'],
         ['Cecal tonsils and Peyer\'s patches', 'Flat, no hemorrhage', 'Necrotic foci, hemorrhage', 'Newcastle Disease (viscerotropic)'],
         ['Liver', 'Firm, dark red-brown, no spots', 'Yellow spots (cholera), friable/pale (FLHS/IBH), fibrin coat', 'Fowl Cholera, FLHS, Colibacillosis, IBH'],
         ['Spleen', 'Small, round, dark red, smooth', 'Enlarged, mottled, congested; white lymphoma nodules or necrotic foci', 'Marek\'s Disease (visceral), Fowl Cholera, Colibacillosis, AI'],
@@ -811,7 +811,7 @@ function buildBody() {
 
     h2('10.1  Case 1: Broiler Mortality Spike at 28 Days'),
     para([{ text: 'Flock history:', bold: true }, { text: ' Ross 308 broilers, 28 days old, 40,000 birds. Mortality climbed from 0.2% to 0.8% per day over 10 days. Birds are dull, piling at feeders, and drinking less. No feed changes. Vaccination completed on time.' }]),
-    para([{ text: 'Necropsy findings (6 birds):', bold: true }, { text: ' Cloudy, thickened air sacs with yellow exudate. Fibrin on the heart in 4 of 6 birds. Swollen liver with fibrin coat. Pale, swollen kidneys with urate deposits in 2 birds. Slight jejunal thickening and blood-tinged fluid in 2 birds.' }]),
+    para([{ text: 'Necropsy findings (6 birds):', bold: true }, { text: ' Cloudy, thickened air sacs with yellow exudate. Fibrin on the heart in 4 of 6 birds. Swollen liver with fibrin coat. Pale, swollen kidneys with urate deposits in 2 birds. Slight jejunal thickening and orange-pink fluid in 2 birds.' }]),
     para([{ text: 'What this tells us:', bold: true }, { text: ' The airsacculitis, pericarditis, and perihepatitis together are the classic picture of colibacillosis. The kidney changes point to a nephropathogenic IBV strain as the likely trigger that opened the door for E. coli. The jejunal lesions in 2 birds suggest low-grade E. maxima coccidiosis adding pressure on top.' }]),
     para([{ text: 'Next steps:', bold: true }]),
     bullet('Submit 8 live birds to the provincial lab: air sac swabs for E. coli culture (looking for pure, heavy APEC growth from a sterile site) with antimicrobial sensitivity testing; tracheal swabs or kidney tissue for IBV RT-PCR with S1 strain sequencing; intestinal scrapings for oocyst count and species ID.'),
