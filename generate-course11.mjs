@@ -320,6 +320,7 @@ function buildBody() {
   const photoAsc    = figBuf('ascites.jpg');
   const photoSDS    = figBuf('SDS.jpg');
   const photoDev    = figBuf('Developmental Dis.jpg');
+  const photoGout   = figBuf('gout.jpg');
   const eTen        = figBuf('E. tenella.jpg');
   const eAcer       = figBuf('E. acervulina.jpg');
   const eMax        = figBuf('E. maxima.jpg');
@@ -596,6 +597,7 @@ function buildBody() {
     bullet([{ text: 'Muscle:', bold: true }, { text: ' The breast muscle is dark red, dry, and sticky (tacky) to the touch instead of moist and pink.' }]),
     bullet([{ text: 'Gut (young chicks):', bold: true }, { text: ' In first-week starve-out the crop and gut are empty and the yolk sac is still there. The chick never found feed and water.' }]),
     bullet([{ text: 'Visceral gout:', bold: true }, { text: ' Concentrated urine drops urate crystals out onto the organs as chalky white deposits, coating the heart and pericardium, the liver surface, and the air sacs. The kidneys are swollen and pale with urate-filled tubules, and the ureters may be packed with white urate or small stones [28].' }]),
+    ...image(photoGout, 'Photo 4.16: Dehydration and visceral gout. A dull, dehydrated bird lying down with sunken eyes (left), dry, tacky breast muscle instead of moist pink muscle (center), and visceral gout with chalky white urate coating the heart and liver (right). Source: Elanco Broiler Disease Reference Guide; Diseases of Poultry, 14th ed.', 5.9),
     para('Dehydration and gout point straight at a water problem. Walk the drinker lines, check pressure, height, and flow, and make sure every bird can reach water. The IBV renal form and IBD give you the same urate picture, so rule those out if the water system checks out.'),
 
     h2('4.5  Fungal Disease'),
@@ -603,7 +605,7 @@ function buildBody() {
     para('Aspergillosis is a fungal lung disease caused by Aspergillus fumigatus. It hits young chicks hardest, usually between 7 and 40 days old, while their immune system is still developing. Chicks pick up the spores at the hatchery or off damp, moldy litter, and older birds breathe in spore-laden dust from contaminated litter or feed. Wet bedding that has dried out is the classic setup, because the mold grows in the damp and then puffs spores into the air [29]:'),
     bullet([{ text: 'Lungs:', bold: true }, { text: ' Firm white to yellow nodules, from a few millimeters up to a couple of centimeters across, scattered through the lung tissue. This is the hallmark finding.' }]),
     bullet([{ text: 'Air sacs:', bold: true }, { text: ' Thickened, carrying the same white-to-yellow plaques and nodules. In heavy cases you can see fuzzy mold growth on the air sac surface.' }]),
-    ...image(photoAsperg, 'Photo 4.16: Aspergillosis lesions. Caseous white nodules studding the lung in place (top left), white-to-yellow granulomas in the air sacs (top right), firm white nodules scattered through an excised lung (bottom left), and a cerebral granuloma in a disseminated case (bottom right). Source: Elanco Broiler Disease Reference Guide; Diseases of Poultry, 14th ed.', 5.5),
+    ...image(photoAsperg, 'Photo 4.17: Aspergillosis lesions. Caseous white nodules studding the lung in place (top left), white-to-yellow granulomas in the air sacs (top right), firm white nodules scattered through an excised lung (bottom left), and a cerebral granuloma in a disseminated case (bottom right). Source: Elanco Broiler Disease Reference Guide; Diseases of Poultry, 14th ed.', 5.5),
     para('A cluster of young chicks with these firm lung nodules points straight back to the hatchery or the litter. Pull a sample of the suspect litter or feed and check your brooding setup for damp, moldy spots [29].'),
     pageBreak(),
 
