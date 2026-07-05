@@ -410,7 +410,7 @@ function buildBody() {
       ['Sample Type', 'Diagnostic Test', 'Pathogen / Condition Identified'],
       [
         ['Live, clinically affected birds (minimum 6)', 'Full necropsy and diagnostic panel', 'Comprehensive pathogen identification across all body systems'],
-        ['Fresh tissue (bursa, liver, intestine, air sac), refrigerated, not frozen', 'Histopathology', 'Confirms tissue damage and intranuclear inclusion bodies; primary test for IBHV and ILTV'],
+        ['Fresh tissue (bursa, liver, intestine, trachea, spleen), refrigerated, not frozen', 'Histopathology', 'Confirms tissue damage and intranuclear inclusion bodies; primary test for IBHV and ILTV'],
         ['Tracheal or cloacal swabs in viral transport media', 'PCR or virus isolation', 'Confirms viral presence: IBV, NDV, AI, IBHV'],
         ['Intestinal content, liver, spleen, yolk material, or air sac swab', 'Bacterial culture and sensitivity', 'Identifies E. coli, Salmonella, Enterococcus, Pasteurella multocida'],
         ['Whole blood, red top (no anticoagulant)', 'Serology (ELISA / HI)*', 'Antibody titres: IBV, NDV, IBD, MG, AI'],
