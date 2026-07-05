@@ -96,3 +96,14 @@ This audit covered the full CLAUDE.md Phase 4 validation checklist in addition t
 - **Document integrity:** `w:dirty` count = 0, `updateFields` = `false`, `bookmarkStart` = `hyperlink` = 22.
 
 No fabricated or incorrect references, claims, or figures found beyond the corrections listed above. Course 9 is ready for distribution.
+
+---
+
+## 2026-07-05 Addendum — NB-revised file ("Revised Course 9 - Edited NB 06242026.docx")
+
+The NB-reviewed working file added two references not present in the 2026-06-15 log (the Section 2.1 AMR/CFIA paragraphs), renumbering Water Quality to [8] and Nipple Drinker Line to [9]. Both new references were verified this session against their official pages before publishing:
+
+- **[6] Health Canada. Responsible use of Medically Important Antimicrobials in animals. Ottawa: Health Canada; 2018.** VERIFIED via canada.ca. Page title matches verbatim ("Responsible use of Medically Important Antimicrobials in animals"). Confirmed the December 1, 2018 rule that all Category I, II and III medically important antimicrobials for veterinary use became prescription-only, supporting the course claim in Section 2.1. Live-source cited date `[cited 2026 Jun]` retained per Cited-Date Rule.
+- **[7] Canadian Food Inspection Agency. Food Animal Information Document for Poultry. Ottawa: CFIA.** VERIFIED via inspection.canada.ca ("Food animal information document for poultry"). Confirmed the document requires, for extra-label drug use, an attached veterinary prescription with withdrawal period and, where residue testing applies, a laboratory report from a Standards Council of Canada (SCC) accredited laboratory. This matches the course claim in Section 2.1 verbatim in substance. Live-source cited date `[cited 2026 Jun]` retained.
+
+References [1]-[5], [8], [9] are unchanged from the 2026-06-15 verification above (same sources, renumbered only). Citation first-appearance order re-confirmed sequential 1 → 9 after this session's edits. The 2026-07-05 edits (cost/benefit worked example, three reviewer grammar fixes, one British-spelling fix, two Mycoplasma italics fixes) introduced **no new references** — the worked example reuses dollar figures already present in the Section 5 case studies.
