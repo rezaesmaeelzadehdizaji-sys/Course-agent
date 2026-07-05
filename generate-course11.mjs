@@ -661,10 +661,8 @@ function buildBody() {
     spacer(40),
     para([{ text: 'Infectious Laryngotracheitis (ILT)', bold: true }]),
     para('ILT is a herpesvirus that attacks the windpipe. It hits layers, breeders, and backyard flocks hard, and birds gasp, cough, and shake bloody mucus onto the walls and each other. Affected birds often stretch the head and neck up and forward and gasp with an open beak, straining to pull air past the blocked windpipe. The necropsy is one of the most distinctive in poultry [36]:'),
-    bullet([{ text: 'Trachea (severe form):', bold: true }, { text: ' Congested, reddened, and roughened, with the lumen full of blood and mucus or a blood-streaked plug. Some birds suffocate on it.' }]),
-    bullet([{ text: 'Trachea (mild form):', bold: true }, { text: ' Just serous to mucoid exudate, mucosal swelling, and congestion.' }]),
-    bullet([{ text: 'Eyes (mild form):', bold: true }, { text: ' Conjunctivitis with swollen, inflamed, watery eyes. This ocular picture usually goes with the milder respiratory form.' }]),
-    bullet([{ text: 'Larynx:', bold: true }, { text: ' Inflamed and hemorrhagic.' }]),
+    bullet([{ text: 'Severe form:', bold: true }, { text: ' The trachea is congested, reddened, and roughened, with the lumen full of blood and mucus or a blood-streaked plug, and some birds suffocate on it. The larynx is inflamed and hemorrhagic.' }]),
+    bullet([{ text: 'Mild form:', bold: true }, { text: ' The trachea shows just serous to mucoid exudate, mucosal swelling, and congestion. The eyes show conjunctivitis with swollen, inflamed, watery lids, the ocular picture that usually goes with this milder form.' }]),
     ...image(photoILT, 'Photo 5.7: Infectious laryngotracheitis (ILT) lesions. Conjunctivitis with swollen, inflamed eyes (top left), and opened tracheas showing the range of exudate: bloody mucus and blood-streaked plugs (top right and bottom right) and a yellow caseous plug in the milder form (bottom left). Source: Diseases of Poultry, 14th ed.; CEVA Handbook of Poultry Diseases.', 5.9),
     para('A bird found dead with blood in the windpipe and no obvious heart or liver disease should put ILT near the top of your list.'),
 
