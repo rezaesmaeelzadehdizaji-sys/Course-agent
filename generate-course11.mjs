@@ -800,7 +800,7 @@ function buildBody() {
         ['Bursa of Fabricius', 'Firm, cream-colored, smooth', 'Enlarged/hemorrhagic (acute IBD); shrunken (chronic IBD)', 'IBD'],
         ['Small intestine (jejunum/ileum)', 'Thin wall, pink, content visible', 'Ballooned, friable, pseudomembrane, foul odor', 'Necrotic Enteritis'],
         ['Intestine (by segment)', 'Pink mucosa, no plaques or blood', 'White plaques (duodenum), bloody ceca, orange-pink viscous fluid (mid-gut)', 'Coccidiosis (species-specific)'],
-        ['Cecal tonsils and Peyer\'s patches', 'Flat, no hemorrhage', 'Necrotic foci, hemorrhage', 'Newcastle Disease (viscerotropic)'],
+        ['Cecal tonsils and Peyer\'s patches', 'Flat, no hemorrhage', 'Necrotic foci, hemorrhage', 'Newcastle Disease (viscerotropic), AI'],
         ['Liver', 'Firm, dark red-brown, no spots', 'Yellow spots (cholera), friable/pale (FLHS/IBH), green (staph septicemia), fibrin coat', 'Fowl Cholera, FLHS, Colibacillosis, IBH, Staphylococcosis'],
         ['Spleen', 'Small, round, dark red, smooth', 'Enlarged, mottled, congested; white lymphoma nodules or necrotic foci', 'Marek\'s Disease (visceral), Fowl Cholera, Colibacillosis, AI'],
         ['Kidneys', 'Dark red, smooth', 'Pale/swollen with chalk-white tubules', 'IBV renal form, IBD, dehydration'],
