@@ -598,7 +598,7 @@ function buildBody() {
     bullet([{ text: 'Gut (young chicks):', bold: true }, { text: ' In first-week starve-out the crop and gut are empty and the yolk sac is still there. The chick never found feed and water.' }]),
     bullet([{ text: 'Visceral gout:', bold: true }, { text: ' Concentrated urine drops urate crystals out onto the organs as chalky white deposits, coating the heart and pericardium, the liver surface, and the air sacs. The kidneys are swollen and pale with urate-filled tubules, and the ureters may be packed with white urate or small stones [28].' }]),
     ...image(photoGout, 'Photo 4.16: Dehydration and visceral gout. A dull, dehydrated bird lying down with sunken eyes (left), dry, tacky breast muscle instead of moist pink muscle (center), and visceral gout with chalky white urate coating the heart and liver (right). Source: Elanco Broiler Disease Reference Guide; Diseases of Poultry, 14th ed.', 5.9),
-    para('Dehydration and gout point straight at a water problem. Walk the drinker lines, check pressure, height, and flow, and make sure every bird can reach water. The IBV renal form and IBD give you the same urate picture, so rule those out if the water system checks out.'),
+    para('Dehydration and gout point straight at a water problem. The IBV renal form and IBD give you the same urate picture, so rule those out if the water system checks out.'),
 
     h2('4.5  Fungal Disease'),
     para([{ text: 'Aspergillosis (Brooder Pneumonia)', bold: true }]),
