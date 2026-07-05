@@ -383,3 +383,15 @@ Two new refs (both verified live 2026-07-04):
 6-panel image embedded as Photo 4.5 in the Staphylococcosis section: excessive synovial fluid (septic joint), bilateral femoral head necrosis, osteomyelitis (cut long bone), green liver discoloration (septicemic form), gangrenous dermatitis, bumblefoot. Caption matches all six panels. Source: Merck Veterinary Manual (merckvetmanual.com); Diseases of Poultry, 14th ed.; Elanco Broiler Disease Reference Guide.
 
 Photos 4.5-4.15 shifted to 4.6-4.16 (descending renumber, no collisions). Verified: Photos now 4.1-4.16 / 5.1-5.11 / 6.1-6.4 / 7.1-7.2 / 8.1 all sequential; 42 images embedded; refs 1-49 intact; all 39 TOC pages correct; 57 pages 0 blank; 0 em dashes; 0 w:dirty.
+
+---
+
+## Addition (2026-07-05): Dehydration and Visceral Gout section (4.4) + ref [28]
+
+Added a short management entry to Section 4.4 (Metabolic and Management Problems), after Skeletal Deformities. Frames dehydration as a management/clinical condition (not an infectious disease): drinker-line failure, wrong pressure/height, heat, or disease-driven fluid loss; first-week starve-out in chicks. Necropsy signs: sunken/dull eyes, dry/dark/tacky breast muscle, empty gut + retained yolk sac in chicks, and visceral gout (chalky urate on heart/pericardium, liver, air sacs; swollen pale urate-filled kidneys and ureters). Backs the "dehydration" differential already in the Section 9 kidney row.
+
+- **[28] Merck Veterinary Manual. Urate Deposition (Gout) in Poultry.** merckvetmanual.com/poultry/miscellaneous-conditions-of-poultry/urate-deposition-gout-in-poultry [cited 2026 Jul] - VERIFIED live: lists dehydration among noninfectious causes of visceral gout; urate deposits on pericardium, peritoneum, liver capsule (kidneys/ureters/air sacs corroborated by clinicopathological studies).
+
+**Proventricular gland hemorrhage NOT included:** the user recalled dehydration causing proventricular hemorrhage, but it could not be sourced as a primary dehydration lesion. Proventricular/junction hemorrhage is classically AI/ND/IBD; it appears "with dehydration" specifically in avian influenza (which causes both). Left out to avoid an unsourced claim; can add if a specific source is provided.
+
+**Renumbering:** new ref at first-appearance position 28 (dehydration section in 4.4, after Skeletal [27], before Aspergillosis). Body [N] with N>=28 cascaded +1; bibliography now 50 entries. Verified: in-text first-appearance order contiguous 1-50, no orphans; all 39 TOC pages correct; 58 pages 0 blank; 0 em dashes; 0 w:dirty.
