@@ -763,7 +763,7 @@ function buildBody() {
     para('Hemorrhagic enteritis is an adenovirus disease of turkeys, usually around six to twelve weeks of age. It causes sudden death, sometimes with bloody droppings [47]:'),
     bullet([{ text: 'Spleen:', bold: true }, { text: ' Enlarged, friable, and mottled. The splenic change is the most consistent finding, even when the gut looks near normal.' }]),
     bullet([{ text: 'Intestine:', bold: true }, { text: ' Congestion and sometimes bloody content in the upper small intestine. The dramatic hemorrhagic gut shows up more in sharp outbreaks than in everyday field cases.' }]),
-    ...image(photoHE, 'Photo 7.1: Hemorrhagic enteritis in a turkey. Severe bleeding in the duodenum and upper small intestine (left), and an enlarged, mottled spleen (right). The big mottled spleen is the most consistent finding, even when the gut looks near normal. Source: Diseases of Poultry, 14th ed.', 5.9),
+    ...image(photoHE, 'Photo 7.1: Hemorrhagic enteritis in a turkey. Severe bleeding in the duodenum (left), and an enlarged, mottled spleen (right). The big mottled spleen is the most consistent finding, even when the gut looks near normal. Source: Diseases of Poultry, 14th ed.', 5.9),
     para('HE also knocks down the immune system, opening the door to secondary E. coli. A turkey flock with sudden deaths and big mottled spleens fits HE. On histology the lab finds intranuclear inclusion bodies in the spleen [47].'),
 
     spacer(40),
