@@ -438,7 +438,7 @@ function buildBody() {
     h1('1. Understanding Humane Euthanasia'),
     h2('1.1  Definition and Purpose'),
     para('Humane euthanasia means ending a bird\'s life fast, with no chance of it coming back, and with as little pain and fear as possible. The AVMA Guidelines describe the goal as rapid loss of consciousness followed by cardiac or respiratory arrest and, ultimately, complete loss of brain function [1]. The key word is rapid. A slow or incomplete procedure is not euthanasia. It is prolonged suffering by a different name.'),
-    para('On a commercial farm, the birds you will be euthanizing are ones that have no realistic chance of recovery. They are suffering now, and they will keep suffering if you leave them. The purpose of euthanasia is straightforward: remove pain quickly, remove that bird from the population, and protect the rest of the flock from a potential disease reservoir.'),
+    para('On a commercial farm, the birds you will be euthanizing are ones that have no realistic chance of recovery. They are suffering now, and they will keep suffering if you leave them. The job is simple: end the pain quickly, get that bird out of the flock, and stop it from becoming a disease source for the birds around it.'),
     para('The NFACC Code of Practice is direct on this point. Sick or injured birds showing obvious signs of pain must be promptly treated or euthanized [2]. "Promptly" is not a suggestion. Farmers and barn staff who delay euthanasia for compromised birds risk both animal welfare violations and audit failures under the Chicken Farmers of Canada Animal Care Program [3].'),
 
     h2('1.2  Ethical Considerations'),
@@ -449,7 +449,7 @@ function buildBody() {
     h2('1.3  Why Timely Euthanasia Matters for Welfare and Productivity'),
     para('A bird that cannot compete for feed and water drags flock uniformity down. It sits in the corner, loses body condition, and becomes a focus for pecking. Left in place, it can also become a source of secondary infection for surrounding birds. Pulling it early eliminates these effects.'),
     para('Compromised chicks at placement are the most important group to catch early. The Chicken Farmers of Canada Animal Care Program guidelines are specific: the greatest positive impact comes from culling compromised chicks immediately after identification, not at the end of the placement day [3]. A chick that cannot stand or find feed in the first 24 hours has almost no chance of reaching market weight profitably. Every hour you delay costs the bird more suffering and costs you more feed and floor space.'),
-    para('Timely euthanasia also protects the rest of the flock. Birds with open wounds, respiratory disease, or enteric infection are shedding pathogens into the barn environment. Getting them out fast reduces the infectious load in the barn and reduces the need for antibiotic intervention later.'),
+    para('Pulling sick birds early also protects the flock. A bird with an open wound, a respiratory bug, or a gut infection is shedding germs into the barn the whole time it sits there. Get it out fast and you lower the disease pressure on the rest, which can save you a treatment later.'),
     pageBreak(),
 
     // ─── SECTION 2 ───
@@ -494,7 +494,7 @@ function buildBody() {
     // ─── SECTION 3 ───
     h1('3. Approved Humane Euthanasia Methods'),
     h2('3.1  Overview of Approved Methods'),
-    para('The AVMA 2020 Guidelines classify euthanasia methods as Acceptable or Acceptable with Conditions for each species [1]. The Merck Veterinary Manual translates this into practical on-farm guidance [4]. For poultry, the methods available to trained farm workers fall into three main categories: physical methods, gas methods, and injectable methods. Each has a specific use case. Not every method is appropriate for every bird or every farm setting.'),
+    para('The AVMA 2020 Guidelines classify euthanasia methods as Acceptable or Acceptable with Conditions for each species [1]. The Merck Veterinary Manual translates this into practical on-farm guidance [4]. For poultry, the methods a trained worker can use fall into three groups: physical, gas, and injectable. Each has its place. No single method fits every bird or every barn.'),
     spacer(80),
     dataTable(
       ['Method', 'Who Can Use It', 'Best For', 'Key Conditions'],
@@ -512,7 +512,7 @@ function buildBody() {
     para([{ text: 'Source:', bold: true }, { text: ' American Veterinary Medical Association, Guidelines for the Euthanasia of Animals: 2020 Edition [1]; Merck Veterinary Manual (citing AVMA 2020) [4]; Poultry Industry Council, Practical Guidelines for On-Farm Euthanasia of Poultry [5].' }]),
 
     h2('3.2  Manual Cervical Dislocation'),
-    para('Manual cervical dislocation is the most widely used method for individual bird euthanasia on Canadian farms. When performed correctly by a trained worker, it produces rapid loss of consciousness and death through disruption of the brainstem and spinal cord. When performed incorrectly, it can fail to produce immediate unconsciousness and the bird will suffer.'),
+    para('Manual cervical dislocation is the most widely used method for individual bird euthanasia on Canadian farms. Done right by a trained worker, it knocks the bird out and kills it in one motion by tearing apart the brainstem and spinal cord. Done wrong, the bird stays conscious and suffers.'),
     para([{ text: 'When it is appropriate:', bold: true }, { text: ' Broilers up to approximately 2.3 kg (typically up to 7 weeks of age). Smaller layers and growers. It becomes physically difficult and unreliable in heavier birds [6,7].' }]),
     para([{ text: 'When it is not appropriate:', bold: true }, { text: ' Broiler breeders at production weight (3.5 to 4.5 kg). Heavy turkeys. Birds over 3 kg in any situation where a mechanical device or captive bolt is available [6].' }]),
     para('Here is the technique, based on published broiler research [6]:'),
@@ -538,9 +538,9 @@ function buildBody() {
     para('Reflexes returned in close to half the KED-euthanized birds in the research above. That makes the three-check protocol in Section 5 essential, not optional, after KED use. Check corneal reflex, heartbeat, and respiration on every bird, every time, before it goes in the mortality bin.'),
 
     h2('3.4  Non-Penetrating Captive Bolt'),
-    para('The non-penetrating captive bolt delivers a percussive blow to the skull that produces immediate concussive unconsciousness. It does not penetrate the brain. Because it does not destroy brain tissue, it must be followed immediately by a secondary method that ensures death: cervical dislocation, decapitation, or exsanguination. Using a captive bolt alone, without a secondary method, is not acceptable.'),
+    para('The non-penetrating captive bolt hits the skull hard enough to knock the bird out cold on impact. It does not go into the brain. Because it does not destroy brain tissue, you have to follow it right away with a second step that finishes the job: cervical dislocation, decapitation, or bleeding the bird out. A captive bolt on its own, with no second step, is not acceptable.'),
     para('Captive bolt devices are particularly useful for heavier birds where manual cervical dislocation is not reliable: broiler breeders at late production weight, large male turkeys, and birds where a mechanical cervical dislocation device of the appropriate size is not available. The device must be applied to the correct anatomical site on the skull at the proper angle to produce effective stunning. Manufacturer instructions and hands-on training are mandatory before using this equipment.'),
-    para('Research on broiler breeders confirmed that non-penetrating captive bolt stunning achieves immediate insensibility reliably in birds at production weight, making it one of the fastest methods for reaching irreversible unconsciousness in heavy birds where cervical dislocation is not practical [8].'),
+    para('In broiler breeder research, the non-penetrating captive bolt knocked birds out immediately and reliably at full production weight [8]. For heavy birds where cervical dislocation is not practical, it is one of the fastest ways to get a bird unconscious.'),
 
     h2('3.5  CO2 Euthanasia'),
     para([
@@ -642,7 +642,7 @@ function buildBody() {
     h1('5. Verification of Death'),
     h2('5.1  Why Verification Matters'),
     para('Wing flapping, muscle tremors, and gasping movements are common after euthanasia. They are reflex responses from the nervous system, not signs of consciousness. If you drop a bird in the mortality bin based on those signs alone, you may be disposing of a bird that is not fully dead.'),
-    para('Verification of death requires that you check for the specific signs that confirm the brain and cardiovascular system have stopped functioning irreversibly. Post-euthanasia reflexes do not tell you that. Only the three-check protocol does [4,11].'),
+    para('To be sure a bird is dead, you have to check the signs that show the brain and heart have truly stopped for good. The twitching and gasping after euthanasia do not tell you that. Only the three-check protocol does [4,11].'),
 
     h2('5.2  The Three-Check Protocol'),
     ...svgImage(verificationSvg, 'Figure 5.1: The three-check death confirmation protocol. All three checks must pass. Absence of corneal blink, heartbeat, and respiration for a sustained period of at least 5 minutes confirms death. Voluntary reflexes after euthanasia are expected and do not indicate consciousness. Source: CPC Short Courses.', 5.9),
@@ -655,7 +655,7 @@ function buildBody() {
     spacer(120),
 
     h2('5.3  When Euthanasia Fails'),
-    para('Method failures happen, even with trained operators. A cervical dislocation that only partially disrupted the joint, a CO2 exposure that was too brief, or a captive bolt applied at the wrong angle can all leave the bird unconscious but not dead. If any of the three checks fails, the bird needs immediate secondary treatment.'),
+    para('Method failures happen, even with trained operators. A cervical dislocation that did not fully separate the joint can leave a bird unconscious but not dead. So can a CO2 exposure cut short, or a captive bolt that caught the skull at the wrong angle. If any of the three checks fails, the bird needs immediate secondary treatment.'),
     para('Secondary methods for an incompletely euthanized bird:'),
     bullet('Manual cervical dislocation as a follow-up to CO2 or captive bolt (if the bird is small enough).'),
     bullet('Decapitation with poultry shears: definitive. Always confirms death. Appropriate for any size bird when other methods fail.'),
