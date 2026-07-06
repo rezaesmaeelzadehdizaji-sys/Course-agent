@@ -51,58 +51,39 @@ rep(
 
 // ---- 7. Cost/benefit worked example (NB comment id5) inserted after first table ----
 const J = '<w:pPr><w:jc w:val="both"/></w:pPr>';
-const ital = t => `<w:r><w:rPr><w:i/><w:iCs/></w:rPr><w:t>${t}</w:t></w:r>`;
-const t = (s, pre = false) => `<w:r><w:t${pre ? ' xml:space="preserve"' : ''}>${s}</w:t></w:r>`;
+const ital = s => `<w:r><w:rPr><w:i/><w:iCs/></w:rPr><w:t>${s}</w:t></w:r>`;
+const t = (s, pre = true) => `<w:r><w:t${pre ? ' xml:space="preserve"' : ''}>${s}</w:t></w:r>`;
+const para = (...runs) => '<w:p>' + J + runs.join('') + '</w:p>';
 
-// worked-example paragraphs
-const leadPara =
-  '<w:p>' + J +
-  t('Put real numbers on it for a 20,000-bird broiler barn. The figures below come straight from the two case studies in Section 5 of this course, so treat them as a guide. Your own lab fees, bird value, and losses will vary by region and flock. A barn like this places several flocks a year. Budget one solid diagnostic submission for each flock, a routine serology panel plus an early-mortality necropsy at roughly $300 a time, and you land at about two to three thousand dollars a year. That is the whole cost of keeping a finger on the flock\'s pulse. Now look at what one missed call costs. The water-drop flock in Case Study B lost over $5,200 in a single cycle once a virus got three days\' head start and ', true) +
-  ital('E. coli') +
-  t(' went septic behind it. The subclinical Infectious Bursal Disease flock in Case Study A was quietly leaking more than $3,800 in feed every cycle before anyone caught it [2,4].', true) +
-  '</w:p>';
-
-const introTable =
-  '<w:p>' + J + '<w:r><w:rPr><w:b/><w:bCs/></w:rPr><w:t xml:space="preserve">Cost of screening versus cost of waiting, 20,000-bird broiler barn:</w:t></w:r></w:p>';
-
-// 2-column table matching the doc's table style
-const HDR = 'D6E4F0';
-function hdrCell(text, w) {
-  return `<w:tc><w:tcPr><w:tcW w:w="${w}" w:type="dxa"/><w:shd w:val="clear" w:color="auto" w:fill="${HDR}"/></w:tcPr><w:p><w:r><w:rPr><w:b/><w:bCs/><w:sz w:val="20"/><w:szCs w:val="20"/></w:rPr><w:t xml:space="preserve">${text}</w:t></w:r></w:p></w:tc>`;
-}
-function dataCell(runsXml, w, bold = false) {
-  const rpr = `<w:rPr>${bold ? '<w:b/><w:bCs/>' : ''}<w:sz w:val="20"/><w:szCs w:val="20"/></w:rPr>`;
-  // runsXml is an array of {text, italic}
-  const runs = runsXml.map(r =>
-    `<w:r>${bold || r.italic ? `<w:rPr>${bold ? '<w:b/><w:bCs/>' : ''}${r.italic ? '<w:i/><w:iCs/>' : ''}<w:sz w:val="20"/><w:szCs w:val="20"/></w:rPr>` : '<w:rPr><w:sz w:val="20"/><w:szCs w:val="20"/></w:rPr>'}<w:t xml:space="preserve">${r.text}</w:t></w:r>`
-  ).join('');
-  return `<w:tc><w:tcPr><w:tcW w:w="${w}" w:type="dxa"/></w:tcPr><w:p><w:pPr><w:rPr>${rpr}</w:rPr></w:pPr>${runs}</w:p></w:tc>`;
-}
-const W1 = 5100, W2 = 3196;
-function row(cells) { return `<w:tr>${cells}</w:tr>`; }
-
-const tableRows = [
-  row(hdrCell('What it is', W1) + hdrCell('Rough dollars on this barn', W2)),
-  row(dataCell([{ text: 'Diagnostic screening for a full year (routine serology plus one early-mortality necropsy per flock, about $300 each)' }], W1) + dataCell([{ text: 'About two to three thousand dollars total' }], W2)),
-  row(dataCell([{ text: 'Emergency antibiotics once a disease is missed and gets ahead of you' }], W1) + dataCell([{ text: 'Around $1,500 per outbreak' }], W2)),
-  row(dataCell([{ text: 'Extra mortality and poorer feed conversion from one late-caught outbreak' }], W1) + dataCell([{ text: 'Over $5,200 in that single cycle (Case Study B)' }], W2)),
-  row(dataCell([{ text: 'Feed quietly wasted by a subclinical problem like IBD before it is caught' }], W1) + dataCell([{ text: 'Over $3,800 per cycle (Case Study A)' }], W2)),
-].join('');
-
-const newTable =
-  '<w:tbl><w:tblPr><w:tblW w:w="5000" w:type="pct"/><w:tblBorders><w:top w:val="single" w:sz="4" w:space="0" w:color="auto"/><w:left w:val="single" w:sz="4" w:space="0" w:color="auto"/><w:bottom w:val="single" w:sz="4" w:space="0" w:color="auto"/><w:right w:val="single" w:sz="4" w:space="0" w:color="auto"/><w:insideH w:val="single" w:sz="4" w:space="0" w:color="auto"/><w:insideV w:val="single" w:sz="4" w:space="0" w:color="auto"/></w:tblBorders><w:tblCellMar><w:left w:w="10" w:type="dxa"/><w:right w:w="10" w:type="dxa"/></w:tblCellMar><w:tblLook w:val="0000" w:firstRow="0" w:lastRow="0" w:firstColumn="0" w:lastColumn="0" w:noHBand="0" w:noVBand="0"/></w:tblPr><w:tblGrid><w:gridCol w:w="' + W1 + '"/><w:gridCol w:w="' + W2 + '"/></w:tblGrid>' +
-  tableRows +
-  '</w:tbl>';
-
-const closePara =
-  '<w:p>' + J +
-  t('So the real choice is spending a few thousand dollars a year to stay ahead, or gambling that you will not lose several times that in one bad cycle. Screening does not have to catch a disaster every flock to pay for itself. It only has to catch one [2].', true) +
-  '</w:p>';
+// Three worked-example paragraphs (farmer-flow, no em/en dashes)
+const p1 = para(
+  t('A 20,000-bird barn places several flocks a year, usually five or six. Budget a solid diagnostic footprint for each one: a routine serology panel plus an early-mortality necropsy, with enough room for one follow-up submission when something looks off. Call it $400 to $500 per flock, and you land at roughly $2,000 to $3,000 a year. That is the whole cost of keeping a finger on the flock\'s pulse.')
+);
+const p2 = para(
+  t('Now look at what one missed call costs. In the water-drop flock in Case Study B, mortality and condemnations ran over $5,200 in a single cycle, about $0.26 a bird, once a virus got three days\' head start and '),
+  ital('E. coli'),
+  t(' went septic behind it. The subclinical Infectious Bursal Disease flock in Case Study A was quietly leaking more than $3,800 in feed every cycle before anyone caught it. On roughly 85,000 kg of feed for a flock this size, that works out to an FCR penalty of about 0.15 points, the kind of drag immunosuppressive IBD hides in plain sight.')
+);
+const p3 = para(
+  t('Two things keep these numbers honest. First, who carries the loss depends on your contract. In integrated production the bird and feed cost sit with the integrator, while the grower feels it through settlement, so read these figures against your own arrangement. Second, a diagnostic submission does not prevent the loss outright. It shortens the detection lag and improves your odds of stepping in while it still matters. Even shaving a large piece off a $5,200 event a few times a year dwarfs the cost of the testing that flags it [2,4].')
+);
 
 // Insert after the FIRST table's close tag
 const firstTblEnd = xml.indexOf('</w:tbl>') + '</w:tbl>'.length;
 if (firstTblEnd < 8) throw new Error('first table not found');
-xml = xml.slice(0, firstTblEnd) + leadPara + introTable + newTable + closePara + xml.slice(firstTblEnd);
+xml = xml.slice(0, firstTblEnd) + p1 + p2 + p3 + xml.slice(firstTblEnd);
+
+// ---- 7b. Delete struck-through words (e.g. "actually") + their trailing space ----
+const strikeCountBefore = (xml.match(/<w:strike\/>/g) || []).length;
+xml = xml.replace(
+  /<w:r\b[^>]*><w:rPr><w:strike\/><\/w:rPr><w:t>[^<]*<\/w:t><\/w:r><w:r><w:t xml:space="preserve"> /g,
+  '<w:r><w:t xml:space="preserve">'
+);
+// remove any remaining struck runs (no following-space case), if any
+xml = xml.replace(/<w:r\b[^>]*><w:rPr><w:strike\/><\/w:rPr><w:t>[^<]*<\/w:t><\/w:r>/g, '');
+if ((xml.match(/<w:strike\/>/g) || []).length !== 0)
+  throw new Error('strike runs remain');
+console.log('struck-through runs removed:', strikeCountBefore);
 
 // ---- 8. Strip ALL remaining comment markers & reference runs ----
 xml = xml.replace(/<w:commentRangeStart w:id="\d+"\/>/g, '');
