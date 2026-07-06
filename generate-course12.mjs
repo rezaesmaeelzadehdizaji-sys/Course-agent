@@ -61,13 +61,13 @@ function h2(text) {
 }
 function bullet(text, lvl = 0) {
   const children = Array.isArray(text)
-    ? text.map(s => new TextRun({ text: s.text, bold: s.bold || false, italics: s.italics || false, color: s.color || BODY_GRAY, size: 24, font: 'Calibri' }))
+    ? text.map(s => new TextRun({ text: s.text, bold: s.bold || false, italics: s.italics || false, color: s.color || BODY_GRAY, size: 24, font: 'Calibri', subScript: s.subScript || false, superScript: s.superScript || false }))
     : [new TextRun({ text, color: BODY_GRAY, size: 24, font: 'Calibri' })];
   return new Paragraph({ children, numbering: { reference: 'bullet-list', level: lvl }, spacing: { after: 80, line: 276, lineRule: 'auto' } });
 }
 function numbered(text, lvl = 0) {
   const children = Array.isArray(text)
-    ? text.map(s => new TextRun({ text: s.text, bold: s.bold || false, italics: s.italics || false, color: s.color || BODY_GRAY, size: 24, font: 'Calibri' }))
+    ? text.map(s => new TextRun({ text: s.text, bold: s.bold || false, italics: s.italics || false, color: s.color || BODY_GRAY, size: 24, font: 'Calibri', subScript: s.subScript || false, superScript: s.superScript || false }))
     : [new TextRun({ text, color: BODY_GRAY, size: 24, font: 'Calibri' })];
   return new Paragraph({ children, numbering: { reference: 'decimal-list', level: lvl }, spacing: { after: 80, line: 276, lineRule: 'auto' } });
 }
@@ -424,20 +424,20 @@ function buildBody() {
     para('You will learn how to recognize when a bird cannot recover, how to choose the right method for the bird in front of you, how to perform the technique correctly, how to confirm that the job is done, and how to handle carcasses and paperwork afterward. The workshop session builds the hands-on competency that the lecture introduces.'),
     spacer(80),
     para('Learning Objectives', { bold: true }),
-    bullet('Explain what humane euthanasia is and why it is required under the NFACC Code of Practice.'),
-    bullet('Identify the clinical signs that require immediate euthanasia.'),
-    bullet('Select the appropriate euthanasia method for the bird in front of you based on species, size, and available equipment.'),
-    bullet('Perform approved euthanasia techniques safely and effectively, with demonstrated competency.'),
-    bullet('Confirm that euthanasia has been completed correctly using the three-check protocol.'),
-    bullet('Follow biosecurity and personal safety requirements during and after the procedure.'),
-    bullet('Dispose of carcasses in compliance with your provincial regulations and farm program.'),
-    bullet('Document euthanasia events correctly for welfare audit purposes.'),
+    bullet('Explain what humane euthanasia is and why the NFACC Code requires it.'),
+    bullet('Spot the signs that tell you a bird needs to come off the floor now.'),
+    bullet('Pick the right method for the bird in front of you, based on its size, species, and the equipment you have.'),
+    bullet('Carry out each approved method correctly, and show you can do it under supervision.'),
+    bullet('Confirm the bird is actually dead with the three-check protocol before it goes in the bin.'),
+    bullet('Protect yourself and the rest of the flock while you work and after you finish.'),
+    bullet('Handle and dispose of carcasses the way your province and farm program require.'),
+    bullet('Keep the records an auditor will ask to see.'),
     pageBreak(),
 
     // ─── SECTION 1 ───
     h1('1. Understanding Humane Euthanasia'),
     h2('1.1  Definition and Purpose'),
-    para('Humane euthanasia means ending a bird\'s life in a way that is rapid, irreversible, and minimizes pain and distress. The AVMA Guidelines describe the goal as rapid loss of consciousness followed by cardiac or respiratory arrest and, ultimately, complete loss of brain function [1]. The key word is rapid. A slow or incomplete procedure is not euthanasia. It is prolonged suffering by a different name.'),
+    para('Humane euthanasia means ending a bird\'s life fast, with no chance of it coming back, and with as little pain and fear as possible. The AVMA Guidelines describe the goal as rapid loss of consciousness followed by cardiac or respiratory arrest and, ultimately, complete loss of brain function [1]. The key word is rapid. A slow or incomplete procedure is not euthanasia. It is prolonged suffering by a different name.'),
     para('On a commercial farm, the birds you will be euthanizing are ones that have no realistic chance of recovery. They are suffering now, and they will keep suffering if you leave them. The purpose of euthanasia is straightforward: remove pain quickly, remove that bird from the population, and protect the rest of the flock from a potential disease reservoir.'),
     para('The NFACC Code of Practice is direct on this point. Sick or injured birds showing obvious signs of pain must be promptly treated or euthanized [2]. "Promptly" is not a suggestion. Farmers and barn staff who delay euthanasia for compromised birds risk both animal welfare violations and audit failures under the Chicken Farmers of Canada Animal Care Program [3].'),
 
@@ -515,13 +515,13 @@ function buildBody() {
     para('Manual cervical dislocation is the most widely used method for individual bird euthanasia on Canadian farms. When performed correctly by a trained worker, it produces rapid loss of consciousness and death through disruption of the brainstem and spinal cord. When performed incorrectly, it can fail to produce immediate unconsciousness and the bird will suffer.'),
     para([{ text: 'When it is appropriate:', bold: true }, { text: ' Broilers up to approximately 2.3 kg (typically up to 7 weeks of age). Smaller layers and growers. It becomes physically difficult and unreliable in heavier birds [6,7].' }]),
     para([{ text: 'When it is not appropriate:', bold: true }, { text: ' Broiler breeders at production weight (3.5 to 4.5 kg). Heavy turkeys. Birds over 3 kg in any situation where a mechanical device or captive bolt is available [6].' }]),
-    para('The technique, drawn from peer-reviewed research on broiler euthanasia [6]:'),
-    numbered('Hold the bird\'s legs and lower body securely in one hand, with the bird\'s back resting against your body or thigh.'),
-    numbered('With the other hand, grip the head firmly behind the skull between your thumb and first two fingers.'),
+    para('Here is the technique, based on published broiler research [6]:'),
+    numbered('Take the bird\'s legs and lower body in one hand and rest its back against your thigh or side.'),
+    numbered('With your other hand, grip the head right behind the skull, between your thumb and first two fingers.'),
     numbered('In a single rapid motion: pull the head firmly downward and simultaneously press your knuckle into the back of the neck at the skull base, stretching and dislocating the cervical vertebrae.'),
     numbered('The motion must be fast and decisive. A slow pull does not dislocate the joint. Do it in one smooth movement.'),
     numbered('You will feel the separation. The neck will elongate. Involuntary wing flapping is normal and expected.'),
-    numbered('Confirm death using the three-check protocol (see Section 5) before placing the bird in the mortality bin.'),
+    numbered('Before the bird goes in the mortality bin, run the three-check protocol to confirm it is dead (see Section 5).'),
     spacer(80),
     callout('Key Point', 'Wing flapping after cervical dislocation is a normal reflex response, not a sign that the bird is still conscious. A bird with a properly dislocated cervical joint is irreversibly unconscious from the moment of dislocation. The flapping is spinal motor activity, not voluntary movement. Do not be alarmed by it. Do be alarmed if the bird raises its head and tries to right itself. That means the dislocation failed.', 'EBF2FA', MED_BLUE),
     spacer(120),
@@ -544,14 +544,14 @@ function buildBody() {
 
     h2('3.5  CO2 Euthanasia'),
     para([
-      { text: 'Carbon dioxide (' }, { text: 'CO', bold: false }, { text: '2' }, { text: ') euthanasia is approved for poultry under the AVMA 2020 Guidelines as an "Acceptable with Conditions" method [1]. It works by displacing oxygen from the breathing space, causing hypoxia and hypercapnia that leads to unconsciousness and death. It is well-suited for hatchery cull birds, small groups of birds, or individual birds when manual or mechanical methods are not practical.' },
+      { text: 'Carbon dioxide (' }, { text: 'CO', bold: false }, { text: '2' }, { text: ') is an approved poultry method under the AVMA 2020 Guidelines, listed as "Acceptable with Conditions" [1]. The gas pushes the oxygen out of the air the bird is breathing, so it loses consciousness and then dies. It works well for hatchery culls, small groups, or the odd individual bird when a manual or mechanical method is not practical.' },
     ]),
-    para('Key technical requirements based on peer-reviewed research [9]:'),
+    para('What the research says you need to get right [9]:'),
     bullet([
-      { text: 'Concentration for chicks (day-old to 3 weeks): ' }, { text: 'Minimum 80% CO', bold: true }, { text: '2', bold: true, subScript: true }, { text: ' by volume in the chamber. Lower concentrations (below 60%) do not reliably produce rapid death in neonatal chicks within a practical timeframe [9].' },
+      { text: 'Chicks (day-old to 3 weeks): ' }, { text: 'fill the chamber to at least 80% CO', bold: true }, { text: '2', bold: true, subScript: true }, { text: '. Below 60%, chicks do not die quickly or reliably [9].' },
     ]),
     bullet([
-      { text: 'Concentration for adult birds: ' }, { text: 'Above 50% CO', bold: true }, { text: '2', bold: true, subScript: true }, { text: ' produces rapid loss of consciousness. Pre-filling the chamber to high concentration before introducing the birds produces faster insensibility and less distress behavior than gradual fill [1,9].' },
+      { text: 'Adult birds: ' }, { text: 'above 50% CO', bold: true }, { text: '2', bold: true, subScript: true }, { text: ' knocks them out fast. Fill the chamber to a high concentration before you put the birds in. They go down quicker and struggle less than if you let the gas build up slowly [1,9].' },
     ]),
     bullet([
       { text: 'Fill rate: ' }, { text: 'For gradual fill methods, a displacement rate of 30 to 70% of the chamber volume per minute is the range used in research settings [1]. Pre-fill (immersion) method is preferred for speed and welfare.' },
@@ -579,7 +579,7 @@ function buildBody() {
     para('If using this method: one blow, applied to the top of the skull with a firm, solid object. Multiple strikes indicate the first strike was not adequate, which is an animal welfare problem. If the first strike was not effective, immediately apply a second strike. Then confirm death with the three-check protocol before disposal.'),
 
     h2('3.7  Methods That Are NOT Acceptable'),
-    para('These methods cause unnecessary suffering, are not reliably effective, or create risks to human safety. They are explicitly listed as unacceptable for poultry euthanasia and must not be used:'),
+    para('The methods below make birds suffer, do not kill reliably, or put people at risk. They are not acceptable for poultry, and you must not use them:'),
     bullet('Drowning: causes air hunger and distress before unconsciousness. Not acceptable for any species.'),
     bullet('Thoracic compression (chest squeezing): causes pain and prolonged asphyxia. Not acceptable for conscious birds.'),
     bullet('Placing birds in plastic bags, alone or in groups, without gas: causes hypoxia with prolonged distress.'),
@@ -611,10 +611,10 @@ function buildBody() {
     para('Poultry euthanasia carries real zoonotic and contamination risks. These are the non-negotiables:'),
     bullet([{ text: 'Gloves every time.', bold: true }, { text: ' Salmonella, Campylobacter, and other pathogens shed by sick birds can infect humans through skin contact, especially through cuts or abrasions. Gloves protect you.' }]),
     bullet([{ text: 'No contact between carcasses and your face.', bold: true }, { text: ' Respiratory pathogens can be transmitted through aerosols when handling freshly dead birds. Do not rub your eyes, nose, or mouth with gloved hands.' }]),
-    bullet([{ text: 'Change gloves between pens.', bold: true }, { text: ' If you are euthanizing birds in multiple areas of the barn, change or sanitize gloves when moving from one pen section to another.' }]),
-    bullet([{ text: 'Dedicated mortality bin, sealed lid.', bold: true }, { text: ' All euthanized birds go directly into a sealed mortality container. Never leave carcasses on the floor.' }]),
-    bullet([{ text: 'Wash and sanitize hands after.', bold: true }, { text: ' Once gloves come off, wash hands with soap and water or use hand sanitizer before touching anything else in the barn.' }]),
-    bullet([{ text: 'Dispose of equipment properly.', bold: true }, { text: ' Used captive bolt cartridges follow your farm\'s sharps disposal protocol. CO2 cylinders are returned to the supplier. Contaminated single-use items go into sealed waste bags.' }]),
+    bullet([{ text: 'Change gloves between pens.', bold: true }, { text: ' Working several areas of the barn? Change or sanitize your gloves each time you move to a new section.' }]),
+    bullet([{ text: 'Sealed mortality bin, lid on.', bold: true }, { text: ' Every bird you put down goes straight into it. Never leave carcasses on the floor.' }]),
+    bullet([{ text: 'Wash up after.', bold: true }, { text: ' Once the gloves come off, wash with soap and water or sanitize before you touch anything else in the barn.' }]),
+    bullet([{ text: 'Deal with the equipment properly.', bold: true }, { text: ' Spent captive bolt cartridges go in your sharps disposal. CO2 cylinders go back to the supplier. Anything single-use and contaminated goes in a sealed waste bag.' }]),
     para('For farms enrolled in On-Farm Food Safety programs, the record of each euthanasia event (method used, number of birds, date) may be required as part of your audit documentation. A brief daily mortality log that includes euthanasia events satisfies this requirement [3].'),
 
     h2('4.3  Differences by Bird Age and Size'),
@@ -722,7 +722,7 @@ function buildBody() {
     bullet('When you hire new barn staff, regardless of prior experience.'),
     bullet('Annually for all staff, or more frequently if your audit program requires it.'),
     bullet('Any time a method failure occurs, as a corrective event.'),
-    para('The Poultry Industry Council offers euthanasia training resources and the Practical Guidelines for On-Farm Euthanasia of Poultry as a reference document [5]. Your veterinarian or integrator representative can also provide hands-on training sessions. For cross-province consistency, the Poultry Industry Council\'s resources are a reliable starting point.'),
+    para('The Poultry Industry Council puts out euthanasia training resources and its Practical Guidelines for On-Farm Euthanasia of Poultry, a solid reference to keep on hand [5]. Your veterinarian or your integrator rep can also come out and run hands-on sessions. If you want guidance that holds up the same way across provinces, start with the Poultry Industry Council material.'),
     pageBreak(),
 
     // ─── SECTION 8 ───
@@ -731,8 +731,8 @@ function buildBody() {
     para('The workshop session is the practical counterpart to this lecture. It is where you develop the hands-on skill that converts knowledge into competency. You cannot demonstrate proficiency by reading about a technique. You demonstrate it by doing it correctly under supervision.'),
     para('The workshop will cover:'),
     numbered('Manual cervical dislocation: technique demonstration, supervised practice, feedback.'),
-    numbered('KED device operation: sizing, positioning, and application for the correct bird size.'),
-    numbered('CO2 chamber setup: connecting the cylinder, setting concentration, loading and sealing, confirming death.'),
+    numbered('Using the KED: picking the right size, where to place it, and how to apply it for the bird you have.'),
+    numbered('Setting up a CO2 chamber: hooking up the cylinder, getting the concentration right, loading and sealing the birds in, and confirming death.'),
     numbered('Three-check death verification: practice applying the protocol to euthanized birds.'),
     numbered('Carcass handling and mortality bin protocol: correct procedure from euthanasia to bin.'),
 
@@ -758,7 +758,7 @@ function buildBody() {
     para([{ text: 'Large, agitated birds.', bold: true }, { text: ' A scared bird fights back. For manual cervical dislocation, secure the legs and body before attempting the technique. For heavier birds, a partner can hold the body while you apply the device or perform the dislocation. Never try to euthanize a fighting bird one-handed. You will not do it cleanly, and you may injure yourself.' }]),
     para([{ text: 'Birds in tight spaces.', bold: true }, { text: ' Birds that collapse in a corner or between feeders need to be extracted gently before euthanasia. Move feeders or drinkers if needed. Do not attempt a dislocating motion in a space too small to complete it fully.' }]),
     para([{ text: 'Large numbers of compromised chicks at placement.', bold: true }, { text: ' A CO2 chamber handles multiple chicks at once and is more efficient than individual manual euthanasia for batches of 10 or more birds. If you have a large number of compromised chicks and no CO2 equipment is available, manual euthanasia with a second trained person present is the right approach. One person holds, one performs the procedure. Do not rush.' }]),
-    para([{ text: 'When a method fails on the first attempt.', bold: true }, { text: ' Do not panic. Apply a secondary method immediately: another cervical dislocation attempt, decapitation, or continued CO2 exposure. The bird is likely unconscious at this point; the priority is confirming irreversible death without further delay.' }]),
+    para([{ text: 'When a method fails on the first attempt.', bold: true }, { text: ' Do not panic. Apply a secondary method immediately: another cervical dislocation attempt, decapitation, or continued CO2 exposure. The bird is almost certainly unconscious by now. Your job is to confirm it is dead, right away.' }]),
     pageBreak(),
 
     // ─── RECOMMENDED JOURNALS ───
