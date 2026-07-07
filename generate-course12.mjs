@@ -450,6 +450,9 @@ function buildBody() {
     h2('1.3  Why Timely Euthanasia Matters for Welfare and Productivity'),
     para('A bird that cannot compete for feed and water drags flock uniformity down. It sits in the corner, loses body condition, and becomes a focus for pecking. Left in place, it can also become a source of secondary infection for surrounding birds. Pulling it early eliminates these effects.'),
     para('Compromised chicks at placement are the most important group to catch early. The Chicken Farmers of Canada Animal Care Program guidelines are specific: the greatest positive impact comes from culling compromised chicks immediately after identification, not at the end of the placement day [3]. A chick that cannot stand or find feed in the first 24 hours has almost no chance of reaching market weight profitably. Every hour you delay costs the bird more suffering and costs you more feed and floor space.'),
+    spacer(60),
+    ...image(figBuf('chicke placement.jpg'), 'Photo 1.1: Day-old chicks settling in at placement, active and spread out across fresh litter with easy access to feed and water. Run a chick check the same day: sample around 100 chicks across the brooding area and score their condition and crop fill, so you catch a weak batch before birds are lost in the flock. Source: cobbgenetics.com.', 5.1),
+    spacer(60),
     para('Pulling sick birds early also protects the flock. A bird with an open wound, a respiratory bug, or a gut infection is shedding germs into the barn the whole time it sits there. Get it out fast and you lower the disease pressure on the rest, which can save you a treatment later.'),
     pageBreak(),
 
@@ -470,9 +473,7 @@ function buildBody() {
     ...image(figBuf('chick abnormalities.jpg'), 'Photo 2.1: Common chick defects that make a bird a cull on the first handling pass: cross-beak, splayed or twisted legs, a twisted neck, an unhealed or infected navel, and open-mouth labored breathing, along with thin, patchy down. Birds like these cannot reach feed and water on their own and will not catch up. Source: salto.com.ph; ceva.vn; Olkowski et al., Acta Vet Scand 2019; Taha & Mohammed, J Educ Sci 2022.', 5.5),
     spacer(80),
     callout('Chick Placement Rule', 'Any chick that cannot stand, has an obvious deformity preventing it from reaching feed or water, or is clearly below half the expected weight of its pen-mates must be euthanized within the first handling pass. Do not place it and hope. NFACC requires compromised birds at placement to be euthanized within 1 hour of completion of flock processing. [2]', 'EBF2FA', MED_BLUE),
-    spacer(80),
-    ...image(figBuf('chick_placement_cobb.jpg'), 'Photo 2.2: A healthy, alert chick at placement, bright eyes, clean down, standing square, and finding feed and water on its own. On placement day, run a chick check: sample around 100 chicks across the brooding area and score their condition and crop fill, so you catch a weak batch before birds are lost in the flock. Source: cobbgenetics.com.', 5.1),
-    spacer(60),
+    spacer(120),
 
     h2('2.2  Recognizing Irreversible Suffering'),
     para('Some conditions look bad but are actually treatable. Others look manageable but are already past the point of recovery. The table below gives you a quick guide to what can typically be managed versus what requires immediate euthanasia in a commercial broiler or layer setting.'),
