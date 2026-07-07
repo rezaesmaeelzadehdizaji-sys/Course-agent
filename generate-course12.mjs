@@ -467,7 +467,7 @@ function buildBody() {
     bullet('Appears to have significant neurological impairment: circling, star-gazing, or complete loss of righting reflex with no improvement in 10 minutes.'),
     bullet('Has been found in poor condition that has clearly been present for more than a day.'),
     spacer(60),
-    ...image(figBuf('chick abnormalities.jpg'), 'Photo 2.1: Common chick defects that make a bird a cull on the first handling pass: cross-beak, splayed or twisted legs, a twisted neck, and an unhealed or infected navel, along with thin, patchy down. Birds like these cannot reach feed and water on their own and will not catch up. Source: salto.com.ph; ceva.vn; Olkowski et al., Acta Vet Scand 2019; Taha & Mohammed, J Educ Sci 2022.', 5.5),
+    ...image(figBuf('chick abnormalities.jpg'), 'Photo 2.1: Common chick defects that make a bird a cull on the first handling pass: cross-beak, splayed or twisted legs, a twisted neck, an unhealed or infected navel, and open-mouth labored breathing, along with thin, patchy down. Birds like these cannot reach feed and water on their own and will not catch up. Source: salto.com.ph; ceva.vn; Olkowski et al., Acta Vet Scand 2019; Taha & Mohammed, J Educ Sci 2022.', 5.5),
     spacer(80),
     callout('Chick Placement Rule', 'Any chick that cannot stand, has an obvious deformity preventing it from reaching feed or water, or is clearly below half the expected weight of its pen-mates must be euthanized within the first handling pass. Do not place it and hope. NFACC requires compromised birds at placement to be euthanized within 1 hour of completion of flock processing. [2]', 'EBF2FA', MED_BLUE),
     spacer(80),
