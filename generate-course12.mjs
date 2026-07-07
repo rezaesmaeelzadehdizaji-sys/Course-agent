@@ -376,7 +376,7 @@ const verificationSvg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 78
   <text x="390" y="288" text-anchor="middle" font-size="12" font-weight="bold" fill="#538135">All three checks must PASS. Wait at least 5 minutes of continuous absence before declaring death.</text>
   <text x="390" y="308" text-anchor="middle" font-size="11" fill="#3C3C3C">Wing flapping and muscle movement after euthanasia are normal reflexes and do NOT indicate the bird is still alive.</text>
   <text x="390" y="326" text-anchor="middle" font-size="11" fill="#3C3C3C">If any check fails: apply a secondary method immediately (decapitation or a second application of your primary method).</text>
-  <text x="390" y="344" text-anchor="middle" font-size="10" fill="#888" font-style="italic">Source: Iowa State VDPAM; Merck Veterinary Manual [4,11]</text>
+  <text x="390" y="344" text-anchor="middle" font-size="10" fill="#888" font-style="italic">Source: Iowa State VDPAM; Merck Veterinary Manual [4,13]</text>
 </svg>`;
 
 // ============================================================
@@ -507,7 +507,7 @@ function buildBody() {
       [
         ['Manual cervical dislocation', 'Trained farm worker', 'Individual birds up to approximately 2.3 kg (broilers to 7 weeks)', 'Requires demonstrated training. Single rapid motion. Confirm death with 3-check protocol.'],
         ['Mechanical cervical dislocation (KED device)', 'Trained farm worker', 'Individual birds: KED-S up to 1.8 kg; KED-C up to 13.6 kg (broiler breeders)', 'Device must match bird size. Same 3-check confirmation required.'],
-        ['Non-penetrating captive bolt', 'Trained farm worker', 'Heavier birds: breeders, turkeys', 'Apply to the correct site on the skull. Confirm insensibility immediately. Follow with secondary method.'],
+        ['Non-penetrating captive bolt', 'Trained farm worker', 'Heavier birds: breeders, turkeys', 'Apply to the correct skull site. Kills in one step in poultry. Confirm death, and use a backup only if a bird is not dead.'],
         ['CO2 euthanasia', 'Trained farm worker', 'Small groups, individual birds, hatchery culls', 'Minimum 80% CO2 for chicks; >50% for adults. Continue until all reflexes cease.'],
         ['Blunt force trauma', 'Trained farm worker', 'Neonatal chicks only', 'Single firm blow to top of skull. Technique-dependent. Seek alternatives where available.'],
         ['Injectable barbiturate overdose', 'Licensed veterinarian only', 'Any bird when a veterinarian is present', 'Intravenous injection. Fastest, most reliable. Not available for routine farm use.'],
@@ -548,28 +548,28 @@ function buildBody() {
     para('Expect more skin damage and bleeding with the KED, and reflexes can return after it. Neither tells you the bird is dead. Run the three-check protocol (Section 5) on every KED bird before it goes in the mortality bin.'),
 
     h2('3.4  Non-Penetrating Captive Bolt'),
-    para('The non-penetrating captive bolt hits the skull hard enough to knock the bird out cold on impact. It does not go into the brain. Because it does not destroy brain tissue, you have to follow it right away with a second step that finishes the job: cervical dislocation, decapitation, or bleeding the bird out. A captive bolt on its own, with no second step, is not acceptable.'),
+    para('The non-penetrating captive bolt drives a bolt hard against the skull without breaking through it. In a bird, that alone is enough to kill. A chicken or turkey skull is small and light, so the blow causes massive brain trauma and death, not just a knockout. Purpose-built poultry devices such as the Zephyr and the TED killed birds in a single step in 89 to 100% of trials on chickens and turkeys [9,10]. This is different from cattle and pigs, where the same kind of bolt only stuns and a separate kill step is required.'),
     para('Captive bolt devices are particularly useful for heavier birds where manual cervical dislocation is not reliable: broiler breeders at late production weight, large male turkeys, and birds where a mechanical cervical dislocation device of the appropriate size is not available. Placement is what makes it work, and it differs by species [5]:'),
     bullet('Chickens: place the bolt directly behind the comb, firmly against the head, with the bird\'s "chin" resting on a hard, solid surface.'),
     bullet('Turkeys: place the bolt on top of the head, between the ears and eyes, with the bird\'s "chin" on a hard, solid surface.'),
     para('Follow the manufacturer\'s instructions in all cases. With a non-penetrating device, fire twice in quick succession if it allows. A penetrating bolt needs only one shot. Hands-on training on the specific device is mandatory before you use it.'),
-    para('In broiler breeder research, the non-penetrating captive bolt knocked birds out immediately and reliably at full production weight [8]. For heavy birds where cervical dislocation is not practical, it is one of the fastest ways to get a bird unconscious.'),
+    para('No application is perfect, so confirm death with the three-check protocol on every bird and apply a backup if one is not dead (see Section 5). Used properly, the captive bolt is one of the fastest ways to put down a heavy bird where cervical dislocation is not practical [8].'),
 
     h2('3.5  CO2 Euthanasia'),
     para([
       { text: 'Carbon dioxide (' }, { text: 'CO', bold: false }, { text: '2' }, { text: ') is an approved poultry method under the AVMA 2020 Guidelines, listed as "Acceptable with Conditions" [1]. The gas pushes the oxygen out of the air the bird is breathing, so it loses consciousness and then dies. It works well for hatchery culls, small groups, or the odd individual bird when a manual or mechanical method is not practical.' },
     ]),
-    para('What the research says you need to get right [9]:'),
+    para('What the research says you need to get right [11]:'),
     bullet([
-      { text: 'Chicks (day-old to 3 weeks): ' }, { text: 'fill the chamber to at least 80% CO', bold: true }, { text: '2', bold: true, subScript: true }, { text: '. Below 60%, chicks do not die quickly or reliably [9].' },
+      { text: 'Chicks (day-old to 3 weeks): ' }, { text: 'fill the chamber to at least 80% CO', bold: true }, { text: '2', bold: true, subScript: true }, { text: '. Below 60%, chicks do not die quickly or reliably [11].' },
     ]),
     bullet([
-      { text: 'Adult birds: ' }, { text: 'above 50% CO', bold: true }, { text: '2', bold: true, subScript: true }, { text: ' knocks them out fast. Fill the chamber to a high concentration before you put the birds in. They go down quicker and struggle less than if you let the gas build up slowly [1,9].' },
+      { text: 'Adult birds: ' }, { text: 'above 50% CO', bold: true }, { text: '2', bold: true, subScript: true }, { text: ' knocks them out fast. Fill the chamber to a high concentration before you put the birds in. They go down quicker and struggle less than if you let the gas build up slowly [1,11].' },
     ]),
     bullet([
       { text: 'Fill rate: ' }, { text: 'For gradual fill methods, a displacement rate of 30 to 70% of the chamber volume per minute is the range used in research settings [1]. Pre-fill (immersion) method is preferred for speed and welfare.' },
     ]),
-    bullet('Continue CO2 flow until all reflexes have stopped, then keep it running for at least 1 more minute to be certain [9].'),
+    bullet('Continue CO2 flow until all reflexes have stopped, then keep it running for at least 1 more minute to be certain [11].'),
     bullet('Chamber must seal. Gas leaks reduce concentration in the breathing zone and produce a slower, less humane death.'),
     spacer(80),
     calloutMulti(
@@ -612,7 +612,7 @@ function buildBody() {
       [
         ['Manual cervical dislocation', 'Gloves. Mortality bin. Death-confirmation checklist.', 'Barn entry point or supervisor station'],
         ['KED device', 'KED device (correct size for flock). Gloves. Mortality bin.', 'Barn entry point, secured wall mount'],
-        ['Captive bolt', 'Captive bolt device. Cartridges or compressed gas charge. Safety lock. Gloves. Mortality bin. Secondary method (shears or scalpel for exsanguination).', 'Locked barn cabinet'],
+        ['Captive bolt', 'Captive bolt device. Cartridges or compressed gas charge. Safety lock. Gloves. Mortality bin. Backup method (poultry shears) if an application fails.', 'Locked barn cabinet'],
         ['CO2 chamber', 'CO2 cylinder with regulator and hose. Sealable chamber sized for the birds. Gloves. Mortality bin.', 'Barn entry, well-ventilated area'],
         ['Blunt force trauma', 'Hard, smooth, rounded object (rubber mallet). Gloves. Mortality bin.', 'Barn entry point'],
       ],
@@ -643,19 +643,19 @@ function buildBody() {
         ['Broiler breeders (females)', '2.5 to 4 kg', 'Manual cervical dislocation (if < 3 kg); KED-C; CO2', 'Assess individual bird weight. Use KED-C for birds you cannot confidently dislocate manually.'],
         ['Commercial layers', '1.5 to 2 kg', 'Manual cervical dislocation; CO2', 'Same approach as market-age broilers.'],
         ['Turkeys (small)', '< 5 kg', 'KED-C; Manual cervical dislocation', 'Physical restraint may be more difficult than with chickens due to size and strength.'],
-        ['Turkeys (large, commercial)', '10 to 20 kg', 'Non-penetrating captive bolt + secondary method; CO2', 'Manual and KED-C methods are not reliable or safe at this weight. Captive bolt required.'],
+        ['Turkeys (large, commercial)', '10 to 20 kg', 'Non-penetrating captive bolt; CO2', 'Manual and KED-C methods are not reliable or safe at this weight. Captive bolt required.'],
       ],
       [2000, 1500, 2600, 2540]
     ),
     spacer(160),
-    para([{ text: 'Source:', bold: true }, { text: ' AVMA Guidelines for the Euthanasia of Animals: 2020 Edition [1]; Boyal et al. 2022, Poultry Science [8]; Ripplinger et al. 2024, Poultry Science [7]; Humane Slaughter Association [10].' }]),
+    para([{ text: 'Source:', bold: true }, { text: ' AVMA Guidelines for the Euthanasia of Animals: 2020 Edition [1]; Boyal et al. 2022, Poultry Science [8]; Ripplinger et al. 2024, Poultry Science [7]; Humane Slaughter Association [12].' }]),
     pageBreak(),
 
     // ─── SECTION 5 ───
     h1('5. Verification of Death'),
     h2('5.1  Why Verification Matters'),
     para('Wing flapping, muscle tremors, and gasping movements are common after euthanasia. They are reflex responses from the nervous system, not signs of consciousness. If you drop a bird in the mortality bin based on those signs alone, you may be disposing of a bird that is not fully dead.'),
-    para('To be sure a bird is dead, you have to check the signs that show the brain and heart have truly stopped for good. The twitching and gasping after euthanasia do not tell you that. Only the three-check protocol does [4,11].'),
+    para('To be sure a bird is dead, you have to check the signs that show the brain and heart have truly stopped for good. The twitching and gasping after euthanasia do not tell you that. Only the three-check protocol does [4,13].'),
 
     h2('5.2  The Three-Check Protocol'),
     ...svgImage(verificationSvg, 'Figure 5.1: The three-check death confirmation protocol. All three checks must pass. Absence of corneal blink, heartbeat, and respiration for a sustained period of at least 5 minutes confirms death. Voluntary reflexes after euthanasia are expected and do not indicate consciousness. Source: CPC Short Courses.', 5.9),
@@ -664,7 +664,7 @@ function buildBody() {
     numbered([{ text: 'Heartbeat:', bold: true }, { text: ' Place your fingers or a stethoscope behind the left elbow on the keel side of the chest. Listen or feel for any heartbeat. For CO2 or manual cervical dislocation cases, you are looking for complete asystole (no beat at all). If you feel a weak or irregular pulse: the bird is not dead yet.' }]),
     numbered([{ text: 'Respiration:', bold: true }, { text: ' Watch the chest and abdomen carefully for 60 seconds. Any movement of the ribcage or abdominal wall indicates the bird is still breathing. A dead bird will have no respiratory movement.' }]),
     spacer(80),
-    callout('The 5-Minute Rule', 'If all three checks pass, wait 5 minutes and recheck the heartbeat and corneal reflex before final disposal. This is especially important after CO2 euthanasia, where birds can recover from light exposure. A bird that was unconscious but not dead may resume respiration if removed from the CO2 atmosphere prematurely. Five minutes of confirmed absence of all three signs means the bird is dead. [4,11]', 'EBF2FA', MED_BLUE),
+    callout('The 5-Minute Rule', 'If all three checks pass, wait 5 minutes and recheck the heartbeat and corneal reflex before final disposal. This is especially important after CO2 euthanasia, where birds can recover from light exposure. A bird that was unconscious but not dead may resume respiration if removed from the CO2 atmosphere prematurely. Five minutes of confirmed absence of all three signs means the bird is dead. [4,13]', 'EBF2FA', MED_BLUE),
     spacer(120),
 
     h2('5.3  When Euthanasia Fails'),
@@ -686,13 +686,13 @@ function buildBody() {
       [
         ['Rendering', 'Carcasses collected by a licensed renderer and processed into meal and fat', 'Carcasses must be stored refrigerated or frozen if retained more than 48 hours after death (Manitoba standard). Keep in sealed containers. Renderer provides collection schedule.'],
         ['On-farm composting', 'Carcasses layered with carbon-rich material (sawdust, straw, wood chips) in an active compost pile', 'Carbon material must fully cover each layer of carcasses. Pile must reach internal temperatures sufficient to kill pathogens. CFIA has specific composting procedures (see Appendix B, Chicken Farmers of Canada) [3].'],
-        ['On-farm burial', 'Carcasses buried in a designated pit on the farm property', 'Manitoba requires burial pits at least 100 meters from any watercourse, spring, sinkhole, or well, with a minimum of 1 meter of impermeable cover over the carcasses [12]. British Columbia requires that buried mortalities not contaminate groundwater and be deep enough to prevent predator access [13]. Setback distances vary by province, so check your local rules.'],
+        ['On-farm burial', 'Carcasses buried in a designated pit on the farm property', 'Manitoba requires burial pits at least 100 meters from any watercourse, spring, sinkhole, or well, with a minimum of 1 meter of impermeable cover over the carcasses [14]. British Columbia requires that buried mortalities not contaminate groundwater and be deep enough to prevent predator access [15]. Setback distances vary by province, so check your local rules.'],
         ['Incineration', 'Carcasses burned in an approved incinerator', 'Must comply with provincial environmental regulations for emissions. Not all provinces permit on-farm incineration without a permit.'],
       ],
       [1800, 3240, 3600]
     ),
     spacer(160),
-    para([{ text: 'Source:', bold: true }, { text: ' Manitoba Agriculture, Protocol for Deadstock Disposal by On-Farm Burial [12]; British Columbia Ministry of Agriculture, Farm Practices: Mortality Disposal [13]; Chicken Farmers of Canada Animal Care Program [3].' }]),
+    para([{ text: 'Source:', bold: true }, { text: ' Manitoba Agriculture, Protocol for Deadstock Disposal by On-Farm Burial [14]; British Columbia Ministry of Agriculture, Farm Practices: Mortality Disposal [15]; Chicken Farmers of Canada Animal Care Program [3].' }]),
 
     h2('6.2  Biosecurity During Disposal'),
     para('Carcasses are a source of pathogens. How you handle them between euthanasia and disposal affects the rest of your flock.'),
@@ -796,6 +796,8 @@ function buildBody() {
     numberedRef('Jacobs L, Bourassa DV, Harris CE, Buhr RJ. Euthanasia: manual versus mechanical cervical dislocation for broilers. Animals. 2019;9(2):47. doi:10.3390/ani9020047'),
     numberedRef('Ripplinger EN, Crespo R, Pullin AN, Carnaccini S, Nelson NC, Trindade PHE, et al. Efficacy of a novel cervical dislocation tool for humane euthanasia of broilers and broiler breeders. Poult Sci. 2024;103(3):103449. doi:10.1016/j.psj.2024.103449'),
     numberedRef('Boyal RS, Buhr RJ, Harris CE, Jacobs L, Bourassa DV. Evaluation of mechanical cervical dislocation, captive bolt, carbon dioxide, and electrical methods for individual on-farm euthanasia of broiler breeders. Poult Sci. 2022;101(9):102000. doi:10.1016/j.psj.2022.102000'),
+    numberedRef('Bandara RMAS, Torrey S, Turner PV, Schwean-Lardner K, Widowski TM. Anatomical pathology, behavioral, and physiological responses induced by application of non-penetrating captive bolt devices in layer chickens. Front Vet Sci. 2019;6:89. doi:10.3389/fvets.2019.00089'),
+    numberedRef('Woolcott CR, Torrey S, Turner PV, Serpa L, Schwean-Lardner K, Widowski TM. Evaluation of two models of non-penetrating captive bolt devices for on-farm euthanasia of turkeys. Animals (Basel). 2018;8(3):42. doi:10.3390/ani8030042'),
     numberedRef('Baker BI, Torrey S, Widowski TM, Turner PV, Knezacek TD, Nicholds J, Crowe TG, Schwean-Lardner K. Defining characteristics of immersion carbon dioxide gas for successful euthanasia of neonatal and young broilers. Poult Sci. 2020;99(9):4408-4416. doi:10.1016/j.psj.2020.05.039'),
     numberedRef('Humane Slaughter Association. Cervical dislocation and decapitation (manual and mechanical). Wheathampstead: HSA [cited 2026 Jun]. Available from: hsa.org.uk'),
     numberedRef('Iowa State University College of Veterinary Medicine, Veterinary Diagnostic and Production Animal Medicine. Secondary Steps and Confirmation of Death. Ames, IA: Iowa State University [cited 2026 Jun]. Available from: vetmed.iastate.edu'),
@@ -875,7 +877,7 @@ async function main() {
     { lvl: 2, text: '3.2  Manual Cervical Dislocation', page: '9' },
     { lvl: 2, text: '3.3  Mechanical Cervical Dislocation (KED Devices)', page: '11' },
     { lvl: 2, text: '3.4  Non-Penetrating Captive Bolt', page: '12' },
-    { lvl: 2, text: '3.5  CO2 Euthanasia', page: '12' },
+    { lvl: 2, text: '3.5  CO2 Euthanasia', page: '13' },
     { lvl: 2, text: '3.6  Blunt Force Trauma for Neonatal Chicks', page: '13' },
     { lvl: 2, text: '3.7  Methods That Are NOT Acceptable', page: '14' },
     { lvl: 1, text: '4. Practical Steps for Each Approved Method', page: '15' },

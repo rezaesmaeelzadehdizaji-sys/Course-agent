@@ -2,9 +2,9 @@
 
 **Course:** Course 12, Humane Euthanasia
 **Generator:** generate-course12.mjs
-**Date verified:** 2026-06-10
+**Date verified:** 2026-06-10; updated 2026-07-07 (added refs [9] Bandara and [10] Woolcott for the non-penetrating captive bolt single-step correction; old [9]-[13] renumbered to [11]-[15])
 **Verifier:** Live PubMed/CrossRef/ScienceDirect/institutional source checks (this session), building on a prior verification pass (2026-06-09)
-**Total references:** 13
+**Total references:** 15
 
 ---
 
@@ -132,7 +132,35 @@ Boyal RS, Buhr RJ, Harris CE, Jacobs L, Bourassa DV. Evaluation of mechanical ce
 
 ---
 
-### [9] Baker et al. 2020, Immersion CO2 euthanasia for neonatal and young broilers
+### [9] Bandara et al. 2019, Non-penetrating captive bolt in layer chickens
+
+**Citation as written:**
+Bandara RMAS, Torrey S, Turner PV, Schwean-Lardner K, Widowski TM. Anatomical pathology, behavioral, and physiological responses induced by application of non-penetrating captive bolt devices in layer chickens. Front Vet Sci. 2019;6:89. doi:10.3389/fvets.2019.00089
+
+**Verification:**
+- DOI 10.3389/fvets.2019.00089 confirmed via CrossRef; PMC PMC6447681
+- Authors confirmed in order: Bandara RMAS, Torrey S, Turner PV, Schwean-Lardner K, Widowski TM
+- Title confirmed verbatim; Frontiers in Veterinary Science, Volume 6, Article 89, 2019
+- Conclusion supports Section 3.4: all three non-penetrating captive bolt devices (Zephyr-E, Zephyr-EXL, TED) caused sufficient brain trauma to result in death (not just unconsciousness) and can be used as a single-step method in all age groups of layer chickens, 99-100% success
+- STATUS: CONFIRMED (added 2026-07-07)
+
+---
+
+### [10] Woolcott et al. 2018, Non-penetrating captive bolt in turkeys
+
+**Citation as written:**
+Woolcott CR, Torrey S, Turner PV, Serpa L, Schwean-Lardner K, Widowski TM. Evaluation of two models of non-penetrating captive bolt devices for on-farm euthanasia of turkeys. Animals (Basel). 2018;8(3):42. doi:10.3390/ani8030042
+
+**Verification:**
+- DOI 10.3390/ani8030042 confirmed via CrossRef; PMC PMC5867530
+- Authors confirmed in order: Woolcott CR, Torrey S, Turner PV, Serpa L, Schwean-Lardner K, Widowski TM
+- Title confirmed verbatim; Animals (Basel/MDPI), Volume 8, Issue 3, Article 42, 2018
+- Conclusion supports Section 3.4: both devices (Zephyr-EXL, TED) were highly effective inducing immediate insensibility through traumatic brain injury and are reliable single-step methods for on-farm euthanasia of turkeys (97.6% and 89.3% success)
+- STATUS: CONFIRMED (added 2026-07-07)
+
+---
+
+### [11] Baker et al. 2020, Immersion CO2 euthanasia for neonatal and young broilers
 
 **Citation as written:**
 Baker BI, Torrey S, Widowski TM, Turner PV, Knezacek TD, Nicholds J, Crowe TG, Schwean-Lardner K. Defining characteristics of immersion carbon dioxide gas for successful euthanasia of neonatal and young broilers. Poult Sci. 2020;99(9):4408-4416. doi:10.1016/j.psj.2020.05.039
@@ -148,7 +176,7 @@ Baker BI, Torrey S, Widowski TM, Turner PV, Knezacek TD, Nicholds J, Crowe TG, S
 
 ---
 
-### [10] Humane Slaughter Association, Cervical dislocation and decapitation
+### [12] Humane Slaughter Association, Cervical dislocation and decapitation
 
 **Citation as written:**
 Humane Slaughter Association. Cervical dislocation and decapitation (manual and mechanical). Wheathampstead: HSA [cited 2026 Jun]. Available from: hsa.org.uk
@@ -160,7 +188,7 @@ Humane Slaughter Association. Cervical dislocation and decapitation (manual and 
 
 ---
 
-### [11] Iowa State University VDPAM, Secondary Steps and Confirmation of Death
+### [13] Iowa State University VDPAM, Secondary Steps and Confirmation of Death
 
 **Citation as written:**
 Iowa State University College of Veterinary Medicine, Veterinary Diagnostic and Production Animal Medicine. Secondary Steps and Confirmation of Death. Ames, IA: Iowa State University [cited 2026 Jun]. Available from: vetmed.iastate.edu
@@ -174,7 +202,7 @@ Iowa State University College of Veterinary Medicine, Veterinary Diagnostic and 
 
 ---
 
-### [12] Manitoba Agriculture, Protocol for Deadstock Disposal by On-Farm Burial
+### [14] Manitoba Agriculture, Protocol for Deadstock Disposal by On-Farm Burial
 
 **Citation as written:**
 Manitoba Agriculture. Protocol for Deadstock Disposal by On-Farm Burial. Winnipeg: Government of Manitoba [cited 2026 Jun]. Available from: gov.mb.ca/agriculture
@@ -187,7 +215,7 @@ Manitoba Agriculture. Protocol for Deadstock Disposal by On-Farm Burial. Winnipe
 
 ---
 
-### [13] British Columbia Ministry of Agriculture, Farm Practices: Mortality Disposal
+### [15] British Columbia Ministry of Agriculture, Farm Practices: Mortality Disposal
 
 **Citation as written:**
 British Columbia Ministry of Agriculture. Farm Practices: Mortality Disposal. Order No. 870.218-46. Victoria: Government of British Columbia; 2014 [cited 2026 Jun]. Available from: gov.bc.ca
@@ -212,13 +240,15 @@ British Columbia Ministry of Agriculture. Farm Practices: Mortality Disposal. Or
 | [6] | Jacobs et al. | 2019 | doi:10.3390/ani9020047, PMID 30769927, PMC6406331 | CONFIRMED |
 | [7] | Ripplinger et al. | 2024 | doi:10.1016/j.psj.2024.103449, PMID 38277886, PMC10832470 | CONFIRMED |
 | [8] | Boyal et al. | 2022 | doi:10.1016/j.psj.2022.102000, PMC9334341 | CONFIRMED |
-| [9] | Baker et al. | 2020 | doi:10.1016/j.psj.2020.05.039, PMID 32867984 | CONFIRMED |
-| [10] | Humane Slaughter Association | n/a | hsa.org.uk | CONFIRMED |
-| [11] | Iowa State University VDPAM | n/a | vetmed.iastate.edu | CONFIRMED |
-| [12] | Manitoba Agriculture | n/a | gov.mb.ca/agriculture | CONFIRMED |
-| [13] | British Columbia Ministry of Agriculture | 2014 | gov.bc.ca | CONFIRMED |
+| [9] | Bandara et al. | 2019 | doi:10.3389/fvets.2019.00089, PMC6447681 | CONFIRMED |
+| [10] | Woolcott et al. | 2018 | doi:10.3390/ani8030042, PMC5867530 | CONFIRMED |
+| [11] | Baker et al. | 2020 | doi:10.1016/j.psj.2020.05.039, PMID 32867984 | CONFIRMED |
+| [12] | Humane Slaughter Association | n/a | hsa.org.uk | CONFIRMED |
+| [13] | Iowa State University VDPAM | n/a | vetmed.iastate.edu | CONFIRMED |
+| [14] | Manitoba Agriculture | n/a | gov.mb.ca/agriculture | CONFIRMED |
+| [15] | British Columbia Ministry of Agriculture | 2014 | gov.bc.ca | CONFIRMED |
 
-**Zero fabricated references. All 13 citations verified against primary sources. Citation order in the built document is sequential 1 through 13 in first-appearance order, matching Vancouver style.**
+**Zero fabricated references. All 15 citations verified against primary sources. Citation order in the built document is sequential 1 through 15 in first-appearance order, matching Vancouver style.**
 
 ---
 
@@ -239,6 +269,8 @@ British Columbia Ministry of Agriculture. Farm Practices: Mortality Disposal. Or
 | 11 | Figure 2.1 (decisionTreeSvg), "Monitor closely" box | "reassess in 4 h" (unsourced specific time figure) | "recheck later" |
 | 12 | Section 2.2 table, neurological signs row | "Mild incoordination in a young chick: move to recovery pen, recheck in 4 h" (unsourced specific time figure) | "Mild incoordination in a young chick: move to recovery pen, recheck within a few hours" |
 | 13 | Section 6.1 carcass disposal table, on-farm burial requirements | "100 metres" and "1 metre" (British spelling, missed by the standard sweep regex because "metre" is not in the checklist) | "100 meters" and "1 meter" (American English, per CLAUDE.md "-er, not -re" rule) |
+| 14 | Section 3.4 non-penetrating captive bolt (2026-07-07) | "Because it does not destroy brain tissue, you have to follow it right away with a second step... A captive bolt on its own, with no second step, is not acceptable." (the large-mammal rule wrongly applied to poultry) | In poultry a purpose-built non-penetrating captive bolt causes fatal traumatic brain injury and kills in a single step (unlike cattle/pigs, where it only stuns). Death is still confirmed with the three-check protocol, and a backup is applied only if a bird is not dead. Supported by new refs [9] Bandara 2019 (layers, 99-100%) and [10] Woolcott 2018 (turkeys, 89-98%). Overview table (3.1), age/size table (4.3 large turkeys), and equipment table (4.1) updated to match. |
+| 15 | Citation renumber after adding [9] and [10] (2026-07-07) | old [9]-[13] | Two new refs first cited in Section 3.4 inserted as [9] (Bandara) and [10] (Woolcott); old [9] Baker -> [11], [10] HSA -> [12], [11] Iowa -> [13], [12] Manitoba -> [14], [13] BC -> [15]. First-appearance order re-verified sequential 1 through 15 in the built docx. |
 
 ---
 
