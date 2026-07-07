@@ -549,7 +549,10 @@ function buildBody() {
 
     h2('3.4  Non-Penetrating Captive Bolt'),
     para('The non-penetrating captive bolt hits the skull hard enough to knock the bird out cold on impact. It does not go into the brain. Because it does not destroy brain tissue, you have to follow it right away with a second step that finishes the job: cervical dislocation, decapitation, or bleeding the bird out. A captive bolt on its own, with no second step, is not acceptable.'),
-    para('Captive bolt devices are particularly useful for heavier birds where manual cervical dislocation is not reliable: broiler breeders at late production weight, large male turkeys, and birds where a mechanical cervical dislocation device of the appropriate size is not available. The device must be applied to the correct anatomical site on the skull at the proper angle to produce effective stunning. Manufacturer instructions and hands-on training are mandatory before using this equipment.'),
+    para('Captive bolt devices are particularly useful for heavier birds where manual cervical dislocation is not reliable: broiler breeders at late production weight, large male turkeys, and birds where a mechanical cervical dislocation device of the appropriate size is not available. Placement is what makes it work, and it differs by species [5]:'),
+    bullet('Chickens: place the bolt directly behind the comb, firmly against the head, with the bird\'s "chin" resting on a hard, solid surface.'),
+    bullet('Turkeys: place the bolt on top of the head, between the ears and eyes, with the bird\'s "chin" on a hard, solid surface.'),
+    para('Follow the manufacturer\'s instructions in all cases. With a non-penetrating device, fire twice in quick succession if it allows. A penetrating bolt needs only one shot. Hands-on training on the specific device is mandatory before you use it.'),
     para('In broiler breeder research, the non-penetrating captive bolt knocked birds out immediately and reliably at full production weight [8]. For heavy birds where cervical dislocation is not practical, it is one of the fastest ways to get a bird unconscious.'),
 
     h2('3.5  CO2 Euthanasia'),
