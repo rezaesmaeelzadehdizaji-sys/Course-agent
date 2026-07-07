@@ -526,7 +526,7 @@ function buildBody() {
     numbered('With your other hand, grip the head right behind the skull, between your thumb and first two fingers.'),
     numbered('In a single rapid motion: pull the head firmly downward and simultaneously press your knuckle into the back of the neck at the skull base, stretching and dislocating the cervical vertebrae.'),
     numbered('The motion must be fast and decisive. A slow pull does not dislocate the joint. Do it in one smooth movement.'),
-    numbered('You will feel the separation. The neck will elongate. Involuntary wing flapping is normal and expected.'),
+    numbered('You will feel the separation, and the neck will elongate.'),
     numbered('Before the bird goes in the mortality bin, run the three-check protocol to confirm it is dead (see Section 5).'),
     spacer(60),
     ...image(figBuf('chick Euthanasia.jpg'), 'Photo 3.1: Manual cervical dislocation, step by step. Secure the lower body and legs in one hand (left), grip the head behind the skull between thumb and fingers (center), then stretch the neck down and back in one fast motion (right). The diagrams show the target: the neck must separate at the base of the skull, between the skull and the first vertebra (green check), not lower down the neck (red X). Source: Poultry Industry Council, Practical Guidelines for On-Farm Euthanasia of Poultry, 2nd ed., 2016 [5].', 5.9),
@@ -545,7 +545,7 @@ function buildBody() {
     spacer(60),
     para('Do not reach for the KED as an automatic upgrade for birds you can already put down by hand. In broilers, hand dislocation worked faster and cleaner, and reflexes came back in about half the KED birds versus very few done by hand [6]. For broilers in this weight range, do it by hand (see Section 3.2).'),
     para('The KED earns its place on birds too heavy for reliable hand dislocation, mainly broiler breeders at production weight. In that range it works well, about a 98% kill rate in one breeder study [8]. Use it there, not as a substitute for hand dislocation on smaller birds.'),
-    para('Expect more skin damage and bleeding with the KED, and reflexes can return after it. Neither tells you the bird is dead. Run the three-check protocol (Section 5) on every KED bird, corneal reflex, heartbeat, and respiration, before it goes in the mortality bin.'),
+    para('Expect more skin damage and bleeding with the KED, and reflexes can return after it. Neither tells you the bird is dead. Run the three-check protocol (Section 5) on every KED bird before it goes in the mortality bin.'),
 
     h2('3.4  Non-Penetrating Captive Bolt'),
     para('The non-penetrating captive bolt hits the skull hard enough to knock the bird out cold on impact. It does not go into the brain. Because it does not destroy brain tissue, you have to follow it right away with a second step that finishes the job: cervical dislocation, decapitation, or bleeding the bird out. A captive bolt on its own, with no second step, is not acceptable.'),
@@ -566,7 +566,7 @@ function buildBody() {
     bullet([
       { text: 'Fill rate: ' }, { text: 'For gradual fill methods, a displacement rate of 30 to 70% of the chamber volume per minute is the range used in research settings [1]. Pre-fill (immersion) method is preferred for speed and welfare.' },
     ]),
-    bullet('Continue CO2 flow until you have confirmed absence of all reflexes: corneal blink, heartbeat, and respiration. Then maintain for a minimum of 1 additional minute to be certain [9].'),
+    bullet('Continue CO2 flow until all reflexes have stopped, then keep it running for at least 1 more minute to be certain [9].'),
     bullet('Chamber must seal. Gas leaks reduce concentration in the breathing zone and produce a slower, less humane death.'),
     spacer(80),
     calloutMulti(
@@ -738,7 +738,7 @@ function buildBody() {
     // ─── SECTION 8 ───
     h1('8. Workshop: Practical Demonstration'),
     h2('8.1  Workshop Overview'),
-    para('The workshop session is the practical counterpart to this lecture. It is where you develop the hands-on skill that converts knowledge into competency. You cannot demonstrate proficiency by reading about a technique. You demonstrate it by doing it correctly under supervision.'),
+    para('The workshop session is the practical counterpart to this lecture. It is where you build the hands-on skill under supervision, because reading about a technique is not the same as being able to do it.'),
     para('The workshop will cover:'),
     numbered('Manual cervical dislocation: technique demonstration, supervised practice, feedback.'),
     numbered('Using the KED: picking the right size, where to place it, and how to apply it for the bird you have.'),
@@ -768,7 +768,7 @@ function buildBody() {
     para([{ text: 'Large, agitated birds.', bold: true }, { text: ' A scared bird fights back. For manual cervical dislocation, secure the legs and body before attempting the technique. For heavier birds, a partner can hold the body while you apply the device or perform the dislocation. Never try to euthanize a fighting bird one-handed. You will not do it cleanly, and you may injure yourself.' }]),
     para([{ text: 'Birds in tight spaces.', bold: true }, { text: ' Birds that collapse in a corner or between feeders need to be extracted gently before euthanasia. Move feeders or drinkers if needed. Do not attempt a dislocating motion in a space too small to complete it fully.' }]),
     para([{ text: 'Large numbers of compromised chicks at placement.', bold: true }, { text: ' A CO2 chamber handles multiple chicks at once and is more efficient than individual manual euthanasia for batches of 10 or more birds. If you have a large number of compromised chicks and no CO2 equipment is available, manual euthanasia with a second trained person present is the right approach. One person holds, one performs the procedure. Do not rush.' }]),
-    para([{ text: 'When a method fails on the first attempt.', bold: true }, { text: ' Do not panic. Apply a secondary method immediately: another cervical dislocation attempt, decapitation, or continued CO2 exposure. The bird is almost certainly unconscious by now. Your job is to confirm it is dead, right away.' }]),
+    para([{ text: 'When a method fails on the first attempt.', bold: true }, { text: ' Do not panic. The bird is almost certainly unconscious by now, so apply a secondary method right away and confirm death, as covered in Section 5.3.' }]),
     pageBreak(),
 
     // ─── RECOMMENDED JOURNALS ───
