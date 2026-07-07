@@ -466,10 +466,12 @@ function buildBody() {
     bullet('Has labored, open-mouth breathing at rest in normal temperature conditions.'),
     bullet('Appears to have significant neurological impairment: circling, star-gazing, or complete loss of righting reflex with no improvement in 10 minutes.'),
     bullet('Has been found in poor condition that has clearly been present for more than a day.'),
+    spacer(60),
+    ...image(figBuf('chick abnormalities.jpg'), 'Photo 2.1: Common chick defects that make a bird a cull on the first handling pass: cross-beak, splayed or twisted legs, a twisted neck, and an unhealed or infected navel, along with thin, patchy down. Birds like these cannot reach feed and water on their own and will not catch up. Source: salto.com.ph; ceva.vn; Olkowski et al., Acta Vet Scand 2019; Taha & Mohammed, J Educ Sci 2022.', 5.5),
     spacer(80),
     callout('Chick Placement Rule', 'Any chick that cannot stand, has an obvious deformity preventing it from reaching feed or water, or is clearly below half the expected weight of its pen-mates must be euthanized within the first handling pass. Do not place it and hope. NFACC requires compromised birds at placement to be euthanized within 1 hour of completion of flock processing. [2]', 'EBF2FA', MED_BLUE),
     spacer(80),
-    ...image(figBuf('chick_placement_cobb.jpg'), 'Photo 2.1: A healthy, alert chick at placement, bright eyes, clean down, standing square, and finding feed and water on its own. On placement day, run a chick check: sample around 100 chicks across the brooding area and score their condition and crop fill, so you catch a weak batch before birds are lost in the flock. Source: cobbgenetics.com.', 5.1),
+    ...image(figBuf('chick_placement_cobb.jpg'), 'Photo 2.2: A healthy, alert chick at placement, bright eyes, clean down, standing square, and finding feed and water on its own. On placement day, run a chick check: sample around 100 chicks across the brooding area and score their condition and crop fill, so you catch a weak batch before birds are lost in the flock. Source: cobbgenetics.com.', 5.1),
     spacer(60),
 
     h2('2.2  Recognizing Irreversible Suffering'),
