@@ -53,8 +53,8 @@ function para(text, opts = {}) {
     indent: opts.indent ? { left: convertInchesToTwip(opts.indent) } : undefined,
   });
 }
-function h1(text) {
-  return new Paragraph({ text, heading: HeadingLevel.HEADING_1, spacing: { before: 360, after: 160 } });
+function h1(text, pageBreakBefore = false) {
+  return new Paragraph({ text, heading: HeadingLevel.HEADING_1, spacing: { before: 360, after: 160 }, pageBreakBefore });
 }
 function h2(text) {
   return new Paragraph({ text, heading: HeadingLevel.HEADING_2, spacing: { before: 280, after: 120 } });
@@ -510,6 +510,7 @@ function buildBody() {
         ['Non-penetrating captive bolt', 'Trained farm worker', 'Heavier birds: breeders, turkeys', 'Apply to the correct skull site. Kills in one step in poultry. Confirm death, and use a backup only if a bird is not dead.'],
         ['CO2 euthanasia', 'Trained farm worker', 'Small groups, individual birds, hatchery culls', 'Minimum 80% CO2 for chicks; >50% for adults. Continue until all reflexes cease.'],
         ['Blunt force trauma', 'Trained farm worker', 'Neonatal chicks only', 'Single firm blow to top of skull. Technique-dependent. Seek alternatives where available.'],
+        ['Decapitation', 'Trained farm worker', 'Smaller birds; definitive backup for any size', 'Sharp overlapping-blade shears, one clean cut. Kills by blood loss, so use cervical dislocation or captive bolt first where practical. Confirm death.'],
         ['Injectable barbiturate overdose', 'Licensed veterinarian only', 'Any bird when a veterinarian is present', 'Intravenous injection. Fastest, most reliable. Not available for routine farm use.'],
       ],
       [1800, 1800, 2160, 2880]
@@ -594,7 +595,16 @@ function buildBody() {
     para('The AVMA notes that those using this method should search for alternatives where feasible [1]. The Poultry Industry Council Practical Guidelines for On-Farm Euthanasia of Poultry recommends CO2 as the preferred method for large numbers of compromised chicks at placement, with blunt force trauma reserved for individual birds when no alternative is immediately available [5].'),
     para('If using this method: one blow, applied to the top of the skull with a firm, solid object. Multiple strikes indicate the first strike was not adequate, which is an animal welfare problem. If the first strike was not effective, immediately apply a second strike. Then confirm death with the three-check protocol before disposal.'),
 
-    h2('3.7  Methods That Are NOT Acceptable'),
+    h2('3.7  Decapitation'),
+    para('Decapitation takes the head off in a single stroke of sharp shears. It is definitive: once the head is off, the bird cannot recover, which is why it is the reliable backup when another method fails (see Section 5.3). The AVMA 2020 Guidelines list it as an approved method with conditions [1].'),
+    para('The honest catch is that decapitation kills by blood loss, not by wrecking the brain, so the bird is not knocked out on the spot the way it is with cervical dislocation or a captive bolt. Brain activity can carry on in the severed head for a short time. So use cervical dislocation or a captive bolt first where either is practical, and reach for decapitation on smaller birds or as the definitive finish when you need to be certain.'),
+    para('If you use it, the conditions that matter [5]:'),
+    bullet('Shears must be sharp, and the blades must overlap when they close, not just meet edge to edge. Dull or meeting blades crush instead of cut.'),
+    bullet('Match the shears to the bird. Light poultry scissors are for small birds; heavier birds need heavy shears that take the neck in one cut.'),
+    bullet('One clean, fast cut all the way through the neck. Do not saw at it.'),
+    bullet('Confirm death with the three-check protocol before the bird goes in the mortality bin (see Section 5).'),
+
+    h2('3.8  Methods That Are NOT Acceptable'),
     para('The methods below make birds suffer, do not kill reliably, or put people at risk. They are not acceptable for poultry, and you must not use them:'),
     bullet('Drowning: causes air hunger and distress before unconsciousness. Not acceptable for any species.'),
     bullet('Thoracic compression (chest squeezing): causes pain and prolonged asphyxia. Not acceptable for conscious birds.'),
@@ -618,6 +628,7 @@ function buildBody() {
         ['Captive bolt', 'Captive bolt device. Cartridges or compressed gas charge. Safety lock. Gloves. Mortality bin. Backup method (poultry shears) if an application fails.', 'Locked barn cabinet'],
         ['CO2 chamber', 'CO2 cylinder with regulator and hose. Sealable chamber sized for the birds. Gloves. Mortality bin.', 'Barn entry, well-ventilated area'],
         ['Blunt force trauma', 'Hard, smooth, rounded object (rubber mallet). Gloves. Mortality bin.', 'Barn entry point'],
+        ['Decapitation', 'Sharp poultry shears sized to the bird. Gloves. Mortality bin.', 'Barn entry point'],
       ],
       [1800, 4320, 2520]
     ),
@@ -652,10 +663,9 @@ function buildBody() {
     ),
     spacer(160),
     para([{ text: 'Source:', bold: true }, { text: ' AVMA Guidelines for the Euthanasia of Animals: 2020 Edition [1]; Boyal et al. 2022, Poultry Science [8]; Ripplinger et al. 2024, Poultry Science [7]; Humane Slaughter Association [12].' }]),
-    pageBreak(),
 
     // ─── SECTION 5 ───
-    h1('5. Verification of Death'),
+    h1('5. Verification of Death', true),
     h2('5.1  Why Verification Matters'),
     para('Wing flapping, muscle tremors, and gasping movements are common after euthanasia. They are reflex responses from the nervous system, not signs of consciousness. If you drop a bird in the mortality bin based on those signs alone, you may be disposing of a bird that is not fully dead.'),
     para('To be sure a bird is dead, you have to check the signs that show the brain and heart have truly stopped for good. The twitching and gasping after euthanasia do not tell you that. Only the three-check protocol does [4,13].'),
@@ -882,7 +892,8 @@ async function main() {
     { lvl: 2, text: '3.4  Non-Penetrating Captive Bolt', page: '12' },
     { lvl: 2, text: '3.5  CO2 Euthanasia', page: '13' },
     { lvl: 2, text: '3.6  Blunt Force Trauma for Neonatal Chicks', page: '14' },
-    { lvl: 2, text: '3.7  Methods That Are NOT Acceptable', page: '14' },
+    { lvl: 2, text: '3.7  Decapitation', page: '14' },
+    { lvl: 2, text: '3.8  Methods That Are NOT Acceptable', page: '15' },
     { lvl: 1, text: '4. Practical Steps for Each Approved Method', page: '16' },
     { lvl: 2, text: '4.1  Equipment Required', page: '16' },
     { lvl: 2, text: '4.2  Worker Safety and Biosecurity', page: '16' },
