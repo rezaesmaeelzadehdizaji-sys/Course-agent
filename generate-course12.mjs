@@ -65,11 +65,11 @@ function bullet(text, lvl = 0) {
     : [new TextRun({ text, color: BODY_GRAY, size: 24, font: 'Calibri' })];
   return new Paragraph({ children, numbering: { reference: 'bullet-list', level: lvl }, spacing: { after: 80, line: 276, lineRule: 'auto' } });
 }
-function numbered(text, lvl = 0) {
+function numbered(text, instance = 1, lvl = 0) {
   const children = Array.isArray(text)
     ? text.map(s => new TextRun({ text: s.text, bold: s.bold || false, italics: s.italics || false, color: s.color || BODY_GRAY, size: 24, font: 'Calibri', subScript: s.subScript || false, superScript: s.superScript || false }))
     : [new TextRun({ text, color: BODY_GRAY, size: 24, font: 'Calibri' })];
-  return new Paragraph({ children, numbering: { reference: 'decimal-list', level: lvl }, spacing: { after: 80, line: 276, lineRule: 'auto' } });
+  return new Paragraph({ children, numbering: { reference: 'decimal-list', level: lvl, instance }, spacing: { after: 80, line: 276, lineRule: 'auto' } });
 }
 function numberedRef(text) {
   return new Paragraph({
@@ -674,9 +674,9 @@ function buildBody() {
     h2('5.2  The Three-Check Protocol'),
     ...image(figBuf('three checks.jpg'), 'Figure 5.1: The three field checks for confirming death, the third-eyelid reflex, neck muscle tone, and pinch response, with the heartbeat and breathing check as the final backstop. Source: Poultry Industry Council [5]; CPC Short Courses.', 5.9),
     para('Run these three field checks on every bird, in this order [5]:'),
-    numbered([{ text: 'Third-eyelid reflex:', bold: true }, { text: ' Touch the corner of the eye lightly with a fingertip or clean swab. In a bird that is still alive, the third eyelid, a thin pale membrane, sweeps across the eye. It keeps working until the brain is almost gone, so this is the most reliable field check. No sweep across the eye means the bird is dead.' }]),
-    numbered([{ text: 'Neck muscle tone:', bold: true }, { text: ' A live or barely conscious bird tries to lift its head. Hold the bird and watch. No effort to raise the head means deep unconsciousness or death.' }]),
-    numbered([{ text: 'Response to a pinch:', bold: true }, { text: ' Pinch the comb or a toe firmly. Any flinch or pulling away means the bird is not dead, so apply a secondary method. No reaction at all supports death.' }]),
+    numbered([{ text: 'Third-eyelid reflex:', bold: true }, { text: ' Touch the corner of the eye lightly with a fingertip or a clean swab. In a live bird, the third eyelid, a thin pale membrane, flicks across the eye. It keeps working until the bird is almost gone, so it is the check you can trust most. No flick across the eye means the bird is dead.' }], 2),
+    numbered([{ text: 'Neck muscle tone:', bold: true }, { text: ' A bird that is still alive tries to lift its head. Hold the bird and watch. No effort to raise the head means the bird is deeply unconscious or dead.' }], 2),
+    numbered([{ text: 'Response to a pinch:', bold: true }, { text: ' Pinch the comb or a toe hard. Any flinch or pull-away means the bird is not dead, so go straight to a backup method. No reaction at all tells you it is dead.' }], 2),
     spacer(80),
     callout('Confirm and Wait 5 Minutes', 'The reflex checks tell you the bird is dead, but do not rush it to the bin. Wait 5 minutes, then confirm there is no heartbeat (feel or listen behind the left elbow, keel side) and no breathing (no chest or abdomen movement). This matters most after CO2, where a bird pulled out too early can come back. Five minutes with no heartbeat and no breathing confirms death [4,13].', 'EBF2FA', MED_BLUE),
     spacer(120),
@@ -754,11 +754,11 @@ function buildBody() {
     h2('8.1  Workshop Overview'),
     para('The workshop session is the practical counterpart to this lecture. It is where you build the hands-on skill under supervision, because reading about a technique is not the same as being able to do it.'),
     para('The workshop will cover:'),
-    numbered('Manual cervical dislocation: technique demonstration, supervised practice, feedback.'),
-    numbered('Using the KED: picking the right size, where to place it, and how to apply it for the bird you have.'),
-    numbered('Setting up a CO2 chamber: hooking up the cylinder, getting the concentration right, loading and sealing the birds in, and confirming death.'),
-    numbered('Three-check death verification: practice applying the protocol to euthanized birds.'),
-    numbered('Carcass handling and mortality bin protocol: correct procedure from euthanasia to bin.'),
+    numbered('Manual cervical dislocation: technique demonstration, supervised practice, feedback.', 3),
+    numbered('Using the KED: picking the right size, where to place it, and how to apply it for the bird you have.', 3),
+    numbered('Setting up a CO2 chamber: hooking up the cylinder, getting the concentration right, loading and sealing the birds in, and confirming death.', 3),
+    numbered('Three-check death verification: practice applying the protocol to euthanized birds.', 3),
+    numbered('Carcass handling and mortality bin protocol: correct procedure from euthanasia to bin.', 3),
 
     h2('8.2  Common Mistakes and How to Avoid Them'),
     spacer(80),
