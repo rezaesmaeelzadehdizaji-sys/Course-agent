@@ -46,16 +46,21 @@ National Farm Animal Care Council. Code of Practice for the Care and Handling of
 
 ---
 
-### [3] Chicken Farmers of Canada Animal Care Program Manual (2018)
+### [3] Chicken Farmers of Canada Animal Care Program Standard Operating Procedures, Version 6.1 (2021, hosted May 2025)
 
 **Citation as written:**
-Chicken Farmers of Canada. Animal Care Program Manual. Ottawa: CFC; 2018. Available from: chickenfarmers.ca
+Chicken Farmers of Canada. Animal Care Program Standard Operating Procedures. Version 6.1. Ottawa: CFC; 2021 [cited 2026 Jul]. Available from: chickenfarmers.ca
 
-**Verification:**
-- Program confirmed at chickenfarmers.ca, Animal Care Program (ACP)
-- "Animal Care Program Manual" confirmed as the title of the on-farm audit manual
-- 2018 reflects the program revision year used at the time of writing. If Chicken Farmers of Canada has issued a newer edition by the next major revision of this course, the year should be confirmed directly with CFC
-- STATUS: CONFIRMED (edition year recommended for periodic recheck with CFC)
+**Verification (updated 2026-07-08, currency recheck):**
+- The prior citation was the 2018 ACP Manual. Currency recheck against chickenfarmers.ca/resources found the current audited program document is the ACP Standard Operating Procedures, Version 6.1 (document titled "2021 ACP Standard Operating Procedures," PDF refreshed May 2025). The 2018 Manual is still hosted but the SOP v6.1 is the current standard farms are audited against.
+- Downloaded the v6.1 PDF and confirmed by full-text extract (pdftotext) that it contains every claim the course attributes to [3]:
+  - Euthanasia SOP section: describe primary method AND "the back-up method you would use if your primary euthanasia method fails" (maps to Section 5.3), euthanasia triggers, and "how you inspect for loss of consciousness and death" (maps to Section 5)
+  - Daily Flock Inspections + mortality and cull records (maps to Sections 1.3, 4.2, 7.1)
+  - ACP Training Record including euthanasia (maps to Sections 7.2, 7.3, competent/trained personnel)
+  - Euthanasia of birds deemed unfit "as soon as possible" (maps to prompt-euthanasia framing)
+- The swap improves both currency (2025 vs 2018) and claim-match precision (v6.1 explicitly names the back-up-method and death-inspection requirements the course teaches)
+- Source PDF retained at Course 12/CFC_ACP_SOP_v6.1_2025.pdf for traceability
+- STATUS: CONFIRMED and UPDATED to current version
 
 ---
 
@@ -234,7 +239,7 @@ British Columbia Ministry of Agriculture. Farm Practices: Mortality Disposal. Or
 |-----|------------------------------|------|------------|--------|
 | [1] | AVMA | 2020 | avma.org | CONFIRMED |
 | [2] | NFACC | 2016 | nfacc.ca | CONFIRMED |
-| [3] | Chicken Farmers of Canada | 2018 | chickenfarmers.ca | CONFIRMED (edition year recheck recommended) |
+| [3] | Chicken Farmers of Canada | 2021 (SOP v6.1, hosted May 2025) | chickenfarmers.ca | CONFIRMED and UPDATED (was 2018 Manual; now current ACP SOP v6.1) |
 | [4] | Merck Veterinary Manual | 2024 | merckvetmanual.com | CONFIRMED |
 | [5] | Poultry Industry Council | 2016 | poultryindustrycouncil.ca | CONFIRMED |
 | [6] | Jacobs et al. | 2019 | doi:10.3390/ani9020047, PMID 30769927, PMC6406331 | CONFIRMED |
@@ -324,6 +329,13 @@ Re-ran the whole audit at the user's request ("double check everything ... I wan
 | 28 | 8.2 Common Mistakes row "Using blunt force trauma on a bird too large ... only for neonatal chicks or very small birds" | Stale wording contradicting corrected Section 3.6 (finding #16); blunt force is scoped for large birds. | Row rewritten to "A hesitant or under-powered blunt force blow," with a farmer-flow prevention step. |
 
 **Death-confirmation checks re-read at source (2026-07-08):** PIC [5] (pp. 13-15) confirms the exact three field checks now in Section 5 and Figure 5.1: nictitating membrane (third eyelid) reflex, lack of neck muscle tone (no attempt to raise head), and lack of response to a comb/toe pinch, plus "Death must also be confirmed in chicks." Section 5 matches the source.
+
+**Currency recheck of institutional sources (2026-07-08):**
+- [1] AVMA Guidelines for the Euthanasia of Animals: 2020 Edition is still the current edition (panel reviews at least every 10 years; no newer edition exists as of July 2026). CURRENT.
+- [2] NFACC Code of Practice for Hatching Eggs, Breeders, Chickens and Turkeys, 2016 is still the in-force edition. A revision began in September 2024 with a public comment period scheduled for September-October 2026 and projected completion September 2027, so the 2016 Code remains the current standard as of July 2026. CURRENT (revised Code expected 2027; re-cite when published).
+- [3] Updated from the 2018 ACP Manual to the current ACP Standard Operating Procedures, Version 6.1 (see [3] entry above).
+- [4] Merck Veterinary Manual euthanasia page is a rolling online source, cited with a live date. CURRENT.
+- [5] PIC Practical Guidelines for On-Farm Euthanasia of Poultry, 2nd ed., 2016 is the current edition. CURRENT.
 
 ---
 

@@ -800,7 +800,7 @@ function buildBody() {
     // Bibliography in first-appearance order per Vancouver style
     numberedRef('American Veterinary Medical Association. Guidelines for the Euthanasia of Animals: 2020 Edition. Schaumburg, IL: AVMA; 2020. Available from: avma.org'),
     numberedRef('National Farm Animal Care Council. Code of Practice for the Care and Handling of Hatching Eggs, Breeders, Chickens and Turkeys. Ottawa: NFACC; 2016. Available from: nfacc.ca'),
-    numberedRef('Chicken Farmers of Canada. Animal Care Program Manual. Ottawa: CFC; 2018. Available from: chickenfarmers.ca'),
+    numberedRef('Chicken Farmers of Canada. Animal Care Program Standard Operating Procedures. Version 6.1. Ottawa: CFC; 2021 [cited 2026 Jul]. Available from: chickenfarmers.ca'),
     numberedRef('Merck Veterinary Manual. Euthanasia of Animals. Kenilworth, NJ: Merck & Co.; 2024 [cited 2026 Jun]. Available from: merckvetmanual.com'),
     numberedRef('Poultry Industry Council. Practical Guidelines for On-Farm Euthanasia of Poultry. 2nd ed. Guelph, ON: PIC; 2016. Available from: poultryindustrycouncil.ca'),
     numberedRef('Jacobs L, Bourassa DV, Harris CE, Buhr RJ. Euthanasia: manual versus mechanical cervical dislocation for broilers. Animals. 2019;9(2):47. doi:10.3390/ani9020047'),
