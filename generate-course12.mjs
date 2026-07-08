@@ -332,8 +332,8 @@ const decisionTreeSvg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80
   </defs>
 </svg>`;
 
-const verificationSvg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 780 360" font-family="Calibri, Arial, sans-serif">
-  <rect width="780" height="360" fill="white"/>
+const verificationSvg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 780 378" font-family="Calibri, Arial, sans-serif">
+  <rect width="780" height="378" fill="white"/>
   <text x="390" y="28" text-anchor="middle" font-size="15" font-weight="bold" fill="#1F3864">Verifying Death After Euthanasia: Three-Check Protocol</text>
   <!-- Check 1 -->
   <rect x="20" y="50" width="220" height="200" rx="10" fill="#EBF2FA" stroke="#2E74B5" stroke-width="2"/>
@@ -372,11 +372,11 @@ const verificationSvg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 78
   <text x="650" y="215" text-anchor="middle" font-size="11" font-weight="bold" fill="#C0504D">No movement = pass</text>
   <text x="650" y="233" text-anchor="middle" font-size="11" fill="#888" font-style="italic">Movement = not dead yet</text>
   <!-- Rule -->
-  <rect x="20" y="268" width="740" height="75" rx="6" fill="#EAF2EA" stroke="#538135" stroke-width="1.5"/>
-  <text x="390" y="288" text-anchor="middle" font-size="12" font-weight="bold" fill="#538135">All three checks must PASS. Wait at least 5 minutes of continuous absence before declaring death.</text>
-  <text x="390" y="308" text-anchor="middle" font-size="11" fill="#3C3C3C">Wing flapping and muscle movement after euthanasia are normal reflexes and do NOT indicate the bird is still alive.</text>
-  <text x="390" y="326" text-anchor="middle" font-size="11" fill="#3C3C3C">If any check fails: apply a secondary method immediately (decapitation or a second application of your primary method).</text>
-  <text x="390" y="344" text-anchor="middle" font-size="10" fill="#888" font-style="italic">Source: Iowa State VDPAM; Merck Veterinary Manual [4,13]</text>
+  <rect x="20" y="266" width="740" height="100" rx="6" fill="#EAF2EA" stroke="#538135" stroke-width="1.5"/>
+  <text x="390" y="290" text-anchor="middle" font-size="12" font-weight="bold" fill="#538135">All three checks must PASS. Wait at least 5 minutes of continuous absence before declaring death.</text>
+  <text x="390" y="311" text-anchor="middle" font-size="11" fill="#3C3C3C">Wing flapping and muscle movement after euthanasia are normal reflexes and do NOT indicate the bird is still alive.</text>
+  <text x="390" y="331" text-anchor="middle" font-size="11" fill="#3C3C3C">If any check fails: apply a secondary method immediately (decapitation or a second application of your primary method).</text>
+  <text x="390" y="352" text-anchor="middle" font-size="10" fill="#888" font-style="italic">Source: Iowa State VDPAM; Merck Veterinary Manual [4,13]</text>
 </svg>`;
 
 // ============================================================
@@ -651,17 +651,18 @@ function buildBody() {
       ['Bird Type', 'Weight Range', 'Recommended Method(s)', 'Notes'],
       [
         ['Day-old / placement chicks', '< 100 g', 'CO2 (for groups); manual cervical dislocation (single bird)', 'Chicks tolerate CO2, so fill the chamber fully and immerse them. For a single chick, cervical dislocation is quick.'],
-        ['Broiler chicks (1-3 weeks)', '100 g to 500 g', 'Manual cervical dislocation; CO2', 'Cervical dislocation is easy at this size. CO2 works for groups.'],
+        ['Broiler chicks (1-3 weeks)', '100 g to 500 g', 'Manual cervical dislocation; KED-S; CO2', 'Cervical dislocation is easy at this size. The KED-S fits birds up to 1.8 kg. CO2 works for groups.'],
         ['Market-age broilers (5-7 weeks)', '1.5 to 3 kg', 'Manual cervical dislocation (up to about 2.3 kg); KED-C', 'Hand dislocation works to about 2.3 kg. Above that, use the KED-C.'],
         ['Broiler breeders (males)', '3.5 to 5 kg', 'KED-C; non-penetrating captive bolt; blunt force trauma', 'Too heavy for reliable hand dislocation, and a CO2 chamber is not practical at this size. Use a device, or blunt force trauma where no device is available.'],
         ['Broiler breeders (females)', '2.5 to 4 kg', 'Manual cervical dislocation (if under 3 kg); KED-C', 'Check the individual bird. Use the KED-C for birds you cannot confidently dislocate by hand.'],
-        ['Commercial layers', '1.5 to 2 kg', 'Manual cervical dislocation; CO2', 'Same approach as market-age broilers. CO2 works for small groups.'],
+        ['Commercial layers', '1.5 to 2 kg', 'Manual cervical dislocation; KED-C; CO2', 'Same approach as market-age broilers. CO2 works for small groups.'],
         ['Turkeys (small)', '< 5 kg', 'KED-C; manual cervical dislocation (small birds)', 'The KED-C covers this range. Restraint is harder than with chickens.'],
-        ['Turkeys (large, commercial)', '10 to 20 kg', 'Non-penetrating captive bolt', 'Too heavy for hand dislocation, and a CO2 chamber is not practical at this size. The KED-C is too small, so the captive bolt is the reliable method.'],
+        ['Turkeys (large, commercial)', '10 to 20 kg', 'KED-T; non-penetrating captive bolt', 'Too heavy for hand dislocation and for a CO2 chamber. Use the turkey KED-T (rated to 29 kg) or a non-penetrating captive bolt.'],
       ],
       [2000, 1500, 2600, 2540]
     ),
     spacer(160),
+    para([{ text: 'KED sizing: ', bold: true, size: 20 }, { text: 'KED-S fits birds up to 1.8 kg, KED-C up to 13.6 kg, and the turkey KED-T up to 29 kg (see Section 3.3).', size: 20 }]),
     para([{ text: 'Source:', bold: true }, { text: ' AVMA Guidelines for the Euthanasia of Animals: 2020 Edition [1]; Boyal et al. 2022, Poultry Science [8]; Ripplinger et al. 2024, Poultry Science [7]; Woolcott et al. 2018, Animals [10]; Humane Slaughter Association [12].' }]),
 
     // ─── SECTION 5 ───
