@@ -171,7 +171,7 @@ Baker BI, Torrey S, Widowski TM, Turner PV, Knezacek TD, Nicholds J, Crowe TG, S
 - Authors confirmed in order: Baker BI, Torrey S, Widowski TM, Turner PV, Knezacek TD, Nicholds J, Crowe TG, Schwean-Lardner K
 - Title confirmed verbatim
 - Journal: Poultry Science, Volume 99, Issue 9, 2020, pages 4408 to 4416, all confirmed
-- Used for the CO2 concentration thresholds in Section 3.5 (minimum 80% CO2 for chicks, 50% for adults, fill rate guidance)
+- Used in Section 3.5 for the immersion-CO2 approach (prefilled sealed chamber, filled fuller for chicks). The body deliberately avoids a hard percentage; the 3.1 overview table was aligned to the same immersion framing on 2026-07-08 (see audit finding #26) so it no longer states a standalone "80% / >50%" figure
 - STATUS: CONFIRMED. The bibliography in generate-course12.mjs already had the correct volume, issue, pages, and DOI. Only the prior version of this log had the wrong values (99(11):6095-6106 and PMID 33142485). See Known Corrections table below
 
 ---
@@ -311,4 +311,20 @@ Triggered after the blunt-force error: verified that each cited CLAIM is actuall
 
 ---
 
-*Log completed and rewritten: 2026-06-10; claim-accuracy audit added 2026-07-07*
+## Claim-Accuracy Audit (2026-07-08, full re-verification before colleague hand-off)
+
+Re-ran the whole audit at the user's request ("double check everything ... I want to send this off to my colleague"). Steps: re-resolved all six journal DOIs against CrossRef; pulled Boyal [8] full text from EuropePMC to confirm the device specs and success rate at the source; re-read PIC [5] (pdftotext) for the chick cervical-dislocation method and death-confirmation checks; full sentence-level farmer-flow read of every section.
+
+| # | Claim / location | Finding | Fix |
+|---|---|---|---|
+| 25 | All six peer-reviewed citations [6]-[11] | Re-resolved each DOI via CrossRef 2026-07-08. Title (verbatim), author order, journal, year, volume, issue, and pages match the citation exactly for all six. No drift from the prior pass. | None needed |
+| 25a | KED device specs (KED-S ≤1.8 kg, KED-C ≤13.6 kg, KED-T ≤29 kg) and "98% for KED" success, cited [8] | CONFIRMED at source. Boyal 2022 full text (EuropePMC PMC9334341) states verbatim "KED-S for birds up to 1.8 kg, KED-C for birds up to 13.6 kg, KED-T for birds up to 29 kg" and "98% for KED." Device name "Koechner Euthanizing Device" also confirmed. | None needed |
+| 26 | 3.1 overview table CO2 cell: "Minimum 80% CO2 for chicks; >50% for adults" | Contradicted the 3.5 body, which deliberately drops any hard percentage in favor of the immersion approach (prefilled sealed chamber, "the birds are your gauge"). PIC [5] gives no numeric CO2 threshold. | Table cell aligned to the body: "Immerse birds in a prefilled, sealed chamber, filled fuller for chicks. Continue until all reflexes cease." |
+| 27 | 8.3 "Large numbers of compromised chicks at placement": "manual euthanasia with a second trained person present ... One person holds, one performs" and "more efficient ... for batches of 10 or more birds" | WRONG method and unsourced number. PIC [5] scopes the two-person hold to LARGE birds (breeders/turkeys held by the wings), not chicks; for chicks under 7 days PIC describes single-operator cervical dislocation (chin on a firm edge, press on the back of the neck). PIC gives no "10 or more" batch threshold. | Rewrote to PIC's chick method, cited [5]; second trained person reframed for operator-fatigue/rotation (PIC: "operator fatigue ... must be considered when euthanizing large numbers of birds"); removed the "10 or more" figure. |
+| 28 | 8.2 Common Mistakes row "Using blunt force trauma on a bird too large ... only for neonatal chicks or very small birds" | Stale wording contradicting corrected Section 3.6 (finding #16); blunt force is scoped for large birds. | Row rewritten to "A hesitant or under-powered blunt force blow," with a farmer-flow prevention step. |
+
+**Death-confirmation checks re-read at source (2026-07-08):** PIC [5] (pp. 13-15) confirms the exact three field checks now in Section 5 and Figure 5.1: nictitating membrane (third eyelid) reflex, lack of neck muscle tone (no attempt to raise head), and lack of response to a comb/toe pinch, plus "Death must also be confirmed in chicks." Section 5 matches the source.
+
+---
+
+*Log completed and rewritten: 2026-06-10; claim-accuracy audit added 2026-07-07; full re-verification before colleague hand-off added 2026-07-08*
