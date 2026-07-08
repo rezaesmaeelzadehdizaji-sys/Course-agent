@@ -433,10 +433,9 @@ function buildBody() {
     bullet('Protect yourself and the rest of the flock while you work and after you finish.'),
     bullet('Handle and dispose of carcasses the way your province and farm program require.'),
     bullet('Keep the records an auditor will ask to see.'),
-    pageBreak(),
 
     // ─── SECTION 1 ───
-    h1('1. Understanding Humane Euthanasia'),
+    h1('1. Understanding Humane Euthanasia', true),
     h2('1.1  Definition and Purpose'),
     para('Humane euthanasia means ending a bird\'s life fast, with no chance of it coming back, and with as little pain and fear as possible. The AVMA Guidelines describe the goal as rapid loss of consciousness followed by cardiac or respiratory arrest and, ultimately, complete loss of brain function [1]. The key word is rapid. A slow or incomplete procedure is not euthanasia. It is prolonged suffering by a different name.'),
     para('On a commercial farm, the birds you will be euthanizing are ones that have no realistic chance of recovery. They are suffering now, and they will keep suffering if you leave them. The job is simple: end the pain quickly, get that bird out of the flock, and stop it from becoming a disease source for the birds around it.'),
@@ -454,10 +453,9 @@ function buildBody() {
     ...image(figBuf('chicke placement.jpg'), 'Photo 1.1: Day-old chicks settling in at placement, active and spread out across fresh litter with easy access to feed and water. Run a chick check the same day: sample around 100 chicks across the brooding area and score their condition and crop fill, so you catch a weak batch before birds are lost in the flock. Source: cobbgenetics.com.', 5.1),
     spacer(60),
     para('Pulling sick birds early also protects the flock. A bird with an open wound, a respiratory bug, or a gut infection is shedding germs into the barn the whole time it sits there. Get it out fast and you lower the disease pressure on the rest, which can save you a treatment later.'),
-    pageBreak(),
 
     // ─── SECTION 2 ───
-    h1('2. When to Euthanize a Bird'),
+    h1('2. When to Euthanize a Bird', true),
     h2('2.1  Criteria for Euthanasia'),
     para('The question is not "could this bird possibly survive?" The question is "can this bird reach market in reasonable condition without ongoing suffering?" If the answer is no, euthanize now.'),
     para('The following conditions require immediate euthanasia. Do not put the bird back and check on it later. Do not wait for your supervisor to walk by. Any bird with any of these signs needs to come off the floor now:'),
@@ -495,10 +493,9 @@ function buildBody() {
     h2('2.3  Decision-Making in Practice'),
     ...svgImage(decisionTreeSvg, 'Figure 2.1: Decision guide for when to euthanize. Start at the top and work through each question. Any bird that cannot eat, drink, or move on its own, or that is in obvious pain, must come off the floor. Source: CPC Short Courses.', 5.9),
     para('If you are unsure, call your veterinarian or barn supervisor before you walk away from the bird. Do not put it back and hope. Hope is not a welfare plan. If you are waiting for guidance, keep the bird separated from the flock and away from active pecking while you make the call.'),
-    pageBreak(),
 
     // ─── SECTION 3 ───
-    h1('3. Approved Humane Euthanasia Methods'),
+    h1('3. Approved Humane Euthanasia Methods', true),
     h2('3.1  Overview of Approved Methods'),
     para('The AVMA 2020 Guidelines classify euthanasia methods as Acceptable or Acceptable with Conditions for each species [1]. The Merck Veterinary Manual translates this into practical on-farm guidance [4]. For poultry, the methods a trained worker can use fall into three groups: physical, gas, and injectable. Each has its place. No single method fits every bird or every barn.'),
     spacer(80),
@@ -563,18 +560,13 @@ function buildBody() {
     para([
       { text: 'Carbon dioxide (' }, { text: 'CO', bold: false }, { text: '2' }, { text: ') is an approved poultry method under the AVMA 2020 Guidelines, listed as "Acceptable with Conditions" [1]. The gas pushes the oxygen out of the air the bird is breathing, so it loses consciousness and then dies. It works well for hatchery culls, small groups, or the odd individual bird when a manual or mechanical method is not practical.' },
     ]),
-    para('What the research says you need to get right [11]:'),
-    bullet([
-      { text: 'Chicks (day-old to 3 weeks): ' }, { text: 'fill the chamber to at least 80% CO', bold: true }, { text: '2', bold: true, subScript: true }, { text: '. Below 60%, chicks do not die quickly or reliably [11].' },
-    ]),
-    bullet([
-      { text: 'Adult birds: ' }, { text: 'above 50% CO', bold: true }, { text: '2', bold: true, subScript: true }, { text: ' knocks them out fast. Fill the chamber to a high concentration before you put the birds in. They go down quicker and struggle less than if you let the gas build up slowly [1,11].' },
-    ]),
-    bullet([
-      { text: 'Fill rate: ' }, { text: 'For gradual fill methods, a displacement rate of 30 to 70% of the chamber volume per minute is the range used in research settings [1]. Pre-fill (immersion) method is preferred for speed and welfare.' },
-    ]),
-    bullet('Continue CO2 flow until all reflexes have stopped, then keep it running for at least 1 more minute to be certain [11].'),
-    bullet('Chamber must seal. Gas leaks reduce concentration in the breathing zone and produce a slower, less humane death.'),
+    para('Here is the practical part: you do not measure a percentage, and you do not meter the gas [11]. You fill a sealed chamber from a CO2 cylinder, then put the birds in. CO2 is heavier than air, so a sealed chamber filled from the cylinder pushes the air out and reaches the high concentration you need on its own. The birds are your gauge. In a proper chamber they lose consciousness within seconds and stop moving.'),
+    para('What matters in practice [1,11]:'),
+    bullet('Prefill the chamber from the cylinder before the birds go in. They go down faster and struggle less than if you trickle gas in with the birds already inside.'),
+    bullet('Fill it full, and fill it fuller for chicks. Day-old to 3-week chicks need a higher concentration than adult birds to die quickly, so a half-filled chamber will not do. Fill it, then immerse them.'),
+    bullet('Keep the gas running until every bird has completely stopped moving, then leave it on at least 1 more minute to be sure.'),
+    bullet('The chamber must seal. A leaky lid lets air back in, drops the concentration, and gives a slower, less humane death. Check the seal every time.'),
+    bullet([{ text: 'The only way to actually read the concentration is a ' }, { text: 'CO' }, { text: '2', subScript: true }, { text: ' gas meter. Without one, trust a full, sealed, prefilled chamber and watch that the birds go down fast.' }]),
     spacer(80),
     calloutMulti(
       'CO2 Safety: Critical Worker Protection Rules',
@@ -617,10 +609,9 @@ function buildBody() {
     bullet('CO2 at low concentrations (below 30%) as the only method: does not produce reliable rapid unconsciousness.'),
     bullet('Carbon monoxide (CO): extreme human safety hazard. Not used in commercial settings.'),
     bullet('Neck twisting without proper dislocation of the joint: does not consistently destroy brainstem function. Must be the rapid dislocating motion described in Section 3.2.'),
-    pageBreak(),
 
     // ─── SECTION 4 ───
-    h1('4. Practical Steps for Each Approved Method'),
+    h1('4. Practical Steps for Each Approved Method', true),
     h2('4.1  Equipment Required'),
     para('Before the flock arrives, every barn should have a complete euthanasia kit in a known location and every person working in the barn should know where it is. You do not want to be searching for equipment with a suffering bird in your hand.'),
     spacer(80),
@@ -691,10 +682,9 @@ function buildBody() {
     bullet('Decapitation with poultry shears: definitive. Always confirms death. Appropriate for any size bird when other methods fail.'),
     bullet('Apply a second CO2 exposure if equipment is available and the first exposure time was insufficient.'),
     para('Do not leave the barn with a bird that has not passed all three checks. Do not hand the responsibility to another person without making sure they know the bird still needs attention. You performed the euthanasia, and confirmation of death is part of that job.'),
-    pageBreak(),
 
     // ─── SECTION 6 ───
-    h1('6. Carcass Disposal'),
+    h1('6. Carcass Disposal', true),
     h2('6.1  Approved Disposal Methods'),
     para('Carcass disposal for euthanized birds follows the same rules as routine mortality management. In Canada, disposal regulations are set by provincial governments, not the federal CFIA, and they vary by province. The table below covers the methods used on Canadian farms: rendering, composting, on-farm burial, and incineration. Your farm program and provincial regulations specify which methods apply to your operation.'),
     spacer(80),
@@ -719,10 +709,9 @@ function buildBody() {
     bullet('If your flock has a notifiable disease (or is suspected of one), carcass disposal must follow your veterinarian\'s or the CFIA\'s specific instructions. Normal routine disposal may be suspended during a disease investigation.'),
     bullet('Rendering is the preferred method during disease investigations because it guarantees pathogen destruction at the processing facility.'),
     para('If you ever suspect Avian Influenza (sudden high mortality, hemorrhages on skin or combs, neurological signs), do not move any carcasses until your veterinarian has assessed the situation. Call first, dispose later.'),
-    pageBreak(),
 
     // ─── SECTION 7 ───
-    h1('7. Record-Keeping and Staff Training'),
+    h1('7. Record-Keeping and Staff Training', true),
     h2('7.1  Documentation for Welfare Audits'),
     para('The Chicken Farmers of Canada Animal Care Program and equivalent programs for layers and turkeys require that farms have a written euthanasia standard operating procedure (SOP) and that all barn staff are trained on it [3]. Auditors ask to see both the written SOP and evidence that training has occurred.'),
     para('What your euthanasia records must cover:'),
@@ -753,10 +742,9 @@ function buildBody() {
     bullet('Annually for all staff, or more frequently if your audit program requires it.'),
     bullet('Any time a method failure occurs, as a corrective event.'),
     para('The Poultry Industry Council puts out euthanasia training resources and its Practical Guidelines for On-Farm Euthanasia of Poultry, a solid reference to keep on hand [5]. Your veterinarian or your integrator rep can also come out and run hands-on sessions. If you want guidance that holds up the same way across provinces, start with the Poultry Industry Council material.'),
-    pageBreak(),
 
     // ─── SECTION 8 ───
-    h1('8. Workshop: Practical Demonstration'),
+    h1('8. Workshop: Practical Demonstration', true),
     h2('8.1  Workshop Overview'),
     para('The workshop session is the practical counterpart to this lecture. It is where you build the hands-on skill under supervision, because reading about a technique is not the same as being able to do it.'),
     para('The workshop will cover:'),
@@ -789,10 +777,9 @@ function buildBody() {
     para([{ text: 'Birds in tight spaces.', bold: true }, { text: ' Birds that collapse in a corner or between feeders need to be extracted gently before euthanasia. Move feeders or drinkers if needed. Do not attempt a dislocating motion in a space too small to complete it fully.' }]),
     para([{ text: 'Large numbers of compromised chicks at placement.', bold: true }, { text: ' A CO2 chamber handles multiple chicks at once and is more efficient than individual manual euthanasia for batches of 10 or more birds. If you have a large number of compromised chicks and no CO2 equipment is available, manual euthanasia with a second trained person present is the right approach. One person holds, one performs the procedure. Do not rush.' }]),
     para([{ text: 'When a method fails on the first attempt.', bold: true }, { text: ' Do not panic. The bird is almost certainly unconscious by now, so apply a secondary method right away and confirm death, as covered in Section 5.3.' }]),
-    pageBreak(),
 
     // ─── RECOMMENDED JOURNALS ───
-    h1('Recommended Journals and Resources'),
+    h1('Recommended Journals and Resources', true),
     para('For ongoing professional development on poultry euthanasia, welfare, and management:'),
     bullet([{ text: 'Poultry Science' }, { text: ': peer-reviewed research on production, welfare, and husbandry. Publishes regularly on euthanasia methods and welfare assessment.' }]),
     bullet([{ text: 'Animals (MDPI)' }, { text: ': open-access journal covering farm animal welfare and welfare-related research.' }]),
@@ -800,10 +787,9 @@ function buildBody() {
     bullet([{ text: 'AVMA Guidelines for the Euthanasia of Animals: 2020 Edition' }, { text: '. The primary reference document for all approved euthanasia methods. Available at avma.org.' }]),
     bullet([{ text: 'NFACC Code of Practice for the Care and Handling of Hatching Eggs, Breeders, Chickens and Turkeys (2016)' }, { text: '. The Canadian standard for on-farm euthanasia requirements. Available at nfacc.ca.' }]),
     bullet([{ text: 'Poultry Industry Council: Practical Guidelines for On-Farm Euthanasia of Poultry' }, { text: '. Practical guidance document for Canadian poultry farms. Available at poultryindustrycouncil.ca.' }]),
-    pageBreak(),
 
     // ─── REFERENCES ───
-    h1('References'),
+    h1('References', true),
     // Bibliography in first-appearance order per Vancouver style
     numberedRef('American Veterinary Medical Association. Guidelines for the Euthanasia of Animals: 2020 Edition. Schaumburg, IL: AVMA; 2020. Available from: avma.org'),
     numberedRef('National Farm Animal Care Council. Code of Practice for the Care and Handling of Hatching Eggs, Breeders, Chickens and Turkeys. Ottawa: NFACC; 2016. Available from: nfacc.ca'),
@@ -896,7 +882,7 @@ async function main() {
     { lvl: 2, text: '3.4  Non-Penetrating Captive Bolt', page: '12' },
     { lvl: 2, text: '3.5  CO2 Euthanasia', page: '13' },
     { lvl: 2, text: '3.6  Blunt Force Trauma for Neonatal Chicks', page: '14' },
-    { lvl: 2, text: '3.7  Decapitation', page: '14' },
+    { lvl: 2, text: '3.7  Decapitation', page: '15' },
     { lvl: 2, text: '3.8  Methods That Are NOT Acceptable', page: '16' },
     { lvl: 1, text: '4. Practical Steps for Each Approved Method', page: '17' },
     { lvl: 2, text: '4.1  Equipment Required', page: '17' },
