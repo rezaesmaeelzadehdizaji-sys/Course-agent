@@ -448,7 +448,7 @@ function buildBody() {
 
     h2('1.3  Why Timely Euthanasia Matters for Welfare and Productivity'),
     para('A bird that cannot compete for feed and water drags flock uniformity down. It sits in the corner, loses body condition, and becomes a focus for pecking. Left in place, it can also become a source of secondary infection for surrounding birds. Pulling it early eliminates these effects.'),
-    para('Compromised chicks at placement are the most important group to catch early. The Chicken Farmers of Canada Animal Care Program guidelines are specific: the greatest positive impact comes from culling compromised chicks immediately after identification, not at the end of the placement day [3]. A chick that cannot stand or find feed in the first 24 hours has almost no chance of reaching market weight profitably. Every hour you delay costs the bird more suffering and costs you more feed and floor space.'),
+    para('Compromised chicks at placement are the most important group to catch early. Under the Chicken Farmers of Canada Animal Care Program, birds in pain must be promptly treated or euthanized, and culls must be handled daily, not left [3]. A chick that cannot stand or find feed in the first 24 hours has almost no chance of reaching market weight profitably. Every hour you delay costs the bird more suffering and costs you more feed and floor space.'),
     spacer(60),
     ...image(figBuf('chicke placement.jpg'), 'Photo 1.1: Day-old chicks settling in at placement, active and spread out across fresh litter with easy access to feed and water. Run a chick check the same day: sample around 100 chicks across the brooding area and score their condition and crop fill, so you catch a weak batch before birds are lost in the flock. Source: cobbgenetics.com.', 5.1),
     spacer(60),
@@ -517,7 +517,7 @@ function buildBody() {
 
     h2('3.2  Manual Cervical Dislocation'),
     para('Manual cervical dislocation is the most widely used method for individual bird euthanasia on Canadian farms. Done right by a trained worker, it knocks the bird out and kills it in one motion by tearing apart the brainstem and spinal cord. Done wrong, the bird stays conscious and suffers.'),
-    para([{ text: 'When it is appropriate:', bold: true }, { text: ' Broilers up to approximately 2.3 kg (typically up to 7 weeks of age). Smaller layers and growers. It becomes physically difficult and unreliable in heavier birds [6,7].' }]),
+    para([{ text: 'When it is appropriate:', bold: true }, { text: ' Broilers up to approximately 2.3 kg (typically up to 7 weeks of age). Smaller layers and growers. The AVMA gives about 2.3 kg as the practical upper limit, and it becomes difficult and unreliable in heavier birds [1,6,7].' }]),
     para([{ text: 'When it is not appropriate:', bold: true }, { text: ' Broiler breeders at production weight (3.5 to 4.5 kg). Heavy turkeys. Birds over 3 kg in any situation where a mechanical device or captive bolt is available [6].' }]),
     para('Here is the technique, based on published broiler research [6]:'),
     numbered('Take the bird\'s legs and lower body in one hand and rest its back against your thigh or side.'),
@@ -560,7 +560,7 @@ function buildBody() {
     para([
       { text: 'Carbon dioxide (' }, { text: 'CO', bold: false }, { text: '2' }, { text: ') is an approved poultry method under the AVMA 2020 Guidelines, listed as "Acceptable with Conditions" [1]. The gas pushes the oxygen out of the air the bird is breathing, so it loses consciousness and then dies. It works well for hatchery culls, small groups, or the odd individual bird when a manual or mechanical method is not practical.' },
     ]),
-    para('Here is the practical part: you do not measure a percentage, and you do not meter the gas [11]. You fill a sealed chamber from a CO2 cylinder, then put the birds in. CO2 is heavier than air, so a sealed chamber filled from the cylinder pushes the air out and reaches the high concentration you need on its own. The birds are your gauge. In a proper chamber they lose consciousness within seconds and stop moving.'),
+    para('Here is the practical part: you fill a sealed chamber from a CO2 cylinder, then put the birds in. You do not measure a percentage or meter the gas. Immersing birds in a chamber already full of CO2 is what the research shows works [11]. CO2 is heavier than air, so a sealed chamber filled from the cylinder pushes the air out and reaches the high concentration you need on its own. The birds are your gauge. In a proper chamber they lose consciousness within seconds and stop moving.'),
     para('What matters in practice [1,11]:'),
     bullet('Prefill the chamber from the cylinder before the birds go in. They go down faster and struggle less than if you trickle gas in with the birds already inside.'),
     bullet('Fill it full, and fill it fuller for chicks. Day-old to 3-week chicks need a higher concentration than adult birds to die quickly, so a half-filled chamber will not do. Fill it, then immerse them.'),
@@ -670,11 +670,11 @@ function buildBody() {
     h2('5.2  The Three-Check Protocol'),
     ...svgImage(verificationSvg, 'Figure 5.1: The three-check death confirmation protocol. All three checks must pass. Absence of corneal blink, heartbeat, and respiration for a sustained period of at least 5 minutes confirms death. Voluntary reflexes after euthanasia are expected and do not indicate consciousness. Source: CPC Short Courses.', 5.9),
     para('Apply the three-check protocol in this order:'),
-    numbered([{ text: 'Corneal reflex:', bold: true }, { text: ' Touch the surface of the eyeball gently with a fingertip or clean swab. A live or incompletely euthanized bird will blink. A dead bird will not. This is the fastest and most reliable indicator of brainstem function loss [4].' }]),
+    numbered([{ text: 'Corneal reflex:', bold: true }, { text: ' Touch the surface of the eyeball gently with a fingertip or clean swab. A live or incompletely euthanized bird will blink. A dead bird will not. Loss of this reflex is one of the key signs that the brainstem has stopped [4].' }]),
     numbered([{ text: 'Heartbeat:', bold: true }, { text: ' Place your fingers or a stethoscope behind the left elbow on the keel side of the chest. Listen or feel for any heartbeat. For CO2 or manual cervical dislocation cases, you are looking for complete asystole (no beat at all). If you feel a weak or irregular pulse: the bird is not dead yet.' }]),
     numbered([{ text: 'Respiration:', bold: true }, { text: ' Watch the chest and abdomen carefully for 60 seconds. Any movement of the ribcage or abdominal wall indicates the bird is still breathing. A dead bird will have no respiratory movement.' }]),
     spacer(80),
-    callout('The 5-Minute Rule', 'If all three checks pass, wait 5 minutes and recheck the heartbeat and corneal reflex before final disposal. This is especially important after CO2 euthanasia, where birds can recover from light exposure. A bird that was unconscious but not dead may resume respiration if removed from the CO2 atmosphere prematurely. Five minutes of confirmed absence of all three signs means the bird is dead. [4,13]', 'EBF2FA', MED_BLUE),
+    callout('The 5-Minute Rule', 'If all three checks pass, wait 5 minutes and recheck the heartbeat and corneal reflex before final disposal. This is especially important after CO2 euthanasia, where birds can recover from light exposure. A bird that was unconscious but not dead may resume respiration if removed from the CO2 atmosphere prematurely. Five minutes of confirmed absence of all three signs means the bird is dead. [13]', 'EBF2FA', MED_BLUE),
     spacer(120),
 
     h2('5.3  When Euthanasia Fails'),
@@ -694,7 +694,7 @@ function buildBody() {
       ['Disposal Method', 'How It Works', 'Key Requirements'],
       [
         ['Rendering', 'Carcasses collected by a licensed renderer and processed into meal and fat', 'Carcasses must be stored refrigerated or frozen if retained more than 48 hours after death (Manitoba standard). Keep in sealed containers. Renderer provides collection schedule.'],
-        ['On-farm composting', 'Carcasses layered with carbon-rich material (sawdust, straw, wood chips) in an active compost pile', 'Carbon material must fully cover each layer of carcasses. Pile must reach internal temperatures sufficient to kill pathogens. CFIA has specific composting procedures (see Appendix B, Chicken Farmers of Canada) [3].'],
+        ['On-farm composting', 'Carcasses layered with carbon-rich material (sawdust, straw, wood chips) in an active compost pile', 'Carbon material must fully cover each layer of carcasses. The pile must reach internal temperatures high enough to kill pathogens. Follow your provincial composting requirements.'],
         ['On-farm burial', 'Carcasses buried in a designated pit on the farm property', 'Manitoba requires burial pits at least 100 meters from any watercourse, spring, sinkhole, or well, with a minimum of 1 meter of impermeable cover over the carcasses [14]. British Columbia requires that buried mortalities not contaminate groundwater and be deep enough to prevent predator access [15]. Setback distances vary by province, so check your local rules.'],
         ['Incineration', 'Carcasses burned in an approved incinerator', 'Must comply with provincial environmental regulations for emissions. Not all provinces permit on-farm incineration without a permit.'],
       ],
@@ -884,7 +884,7 @@ async function main() {
     { lvl: 2, text: '3.4  Non-Penetrating Captive Bolt', page: '12' },
     { lvl: 2, text: '3.5  CO2 Euthanasia', page: '13' },
     { lvl: 2, text: '3.6  Blunt Force Trauma', page: '15' },
-    { lvl: 2, text: '3.7  Decapitation', page: '15' },
+    { lvl: 2, text: '3.7  Decapitation', page: '16' },
     { lvl: 2, text: '3.8  Methods That Are NOT Acceptable', page: '17' },
     { lvl: 1, text: '4. Practical Steps for Each Approved Method', page: '18' },
     { lvl: 2, text: '4.1  Equipment Required', page: '18' },

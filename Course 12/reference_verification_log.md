@@ -290,4 +290,22 @@ The course was rebuilt with `node generate-course12.mjs` after all corrections a
 
 ---
 
-*Log completed and rewritten: 2026-06-10*
+## Claim-Accuracy Audit (2026-07-07)
+
+Triggered after the blunt-force error: verified that each cited CLAIM is actually supported by its source, not just that the source exists. Sources re-read: CFC ACP Manual 2018 (pdftotext extract), AVMA 2020, Merck/MSD euthanasia page, Iowa State VDPAM Confirmation of Death, PIC guidelines.
+
+| # | Claim / location | Finding | Fix |
+|---|---|---|---|
+| 16 | 3.6 blunt force trauma "for neonatal chicks," and "[5] reserves blunt force for individual chicks" | FABRICATED scope/attribution. PIC [5] scopes blunt force "for large birds where other methods are not practical." | Section reframed to large birds per [5]; heading renamed; 3.1 and 4.3 tables fixed |
+| 17 | 6.1 composting: "CFIA has specific composting procedures (see Appendix B, Chicken Farmers of Canada) [3]" | FABRICATED. CFC ACP Manual has no Appendix B and no composting content (confirmed by full-text extract). | Removed the fake citation; now "Follow your provincial composting requirements" |
+| 18 | 1.3: "[3] ... greatest positive impact comes from culling compromised chicks immediately after identification, not at the end of the placement day" | NOT in [3]. Manual says "Birds promptly treated or euthanized when in pain" and "Culled sick and injured birds daily." | Rewritten to match the manual's actual wording |
+| 19 | 3.2: manual dislocation "2.3 kg" cited [6,7] | Figure is correct but it is an AVMA [1] figure (confirmed), not from Jacobs/Ripplinger | Recited as "The AVMA gives about 2.3 kg as the practical upper limit ... [1,6,7]" |
+| 20 | 5.2: corneal reflex "the fastest and most reliable indicator of brainstem function loss [4]" | Merck [4] does NOT say fastest/most reliable; it lists corneal reflex as one of several criteria | Softened to "one of the key signs that the brainstem has stopped [4]" |
+| 21 | 5.2 five-minute rule cited [4,13] | Merck [4] does not cover the 5-minute wait or CO2 recovery; Iowa State [13] explicitly does ("...for a period of more than 5 minutes") | Recited to [13] alone |
+| 22 | 3.5 CO2: "you do not meter the gas [11]" | Baker [11] is an immersion-CO2 study; supports immersion, not the "no metering" operational phrasing directly | Rescoped so [11] supports "immersing birds in a chamber already full of CO2 is what the research shows works" |
+
+**Confirmed accurate (no change needed):** [1] AVMA "demonstrated proficiency" phrase (verbatim in AVMA 2020); [2] NFACC prompt-euthanasia and within-one-hour-of-processing; [3] written euthanasia SOP + trained personnel + per-flock euthanasia records; [4]+[13] three-check death confirmation (corneal/heartbeat/respiration); [6] Jacobs reflex-return and skin-damage findings; [8] Boyal 98% breeder success and captive bolt; [9] Bandara / [10] Woolcott NPCB single-step 89-100%; [14] Manitoba burial setbacks; [15] BC groundwater/predator requirement.
+
+---
+
+*Log completed and rewritten: 2026-06-10; claim-accuracy audit added 2026-07-07*
