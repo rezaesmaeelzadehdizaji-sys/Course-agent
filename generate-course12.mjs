@@ -340,43 +340,43 @@ const verificationSvg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 78
   <circle cx="130" cy="90" r="26" fill="#2E74B5"/>
   <text x="130" y="86" text-anchor="middle" font-size="18" fill="white" font-weight="bold">1</text>
   <text x="130" y="101" text-anchor="middle" font-size="10" fill="white">CHECK</text>
-  <text x="130" y="132" text-anchor="middle" font-size="13" font-weight="bold" fill="#1F3864">Corneal Reflex</text>
+  <text x="130" y="132" text-anchor="middle" font-size="13" font-weight="bold" fill="#1F3864">Third Eyelid</text>
   <line x1="50" y1="145" x2="210" y2="145" stroke="#C9A84C" stroke-width="1.5"/>
-  <text x="130" y="163" text-anchor="middle" font-size="11" fill="#3C3C3C">Gently touch the surface</text>
-  <text x="130" y="179" text-anchor="middle" font-size="11" fill="#3C3C3C">of the eyeball with a</text>
-  <text x="130" y="195" text-anchor="middle" font-size="11" fill="#3C3C3C">fingertip or swab.</text>
-  <text x="130" y="215" text-anchor="middle" font-size="11" font-weight="bold" fill="#C0504D">No blink = pass</text>
-  <text x="130" y="233" text-anchor="middle" font-size="11" fill="#888" font-style="italic">Blink = not dead yet</text>
+  <text x="130" y="163" text-anchor="middle" font-size="11" fill="#3C3C3C">Touch the corner of</text>
+  <text x="130" y="179" text-anchor="middle" font-size="11" fill="#3C3C3C">the eye and watch</text>
+  <text x="130" y="195" text-anchor="middle" font-size="11" fill="#3C3C3C">the third eyelid.</text>
+  <text x="130" y="215" text-anchor="middle" font-size="11" font-weight="bold" fill="#C0504D">No sweep = dead</text>
+  <text x="130" y="233" text-anchor="middle" font-size="11" fill="#888" font-style="italic">It sweeps = alive</text>
   <!-- Check 2 -->
   <rect x="280" y="50" width="220" height="200" rx="10" fill="#EBF2FA" stroke="#2E74B5" stroke-width="2"/>
   <circle cx="390" cy="90" r="26" fill="#2E74B5"/>
   <text x="390" y="86" text-anchor="middle" font-size="18" fill="white" font-weight="bold">2</text>
   <text x="390" y="101" text-anchor="middle" font-size="10" fill="white">CHECK</text>
-  <text x="390" y="132" text-anchor="middle" font-size="13" font-weight="bold" fill="#1F3864">No Heartbeat</text>
+  <text x="390" y="132" text-anchor="middle" font-size="13" font-weight="bold" fill="#1F3864">Neck Muscle Tone</text>
   <line x1="310" y1="145" x2="470" y2="145" stroke="#C9A84C" stroke-width="1.5"/>
-  <text x="390" y="163" text-anchor="middle" font-size="11" fill="#3C3C3C">Place stethoscope or</text>
-  <text x="390" y="179" text-anchor="middle" font-size="11" fill="#3C3C3C">fingertips behind the</text>
-  <text x="390" y="195" text-anchor="middle" font-size="11" fill="#3C3C3C">left elbow (keel side).</text>
-  <text x="390" y="215" text-anchor="middle" font-size="11" font-weight="bold" fill="#C0504D">Silence = pass</text>
-  <text x="390" y="233" text-anchor="middle" font-size="11" fill="#888" font-style="italic">Any beat = not dead yet</text>
+  <text x="390" y="163" text-anchor="middle" font-size="11" fill="#3C3C3C">A live bird tries to</text>
+  <text x="390" y="179" text-anchor="middle" font-size="11" fill="#3C3C3C">lift its head. Watch</text>
+  <text x="390" y="195" text-anchor="middle" font-size="11" fill="#3C3C3C">for the effort.</text>
+  <text x="390" y="215" text-anchor="middle" font-size="11" font-weight="bold" fill="#C0504D">No lift = dead</text>
+  <text x="390" y="233" text-anchor="middle" font-size="11" fill="#888" font-style="italic">Lifts head = alive</text>
   <!-- Check 3 -->
   <rect x="540" y="50" width="220" height="200" rx="10" fill="#EBF2FA" stroke="#2E74B5" stroke-width="2"/>
   <circle cx="650" cy="90" r="26" fill="#2E74B5"/>
   <text x="650" y="86" text-anchor="middle" font-size="18" fill="white" font-weight="bold">3</text>
   <text x="650" y="101" text-anchor="middle" font-size="10" fill="white">CHECK</text>
-  <text x="650" y="132" text-anchor="middle" font-size="13" font-weight="bold" fill="#1F3864">No Breathing</text>
+  <text x="650" y="132" text-anchor="middle" font-size="13" font-weight="bold" fill="#1F3864">Pinch Response</text>
   <line x1="570" y1="145" x2="730" y2="145" stroke="#C9A84C" stroke-width="1.5"/>
-  <text x="650" y="163" text-anchor="middle" font-size="11" fill="#3C3C3C">Watch the chest and</text>
-  <text x="650" y="179" text-anchor="middle" font-size="11" fill="#3C3C3C">abdomen for any</text>
-  <text x="650" y="195" text-anchor="middle" font-size="11" fill="#3C3C3C">movement for 60 s.</text>
-  <text x="650" y="215" text-anchor="middle" font-size="11" font-weight="bold" fill="#C0504D">No movement = pass</text>
-  <text x="650" y="233" text-anchor="middle" font-size="11" fill="#888" font-style="italic">Movement = not dead yet</text>
+  <text x="650" y="163" text-anchor="middle" font-size="11" fill="#3C3C3C">Pinch the comb or a</text>
+  <text x="650" y="179" text-anchor="middle" font-size="11" fill="#3C3C3C">toe firmly and watch</text>
+  <text x="650" y="195" text-anchor="middle" font-size="11" fill="#3C3C3C">for any reaction.</text>
+  <text x="650" y="215" text-anchor="middle" font-size="11" font-weight="bold" fill="#C0504D">No reaction = dead</text>
+  <text x="650" y="233" text-anchor="middle" font-size="11" fill="#888" font-style="italic">Flinch = alive</text>
   <!-- Rule -->
   <rect x="20" y="266" width="740" height="100" rx="6" fill="#EAF2EA" stroke="#538135" stroke-width="1.5"/>
-  <text x="390" y="290" text-anchor="middle" font-size="12" font-weight="bold" fill="#538135">All three checks must PASS. Wait at least 5 minutes of continuous absence before declaring death.</text>
-  <text x="390" y="311" text-anchor="middle" font-size="11" fill="#3C3C3C">Wing flapping and muscle movement after euthanasia are normal reflexes and do NOT indicate the bird is still alive.</text>
+  <text x="390" y="290" text-anchor="middle" font-size="12" font-weight="bold" fill="#538135">All three field checks must PASS. Then confirm no heartbeat and no breathing for 5 minutes before disposal.</text>
+  <text x="390" y="311" text-anchor="middle" font-size="11" fill="#3C3C3C">Wing flapping and muscle twitching after euthanasia are normal reflexes and do NOT mean the bird is alive.</text>
   <text x="390" y="331" text-anchor="middle" font-size="11" fill="#3C3C3C">If any check fails: apply a secondary method immediately (decapitation or a second application of your primary method).</text>
-  <text x="390" y="352" text-anchor="middle" font-size="10" fill="#888" font-style="italic">Source: Iowa State VDPAM; Merck Veterinary Manual [4,13]</text>
+  <text x="390" y="352" text-anchor="middle" font-size="10" fill="#888" font-style="italic">Source: Poultry Industry Council [5]; Merck and Iowa State VDPAM [4,13]</text>
 </svg>`;
 
 // ============================================================
@@ -669,16 +669,16 @@ function buildBody() {
     h1('5. Verification of Death', true),
     h2('5.1  Why Verification Matters'),
     para('Wing flapping, muscle tremors, and gasping movements are common after euthanasia. They are reflex responses from the nervous system, not signs of consciousness. If you drop a bird in the mortality bin based on those signs alone, you may be disposing of a bird that is not fully dead.'),
-    para('To be sure a bird is dead, you have to check the signs that show the brain and heart have truly stopped for good. The twitching and gasping after euthanasia do not tell you that. Only the three-check protocol does [4,13].'),
+    para('To be sure a bird is dead, you have to check the reflexes and responses that only switch off once the brain has truly stopped. The twitching and gasping after euthanasia do not tell you that. The field checks below do [5].'),
 
     h2('5.2  The Three-Check Protocol'),
-    ...svgImage(verificationSvg, 'Figure 5.1: The three-check death confirmation protocol. All three checks must pass. Absence of corneal blink, heartbeat, and respiration for a sustained period of at least 5 minutes confirms death. Voluntary reflexes after euthanasia are expected and do not indicate consciousness. Source: CPC Short Courses.', 5.9),
-    para('Apply the three-check protocol in this order:'),
-    numbered([{ text: 'Corneal reflex:', bold: true }, { text: ' Touch the surface of the eyeball gently with a fingertip or clean swab. A live or incompletely euthanized bird will blink. A dead bird will not. Loss of this reflex is one of the key signs that the brainstem has stopped [4].' }]),
-    numbered([{ text: 'Heartbeat:', bold: true }, { text: ' Place your fingers or a stethoscope behind the left elbow on the keel side of the chest. Listen or feel for any heartbeat. For CO2 or manual cervical dislocation cases, you are looking for complete asystole (no beat at all). If you feel a weak or irregular pulse: the bird is not dead yet.' }]),
-    numbered([{ text: 'Respiration:', bold: true }, { text: ' Watch the chest and abdomen carefully for 60 seconds. Any movement of the ribcage or abdominal wall indicates the bird is still breathing. A dead bird will have no respiratory movement.' }]),
+    ...svgImage(verificationSvg, 'Figure 5.1: The three field checks for confirming death in poultry, the third-eyelid reflex, neck muscle tone, and response to a pinch. All three must pass, then confirm no heartbeat and no breathing for at least 5 minutes before disposal. Twitching and wing flapping after euthanasia are normal and do not mean the bird is alive. Source: adapted from Poultry Industry Council [5]; Merck Veterinary Manual and Iowa State VDPAM [4,13].', 5.9),
+    para('Run these three field checks on every bird, in this order [5]:'),
+    numbered([{ text: 'Third-eyelid reflex:', bold: true }, { text: ' Touch the corner of the eye lightly with a fingertip or clean swab. In a bird that is still alive, the third eyelid, a thin pale membrane, sweeps across the eye. It keeps working until the brain is almost gone, so this is the most reliable field check. No sweep across the eye means the bird is dead.' }]),
+    numbered([{ text: 'Neck muscle tone:', bold: true }, { text: ' A live or barely conscious bird tries to lift its head. Hold the bird and watch. No effort to raise the head means deep unconsciousness or death.' }]),
+    numbered([{ text: 'Response to a pinch:', bold: true }, { text: ' Pinch the comb or a toe firmly. Any flinch or pulling away means the bird is not dead, so apply a secondary method. No reaction at all supports death.' }]),
     spacer(80),
-    callout('The 5-Minute Rule', 'If all three checks pass, wait 5 minutes and recheck the heartbeat and corneal reflex before final disposal. This is especially important after CO2 euthanasia, where birds can recover from light exposure. A bird that was unconscious but not dead may resume respiration if removed from the CO2 atmosphere prematurely. Five minutes of confirmed absence of all three signs means the bird is dead. [13]', 'EBF2FA', MED_BLUE),
+    callout('Confirm and Wait 5 Minutes', 'The reflex checks tell you the bird is dead, but do not rush it to the bin. Wait 5 minutes, then confirm there is no heartbeat (feel or listen behind the left elbow, keel side) and no breathing (no chest or abdomen movement). This matters most after CO2, where a bird pulled out too early can come back. Five minutes with no heartbeat and no breathing confirms death [4,13].', 'EBF2FA', MED_BLUE),
     spacer(120),
 
     h2('5.3  When Euthanasia Fails'),
