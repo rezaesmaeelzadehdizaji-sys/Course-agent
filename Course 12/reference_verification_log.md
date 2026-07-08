@@ -202,7 +202,7 @@ Iowa State University College of Veterinary Medicine, Veterinary Diagnostic and 
 
 ---
 
-### [14] Manitoba Agriculture, Protocol for Deadstock Disposal by On-Farm Burial
+### [15] Manitoba Agriculture, Protocol for Deadstock Disposal by On-Farm Burial
 
 **Citation as written:**
 Manitoba Agriculture. Protocol for Deadstock Disposal by On-Farm Burial. Winnipeg: Government of Manitoba [cited 2026 Jun]. Available from: gov.mb.ca/agriculture
@@ -215,7 +215,7 @@ Manitoba Agriculture. Protocol for Deadstock Disposal by On-Farm Burial. Winnipe
 
 ---
 
-### [15] British Columbia Ministry of Agriculture, Farm Practices: Mortality Disposal
+### [14] British Columbia Ministry of Agriculture, Farm Practices: Mortality Disposal
 
 **Citation as written:**
 British Columbia Ministry of Agriculture. Farm Practices: Mortality Disposal. Order No. 870.218-46. Victoria: Government of British Columbia; 2014 [cited 2026 Jun]. Available from: gov.bc.ca
@@ -245,8 +245,8 @@ British Columbia Ministry of Agriculture. Farm Practices: Mortality Disposal. Or
 | [11] | Baker et al. | 2020 | doi:10.1016/j.psj.2020.05.039, PMID 32867984 | CONFIRMED |
 | [12] | Humane Slaughter Association | n/a | hsa.org.uk | CONFIRMED |
 | [13] | Iowa State University VDPAM | n/a | vetmed.iastate.edu | CONFIRMED |
-| [14] | Manitoba Agriculture | n/a | gov.mb.ca/agriculture | CONFIRMED |
-| [15] | British Columbia Ministry of Agriculture | 2014 | gov.bc.ca | CONFIRMED |
+| [14] | British Columbia Ministry of Agriculture | 2014 | gov.bc.ca | CONFIRMED |
+| [15] | Manitoba Agriculture | n/a | gov.mb.ca/agriculture | CONFIRMED |
 
 **Zero fabricated references. All 15 citations verified against primary sources. Citation order in the built document is sequential 1 through 15 in first-appearance order, matching Vancouver style.**
 
@@ -304,6 +304,8 @@ Triggered after the blunt-force error: verified that each cited CLAIM is actuall
 | 21 | 5.2 five-minute rule cited [4,13] | Merck [4] does not cover the 5-minute wait or CO2 recovery; Iowa State [13] explicitly does ("...for a period of more than 5 minutes") | Recited to [13] alone |
 | 22 | 3.5 CO2: "you do not meter the gas [11]" | Baker [11] is an immersion-CO2 study; supports immersion, not the "no metering" operational phrasing directly | Rescoped so [11] supports "immersing birds in a chamber already full of CO2 is what the research shows works" |
 | 23 | Section 5 / Figure 5.1 death-confirmation "three-check" = corneal reflex, heartbeat, respiration (cited [4,13]) (2026-07-08) | Those citations are accurate but Merck [4] and Iowa State [13] are GENERAL/production-animal references. The poultry-specific field method in PIC [5] (pp.13-15) is different: nictitating membrane (third eyelid) reflex as the primary tool, plus lack of neck muscle tone and lack of response to a comb/toe pinch. Only the eye check loosely overlapped (corneal vs third-eyelid, a different reflex). | Rewrote 5.2 and the Figure 5.1 diagram to PIC's poultry checks (third-eyelid reflex, neck muscle tone, pinch response), cited [5]; kept "no heartbeat and no breathing sustained for 5 minutes" as the final backstop, cited Merck [4] + Iowa State [13] |
+
+| 24 | 6.1 rendering row and ref order (2026-07-08) | Only Manitoba's 48-hour refrigeration was given; course is BC-first | Added BC's requirement (store in sealed containers away from live birds, pick up before decomposition, urgency by temperature) verified from BC Farm Practices: Mortality Disposal; put BC first. Swapped ref numbers so BC = [14] and Manitoba = [15] to keep Vancouver first-appearance order with BC listed first. Manitoba 48-hour rule re-verified (Livestock Manure and Mortalities Management Regulation). Also subscripted the 2 in every CO2 across the course (post-build XML patch, 36 conversions). |
 
 **Confirmed accurate (no change needed):** [1] AVMA "demonstrated proficiency" phrase (verbatim in AVMA 2020); [2] NFACC prompt-euthanasia and within-one-hour-of-processing; [3] written euthanasia SOP + trained personnel + per-flock euthanasia records; [4]+[13] three-check death confirmation (corneal/heartbeat/respiration); [6] Jacobs reflex-return and skin-damage findings; [8] Boyal 98% breeder success and captive bolt; [9] Bandara / [10] Woolcott NPCB single-step 89-100%; [14] Manitoba burial setbacks; [15] BC groundwater/predator requirement.
 

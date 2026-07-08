@@ -697,15 +697,15 @@ function buildBody() {
     dataTable(
       ['Disposal Method', 'How It Works', 'Key Requirements'],
       [
-        ['Rendering', 'Carcasses collected by a licensed renderer and processed into meal and fat', 'Carcasses must be stored refrigerated or frozen if retained more than 48 hours after death (Manitoba standard). Keep in sealed containers. Renderer provides collection schedule.'],
+        ['Rendering', 'Carcasses collected by a licensed renderer and processed into meal and fat', 'British Columbia: store carcasses in sealed containers, away from live birds, and have a dead stock service pick them up before they start to decompose. Pickup is more urgent in warm weather and less urgent when carcasses are frozen [14]. Manitoba requires refrigeration or freezing if carcasses are held more than 48 hours after death [15]. The renderer sets the collection schedule.'],
         ['On-farm composting', 'Carcasses layered with carbon-rich material (sawdust, straw, wood chips) in an active compost pile', 'Carbon material must fully cover each layer of carcasses. The pile must reach internal temperatures high enough to kill pathogens. Follow your provincial composting requirements.'],
-        ['On-farm burial', 'Carcasses buried in a designated pit on the farm property', 'Manitoba requires burial pits at least 100 meters from any watercourse, spring, sinkhole, or well, with a minimum of 1 meter of impermeable cover over the carcasses [14]. British Columbia requires that buried mortalities not contaminate groundwater and be deep enough to prevent predator access [15]. Setback distances vary by province, so check your local rules.'],
+        ['On-farm burial', 'Carcasses buried in a designated pit on the farm property', 'British Columbia requires that buried mortalities not contaminate groundwater, watercourses, or water supplies and be buried deep enough to keep predators from digging them up [14]. Manitoba requires burial pits at least 100 meters from any watercourse, spring, sinkhole, or well, with a minimum of 1 meter of impermeable cover over the carcasses [15]. Setback distances vary by province, so check your local rules.'],
         ['Incineration', 'Carcasses burned in an approved incinerator', 'Must comply with provincial environmental regulations for emissions. Not all provinces permit on-farm incineration without a permit.'],
       ],
       [1800, 3240, 3600]
     ),
     spacer(160),
-    para([{ text: 'Source:', bold: true }, { text: ' Manitoba Agriculture, Protocol for Deadstock Disposal by On-Farm Burial [14]; British Columbia Ministry of Agriculture, Farm Practices: Mortality Disposal [15]; Chicken Farmers of Canada Animal Care Program [3].' }]),
+    para([{ text: 'Source:', bold: true }, { text: ' British Columbia Ministry of Agriculture, Farm Practices: Mortality Disposal [14]; Manitoba Agriculture, Protocol for Deadstock Disposal by On-Farm Burial [15]; Chicken Farmers of Canada Animal Care Program [3].' }]),
 
     h2('6.2  Biosecurity During Disposal'),
     para('Carcasses are a source of pathogens. How you handle them between euthanasia and disposal affects the rest of your flock.'),
@@ -810,8 +810,8 @@ function buildBody() {
     numberedRef('Baker BI, Torrey S, Widowski TM, Turner PV, Knezacek TD, Nicholds J, Crowe TG, Schwean-Lardner K. Defining characteristics of immersion carbon dioxide gas for successful euthanasia of neonatal and young broilers. Poult Sci. 2020;99(9):4408-4416. doi:10.1016/j.psj.2020.05.039'),
     numberedRef('Humane Slaughter Association. Cervical dislocation and decapitation (manual and mechanical). Wheathampstead: HSA [cited 2026 Jun]. Available from: hsa.org.uk'),
     numberedRef('Iowa State University College of Veterinary Medicine, Veterinary Diagnostic and Production Animal Medicine. Secondary Steps and Confirmation of Death. Ames, IA: Iowa State University [cited 2026 Jun]. Available from: vetmed.iastate.edu'),
-    numberedRef('Manitoba Agriculture. Protocol for Deadstock Disposal by On-Farm Burial. Winnipeg: Government of Manitoba [cited 2026 Jun]. Available from: gov.mb.ca/agriculture'),
     numberedRef('British Columbia Ministry of Agriculture. Farm Practices: Mortality Disposal. Order No. 870.218-46. Victoria: Government of British Columbia; 2014 [cited 2026 Jun]. Available from: gov.bc.ca'),
+    numberedRef('Manitoba Agriculture. Protocol for Deadstock Disposal by On-Farm Burial. Winnipeg: Government of Manitoba [cited 2026 Jun]. Available from: gov.mb.ca/agriculture'),
   ];
 }
 
@@ -900,7 +900,7 @@ async function main() {
     { lvl: 2, text: '5.3  When Euthanasia Fails', page: '23' },
     { lvl: 1, text: '6. Carcass Disposal', page: '24' },
     { lvl: 2, text: '6.1  Approved Disposal Methods', page: '24' },
-    { lvl: 2, text: '6.2  Biosecurity During Disposal', page: '24' },
+    { lvl: 2, text: '6.2  Biosecurity During Disposal', page: '25' },
     { lvl: 1, text: '7. Record-Keeping and Staff Training', page: '26' },
     { lvl: 2, text: '7.1  Documentation for Welfare Audits', page: '26' },
     { lvl: 2, text: '7.2  Ensuring All Staff Are Competent', page: '26' },
@@ -972,6 +972,29 @@ async function main() {
   if (entryIdx !== entriesWithAnchor.length) {
     console.warn(`TOC bookmark warning: matched ${entryIdx}/${entriesWithAnchor.length}`);
   }
+
+  // Subscript the 2 in every CO2 (carbon dioxide), wherever it appears (paras,
+  // tables, callouts, captions). Splits each text run into CO + subscript 2 + rest.
+  let co2Count = 0;
+  docXml = docXml.replace(/<w:r>(<w:rPr>[\s\S]*?<\/w:rPr>)?(<w:t\b[^>]*>)([^<]*)<\/w:t><\/w:r>/g, (m, rpr, topen, text) => {
+    if (!text.includes('CO2')) return m;
+    rpr = rpr || '';
+    const subRpr = rpr ? rpr.replace('</w:rPr>', '<w:vertAlign w:val="subscript"/></w:rPr>')
+                       : '<w:rPr><w:vertAlign w:val="subscript"/></w:rPr>';
+    const parts = text.split('CO2');
+    let out = '';
+    parts.forEach((part, i) => {
+      if (i > 0) {
+        co2Count++;
+        out += `<w:r>${rpr}${topen}CO</w:t></w:r>`;
+        out += `<w:r>${subRpr}${topen}2</w:t></w:r>`;
+      }
+      if (part.length) out += `<w:r>${rpr}${topen}${part}</w:t></w:r>`;
+    });
+    return out;
+  });
+  console.log(`CO2 subscript conversions: ${co2Count}`);
+
   outZip.file('word/document.xml', docXml);
 
   // Patch settings.xml
