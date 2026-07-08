@@ -650,19 +650,19 @@ function buildBody() {
     dataTable(
       ['Bird Type', 'Weight Range', 'Recommended Method(s)', 'Notes'],
       [
-        ['Day-old / placement chicks', '< 100 g', 'CO2 (preferred for multiples); manual cervical dislocation (single bird)', 'CO2 for groups. For a single chick, cervical dislocation is quick and reliable.'],
-        ['Broiler chicks (1-3 weeks)', '100 g to 500 g', 'Manual cervical dislocation; CO2', 'Cervical dislocation technique is the same; grip is smaller. CO2 efficient for groups.'],
-        ['Market-age broilers (5-7 weeks)', '1.5 to 3 kg', 'Manual cervical dislocation; KED-C', 'Upper weight limit for comfortable manual technique. KED-C handles this range well.'],
-        ['Broiler breeders (males)', '3.5 to 5 kg', 'KED-C; Non-penetrating captive bolt; CO2; blunt force trauma', 'Manual technique is unreliable at this weight. Use a device, or blunt force trauma where no device is available.'],
-        ['Broiler breeders (females)', '2.5 to 4 kg', 'Manual cervical dislocation (if < 3 kg); KED-C; CO2', 'Assess individual bird weight. Use KED-C for birds you cannot confidently dislocate manually.'],
-        ['Commercial layers', '1.5 to 2 kg', 'Manual cervical dislocation; CO2', 'Same approach as market-age broilers.'],
-        ['Turkeys (small)', '< 5 kg', 'KED-C; Manual cervical dislocation', 'Physical restraint may be more difficult than with chickens due to size and strength.'],
-        ['Turkeys (large, commercial)', '10 to 20 kg', 'Non-penetrating captive bolt; CO2', 'Manual and KED-C methods are not reliable or safe at this weight. Captive bolt required.'],
+        ['Day-old / placement chicks', '< 100 g', 'CO2 (for groups); manual cervical dislocation (single bird)', 'Chicks tolerate CO2, so fill the chamber fully and immerse them. For a single chick, cervical dislocation is quick.'],
+        ['Broiler chicks (1-3 weeks)', '100 g to 500 g', 'Manual cervical dislocation; CO2', 'Cervical dislocation is easy at this size. CO2 works for groups.'],
+        ['Market-age broilers (5-7 weeks)', '1.5 to 3 kg', 'Manual cervical dislocation (up to about 2.3 kg); KED-C', 'Hand dislocation works to about 2.3 kg. Above that, use the KED-C.'],
+        ['Broiler breeders (males)', '3.5 to 5 kg', 'KED-C; non-penetrating captive bolt; blunt force trauma', 'Too heavy for reliable hand dislocation, and a CO2 chamber is not practical at this size. Use a device, or blunt force trauma where no device is available.'],
+        ['Broiler breeders (females)', '2.5 to 4 kg', 'Manual cervical dislocation (if under 3 kg); KED-C', 'Check the individual bird. Use the KED-C for birds you cannot confidently dislocate by hand.'],
+        ['Commercial layers', '1.5 to 2 kg', 'Manual cervical dislocation; CO2', 'Same approach as market-age broilers. CO2 works for small groups.'],
+        ['Turkeys (small)', '< 5 kg', 'KED-C; manual cervical dislocation (small birds)', 'The KED-C covers this range. Restraint is harder than with chickens.'],
+        ['Turkeys (large, commercial)', '10 to 20 kg', 'Non-penetrating captive bolt', 'Too heavy for hand dislocation, and a CO2 chamber is not practical at this size. The KED-C is too small, so the captive bolt is the reliable method.'],
       ],
       [2000, 1500, 2600, 2540]
     ),
     spacer(160),
-    para([{ text: 'Source:', bold: true }, { text: ' AVMA Guidelines for the Euthanasia of Animals: 2020 Edition [1]; Boyal et al. 2022, Poultry Science [8]; Ripplinger et al. 2024, Poultry Science [7]; Humane Slaughter Association [12].' }]),
+    para([{ text: 'Source:', bold: true }, { text: ' AVMA Guidelines for the Euthanasia of Animals: 2020 Edition [1]; Boyal et al. 2022, Poultry Science [8]; Ripplinger et al. 2024, Poultry Science [7]; Woolcott et al. 2018, Animals [10]; Humane Slaughter Association [12].' }]),
 
     // ─── SECTION 5 ───
     h1('5. Verification of Death', true),
