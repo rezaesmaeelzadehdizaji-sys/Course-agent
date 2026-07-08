@@ -771,7 +771,7 @@ function buildBody() {
         ['Not sealing the CO2 chamber properly', 'Gas leaks out, concentration drops, bird takes longer to die', 'Check the seal before every use. Keep the lid firmly closed during the entire exposure.'],
         ['Removing birds from CO2 too early', 'Bird may recover from unconsciousness. Wakes up in the mortality bin.', 'Maintain exposure until all reflexes cease, then continue for 1 more minute minimum.'],
         ['Skipping the three-check protocol because the bird looked dead', 'Incomplete euthanasia. Bird may still be alive in the mortality bin.', 'Every bird. Every time. The three checks take 30 seconds.'],
-        ['Using blunt force trauma on a bird too large for the technique', 'First blow may not achieve immediate unconsciousness. Multiple blows required.', 'Blunt force only for neonatal chicks or very small birds. Use a mechanical method for larger birds.'],
+        ['A hesitant or under-powered blunt force blow', 'The bird is stunned but not killed, so it needs a second blow. More suffering, and harder on you.', 'Use a tool heavy enough to knock the bird out in one firm strike. If you cannot commit to that, use a captive bolt or KED device instead.'],
         ['Disposing of a bird before confirming death', 'Animal welfare violation. Bird may recover in a sealed bin without access to air.', 'Never put a bird in a sealed container until all three checks have passed.'],
       ],
       [2400, 2880, 3360]
