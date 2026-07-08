@@ -748,6 +748,7 @@ function buildBody() {
     bullet('Annually for all staff, or more frequently if your audit program requires it.'),
     bullet('Any time a method failure occurs, as a corrective event.'),
     para('The Poultry Industry Council puts out euthanasia training resources and its Practical Guidelines for On-Farm Euthanasia of Poultry, a solid reference to keep on hand [5]. Your veterinarian or your integrator rep can also come out and run hands-on sessions. If you want guidance that holds up the same way across provinces, start with the Poultry Industry Council material.'),
+    para('The CPC Learning Centre also runs a hands-on Humane Euthanasia course most years. It is a good place to get new staff trained and to keep experienced hands sharp. Call CPC or check the dates at canadianpoultry.ca/events.'),
 
     // ─── SECTION 8 ───
     h1('8. Workshop: Practical Demonstration', true),
