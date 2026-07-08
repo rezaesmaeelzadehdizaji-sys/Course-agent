@@ -672,7 +672,7 @@ function buildBody() {
     para('To be sure a bird is dead, you have to check the reflexes and responses that only switch off once the brain has truly stopped. The twitching and gasping after euthanasia do not tell you that. The field checks below do [5].'),
 
     h2('5.2  The Three-Check Protocol'),
-    ...svgImage(verificationSvg, 'Figure 5.1: The three field checks for confirming death in poultry, the third-eyelid reflex, neck muscle tone, and response to a pinch. All three must pass, then confirm no heartbeat and no breathing for at least 5 minutes before disposal. Twitching and wing flapping after euthanasia are normal and do not mean the bird is alive. Source: adapted from Poultry Industry Council [5]; Merck Veterinary Manual and Iowa State VDPAM [4,13].', 5.9),
+    ...image(figBuf('three checks.jpg'), 'Figure 5.1: The three field checks for confirming death, the third-eyelid reflex, neck muscle tone, and pinch response, with the heartbeat and breathing check as the final backstop. Source: Poultry Industry Council [5]; CPC Short Courses.', 5.9),
     para('Run these three field checks on every bird, in this order [5]:'),
     numbered([{ text: 'Third-eyelid reflex:', bold: true }, { text: ' Touch the corner of the eye lightly with a fingertip or clean swab. In a bird that is still alive, the third eyelid, a thin pale membrane, sweeps across the eye. It keeps working until the brain is almost gone, so this is the most reliable field check. No sweep across the eye means the bird is dead.' }]),
     numbered([{ text: 'Neck muscle tone:', bold: true }, { text: ' A live or barely conscious bird tries to lift its head. Hold the bird and watch. No effort to raise the head means deep unconsciousness or death.' }]),
