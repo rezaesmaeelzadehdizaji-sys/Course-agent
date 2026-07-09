@@ -448,7 +448,7 @@ function buildBody() {
 
     h2('1.3  Why Timely Euthanasia Matters for Welfare and Productivity'),
     para('A bird that cannot compete for feed and water drags flock uniformity down. It sits in the corner, loses body condition, and becomes a focus for pecking. Left in place, it can also become a source of secondary infection for surrounding birds. Pulling it early eliminates these effects.'),
-    para('Compromised chicks at placement are the most important group to catch early. Under the Chicken Farmers of Canada Animal Care Program, birds in pain must be promptly treated or euthanized, and culls must be handled daily, not left [3]. A chick that cannot stand or find feed in the first 24 hours has almost no chance of reaching market weight profitably. Every hour you delay costs the bird more suffering and costs you more feed and floor space.'),
+    para('Compromised chicks at placement are the most important group to catch early. The Chicken Farmers of Canada Animal Care Program requires culls to be handled daily, not left to pile up [3]. A chick that cannot stand or find feed in the first 24 hours has almost no chance of reaching market weight profitably. Every hour you delay costs the bird more suffering and costs you more feed and floor space.'),
     spacer(80),
     callout('Chick Placement Rule', 'Any chick that cannot stand, has an obvious deformity preventing it from reaching feed or water, or is clearly below half the expected weight of its pen-mates must be euthanized within the first handling pass. Do not place it and hope. NFACC requires compromised birds at placement to be euthanized within 1 hour of completion of flock processing. [2]', 'EBF2FA', MED_BLUE),
     spacer(80),
