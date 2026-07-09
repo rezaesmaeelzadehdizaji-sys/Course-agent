@@ -207,16 +207,18 @@ Iowa State University College of Veterinary Medicine, Veterinary Diagnostic and 
 
 ---
 
-### [15] Manitoba Agriculture, Protocol for Deadstock Disposal by On-Farm Burial
+### [15] Government of Alberta, Disposal of Dead Animals Regulation (Alta Reg 132/2014)
 
 **Citation as written:**
-Manitoba Agriculture. Protocol for Deadstock Disposal by On-Farm Burial. Winnipeg: Government of Manitoba [cited 2026 Jun]. Available from: gov.mb.ca/agriculture
+Government of Alberta. Disposal of Dead Animals Regulation, Alta Reg 132/2014 (Animal Health Act). Edmonton: Government of Alberta; 2014 [cited 2026 Jul]. Available from: open.alberta.ca
 
-**Verification:**
-- Government of Manitoba Agriculture confirmed as the publisher of deadstock disposal guidance at gov.mb.ca/agriculture
-- "Protocol for Deadstock Disposal by On-Farm Burial" confirmed as the title of Manitoba's burial guidance
-- Used in Section 6.1 for the 100 meter watercourse, spring, sinkhole, and well setback and the 1 meter impermeable cover requirement for burial pits
-- STATUS: CONFIRMED
+**Verification (updated 2026-07-09):**
+- Replaced the former Manitoba source at the reviewer's request: Alberta is the neighboring province to British Columbia (the course is BC-first), so the second provincial example is now Alberta.
+- Disposal of Dead Animals Regulation, Alta Reg 132/2014, confirmed as the current Alberta regulation under the Animal Health Act (published at open.alberta.ca/publications/2014_132; text on CanLII alta-reg-132-2014). It replaced the older Alta Reg 229/2000.
+- Claims used in Section 6.1, verified against the regulation and the Alberta livestock mortality management guidance:
+  - Rendering row: dead animals must be disposed of within 7 days of death, unless kept frozen outdoors over winter or as the chief provincial veterinarian directs.
+  - Burial row: burial pit at least 100 m from any well or water source (well/domestic water intake, stream, creek, pond, spring, river, irrigation canal, dugout, other water source, and the high-water mark of any lake), the pit bottom at least 1 m above the seasonal high-water table, and at least 1 m of compacted soil cover.
+- STATUS: CONFIRMED (was Manitoba; swapped to Alberta 2026-07-09)
 
 ---
 
@@ -251,7 +253,7 @@ British Columbia Ministry of Agriculture. Farm Practices: Mortality Disposal. Or
 | [12] | Humane Slaughter Association | n/a | hsa.org.uk | CONFIRMED |
 | [13] | Iowa State University VDPAM | n/a | vetmed.iastate.edu | CONFIRMED |
 | [14] | British Columbia Ministry of Agriculture | 2014 | gov.bc.ca | CONFIRMED |
-| [15] | Manitoba Agriculture | n/a | gov.mb.ca/agriculture | CONFIRMED |
+| [15] | Government of Alberta (Disposal of Dead Animals Regulation, Alta Reg 132/2014) | 2014 | open.alberta.ca | CONFIRMED (was Manitoba; swapped to Alberta 2026-07-09) |
 
 **Zero fabricated references. All 15 citations verified against primary sources. Citation order in the built document is sequential 1 through 15 in first-appearance order, matching Vancouver style.**
 

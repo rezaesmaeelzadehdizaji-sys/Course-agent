@@ -694,15 +694,15 @@ function buildBody() {
     dataTable(
       ['Disposal Method', 'How It Works', 'Key Requirements'],
       [
-        ['Rendering', 'Carcasses collected by a licensed renderer and processed into meal and fat', 'British Columbia: store carcasses in sealed containers, away from live birds, and have a dead stock service pick them up before they start to decompose. Pickup is more urgent in warm weather and less urgent when carcasses are frozen [14]. Manitoba requires refrigeration or freezing if carcasses are held more than 48 hours after death [15]. The renderer sets the collection schedule.'],
+        ['Rendering', 'Carcasses collected by a licensed renderer and processed into meal and fat', 'British Columbia: store carcasses in sealed containers, away from live birds, and have a dead stock service pick them up before they start to decompose. Pickup is more urgent in warm weather and less urgent when carcasses are frozen [14]. Alberta requires dead animals to be disposed of within 7 days of death, so carcasses held for a renderer cannot sit indefinitely, unless they are kept frozen outdoors over winter [15]. The renderer sets the collection schedule.'],
         ['On-farm composting', 'Carcasses layered with carbon-rich material (sawdust, straw, wood chips) in an active compost pile', 'Carbon material must fully cover each layer of carcasses. The pile must reach internal temperatures high enough to kill pathogens. Follow your provincial composting requirements.'],
-        ['On-farm burial', 'Carcasses buried in a designated pit on the farm property', 'British Columbia requires that buried mortalities not contaminate groundwater, watercourses, or water supplies and be buried deep enough to keep predators from digging them up [14]. Manitoba requires burial pits at least 100 meters from any watercourse, spring, sinkhole, or well, with a minimum of 1 meter of impermeable cover over the carcasses [15]. Setback distances vary by province, so check your local rules.'],
+        ['On-farm burial', 'Carcasses buried in a designated pit on the farm property', 'British Columbia requires that buried mortalities not contaminate groundwater, watercourses, or water supplies and be buried deep enough to keep predators from digging them up [14]. Alberta requires burial pits at least 100 meters from any well or water source, with the pit bottom at least 1 meter above the seasonal high-water table and at least 1 meter of compacted soil cover [15]. Setback distances vary by province, so check your local rules.'],
         ['Incineration', 'Carcasses burned in an approved incinerator', 'Must comply with provincial environmental regulations for emissions. Not all provinces permit on-farm incineration without a permit.'],
       ],
       [1800, 3240, 3600]
     ),
     spacer(160),
-    para([{ text: 'Source:', bold: true }, { text: ' British Columbia Ministry of Agriculture, Farm Practices: Mortality Disposal [14]; Manitoba Agriculture, Protocol for Deadstock Disposal by On-Farm Burial [15]; Chicken Farmers of Canada Animal Care Program [3].' }]),
+    para([{ text: 'Source:', bold: true }, { text: ' British Columbia Ministry of Agriculture, Farm Practices: Mortality Disposal [14]; Government of Alberta, Disposal of Dead Animals Regulation (Alta Reg 132/2014) [15]; Chicken Farmers of Canada Animal Care Program [3].' }]),
     spacer(80),
     para('One exception: a bird euthanized with injectable barbiturate by a veterinarian cannot go to rendering or composting. It needs the separate handling described in Section 3.1.'),
 
@@ -811,7 +811,7 @@ function buildBody() {
     numberedRef('Humane Slaughter Association. Cervical dislocation and decapitation (manual and mechanical). Wheathampstead: HSA [cited 2026 Jun]. Available from: hsa.org.uk'),
     numberedRef('Iowa State University College of Veterinary Medicine, Veterinary Diagnostic and Production Animal Medicine. Secondary Steps and Confirmation of Death. Ames, IA: Iowa State University [cited 2026 Jun]. Available from: vetmed.iastate.edu'),
     numberedRef('British Columbia Ministry of Agriculture. Farm Practices: Mortality Disposal. Order No. 870.218-46. Victoria: Government of British Columbia; 2014 [cited 2026 Jun]. Available from: gov.bc.ca'),
-    numberedRef('Manitoba Agriculture. Protocol for Deadstock Disposal by On-Farm Burial. Winnipeg: Government of Manitoba [cited 2026 Jun]. Available from: gov.mb.ca/agriculture'),
+    numberedRef('Government of Alberta. Disposal of Dead Animals Regulation, Alta Reg 132/2014 (Animal Health Act). Edmonton: Government of Alberta; 2014 [cited 2026 Jul]. Available from: open.alberta.ca'),
   ];
 }
 
