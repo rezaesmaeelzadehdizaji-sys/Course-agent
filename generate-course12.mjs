@@ -508,6 +508,9 @@ function buildBody() {
     ),
     spacer(160),
     para([{ text: 'Source:', bold: true }, { text: ' American Veterinary Medical Association, Guidelines for the Euthanasia of Animals: 2020 Edition [1]; Merck Veterinary Manual (citing AVMA 2020) [4]; Poultry Industry Council, Practical Guidelines for On-Farm Euthanasia of Poultry [5].' }]),
+    spacer(120),
+    para('One row in that table is not a farm job at all. Injectable barbiturate overdose, usually pentobarbital, is an approved method under the AVMA Guidelines, but only a licensed veterinarian can give it. It is a controlled drug, injected into a vein, and it puts the bird down fast and painlessly [1]. You will only see it if your veterinarian is on the farm and chooses it for an individual bird. It is not something you keep in the barn, and it is not practical for routine flock work.'),
+    para('There is one more thing about it that matters after the bird is dead. A barbiturate carcass is dangerous to anything that eats it. The drug does not break down in rendering or composting, and it will poison scavengers like hawks and eagles, and any dog or cat that gets to the body [1]. So a bird put down this way cannot go to a renderer or a normal compost pile. It has to be disposed of exactly the way your veterinarian directs, kept away from wildlife and pets.'),
 
     h2('3.2  Manual Cervical Dislocation'),
     para('Manual cervical dislocation is the most widely used method for individual bird euthanasia on Canadian farms. Done right by a trained worker, it knocks the bird out and kills it in one motion by tearing apart the brainstem and spinal cord. Done wrong, the bird stays conscious and suffers.'),
