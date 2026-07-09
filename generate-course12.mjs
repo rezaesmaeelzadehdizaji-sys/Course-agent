@@ -703,6 +703,8 @@ function buildBody() {
     ),
     spacer(160),
     para([{ text: 'Source:', bold: true }, { text: ' British Columbia Ministry of Agriculture, Farm Practices: Mortality Disposal [14]; Manitoba Agriculture, Protocol for Deadstock Disposal by On-Farm Burial [15]; Chicken Farmers of Canada Animal Care Program [3].' }]),
+    spacer(80),
+    para('One exception: a bird euthanized with injectable barbiturate by a veterinarian cannot go to rendering or composting. It needs the separate handling described in Section 3.1.'),
 
     h2('6.2  Biosecurity During Disposal'),
     para('Carcasses are a source of pathogens. How you handle them between euthanasia and disposal affects the rest of your flock.'),
