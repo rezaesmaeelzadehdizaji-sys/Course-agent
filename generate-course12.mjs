@@ -467,7 +467,7 @@ function buildBody() {
     bullet('Is being pecked by other birds and is unable to escape.'),
     bullet('Is severely emaciated with no muscle cover over the keel.'),
     bullet('Has labored, open-mouth breathing at rest in normal temperature conditions.'),
-    bullet('Appears to have significant neurological impairment: circling, star-gazing, or complete loss of righting reflex with no improvement in 10 minutes.'),
+    bullet('Appears to have significant neurological impairment: circling, star-gazing, or complete loss of the righting reflex, with no sign of recovery.'),
     bullet('Has been found in poor condition that has clearly been present for more than a day.'),
     spacer(60),
     ...image(figBuf('chick abnormalities.jpg'), 'Photo 2.1: Common chick defects that make a bird a cull on the first handling pass: cross-beak, splayed or twisted legs, a twisted neck, an unhealed or infected navel, and open-mouth labored breathing, along with thin, patchy down. Birds like these cannot reach feed and water on their own and will not catch up. Source: salto.com.ph; ceva.vn; Olkowski et al., Acta Vet Scand 2019; Taha & Mohammed, J Educ Sci 2022.', 5.5),
@@ -483,7 +483,7 @@ function buildBody() {
         ['Respiratory signs', 'Mild rattling in one or two birds: isolate, monitor, call veterinarian', 'Gasping open-mouthed at rest, head pulled back, cyanotic comb in cool conditions'],
         ['Wound / injury', 'Minor superficial wound: clean, monitor', 'Open wound exposing muscle, bone, or viscera. Active pecking target.'],
         ['Body condition', 'Thin but mobile bird in a young flock: check management', 'Emaciated, keel bone fully palpable with no muscle cover, dehydrated'],
-        ['Neurological signs', 'Mild incoordination in a young chick: move to recovery pen, recheck within a few hours', 'Full loss of righting reflex, circling, or star-gazing with no improvement in 10 min'],
+        ['Neurological signs', 'Mild incoordination in a young chick: move to recovery pen, recheck within a few hours', 'Full loss of righting reflex, circling, or star-gazing that is not improving'],
         ['Deformity', 'Mild beak or toe defect not affecting feed access', 'Cross-beak severe enough to prevent feed intake, or any structural defect preventing normal movement'],
       ],
       [2400, 3200, 3040]

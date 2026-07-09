@@ -330,6 +330,8 @@ Re-ran the whole audit at the user's request ("double check everything ... I wan
 
 **Death-confirmation checks re-read at source (2026-07-08):** PIC [5] (pp. 13-15) confirms the exact three field checks now in Section 5 and Figure 5.1: nictitating membrane (third eyelid) reflex, lack of neck muscle tone (no attempt to raise head), and lack of response to a comb/toe pinch, plus "Death must also be confirmed in chicks." Section 5 matches the source.
 
+**Unsourced time figure removed (2026-07-09):** Sections 2.1 (bullet) and 2.2 (table, neurological row) said a bird with full loss of righting reflex, circling, or star-gazing should be euthanized "with no improvement in 10 min." No authoritative source gives a 10-minute pre-euthanasia neurological observation window; the sourced poultry time windows are all post-euthanasia confirmation figures (no recovery at 5 min, reflexes stopped 1 min, no rhythmic breathing 2 min). Same class of invented precision as the "4 h" figures removed in findings #11/#12. Replaced with a qualitative "with no sign of recovery" / "that is not improving."
+
 **Currency recheck of institutional sources (2026-07-08):**
 - [1] AVMA Guidelines for the Euthanasia of Animals: 2020 Edition is still the current edition (panel reviews at least every 10 years; no newer edition exists as of July 2026). CURRENT.
 - [2] NFACC Code of Practice for Hatching Eggs, Breeders, Chickens and Turkeys, 2016 is still the in-force edition. A revision began in September 2024 with a public comment period scheduled for September-October 2026 and projected completion September 2027, so the 2016 Code remains the current standard as of July 2026. CURRENT (revised Code expected 2027; re-cite when published).
