@@ -263,8 +263,8 @@ const co2r = () => [run('CO'), run('2', { subScript: true })];
 // SVG FIGURES
 // ============================================================
 
-const decisionTreeSvg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 580" font-family="Calibri, Arial, sans-serif">
-  <rect width="800" height="580" fill="white"/>
+const decisionTreeSvg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 460" font-family="Calibri, Arial, sans-serif">
+  <rect width="800" height="460" fill="white"/>
   <!-- Title -->
   <text x="400" y="30" text-anchor="middle" font-size="16" font-weight="bold" fill="#1F3864">When to Euthanize: Decision Guide</text>
   <!-- Top box: You find a bird that is not right -->
@@ -318,12 +318,6 @@ const decisionTreeSvg = `<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80
   <rect x="250" y="395" width="300" height="50" rx="8" fill="#2E74B5"/>
   <text x="400" y="418" text-anchor="middle" font-size="13" fill="white" font-weight="bold">Call your veterinarian or barn supervisor</text>
   <text x="400" y="436" text-anchor="middle" font-size="12" fill="white">Get guidance before the bird suffers longer</text>
-  <!-- Rule box at bottom -->
-  <rect x="80" y="470" width="640" height="90" rx="6" fill="#FFF3E0" stroke="#C9A84C" stroke-width="2"/>
-  <text x="400" y="492" text-anchor="middle" font-size="12" font-weight="bold" fill="#1F3864">NFACC Code of Practice Rule (2016):</text>
-  <text x="400" y="512" text-anchor="middle" font-size="11" fill="#3C3C3C">Sick or injured birds showing obvious signs of pain must be promptly treated or euthanized.</text>
-  <text x="400" y="532" text-anchor="middle" font-size="11" fill="#3C3C3C">Compromised chicks at placement must be euthanized within 1 hour of flock processing completion.</text>
-  <text x="400" y="552" text-anchor="middle" font-size="11" fill="#888" font-style="italic">Source: NFACC Code of Practice, 2016 [2]</text>
   <!-- Arrow marker -->
   <defs>
     <marker id="arr" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
@@ -881,7 +875,7 @@ async function main() {
     { lvl: 1, text: '2. When to Euthanize a Bird', page: '7' },
     { lvl: 2, text: '2.1  Criteria for Euthanasia', page: '7' },
     { lvl: 2, text: '2.2  Recognizing Irreversible Suffering', page: '8' },
-    { lvl: 2, text: '2.3  Decision-Making in Practice', page: '9' },
+    { lvl: 2, text: '2.3  Decision-Making in Practice', page: '8' },
     { lvl: 1, text: '3. Approved Humane Euthanasia Methods', page: '10' },
     { lvl: 2, text: '3.1  Overview of Approved Methods', page: '10' },
     { lvl: 2, text: '3.2  Manual Cervical Dislocation', page: '11' },

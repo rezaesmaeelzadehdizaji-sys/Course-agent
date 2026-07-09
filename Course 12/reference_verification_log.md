@@ -330,6 +330,8 @@ Re-ran the whole audit at the user's request ("double check everything ... I wan
 
 **Death-confirmation checks re-read at source (2026-07-08):** PIC [5] (pp. 13-15) confirms the exact three field checks now in Section 5 and Figure 5.1: nictitating membrane (third eyelid) reflex, lack of neck muscle tone (no attempt to raise head), and lack of response to a comb/toe pinch, plus "Death must also be confirmed in chicks." Section 5 matches the source.
 
+**Redundant rule box removed from Figure 2.1 (2026-07-09):** The decision-tree SVG carried a bottom box restating both NFACC rules verbatim ("Sick or injured birds ... must be promptly treated or euthanized" and "Compromised chicks ... within 1 hour of flock processing"). Both already appear in the body: the first in Section 1.1 [2], the second in the Section 1.3 Chick Placement Rule callout [2]. Removed the box (tree still labels the euthanize node "NFACC requirement," so it stays grounded) and shrank the figure viewBox to fit. Each NFACC rule now appears once in the document.
+
 **Unsourced time figure removed (2026-07-09):** Sections 2.1 (bullet) and 2.2 (table, neurological row) said a bird with full loss of righting reflex, circling, or star-gazing should be euthanized "with no improvement in 10 min." No authoritative source gives a 10-minute pre-euthanasia neurological observation window; the sourced poultry time windows are all post-euthanasia confirmation figures (no recovery at 5 min, reflexes stopped 1 min, no rhythmic breathing 2 min). Same class of invented precision as the "4 h" figures removed in findings #11/#12. Replaced with a qualitative "with no sign of recovery" / "that is not improving."
 
 **Currency recheck of institutional sources (2026-07-08):**
