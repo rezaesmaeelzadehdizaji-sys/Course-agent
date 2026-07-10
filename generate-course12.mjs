@@ -660,7 +660,7 @@ function buildBody() {
     ),
     spacer(160),
     para([{ text: 'KED sizing: ', bold: true, size: 20 }, { text: 'KED-S fits birds up to 1.8 kg, KED-C up to 13.6 kg, and the turkey KED-T up to 29 kg (see Section 3.3).', size: 20 }]),
-    para([{ text: 'Source:', bold: true }, { text: ' AVMA Guidelines for the Euthanasia of Animals: 2020 Edition [1]; Boyal et al. 2022, Poultry Science [8]; Ripplinger et al. 2024, Poultry Science [7]; Woolcott et al. 2018, Animals [10]; Humane Slaughter Association [12].' }]),
+    para([{ text: 'Source:', bold: true }, { text: ' AVMA Euthanasia Guidelines, 2020 Edition [1]; Humane Slaughter Association [12]; peer-reviewed poultry welfare research [7,8,10].' }]),
 
     // ─── SECTION 5 ───
     h1('5. Verification of Death', true),

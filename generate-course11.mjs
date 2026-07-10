@@ -902,7 +902,7 @@ function buildBody() {
     bullet([{ text: 'Poultry Science:', bold: true }, { text: ' Broad-scope journal covering production, health, and management. Frequent practical disease studies.' }]),
     bullet([{ text: 'Avian Pathology:', bold: true }, { text: ' European-based peer-reviewed journal. Strong coverage of infectious diseases, field diagnostics, and vaccination.' }]),
     bullet([{ text: 'Merck Veterinary Manual (merckvetmanual.com):', bold: true }, { text: ' Free online reference. Poultry disease profiles are accurate, regularly updated, and farmer-accessible.' }]),
-    bullet([{ text: 'Diseases of Poultry, 14th Edition (Swayne et al.):', bold: true }, { text: ' The standard textbook reference for poultry disease. Available in the CPC reference library.' }]),
+    bullet([{ text: 'Diseases of Poultry, 14th Edition:', bold: true }, { text: ' The standard textbook reference for poultry disease. Available in the CPC reference library.' }]),
     bullet([{ text: 'CPC Learning Centre (cpclearningcentre.ca):', bold: true }, { text: ' Disease profiles, flock management guides, and technical bulletins specific to Canadian commercial production. Free access.' }]),
     pageBreak(),
 
