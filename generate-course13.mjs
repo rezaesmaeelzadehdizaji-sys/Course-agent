@@ -294,7 +294,7 @@ function generateFiveDomainsFigure() {
 
   ctx.fillStyle = '#888888';
   ctx.font = '11px Arial';
-  ctx.fillText('Mellor et al. 2020 | Animals (Basel) 10(10):1870', W/2, 36);
+  ctx.fillText('The Five Domains model of animal welfare', W/2, 36);
 
   const outPath = path.join(OUT_DIR, 'fig1_1_five_domains.png');
   fs.writeFileSync(outPath, canvas.toBuffer('image/png'));
@@ -321,7 +321,7 @@ function generateGaitScoringFigure() {
 
   ctx.fillStyle = '#888888';
   ctx.font = '11px Arial';
-  ctx.fillText('Kestin et al. 1992 | Vet Rec 131:190-194', W/2, 44);
+  ctx.fillText('Six-point gait score, GS 0 to GS 5', W/2, 44);
 
   const scores = [
     { gs: 0, label: 'Normal',              detail: 'Regular, even strides. Well balanced.',                    welfare: 'No concern',      col: '#27AE60' },
@@ -468,7 +468,7 @@ function buildWelfareIndicatorTable() {
     ['Hock burns', 'Brown burn lesions on hock joint skin', 'Extended contact with wet litter', 'Same as FPD: litter moisture and air quality'],
     ['Feather pecking', 'Bare patches, bleeding wounds on back or vent', 'Overcrowding, light, diet, stress, boredom', 'Investigate root cause; adjust light, space, diet'],
     ['Keel bone injury', 'Swollen, deformed, or fractured breastbone', 'Trauma in cage-free systems', 'Reduce perch height; manage pop-hole timing'],
-    ['Elevated mortality', 'Daily mortality above 0.2% or sudden spike', 'Disease, heat stress, trauma, management gap', 'Necropsy immediately; call your veterinarian'],
+    ['Elevated mortality', 'Daily mortality above 0.5% for two days running, or a sudden spike', 'Disease, heat stress, trauma, management gap', 'Necropsy immediately; call your veterinarian'],
   ];
 
   return new Table({
@@ -665,13 +665,13 @@ function buildSection1(fiveDomainsBuf) {
       para('The Five Freedoms are a minimum standard, a checklist of things birds should be free from. They are still the baseline used in NFACC codes and in most poultry welfare audit programs.'),
 
       h2('1.3 The Five Domains: Where the Science Is Now'),
-      para('The Five Domains model, updated by Mellor and colleagues in 2020, takes a broader view [4]. Instead of only asking what birds should be free from, it asks what the bird is actually experiencing across five connected areas:'),
-      ...image(fiveDomainsBuf, 'Figure 1.1: The Five Domains model of animal welfare (Mellor et al. 2020). Domains 1-4 are physical and functional factors that feed into Domain 5, the bird\'s mental state. Source: CPC Short Courses.', 5.5),
+      para('The Five Domains model takes a broader view [4]. Instead of only asking what birds should be free from, it asks what the bird is actually experiencing across five connected areas:'),
+      ...image(fiveDomainsBuf, 'Figure 1.1: The Five Domains model of animal welfare. Domains 1-4 are physical and functional factors that feed into Domain 5, the bird\'s mental state. Source: CPC Short Courses.', 5.5),
       para('Domains 1 through 4 are the conditions you control as a farmer: nutrition, the physical environment, health, and behavioral interactions. Domain 5, mental state, is the outcome: how the bird actually feels as a result of those conditions. A bird with access to feed and clean water, in a comfortable barn with good air quality, is experiencing positive Domain 5. A bird in wet litter, with footpad lesions and a gait score of 3, is experiencing negative Domain 5, and it is costing you performance.'),
       para('The Five Domains model is useful because it frames every management decision as something that either supports or undermines the bird\'s experience. Ventilation is not just an engineering problem. It is a welfare problem. Litter management is not just about ammonia. It is about what the bird experiences every time it takes a step.'),
 
       h2('1.4 Why Welfare Connects Directly to Production'),
-      para('A large-scale study of 2.7 million broilers across ten major producers showed that bird welfare depends more on the overall housing environment than on stocking density alone [5]. That means the way you manage your barn every day, temperature, air, water, litter, has a bigger impact on your birds\' welfare than simply how many birds are in the pen. Every farmer can influence this, regardless of housing system.'),
+      para('Here is the finding that matters most for every farmer: how you manage the barn day to day, temperature, air, water, litter, matters more to bird welfare than how many birds are in the pen. That comes from one of the largest broiler studies ever run, covering 2.7 million birds across ten major producers [5]. It means every farmer can move the needle on welfare, whatever the housing system.'),
       para('Birds that are under environmental or social stress produce stress hormones that suppress immune function, impair gut integrity, and reduce feed conversion. Flocks with consistently good welfare scores have lower mortality, better feed conversion, higher uniformity at slaughter, and fewer condemnations. The welfare score and the performance score tend to move together.'),
 
       new Paragraph({ children: [], spacing: { before: 80 } }),
@@ -693,7 +693,7 @@ function buildSection2() {
       h2('2.1 Feed and Water Access'),
       para('Access to feed and water is the most basic welfare requirement. The NFACC Code requires that all birds have ready access to feed and water at all times, appropriate for their age and production type [1]. This sounds straightforward, but there are several ways it can break down.'),
       bullet('Water temperature at the nipple should be 10-14°C. Hot water reduces intake quickly. Press a nipple in the middle of a hot summer afternoon and feel what comes out. If it is warm, birds are backing off.'),
-      bullet('Water-to-feed ratio at thermoneutral temperatures runs approximately 1.7-1.8:1. That ratio climbs significantly under heat stress.'),
+      bullet('Water-to-feed ratio at thermoneutral temperatures runs approximately 1.6-1.8:1. That ratio climbs above 2:1 under heat stress.'),
       bullet('Feed line failures, bridged bins, and blocked auger joints can leave an entire section without feed while the bin reads full. Check that feed is actually flowing, not just that the system is running.'),
       bullet('Layer and breeder systems: ensure adequate feeder and drinker space per bird. Competition at the feeder drives stress, pecking order disruption, and reduced intake in subordinate birds.'),
       para('For more on daily water and feed monitoring, see Course 3 (T-FLAWS Assessment Management Tool) in this series, which covers the full feed and water checkpoint framework in practical detail.'),
@@ -703,7 +703,7 @@ function buildSection2() {
       bullet('Brooding (day 0-2): 32-34°C at bird level. The sensor is not the bird. Check temperature at chick height.'),
       bullet('As feathering develops, reduce temperature gradually, approximately 0.5°C every 2-3 days, until the barn reaches grow-out temperature (around 20-22°C by week 3).'),
       bullet('Adult birds in heat stress: increased water intake, panting, wing drooping, reduced feed intake, and clustering near air inlets.'),
-      para('Air quality matters as much as temperature. Ammonia from litter breakdown irritates the respiratory tract, damages the eyes, and suppresses immunity. Quarles and Kling (1974) showed that broilers exposed to ammonia had significantly reduced body weight and severe airsacculitis at 6-8 weeks of age [6].'),
+      para('Air quality matters as much as temperature. Ammonia from litter breakdown irritates the airways, damages the eyes, and weakens the birds\' defenses. It also shows up on the scale: at 50 ppm broilers finish around 6% lighter, and at 75 ppm about 9% lighter with more of them dying [6].'),
       bullet('Target: ammonia below 10 ppm at bird level. Action level: 25 ppm (visible effects begin at this point).'),
       bullet('CO2 above 3,000 ppm signals that minimum ventilation is too low.'),
       bullet('Litter moisture target: 20-25%. Wetter litter drives ammonia, footpad dermatitis, and bacterial load.'),
@@ -711,8 +711,8 @@ function buildSection2() {
 
       h2('2.3 Lighting for Welfare and Production'),
       para('Light affects bird behavior, growth, reproduction, and rest. The NFACC Code requires a minimum dark period of 4 continuous hours per 24-hour cycle for broilers and broiler breeders to support normal rest behavior [1]. For layers, the NFACC Code recommends at least 8 hours of darkness per 24-hour period [7].'),
-      bullet('First 7 days: minimum 20 lux, 23 hours of light per day to ensure chicks find feed and water.'),
-      bullet('From week 2 onward: reduce to 6-8 lux to reduce activity and pecking behavior. Birds settle quickly in true darkness. If they are still moving around at night, something is letting light in.'),
+      bullet('First 7 days: 50 to 100 lux at 18 hours of light with 6 hours of dark, so chicks can find feed and water easily.'),
+      bullet('From week 2, step the light intensity down gradually week by week as the birds mature. Dimmer light calms activity and cuts pecking. Birds settle quickly in true darkness. If they are still moving around at night, something is letting light in.'),
       bullet('For layers: light programs drive sexual maturity and production. Consult your integrator or management manual for the specific program for your strain and housing system.'),
 
       h2('2.4 Health Care and Disease Management'),
@@ -724,7 +724,7 @@ function buildSection2() {
       para('NFACC stocking density limits for Canadian commercial operations [1,7]:'),
       buildStockingTable(),
       new Paragraph({ spacing: { before: 100, after: 0 } }),
-      para('Overcrowding limits movement, drives competition at feeders and drinkers, increases disease transmission, worsens litter quality, and raises ammonia. The Dawkins et al. (2004) study confirmed that housing conditions, including litter quality and temperature management, outweigh stocking density as the dominant welfare driver [5]. This means that even at permitted densities, poor management causes welfare problems. Good management at the same density produces healthy birds.'),
+      para('Overcrowding limits movement, drives competition at feeders and drinkers, increases disease transmission, worsens litter quality, and raises ammonia. But housing conditions, litter quality, and temperature outweigh stocking density as the main welfare driver [5]. Even at permitted densities, poor management causes welfare problems, and good management at the same density produces healthy birds.'),
       para('Layer hens in any non-cage system, and broiler breeders on floor systems, must have perches, nesting, and dust-bathing opportunities appropriate to their strain and life stage [7]. These behaviors reduce stress, maintain normal social hierarchies, and reduce injurious pecking.'),
     ],
   };
@@ -741,12 +741,12 @@ function buildSection3(gaitBuf) {
     children: [
       h1('Section 3: Welfare Indicators Every Farmer Should Know'),
 
-      para('Welfare assessment on a commercial farm means measuring outcomes on the birds, not just checking that management practices are in place. The Welfare Quality® Assessment Protocol for Poultry (2009) is the most widely used science-based framework for this measurement [8]. It focuses on what you can actually observe on the birds: how they walk, the condition of their feet, the state of their feathers, and how they behave. What follows are the key indicators you should be checking on every barn walk-through.'),
+      para('Welfare assessment on a commercial farm means measuring outcomes on the birds, not just checking that management practices are in place. The most widely used science-based framework for this is the Welfare Quality® assessment protocol [8]. It focuses on what you can actually see on the birds: how they walk, the condition of their feet, the state of their feathers, and how they behave. What follows are the key indicators you should be checking on every barn walk-through.'),
 
       h2('3.1 Gait and Leg Health in Broilers'),
       para('Leg problems are one of the most significant welfare issues in commercial broiler production. Broilers have been selected for rapid body weight gain, and that selection pressure creates a mismatch between muscle mass and skeletal development. The result is a measurable prevalence of leg weakness across commercial flocks.'),
-      ...image(gaitBuf, 'Figure 3.1: Bristol Gait Scoring scale for broiler chickens (Kestin et al. 1992). Birds scoring GS 3 or above are in pain and require immediate attention. Source: CPC Short Courses.', 5.8),
-      para('Kestin et al. (1992) surveyed commercial broiler flocks in the UK and found that 90% had a detectable gait abnormality, and 26% had an abnormality severe enough to compromise welfare [9]. Use the six-point Bristol Gait Score (GS 0-5) on a sample of birds at every barn check.'),
+      ...image(gaitBuf, 'Figure 3.1: Bristol gait scoring scale for broiler chickens. Birds scoring GS 3 or above are in pain and require immediate attention. Source: CPC Short Courses.', 5.8),
+      para('Leg problems are widespread. In commercial broiler flocks, around 90% of birds show some detectable gait abnormality, and about 26% are lame enough that their welfare is compromised [9]. Use the six-point Bristol gait score (GS 0-5) on a sample of birds at every barn check.'),
       bullet('GS 0-1: Normal to minor deviation. No welfare concern.'),
       bullet('GS 2: Obvious gait abnormality. Walking is still functional. Monitor and investigate cause.'),
       bullet('GS 3: Clear defect, function impaired. These birds are in pain. Action is required.'),
@@ -757,7 +757,7 @@ function buildSection3(gaitBuf) {
       para('Footpad dermatitis (FPD) is a contact dermatitis on the underside of the foot, caused primarily by wet, ammonia-rich litter. It is one of the most commonly observed welfare lesions in commercial broiler production and is a direct signal of litter management problems.'),
       bullet('Mild FPD (Score 1-2): superficial dark discoloration. Common and manageable.'),
       bullet('Severe FPD (Score 3-4): ulceration, deep lesions, secondary infection. Painful and affects bird movement and feed access.'),
-      para('The Welfare Quality® protocol (2009) scores FPD on a 0-4 scale using visual assessment during the barn walk or at the slaughter line [8]. Many Canadian processing plants assess FPD scores as part of their welfare monitoring program. High plant-level FPD scores come back to affect your relationship with your processor and your market access.'),
+      para('Footpad dermatitis is scored on a 0 to 4 scale, either on your barn walk or at the slaughter line [8]. Many Canadian processing plants score FPD as part of their welfare monitoring. High scores at the plant come back to affect your relationship with your processor and your market access.'),
       para('The main driver is litter moisture. Keep litter at 20-25% moisture. In cold Canadian winters, ventilation tends to drop to conserve heat, and that is when litter gets wet and FPD rates climb. Do not sacrifice air quality to save heating costs.'),
 
       h2('3.3 Hock Burns'),
@@ -765,7 +765,7 @@ function buildSection3(gaitBuf) {
       para('Both FPD and hock burns can be scored at slaughter as part of your standard welfare audit. If you are getting feedback from the plant on high lesion scores, check your litter moisture and ventilation management first.'),
 
       h2('3.4 Keel Bone Condition in Laying Hens'),
-      para('Keel bone fractures are a major welfare issue for laying hens, particularly in cage-free and aviary systems. Lay et al. (2011) reviewed hen welfare across housing systems and reported keel bone fracture prevalence of 52-73% in cage-free hens [10]. Fractures cause chronic pain, reduce egg production, and affect bird mobility. As Canada transitions away from battery cages under the NFACC 2017 Code [7], this will become an increasingly important welfare challenge.'),
+      para('Keel bone fractures are a major welfare issue for laying hens, especially in cage-free and aviary systems, where reported rates run from 52 to 73% of hens affected [10]. Fractures cause chronic pain, reduce egg production, and affect how well birds get around. As Canada moves away from battery cages under the NFACC 2017 Code [7], this becomes a bigger welfare challenge every year.'),
       para('Common causes include:'),
       bullet('Collisions with perches, feeders, or nest boxes during flight and landing in aviary systems.'),
       bullet('Osteoporosis from high lay rate and calcium mobilization.'),
@@ -789,9 +789,9 @@ function buildSection3(gaitBuf) {
 
       h2('3.6 Daily Mortality and Flock Behavior'),
       para('Your daily mortality record is a welfare dashboard. A sudden jump in daily mortality means something changed. The CPC Learning Centre Spotting Disease Early guide puts it clearly: water consumption drops before feed consumption drops, feed drops before you see sick birds, and sick birds appear before mortality climbs [11]. If you are waiting for mortality to tell you something is wrong, you are behind the problem by days.'),
-      bullet('Target daily broiler mortality: below 0.2% of the flock per day.'),
+      bullet('In a healthy flock, daily broiler mortality is low, usually around 0.05 to 0.1% of the birds per day.'),
       bullet('Cumulative mortality target at processing weight: below 4%.'),
-      bullet('Sudden increase in mortality: necropsy dead birds immediately. Do not wait. Call your veterinarian if you cannot identify the cause within the first 24 hours.'),
+      bullet('Investigate right away if daily mortality runs above 0.5% for two days in a row, or on any sudden spike. Necropsy dead birds immediately and call your veterinarian if you cannot find the cause within 24 hours.'),
       para('Behavioral changes are welfare signals too. Birds that are piling in corners, not distributing evenly across the barn, sitting rather than walking, or showing reduced feeding activity are telling you something is wrong with the environment or their health, often before any other measurable indicator changes.'),
 
       h2('3.7 At-a-Glance: Key Welfare Indicators'),
@@ -856,14 +856,14 @@ function buildSection5() {
       h2('5.1 Thermal Comfort at Every Age'),
       para('Thermal management is a welfare intervention at every stage. The CPC Learning Centre Heat Stress Technical Bulletin identifies thermal stress as one of the most significant welfare and production risks in commercial poultry, with effects ranging from reduced feed intake and lower growth rates to immune suppression and increased mortality [12].'),
       para('Practical thermal management by production stage:'),
-      bullet('Brooding (days 0-7): 32-34°C at bird level. Birds cluster away from heat means it is too hot. Birds pile means it is too cold. Read the birds, not just the controller.'),
+      bullet('Brooding (day 0-2): 32-34°C at bird level, then reduce gradually. Birds cluster away from heat means it is too hot. Birds pile means it is too cold. Read the birds, not just the controller.'),
       bullet('Grow-out (weeks 2-6): step down gradually. Feathered broilers at week 3 should be comfortable at 25-27°C. By week 5, 20-22°C is appropriate.'),
       bullet('Laying hens: optimal production range 18-24°C. Below 10°C reduces feed intake. Above 27°C, egg production, shell quality, and bird health all suffer.'),
       bullet('Summer management: pre-cool the barn before birds arrive. Run tunnel ventilation before the barn reaches critical temperature, not after birds are already in heat stress.'),
       para('For a full thermal monitoring protocol integrated with feed, air, water, and sanitation checkpoints, refer to Course 3 (T-FLAWS Assessment Management Tool) in this series.'),
 
       h2('5.2 Ventilation and Air Quality'),
-      para('Good air quality is not optional. Quarles and Kling (1974) showed clearly that ammonia exposure at commercial concentrations reduces broiler body weight significantly and causes severe respiratory disease [6]. The damage mechanism is direct: ammonia paralyzes cilia in the trachea, removing the birds\' first line of defense against respiratory pathogens. Once cilia are impaired, bacteria that would normally be cleared instead reach the lungs and air sacs.'),
+      para('Good air quality is not optional. At the levels that build up in a poorly ventilated barn, ammonia cuts body weight and raises mortality, and the damage is direct [6]. It paralyzes the tiny hairs (cilia) that line the windpipe, the birds\' first line of defense against respiratory bugs. Once those are knocked out, bacteria that would normally get cleared reach the lungs and air sacs.'),
       bullet('Target ammonia: below 10 ppm during brooding; below 25 ppm throughout the grow-out.'),
       bullet('Action threshold: 25 ppm at bird level. You can detect this with a simple ammonia meter or colorimetric tube. Do not wait until birds show signs.'),
       bullet('CO2 target: below 3,000 ppm. High CO2 signals inadequate minimum ventilation rate.'),
@@ -882,8 +882,8 @@ function buildSection5() {
 
       h2('5.4 Light Programs That Support Welfare'),
       para('Lighting is a management tool that affects bird behavior, rest, and stress. The NFACC Code requires all birds to have a minimum dark period per 24-hour cycle [1]. Birds in continuous light cannot rest properly, which drives chronic stress and increased injurious pecking.'),
-      bullet('Broilers (week 1): minimum 20 lux, 23 hours of light. This ensures chicks find feed and water.'),
-      bullet('Broilers (week 2 onward): step down to 6-8 lux and introduce 4-6 hours of continuous darkness.'),
+      bullet('Broilers (week 1): 50 to 100 lux at 18 hours of light with 6 hours of dark. This lets chicks find feed and water.'),
+      bullet('Broilers (week 2 onward): step the intensity down gradually and hold the required dark period. By the last weeks birds are on much lower light, down to single digits in lux, which also cuts pecking.'),
       bullet('Layers and breeders: consult your integrator\'s lighting program. Increasing day length stimulates sexual maturity and production; abrupt changes cause stress.'),
       bullet('Minimum continuous dark period: 4 hours for broilers and broiler breeders [1]. For layers, NFACC recommends at least 8 hours of darkness per 24-hour period [7].'),
       para('Uniform light distribution is as important as intensity. Hot spots with high intensity over feeders or drinkers can drive pecking at those locations. Walk the barn with a light meter and check that intensity is consistent across the floor.'),
@@ -921,7 +921,7 @@ function buildSection6() {
       bullet('Complete catching in under 2-3 hours where possible. Extended catching time increases heat stress, especially in older birds.'),
 
       h2('6.3 From Farm to Plant: Reducing Pre-Slaughter Stress'),
-      para('Once birds leave your farm, a different set of welfare risks applies: trailer microclimate, journey duration, and lairage conditions. Caffrey et al. (2017) found that journey duration, bird age, catching team, and holding barn duration all independently affected dead-on-arrival (DOA) rates in broiler transport in Atlantic Canada [13]. The median DOA rate in that study was approximately 0.29%, but individual loads ranged from near zero to almost 2% depending on these factors.'),
+      para('Once birds leave your farm, a different set of welfare risks applies: the trailer microclimate, how long the journey takes, and holding conditions at the plant. For broiler transport in Atlantic Canada, four things drove dead-on-arrival (DOA) rates: journey length, bird age, which catching team loaded the birds, and how long they waited in the holding barn [13]. The typical DOA rate was around 0.29%, but individual loads ran from near zero to almost 2% depending on those factors.'),
       para('Your influence over transport welfare is limited once the truck leaves, but you can control several key factors:'),
       bullet('Withdraw feed at the right time before catching. Too early causes feed restriction stress; too late causes crop content that affects processing. Follow your integrator\'s withdrawal schedule.'),
       bullet('Communicate with the catching crew supervisor about any bird health concerns in the flock. Compromised birds have higher transport mortality risk.'),
@@ -1012,7 +1012,7 @@ function buildReferencesSection() {
       numberedRef('Farm Animal Welfare Council. Five Freedoms [Press statement]. Surrey, UK: FAWC; 1979. Available from: webarchive.nationalarchives.gov.uk [cited 2026 Jun].'),
       numberedRef('Mellor DJ, Beausoleil NJ, Littlewood KE, McLean AN, McGreevy PD, Jones B, Wilkins C. The 2020 Five Domains Model: Including Human-Animal Interactions in Assessments of Animal Welfare. Animals (Basel). 2020;10(10):1870. doi:10.3390/ani10101870.'),
       numberedRef('Dawkins MS, Donnelly CA, Jones TA. Chicken welfare is influenced more by housing conditions than by stocking density. Nature. 2004;427(6972):342-344. doi:10.1038/nature02226.'),
-      numberedRef('Quarles CL, Kling HF. Evaluation of ammonia and infectious bronchitis vaccination stress on broiler performance and carcass quality. Poult Sci. 1974;53(5):1592-1596. doi:10.3382/ps.0531592.'),
+      numberedRef('Miles DM, Branton SL, Lott BD. Atmospheric ammonia is detrimental to the performance of modern commercial broilers. Poult Sci. 2004;83(10):1650-1654. doi:10.1093/ps/83.10.1650.'),
       numberedRef('National Farm Animal Care Council. Code of Practice for the Care and Handling of Pullets and Laying Hens. Burnaby, BC: NFACC; 2017. Available from: nfacc.ca [cited 2026 Jun].'),
       numberedRef('Welfare Quality® Consortium. Welfare Quality® Assessment Protocol for Poultry (Broilers, Laying Hens). Lelystad, Netherlands: Welfare Quality® Consortium; 2009.'),
       numberedRef('Kestin SC, Knowles TG, Tinch AE, Gregory NG. Prevalence of leg weakness in broiler chickens and its relationship with genotype. Vet Rec. 1992;131(9):190-194.'),

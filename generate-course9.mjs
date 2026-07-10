@@ -575,7 +575,7 @@ function buildSection4() {
       para('To recognize when a flock is in trouble, you must know what is normal for your barn. Every farm has a baseline: normal daily water intake, typical flock behavior at different ages, and normal daily mortality (typically under 0.05% per day after the first week) [2,4].'),
       para('The CPC Learning Centre \'Spotting Disease Early\' guide recommends contacting your veterinarian or service representative immediately if you observe any of the following triggers [2,4]:'),
       bullet('A notable unexplained drop in daily water or feed consumption, with no obvious mechanical cause, on a single day.'),
-      bullet('Daily mortality running above 0.1% for two days in a row, or any sudden jump in dead birds.'),
+      bullet('Daily mortality running above 0.5% for two days in a row, or any sudden jump in dead birds.'),
       bullet('Birds huddling, going quiet, or making a soft clicking sound (snicking) on your night barn walk.'),
       bullet('Weekly gains dropping suddenly, or birds starting to spread wide in size.'),
       bullet('In layers, a drop of 5% or more in daily production, or a sudden increase in cracked or soft-shelled eggs.'),

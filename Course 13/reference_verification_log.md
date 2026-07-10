@@ -66,17 +66,19 @@ All 13 citations verified individually against PubMed, CrossRef, publisher sites
 
 ---
 
-## [6] Quarles CL, Kling HF 1974 (Ammonia and broiler performance)
+## [6] Miles DM, Branton SL, Lott BD 2004 (Ammonia and modern broiler performance)
 
-- **Full citation:** Quarles CL, Kling HF. Evaluation of ammonia and infectious bronchitis vaccination stress on broiler performance and carcass quality. Poult Sci. 1974;53(5):1592-1596.
-- **DOI:** 10.3382/ps.0531592
-- **Verified at:** doi.org/10.3382/ps.0531592 (Poultry Science journal, OUP/Elsevier)
-- **Authors confirmed:** Quarles CL, Kling HF — both names match
-- **Title confirmed:** "Evaluation of ammonia and infectious bronchitis vaccination stress on broiler performance and carcass quality" — confirmed
+- **Full citation:** Miles DM, Branton SL, Lott BD. Atmospheric ammonia is detrimental to the performance of modern commercial broilers. Poult Sci. 2004;83(10):1650-1654.
+- **DOI:** 10.1093/ps/83.10.1650
+- **PubMed ID:** 15510548
+- **Verified at:** CrossRef (doi.org/10.1093/ps/83.10.1650) and PubMed PMID 15510548
+- **Authors confirmed:** Miles DM, Branton SL, Lott BD — all three match
+- **Title confirmed:** "Atmospheric ammonia is detrimental to the performance of modern commercial broilers" — confirmed
 - **Journal:** Poultry Science — correct
-- **Volume/Issue/Year:** 53(5):1592-1596, 1974 — confirmed
+- **Volume/Issue/Year:** 83(10):1650-1654, 2004 — confirmed
 - **Status:** CONFIRMED — fully verified
-- **Date verified:** 2026-06-09
+- **Note:** Replaced the earlier Quarles & Kling (1974) citation on 2026-07-10 at user request (1974 paper too dated; farmer-audience prefers a modern-broiler source). Course claims updated to match this paper's findings: final body weight depressed ~6% at 50 ppm and ~9% at 75 ppm vs 0 ppm; mortality significantly higher at 75 ppm (13.9% vs 5.8%).
+- **Date verified:** 2026-07-10
 
 ---
 
@@ -178,7 +180,7 @@ All 13 citations verified individually against PubMed, CrossRef, publisher sites
 | 3 | FAWC (Five Freedoms) | 1979 | CONFIRMED | UK National Archives |
 | 4 | Mellor DJ et al. | 2020 | CONFIRMED | doi:10.3390/ani10101870 |
 | 5 | Dawkins MS et al. | 2004 | CONFIRMED | doi:10.1038/nature02226 |
-| 6 | Quarles CL, Kling HF | 1974 | CONFIRMED | doi:10.3382/ps.0531592 |
+| 6 | Miles DM, Branton SL, Lott BD | 2004 | CONFIRMED | doi:10.1093/ps/83.10.1650 |
 | 7 | NFACC (Laying Hens Code) | 2017 | CONFIRMED | nfacc.ca |
 | 8 | Welfare Quality® Consortium | 2009 | CONFIRMED | Welfare Quality Network |
 | 9 | Kestin SC et al. | 1992 | CONFIRMED | PMID 1441174 |
