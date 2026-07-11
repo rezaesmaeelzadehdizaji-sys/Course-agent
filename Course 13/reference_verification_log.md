@@ -10,8 +10,8 @@ All 13 citations verified individually against PubMed, CrossRef, publisher sites
 - **Full citation:** National Farm Animal Care Council. Code of Practice for the Care and Handling of Hatching Eggs, Breeders, Chickens and Turkeys. Burnaby, BC: NFACC; 2016.
 - **Source:** nfacc.ca (Canadian national standards body)
 - **Verified at:** nfacc.ca/codes-of-practice/chickens
-- **Status:** CONFIRMED — document exists and is publicly available; welfare and stocking density provisions cited (31 kg/m² conventional, 38 kg/m² enhanced welfare) are consistent with the Code content
-- **Date verified:** 2026-06-09
+- **Status:** CONFIRMED — document exists and is publicly available. Stocking density provisions verified against the exact Code text (Section 3.5, nfacc.ca/pdfs/codes/poultry_code_EN.pdf) on 2026-07-11: broilers "must not normally exceed 31 kg/m² at any time," "may be increased to a maximum of 38 kg/m²" only when five conditions are maintained (daily environmental monitoring of temperature and relative humidity or ammonia; daily water intake monitored; a Flock Health Plan; alarms; ongoing health/injury data showing welfare is not compromised); broiler breeders "must not be greater than 34 kg/m²." Course 13 table corrected on 2026-07-11: the 38 kg/m² row was mislabeled "Enhanced welfare" (38 is a HIGHER density permitted only with enhanced monitoring, not better welfare) and the broiler-breeder 34 kg/m² limit was added.
+- **Date verified:** 2026-07-11
 
 ---
 

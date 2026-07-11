@@ -507,12 +507,13 @@ function buildStockingTable() {
     children: [new Paragraph({ alignment: AlignmentType.CENTER, spacing: { before: 50, after: 50 }, children: [run(text, { size: 18, color: BODY })] })],
   });
 
-  const headers = ['Housing type', 'Max stocking density', 'Applies when'];
+  const headers = ['Housing type', 'NFACC limit or status', 'Conditions / notes'];
   const rows = [
-    ['Conventional broilers',        '31 kg/m²', 'Standard commercial production'],
-    ['Enhanced welfare (broilers)', '38 kg/m²', 'Continuous monitoring requirements met'],
-    ['Conventional layers (battery)', 'Phased out by 2036', 'NFACC 2017 transition requirement'],
-    ['Enriched cage / cage-free',    'System-specific', 'Per NFACC 2017 enrichment requirements'],
+    ['Broilers (standard)',                '31 kg/m²',           'Normal maximum at any time'],
+    ['Broilers (enhanced monitoring)',     '38 kg/m²',           'Only with daily environment and water monitoring, a Flock Health Plan, and alarms'],
+    ['Broiler breeders',                   '34 kg/m²',           'Maximum under the 2016 Code'],
+    ['Conventional layer cages (battery)', 'Phased out by 2036', 'NFACC 2017 layer Code transition'],
+    ['Enriched cage / cage-free (layers)', 'System-specific',    'Per NFACC 2017 layer Code space allowances'],
   ];
 
   return new Table({
@@ -814,7 +815,7 @@ function buildSection4() {
       h1('Section 4: Welfare in Your Production System'),
 
       h2('4.1 Broiler Welfare Priorities'),
-      para('Commercial broilers in Canada are housed at densities up to 31 kg/m² under the NFACC Code (2016) [1]. At that density, the bird environment is your most powerful welfare tool. Litter quality, air quality, temperature, and water access drive almost every significant welfare indicator in the broiler house.'),
+      para('Commercial broilers in Canada are housed at up to 31 kg/m² under the NFACC Code (2016), or up to 38 kg/m² where the enhanced monitoring conditions are met [1]. At that density, the bird environment is your most powerful welfare tool. Litter quality, air quality, temperature, and water access drive almost every significant welfare indicator in the broiler house.'),
       para('The key broiler welfare priorities in approximate order of impact:'),
       numbered('Leg health: rapid growth creates locomotor weakness. Monitor gait score weekly from week 3 onward [9].'),
       numbered('Footpad dermatitis and hock burns: driven by litter moisture. Manage ventilation and litter conditioning proactively [8].'),
