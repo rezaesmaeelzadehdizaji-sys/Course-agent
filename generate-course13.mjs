@@ -209,7 +209,7 @@ function generateFiveDomainsFigure() {
     { label: 'Domain 1',  sub: 'Nutrition',                  x: cx - orbit, y: cy - orbit * 0.7, bg: '#E8F0FB', border: '#2E74B5' },
     { label: 'Domain 2',  sub: 'Physical\nEnvironment',      x: cx + orbit, y: cy - orbit * 0.7, bg: '#E8F0FB', border: '#2E74B5' },
     { label: 'Domain 3',  sub: 'Health',                     x: cx + orbit, y: cy + orbit * 0.7, bg: '#E8F0FB', border: '#2E74B5' },
-    { label: 'Domain 4',  sub: 'Behavioural\nInteractions',  x: cx - orbit, y: cy + orbit * 0.7, bg: '#E8F0FB', border: '#2E74B5' },
+    { label: 'Domain 4',  sub: 'Behavioral\nInteractions',  x: cx - orbit, y: cy + orbit * 0.7, bg: '#E8F0FB', border: '#2E74B5' },
   ];
 
   // Draw arrows from each domain to center
@@ -292,10 +292,6 @@ function generateFiveDomainsFigure() {
   ctx.textBaseline = 'top';
   ctx.fillText('The Five Domains Model of Animal Welfare', W/2, 14);
 
-  ctx.fillStyle = '#888888';
-  ctx.font = '11px Arial';
-  ctx.fillText('The Five Domains model of animal welfare', W/2, 36);
-
   const outPath = path.join(OUT_DIR, 'fig1_1_five_domains.png');
   fs.writeFileSync(outPath, canvas.toBuffer('image/png'));
   console.log('Generated fig1_1_five_domains.png');
@@ -328,7 +324,7 @@ function generateGaitScoringFigure() {
     { gs: 1, label: 'Minor deviation',     detail: 'Slight irregularity. Normal function.',                   welfare: 'Acceptable',      col: '#82C341' },
     { gs: 2, label: 'Obvious abnormality', detail: 'Uneven strides. Little impact on function.',              welfare: 'Monitor closely', col: '#F39C12' },
     { gs: 3, label: 'Impaired function',   detail: 'Clear defect. Function impaired.',                       welfare: 'Action needed',   col: '#E67E22' },
-    { gs: 4, label: 'Severe difficulty',   detail: 'Great difficulty walking. Severe impairment.',            welfare: 'Cull or treat',   col: '#E74C3C' },
+    { gs: 4, label: 'Severe difficulty',   detail: 'Great difficulty walking. Severe impairment.',            welfare: 'Cull',            col: '#E74C3C' },
     { gs: 5, label: 'Unable to walk',      detail: 'Reluctant to move. Cannot walk many strides.',            welfare: 'Euthanize',       col: '#C0392B' },
   ];
 
@@ -463,7 +459,7 @@ function buildWelfareIndicatorTable() {
 
   const headers = ['Indicator', 'What you see', 'What it signals', 'Action'];
   const rows = [
-    ['Gait score', 'GS 3-5: bird limping badly or refusing to move', 'Leg pain, lameness, growth problems', 'Cull or treat; review litter and growth rate'],
+    ['Gait score', 'GS 3-5: bird limping badly or refusing to move', 'Leg pain, lameness, growth problems', 'Act on GS 3 and review litter and growth; cull GS 4-5'],
     ['Footpad dermatitis', 'Dark, crusty or ulcerated lesions on foot pads', 'Wet litter, high ammonia, immune stress', 'Reduce litter moisture; improve ventilation'],
     ['Hock burns', 'Brown burn lesions on hock joint skin', 'Extended contact with wet litter', 'Same as FPD: litter moisture and air quality'],
     ['Feather pecking', 'Bare patches, bleeding wounds on back or vent', 'Overcrowding, light, diet, stress, boredom', 'Investigate root cause; adjust light, space, diet'],
