@@ -191,3 +191,13 @@ All 13 citations verified individually against PubMed, CrossRef, publisher sites
 | 13 | Caffrey NP et al. | 2017 | CONFIRMED | doi:10.1016/j.prevetmed.2017.09.011 |
 
 All 13 references verified. No fabricated or unverifiable citations. All peer-reviewed articles confirmed against PubMed or CrossRef DOI lookup. CPC Learning Centre materials confirmed against the organizational website and local reference library.
+
+---
+
+## Image-source citations (credited in figure/photo captions, not in the numbered reference list)
+
+Following the course convention (image credits are named in the caption, e.g. Photo 3.1 "Source: USDA ARS"), these third-party image sources are attributed in-caption rather than as numbered references. Both verified via CrossRef on 2026-07-11:
+
+- **Photo 3.1 (FPD + hock burn):** USDA Agricultural Research Service, public domain. Reused from Course 3 (fpd_hockburn.jpg).
+- **Photo 3.2 (keel bone fractures), panels A and B:** Kittelsen KE, Toftaker I, Tahamtani F, Moe RO, Thøfner I, Vasdal G. Keel bone fractures in broiler breeders: is palpation a reliable diagnostic method? Avian Pathology. 2023;52(1):78-83. doi:10.1080/03079457.2022.2147416 — CONFIRMED (CrossRef; title/authors/journal/volume/issue/pages all match).
+- **Photo 3.2, panel C (radiograph):** Uysal A, Laçin E. Effect of Different Cage Densities and Age on Keel Bone Damage and Some Hormones in Laying Hens. Brazilian Journal of Poultry Science. 2024;26. doi:10.1590/1806-9061-2024-1931 — CONFIRMED (CrossRef; title/authors/journal/year match).

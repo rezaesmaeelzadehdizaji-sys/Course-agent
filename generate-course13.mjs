@@ -768,6 +768,7 @@ function buildSection3(gaitBuf) {
       bullet('Collisions with perches, feeders, or nest boxes during flight and landing in aviary systems.'),
       bullet('Osteoporosis from high lay rate and calcium mobilization.'),
       bullet('Multi-tier systems with elevated structures that birds cannot navigate safely.'),
+      ...photo(figBuf('Keel bone fc.jpg'), 'Photo 3.2: Checking a keel bone for fractures. (A) Palpation: running the fingers along the length of the keel to feel for fractures. Shown here on a live bird; in the study it was done post-mortem. (B) The inner surface of the keel bone at necropsy. An old, healed fracture with callus (the bony repair tissue) is visible toward the rear of the keel (circled). (C) A radiograph of the keel showing a fracture (circled). Source: panels A and B, Kittelsen et al., Avian Pathology 2023; panel C, Uysal and Laçin, Brazilian Journal of Poultry Science 2024.', 5.8),
       para('Management options include reducing perch height, using padded or rounded perch surfaces, breeding for strains with better bone density, and managing pop-hole timing to reduce rush-flight behavior at dawn.'),
 
       h2('3.5 Feather Condition and Pecking Injuries'),
