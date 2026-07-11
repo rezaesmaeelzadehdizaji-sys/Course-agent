@@ -104,18 +104,19 @@ All 13 citations verified individually against PubMed, CrossRef, publisher sites
 
 ---
 
-## [9] Kestin et al. 1992 (Gait scoring, broiler leg weakness)
+## [9] Santos et al. 2022 (Broiler walking ability, University of Guelph)
 
-- **Full citation:** Kestin SC, Knowles TG, Tinch AE, Gregory NG. Prevalence of leg weakness in broiler chickens and its relationship with genotype. Vet Rec. 1992;131(9):190-194.
-- **PubMed ID:** 1441174
-- **Verified at:** PubMed PMID 1441174; Vet Rec archives (BMJ/BVA)
-- **Authors confirmed:** Kestin SC, Knowles TG, Tinch AE, Gregory NG — all four match
-- **Title confirmed:** "Prevalence of leg weakness in broiler chickens and its relationship with genotype" — confirmed
-- **Journal:** Veterinary Record — correct
-- **Volume/Issue/Year:** 131(9):190-194, 1992 — confirmed
+- **Full citation:** Santos MN, Widowski TM, Kiarie EG, Guerin MT, Edwards AM, Torrey S. In pursuit of a better broiler: walking ability and incidence of contact dermatitis in conventional and slower growing strains of broiler chickens. Poult Sci. 2022;101(4):101768.
+- **DOI:** 10.1016/j.psj.2022.101768
+- **PMC:** PMC8892009
+- **Verified at:** CrossRef (doi.org/10.1016/j.psj.2022.101768) and PMC full text (PMC8892009)
+- **Authors confirmed:** Santos MN, Widowski TM, Kiarie EG, Guerin MT, Edwards AM, Torrey S — all six match (Widowski, Kiarie, Guerin, Torrey are University of Guelph)
+- **Title confirmed:** "In pursuit of a better broiler: walking ability and incidence of contact dermatitis in conventional and slower growing strains of broiler chickens" — confirmed verbatim
+- **Journal / Volume / Issue / Year:** Poultry Science, 101(4):101768, 2022 — confirmed
 - **Status:** CONFIRMED — fully verified
-- **Note:** Statistics cited (90% with detectable abnormalities, 26% severe enough to compromise welfare) confirmed against the paper's abstract
-- **Date verified:** 2026-06-09
+- **CLAIM-MATCH NOTE (important):** The course statistic "14 to 30% of fast-growing broilers have moderate to severe gait impairment, and about 3.3% almost unable to walk" is quoted from the introduction of this paper, where Santos et al. present it as a compiled estimate from prior work (they cite Knowles et al., 2008 and others). It is NOT Santos et al.'s own measured result (their own data used latency-to-lie and group obstacle tests comparing fast- vs slower-growing strains). The course therefore phrases it as "recent studies estimate…", matching the paper's own wording, so the citation faithfully represents the source. Primary source for the 3.3% figure is Knowles et al. 2008 (PLoS ONE 3(2):e1545) if a primary citation is preferred later.
+- **Replaces:** the earlier Kestin et al. 1992 (Vet Rec 131:190-194) citation, swapped 2026-07-11 at user request for a newer Canadian source. Same [9] slot; no renumbering needed.
+- **Date verified:** 2026-07-11
 
 ---
 
@@ -183,7 +184,7 @@ All 13 citations verified individually against PubMed, CrossRef, publisher sites
 | 6 | Miles DM, Branton SL, Lott BD | 2004 | CONFIRMED | doi:10.1093/ps/83.10.1650 |
 | 7 | NFACC (Laying Hens Code) | 2017 | CONFIRMED | nfacc.ca |
 | 8 | Welfare Quality® Consortium | 2009 | CONFIRMED | Welfare Quality Network |
-| 9 | Kestin SC et al. | 1992 | CONFIRMED | PMID 1441174 |
+| 9 | Santos MN et al. (U. Guelph) | 2022 | CONFIRMED | doi:10.1016/j.psj.2022.101768 |
 | 10 | Lay DC Jr et al. | 2011 | CONFIRMED | doi:10.3382/ps.2010-00962 |
 | 11 | CPC Learning Centre (Spotting Disease Early) | n.d. | CONFIRMED | cpclearningcentre.ca |
 | 12 | CPC Learning Centre (Heat Stress) | n.d. | CONFIRMED | cpclearningcentre.ca + local PDF |
