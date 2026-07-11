@@ -649,7 +649,7 @@ function buildSection1(fiveDomainsBuf) {
       h1('Section 1: Understanding Poultry Welfare'),
 
       h2('1.1 What Welfare Means on a Commercial Farm'),
-      para('Welfare is the state of an animal based on how well it can cope with its physical and biological environment. The NFACC Code of Practice for chickens (2016) frames this around the bird\'s ability to stay healthy, comfortable, and able to behave normally [1]. On a working farm, that comes down to a few practical questions: Is the barn the right temperature? Do birds have clean water and feed? Is the litter dry? Are they moving around normally?'),
+      para('Welfare comes down to one thing: how well a bird can cope with the conditions it lives in. The NFACC Code of Practice for chickens (2016) frames it around the bird\'s ability to stay healthy, comfortable, and able to behave normally [1]. On a working farm, that comes down to a few practical questions: Is the barn the right temperature? Do birds have clean water and feed? Is the litter dry? Are they moving around normally?'),
       para('Welfare is not just an ethics issue. Uncomfortable, stressed, or injured birds cost you money. Pain suppresses growth. Chronic heat stress cuts feed intake and slows weight gain. Poor litter drives up footpad dermatitis and respiratory disease, which means more condemnations at the plant and more antibiotic costs. Managing welfare well is managing your input costs well.'),
 
       h2('1.2 The Five Freedoms: Where the Framework Started'),
@@ -669,7 +669,7 @@ function buildSection1(fiveDomainsBuf) {
 
       h2('1.4 Why Welfare Connects Directly to Production'),
       para('Here is the finding that matters most for every farmer: how you manage the barn day to day, temperature, air, water, litter, matters more to bird welfare than how many birds are in the pen. That comes from one of the largest broiler studies ever run, covering 2.7 million birds across ten major producers [5]. It means every farmer can move the needle on welfare, whatever the housing system.'),
-      para('Birds that are under environmental or social stress produce stress hormones that suppress immune function, impair gut integrity, and reduce feed conversion. Flocks with consistently good welfare scores have lower mortality, better feed conversion, higher uniformity at slaughter, and fewer condemnations. The welfare score and the performance score tend to move together.'),
+      para('A stressed bird, whether the stress comes from heat, crowding, or bullying, runs down its own immune system and gut lining and converts feed less efficiently. Flocks with consistently good welfare have lower mortality, better feed conversion, more even weights at slaughter, and fewer condemnations. Welfare and performance move together.'),
 
       new Paragraph({ children: [], spacing: { before: 80 } }),
     ],
@@ -741,7 +741,7 @@ function buildSection3(gaitBuf) {
       para('Welfare assessment on a commercial farm means measuring outcomes on the birds, not just checking that management practices are in place. The most widely used science-based framework for this is the Welfare Quality® assessment protocol [8]. It focuses on what you can actually see on the birds: how they walk, the condition of their feet, the state of their feathers, and how they behave. What follows are the key indicators you should be checking on every barn walk-through.'),
 
       h2('3.1 Gait and Leg Health in Broilers'),
-      para('Leg problems are one of the most significant welfare issues in commercial broiler production. Broilers have been selected for rapid body weight gain, and that selection pressure creates a mismatch between muscle mass and skeletal development. The result is a measurable prevalence of leg weakness across commercial flocks.'),
+      para('Leg problems are one of the biggest welfare issues in commercial broiler production. Modern broilers have been bred to put on muscle fast, faster than their legs and joints can keep up with. That mismatch is why some degree of leg weakness shows up in every commercial flock.'),
       ...image(gaitBuf, 'Figure 3.1: Bristol gait scoring scale for broiler chickens. Birds scoring GS 3 or above are in pain and require immediate attention. Source: CPC Short Courses.', 5.8),
       para('Leg problems are widespread. In commercial broiler flocks, around 90% of birds show some detectable gait abnormality, and about 26% are lame enough that their welfare is compromised [9]. Use the six-point Bristol gait score (GS 0-5) on a sample of birds at every barn check.'),
       bullet('GS 0-1: Normal to minor deviation. No welfare concern.'),
@@ -829,7 +829,7 @@ function buildSection4() {
       para('The welfare performance of cage-free systems depends heavily on barn design, management competence, and stocking management. The transition to cage-free is not automatically a welfare improvement without skilled management.'),
 
       h2('4.3 Breeder Welfare Considerations'),
-      para('Breeder welfare has a dimension that broiler and layer welfare do not: the feed restriction used to control body weight and maximize reproductive performance creates a genuine welfare trade-off. Parent stock birds are genetically identical to their broiler or layer progeny, meaning they have the same appetite drive and growth potential. Feeding them for reproductive performance means they are chronically hungry.'),
+      para('Breeders carry a welfare problem that broilers and layers do not. To hold them at the right weight for good hatching eggs, you have to restrict their feed. But a breeder has the same fast-growth genetics and the same big appetite as the broilers it produces, so a feed-restricted breeder is a genuinely hungry bird, day in and day out. That is the trade-off you are managing.'),
       para('Key breeder welfare concerns:'),
       bullet('Feed restriction and chronic hunger in both male and female breeders, especially during the rearing phase. This requires careful pen management and feeding system design to minimize fighting and feeder competition.'),
       bullet('Leg health in males: breeder males carry significant body weight and are active in mating. Monitor gait score and remove severely lame males promptly.'),
@@ -909,7 +909,7 @@ function buildSection6() {
       bullet('Train all farm workers who have contact with birds. Welfare during daily management reflects directly in catching-day outcomes.'),
 
       h2('6.2 Catching and Loading for Transport'),
-      para('Catching day is the highest-risk welfare event for broilers. The combination of handling stress, reduced lighting, physical restraint, and transport preparation creates conditions where injury and mortality risk spike. How your catching crew performs directly determines your plant-side welfare outcome.'),
+      para('Catching day is the highest-risk welfare event for broilers. Handling, dim light, restraint, and loading all hit the birds at once, and that is when injuries and death losses spike. How your catching crew performs directly determines your welfare results at the plant.'),
       para('Best practices for catching and loading [8]:'),
       bullet('Reduce light intensity to 1-2 lux before catching begins. Low light reduces bird activity and flight response.'),
       bullet('Catch at night or in early morning when barn temperatures are lower. Heat stress during catching is a mortality risk.'),
