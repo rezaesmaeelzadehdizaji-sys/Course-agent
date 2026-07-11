@@ -821,6 +821,7 @@ function buildSection4() {
       numbered('Footpad dermatitis and hock burns: driven by litter moisture. Manage ventilation and litter conditioning proactively [8].'),
       numbered('Heat stress: most dangerous at slaughter weight. Birds at 2+ kg have limited ability to regulate body temperature. Ensure tunnel ventilation is running before temperatures exceed 22°C at bird level.'),
       numbered('Catching and loading: the final welfare event on the farm. Rough handling causes bruising, fractures, and stress-related mortality. Catching team management is a welfare intervention.'),
+      ...photo(figBuf('shipment.jpg'), 'Photo 4.1: Catching and loading on shipment day, done under dim blue and green light. Working in near-darkness keeps the birds calm and cuts flapping, injury, and stress. A trained, professional crew loading gently into transport crates is a direct welfare intervention. Source: CPC Short Courses.', 5.8),
       para('Broilers reach target weight in 35-42 days. That is a short window to get things right. Problems that develop in the first week of the grow-out compound through the rest of the cycle. Correct them fast.'),
 
       h2('4.2 Laying Hen Welfare and Housing Systems'),
