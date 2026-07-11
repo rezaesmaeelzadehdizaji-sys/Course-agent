@@ -120,19 +120,20 @@ All 13 citations verified individually against PubMed, CrossRef, publisher sites
 
 ---
 
-## [10] Lay et al. 2011 (Hen welfare across housing systems)
+## [10] Abdallah et al. 2025 (Keel bone damage review)
 
-- **Full citation:** Lay DC Jr, Fulton RM, Hester PY, Karcher DM, Kjaer JB, Mench JA, et al. Hen welfare in different housing systems. Poult Sci. 2011;90(1):278-294.
-- **DOI:** 10.3382/ps.2010-00962
-- **PubMed ID:** 21177469
-- **Verified at:** doi.org/10.3382/ps.2010-00962; PubMed PMID 21177469
-- **Authors confirmed:** Lay DC Jr, Fulton RM, Hester PY, Karcher DM, Kjaer JB, Mench JA — et al. confirmed (multi-author paper); lead author and first 6 match
-- **Title confirmed:** "Hen welfare in different housing systems" — confirmed
-- **Journal:** Poultry Science — correct
-- **Volume/Issue/Year:** 90(1):278-294, 2011 — confirmed
+- **Full citation:** Abdallah N, Kursun K, Baylan M. Keel bone damage in commercial laying hen hybrids. Vet Med Sci. 2025;11(5):e70518.
+- **DOI:** 10.1002/vms3.70518
+- **PMC:** PMC12288620
+- **Verified at:** CrossRef (doi.org/10.1002/vms3.70518) and PMC full text (PMC12288620)
+- **Authors confirmed:** N. Abdallah, K. Kursun, M. Baylan (Çukurova University, Turkey) — all three match
+- **Title confirmed:** "Keel Bone Damage in Commercial Laying Hen Hybrids" — confirmed
+- **Journal / Volume / Issue / Article / Year:** Veterinary Medicine and Science, 11(5):e70518, 2025 — confirmed
 - **Status:** CONFIRMED — fully verified
-- **Note:** Keel bone fracture prevalence of 52-73% in cage-free hens cited from this review; confirmed as consistent with the paper's review of the available literature
-- **Date verified:** 2026-06-09
+- **CLAIM-MATCH NOTE:** The review states verbatim: "The prevalence of KF among laying hens varies between 53% and 100% in the cage-free systems, whereas its prevalence in enriched cages ranged between 50% and 98%." It also discusses BOTH causes: external trauma (collisions in flight, clumsy perch ascents/descents) AND internal bone weakness (osteoporosis, calcium diverted to eggshell, early maturity and high egg production). Course 3.4 and 4.2 text matches both points.
+- **Replaces:** the earlier Lay et al. 2011 (Poult Sci 90:278-294) "52-73%" figure, swapped 2026-07-11 after user deep-research flagged that the older palpation-based range underestimates true prevalence. Same [10] slot; no renumbering (Lay 2011 was only cited for the keel figure in this course).
+- **Supporting primary source (not cited in course, for the mechanism):** Thøfner I, Hougen HP, Villa C, Lynnerup N, Christensen JP. Pathological characterization of keel bone fractures in laying hens does not support external trauma as the underlying cause. PLoS One. 2020;15(3):e0229735. doi:10.1371/journal.pone.0229735 — found 92% of fractures at the caudal keel tip, consistent with internal stress fractures. (Note: user's deep-research draft said ">96% caudal"; the verified figure in Thøfner is 92%.)
+- **Date verified:** 2026-07-11
 
 ---
 
@@ -185,7 +186,7 @@ All 13 citations verified individually against PubMed, CrossRef, publisher sites
 | 7 | NFACC (Laying Hens Code) | 2017 | CONFIRMED | nfacc.ca |
 | 8 | Welfare Quality® Consortium | 2009 | CONFIRMED | Welfare Quality Network |
 | 9 | Santos MN et al. (U. Guelph) | 2022 | CONFIRMED | doi:10.1016/j.psj.2022.101768 |
-| 10 | Lay DC Jr et al. | 2011 | CONFIRMED | doi:10.3382/ps.2010-00962 |
+| 10 | Abdallah N et al. | 2025 | CONFIRMED | doi:10.1002/vms3.70518 |
 | 11 | CPC Learning Centre (Spotting Disease Early) | n.d. | CONFIRMED | cpclearningcentre.ca |
 | 12 | CPC Learning Centre (Heat Stress) | n.d. | CONFIRMED | cpclearningcentre.ca + local PDF |
 | 13 | Caffrey NP et al. | 2017 | CONFIRMED | doi:10.1016/j.prevetmed.2017.09.011 |
