@@ -324,7 +324,7 @@ function generateGaitScoringFigure() {
     { gs: 1, label: 'Minor deviation',     detail: 'Slight irregularity. Normal function.',                   welfare: 'Acceptable',      col: '#82C341' },
     { gs: 2, label: 'Obvious abnormality', detail: 'Uneven strides. Little impact on function.',              welfare: 'Monitor closely', col: '#F39C12' },
     { gs: 3, label: 'Impaired function',   detail: 'Clear defect. Function impaired.',                       welfare: 'Action needed',   col: '#E67E22' },
-    { gs: 4, label: 'Severe difficulty',   detail: 'Great difficulty walking. Severe impairment.',            welfare: 'Cull',            col: '#E74C3C' },
+    { gs: 4, label: 'Severe difficulty',   detail: 'Great difficulty walking. Severe impairment.',            welfare: 'Euthanize',       col: '#E74C3C' },
     { gs: 5, label: 'Unable to walk',      detail: 'Reluctant to move. Cannot walk many strides.',            welfare: 'Euthanize',       col: '#C0392B' },
   ];
 
@@ -459,7 +459,7 @@ function buildWelfareIndicatorTable() {
 
   const headers = ['Indicator', 'What you see', 'What it signals', 'Action'];
   const rows = [
-    ['Gait score', 'GS 3-5: bird limping badly or refusing to move', 'Leg pain, lameness, growth problems', 'Act on GS 3 and review litter and growth; cull GS 4-5'],
+    ['Gait score', 'GS 3-5: bird limping badly or refusing to move', 'Leg pain, lameness, growth problems', 'Act on GS 3 and review litter and growth; euthanize GS 4-5'],
     ['Footpad dermatitis', 'Dark, crusty or ulcerated lesions on foot pads', 'Wet litter, high ammonia, immune stress', 'Reduce litter moisture; improve ventilation'],
     ['Hock burns', 'Brown burn lesions on hock joint skin', 'Extended contact with wet litter', 'Same as FPD: litter moisture and air quality'],
     ['Feather pecking', 'Bare patches, bleeding wounds on back or vent', 'Overcrowding, light, diet, stress, boredom', 'Investigate root cause; adjust light, space, diet'],
