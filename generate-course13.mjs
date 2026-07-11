@@ -756,11 +756,11 @@ function buildSection3(gaitBuf) {
       bullet('Severe FPD (Score 3-4): ulceration, deep lesions, secondary infection. Painful and affects bird movement and feed access.'),
       para('Footpad dermatitis is scored on a 0 to 4 scale, either on your barn walk or at the slaughter line [8]. Many Canadian processing plants score FPD as part of their welfare monitoring. High scores at the plant come back to affect your relationship with your processor and your market access.'),
       para('The main driver is litter moisture. Keep litter at 20-25% moisture. In cold Canadian winters, ventilation tends to drop to conserve heat, and that is when litter gets wet and FPD rates climb. Do not sacrifice air quality to save heating costs.'),
-      ...photo(figBuf('fpd_hockburn.jpg'), 'Photo 3.1: Footpad dermatitis and hock burn on a commercial broiler. The dark, necrotic tissue on the footpad is an advanced FPD lesion; the brown discoloration over the hock joint is a hock burn. Both trace back to chronic wet litter. Source: USDA Agricultural Research Service (public domain).', 5.0),
 
       h2('3.3 Hock Burns'),
       para('Hock burns are contact lesions on the skin of the hock joint, scored 0-4 under the same scale used for FPD [8]. Like FPD, they reflect how much time birds are spending in contact with wet litter, and rates can swing widely between flocks depending on litter conditions, season, and bird age. High hock burn rates are a red flag for the same litter and ventilation problems that drive FPD.'),
       para('Both FPD and hock burns can be scored at slaughter as part of your standard welfare audit. If you are getting feedback from the plant on high lesion scores, check your litter moisture and ventilation management first.'),
+      ...photo(figBuf('fpd_hockburn.jpg'), 'Photo 3.1: Footpad dermatitis and hock burn on a commercial broiler. The dark, necrotic tissue on the footpad is an advanced FPD lesion; the brown discoloration over the hock joint is a hock burn. Both trace back to chronic wet litter. Source: USDA Agricultural Research Service (public domain).', 5.0),
 
       h2('3.4 Keel Bone Condition in Laying Hens'),
       para('Keel bone fractures are a major welfare issue for laying hens, especially in cage-free and aviary systems, where reported rates run from 52 to 73% of hens affected [10]. Fractures cause chronic pain, reduce egg production, and affect how well birds get around. As Canada moves away from battery cages under the NFACC 2017 Code [7], this becomes a bigger welfare challenge every year.'),
