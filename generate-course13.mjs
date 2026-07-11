@@ -792,7 +792,7 @@ function buildSection3(gaitBuf) {
       para('Your daily mortality record is a welfare dashboard. A sudden jump in daily mortality means something changed. The CPC Learning Centre Spotting Disease Early guide puts it clearly: water consumption drops before feed consumption drops, feed drops before you see sick birds, and sick birds appear before mortality climbs [11]. If you are waiting for mortality to tell you something is wrong, you are behind the problem by days.'),
       bullet('In a healthy flock, daily broiler mortality is low, usually around 0.05 to 0.1% of the birds per day.'),
       bullet('Cumulative mortality target at processing weight: below 4%.'),
-      bullet('Investigate right away if daily mortality runs above 0.5% for two days in a row, or on any sudden spike. Call your veterinarian promptly. Finding the cause of death through a post-mortem is the veterinarian\'s job, not something to work out on your own. Set fresh dead birds aside and keep them cool so the veterinarian can examine them.'),
+      bullet('Investigate right away if daily mortality runs above 0.5% for two days in a row, or on any sudden spike. Call your veterinarian promptly. Set fresh dead birds aside and keep them cool so the veterinarian can examine them.'),
       para('Behavioral changes are welfare signals too. Birds that are piling in corners, not distributing evenly across the barn, sitting rather than walking, or showing reduced feeding activity are telling you something is wrong with the environment or their health, often before any other measurable indicator changes.'),
 
       h2('3.7 At-a-Glance: Key Welfare Indicators'),
