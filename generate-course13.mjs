@@ -783,10 +783,11 @@ function buildSection3(gaitBuf) {
       bullet('Inadequate environmental enrichment in cage-free systems (no perches, no foraging substrate).'),
       ...photo(figBuf('feather and pecking.jpg'), 'Photo 3.3: How feather pecking escalates if it is not caught early. (A) Heavily broken feathers. (B) Almost bald, with skin starting to show. (C) A bald patch of red, irritated skin. (D) Open, bleeding wounds: cannibalism. Once you see blood, the flock is already in trouble. Source: panels A to C, Aviagen Brief, Feathering in Broiler Breeder Females, 2024; panel D, Poultry Hub Australia (poultryhub.org).', 5.5),
       para('Prevention is far more effective than treatment. Once cannibalism establishes itself in a flock, it is very difficult to stop. Management interventions include:'),
-      bullet('Dimming lights to 6-8 lux during the critical pecking-risk period.'),
+      bullet('Dimming lights to 6-8 lux, or switching to red light, during an outbreak. Under dim or red light birds cannot see blood and fresh wounds as easily, which slows the spread of pecking and cannibalism.'),
       bullet('Ensuring adequate feeder space per bird.'),
       bullet('Providing enrichment: scratch areas, straw bales, pecking blocks in non-cage systems.'),
       bullet('Reviewing diet for fiber, methionine, and sodium adequacy.'),
+      bullet('A short-term salt boost in the drinking water can help when the outbreak is driven by salt hunger: about one tablespoon of salt per gallon (roughly 4 to 5 g/L) for half a day, repeated once about three days later, then back to plain water. Keep it brief, because too much salt is toxic.'),
       bullet('Beak treatment as a last resort when management alternatives have been exhausted.'),
 
       h2('3.6 Daily Mortality and Flock Behavior'),
