@@ -786,8 +786,7 @@ function buildSection3(gaitBuf) {
       bullet('Dimming lights to 6-8 lux, or switching to red light, during an outbreak. Under dim or red light birds cannot see blood and fresh wounds as easily, which slows the spread of pecking and cannibalism [12].'),
       bullet('Ensuring adequate feeder space per bird.'),
       bullet('Providing enrichment: scratch areas, straw bales, pecking blocks in non-cage systems.'),
-      bullet('Reviewing diet for fiber, methionine, and sodium adequacy.'),
-      bullet('Check and correct dietary salt, since salt (sodium) deficiency is a recognized trigger for cannibalism [13]. When salt hunger is the driver, a traditional short-term measure is a salt boost in the drinking water: about one tablespoon per gallon for half a day, repeated once a few days later, then back to plain water. Keep any salt supplement brief, because too much salt is toxic.'),
+      bullet('Reviewing the diet for fiber, methionine, and sodium adequacy. A salt (sodium) shortfall in particular is a recognized trigger for cannibalism, so make sure the ration meets the birds\' sodium needs [13].'),
       bullet('Beak treatment as a last resort when management alternatives have been exhausted.'),
 
       h2('3.6 Daily Mortality and Flock Behavior'),

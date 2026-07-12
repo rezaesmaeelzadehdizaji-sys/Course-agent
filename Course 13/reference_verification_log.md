@@ -173,7 +173,7 @@ All 16 citations verified individually against PubMed, CrossRef, publisher sites
 - **Source:** University of Nebraska-Lincoln Extension (NebGuide G1670), issued February 2007
 - **Verified at:** extensionpubs.unl.edu/publication/g1670 (PDF text extracted and read directly)
 - **Status:** CONFIRMED — publication exists; author, number, institution, and 2007 date confirmed from the PDF
-- **CLAIM-MATCH NOTE:** Cited in the 3.5 salt bullet for the claim that "salt (sodium) deficiency is a recognized trigger for cannibalism" — G1670 lists "Dietary absences or deficiencies (example: salt deficiency)" among the causes. IMPORTANT: G1670 does NOT contain the salt-in-water dose. The specific water-cure dose (~1 tbsp/gallon) in the course is labeled a "traditional short-term measure" and is NOT presented as sourced to G1670; no authoritative modern source recommends the water-cure (it traces to a 1942 "salt cure" found mainly in forums/blogs; Penn State, UNL, Mississippi State, and Maryland extension pages do not recommend it). Flagged to the user 2026-07-11.
+- **CLAIM-MATCH NOTE:** Cited in the 3.5 diet bullet for the claim that "salt (sodium) deficiency is a recognized trigger for cannibalism" — G1670 lists "Dietary absences or deficiencies (example: salt deficiency)" among the causes, so the cited claim matches the source exactly. The traditional salt-in-water dose (~1 tbsp/gallon) was DROPPED from the course at user request on 2026-07-11, because no authoritative modern source recommends the water-cure (checked Penn State, UNL, Mississippi State, Maryland; it traces to a 1942 "salt cure" found mainly in forums/blogs). Only the sourced "correct dietary salt deficiency" guidance remains.
 - **Date verified:** 2026-07-11
 
 ---
