@@ -844,6 +844,7 @@ function buildSection4() {
       bullet('Leg health in males: breeder males carry significant body weight and are active in mating. Monitor gait score and remove severely lame males promptly.'),
       bullet('Mating injury to females: treading injuries are common in heavy-breed breeders. Manage male-to-female ratio and monitor hen back/saddle condition.'),
       bullet('Floor access and dustbathing: breeders on litter should have full floor access, and litter condition should be managed to allow dustbathing behavior.'),
+      ...photo(figBuf('breeder farm.jpg'), 'Photo 4.4: A broiler breeder barn on floor (litter) housing. Birds have full floor access on dry bedding for scratching and dust-bathing, with nest boxes down the center and feed and water lines within easy reach. Keeping the litter dry and friable is what lets the birds dust-bathe and keeps their feet healthy. Source: Chicken Farmers of Canada (chicken.ca).', 5.8),
     ],
   };
 }
