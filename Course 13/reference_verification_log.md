@@ -1,7 +1,7 @@
 # Reference Verification Log — Course 13: Poultry Welfare
 Date verified: 2026-06-09
 
-All 14 citations verified individually against PubMed, CrossRef, publisher sites, or official government/institutional sources before publication.
+All 16 citations verified individually against PubMed, CrossRef, publisher sites, or official government/institutional sources before publication.
 
 ---
 
@@ -153,7 +153,32 @@ All 14 citations verified individually against PubMed, CrossRef, publisher sites
 
 ---
 
-## [12] CPC Learning Centre — Spotting Disease Early
+## [12] Shi et al. 2019 (Red light reduces feather pecking/cannibalism)
+
+- **Full citation:** Shi H, Li B, Tong Q, Zheng W, Zeng D, Feng G. Effects of LED light color and intensity on feather pecking and fear responses of layer breeders in natural mating colony cages. Animals (Basel). 2019;9(10):814.
+- **DOI:** 10.3390/ani9100814
+- **PMC:** PMC6826393
+- **Verified at:** CrossRef (doi.org/10.3390/ani9100814) and PMC (PMC6826393)
+- **Authors confirmed:** Shi H, Li B, Tong Q, Zheng W, Zeng D, Feng G — all six match
+- **Title / Journal / Vol / Issue / Article / Year:** Animals (Basel) 9(10):814, 2019 — confirmed
+- **Status:** CONFIRMED — fully verified
+- **CLAIM-MATCH NOTE:** Supports the 3.5 red-light bullet. Paper found hens under red light had the lowest frequency of severe feather pecking and that red light "significantly reduce[d] mortality from cannibalism." Added 2026-07-11.
+- **Date verified:** 2026-07-11
+
+---
+
+## [13] Scheideler 2007 (Salt deficiency as a cannibalism cause)
+
+- **Full citation:** Scheideler SE. Cannibalism by Poultry [NebGuide G1670]. Lincoln (NE): University of Nebraska-Lincoln Extension; 2007.
+- **Source:** University of Nebraska-Lincoln Extension (NebGuide G1670), issued February 2007
+- **Verified at:** extensionpubs.unl.edu/publication/g1670 (PDF text extracted and read directly)
+- **Status:** CONFIRMED — publication exists; author, number, institution, and 2007 date confirmed from the PDF
+- **CLAIM-MATCH NOTE:** Cited in the 3.5 salt bullet for the claim that "salt (sodium) deficiency is a recognized trigger for cannibalism" — G1670 lists "Dietary absences or deficiencies (example: salt deficiency)" among the causes. IMPORTANT: G1670 does NOT contain the salt-in-water dose. The specific water-cure dose (~1 tbsp/gallon) in the course is labeled a "traditional short-term measure" and is NOT presented as sourced to G1670; no authoritative modern source recommends the water-cure (it traces to a 1942 "salt cure" found mainly in forums/blogs; Penn State, UNL, Mississippi State, and Maryland extension pages do not recommend it). Flagged to the user 2026-07-11.
+- **Date verified:** 2026-07-11
+
+---
+
+## [14] CPC Learning Centre — Spotting Disease Early
 
 - **Full citation:** CPC Learning Centre. Spotting Disease Early [Flock Management Guide]. CPC Learning Centre. Available from: cpclearningcentre.ca.
 - **Source:** CPC Learning Centre internal resource
@@ -163,7 +188,7 @@ All 14 citations verified individually against PubMed, CrossRef, publisher sites
 
 ---
 
-## [13] CPC Learning Centre — Heat Stress Technical Bulletin
+## [15] CPC Learning Centre — Heat Stress Technical Bulletin
 
 - **Full citation:** CPC Learning Centre. Heat Stress [Technical Bulletin]. CPC Learning Centre. Available from: cpclearningcentre.ca.
 - **Source:** CPC Learning Centre technical bulletin series
@@ -173,7 +198,7 @@ All 14 citations verified individually against PubMed, CrossRef, publisher sites
 
 ---
 
-## [14] Caffrey et al. 2017 (Transport mortality, Atlantic Canada)
+## [16] Caffrey et al. 2017 (Transport mortality, Atlantic Canada)
 
 - **Full citation:** Caffrey NP, Dohoo IR, Cockram MS. Factors affecting mortality risk during transportation of broiler chickens for slaughter in Atlantic Canada. Prev Vet Med. 2017;147:199-208.
 - **DOI:** 10.1016/j.prevetmed.2017.09.011
@@ -208,7 +233,7 @@ All 14 citations verified individually against PubMed, CrossRef, publisher sites
 | 13 | CPC Learning Centre (Heat Stress) | n.d. | CONFIRMED | cpclearningcentre.ca + local PDF |
 | 14 | Caffrey NP et al. | 2017 | CONFIRMED | doi:10.1016/j.prevetmed.2017.09.011 |
 
-All 14 references verified. No fabricated or unverifiable citations. All peer-reviewed articles confirmed against PubMed or CrossRef DOI lookup. CPC Learning Centre materials confirmed against the organizational website and local reference library.
+All 16 references verified. No fabricated or unverifiable citations. All peer-reviewed articles confirmed against PubMed or CrossRef DOI lookup. CPC Learning Centre materials confirmed against the organizational website and local reference library.
 
 ---
 
