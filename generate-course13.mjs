@@ -773,6 +773,7 @@ function buildSection3(gaitBuf) {
 
       h2('3.5 Feather Condition and Pecking Injuries'),
       para('Feather pecking and cannibalism are welfare emergencies once they start. Bare patches, bleeding wounds on the back, wings, or vent area, and dead birds with body injuries are signs that injurious pecking has already started. The challenge is that by the time you see bleeding, the flock is already in a problem state.'),
+      para('Before you assume every bare patch is pecking, rule out two other causes. First, genetics: the tendency to feather peck is partly inherited, and brown-feathered layers are generally more prone to it than white strains, with the back a common site of wear. Strains differ too. Lohmann Brown hens, for example, tend to lose feather cover faster with age and are more prone to injurious pecking than Hy-Line Brown [11]. Second, in breeders, worn or bare backs and saddles usually come from mating, as the males tread the hens, not from pecking. Manage the male-to-female ratio and watch back and saddle condition, as covered in Section 4.3.'),
       para('Feather pecking rarely has a single cause. Common triggers include:'),
       bullet('Overcrowding and competition at feeders and drinkers.'),
       bullet('Lighting that is too bright or unevenly distributed.'),
@@ -789,7 +790,7 @@ function buildSection3(gaitBuf) {
       bullet('Beak treatment as a last resort when management alternatives have been exhausted.'),
 
       h2('3.6 Daily Mortality and Flock Behavior'),
-      para('Your daily mortality record is a welfare dashboard. A sudden jump in daily mortality means something changed. The CPC Learning Centre Spotting Disease Early guide puts it clearly: water consumption drops before feed consumption drops, feed drops before you see sick birds, and sick birds appear before mortality climbs [11]. If you are waiting for mortality to tell you something is wrong, you are behind the problem by days.'),
+      para('Your daily mortality record is a welfare dashboard. A sudden jump in daily mortality means something changed. The CPC Learning Centre Spotting Disease Early guide puts it clearly: water consumption drops before feed consumption drops, feed drops before you see sick birds, and sick birds appear before mortality climbs [12]. If you are waiting for mortality to tell you something is wrong, you are behind the problem by days.'),
       bullet('In a healthy flock, daily broiler mortality is low, usually around 0.05 to 0.1% of the birds per day.'),
       bullet('Cumulative mortality target at processing weight: below 4%.'),
       bullet('Investigate right away if daily mortality runs above 0.5% for two days in a row, or on any sudden spike. Call your veterinarian promptly. Set fresh dead birds aside and keep them cool so the veterinarian can examine them.'),
@@ -857,7 +858,7 @@ function buildSection5() {
       h1('Section 5: Reducing Stress and Improving the Environment'),
 
       h2('5.1 Thermal Comfort at Every Age'),
-      para('Thermal management is a welfare intervention at every stage. The CPC Learning Centre Heat Stress Technical Bulletin identifies thermal stress as one of the most significant welfare and production risks in commercial poultry, with effects ranging from reduced feed intake and lower growth rates to immune suppression and increased mortality [12].'),
+      para('Thermal management is a welfare intervention at every stage. The CPC Learning Centre Heat Stress Technical Bulletin identifies thermal stress as one of the most significant welfare and production risks in commercial poultry, with effects ranging from reduced feed intake and lower growth rates to immune suppression and increased mortality [13].'),
       para('Practical thermal management by production stage:'),
       bullet('Brooding (day 0-2): 32-34°C at bird level, then reduce gradually. Birds cluster away from heat means it is too hot. Birds pile means it is too cold. Read the birds, not just the controller.'),
       bullet('Grow-out (weeks 2-6): step down gradually. Feathered broilers at week 3 should be comfortable at 25-27°C. By week 5, 20-22°C is appropriate.'),
@@ -924,7 +925,7 @@ function buildSection6() {
       bullet('Complete catching in under 2-3 hours where possible. Extended catching time increases heat stress, especially in older birds.'),
 
       h2('6.3 From Farm to Plant: Reducing Pre-Slaughter Stress'),
-      para('Once birds leave your farm, a different set of welfare risks applies: the trailer microclimate, how long the journey takes, and holding conditions at the plant. For broiler transport in Atlantic Canada, four things drove dead-on-arrival (DOA) rates: journey length, bird age, which catching team loaded the birds, and how long they waited in the holding barn [13]. The typical DOA rate was around 0.29%, but individual loads ran from near zero to almost 2% depending on those factors.'),
+      para('Once birds leave your farm, a different set of welfare risks applies: the trailer microclimate, how long the journey takes, and holding conditions at the plant. For broiler transport in Atlantic Canada, four things drove dead-on-arrival (DOA) rates: journey length, bird age, which catching team loaded the birds, and how long they waited in the holding barn [14]. The typical DOA rate was around 0.29%, but individual loads ran from near zero to almost 2% depending on those factors.'),
       para('Your influence over transport welfare is limited once the truck leaves, but you can control several key factors:'),
       bullet('Withdraw feed at the right time before catching. Too early causes feed restriction stress; too late causes crop content that affects processing. Follow your integrator\'s withdrawal schedule.'),
       bullet('Communicate with the catching crew supervisor about any bird health concerns in the flock. Compromised birds have higher transport mortality risk.'),
@@ -946,7 +947,7 @@ function buildSection7() {
       h1('Section 7: The Farmer\'s Daily Welfare Role'),
 
       h2('7.1 Daily Welfare Walk-Through'),
-      para('Every barn check is a welfare check. The CPC Learning Centre Spotting Disease Early guide describes the systematic five-sense barn walk: what you see, hear, smell, touch, and observe in water and feed consumption before you touch a single bird [11]. That approach applies directly to welfare monitoring.'),
+      para('Every barn check is a welfare check. The CPC Learning Centre Spotting Disease Early guide describes the systematic five-sense barn walk: what you see, hear, smell, touch, and observe in water and feed consumption before you touch a single bird [12]. That approach applies directly to welfare monitoring.'),
       para('Welfare observations to make on every barn check:'),
       bullet('Bird distribution: are birds spreading evenly across the barn, or clustering? Clustering signals temperature, light, ventilation, or water access problems.'),
       bullet('Activity and behavior: are birds moving, feeding, and drinking? How many are sitting? Sitting birds that do not rise when approached are a welfare flag.'),
@@ -1020,6 +1021,7 @@ function buildReferencesSection() {
       numberedRef('Welfare Quality® Consortium. Welfare Quality® Assessment Protocol for Poultry (Broilers, Laying Hens). Lelystad, Netherlands: Welfare Quality® Consortium; 2009.'),
       numberedRef('Santos MN, Widowski TM, Kiarie EG, Guerin MT, Edwards AM, Torrey S. In pursuit of a better broiler: walking ability and incidence of contact dermatitis in conventional and slower growing strains of broiler chickens. Poult Sci. 2022;101(4):101768. doi:10.1016/j.psj.2022.101768.'),
       numberedRef('Abdallah N, Kursun K, Baylan M. Keel bone damage in commercial laying hen hybrids. Vet Med Sci. 2025;11(5):e70518. doi:10.1002/vms3.70518.'),
+      numberedRef('Morrissey K, Brocklehurst S, Baker L, Widowski TM, Sandilands V. Can non-beak treated hens be kept in commercial furnished cages? Exploring the effects of strain and extra environmental enrichment on behaviour, feather cover, and mortality. Animals (Basel). 2016;6(3):17. doi:10.3390/ani6030017.'),
       numberedRef('CPC Learning Centre. Spotting Disease Early [Flock Management Guide]. CPC Learning Centre. Available from: cpclearningcentre.ca.'),
       numberedRef('CPC Learning Centre. Heat Stress [Technical Bulletin]. CPC Learning Centre. Available from: cpclearningcentre.ca.'),
       numberedRef('Caffrey NP, Dohoo IR, Cockram MS. Factors affecting mortality risk during transportation of broiler chickens for slaughter in Atlantic Canada. Prev Vet Med. 2017;147:199-208. doi:10.1016/j.prevetmed.2017.09.011.'),

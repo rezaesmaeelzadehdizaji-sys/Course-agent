@@ -1,7 +1,7 @@
 # Reference Verification Log — Course 13: Poultry Welfare
 Date verified: 2026-06-09
 
-All 13 citations verified individually against PubMed, CrossRef, publisher sites, or official government/institutional sources before publication.
+All 14 citations verified individually against PubMed, CrossRef, publisher sites, or official government/institutional sources before publication.
 
 ---
 
@@ -137,7 +137,23 @@ All 13 citations verified individually against PubMed, CrossRef, publisher sites
 
 ---
 
-## [11] CPC Learning Centre — Spotting Disease Early
+## [11] Morrissey et al. 2016 (Strain effects on feather cover)
+
+- **Full citation:** Morrissey K, Brocklehurst S, Baker L, Widowski TM, Sandilands V. Can non-beak treated hens be kept in commercial furnished cages? Exploring the effects of strain and extra environmental enrichment on behaviour, feather cover, and mortality. Animals (Basel). 2016;6(3):17.
+- **DOI:** 10.3390/ani6030017
+- **PMC:** PMC4810045
+- **Verified at:** CrossRef (doi.org/10.3390/ani6030017) and PMC full text (PMC4810045)
+- **Authors confirmed:** Krysta Morrissey, Sarah Brocklehurst, Laurence Baker, Tina M. Widowski, Victoria Sandilands — all match (Widowski is the same U. Guelph author as ref [9])
+- **Title confirmed:** "Can Non-Beak Treated Hens be Kept in Commercial Furnished Cages? Exploring the Effects of Strain and Extra Environmental Enrichment on Behaviour, Feather Cover, and Mortality" — confirmed
+- **Journal / Volume / Issue / Article / Year:** Animals (Basel), 6(3):17, 2016 — confirmed
+- **Status:** CONFIRMED — fully verified
+- **CLAIM-MATCH NOTE:** Course 3.5 states "Lohmann Brown hens tend to lose feather cover faster with age and are more prone to injurious pecking than Hy-Line Brown." The paper reports verbatim that feather cover for Lohmann Brown hens "deteriorated more quickly with age at most body sites than Hyline Brown hens," and that Lohmann Brown had "higher all and injurious pecking-related mortality than Hyline Brown hens (p < 0.003)." Directly supports the course text. Added 2026-07-11 at user request (strain characteristic of back feather loss).
+- **Renumbering:** inserting this as [11] shifted the three later refs by +1 (old [11] Spotting Disease Early -> [12]; old [12] Heat Stress -> [13]; old [13] Caffrey -> [14]). All in-text citations updated to match.
+- **Date verified:** 2026-07-11
+
+---
+
+## [12] CPC Learning Centre — Spotting Disease Early
 
 - **Full citation:** CPC Learning Centre. Spotting Disease Early [Flock Management Guide]. CPC Learning Centre. Available from: cpclearningcentre.ca.
 - **Source:** CPC Learning Centre internal resource
@@ -147,7 +163,7 @@ All 13 citations verified individually against PubMed, CrossRef, publisher sites
 
 ---
 
-## [12] CPC Learning Centre — Heat Stress Technical Bulletin
+## [13] CPC Learning Centre — Heat Stress Technical Bulletin
 
 - **Full citation:** CPC Learning Centre. Heat Stress [Technical Bulletin]. CPC Learning Centre. Available from: cpclearningcentre.ca.
 - **Source:** CPC Learning Centre technical bulletin series
@@ -157,7 +173,7 @@ All 13 citations verified individually against PubMed, CrossRef, publisher sites
 
 ---
 
-## [13] Caffrey et al. 2017 (Transport mortality, Atlantic Canada)
+## [14] Caffrey et al. 2017 (Transport mortality, Atlantic Canada)
 
 - **Full citation:** Caffrey NP, Dohoo IR, Cockram MS. Factors affecting mortality risk during transportation of broiler chickens for slaughter in Atlantic Canada. Prev Vet Med. 2017;147:199-208.
 - **DOI:** 10.1016/j.prevetmed.2017.09.011
@@ -187,11 +203,12 @@ All 13 citations verified individually against PubMed, CrossRef, publisher sites
 | 8 | Welfare Quality® Consortium | 2009 | CONFIRMED | Welfare Quality Network |
 | 9 | Santos MN et al. (U. Guelph) | 2022 | CONFIRMED | doi:10.1016/j.psj.2022.101768 |
 | 10 | Abdallah N et al. | 2025 | CONFIRMED | doi:10.1002/vms3.70518 |
-| 11 | CPC Learning Centre (Spotting Disease Early) | n.d. | CONFIRMED | cpclearningcentre.ca |
-| 12 | CPC Learning Centre (Heat Stress) | n.d. | CONFIRMED | cpclearningcentre.ca + local PDF |
-| 13 | Caffrey NP et al. | 2017 | CONFIRMED | doi:10.1016/j.prevetmed.2017.09.011 |
+| 11 | Morrissey K et al. | 2016 | CONFIRMED | doi:10.3390/ani6030017 |
+| 12 | CPC Learning Centre (Spotting Disease Early) | n.d. | CONFIRMED | cpclearningcentre.ca |
+| 13 | CPC Learning Centre (Heat Stress) | n.d. | CONFIRMED | cpclearningcentre.ca + local PDF |
+| 14 | Caffrey NP et al. | 2017 | CONFIRMED | doi:10.1016/j.prevetmed.2017.09.011 |
 
-All 13 references verified. No fabricated or unverifiable citations. All peer-reviewed articles confirmed against PubMed or CrossRef DOI lookup. CPC Learning Centre materials confirmed against the organizational website and local reference library.
+All 14 references verified. No fabricated or unverifiable citations. All peer-reviewed articles confirmed against PubMed or CrossRef DOI lookup. CPC Learning Centre materials confirmed against the organizational website and local reference library.
 
 ---
 
