@@ -217,7 +217,7 @@ children.push(
   }),
 
   new Paragraph({
-    children: [new TextRun({ text: 'June 2026', color: GRAY_TEXT, size: 22, font: 'Calibri' })],
+    children: [new TextRun({ text: 'July 2026', color: GRAY_TEXT, size: 22, font: 'Calibri' })],
     alignment: AlignmentType.CENTER,
     spacing: { before: 0, after: 360 },
   }),
