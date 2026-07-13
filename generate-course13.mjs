@@ -1102,7 +1102,7 @@ import { LevelFormat } from 'docx';
 
   // Generate figures
   console.log('Generating figures...');
-  const fiveDomainsBuf = generateFiveDomainsFigure();
+  const fiveDomainsBuf = figBuf('5 domains.png');
   const gaitBuf        = generateGaitScoringFigure();
 
   console.log('Building document...');
