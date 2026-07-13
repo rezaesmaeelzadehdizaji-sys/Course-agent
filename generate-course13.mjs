@@ -693,7 +693,7 @@ function buildSection2() {
       bullet('Water-to-feed ratio at thermoneutral temperatures runs approximately 1.6-1.8:1. That ratio climbs above 2:1 under heat stress.'),
       bullet('Feed line failures, bridged bins, and blocked auger joints can leave an entire section without feed while the bin reads full. Check that feed is actually flowing, not just that the system is running.'),
       bullet('Layer and breeder systems: ensure adequate feeder and drinker space per bird. Competition at the feeder drives stress, pecking order disruption, and reduced intake in subordinate birds.'),
-      bullet('Equipment and ratios: most broiler barns run nipple drinker lines, roughly one nipple per 12 birds, and pan or plate feeders. Set them so no bird has to walk more than about 2 m to water, and put out extra feed trays and mini-drinkers for the first few days (about one tray per 80 chicks) so young chicks find feed and water fast.'),
+      bullet('Equipment and ratios: most broiler barns run nipple drinker lines at 8 to 12 birds per nipple, plus pan or plate feeders. For the first few days, put out extra feed trays (about 1 per 100 to 150 chicks) and mini-drinkers so young chicks find feed and water fast.'),
       para('For more on daily water and feed monitoring, see Course 3 (T-FLAWS Assessment Management Tool) in this series, which covers the full feed and water checkpoint framework in practical detail.'),
 
       h2('2.2 Environment: Temperature, Air Quality, and Litter'),
