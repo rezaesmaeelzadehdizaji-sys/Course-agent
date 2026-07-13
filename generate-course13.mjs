@@ -1103,7 +1103,7 @@ import { LevelFormat } from 'docx';
   // Generate figures
   console.log('Generating figures...');
   const fiveDomainsBuf = figBuf('5 domains.jpg');
-  const gaitBuf        = figBuf('gait_scale.jpg');
+  const gaitBuf        = figBuf('fig3.1.jpg');
 
   console.log('Building document...');
 
