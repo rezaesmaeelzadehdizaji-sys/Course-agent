@@ -663,7 +663,7 @@ function buildSection1(fiveDomainsBuf) {
 
       h2('1.3 The Five Domains: Where the Science Is Now'),
       para('The Five Domains model takes a broader view [4]. Instead of only asking what birds should be free from, it asks what the bird is actually experiencing across five connected areas:'),
-      ...image(fiveDomainsBuf, 'Figure 1.1: The Five Domains model of animal welfare. Domains 1-4 are physical and functional factors that feed into Domain 5, the bird\'s mental state. Source: CPC Short Courses.', 5.5),
+      ...photo(fiveDomainsBuf, 'Figure 1.1: The Five Domains model of animal welfare. Domains 1-4 are physical and functional factors that feed into Domain 5, the bird\'s mental state. Source: CPC Short Courses.', 5.5),
       para('Domains 1 through 4 are the conditions you control as a farmer: nutrition, the physical environment, health, and behavioral interactions. Domain 5, mental state, is the outcome: how the bird actually feels as a result of those conditions. A bird with access to feed and clean water, in a comfortable barn with good air quality, is experiencing positive Domain 5. A bird in wet litter, with footpad lesions and a gait score of 3, is experiencing negative Domain 5, and it is costing you performance.'),
       para('The Five Domains model is useful because it frames every management decision as something that either supports or undermines the bird\'s experience. Ventilation is not just an engineering problem. It is a welfare problem. Litter management is not just about ammonia. It is about what the bird experiences every time it takes a step.'),
 
@@ -1102,7 +1102,7 @@ import { LevelFormat } from 'docx';
 
   // Generate figures
   console.log('Generating figures...');
-  const fiveDomainsBuf = figBuf('5 domains.png');
+  const fiveDomainsBuf = figBuf('5 domains.jpg');
   const gaitBuf        = generateGaitScoringFigure();
 
   console.log('Building document...');
