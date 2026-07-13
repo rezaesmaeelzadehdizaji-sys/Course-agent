@@ -927,6 +927,7 @@ function buildSection6() {
 
       h2('6.3 From Farm to Plant: Reducing Pre-Slaughter Stress'),
       para('Once birds leave your farm, a different set of welfare risks applies: the trailer microclimate, how long the journey takes, and holding conditions at the plant. For broiler transport in Atlantic Canada, four things drove dead-on-arrival (DOA) rates: journey length, bird age, which catching team loaded the birds, and how long they waited in the holding barn [18]. The typical DOA rate was around 0.29%, but individual loads ran from near zero to almost 2% depending on those factors.'),
+      ...photo(figBuf('shipment mix.jpg'), 'Photo 6.3: Loading for transport in the cool, dark early hours to hold down heat stress. From here on, the handling at loading, the journey, and the wait at the plant are what drive the dead-on-arrival rate. Source: CPC Short Courses.', 5.8),
       para('Your influence over transport welfare is limited once the truck leaves, but you can control several key factors:'),
       bullet('Withdraw feed at the right time before catching. Too early causes feed restriction stress; too late causes crop content that affects processing. Follow your integrator\'s withdrawal schedule.'),
       bullet('Communicate with the catching crew supervisor about any bird health concerns in the flock. Compromised birds have higher transport mortality risk.'),
