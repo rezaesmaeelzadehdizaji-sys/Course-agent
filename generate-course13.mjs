@@ -873,10 +873,11 @@ function buildSection5() {
       h2('5.2 Ventilation and Air Quality'),
       para('Good air quality is not optional. At the levels that build up in a poorly ventilated barn, ammonia cuts body weight and raises mortality, and the damage is direct [6]. It paralyzes the tiny hairs (cilia) that line the windpipe, the birds\' first line of defense against respiratory bugs. Once those are knocked out, bacteria that would normally get cleared reach the lungs and air sacs.'),
       bullet('Target ammonia: below 10 ppm during brooding; below 25 ppm throughout the grow-out.'),
-      bullet('Action threshold: 25 ppm at bird level. You can detect this with a simple ammonia meter or colorimetric tube. Do not wait until birds show signs.'),
+      bullet('Action threshold: 25 ppm at bird level. Your nose is an early warning: most people first smell ammonia at about 20 to 30 ppm, right around the level where it starts harming birds [16]. But do not rely on smell alone. Anyone who works in the barn every day goes nose-blind to ammonia and can stop noticing even high levels [16]. Check with a simple ammonia meter or colorimetric tube, and do not wait until birds show signs.'),
       bullet('CO2 target: below 3,000 ppm. High CO2 signals inadequate minimum ventilation rate.'),
-      bullet('Humidity: 60-70% during brooding; 50-60% from week 2 onward. High humidity drives ammonia and wet litter.'),
-      para('Litter treatment products can help manage ammonia between flocks and during the grow-out. Acidifying agents reduce ammonia volatilization from litter, lowering both the welfare and production impact.'),
+      bullet('Humidity: 60-70% during brooding; 50-60% from week 2 onward. High humidity drives ammonia and wet litter. In wet regions and seasons, like coastal BC winters, the outside air is already damp and you may not hit the exact target. Dry, friable litter matters more than the number. Keep minimum ventilation running and aim the incoming air up at the ceiling so it warms and mixes before it reaches the birds. That is how the air picks up and carries moisture out, even in cold, damp weather. Ceiling stirring fans help, and open up a bit more during the warmer, drier part of the day [17].'),
+      para('Litter treatment products can help manage ammonia between flocks and during the grow-out. Acidifying agents reduce ammonia volatilization from litter, lowering both the welfare and production impact. The CPC Enhanced Litter Treatment is one such amendment, applied to the litter to cut ammonia, moisture, and bacterial load, usually before placement.'),
+      ...photo(figBuf('product_enhanced_litter_treatment.jpg'), 'Photo 5.1: Enhanced Litter Treatment. A litter amendment applied before placement to reduce ammonia, moisture, and bacterial load in the litter. Source: canadianpoultry.ca/shop.', 2.3),
 
       h2('5.3 Litter Quality Management'),
       para('Litter quality is the single most controllable welfare factor in a broiler house. Poor litter causes FPD, hock burns, elevated ammonia, respiratory disease, and higher bacterial load. Good litter reduces all of these simultaneously.'),
@@ -929,7 +930,7 @@ function buildSection6() {
       bullet('Complete catching in under 2-3 hours where possible. Extended catching time increases heat stress, especially in older birds.'),
 
       h2('6.3 From Farm to Plant: Reducing Pre-Slaughter Stress'),
-      para('Once birds leave your farm, a different set of welfare risks applies: the trailer microclimate, how long the journey takes, and holding conditions at the plant. For broiler transport in Atlantic Canada, four things drove dead-on-arrival (DOA) rates: journey length, bird age, which catching team loaded the birds, and how long they waited in the holding barn [16]. The typical DOA rate was around 0.29%, but individual loads ran from near zero to almost 2% depending on those factors.'),
+      para('Once birds leave your farm, a different set of welfare risks applies: the trailer microclimate, how long the journey takes, and holding conditions at the plant. For broiler transport in Atlantic Canada, four things drove dead-on-arrival (DOA) rates: journey length, bird age, which catching team loaded the birds, and how long they waited in the holding barn [18]. The typical DOA rate was around 0.29%, but individual loads ran from near zero to almost 2% depending on those factors.'),
       para('Your influence over transport welfare is limited once the truck leaves, but you can control several key factors:'),
       bullet('Withdraw feed at the right time before catching. Too early causes feed restriction stress; too late causes crop content that affects processing. Follow your integrator\'s withdrawal schedule.'),
       bullet('Communicate with the catching crew supervisor about any bird health concerns in the flock. Compromised birds have higher transport mortality risk.'),
@@ -1030,6 +1031,8 @@ function buildReferencesSection() {
       numberedRef('Scheideler SE. Cannibalism by Poultry [NebGuide G1670]. Lincoln (NE): University of Nebraska-Lincoln Extension; 2007. Available from: extensionpubs.unl.edu.'),
       numberedRef('CPC Learning Centre. Spotting Disease Early [Flock Management Guide]. CPC Learning Centre. Available from: cpclearningcentre.ca.'),
       numberedRef('CPC Learning Centre. Heat Stress [Technical Bulletin]. CPC Learning Centre. Available from: cpclearningcentre.ca.'),
+      numberedRef('Martin GP, Fabian EE. Detecting Ammonia in Poultry Housing Using Inexpensive Instruments. University Park (PA): Penn State Extension; 2026 [cited 2026 Jul]. Available from: extension.psu.edu.'),
+      numberedRef('Campbell J, Davis J, Linhoss J, Griggs K, Smith C, Edge C, Rueda M. Cold Weather Ventilation and Moisture Control of Poultry Houses. Auburn (AL): Alabama Cooperative Extension System; 2022 [cited 2026 Jul]. Available from: aces.edu.'),
       numberedRef('Caffrey NP, Dohoo IR, Cockram MS. Factors affecting mortality risk during transportation of broiler chickens for slaughter in Atlantic Canada. Prev Vet Med. 2017;147:199-208. doi:10.1016/j.prevetmed.2017.09.011.'),
     ],
   };

@@ -1,7 +1,7 @@
 # Reference Verification Log — Course 13: Poultry Welfare
 Date verified: 2026-06-09
 
-All 16 citations verified individually against PubMed, CrossRef, publisher sites, or official government/institutional sources before publication.
+All 18 citations verified individually against PubMed, CrossRef, publisher sites, or official government/institutional sources before publication.
 
 ---
 
@@ -198,7 +198,29 @@ All 16 citations verified individually against PubMed, CrossRef, publisher sites
 
 ---
 
-## [16] Caffrey et al. 2017 (Transport mortality, Atlantic Canada)
+## [16] Martin & Fabian (Penn State Extension) — Detecting Ammonia
+
+- **Full citation:** Martin GP, Fabian EE. Detecting Ammonia in Poultry Housing Using Inexpensive Instruments. University Park (PA): Penn State Extension; 2026.
+- **Source:** Penn State Extension (extension.psu.edu), authors Gregory P. Martin, Ph.D., PAS and Eileen E. Fabian, Ph.D.
+- **Verified at:** extension.psu.edu/detecting-ammonia-in-poultry-housing-using-inexpensive-instruments (content read directly)
+- **Status:** CONFIRMED
+- **CLAIM-MATCH NOTE:** Cited in 5.2 for "most people first smell ammonia at about 20 to 30 ppm" and the nose-blindness point. Article states verbatim: "Our human nose will not recognize ammonia until about 20 to 30 parts per million (ppm) has been reached," and "Producers who have frequent exposure to poultry facilities with recognizable ammonia gas levels are known to lose their sensitivity to smell ammonia." Matches. (Consistent with Course 3 T-FLAWS "you can smell it before your birds are in serious danger.")
+- **Date verified:** 2026-07-13
+
+---
+
+## [17] Campbell et al. (Alabama Extension) — Cold Weather Moisture Control
+
+- **Full citation:** Campbell J, Davis J, Linhoss J, Griggs K, Smith C, Edge C, Rueda M. Cold Weather Ventilation and Moisture Control of Poultry Houses. Auburn (AL): Alabama Cooperative Extension System; 2022.
+- **Source:** Alabama Cooperative Extension System (aces.edu)
+- **Verified at:** aces.edu/blog/topics/farming/cold-weather-ventilation-moisture-control-of-poultry-houses/ (content read directly)
+- **Status:** CONFIRMED — title, seven authors, organization, and 2022 date confirmed
+- **CLAIM-MATCH NOTE:** Cited in the 5.2 humidity bullet for the wet-climate moisture-control approach: keep minimum ventilation running and direct incoming air to the ceiling so it mixes/warms before reaching birds ("This is how moisture is removed from the house"), use stirring fans, target RH 50-70%. Matches the article.
+- **Date verified:** 2026-07-13
+
+---
+
+## [18] Caffrey et al. 2017 (Transport mortality, Atlantic Canada)
 
 - **Full citation:** Caffrey NP, Dohoo IR, Cockram MS. Factors affecting mortality risk during transportation of broiler chickens for slaughter in Atlantic Canada. Prev Vet Med. 2017;147:199-208.
 - **DOI:** 10.1016/j.prevetmed.2017.09.011
@@ -233,7 +255,7 @@ All 16 citations verified individually against PubMed, CrossRef, publisher sites
 | 13 | CPC Learning Centre (Heat Stress) | n.d. | CONFIRMED | cpclearningcentre.ca + local PDF |
 | 14 | Caffrey NP et al. | 2017 | CONFIRMED | doi:10.1016/j.prevetmed.2017.09.011 |
 
-All 16 references verified. No fabricated or unverifiable citations. All peer-reviewed articles confirmed against PubMed or CrossRef DOI lookup. CPC Learning Centre materials confirmed against the organizational website and local reference library.
+All 18 references verified. No fabricated or unverifiable citations. All peer-reviewed articles confirmed against PubMed or CrossRef DOI lookup. CPC Learning Centre materials confirmed against the organizational website and local reference library.
 
 ---
 
