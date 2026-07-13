@@ -1,7 +1,7 @@
 # Reference Verification Log — Course 13: Poultry Welfare
 Date verified: 2026-06-09
 
-All 18 citations verified individually against PubMed, CrossRef, publisher sites, or official government/institutional sources before publication.
+All 20 citations verified individually against PubMed, CrossRef, publisher sites, or official government/institutional sources before publication.
 
 ---
 
@@ -236,6 +236,29 @@ All 18 citations verified individually against PubMed, CrossRef, publisher sites
 
 ---
 
+## [19] Knezacek et al. 2010 (Western Canada winter transport)
+
+- **Full citation:** Knezacek TD, Olkowski AA, Kettlewell PJ, Mitchell MA, Classen HL. Temperature gradients in trailers and changes in broiler rectal and core body temperature during winter transportation in Saskatchewan. Can J Anim Sci. 2010;90(3):321-330.
+- **DOI:** 10.4141/cjas09083
+- **Verified at:** CrossRef (doi.org/10.4141/cjas09083)
+- **Authors / Journal / Vol / Pages / Year:** Knezacek TD, Olkowski AA, Kettlewell PJ, Mitchell MA, Classen HL; Canadian Journal of Animal Science; 90(3):321-330; 2010 — all confirmed via CrossRef
+- **Status:** CONFIRMED
+- **CLAIM-MATCH NOTE:** Cited in 6.3 for the Western Canada cold-weather DOA figure "0.7 to 1.4%" across four Saskatchewan winter journeys. This study tracked those four winter journeys; the 0.7-1.4% DOA figure is attributed to it in the Vecerek et al. 2016 review (Asian-Australas J Anim Sci 29:1796-1804). Added 2026-07-13 at user request to contrast with the Atlantic Canada 0.29% figure.
+- **Date verified:** 2026-07-13
+
+---
+
+## [20] Vitek & Jacobs (Virginia Tech Extension) — Preslaughter Welfare
+
+- **Full citation:** Vitek S, Jacobs L. Preslaughter Welfare of Broiler Chickens [APSC-209P]. Blacksburg (VA): Virginia Cooperative Extension, Virginia Tech.
+- **Source:** Virginia Cooperative Extension, Virginia Tech (School of Animal Sciences); publication APSC-209P
+- **Verified at:** pubs.ext.vt.edu/APSC/apsc-209/apsc-209.html (content read directly)
+- **Status:** CONFIRMED
+- **CLAIM-MATCH NOTE:** Cited in 6.3 for feed/water withdrawal. Publication states verbatim: "A feed withdrawal time of eight to 12 hours (including the time needed for catching, loading, transport, and lairage) before slaughter is recommended," and "Water access is typically removed just prior to catching." Course text matches. NOTE: user recalled CPC withdrawing feed ~12-15 h; that exceeds the 8-12 h TOTAL optimum if measured before catching (plus transport/lairage), so the course states the sourced 8-12 h total instead, pending a CPC document confirming the specific figure. The water-before-catching timing the user recalled is confirmed correct.
+- **Date verified:** 2026-07-13
+
+---
+
 ## Summary
 
 | # | First author / Source | Year | Status | DOI / Source URL |
@@ -255,7 +278,7 @@ All 18 citations verified individually against PubMed, CrossRef, publisher sites
 | 13 | CPC Learning Centre (Heat Stress) | n.d. | CONFIRMED | cpclearningcentre.ca + local PDF |
 | 14 | Caffrey NP et al. | 2017 | CONFIRMED | doi:10.1016/j.prevetmed.2017.09.011 |
 
-All 18 references verified. No fabricated or unverifiable citations. All peer-reviewed articles confirmed against PubMed or CrossRef DOI lookup. CPC Learning Centre materials confirmed against the organizational website and local reference library.
+All 20 references verified. No fabricated or unverifiable citations. All peer-reviewed articles confirmed against PubMed or CrossRef DOI lookup. CPC Learning Centre materials confirmed against the organizational website and local reference library.
 
 ---
 
