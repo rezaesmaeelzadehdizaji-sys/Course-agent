@@ -820,14 +820,13 @@ function buildSection4() {
       numbered('Footpad dermatitis and hock burns: driven by litter moisture. Manage ventilation and litter conditioning proactively [8].'),
       numbered('Heat stress: most dangerous at slaughter weight. Birds at 2+ kg have limited ability to regulate body temperature. Start monitoring actively once bird-level temperature climbs above 22°C, and have full tunnel ventilation running well before it reaches 25-28°C.'),
       numbered('Catching and loading: the final welfare event on the farm. Rough handling causes bruising, fractures, and stress-related mortality. Catching team management is a welfare intervention.'),
-      ...photo(figBuf('shipment.jpg'), 'Photo 4.1: Catching and loading on shipment day, done under dim blue and green light. Working in near-darkness keeps the birds calm and cuts flapping, injury, and stress. A trained, professional crew loading gently into transport crates is a direct welfare intervention. Source: CPC Short Courses.', 5.8),
       para('Broilers reach target weight in 35-42 days. That is a short window to get things right. Problems that develop in the first week of the grow-out compound through the rest of the cycle. Correct them fast.'),
 
       h2('4.2 Laying Hen Welfare and Housing Systems'),
       para('Laying hen welfare in Canada is undergoing the most significant transition in the industry\'s history. The NFACC Code of Practice for Pullets and Laying Hens (2017) requires that all battery cage systems be phased out by 2036, with no new battery cages installed after 2017 [7]. The industry is transitioning to enriched cages and cage-free systems, each with different welfare profiles.'),
-      ...photo(figBuf('free cage.jpg'), 'Photo 4.2: Three cage-free laying hen systems. Left: a floor or free-run barn, where hens live on a single littered level. Center: a multi-tier aviary, with raised platforms, perches, and nest boxes. Right: a free-range barn with access to the outdoors. Cage-free housing lets hens move, perch, dust-bathe, and nest more naturally, but the added height and hard landings in multi-tier systems raise the risk of keel bone fractures. Source: Egg Farmers of Alberta (eggs.ab.ca).', 5.8),
+      ...photo(figBuf('free cage.jpg'), 'Photo 4.1: Three cage-free laying hen systems. Left: a floor or free-run barn, where hens live on a single littered level. Center: a multi-tier aviary, with raised platforms, perches, and nest boxes. Right: a free-range barn with access to the outdoors. Cage-free housing lets hens move, perch, dust-bathe, and nest more naturally, but the added height and hard landings in multi-tier systems raise the risk of keel bone fractures. Source: Egg Farmers of Alberta (eggs.ab.ca).', 5.8),
       para('Enriched cages provide perches, nest boxes, and scratch pads, which reduce the behavioral frustration common in conventional battery cages.'),
-      ...photo(figBuf('cage system.jpg'), 'Photo 4.3: A conventional battery cage (left) next to enriched cage systems (center and right). Compared with the bare battery cage, enriched cages give hens more vertical and horizontal space and private nesting areas (the red curtains, center), plus scratch pads on the floor (right). These features let hens nest, perch, and scratch, which reduces the frustration seen in battery cages. Source: Egg Farmers of Alberta (eggs.ab.ca).', 5.8),
+      ...photo(figBuf('cage system.jpg'), 'Photo 4.2: A conventional battery cage (left) next to enriched cage systems (center and right). Compared with the bare battery cage, enriched cages give hens more vertical and horizontal space and private nesting areas (the red curtains, center), plus scratch pads on the floor (right). These features let hens nest, perch, and scratch, which reduces the frustration seen in battery cages. Source: Egg Farmers of Alberta (eggs.ab.ca).', 5.8),
       para('Cage-free systems (aviary, floor, free-run, free-range) allow greater expression of natural behavior but introduce new welfare challenges:'),
       bullet('Keel bone fractures, from both weak bones (osteoporosis from high lay) and collisions in multi-tier systems. Section 3.4 covers the prevalence and management.'),
       bullet('Feather pecking and cannibalism, which are harder to control in group-housed flocks without beak treatment.'),
@@ -842,7 +841,7 @@ function buildSection4() {
       bullet('Leg health in males: breeder males carry significant body weight and are active in mating. Monitor gait score and remove severely lame males promptly.'),
       bullet('Mating injury to females: treading injuries are common in heavy-breed breeders. Manage male-to-female ratio and monitor hen back/saddle condition.'),
       bullet('Floor access and dustbathing: breeders on litter should have full floor access, and litter condition should be managed to allow dustbathing behavior.'),
-      ...photo(figBuf('breeder farm.jpg'), 'Photo 4.4: A broiler breeder barn on floor (litter) housing. Birds have full floor access on dry bedding for scratching and dust-bathing, with nest boxes down the center and feed and water lines within easy reach. Keeping the litter dry and friable is what lets the birds dust-bathe and keeps their feet healthy. Source: Chicken Farmers of Canada (chicken.ca).', 5.8),
+      ...photo(figBuf('breeder farm.jpg'), 'Photo 4.3: A broiler breeder barn on floor (litter) housing. Birds have full floor access on dry bedding for scratching and dust-bathing, with nest boxes down the center and feed and water lines within easy reach. Keeping the litter dry and friable is what lets the birds dust-bathe and keeps their feet healthy. Source: Chicken Farmers of Canada (chicken.ca).', 5.8),
     ],
   };
 }
@@ -914,6 +913,7 @@ function buildSection6() {
       bullet('Carry birds breast-side toward your body. This supports the bird\'s weight naturally and reduces struggling.'),
       bullet('Do not drag birds across the floor or stack them against pen walls. Injuries from improper handling are welfare violations and a direct cost.'),
       bullet('Train all farm workers who have contact with birds. Welfare during daily management reflects directly in catching-day outcomes.'),
+      ...photo(figBuf('handling.jpg'), 'Photo 6.1: Calm, correct handling. The bird is supported with both hands and held close, unhurried. Handling birds gently in daily management keeps them used to people and pays off in lower stress and fewer injuries on catching day. Source: CPC Short Courses.', 5.5),
 
       h2('6.2 Catching and Loading for Transport'),
       para('Catching day is the highest-risk welfare event for broilers. Handling, dim light, restraint, and loading all hit the birds at once, and that is when injuries and death losses spike. How your catching crew performs directly determines your welfare results at the plant.'),
@@ -923,6 +923,7 @@ function buildSection6() {
       bullet('Use mechanical harvesters where available. Manual catching at commercial scale should be done by trained crews using controlled technique.'),
       bullet('Load birds to module or crate specifications. Overcrowded crates cause crush injuries and suffocation.'),
       bullet('Complete catching in under 2-3 hours where possible. Extended catching time increases heat stress, especially in older birds.'),
+      ...photo(figBuf('shipment.jpg'), 'Photo 6.2: Catching and loading on shipment day, done under dim blue and green light. Working in near-darkness keeps the birds calm and cuts flapping, injury, and stress. A trained, professional crew loading gently into transport crates is a direct welfare intervention. Source: CPC Short Courses.', 5.8),
 
       h2('6.3 From Farm to Plant: Reducing Pre-Slaughter Stress'),
       para('Once birds leave your farm, a different set of welfare risks applies: the trailer microclimate, how long the journey takes, and holding conditions at the plant. For broiler transport in Atlantic Canada, four things drove dead-on-arrival (DOA) rates: journey length, bird age, which catching team loaded the birds, and how long they waited in the holding barn [18]. The typical DOA rate was around 0.29%, but individual loads ran from near zero to almost 2% depending on those factors.'),
