@@ -873,8 +873,9 @@ function buildSection5() {
       bullet('Action threshold: 25 ppm at bird level. Your nose is an early warning: most people first smell ammonia at about 20 to 30 ppm, right around the level where it starts harming birds [16]. But do not rely on smell alone. Anyone who works in the barn every day goes nose-blind to ammonia and can stop noticing even high levels [16]. Check with a simple ammonia meter or colorimetric tube, and do not wait until birds show signs.'),
       bullet('CO2 target: below 3,000 ppm. High CO2 signals inadequate minimum ventilation rate.'),
       bullet('Humidity: 60-70% during brooding; 50-60% from week 2 onward. High humidity drives ammonia and wet litter. In wet regions and seasons, like coastal BC winters, the outside air is already damp and you may not hit the exact target. Dry, friable litter matters more than the number. Keep minimum ventilation running and aim the incoming air up at the ceiling so it warms and mixes before it reaches the birds. That is how the air picks up and carries moisture out, even in cold, damp weather. Ceiling stirring fans help, and open up a bit more during the warmer, drier part of the day [17].'),
+      ...photo(figBuf('litter management.jpg'), 'Photo 5.1: Dry versus wet litter. Left: dry, friable litter that crumbles in the hand, which is the target. Right: dark, wet, caked litter that packs into a ball and drives ammonia, footpad lesions, and disease. Source: fresheggsdaily.blog and fidarfeed.com.', 5.8),
       para('Litter treatment products can help manage ammonia between flocks and during the grow-out. Acidifying agents reduce ammonia volatilization from litter, lowering both the welfare and production impact. The CPC Enhanced Litter Treatment is one such amendment, applied to the litter to cut ammonia, moisture, and bacterial load, usually before placement.'),
-      ...photo(figBuf('product_enhanced_litter_treatment.jpg'), 'Photo 5.1: Enhanced Litter Treatment. A litter amendment applied before placement to reduce ammonia, moisture, and bacterial load in the litter. Source: canadianpoultry.ca/shop.', 2.3),
+      ...photo(figBuf('product_enhanced_litter_treatment.jpg'), 'Photo 5.2: Enhanced Litter Treatment. A litter amendment applied before placement to reduce ammonia, moisture, and bacterial load in the litter. Source: canadianpoultry.ca/shop.', 2.3),
 
       h2('5.3 Litter Quality Management'),
       para('Litter quality is the single most controllable welfare factor in a broiler house. Poor litter causes FPD, hock burns, elevated ammonia, respiratory disease, and higher bacterial load. Good litter reduces all of these simultaneously.'),
@@ -889,7 +890,7 @@ function buildSection5() {
       h2('5.4 Light Programs That Support Welfare'),
       para('Lighting is not just a production setting, it is a welfare tool. Birds in continuous light cannot rest properly, and that drives chronic stress and more injurious pecking, so the minimum dark period the NFACC Code requires is there for welfare, not just performance [1]. Section 2.3 gives the lux levels, day lengths, and dark-period rules by age and bird type.'),
       para('Uniform light distribution is as important as intensity. Hot spots with high intensity over feeders or drinkers can drive pecking at those locations. Walk the barn with a light meter and check that intensity is consistent across the floor.'),
-      ...photo(figBuf('lux.jpg'), 'Photo 5.2: A handheld light meter (lux meter). Walking the barn with one is the only reliable way to confirm light intensity is on target and even across the floor. Estimating lux by eye does not work. Source: daltonsupplies.com/products.', 1.6),
+      ...photo(figBuf('lux.jpg'), 'Photo 5.3: A handheld light meter (lux meter). Walking the barn with one is the only reliable way to confirm light intensity is on target and even across the floor. Estimating lux by eye does not work. Source: daltonsupplies.com/products.', 1.6),
     ],
   };
 }
