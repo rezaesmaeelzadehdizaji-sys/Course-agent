@@ -740,7 +740,7 @@ function buildSection3(gaitBuf) {
 
       h2('3.1 Gait and Leg Health in Broilers'),
       para('Leg problems are one of the biggest welfare issues in commercial broiler production. Modern broilers have been bred to put on muscle fast, faster than their legs and joints can keep up with. That mismatch is why some degree of leg weakness shows up in every commercial flock.'),
-      ...image(gaitBuf, 'Figure 3.1: Bristol gait scoring scale for broiler chickens. Birds scoring GS 3 or above are in pain and require immediate attention. Source: CPC Short Courses.', 5.8),
+      ...photo(gaitBuf, 'Figure 3.1: Bristol gait scoring scale for broiler chickens. Birds scoring GS 3 or above are in pain and require immediate attention. Source: CPC Short Courses.', 5.8),
       para('Leg problems are widespread. Recent studies estimate that 14 to 30% of fast-growing broilers have moderate to severe gait impairment, and about 3.3% are almost unable to walk [9]. Use the six-point Bristol gait score (GS 0-5) on a sample of birds at every barn check.'),
       bullet('GS 0-1: Normal to minor deviation. No welfare concern.'),
       bullet('GS 2: Obvious gait abnormality. Walking is still functional. Monitor and investigate cause.'),
@@ -1103,7 +1103,7 @@ import { LevelFormat } from 'docx';
   // Generate figures
   console.log('Generating figures...');
   const fiveDomainsBuf = figBuf('5 domains.jpg');
-  const gaitBuf        = generateGaitScoringFigure();
+  const gaitBuf        = figBuf('gait_scale.jpg');
 
   console.log('Building document...');
 
