@@ -890,7 +890,7 @@ function buildSection5() {
       h2('5.4 Light Programs That Support Welfare'),
       para('Lighting is not just a production setting, it is a welfare tool. Birds in continuous light cannot rest properly, and that drives chronic stress and more injurious pecking, so the minimum dark period the NFACC Code requires is there for welfare, not just performance [1]. Section 2.3 gives the lux levels, day lengths, and dark-period rules by age and bird type.'),
       para('Uniform light distribution is as important as intensity. Hot spots with high intensity over feeders or drinkers can drive pecking at those locations. Walk the barn with a light meter and check that intensity is consistent across the floor.'),
-      ...photo(figBuf('lux.jpg'), 'Photo 5.2: A handheld light meter (lux meter). Walking the barn with one is the only reliable way to confirm light intensity is on target and even across the floor. Estimating lux by eye does not work. Source: daltonsupplies.com/products.', 2.3),
+      ...photo(figBuf('lux.jpg'), 'Photo 5.2: A handheld light meter (lux meter). Walking the barn with one is the only reliable way to confirm light intensity is on target and even across the floor. Estimating lux by eye does not work. Source: daltonsupplies.com/products.', 1.6),
     ],
   };
 }
