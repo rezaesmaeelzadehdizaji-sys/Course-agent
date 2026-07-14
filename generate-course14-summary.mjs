@@ -264,12 +264,12 @@ const children = [
 
   para('By the end of this course, participants will be able to:'),
 
-  loItem(1, 'Describe the role of field service in commercial poultry production and how it connects the integrator, the farm, and the veterinary team.'),
-  loItem(2, 'Prepare for and conduct a structured farm visit that meets CFIA biosecurity standards for service personnel.'),
-  loItem(3, 'Use a systematic barn walk sequence to assess bird distribution, environmental conditions, and individual bird health.'),
-  loItem(4, 'Read and interpret daily production records: mortality trends, water and feed consumption, and spot weight data.'),
-  loItem(5, 'Communicate findings clearly to the farmer, make specific recommendations, and identify when to escalate to the veterinarian.'),
-  loItem(6, 'Complete a visit record that supports farm continuity, traceability, and ongoing flock health management.'),
+  loItem(1, 'Explain what field service really involves and where you fit between the integrator, the veterinarian, and the grower.'),
+  loItem(2, 'Get ready for a farm visit and follow Canadian biosecurity standards so you never carry disease from one barn to the next.'),
+  loItem(3, 'Walk a barn the same way every time, reading the flock and the environment so nothing slips past you.'),
+  loItem(4, 'Read the daily records for mortality, water, feed, and body weight, and catch a bad trend before it turns into a real problem.'),
+  loItem(5, 'Tell the farmer what you found so it leads to action, and know when it is time to call the veterinarian.'),
+  loItem(6, 'Leave behind a visit record clear enough that the next person can pick up right where you left off.'),
 
   new Paragraph({ spacing: { before: 80, after: 0 } }),
 

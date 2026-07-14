@@ -433,12 +433,12 @@ function buildBodySection() {
 
     para('By the end of this course, you should be able to:'),
 
-    numbered('Describe the role of field service in commercial poultry production and how it fits within the production chain.'),
-    numbered('Prepare for and conduct a structured farm visit following Canadian biosecurity standards.'),
-    numbered('Use a systematic observation sequence to assess flock health and the barn environment.'),
-    numbered('Read and interpret daily production records including mortality, water consumption, feed consumption, and body weight.'),
-    numbered('Communicate findings clearly to the farmer and identify when to call the veterinarian.'),
-    numbered('Complete a visit record that supports traceability and continuity of care.'),
+    numbered('Explain what field service really involves and where you fit between the integrator, the veterinarian, and the grower.'),
+    numbered('Get ready for a farm visit and follow Canadian biosecurity standards so you never carry disease from one barn to the next.'),
+    numbered('Walk a barn the same way every time, reading the flock and the environment so nothing slips past you.'),
+    numbered('Read the daily records for mortality, water, feed, and body weight, and catch a bad trend before it turns into a real problem.'),
+    numbered('Tell the farmer what you found so it leads to action, and know when it is time to call the veterinarian.'),
+    numbered('Leave behind a visit record clear enough that the next person can pick up right where you left off.'),
 
     new Paragraph({ spacing: { before: 0, after: 160 } }),
 
