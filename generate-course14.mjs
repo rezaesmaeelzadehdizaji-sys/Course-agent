@@ -567,9 +567,9 @@ function buildBodySection() {
 
     para('The guide walks through what to check on each bird [3]:'),
 
-    bullet('Color: pale suggests anemia or chilling; dark or dusky suggests dehydration or fever'),
+    bullet('Color: a pale comb suggests anemia or chilling, and a pale, shrunken, dry comb points to dehydration; a dark, dusky, or purple comb is cyanosis, which signals circulatory or respiratory compromise, not dehydration'),
     bullet('Size: swollen infraorbital sinus or swollen joints indicate inflammation; underweight or depleted muscle mass indicates a performance problem'),
-    bullet('Position: drooping wings, twisted neck (torticollis), or a crouched hunched stance all indicate something is wrong internally'),
+    bullet('Position: drooping wings or a crouched, hunched stance signal general illness or pain; a twisted neck (torticollis) is a neurological sign that points to central nervous system involvement, not a general internal problem'),
     bullet('Heat: joints that feel warm to the touch indicate active inflammation at that site'),
     bullet('Soiling: vent soiling, caked toes, or stained feathers point to enteric problems and abnormal droppings'),
     bullet('Discharges: healthy eyes, nostrils, and the vent do not discharge; any discharge means investigate the color, consistency, and smell'),
