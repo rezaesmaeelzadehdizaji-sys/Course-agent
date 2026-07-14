@@ -478,7 +478,9 @@ function buildBodySection() {
       '3. You have a record of what you found (documentation)',
     ]),
 
-    para('If you leave a farm without all three, the visit did not accomplish its purpose. An assessment without a recommendation leaves the farmer without direction. A recommendation without a record means the next person who visits has no context. Keep that in mind through everything that follows.'),
+    para('If you leave a farm without all three, the visit did not accomplish its purpose. An assessment without a recommendation leaves the farmer without direction. A recommendation without a record means the next person who visits has no context.'),
+
+    para('There is a fourth element underneath all three: your relationship with the farmer. Assessments, recommendations, and records only get acted on if the grower trusts the person delivering them. That trust is built one visit at a time, and it is what separates a technician who gets results from one who just fills out forms. Section 5 covers how to build it and keep it, so keep it in mind through everything that follows.'),
 
     // ── SECTION 2 ─────────────────────────────────────────────
     pageBreak(),
@@ -664,7 +666,7 @@ function buildBodySection() {
 
     h2('5.1  Building the Relationship'),
 
-    para('The farmer runs the farm. Your job is to support them, not supervise them. That distinction matters. Contract growers often deal with equipment issues, tight margins, labor challenges, and environmental problems that are outside their control but still affect flock performance [1]. A service technician who shows up understanding those pressures and comes prepared with useful information is welcome. One who shows up unprepared and lectures gets avoided.'),
+    para('The farmer runs the farm. Your job is to support them, not supervise them. That distinction matters. This is the fourth element from Section 1, the relationship that decides whether your assessments and recommendations ever get acted on. Contract growers often deal with equipment issues, tight margins, labor challenges, and environmental problems that are outside their control but still affect flock performance [1]. A service technician who shows up understanding those pressures and comes prepared with useful information is welcome. One who shows up unprepared and lectures gets avoided.'),
 
     para('Come prepared every visit: know their flock history, remember what you discussed last time, and follow up on whatever you recommended. If you told them to check the drinker pressure on line 3, ask what they found. Consistency and follow-through build the trust that makes a grower call you when something first looks wrong, not three days later when it is already a bigger problem.'),
 
