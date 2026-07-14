@@ -1,6 +1,7 @@
 # Reference Verification Log — Course 14: Intro to Field Service
 **Date verified:** 2026-06-09
 **Date re-verified (sentence-level + citation-order audit):** 2026-06-10
+**Date re-verified against live online sources:** 2026-07-14 — all 6 references confirmed real; reference [6] title corrected ("Ross 308 Broiler Management Handbook" → "Ross Broiler Management Handbook", the actual 2025 title). USDA manual, CFIA guide, Poultry Signals (2012, Roodbont, ISBN 9789087400798, 4 authors, subtitle confirmed), NFACC 2016 code, and Aviagen 2025 handbook all verified against their live/authoritative pages.
 
 ---
 
@@ -76,14 +77,15 @@ First-appearance order is now confirmed sequential: 1, 2, 3, 4, 5, 6. The refere
 
 ---
 
-### [6] Aviagen. Ross 308 Broiler Management Handbook 2025.
-- **Full citation:** Aviagen. Ross 308 Broiler Management Handbook. Huntsville, AL: Aviagen; 2025. Available from: aviagen.com/assets/Tech_Center/Ross_Broiler/Aviagen-ROSS-Broiler-Handbook-EN.pdf
+### [6] Aviagen. Ross Broiler Management Handbook. 2025.
+- **Full citation:** Aviagen. Ross Broiler Management Handbook. Huntsville, AL: Aviagen; 2025. Available from: aviagen.com/assets/Tech_Center/Ross_Broiler/Aviagen-ROSS-Broiler-Handbook-EN.pdf
 - **Verified:** YES
 - **Source URL:** https://www.aviagen.com/assets/Tech_Center/Ross_Broiler/Aviagen-ROSS-Broiler-Handbook-EN.pdf
 - **Content confirmed:** Water:feed ratio 1.6–1.8:1 at thermoneutral temperatures; spot weighing recommendations (30–50 birds from multiple locations); daily gain calculation methodology; CV >10–12% at weeks 3–4 indicates poor uniformity from early flock management failures; breed performance targets.
-- **Year confirmed:** 2025, per document title page and local PDF.
+- **Year confirmed:** 2025, confirmed via Aviagen announcement and the live PDF at the URL above.
+- **TITLE CORRECTED 2026-07-14:** Reference previously read "Ross **308** Broiler Management Handbook." Live verification (Aviagen 2025 release announcement, poultry.network) confirms the actual title of the 2025 document is "**Ross Broiler Management Handbook**" (no "308" in the title; the handbook covers Ross broilers generally, with Ross 308 being one strain). The "308" was removed to match the verbatim published title.
 - **Notes:** Institutional authorship (Aviagen). Publicly available technical document.
-- **Status:** VERIFIED
+- **Status:** VERIFIED (title corrected)
 
 ---
 

@@ -788,7 +788,7 @@ function buildBodySection() {
     numberedRef('CPC Learning Centre. Spotting Disease Early [Flock Management Guide]. CPC Learning Centre. Available from: cpclearningcentre.ca'),
     numberedRef('Bestman M, Ruis M, Heijmans J, van Middelkoop K. Poultry Signals: A Practical Guide for Bird-Focused Poultry Farming. Zutphen: Roodbont Publishers; 2012.'),
     numberedRef('National Farm Animal Care Council. Code of Practice for the Care and Handling of Hatching Eggs, Breeders, Chickens and Turkeys. Lacombe: National Farm Animal Care Council; 2016. Available from: nfacc.ca/poultry-code-of-practice'),
-    numberedRef('Aviagen. Ross 308 Broiler Management Handbook. Huntsville, AL: Aviagen; 2025. Available from: aviagen.com/assets/Tech_Center/Ross_Broiler/Aviagen-ROSS-Broiler-Handbook-EN.pdf'),
+    numberedRef('Aviagen. Ross Broiler Management Handbook. Huntsville, AL: Aviagen; 2025. Available from: aviagen.com/assets/Tech_Center/Ross_Broiler/Aviagen-ROSS-Broiler-Handbook-EN.pdf'),
 
   ]; // end children
 
