@@ -552,7 +552,7 @@ function buildBodySection() {
 
     para('Pick up a handful of litter. Squeeze it. Good litter forms a loose ball but does not ooze moisture and does not smell of ammonia when you hold it close. Dry, dusty litter with visible feather packs is also wrong. Good litter is friable, slightly moist, and crumbles when you drop it [3].'),
 
-    para('Measure ammonia at bird level, not at your head height, which is well above the zone where chicks and growing birds breathe. Use an ammonia detection meter or chemical indicator tube held at or below knee height. Record the reading in your visit notes.'),
+    para('Measure ammonia at bird level, not at standing height. Use an electronic ammonia meter or a colorimetric detector tube held at or below knee height, and record the reading in your visit notes against the litter and ventilation observations from the walk.'),
 
     ...image(photo3_1, 'Photo 3.1: Barn observation is the foundation of field service. Walking the full barn systematically gives you a picture of bird distribution, behavior, and environmental conditions before you examine any individual bird. Source: CPC Short Courses.', 5.5, 'png'),
 
@@ -583,7 +583,7 @@ function buildBodySection() {
 
     para('Pull the record book before your barn walk, not after. Knowing the trend going into the walk tells you what to look for. A mortality spike that started three days ago is more alarming than a spike that started yesterday.'),
 
-    para('The NFACC Code of Practice requires that mortalities and culls be recorded daily and that dead birds be removed and disposed of daily [5]. A farm without current mortality records is a compliance issue and a management issue at the same time. If a grower is not keeping records, that is a conversation to have.'),
+    para('The NFACC Code of Practice requires that mortalities and culls be recorded daily and that dead birds be removed and disposed of daily [5]. A farm without current mortality records is both a compliance gap and a management blind spot. If a grower is not keeping daily records, raise it directly and help them put a simple system in place.'),
 
     para('Under the NFACC Code, cases involving unexpected illness, death, or increases in mortality rates must be investigated. Consult a veterinarian and submit samples to a lab if the cause is not clear [5]. That language defines your responsibility: unexpected increases require action, not just observation.'),
 
@@ -713,7 +713,7 @@ function buildBodySection() {
 
     para('Work from the outside in. First look at the feathers, skin, and muscle condition before you open the bird. Then examine the body cavity systematically. Note what is present and what is absent. A pale liver is just as significant as a swollen one. Empty intestines tell you something different than hemorrhagic intestines.'),
 
-    para('At the farm, you are sorting findings into two buckets. The first is management or trauma-related: skin scratches, bruising, ascites fluid with no other lesions, or pasting from wet litter. The second is systemic disease: generalized organ changes, abnormal content in the respiratory tract, petechial hemorrhages, or unusual odors from specific organs.'),
+    para('At the farm, you are sorting findings into two categories. The first is management or trauma-related: skin scratches, bruising, ascites fluid with no other lesions, or pasting from wet litter. The second points to systemic disease: generalized organ changes, abnormal content in the respiratory tract, petechial hemorrhages, fibrin on the serosal surfaces, or unusual odors from specific organs.'),
 
     para('Never substitute an on-farm post-mortem for lab submission when the cause of mortality is unclear [3]. When mortality is present, the CPC Learning Centre Spotting Disease Early guide is clear that you should send live moribund birds representing the current clinical picture, not birds that died hours ago [3]. Section 6.2 covers how many birds to send and how to package them. Your job at the farm is to give the pathologist enough information to get started, not to make the final diagnosis.'),
 
