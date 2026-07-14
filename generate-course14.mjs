@@ -419,6 +419,7 @@ function buildBodySection() {
   const photo1_1 = figBuf('photo1_1_commercial_broiler_flock.jpg');
   const photo2_1 = figBuf('photo2_1_biosecurity_entry.png');
   const photo3_1 = figBuf('photo3_1_barn_observation.png');
+  const walkBarn = figBuf('Walk barn.png');
   const bootsImg = productBuf('elastic_top_boots');
   const evoWashImg = productBuf('chlorinated_evo_wash');
 
@@ -549,6 +550,8 @@ function buildBodySection() {
     para('Enter calmly. A door slamming creates a brief flush response that masks normal distribution and makes it harder to spot birds that were already quiet and sluggish before you arrived.'),
 
     para('Walk the full perimeter of the barn first, then cross diagonal paths. This ensures you cover the edges, the center, and every section of feeder and drinker line. Note bird distribution: are there gaps where birds have moved away from a section? Are there piles at specific spots?'),
+
+    ...image(walkBarn, 'Figure 3.1: The systematic barn-walk pattern. Walk the perimeter first (green path), then cross the barn on a symmetric diagonal (orange X-pattern) so you cover the edges, the center, and every feeder and drinker line. The callouts flag what to watch for: distribution gaps where birds have pulled off a section, corner piling that points to a wall draft or light leak, chicks slipping under the brood curtain, and central flock activity. Source: CPC Short Courses.', 5.9, 'png'),
 
     para('Check feeders and drinkers at multiple points, not just the first few near the entry door. A failed auger, a blocked joint, or a drinker line out of adjustment can leave a whole section without access while the controller still reads normal.'),
 
@@ -871,24 +874,24 @@ const tocEntries = [
   { lvl: 1, text: 'Section 3: The Barn Walk', page: 9 },
   { lvl: 2, text: '3.1  What to Notice Before You Go Inside', page: 9 },
   { lvl: 2, text: '3.2  The Systematic Walk: What to Look For', page: 9 },
-  { lvl: 2, text: '3.3  Bird Conformation Assessment', page: 10 },
-  { lvl: 1, text: 'Section 4: Reading Performance Data', page: 12 },
-  { lvl: 2, text: '4.1  Daily Records: What They Tell You', page: 12 },
-  { lvl: 2, text: '4.2  Mortality Patterns: Normal vs. Concerning', page: 12 },
-  { lvl: 2, text: '4.3  Water and Feed as Early Warning Signals', page: 12 },
-  { lvl: 2, text: '4.4  Spot Weighing and Weight Uniformity', page: 13 },
-  { lvl: 1, text: 'Section 5: Working with the Farmer', page: 14 },
-  { lvl: 2, text: '5.1  Building the Relationship', page: 14 },
-  { lvl: 2, text: '5.2  Communicating Findings', page: 14 },
-  { lvl: 2, text: '5.3  The Visit Record', page: 14 },
-  { lvl: 2, text: '5.4  When to Call the Veterinarian', page: 15 },
-  { lvl: 1, text: 'Section 6: Practical Field Skills', page: 16 },
-  { lvl: 2, text: '6.1  On-Farm Necropsy Basics', page: 16 },
-  { lvl: 2, text: '6.2  Sample Collection', page: 16 },
-  { lvl: 2, text: '6.3  The Farm Health Record Over Time', page: 17 },
-  { lvl: 1, text: 'Workshop: Practical Field Visit Exercise', page: 18 },
-  { lvl: 1, text: 'Recommended Journals and Resources', page: 19 },
-  { lvl: 1, text: 'References', page: 20 },
+  { lvl: 2, text: '3.3  Bird Conformation Assessment', page: 11 },
+  { lvl: 1, text: 'Section 4: Reading Performance Data', page: 13 },
+  { lvl: 2, text: '4.1  Daily Records: What They Tell You', page: 13 },
+  { lvl: 2, text: '4.2  Mortality Patterns: Normal vs. Concerning', page: 13 },
+  { lvl: 2, text: '4.3  Water and Feed as Early Warning Signals', page: 13 },
+  { lvl: 2, text: '4.4  Spot Weighing and Weight Uniformity', page: 14 },
+  { lvl: 1, text: 'Section 5: Working with the Farmer', page: 15 },
+  { lvl: 2, text: '5.1  Building the Relationship', page: 15 },
+  { lvl: 2, text: '5.2  Communicating Findings', page: 15 },
+  { lvl: 2, text: '5.3  The Visit Record', page: 15 },
+  { lvl: 2, text: '5.4  When to Call the Veterinarian', page: 16 },
+  { lvl: 1, text: 'Section 6: Practical Field Skills', page: 17 },
+  { lvl: 2, text: '6.1  On-Farm Necropsy Basics', page: 17 },
+  { lvl: 2, text: '6.2  Sample Collection', page: 17 },
+  { lvl: 2, text: '6.3  The Farm Health Record Over Time', page: 18 },
+  { lvl: 1, text: 'Workshop: Practical Field Visit Exercise', page: 19 },
+  { lvl: 1, text: 'Recommended Journals and Resources', page: 20 },
+  { lvl: 1, text: 'References', page: 21 },
 ];
 
 // Assign anchor IDs
