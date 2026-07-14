@@ -212,6 +212,11 @@ const children = [
   // ── INTRODUCTION ─────────────────────────────────────────
   sectionHead('Introduction'),
 
+  para([
+    { text: 'Who this course is for: ', bold: true },
+    { text: 'field service technicians and service representatives who visit contract poultry farms on behalf of an integrator, hatchery, or feed company. Throughout the course, you are the technician making the visit and the grower is the person you support.' },
+  ]),
+
   para('Field service is the link between the integrator and the farm. The service technician visits contract growers regularly, checks how the flock is progressing, catches problems before they get expensive, and keeps the farmer connected to veterinary, nutritional, and management support. In commercial Canadian poultry production, the service technician is usually the first call a grower makes when something looks wrong.'),
 
   para('This course covers the practical core of field service: how to prepare for a farm visit, how to walk a barn systematically, how to read a production record, how to communicate what you find, and when to escalate. The hands-on workshop gives participants practice in a real barn setting.'),
