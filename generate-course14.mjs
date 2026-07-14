@@ -716,7 +716,7 @@ function buildBodySection() {
 
     h2('6.2  Sample Collection'),
 
-    para('When the veterinarian asks you to collect and submit samples, how you handle them determines whether the lab gets usable results. Poorly collected or improperly stored samples waste everyone\'s time and delay the diagnosis.'),
+    para('When the veterinarian asks you to collect and submit samples, how you handle them determines whether the lab gets usable results. Poorly collected or improperly stored samples waste everyone\'s time and delay the diagnosis. For the full sample selection, packaging, and lab submission protocol, see Course 9 (The Value of Poultry Diagnostics) in this series.'),
 
     para('The best submission is 10 to 12 live moribund birds showing the current clinical signs, packaged to arrive alive at the lab [3]. Second best is fresh mortality: birds that have died within the past 2 to 4 hours, chilled but not frozen. Frozen birds lose tissue architecture and many diagnostic tests cannot be run on them.'),
 
