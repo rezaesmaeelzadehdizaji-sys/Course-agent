@@ -496,7 +496,7 @@ function buildBodySection() {
     twoColTable(
       ['Zone', 'Description and Your Responsibilities'],
       [
-        ['Controlled Access Zone (CAZ)', 'Outer farm area. Sign the visitor log. Park at least 15 metres from barn air inlets and exhaust fans. Do not bring vehicles with poultry contact history closer than required.'],
+        ['Controlled Access Zone (CAZ)', 'Outer farm area. Sign the visitor log. Park at least 15 meters from barn air inlets and exhaust fans. Do not bring vehicles with poultry contact history closer than required.'],
         ['Service Area', 'Transitional space: egg rooms, feed access points, utility entries. Change into clean coveralls and footwear before entering. Disinfect hands.'],
         ['Restricted Access Zone (RAZ)', 'Live bird housing. Highest biosecurity demands. Wear fresh or disinfected coveralls and boots. Use hairnet or hooded coveralls. This is where you spend most of your visit.'],
       ]
