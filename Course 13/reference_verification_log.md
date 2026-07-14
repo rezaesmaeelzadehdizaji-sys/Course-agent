@@ -274,11 +274,17 @@ All 20 citations verified individually against PubMed, CrossRef, publisher sites
 | 9 | Santos MN et al. (U. Guelph) | 2022 | CONFIRMED | doi:10.1016/j.psj.2022.101768 |
 | 10 | Abdallah N et al. | 2025 | CONFIRMED | doi:10.1002/vms3.70518 |
 | 11 | Morrissey K et al. | 2016 | CONFIRMED | doi:10.3390/ani6030017 |
-| 12 | CPC Learning Centre (Spotting Disease Early) | n.d. | CONFIRMED | cpclearningcentre.ca |
-| 13 | CPC Learning Centre (Heat Stress) | n.d. | CONFIRMED | cpclearningcentre.ca + local PDF |
-| 14 | Caffrey NP et al. | 2017 | CONFIRMED | doi:10.1016/j.prevetmed.2017.09.011 |
+| 12 | Shi H et al. | 2019 | CONFIRMED | doi:10.3390/ani9100814 |
+| 13 | Scheideler SE (UNL Extension) | 2007 | CONFIRMED | extensionpubs.unl.edu |
+| 14 | CPC Learning Centre (Spotting Disease Early) | n.d. | CONFIRMED | cpclearningcentre.ca |
+| 15 | CPC Learning Centre (Heat Stress) | n.d. | CONFIRMED | cpclearningcentre.ca + local PDF |
+| 16 | Martin GP, Fabian EE (Penn State Ext.) | 2026 | CONFIRMED | extension.psu.edu |
+| 17 | Campbell J et al. (Alabama Ext.) | 2022 | CONFIRMED | aces.edu |
+| 18 | Caffrey NP et al. | 2017 | CONFIRMED | doi:10.1016/j.prevetmed.2017.09.011 |
+| 19 | Knezacek TD et al. | 2010 | CONFIRMED | doi:10.4141/cjas09083 |
+| 20 | Vitek S, Jacobs L (Virginia Tech Ext.) | n.d. | CONFIRMED | pubs.ext.vt.edu |
 
-All 20 references verified. No fabricated or unverifiable citations. All peer-reviewed articles confirmed against PubMed or CrossRef DOI lookup. CPC Learning Centre materials confirmed against the organizational website and local reference library.
+All 20 references verified. All 11 peer-reviewed/image DOIs re-confirmed live via CrossRef on 2026-07-13 (year, journal, and title all match). No fabricated or unverifiable citations. All peer-reviewed articles confirmed against PubMed or CrossRef DOI lookup. CPC Learning Centre materials confirmed against the organizational website and local reference library.
 
 ---
 
