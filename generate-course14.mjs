@@ -485,7 +485,7 @@ function buildBodySection() {
 
     para('Check for any active disease alerts from CFIA or the provincial authority for your region. If a notifiable disease is circulating nearby, your visit protocol changes. Enhanced cleaning and disinfection apply, and in some cases only essential visits are allowed [2].'),
 
-    para('The CFIA Poultry Service Industry Biosecurity Guide is explicit on this point: communicate with the producer before arrival and ask about the current health status, any vaccination or treatment history since your last visit, and any concerns they have about the flock [2]. A phone call before you get there saves surprises at the barn door.'),
+    para('The CFIA Poultry Service Industry Biosecurity Guide is explicit on this point. Call the producer before you arrive. Ask about the flock\'s current health status, any vaccination or treatment given since your last visit, and any concerns they have about the birds [2]. A phone call before you get there saves surprises at the barn door.'),
 
     h2('2.2  Canadian Biosecurity Requirements for Service Personnel'),
 
@@ -555,7 +555,7 @@ function buildBodySection() {
 
     para('Once you have a picture of the flock as a whole, catch a sample of birds for individual assessment. The CPC Learning Centre Spotting Disease Early guide recommends randomly selecting birds from different areas of the barn and examining them from head to toes [3]. Do not just catch the birds closest to you at the door.'),
 
-    para('The CPC Learning Centre Spotting Disease Early guide walks through what to check on each bird [3]:'),
+    para('The guide walks through what to check on each bird [3]:'),
 
     bullet('Color: pale suggests anemia or chilling; dark or dusky suggests dehydration or fever'),
     bullet('Size: swollen infraorbital sinus or swollen joints indicate inflammation; underweight or depleted muscle mass indicates a performance problem'),
@@ -568,7 +568,7 @@ function buildBodySection() {
 
     new Paragraph({ spacing: { before: 0, after: 160 } }),
 
-    para('If you are keeping a daily list and comparing bird-by-bird across visits, you will find abnormalities that a single snapshot misses. The CPC Learning Centre Spotting Disease Early guide makes the point clearly: if you keep a list from day to day and evaluate the abnormal alongside the normal, you will be surprised by how much you actually see [3].'),
+    para('If you are keeping a daily list and comparing bird-by-bird across visits, you will find abnormalities that a single snapshot misses. The guide makes the point clearly: if you keep a list from day to day and evaluate the abnormal alongside the normal, you will be surprised by how much you actually see [3].'),
 
     // ── SECTION 4 ─────────────────────────────────────────────
     pageBreak(),
@@ -641,7 +641,7 @@ function buildBodySection() {
 
     para('The CPC Learning Centre Spotting Disease Early guide explains it plainly: when a disease or stress occurs, a decrease in water consumption is usually noticed a day or two before the decrease in feed consumption [3]. Water meters that record daily consumption are your earliest warning system.'),
 
-    para('Record water and feed consumption at the same time every day. The CPC Learning Centre Spotting Disease Early guide recommends this specifically so that comparisons are valid across days [3]. A reading taken at 6 a.m. one day and 2 p.m. the next gives you a misleading comparison.'),
+    para('Record water and feed consumption at the same time every day. The guide recommends this specifically so that comparisons are valid across days [3]. A reading taken at 6 a.m. one day and 2 p.m. the next gives you a misleading comparison.'),
 
     para('The water-to-feed ratio at thermoneutral temperatures runs approximately 1.6 to 1.8 parts water per part feed for growing broilers [6]. A ratio that drops below 1.5 suggests water access is restricted. Check pressure, drinker height, and any blocked lines. A ratio climbing above 2.0 to 2.5 during cool weather suggests the birds are sick (increased water consumption with reduced feed intake is a classic early disease response) or there is a drinker leak inflating the meter reading.'),
 
@@ -688,7 +688,7 @@ function buildBodySection() {
     ...callout('Escalate to the veterinarian when you see:', [
       'Unexplained mortality increase: daily rate doubling over 2-3 days with no obvious management cause',
       'Systemic signs in a significant portion of the flock: swollen heads, green or watery diarrhea, neurological signs, widespread respiratory distress',
-      'Signs consistent with a notifiable disease: sudden high mortality with multiple systems affected (call CFIA as well)',
+      'Signs that point to a notifiable disease: sudden high mortality with multiple systems affected (call CFIA as well)',
       'No response to treatment within 48-72 hours of a protocol starting',
       'Multiple barns on the same farm showing similar signs simultaneously',
       'Unusual lesions found during an on-farm necropsy that do not match common management-related findings',
@@ -710,7 +710,7 @@ function buildBodySection() {
 
     para('At the farm, you are sorting findings into two buckets. The first is management or trauma-related: skin scratches, bruising, ascites fluid with no other lesions, or pasting from wet litter. The second is systemic disease: generalized organ changes, abnormal content in the respiratory tract, petechial hemorrhages, or unusual odors from specific organs.'),
 
-    para('Never substitute an on-farm post-mortem for lab submission when the cause of mortality is unclear [3]. The CPC Learning Centre Spotting Disease Early guide recommends submitting 10 to 12 birds if mortality is present in the flock: send live moribund birds representing the current clinical picture, not birds that died hours ago [3]. Your job at the farm is to give the pathologist enough information to get started, not to make the final diagnosis.'),
+    para('Never substitute an on-farm post-mortem for lab submission when the cause of mortality is unclear [3]. When mortality is present, the CPC Learning Centre Spotting Disease Early guide is clear that you should send live moribund birds representing the current clinical picture, not birds that died hours ago [3]. Section 6.2 covers how many birds to send and how to package them. Your job at the farm is to give the pathologist enough information to get started, not to make the final diagnosis.'),
 
     para('For a complete guide to post-mortem examination technique and what normal organs look like, see Course 10 (Necropsy, Normal Birds) in this series.'),
 
@@ -718,11 +718,11 @@ function buildBodySection() {
 
     para('When the veterinarian asks you to collect and submit samples, how you handle them determines whether the lab gets usable results. Poorly collected or improperly stored samples waste everyone\'s time and delay the diagnosis.'),
 
-    para('The best submission is 10 to 12 live moribund birds showing the current clinical signs, packaged to arrive alive at the lab [3]. Second best is fresh mortality: birds that have died within the past 4 to 6 hours, chilled but not frozen. Frozen birds lose tissue architecture and many diagnostic tests cannot be run on them.'),
+    para('The best submission is 10 to 12 live moribund birds showing the current clinical signs, packaged to arrive alive at the lab [3]. Second best is fresh mortality: birds that have died within the past 2 to 4 hours, chilled but not frozen. Frozen birds lose tissue architecture and many diagnostic tests cannot be run on them.'),
 
     para('Label every sample bag clearly: farm ID, flock age, placement date, clinical signs you observed, vaccines given and dates, any treatments given and when. A completed submission form reduces the number of phone calls the lab has to make to you and gets your results back faster [3].'),
 
-    para('During transport, keep samples chilled at 4 to 7 degrees Celsius (roughly refrigerator temperature). Avoid extended exposure to ambient temperatures, especially in summer.'),
+    para('During transport, keep samples chilled at about 4 degrees Celsius (refrigerator temperature), never frozen. Avoid extended exposure to ambient temperatures, especially in summer.'),
 
     h2('6.3  The Farm Health Record Over Time'),
 
@@ -757,7 +757,7 @@ function buildBodySection() {
 
     new Paragraph({ spacing: { before: 0, after: 160 } }),
 
-    para('The workshop is designed to be done on a real farm with a real flock. Biosecurity protocols apply from the moment you arrive in the parking lot. PPE is provided by CPC for all participants.'),
+    para('We run the workshop on a real farm with a real flock. Biosecurity protocols apply from the moment you arrive in the parking lot. CPC provides PPE for every participant.'),
 
     // ── RECOMMENDED JOURNALS ─────────────────────────────────
     pageBreak(),
