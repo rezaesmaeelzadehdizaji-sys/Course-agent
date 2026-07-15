@@ -419,7 +419,7 @@ function buildBodySection() {
   const photo1_1 = figBuf('photo1_1_commercial_broiler_flock.jpg');
   const photo2_1 = figBuf('photo2_1_biosecurity_entry.png');
   const photo3_1 = figBuf('photo3_1_barn_observation.png');
-  const walkBarn = figBuf('Walk barn.png');
+  const walkBarn = figBuf('walk barn.jpg');
   const bootsImg = productBuf('elastic_top_boots');
   const evoWashImg = productBuf('chlorinated_evo_wash');
 
@@ -551,7 +551,7 @@ function buildBodySection() {
 
     para('Walk the full perimeter of the barn first, then cross diagonal paths. This ensures you cover the edges, the center, and every section of feeder and drinker line. Note bird distribution: are there gaps where birds have moved away from a section? Are there piles at specific spots?'),
 
-    ...image(walkBarn, 'Figure 3.1: The systematic barn-walk pattern. Walk the perimeter first (green path), then cross the barn on a symmetric diagonal (orange X-pattern) so you cover the edges, the center, and every feeder and drinker line. The callouts flag what to watch for: distribution gaps where birds have pulled off a section, corner piling that points to a wall draft or light leak, chicks slipping under the brood curtain, and central flock activity. Source: CPC Short Courses.', 5.9, 'png'),
+    ...image(walkBarn, 'Figure 3.1: The systematic barn-walk pattern. Walk the perimeter first (green path), then cross the barn on a symmetric diagonal (orange X-pattern) so you cover the edges, the center, and every feeder and drinker line. The callouts flag what to watch for: distribution gaps where birds have pulled off a section, corner piling that points to a wall draft or light leak, chicks slipping under the brood curtain, and central flock activity. Source: CPC Short Courses.', 5.9, 'jpg'),
 
     para('Check feeders and drinkers at multiple points, not just the first few near the entry door. A failed auger, a blocked joint, or a drinker line out of adjustment can leave a whole section without access while the controller still reads normal.'),
 
