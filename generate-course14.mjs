@@ -729,6 +729,8 @@ function buildBodySection() {
 
     para('At the farm, you are sorting findings into two categories. The first is management or trauma-related: skin scratches, bruising, ascites fluid with no other lesions, or pasting from wet litter. The second points to systemic disease: generalized organ changes, abnormal content in the respiratory tract, petechial hemorrhages, fibrin on the serosal surfaces, or unusual odors from specific organs.'),
 
+    para('Whatever you find, get it on the record instead of carrying it out of the barn in your head. Write down the color, size, location, and consistency of every lesion, and photograph it in place before you cut into it. Use good light, a clean background, and put something in frame for scale. This matters most in the situation where your veterinarian cannot get to the farm, because then your notes and photos are what they are reading the case from. The two minutes it takes to shoot them properly is often the most useful part of the whole exercise.'),
+
     para('Never substitute an on-farm post-mortem for lab submission when the cause of mortality is unclear [3]. When mortality is present, the CPC Learning Centre Spotting Disease Early guide is clear that you should send live moribund birds representing the current clinical picture, not birds that died hours ago [3]. Section 6.2 covers how many birds to send and how to package them. Your job at the farm is to give the pathologist enough information to get started, not to make the final diagnosis.'),
 
     para('For a complete guide to post-mortem examination technique and what normal organs look like, see Course 10 (Necropsy, Normal Birds) in this series.'),
@@ -885,7 +887,7 @@ const tocEntries = [
   { lvl: 2, text: '5.4  When to Call the Veterinarian', page: 16 },
   { lvl: 1, text: 'Section 6: Practical Field Skills', page: 18 },
   { lvl: 2, text: '6.1  On-Farm Necropsy Basics', page: 18 },
-  { lvl: 2, text: '6.2  Sample Collection', page: 18 },
+  { lvl: 2, text: '6.2  Sample Collection', page: 19 },
   { lvl: 2, text: '6.3  The Farm Health Record Over Time', page: 19 },
   { lvl: 1, text: 'Workshop: Practical Field Visit Exercise', page: 20 },
   { lvl: 1, text: 'Recommended Journals and Resources', page: 21 },
