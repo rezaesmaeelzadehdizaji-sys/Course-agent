@@ -650,7 +650,7 @@ function buildBodySection() {
 
     para('Record water and feed consumption at the same time every day. The guide recommends this specifically so that comparisons are valid across days [3]. A reading taken at 6 a.m. one day and 2 p.m. the next gives you a misleading comparison.'),
 
-    para('The water-to-feed ratio at thermoneutral temperatures runs approximately 1.6 to 1.8 parts water per part feed for growing broilers [6]. A ratio that drops below 1.5 suggests water access is restricted. Check pressure, drinker height, and any blocked lines. A ratio climbing above 2.0 to 2.5 during cool weather suggests the birds are sick (increased water consumption with reduced feed intake is a classic early disease response) or there is a drinker leak inflating the meter reading.'),
+    para('The water-to-feed ratio at thermoneutral temperatures runs approximately 1.6 to 1.8 parts water per part feed for growing broilers [6]. A ratio that drops below 1.5 suggests water access is restricted. Check pressure, drinker height, and any blocked lines. A ratio climbing above 2.0 to 2.5 in cool weather means the opposite: either feed intake has fallen away while water held steady, or something is pushing the birds to drink more, such as kidney damage from a nephropathogenic infectious bronchitis strain or high dietary salt. A drinker leak inflating the meter reading looks the same on paper. A genuine rise in water intake usually shows up as watery droppings and wet litter within a day or two.'),
 
     h2('4.4  Spot Weighing and Weight Uniformity'),
 
