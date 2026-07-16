@@ -419,6 +419,7 @@ function buildBodySection() {
   const photo1_1 = figBuf('photo1_1_commercial_broiler_flock.jpg');
   const photo2_1 = figBuf('photo2_1_biosecurity_entry.png');
   const walkBarn = figBuf('walk barn.jpg');
+  const elecWeigh = figBuf('electric weighting.jpg');
   const bootsImg = productBuf('elastic_top_boots');
   const evoWashImg = productBuf('chlorinated_evo_wash');
 
@@ -657,6 +658,8 @@ function buildBodySection() {
     para('As the flock approaches market weight, spot-weigh by randomly catching birds from several different areas of the barn. Thirty to 50 birds spread across the house is a reasonable sample [1,6]. Avoid catching only near the door; birds there tend to be more active and often represent a different weight distribution than birds deeper in the barn.'),
 
     para('Many barns now run automatic weigh platforms as well. These sit at bird level for the whole flock, and birds step onto them on their own through the day, so the system logs hundreds of weighings and reports a running average and CV without anyone catching a bird. That gives you a daily trend line instead of a snapshot two or three times a week. Calibrate the automatic equipment at least once per flock [6].'),
+
+    ...image(elecWeigh, 'Photo 4.1: An automatic weigh platform suspended at bird level in a broiler barn. Birds step onto the pan on their own through the day and the load cell logs each weighing, so the system builds an average weight and CV without anyone catching a bird. Source: anyload.com.', 2.8, 'jpg'),
 
     para('Do not retire the catch-and-weigh scale, though. Heavier birds visit the platform less often than lighter ones, and that bias grows as the flock approaches market weight, so the automatic average reads low exactly when you need it to be right [7]. Use the platform for the daily trend, and confirm it against a manual spot weigh before you call a market weight.'),
 
