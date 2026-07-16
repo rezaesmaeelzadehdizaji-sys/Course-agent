@@ -663,7 +663,7 @@ function buildBodySection() {
 
     para('Do not retire the catch-and-weigh scale, though. Heavier birds visit the platform less often than lighter ones, and that bias grows as the flock approaches market weight, so the automatic average reads low exactly when you need it to be right [7]. Use the platform for the daily trend, and confirm it against a manual spot weigh before you call a market weight.'),
 
-    para('Calculate average daily gain: divide the current average weight by the flock\'s age in days, or use the difference from the last weigh-in divided by the days between. Compare to the breed target [6].'),
+    para('Calculate average daily gain: divide the current average weight by the flock\'s age in days, or use the difference from the last weigh-in divided by the days between. Compare to the breed target [6]. An automatic platform reports daily gain for you, but the same bias carries through the math: if the platform average is reading low, the gain figure is low with it.'),
 
     para('The coefficient of variation (CV) tells you how uniform the flock is. A CV above 10 to 12% at weeks 3 to 4 means the flock has a significant spread in body size. That gap almost always traces back to the first week: poor water or feed access during brooding, an early disease challenge, or an uneven temperature distribution that pushed some chicks off feed [6]. By week 4 you can see it in the weight data even when the cause is long gone.'),
 
