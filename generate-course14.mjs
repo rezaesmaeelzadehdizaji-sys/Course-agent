@@ -721,9 +721,9 @@ function buildBodySection() {
 
     h2('6.1  On-Farm Necropsy Basics'),
 
-    para('Be clear on the boundary before you open a bird. The necropsy and the diagnosis belong to the veterinarian. Most of the time the right call is the simple one: leave the bird intact, keep it cool, and get it to the lab. Two situations change that. The first is when a veterinarian cannot get to the farm in time and the flock cannot wait. The second is when your veterinarian wants a specific tissue collected and sent. In both cases you are working under your veterinarian\'s direction and not on your own judgment, and you work inside the farm\'s biosecurity protocol, because nothing should leave that barn on your knife, your boots, or your coveralls.'),
+    para('Be clear on the boundary before you open a bird. The necropsy and the diagnosis belong to the veterinarian, and you do not open birds on your own initiative to work out what killed them. Most of the time the right call is the simple one: leave the bird intact, keep it cool, and get it to the lab. Two situations change that, and both of them start with a phone call to your veterinarian. The first is when your veterinarian cannot get to the farm in person, the flock cannot wait, and they want eyes inside the bird now. The second is when they want a specific tissue collected and sent. Either way you are working under their direction and not on your own judgment, and you work inside the farm\'s biosecurity protocol, because nothing should leave that barn on your knife, your boots, or your coveralls.'),
 
-    para('When one of those situations applies, a structured approach gives you the most information from the least time, and it gives the veterinarian a clear picture before any birds reach the diagnostic lab.'),
+    para('When one of those situations applies, a structured approach gives you the most information from the least time, and it means your veterinarian gets specific findings to act on instead of a vague impression.'),
 
     para('Work from the outside in. First look at the feathers, skin, and muscle condition before you open the bird. Then examine the body cavity systematically. Note what is present and what is absent. A pale liver is just as significant as a swollen one. Empty intestines tell you something different than hemorrhagic intestines.'),
 
