@@ -711,7 +711,7 @@ function buildBodySection() {
       'Unusual lesions found during an on-farm necropsy that do not match common management-related findings.',
     ]),
 
-    para('When you call the veterinarian, have your records ready. The veterinarian needs: the flock age, mortality trend over the past 5 to 7 days, vaccination and treatment history, water and feed consumption trend, what you saw during the barn walk, and what the birds look like on individual examination. A clear, organized briefing gets you a faster and more accurate response.'),
+    para('When you call the veterinarian, have your records ready. Start with the flock history: the age, the mortality trend over the past 5 to 7 days, the vaccination and treatment history, and the water and feed consumption trend. Then walk them through what you saw on the barn walk and what the birds looked like on individual examination. A clear, organized briefing gets you a faster and more accurate response.'),
 
     para('For a full profile of common poultry diseases and the clinical signs that distinguish one from another, see Course 7 (Common Poultry Diseases) in this series.'),
 
