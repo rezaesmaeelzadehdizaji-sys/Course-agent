@@ -475,9 +475,9 @@ function buildBodySection() {
     para('A farm visit is only useful if it produces three things:'),
 
     ...callout('The three outcomes of every farm visit', [
-      '1. You know how the flock is doing (assessment)',
-      '2. The farmer knows what to adjust (recommendation)',
-      '3. You have a record of what you found (documentation)',
+      '1. You know how the flock is doing (assessment).',
+      '2. The farmer knows what to adjust (recommendation).',
+      '3. You have a record of what you found (documentation).',
     ]),
 
     para('If you leave a farm without all three, the visit did not accomplish its purpose. An assessment without a recommendation leaves the farmer without direction. A recommendation without a record means the next person who visits has no context.'),
@@ -566,14 +566,14 @@ function buildBodySection() {
 
     para('The guide walks through what to check on each bird [3]:'),
 
-    bullet('Color: a pale comb suggests anemia or chilling, and a pale, shrunken, dry comb points to dehydration; a dark, dusky, or purple comb is cyanosis, which signals circulatory or respiratory compromise, not dehydration'),
-    bullet('Size: swollen infraorbital sinus or swollen joints indicate inflammation; underweight or depleted muscle mass indicates a performance problem'),
-    bullet('Position: drooping wings or a crouched, hunched stance signal general illness or pain; a twisted neck (torticollis) is a neurological sign that points to central nervous system involvement, not a general internal problem'),
-    bullet('Heat: joints that feel warm to the touch indicate active inflammation at that site'),
-    bullet('Soiling: vent soiling, caked toes, or stained feathers point to enteric problems and abnormal droppings'),
-    bullet('Discharges: healthy eyes, nostrils, and the vent do not discharge; any discharge means investigate the color, consistency, and smell'),
-    bullet('Alertness: a healthy bird is quick to react to your presence; a sick bird is slow, droopy-eyed, and does not respond normally when you approach'),
-    bullet('Vocalization: snicking, sneezing, or rattling respiration are audible signs; note which birds are making the sound and how many [3]'),
+    bullet('Color: a pale comb suggests anemia or chilling, and a pale, shrunken, dry comb points to dehydration; a dark, dusky, or purple comb is cyanosis, which signals circulatory or respiratory compromise, not dehydration.'),
+    bullet('Size: swollen infraorbital sinus or swollen joints indicate inflammation; underweight or depleted muscle mass indicates a performance problem.'),
+    bullet('Position: drooping wings or a crouched, hunched stance signal general illness or pain; a twisted neck (torticollis) is a neurological sign that points to central nervous system involvement, not a general internal problem.'),
+    bullet('Heat: joints that feel warm to the touch indicate active inflammation at that site.'),
+    bullet('Soiling: vent soiling, caked toes, or stained feathers point to enteric problems and abnormal droppings.'),
+    bullet('Discharges: healthy eyes, nostrils, and the vent do not discharge; any discharge means investigate the color, consistency, and smell.'),
+    bullet('Alertness: a healthy bird is quick to react to your presence; a sick bird is slow, droopy-eyed, and does not respond normally when you approach.'),
+    bullet('Vocalization: snicking, sneezing, or rattling respiration are audible signs; note which birds are making the sound and how many [3].'),
 
     new Paragraph({ spacing: { before: 0, after: 160 } }),
 
@@ -703,12 +703,12 @@ function buildBodySection() {
     para('You are not the veterinarian. Knowing when to escalate is as important as knowing how to assess.'),
 
     ...callout('Escalate to the veterinarian when you see:', [
-      'Unexplained mortality increase: daily rate doubling over 2-3 days with no obvious management cause',
-      'Systemic signs in a significant portion of the flock: swollen heads, green or watery diarrhea, neurological signs, widespread respiratory distress',
-      'Signs that point to a notifiable disease: sudden high mortality with multiple systems affected (call CFIA as well)',
-      'No response to treatment within 48-72 hours of a protocol starting',
-      'Multiple barns on the same farm showing similar signs simultaneously',
-      'Unusual lesions found during an on-farm necropsy that do not match common management-related findings',
+      'Unexplained mortality increase: daily rate doubling over 2-3 days with no obvious management cause.',
+      'Systemic signs in a significant portion of the flock: swollen heads, green or watery diarrhea, neurological signs, widespread respiratory distress.',
+      'Signs that point to a notifiable disease: sudden high mortality with multiple systems affected (call CFIA as well).',
+      'No response to treatment within 48-72 hours of a protocol starting.',
+      'Multiple barns on the same farm showing similar signs simultaneously.',
+      'Unusual lesions found during an on-farm necropsy that do not match common management-related findings.',
     ]),
 
     para('When you call the veterinarian, have your records ready. The veterinarian needs: the flock age, mortality trend over the past 5 to 7 days, vaccination and treatment history, water and feed consumption trend, what you saw during the barn walk, and what the birds look like on individual examination. A clear, organized briefing gets you a faster and more accurate response.'),
@@ -770,12 +770,12 @@ function buildBodySection() {
 
     para('The following journals and publications are useful for staying current on poultry health, production management, and field service practices:'),
 
-    bullet('Poultry Science: peer-reviewed journal covering broiler and layer management, nutrition, health, and welfare (poultryscience.org)'),
-    bullet('Avian Diseases: peer-reviewed journal of the American Association of Avian Pathologists, covering poultry pathology, diagnostics, and disease management'),
-    bullet('Canadian Poultry Magazine: industry publication covering Canadian commercial poultry news, management practices, and policy (canadianpoultrymag.com)'),
-    bullet('The Poultry Site: international industry news and technical articles (thepoultrysite.com)'),
-    bullet('CFIA Animal Health Notices: subscribe for alerts on reportable diseases and national biosecurity updates (inspection.canada.ca)'),
-    bullet('NFACC Code of Practice updates: check nfacc.ca for the most current version of the poultry Code and any associated guidance documents'),
+    bullet('Poultry Science: peer-reviewed journal covering broiler and layer management, nutrition, health, and welfare (poultryscience.org).'),
+    bullet('Avian Diseases: peer-reviewed journal of the American Association of Avian Pathologists, covering poultry pathology, diagnostics, and disease management.'),
+    bullet('Canadian Poultry Magazine: industry publication covering Canadian commercial poultry news, management practices, and policy (canadianpoultrymag.com).'),
+    bullet('The Poultry Site: international industry news and technical articles (thepoultrysite.com).'),
+    bullet('CFIA Animal Health Notices: subscribe for alerts on reportable diseases and national biosecurity updates (inspection.canada.ca).'),
+    bullet('NFACC Code of Practice updates: check nfacc.ca for the most current version of the poultry Code and any associated guidance documents.'),
 
     new Paragraph({ spacing: { before: 0, after: 240 } }),
 
