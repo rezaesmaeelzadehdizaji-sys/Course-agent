@@ -462,6 +462,8 @@ Image URLs: `https://canadianpoultry.ca/wp-content/uploads/2026/02/[Product-Name
 | Course 4 | Proxy Clean | Section 4.3 — organic matter removal before disinfection |
 | Course 4 | Virocid | Section 4.3 — broad-spectrum disinfection |
 | Course 4 | Enhanced Litter Treatment | Section 4.3 — pre-placement litter management |
+| Course 14 | Elastic Top Boots | Section 2.3 — dedicated barn footwear for service personnel |
+| Course 14 | Chlorinated EVO Wash | Section 2.3 — boot dip and footwear sanitation at farm entry |
 
 ---
 
@@ -508,6 +510,7 @@ One sentence, woven into the paragraph where the topic appears. Use this format:
 | Course 14, Section 3.1 | Systematic T-FLAWS barn assessment framework | Course 3 (T-FLAWS Assessment Management Tool) |
 | Course 14, Section 5.4 | Full disease profiles and distinguishing clinical signs | Course 7 (Common Poultry Diseases) |
 | Course 14, Section 6.1 | Post-mortem examination technique and normal organ appearance | Course 10 (Necropsy, Normal Birds) |
+| Course 14, Section 6.2 | Full sample selection, packaging, and lab submission protocol | Course 9 (The Value of Poultry Diagnostics) |
 
 Update this table as new cross-references are added in future courses.
 

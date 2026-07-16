@@ -524,10 +524,10 @@ function buildBodySection() {
 
     para('The CPC Learning Centre and CPC Shop provide the Elastic Top Boots for dedicated barn footwear and the Chlorinated EVO Wash for boot dip and footwear sanitation. Dedicated, farm-specific footwear is one of the simplest and most effective things you can do to stop disease from moving between farms on your boots.'),
 
-    ...(bootsImg ? productImage(bootsImg, 'Elastic Top Boots. Dedicated barn footwear prevents cross-contamination between farms. Source: canadianpoultry.ca/shop.') : []),
-    ...(evoWashImg ? productImage(evoWashImg, 'Chlorinated EVO Wash. Foaming chlorine wash for footwear and boot dips at farm entry. Source: canadianpoultry.ca/shop.') : []),
+    ...(bootsImg ? productImage(bootsImg, 'Photo 2.1: Elastic Top Boots. Dedicated barn footwear prevents cross-contamination between farms. Source: canadianpoultry.ca/shop.') : []),
+    ...(evoWashImg ? productImage(evoWashImg, 'Photo 2.2: Chlorinated EVO Wash. Foaming chlorine wash for footwear and boot dips at farm entry. Source: canadianpoultry.ca/shop.') : []),
 
-    ...image(photo2_1, 'Photo 2.1: Biosecurity entry at a commercial poultry barn. Clean coveralls and boot dip are the minimum entry standard for service personnel under CFIA guidelines [2]. Source: CPC Short Courses.', 5.5, 'png'),
+    ...image(photo2_1, 'Photo 2.3: Biosecurity entry at a commercial poultry barn. Clean coveralls and boot dip are the minimum entry standard for service personnel under CFIA guidelines [2]. Source: CPC Short Courses.', 5.5, 'png'),
 
     // ── SECTION 3 ─────────────────────────────────────────────
     pageBreak(),
