@@ -420,6 +420,7 @@ function buildBodySection() {
   const photo2_1 = figBuf('photo2_1_biosecurity_entry.png');
   const walkBarn = figBuf('walk barn.jpg');
   const elecWeigh = figBuf('electric weighting.jpg');
+  const visitRecord = figBuf('photo3_1_barn_observation.png');
   const bootsImg = productBuf('elastic_top_boots');
   const evoWashImg = productBuf('chlorinated_evo_wash');
 
@@ -689,7 +690,9 @@ function buildBodySection() {
 
     para('Write the visit record the same day. Details blur fast, and the record is only useful if it is accurate.'),
 
-    para('A complete visit record covers the basics: date, time, farm and barn ID, flock age, and placement date. Add the numbers: mortality for the day and the cumulative total, water and feed consumption, and any body weight data you collected. Then round it out with what you saw (temperature, ammonia level, litter condition), what you told the farmer to do, and what you committed to follow up on before your next visit.'),
+    para('A complete visit record covers the basics: date, time, farm and barn ID, flock age, and placement date. Add the numbers: mortality for the day and the cumulative total, plus whether the trend is stable, rising, or falling. Record water and feed consumption against the three-day average, and any body weight data with the CV and the breed target beside it. Then round it out with what you saw (temperature, ammonia at bird level, litter condition, how the birds were distributed and how active they were), any treatments given and the authorization you acted under, what you told the farmer to do, and what you committed to follow up on before your next visit.'),
+
+    ...image(visitRecord, 'Photo 5.1: A standardized visit form filled in during the barn walk. Working from a printed form prompts you through the same checks in the same order on every farm, so nothing gets skipped. Source: CPC Short Courses.', 5.5, 'png'),
 
     para('Leave a copy with the farmer; keep one in your records. The CFIA Poultry Service Industry Biosecurity Guide requires that service providers leave documentation of their service activity on the premises [2]. The visit record satisfies this requirement and builds the farm health history at the same time.'),
 
@@ -744,19 +747,7 @@ function buildBodySection() {
 
     para('Flag concerning trends early. A mortality curve that is creeping up day after day is much easier to address at week 2 than at week 4. A farm that consistently has high early mortality across three successive flocks is telling you something about the brooding setup or chick quality that one visit report will not reveal.'),
 
-    para('Write records with continuity in mind. If someone else needs to cover your farms, because you are away, because of staff changes, or because of an emergency, they must be able to read your records and understand what was happening without calling you. Cover the mortality trend, bird behavior notes, and environmental readings such as temperature, ammonia level, and carbon dioxide. Add weight data, the water and feed trend, any treatments given and the authorization you acted under, and the specific follow-up actions you committed to.'),
-
-    ...callout('A useful visit record captures:', [
-      'Date, farm ID, barn IDs visited, flock age',
-      'Mortality: today\'s count, cumulative total, and whether the trend is stable, rising, or falling',
-      'Water consumption: today\'s reading and comparison to the 3-day average',
-      'Feed consumption: today\'s reading and comparison to the 3-day average',
-      'Environmental: temperature range recorded, ammonia level at bird height, litter condition description',
-      'Body weights: date weighed, average weight, CV if calculated, breed target for comparison',
-      'Bird behavior: distribution, activity level, any abnormal sounds or signs',
-      'Recommendations given to the farmer: specific and actionable',
-      'Follow-up committed: what you will do before your next visit and when',
-    ]),
+    para('Write records with continuity in mind. If someone else needs to cover your farms, because you are away, because of staff changes, or because of an emergency, they must be able to read your records and understand what was happening without calling you. Section 5.3 lists what belongs in each entry. The test is simple: hand your file to a technician who has never been on the farm and see whether they can tell you what the flock has been doing.'),
 
     // ── WORKSHOP NOTE ─────────────────────────────────────────
     pageBreak(),
@@ -890,13 +881,13 @@ const tocEntries = [
   { lvl: 2, text: '5.2  Communicating Findings', page: 15 },
   { lvl: 2, text: '5.3  The Visit Record', page: 15 },
   { lvl: 2, text: '5.4  When to Call the Veterinarian', page: 16 },
-  { lvl: 1, text: 'Section 6: Practical Field Skills', page: 17 },
-  { lvl: 2, text: '6.1  On-Farm Necropsy Basics', page: 17 },
-  { lvl: 2, text: '6.2  Sample Collection', page: 17 },
-  { lvl: 2, text: '6.3  The Farm Health Record Over Time', page: 18 },
-  { lvl: 1, text: 'Workshop: Practical Field Visit Exercise', page: 19 },
-  { lvl: 1, text: 'Recommended Journals and Resources', page: 20 },
-  { lvl: 1, text: 'References', page: 21 },
+  { lvl: 1, text: 'Section 6: Practical Field Skills', page: 18 },
+  { lvl: 2, text: '6.1  On-Farm Necropsy Basics', page: 18 },
+  { lvl: 2, text: '6.2  Sample Collection', page: 18 },
+  { lvl: 2, text: '6.3  The Farm Health Record Over Time', page: 19 },
+  { lvl: 1, text: 'Workshop: Practical Field Visit Exercise', page: 20 },
+  { lvl: 1, text: 'Recommended Journals and Resources', page: 21 },
+  { lvl: 1, text: 'References', page: 22 },
 ];
 
 // Assign anchor IDs
