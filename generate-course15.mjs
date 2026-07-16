@@ -274,7 +274,7 @@ function buildCoverSection() {
       alignment: AlignmentType.CENTER, spacing: { before: 0, after: 120 },
     }),
     new Paragraph({
-      children: [new TextRun({ text: 'June 2026', color: '595959', size: 22, font: 'Calibri' })],
+      children: [new TextRun({ text: 'July 2026', color: '595959', size: 22, font: 'Calibri' })],
       alignment: AlignmentType.CENTER, spacing: { before: 0, after: 480 },
     }),
     new Paragraph({

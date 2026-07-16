@@ -126,7 +126,7 @@ async function main() {
   }));
   children.push(para('CPC Short Courses', { bold: true, color: '595959', alignment: AlignmentType.CENTER, after: 80 }));
   children.push(para('Duration: 2-Hour Lecture', { color: '595959', size: 22, alignment: AlignmentType.CENTER, after: 80 }));
-  children.push(para('June 2026', { color: '595959', size: 22, alignment: AlignmentType.CENTER, after: 360 }));
+  children.push(para('July 2026', { color: '595959', size: 22, alignment: AlignmentType.CENTER, after: 360 }));
 
   // Introduction (humanized, farmer-flow)
   children.push(sectionHead('Introduction'));
