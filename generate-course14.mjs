@@ -656,6 +656,10 @@ function buildBodySection() {
 
     para('As the flock approaches market weight, spot-weigh by randomly catching birds from several different areas of the barn. Thirty to 50 birds spread across the house is a reasonable sample [1,6]. Avoid catching only near the door; birds there tend to be more active and often represent a different weight distribution than birds deeper in the barn.'),
 
+    para('Many barns now run automatic weigh platforms as well. These sit at bird level for the whole flock, and birds step onto them on their own through the day, so the system logs hundreds of weighings and reports a running average and CV without anyone catching a bird. That gives you a daily trend line instead of a snapshot two or three times a week. Calibrate the automatic equipment at least once per flock [6].'),
+
+    para('Do not retire the catch-and-weigh scale, though. Heavier birds visit the platform less often than lighter ones, and that bias grows as the flock approaches market weight, so the automatic average reads low exactly when you need it to be right [7]. Use the platform for the daily trend, and confirm it against a manual spot weigh before you call a market weight.'),
+
     para('Calculate average daily gain: divide the current average weight by the flock\'s age in days, or use the difference from the last weigh-in divided by the days between. Compare to the breed target [6].'),
 
     para('The coefficient of variation (CV) tells you how uniform the flock is. A CV above 10 to 12% at weeks 3 to 4 means the flock has a significant spread in body size. That gap almost always traces back to the first week: poor water or feed access during brooding, an early disease challenge, or an uneven temperature distribution that pushed some chicks off feed [6]. By week 4 you can see it in the weight data even when the cause is long gone.'),
@@ -791,6 +795,7 @@ function buildBodySection() {
     numberedRef('Bestman M, Ruis M, Heijmans J, van Middelkoop K. Poultry Signals: A Practical Guide for Bird-Focused Poultry Farming. Zutphen: Roodbont Publishers; 2012.'),
     numberedRef('National Farm Animal Care Council. Code of Practice for the Care and Handling of Hatching Eggs, Breeders, Chickens and Turkeys. Lacombe: National Farm Animal Care Council; 2016. Available from: nfacc.ca/poultry-code-of-practice'),
     numberedRef('Aviagen. Ross Broiler Management Handbook. Huntsville, AL: Aviagen; 2025. Available from: aviagen.com/assets/Tech_Center/Ross_Broiler/Aviagen-ROSS-Broiler-Handbook-EN.pdf'),
+    numberedRef('Chedad A, Aerts JM, Vranken E, Lippens M, Zoons J, Berckmans D. Do heavy broiler chickens visit automatic weighing systems less than lighter birds? Br Poult Sci. 2003;44(5):663-668. doi:10.1080/00071660310001643633'),
 
   ]; // end children
 
@@ -877,18 +882,18 @@ const tocEntries = [
   { lvl: 2, text: '4.2  Mortality Patterns: Normal vs. Concerning', page: 12 },
   { lvl: 2, text: '4.3  Water and Feed as Early Warning Signals', page: 12 },
   { lvl: 2, text: '4.4  Spot Weighing and Weight Uniformity', page: 13 },
-  { lvl: 1, text: 'Section 5: Working with the Farmer', page: 14 },
-  { lvl: 2, text: '5.1  Building the Relationship', page: 14 },
-  { lvl: 2, text: '5.2  Communicating Findings', page: 14 },
-  { lvl: 2, text: '5.3  The Visit Record', page: 14 },
-  { lvl: 2, text: '5.4  When to Call the Veterinarian', page: 15 },
-  { lvl: 1, text: 'Section 6: Practical Field Skills', page: 16 },
-  { lvl: 2, text: '6.1  On-Farm Necropsy Basics', page: 16 },
-  { lvl: 2, text: '6.2  Sample Collection', page: 16 },
-  { lvl: 2, text: '6.3  The Farm Health Record Over Time', page: 17 },
-  { lvl: 1, text: 'Workshop: Practical Field Visit Exercise', page: 18 },
-  { lvl: 1, text: 'Recommended Journals and Resources', page: 19 },
-  { lvl: 1, text: 'References', page: 20 },
+  { lvl: 1, text: 'Section 5: Working with the Farmer', page: 15 },
+  { lvl: 2, text: '5.1  Building the Relationship', page: 15 },
+  { lvl: 2, text: '5.2  Communicating Findings', page: 15 },
+  { lvl: 2, text: '5.3  The Visit Record', page: 15 },
+  { lvl: 2, text: '5.4  When to Call the Veterinarian', page: 16 },
+  { lvl: 1, text: 'Section 6: Practical Field Skills', page: 17 },
+  { lvl: 2, text: '6.1  On-Farm Necropsy Basics', page: 17 },
+  { lvl: 2, text: '6.2  Sample Collection', page: 17 },
+  { lvl: 2, text: '6.3  The Farm Health Record Over Time', page: 18 },
+  { lvl: 1, text: 'Workshop: Practical Field Visit Exercise', page: 19 },
+  { lvl: 1, text: 'Recommended Journals and Resources', page: 20 },
+  { lvl: 1, text: 'References', page: 21 },
 ];
 
 // Assign anchor IDs

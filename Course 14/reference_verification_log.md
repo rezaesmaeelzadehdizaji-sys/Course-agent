@@ -89,6 +89,20 @@ First-appearance order is now confirmed sequential: 1, 2, 3, 4, 5, 6. The refere
 
 ---
 
+### [7] Chedad A, et al. Do heavy broiler chickens visit automatic weighing systems less than lighter birds?
+- **Full citation:** Chedad A, Aerts JM, Vranken E, Lippens M, Zoons J, Berckmans D. Do heavy broiler chickens visit automatic weighing systems less than lighter birds? Br Poult Sci. 2003;44(5):663-668. doi:10.1080/00071660310001643633
+- **Verified:** YES — metadata confirmed directly against the CrossRef API (`api.crossref.org/works/10.1080/00071660310001643633`) on 2026-07-15
+- **Authors confirmed:** Chedad A. | Aerts J.-M. | Vranken E. | Lippens M. | Zoons J. | Berckmans D. — all six, in this exact order. NOTE: an initial from-memory guess had only four authors (omitting Lippens and Zoons). CrossRef verification caught this before publication. This is exactly the "missing co-author" fabrication pattern listed in CLAUDE.md.
+- **Title confirmed:** exact, verbatim, including the question mark
+- **Journal confirmed:** British Poultry Science (abbrev. Br Poult Sci)
+- **Year / volume / issue / pages confirmed:** 2003; 44(5); 663-668
+- **DOI confirmed:** 10.1080/00071660310001643633
+- **Content supported:** heavier broilers visit automatic weighing platforms less frequently than lighter birds, biasing the automatic flock-weight average downward, with the effect most pronounced toward the end of the growing period. Cited in Section 4.4 to justify confirming automatic platform readings against a manual spot weigh near market weight.
+- **Notes:** Publisher landing page (tandfonline.com) returns HTTP 403 to automated fetches; CrossRef is the authoritative metadata source used instead. Added 2026-07-15. First appears in Section 4.4, after refs [1]-[6], so it appends as [7] with no renumbering required.
+- **Status:** VERIFIED
+
+---
+
 ## In-Text Citation Audit (re-derived 2026-06-10 from the regenerated docx)
 
 | Citation | Section(s) | Claim supported |
