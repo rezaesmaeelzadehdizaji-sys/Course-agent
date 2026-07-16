@@ -510,6 +510,7 @@ One sentence, woven into the paragraph where the topic appears. Use this format:
 | Course 14, Section 3.1 | Systematic T-FLAWS barn assessment framework | Course 3 (T-FLAWS Assessment Management Tool) |
 | Course 14, Section 5.4 | Full disease profiles and distinguishing clinical signs | Course 7 (Common Poultry Diseases) |
 | Course 14, Section 6.1 | Post-mortem examination technique and normal organ appearance | Course 10 (Necropsy, Normal Birds) |
+| Course 14, Section 6.1 | Post-mortem lesions that distinguish one disease from another | Course 11 (Necropsy, Common Diseases) |
 | Course 14, Section 6.2 | Full sample selection, packaging, and lab submission protocol | Course 9 (The Value of Poultry Diagnostics) |
 
 Update this table as new cross-references are added in future courses.
