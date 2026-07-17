@@ -235,7 +235,7 @@ const children = [
   agendaSub('c', 'PPE and biosecurity entry protocol'),
 
   agendaItem(3, 'The Barn Walk'),
-  agendaSub('a', 'What to notice before you go inside: using all five senses'),
+  agendaSub('a', 'What to notice before you go inside: using all your senses'),
   agendaSub('b', 'Systematic walk protocol: perimeter, diagonals, feeder and drinker lines'),
   agendaSub('c', 'Bird conformation assessment: the CPC Learning Centre eight-point check'),
 
