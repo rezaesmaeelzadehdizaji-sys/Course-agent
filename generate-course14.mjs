@@ -507,7 +507,7 @@ function buildBodySection() {
 
     para('Vehicle positioning matters: park so that your vehicle does not cross in front of barn air inlets or exhaust fans. Disease can travel through the air and straight into the barn through these openings [2].'),
 
-    ...image(bioZone, 'Figure 2.1: The CFIA risk-based zone system for a poultry premises. The zones nest from the Controlled Access Zone at the outer farm, through the transitional Service Area, to the Restricted Access Zone where the birds live. The icons trace the order a visit follows: sign in and park clear of the air inlets, change into clean coveralls and footwear and wash hands at the line of separation, then work in the Restricted Access Zone under the highest biosecurity demands. Source: CPC Short Courses.', 5.9, 'jpg'),
+    ...image(bioZone, 'Figure 2.1: The CFIA risk-based zone system for a poultry premises. The zones nest from the Controlled Access Zone at the outer farm, through the transitional Service Area, to the Restricted Access Zone where the birds live. The icons trace the order a visit follows: sign in and park clear of the air inlets, then change into clean coveralls and footwear and wash hands at the line of separation. From there you work in the Restricted Access Zone, under the highest biosecurity demands. Source: CPC Short Courses.', 5.9, 'jpg'),
 
     h2('2.3  PPE and the Biosecurity Entry'),
 
