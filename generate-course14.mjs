@@ -421,6 +421,7 @@ function buildBodySection() {
   const photo1_1 = figBuf('photo1_1_commercial_broiler_flock.jpg');
   const photo2_1 = figBuf('photo2_1_biosecurity_entry.png');
   const walkBarn = figBuf('walk barn.jpg');
+  const bioZone = figBuf('biosecurity zone.jpg');
   const elecWeigh = figBuf('electric weighting.jpg');
   const visitRecord = figBuf('photo3_1_barn_observation.png');
   const bootsImg = productBuf('elastic_top_boots');
@@ -518,6 +519,8 @@ function buildBodySection() {
     para('Sign the visitor logbook at the farm entrance for every visit. The CFIA guide requires that service providers always leave documentation on the premises about their service activity. A signed visitor log satisfies this requirement [2].'),
 
     para('Vehicle positioning matters: park so that your vehicle does not cross in front of barn air inlets or exhaust fans. Disease can travel through the air and straight into the barn through these openings [2].'),
+
+    ...image(bioZone, 'Figure 2.1: The CFIA risk-based zone system for a poultry premises. The zones nest from the Controlled Access Zone at the outer farm, through the transitional Service Area, to the Restricted Access Zone where the birds live. The icons trace the order a visit follows: sign in and park clear of the air inlets, change into clean coveralls and footwear and wash hands at the line of separation, then work in the Restricted Access Zone under the highest biosecurity demands. Source: CPC Short Courses.', 5.9, 'jpg'),
 
     h2('2.3  PPE and the Biosecurity Entry'),
 
