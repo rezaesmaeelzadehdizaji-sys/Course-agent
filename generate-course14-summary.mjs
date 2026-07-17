@@ -281,7 +281,7 @@ const children = [
   // ── IMPORTANT NOTES ──────────────────────────────────────
   sectionHead('Important Notes'),
 
-  para('This course requires access to a working commercial poultry barn for the workshop component. Biosecurity protocols apply from the moment participants arrive in the parking lot. PPE is provided by CPC for all workshop participants.'),
+  para('This course requires access to a working commercial poultry barn for the workshop component. Biosecurity protocols apply from the moment participants arrive in the parking lot. Contact CPC 2 to 3 days before the workshop for biosecurity advice specific to the host farm, because some requirements have to be met before you arrive and you need time to act on them. PPE is provided by CPC for all workshop participants.'),
 
   para('Participants are expected to come to the lecture with a basic understanding of commercial poultry production. The course builds on concepts from Course 3 (T-FLAWS Assessment Management Tool) and Course 7 (Common Poultry Diseases). Reviewing those courses before attending is recommended.'),
 
