@@ -119,10 +119,12 @@ function bullet(text, lvl = 0) {
   return new Paragraph({ children, numbering: { reference: 'bullet-list', level: lvl }, spacing: { after: 80, line: 276, lineRule: 'auto' } });
 }
 
-function numbered(text) {
+// `reference` selects the numbering instance. Lists that must restart at 1 need
+// their own reference, otherwise Word continues the previous list's sequence.
+function numbered(text, reference = 'numbered-list') {
   return new Paragraph({
     children: [new TextRun({ text, color: BODY_GRAY, size: 24, font: 'Calibri' })],
-    numbering: { reference: 'numbered-list', level: 0 },
+    numbering: { reference, level: 0 },
     spacing: { after: 80, line: 276, lineRule: 'auto' },
   });
 }
@@ -759,10 +761,10 @@ function buildBodySection() {
 
     para('The two-hour workshop that follows this lecture covers the hands-on skills that cannot be taught from a slide deck. You will:'),
 
-    numbered('Walk a working commercial barn using the systematic protocol described in Section 3. Your task is to produce a complete barn walk assessment: distribution pattern, environmental readings, and individual bird examination of at least 5 birds.'),
-    numbered('Read a set of real production records (mortality trend, water consumption, feed consumption, and weight data) and identify which flocks require follow-up action and what that action should be.'),
-    numbered('Practice the visit record. Complete a standardized visit form based on what you found in the barn walk exercise. Debrief with the group on what you each recorded and what you might have missed.'),
-    numbered('Communication role-play. In pairs, practice delivering a difficult finding to a "farmer" (played by a classmate). The scenario: you found elevated early mortality and the farmer\'s records are behind. Your job is to communicate the finding, get the records up to date, and agree on a plan without damaging the relationship.'),
+    numbered('Walk a working commercial barn using the systematic protocol described in Section 3. Your task is to produce a complete barn walk assessment: distribution pattern, environmental readings, and individual bird examination of at least 5 birds.', 'workshop-list'),
+    numbered('Read a set of real production records (mortality trend, water consumption, feed consumption, and weight data) and identify which flocks require follow-up action and what that action should be.', 'workshop-list'),
+    numbered('Practice the visit record. Complete a standardized visit form based on what you found in the barn walk exercise. Debrief with the group on what you each recorded and what you might have missed.', 'workshop-list'),
+    numbered('Communication role-play. In pairs, practice delivering a difficult finding to a "farmer" (played by a classmate). The scenario: you found elevated early mortality and the farmer\'s records are behind. Your job is to communicate the finding, get the records up to date, and agree on a plan without damaging the relationship.', 'workshop-list'),
 
     new Paragraph({ spacing: { before: 0, after: 160 } }),
 
@@ -822,6 +824,12 @@ const doc = new Document({
       },
       {
         reference: 'numbered-list',
+        levels: [{ level: 0, format: LevelFormat.DECIMAL, text: '%1.', alignment: AlignmentType.LEFT, style: { paragraph: { indent: { left: convertInchesToTwip(0.5), hanging: convertInchesToTwip(0.3) } } } }],
+      },
+      {
+        // Separate instance so the Workshop list restarts at 1 instead of
+        // continuing the Introduction's learning objectives.
+        reference: 'workshop-list',
         levels: [{ level: 0, format: LevelFormat.DECIMAL, text: '%1.', alignment: AlignmentType.LEFT, style: { paragraph: { indent: { left: convertInchesToTwip(0.5), hanging: convertInchesToTwip(0.3) } } } }],
       },
       {
