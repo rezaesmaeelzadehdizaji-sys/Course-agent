@@ -743,7 +743,7 @@ function buildBodySection() {
 
     para('Label every sample bag clearly: farm ID, flock age, placement date, clinical signs you observed, vaccines given and dates, any treatments given and when. A completed submission form reduces the number of phone calls the lab has to make to you and gets your results back faster [3].'),
 
-    para('Transport is where a good sample gets ruined, and in this country the risk runs in both directions. Keep samples at about 4 degrees Celsius (refrigerator temperature) the whole way to the lab. In summer that means ice packs in an insulated cooler, not a sample bag riding on the truck seat or sitting in the sun on a loading dock. In a Canadian winter the danger is the opposite one: a box left in an unheated truck bed or dropped at a depot overnight will freeze solid, and that costs you the same tests you were trying to run. Chilled, never frozen, and never left in ambient temperature longer than it has to be.'),
+    para('Transport is where a good sample gets ruined, and the risk runs in both directions through the year. Keep samples at about 4 degrees Celsius (refrigerator temperature) the whole way to the lab. In summer that means ice packs in an insulated cooler, not a sample bag riding on the truck seat or sitting in the sun on a loading dock. In winter the danger flips: a box left in an unheated truck bed or dropped at a depot overnight will freeze solid, and that costs you the same tests you were trying to run. Chilled, never frozen, and never left in ambient temperature longer than it has to be.'),
 
     h2('6.3  The Farm Health Record Over Time'),
 
