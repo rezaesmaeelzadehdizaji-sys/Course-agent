@@ -538,13 +538,11 @@ function buildBodySection() {
 
     h2('3.1  What to Notice Before You Go Inside'),
 
-    para('The barn walk starts before you touch the door handle. Stop outside for a moment and use your senses. Healthy birds in a well-managed barn produce a low, even, contented murmur. If what you hear is silence, alarm calls, or labored breathing, write it down before you open the door.'),
+    para('The barn walk starts before you touch the door handle. The CPC Learning Centre Spotting Disease Early guide puts it plainly: use all your senses [3]. Stop outside for a moment and listen, without disturbing the flock [4]. Healthy birds in a well-managed barn produce a low, even, contented murmur. If what you hear is silence, alarm calls, or labored breathing, write it down before you open the door.'),
 
     para('Look through the observation window before entering. Healthy broilers at mid-grow-out distribute fairly evenly across the floor when active and cluster loosely near feeders and drinkers during eating and drinking times. Tight piling in corners suggests chilling or poor ventilation. Birds crowding one end of the barn may be chasing a warm zone or avoiding a draft. A barn where all the birds are sitting flat and quiet during what should be an active period is worth investigating further [3,4].'),
 
     para('Smell tells you things immediately. If you can smell ammonia at the barn door, the air inside is already carrying more than the birds should be living in. A sweet-rotten smell means there is carcass decomposing in the litter. A sour, acidic smell suggests wet litter and potential yeast or bacterial overgrowth [3]. Note what you smell before you step inside, because once you are in for a few minutes your nose adjusts.'),
-
-    para('Poultry Signals: A Practical Guide for Bird-Focused Poultry Farming by Bestman, Ruis, Heijmans, and van Middelkoop describes the approach this way: always use all your senses, and before you enter the poultry house, stop and listen without disturbing the flock [4]. That is the foundation of every good barn walk.'),
 
     para('For a full systematic barn assessment framework covering Temperature, Feed, Light, Air, Water, and Sanitation and Space, see Course 3 (T-FLAWS Assessment Management Tool) in this series.'),
 
@@ -554,7 +552,7 @@ function buildBodySection() {
 
     para('Walk the full perimeter of the barn first, then cross diagonal paths. This ensures you cover the edges, the center, and every section of feeder and drinker line. Note bird distribution: are there gaps where birds have moved away from a section? Are there piles at specific spots?'),
 
-    ...image(walkBarn, 'Figure 3.1: The systematic barn-walk pattern. Walk the perimeter first (green path), then cross the barn on a symmetric diagonal (orange X-pattern) so you cover the edges, the center, and every feeder and drinker line. The callouts flag what to watch for: distribution gaps where birds have pulled off a section, corner piling that points to a wall draft or light leak, chicks slipping under the brood curtain, and central flock activity. Walking the barn this way gives you a picture of bird distribution, behavior, and environmental conditions before you examine any individual bird. Source: CPC Short Courses.', 5.9, 'jpg'),
+    ...image(walkBarn, 'Figure 3.1: The systematic barn-walk pattern. The green path is the perimeter; the orange X is the diagonal crossing. The callouts mark what to pick up along the way: distribution gaps where birds have pulled off a section, corner piling that points to a wall draft or light leak, chicks slipping under the brood curtain, and central flock activity. Walking it this way gives you a picture of distribution, behavior, and environmental conditions before you examine any individual bird. Source: CPC Short Courses.', 5.9, 'jpg'),
 
     para('Check feeders and drinkers at multiple points, not just the first few near the entry door. A failed auger, a blocked joint, or a drinker line out of adjustment can leave a whole section without access while the controller still reads normal.'),
 
@@ -654,7 +652,7 @@ function buildBodySection() {
 
     para('Record water and feed consumption at the same time every day. The guide recommends this specifically so that comparisons are valid across days [3]. A reading taken at 6 a.m. one day and 2 p.m. the next gives you a misleading comparison.'),
 
-    para('The water-to-feed ratio at thermoneutral temperatures runs approximately 1.6 to 1.8 parts water per part feed for growing broilers [6]. A ratio that drops below 1.5 suggests water access is restricted. Check pressure, drinker height, and any blocked lines. A ratio climbing above 2.0 to 2.5 in cool weather means the opposite: either feed intake has fallen away while water held steady, or something is pushing the birds to drink more, such as kidney damage from a nephropathogenic infectious bronchitis strain or high dietary salt. A drinker leak inflating the meter reading looks the same on paper. A genuine rise in water intake usually shows up as watery droppings and wet litter within a day or two.'),
+    para('The water-to-feed ratio at thermoneutral temperatures runs approximately 1.6 to 1.8 parts water per part feed for growing broilers [6]. A ratio that drops below 1.5 suggests water access is restricted. Check pressure, drinker height, and any blocked lines. A ratio climbing above 2.0 to 2.5 in cool weather means the opposite. Either feed intake has fallen away while water held steady, or something is pushing the birds to drink more. Kidney damage from a nephropathogenic infectious bronchitis strain will do it, and so will high dietary salt. A drinker leak inflating the meter reading looks the same on paper. A genuine rise in water intake usually shows up as watery droppings and wet litter within a day or two.'),
 
     h2('4.4  Spot Weighing and Weight Uniformity'),
 
@@ -692,7 +690,7 @@ function buildBodySection() {
 
     para('Write the visit record the same day. Details blur fast, and the record is only useful if it is accurate.'),
 
-    para('A complete visit record covers the basics: date, time, farm and barn ID, flock age, and placement date. Add the numbers: mortality for the day and the cumulative total, plus whether the trend is stable, rising, or falling. Record water and feed consumption against the three-day average, and any body weight data with the CV and the breed target beside it. Then round it out with what you saw (temperature, ammonia at bird level, litter condition, how the birds were distributed and how active they were), any treatments given and the authorization you acted under, what you told the farmer to do, and what you committed to follow up on before your next visit.'),
+    para('A complete visit record covers the basics: date, time, farm and barn ID, flock age, and placement date. Add the numbers: mortality for the day and the cumulative total, plus whether the trend is stable, rising, or falling. Record water and feed consumption against the three-day average, and any body weight data with the CV and the breed target beside it. Then round it out with what you saw: temperature, ammonia at bird level, litter condition, and how the birds were distributed and behaving. Note any treatments given and the authorization you acted under. Finish with what you told the farmer to do and what you committed to follow up on before your next visit.'),
 
     ...image(visitRecord, 'Photo 5.1: A standardized visit form filled in during the barn walk. Working from a printed form prompts you through the same checks in the same order on every farm, so nothing gets skipped. Source: CPC Short Courses.', 5.5, 'png'),
 
