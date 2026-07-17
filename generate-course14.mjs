@@ -503,19 +503,6 @@ function buildBodySection() {
 
     para('The CFIA Poultry Service Industry Biosecurity Guide establishes a risk-based zone system for all poultry premises [2]. Understanding it is not optional. It is the minimum standard for any service personnel entering a commercial poultry operation in Canada.'),
 
-    new Paragraph({ spacing: { before: 80, after: 80 } }),
-
-    twoColTable(
-      ['Zone', 'Description and Your Responsibilities'],
-      [
-        ['Controlled Access Zone (CAZ)', 'Outer farm area. Sign the visitor log. Park at least 15 meters from barn air inlets and exhaust fans. Do not bring vehicles with poultry contact history closer than required.'],
-        ['Service Area', 'Transitional space: egg rooms, feed access points, utility entries. Change into clean coveralls and footwear before entering. Disinfect hands.'],
-        ['Restricted Access Zone (RAZ)', 'Live bird housing. Highest biosecurity demands. Wear fresh or disinfected coveralls and boots. Use hairnet or hooded coveralls. This is where you spend most of your visit.'],
-      ]
-    ),
-
-    new Paragraph({ spacing: { before: 80, after: 80 } }),
-
     para('Sign the visitor logbook at the farm entrance for every visit. The CFIA guide requires that service providers always leave documentation on the premises about their service activity. A signed visitor log satisfies this requirement [2].'),
 
     para('Vehicle positioning matters: park so that your vehicle does not cross in front of barn air inlets or exhaust fans. Disease can travel through the air and straight into the barn through these openings [2].'),
