@@ -737,13 +737,13 @@ function buildBodySection() {
 
     h2('6.2  Sample Collection'),
 
-    para('When the veterinarian asks you to collect and submit samples, how you handle them determines whether the lab gets usable results. Poorly collected or improperly stored samples waste everyone\'s time and delay the diagnosis. For the full sample selection, packaging, and lab submission protocol, see Course 9 (The Value of Poultry Diagnostics) in this series.'),
+    para('When the veterinarian asks you to collect and submit samples, how you handle them determines whether the lab gets usable results. Poorly collected, badly stored, or carelessly transported samples waste everyone\'s time and delay the diagnosis. For the full sample selection, packaging, and lab submission protocol, see Course 9 (The Value of Poultry Diagnostics) in this series.'),
 
     para('The best submission is 10 to 12 live moribund birds showing the current clinical signs, packaged to arrive alive at the lab [3]. Second best is fresh mortality: birds that have died within the past 2 to 4 hours, chilled but not frozen. Frozen birds lose tissue architecture and many diagnostic tests cannot be run on them.'),
 
     para('Label every sample bag clearly: farm ID, flock age, placement date, clinical signs you observed, vaccines given and dates, any treatments given and when. A completed submission form reduces the number of phone calls the lab has to make to you and gets your results back faster [3].'),
 
-    para('During transport, keep samples chilled at about 4 degrees Celsius (refrigerator temperature), never frozen. Avoid extended exposure to ambient temperatures, especially in summer.'),
+    para('Transport is where a good sample gets ruined, and in this country the risk runs in both directions. Keep samples at about 4 degrees Celsius (refrigerator temperature) the whole way to the lab. In summer that means ice packs in an insulated cooler, not a sample bag riding on the truck seat or sitting in the sun on a loading dock. In a Canadian winter the danger is the opposite one: a box left in an unheated truck bed or dropped at a depot overnight will freeze solid, and that costs you the same tests you were trying to run. Chilled, never frozen, and never left in ambient temperature longer than it has to be.'),
 
     h2('6.3  The Farm Health Record Over Time'),
 
@@ -889,9 +889,9 @@ const tocEntries = [
   { lvl: 2, text: '6.1  On-Farm Necropsy Basics', page: 18 },
   { lvl: 2, text: '6.2  Sample Collection', page: 19 },
   { lvl: 2, text: '6.3  The Farm Health Record Over Time', page: 19 },
-  { lvl: 1, text: 'Workshop: Practical Field Visit Exercise', page: 20 },
-  { lvl: 1, text: 'Recommended Journals and Resources', page: 21 },
-  { lvl: 1, text: 'References', page: 22 },
+  { lvl: 1, text: 'Workshop: Practical Field Visit Exercise', page: 21 },
+  { lvl: 1, text: 'Recommended Journals and Resources', page: 22 },
+  { lvl: 1, text: 'References', page: 23 },
 ];
 
 // Assign anchor IDs
