@@ -656,7 +656,9 @@ function buildBodySection() {
 
     para('Calculate average daily gain: divide the current average weight by the flock\'s age in days, or use the difference from the last weigh-in divided by the days between. Compare to the breed target [6]. An automatic platform reports daily gain for you, but the same bias carries through the math: if the platform average is reading low, the gain figure is low with it.'),
 
-    para('The coefficient of variation (CV) tells you how uniform the flock is. A CV above 10 to 12% at weeks 3 to 4 means the flock has a significant spread in body size. That gap almost always traces back to the first week: poor water or feed access during brooding, an early disease challenge, or an uneven temperature distribution that pushed some chicks off feed [6]. By week 4 you can see it in the weight data even when the cause is long gone.'),
+    para('The coefficient of variation (CV) is a simple check on how even the flock\'s weights are. A low number means the birds are growing at a similar pace. A high number means you have a wide mix of small and big birds in the same house. Uniformity is the share of birds within 10% of the average weight, and CV tracks it directly. A CV around 8% at day 21 means roughly 79% of the flock sits in that uniform band, which tells you management and conditions are on track. Once CV reaches 10 to 12%, only about 60 to 68% of the birds are uniform, and that is a red flag [6].'),
+
+    para('A wide spread at three to four weeks almost always traces back to the first week: poor water or feed access during brooding, an early disease challenge, or uneven temperature that pushed some chicks off feed [6]. By then it shows in the weight data even when the cause is long gone. Weigh a sample at set ages, day-old, 7 days, and 21 days, then weekly from 35 days to the end, so you are tracking uniformity across the flock instead of finding out at settlement.'),
 
     // ── SECTION 5 ─────────────────────────────────────────────
     pageBreak(),
@@ -876,18 +878,18 @@ const tocEntries = [
   { lvl: 2, text: '4.2  Mortality Patterns: Normal vs. Concerning', page: 12 },
   { lvl: 2, text: '4.3  Water and Feed as Early Warning Signals', page: 12 },
   { lvl: 2, text: '4.4  Spot Weighing and Weight Uniformity', page: 13 },
-  { lvl: 1, text: 'Section 5: Working with the Farmer', page: 15 },
-  { lvl: 2, text: '5.1  Building the Relationship', page: 15 },
-  { lvl: 2, text: '5.2  Communicating Findings', page: 15 },
-  { lvl: 2, text: '5.3  The Visit Record', page: 15 },
-  { lvl: 2, text: '5.4  When to Call the Veterinarian', page: 16 },
-  { lvl: 1, text: 'Section 6: Practical Field Skills', page: 18 },
-  { lvl: 2, text: '6.1  On-Farm Necropsy Basics', page: 18 },
-  { lvl: 2, text: '6.2  Sample Collection', page: 19 },
-  { lvl: 2, text: '6.3  The Farm Health Record Over Time', page: 19 },
-  { lvl: 1, text: 'Workshop: Practical Field Visit Exercise', page: 21 },
-  { lvl: 1, text: 'Recommended Journals and Resources', page: 22 },
-  { lvl: 1, text: 'References', page: 23 },
+  { lvl: 1, text: 'Section 5: Working with the Farmer', page: 16 },
+  { lvl: 2, text: '5.1  Building the Relationship', page: 16 },
+  { lvl: 2, text: '5.2  Communicating Findings', page: 16 },
+  { lvl: 2, text: '5.3  The Visit Record', page: 16 },
+  { lvl: 2, text: '5.4  When to Call the Veterinarian', page: 17 },
+  { lvl: 1, text: 'Section 6: Practical Field Skills', page: 19 },
+  { lvl: 2, text: '6.1  On-Farm Necropsy Basics', page: 19 },
+  { lvl: 2, text: '6.2  Sample Collection', page: 20 },
+  { lvl: 2, text: '6.3  The Farm Health Record Over Time', page: 20 },
+  { lvl: 1, text: 'Workshop: Practical Field Visit Exercise', page: 22 },
+  { lvl: 1, text: 'Recommended Journals and Resources', page: 23 },
+  { lvl: 1, text: 'References', page: 24 },
 ];
 
 // Assign anchor IDs
