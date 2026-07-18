@@ -650,7 +650,7 @@ function buildBodySection() {
 
     para('Many barns now run automatic weigh platforms as well. These sit at bird level for the whole flock, and birds step onto them on their own through the day, so the system logs hundreds of weighings and reports a running average and CV without anyone catching a bird. That gives you a daily trend line instead of a snapshot two or three times a week. Calibrate the automatic equipment at least once per flock [6].'),
 
-    ...image(elecWeigh, 'Photo 4.1: An automatic weigh platform suspended at bird level in a broiler barn. Birds step onto the pan on their own through the day and the load cell logs each weighing, so the system builds an average weight and CV without anyone catching a bird. Source: anyload.com.', 2.8, 'jpg'),
+    ...image(elecWeigh, 'Photo 4.1: A suspended automatic weigh platform, its load-cell pan resting at bird level. Shown here early in the flock with chicks on it. Source: anyload.com.', 2.8, 'jpg'),
 
     para('Do not retire the catch-and-weigh scale, though. Heavier birds visit the platform less often than lighter ones, and that bias grows as the flock approaches market weight, so the automatic average reads low exactly when you need it to be right [7]. Use the platform for the daily trend, and confirm it against a manual spot weigh before you call a market weight.'),
 
