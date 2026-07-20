@@ -660,6 +660,16 @@ function buildBodySection() {
 
     para('A wide spread at three to four weeks almost always traces back to the first week: poor water or feed access during brooding, an early disease challenge, or uneven temperature that pushed some chicks off feed [6]. By then it shows in the weight data even when the cause is long gone. Weigh a sample at set ages, day-old, 7 days, and 21 days, then weekly from 35 days to the end, so you are tracking uniformity across the flock instead of finding out at settlement.'),
 
+    h2('4.5  When the Numbers Are Bad but No Disease Shows'),
+
+    para('Sometimes the data tells a clear story of a flock going backwards. Feed intake is off, daily gain is behind target, feed conversion is creeping up, and a few extra birds die every day. Yet the barn walk, and even a necropsy, turns up no clear disease. This is the moment a lot of people jump to the wrong conclusion. The grower blames the last vaccine, someone blames the hatchery, and the call to the veterinarian starts with "the birds are sick." Often they are not sick in the infectious sense at all.'),
+
+    para('One of the most common non-infectious reasons a flock underperforms is oxidative stress. It builds up when something in the barn or the feed pushes the birds harder than their bodies can keep up with: heat, crowding, rancid fat, or moldy feed. It damages the gut lining and weakens the immune system, so the bird eats less, grows slower, converts feed worse, and is more likely to pick up a secondary infection [8]. When that secondary infection or a rough vaccine reaction finally shows up, it gets the blame, but the stress came first.'),
+
+    para('There is a simple reason poor performance is the first thing you see. A bird pays its energy bills in a fixed order. Staying alive, keeping warm, feathers, and activity get paid first, and weight gain and eggs get paid last with whatever is left over. Under stress, the body also builds emergency immune proteins that jump to the front of that line, so growth and eggs are exactly what gets cut first, often before a single bird looks sick. For the full mechanism, the energy priority order, and how the bird\'s antioxidant defenses work, see Course 6 (Poultry Anatomy and Physiology) in this series.'),
+
+    para('So when the performance data is poor and nothing infectious is obvious, work the non-infectious causes first. What have the barn temperatures and air speed actually been, not what the controller is set to? How many birds per square meter? When was the feed delivered, how is it stored, and does it smell right? A flock does not have to be diseased to perform badly, and reaching first for an antibiotic when the real problem is heat or feed quality fixes nothing and costs money.'),
+
     // ── SECTION 5 ─────────────────────────────────────────────
     pageBreak(),
     h1('Section 5: Working with the Farmer'),
@@ -786,6 +796,7 @@ function buildBodySection() {
     numberedRef('National Farm Animal Care Council. Code of Practice for the Care and Handling of Hatching Eggs, Breeders, Chickens and Turkeys. Lacombe: National Farm Animal Care Council; 2016. Available from: nfacc.ca/poultry-code-of-practice'),
     numberedRef('Aviagen. Ross Broiler Management Handbook. Huntsville, AL: Aviagen; 2025. Available from: aviagen.com/assets/Tech_Center/Ross_Broiler/Aviagen-ROSS-Broiler-Handbook-EN.pdf'),
     numberedRef('Chedad A, Aerts JM, Vranken E, Lippens M, Zoons J, Berckmans D. Do heavy broiler chickens visit automatic weighing systems less than lighter birds? Br Poult Sci. 2003;44(5):663-668. doi:10.1080/00071660310001643633'),
+    numberedRef('Oke OE, Akosile OA, Oni AI, Opowoye IO, Ishola CA, Adebiyi JO, Odeyemi AJ, Adjei-Mensah B, Uyanga VA, Abioja MO. Oxidative stress in poultry production. Poult Sci. 2024;103(9):104003. doi:10.1016/j.psj.2024.104003.'),
 
   ]; // end children
 
@@ -878,6 +889,7 @@ const tocEntries = [
   { lvl: 2, text: '4.2  Mortality Patterns: Normal vs. Concerning', page: 12 },
   { lvl: 2, text: '4.3  Water and Feed as Early Warning Signals', page: 12 },
   { lvl: 2, text: '4.4  Spot Weighing and Weight Uniformity', page: 13 },
+  { lvl: 2, text: '4.5  When the Numbers Are Bad but No Disease Shows', page: 15 },
   { lvl: 1, text: 'Section 5: Working with the Farmer', page: 16 },
   { lvl: 2, text: '5.1  Building the Relationship', page: 16 },
   { lvl: 2, text: '5.2  Communicating Findings', page: 16 },

@@ -386,11 +386,11 @@ function buildBodySection() {
 
     h2('2.3  AGID and Plate Agglutination'),
 
-    para('Agar gel immunodiffusion, or AGID, works on a completely different principle than ELISA. A small plate of gel is cut with a pattern of seven wells: one in the center and six arranged around it. The center well is filled with antigen, and serum samples go in the wells around it. Both the antigen and any antibodies in the serum spread out through the gel toward each other.'),
+    para('Agar gel immunodiffusion, or AGID, works on a completely different principle than ELISA. Where ELISA reads antibody as an enzyme-linked color change, AGID is a gel-based precipitation test you read by eye. A small plate of gel is cut with a pattern of seven wells: one in the center and six arranged around it. The center well is filled with antigen, and serum samples go in the wells around it, including at least one known positive and one known negative control. Both the antigen and any antibodies in the serum spread out through the gel toward each other.'),
 
     para('If the serum contains antibodies that match the antigen, a visible line forms in the gel where the two meet. When that line connects smoothly with the line from a known positive control, it is called a line of identity, and that is a positive result. If the lines stay separate, or bend away from each other instead of joining, the result is negative. A clear positive line usually shows up within 24 hours, though weak positives can take up to 48 hours to appear [4].'),
 
-    ...image(figBuf('fig15_3.png'), 'Figure 2.1: In a positive AGID result, the test-well precipitin line joins (fuses with) the positive control line in the gel. In a negative result, the lines stay separate. Source: CPC Short Courses.'),
+    ...image(figBuf('fig15_3.png'), 'Figure 2.1: How an AGID result forms. Antigen and antibody diffuse through the gel and form a visible precipitin line where they meet. On the plate, a test line that fuses smoothly with the positive control line is a line of identity (positive); where no line forms, the result is negative. Source: CPC Short Courses.'),
 
     para('Plate agglutination is a third method. A drop of antigen is mixed directly with a drop of blood or serum on a plate, and if antibodies are present, the mixture clumps visibly within minutes [1].'),
 

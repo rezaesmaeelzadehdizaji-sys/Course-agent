@@ -206,82 +206,131 @@ function fig15_2() {
 }
 
 // ============================================================
-// FIGURE 15.3 — Reading an AGID Test Pattern
+// FIGURE 15.3 — How an AGID Result Forms (mechanism + line of identity)
 // ============================================================
 function fig15_3() {
-  const W = 800, H = 480;
+  const W = 820, H = 580;
+  const rad = d => (Math.PI / 180) * d;
 
-  function agidPlate(cx, cy, label, labelColor, wells) {
-    // wells: array of 6 {angle, fill, lineToCenter: bool, lineCurve: 'in'|'out'|'straight'}
-    const r = 78; // radius for peripheral wells
-    const wellR = 16;
-    let svg = '';
-    // Outer plate circle
-    svg += `<circle cx="${cx}" cy="${cy}" r="115" fill="${C.lightGray}" stroke="#999" stroke-width="1.5"/>`;
-    // Center well (antigen)
-    svg += `<circle cx="${cx}" cy="${cy}" r="${wellR}" fill="${C.amber}" stroke="${C.gray}" stroke-width="1.5"/>`;
-    svg += `<text x="${cx}" y="${cy + 4}" text-anchor="middle" fill="${C.gray}" font-family="Arial, sans-serif" font-size="9" font-weight="bold">Ag</text>`;
+  // ---- small well helper for the mechanism strip ----
+  const well = (x, y, fill, label, r = 15) =>
+    `<circle cx="${x}" cy="${y}" r="${r}" fill="${fill}" stroke="${C.gray}" stroke-width="1.5"/>` +
+    `<text x="${x}" y="${y + 4}" text-anchor="middle" fill="${C.gray}" font-family="Arial, sans-serif" font-size="10" font-weight="bold">${label}</text>`;
 
-    wells.forEach((w, i) => {
-      const ang = (Math.PI / 180) * w.angle;
-      const wx = cx + r * Math.cos(ang);
-      const wy = cy + r * Math.sin(ang);
-      // precipitin line between center and well
-      if (w.line === 'straight') {
-        const mx = cx + (r - wellR - 6) * Math.cos(ang);
-        const my = cy + (r - wellR - 6) * Math.sin(ang);
-        const px = cx + (wellR + 6) * Math.cos(ang);
-        const py = cy + (wellR + 6) * Math.sin(ang);
-        svg += `<line x1="${px}" y1="${py}" x2="${mx}" y2="${my}" stroke="${C.darkBlue}" stroke-width="2.5"/>`;
-      } else if (w.line === 'fused') {
-        // arc bending toward neighbouring well to show line of identity fusion
-        const mx = cx + (r - wellR - 6) * Math.cos(ang);
-        const my = cy + (r - wellR - 6) * Math.sin(ang);
-        const px = cx + (wellR + 6) * Math.cos(ang);
-        const py = cy + (wellR + 6) * Math.sin(ang);
-        const ctrlAng = ang - 0.35;
-        const cxr = cx + (r - 30) * Math.cos(ctrlAng);
-        const cyr = cy + (r - 30) * Math.sin(ctrlAng);
-        svg += `<path d="M ${px} ${py} Q ${cxr} ${cyr} ${mx} ${my}" fill="none" stroke="${C.green}" stroke-width="2.5"/>`;
-      }
-      svg += `<circle cx="${wx}" cy="${wy}" r="${wellR}" fill="${w.fill}" stroke="${C.gray}" stroke-width="1.5"/>`;
-      svg += `<text x="${wx}" y="${wy + 4}" text-anchor="middle" fill="${C.gray}" font-family="Arial, sans-serif" font-size="9" font-weight="bold">${w.label}</text>`;
-    });
+  // ============ MECHANISM STRIP (top) ============
+  const my = 168; // well row y for the strip
+  // Stage 2 wells sit at x=410 (Ag) and x=480 (Ab); arrows live in the gap between them,
+  // outside both wells, and the dot trails funnel toward the meeting point (~445, my).
+  const diff =
+    dArrow(429, my, 443, my, C.orange, 'agO') +
+    dArrow(461, my, 447, my, C.medBlue, 'agB') +
+    `<circle cx="431" cy="${my - 11}" r="2.7" fill="${C.orange}"/>` +
+    `<circle cx="437" cy="${my - 7}"  r="2.7" fill="${C.orange}"/>` +
+    `<circle cx="443" cy="${my - 3}"  r="2.7" fill="${C.orange}"/>` +
+    `<circle cx="459" cy="${my + 11}" r="2.7" fill="${C.medBlue}"/>` +
+    `<circle cx="453" cy="${my + 7}"  r="2.7" fill="${C.medBlue}"/>` +
+    `<circle cx="447" cy="${my + 3}"  r="2.7" fill="${C.medBlue}"/>`;
 
-    svg += `<text x="${cx}" y="${cy + 145}" text-anchor="middle" fill="${labelColor}" font-family="Arial, sans-serif" font-size="13" font-weight="bold">${label}</text>`;
-    return svg;
+  // ============ ROSETTE (bottom) ============
+  const cx = 215, cy = 415, R = 92, wr = 17;
+  const angles = [-90, -30, 30, 90, 150, 210];
+  // roles clockwise from top: +ctrl, test(+), +ctrl, test(NEG), +ctrl, test(+)
+  const roles  = ['ctrl', 'testpos', 'ctrl', 'testneg', 'ctrl', 'testpos'];
+  const fillFor  = r => r === 'ctrl' ? C.lightBlue : r === 'testpos' ? C.lightGreen : C.lightRed;
+  const labelFor = r => r === 'ctrl' ? '+ctrl' : 'test';
+  const reacts   = i => roles[i] !== 'testneg';
+  const pt = (ang, rr) => [cx + rr * Math.cos(rad(ang)), cy + rr * Math.sin(rad(ang))];
+
+  // fused precipitin arcs (line of identity) between adjacent reacting wells; gap at the negative well
+  let arcs = '';
+  for (let i = 0; i < 6; i++) {
+    const j = (i + 1) % 6;
+    if (reacts(i) && reacts(j)) {
+      const [ax, ay] = pt(angles[i], R - wr - 6);
+      const [bx, by] = pt(angles[j], R - wr - 6);
+      const aj = angles[j] < angles[i] ? angles[j] + 360 : angles[j];
+      const midAng = (angles[i] + aj) / 2;
+      const [kx, ky] = pt(midAng, R * 0.40);
+      arcs += `<path d="M ${ax.toFixed(1)} ${ay.toFixed(1)} Q ${kx.toFixed(1)} ${ky.toFixed(1)} ${bx.toFixed(1)} ${by.toFixed(1)}" fill="none" stroke="${C.darkBlue}" stroke-width="3"/>`;
+    }
   }
-
-  const negWells = [
-    { angle: -90, fill: C.lightBlue, label: '+ctrl', line: 'straight' },
-    { angle: -30, fill: C.lightRed,  label: 'test',  line: 'straight' },
-    { angle:  30, fill: C.lightBlue, label: '+ctrl', line: 'straight' },
-    { angle:  90, fill: C.lightRed,  label: 'test',  line: 'straight' },
-    { angle: 150, fill: C.lightBlue, label: '+ctrl', line: 'straight' },
-    { angle: 210, fill: C.lightRed,  label: 'test',  line: 'straight' },
-  ];
-  const posWells = [
-    { angle: -90, fill: C.lightBlue, label: '+ctrl', line: 'straight' },
-    { angle: -30, fill: C.lightGreen,label: 'test',  line: 'fused' },
-    { angle:  30, fill: C.lightBlue, label: '+ctrl', line: 'straight' },
-    { angle:  90, fill: C.lightGreen,label: 'test',  line: 'fused' },
-    { angle: 150, fill: C.lightBlue, label: '+ctrl', line: 'straight' },
-    { angle: 210, fill: C.lightGreen,label: 'test',  line: 'fused' },
-  ];
+  // wells
+  let wells = '';
+  angles.forEach((a, i) => {
+    const [wx, wy] = pt(a, R);
+    wells += `<circle cx="${wx.toFixed(1)}" cy="${wy.toFixed(1)}" r="${wr}" fill="${fillFor(roles[i])}" stroke="${C.gray}" stroke-width="1.5"/>`;
+    wells += `<text x="${wx.toFixed(1)}" y="${(wy + 3.5).toFixed(1)}" text-anchor="middle" fill="${C.gray}" font-family="Arial, sans-serif" font-size="9" font-weight="bold">${labelFor(roles[i])}</text>`;
+  });
+  const [nx, ny] = pt(90, R); // negative well (bottom)
 
   return `<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}">
   <rect width="${W}" height="${H}" fill="white"/>
-  ${titleBar(W, 'Reading an AGID Precipitin-Line Test')}
+  ${titleBar(W, 'How an AGID Result Forms')}
+  ${DEFS(C.orange, 'agO')}
+  ${DEFS(C.medBlue, 'agB')}
+  ${DEFS(C.gray, 'agStage')}
+  ${DEFS(C.red, 'agPtr')}
 
-  <text x="200" y="90" text-anchor="middle" fill="${C.gray}" font-family="Arial, sans-serif" font-size="12">Center well holds antigen. Peripheral wells alternate</text>
-  <text x="200" y="106" text-anchor="middle" fill="${C.gray}" font-family="Arial, sans-serif" font-size="12">positive control serum and the bird's test serum.</text>
+  <!-- ===== Mechanism strip ===== -->
+  <rect x="18" y="62" width="784" height="168" rx="8" fill="${C.lightGray}" stroke="#DDD"/>
+  <text x="30" y="84" fill="${C.darkBlue}" font-family="Arial, sans-serif" font-size="13" font-weight="bold">Where the line comes from: antigen and antibody diffuse together and drop out as a solid line</text>
 
-  ${agidPlate(200, 250, 'NEGATIVE: lines stay separate', C.gray, negWells)}
-  ${agidPlate(600, 250, 'POSITIVE: lines fuse together', C.green, posWells)}
+  <!-- Stage 1 -->
+  ${well(140, my, C.amber, 'Ag')}
+  ${well(200, my, C.lightBlue, 'Ab')}
+  <text x="170" y="212" text-anchor="middle" fill="${C.gray}" font-family="Arial, sans-serif" font-size="11">1. Antigen and serum</text>
+  <text x="170" y="226" text-anchor="middle" fill="${C.gray}" font-family="Arial, sans-serif" font-size="11">sit in separate wells</text>
+  ${dArrow(250, my, 320, my, C.gray, 'agStage')}
 
-  <text x="400" y="430" text-anchor="middle" fill="${C.gray}" font-family="Arial, sans-serif" font-size="11">A "line of identity", where the bird's antibodies meet the antigen, is a positive result.</text>
+  <!-- Stage 2 -->
+  ${well(410, my, C.amber, 'Ag')}
+  ${well(480, my, C.lightBlue, 'Ab')}
+  ${diff}
+  <text x="445" y="212" text-anchor="middle" fill="${C.gray}" font-family="Arial, sans-serif" font-size="11">2. Both spread through</text>
+  <text x="445" y="226" text-anchor="middle" fill="${C.gray}" font-family="Arial, sans-serif" font-size="11">the gel toward each other</text>
+  ${dArrow(520, my, 590, my, C.gray, 'agStage')}
 
-  ${caption(W, H, 'Figure 2.1  |  In a positive sample, the test-well line joins (fuses with) the control line; in a negative sample it does not')}
+  <!-- Stage 3: precipitin line forms between the two wells -->
+  ${well(680, my, C.amber, 'Ag')}
+  ${well(740, my, C.lightBlue, 'Ab')}
+  <line x1="710" y1="${my - 20}" x2="710" y2="${my + 20}" stroke="#FFFFFF" stroke-width="6"/>
+  <line x1="710" y1="${my - 20}" x2="710" y2="${my + 20}" stroke="${C.darkBlue}" stroke-width="3"/>
+  <text x="710" y="212" text-anchor="middle" fill="${C.darkBlue}" font-family="Arial, sans-serif" font-size="11" font-weight="bold">3. A visible precipitin</text>
+  <text x="710" y="226" text-anchor="middle" fill="${C.darkBlue}" font-family="Arial, sans-serif" font-size="11" font-weight="bold">line forms where they meet</text>
+
+  <!-- ===== Rosette ===== -->
+  <text x="30" y="270" fill="${C.darkBlue}" font-family="Arial, sans-serif" font-size="13" font-weight="bold">Reading the plate: antigen in the center well, serum in the six wells around it</text>
+
+  <circle cx="${cx}" cy="${cy}" r="118" fill="${C.lightGray}" stroke="#BBB" stroke-width="1.5"/>
+  ${arcs}
+  <circle cx="${cx}" cy="${cy}" r="${wr}" fill="${C.amber}" stroke="${C.gray}" stroke-width="1.5"/>
+  <text x="${cx}" y="${cy + 3.5}" text-anchor="middle" fill="${C.gray}" font-family="Arial, sans-serif" font-size="9" font-weight="bold">Ag</text>
+  ${wells}
+
+  <!-- Pointer: line of identity (top-right junction) -->
+  ${dArrow(430, 300, 262, 352, C.red, 'agPtr')}
+  <rect x="430" y="286" width="360" height="52" rx="6" fill="${C.lightGreen}" stroke="${C.green}"/>
+  <text x="442" y="306" fill="${C.green}" font-family="Arial, sans-serif" font-size="12" font-weight="bold">POSITIVE: line of identity</text>
+  <text x="442" y="324" fill="${C.gray}" font-family="Arial, sans-serif" font-size="11">The test line joins the control line in one smooth curve.</text>
+
+  <!-- Pointer: negative well (bottom) -->
+  ${dArrow(430, 470, nx + 22, ny - 6, C.red, 'agPtr')}
+  <rect x="430" y="446" width="360" height="52" rx="6" fill="${C.lightRed}" stroke="${C.red}"/>
+  <text x="442" y="466" fill="${C.red}" font-family="Arial, sans-serif" font-size="12" font-weight="bold">NEGATIVE: no line</text>
+  <text x="442" y="484" fill="${C.gray}" font-family="Arial, sans-serif" font-size="11">No antibody in the serum, so the curve breaks at that well.</text>
+
+  <!-- Legend -->
+  <rect x="430" y="352" width="360" height="86" rx="6" fill="${C.white}" stroke="#CCC"/>
+  <circle cx="446" cy="370" r="7" fill="${C.amber}" stroke="${C.gray}"/>
+  <text x="460" y="374" fill="${C.gray}" font-family="Arial, sans-serif" font-size="11">Ag: the known antigen for the disease tested</text>
+  <circle cx="446" cy="392" r="7" fill="${C.lightBlue}" stroke="${C.gray}"/>
+  <text x="460" y="396" fill="${C.gray}" font-family="Arial, sans-serif" font-size="11">+ctrl: known positive control serum</text>
+  <circle cx="446" cy="414" r="7" fill="${C.lightGreen}" stroke="${C.gray}"/>
+  <text x="460" y="418" fill="${C.gray}" font-family="Arial, sans-serif" font-size="11">test: the bird's serum</text>
+  <line x1="440" y1="432" x2="452" y2="432" stroke="${C.darkBlue}" stroke-width="3"/>
+  <text x="460" y="436" fill="${C.gray}" font-family="Arial, sans-serif" font-size="11">precipitin line (antigen and antibody locked together)</text>
+
+  ${caption(W, H, 'Figure 2.1  |  Antigen and antibody diffuse together to form a precipitin line; a test line that fuses with the control line is a positive line of identity')}
 </svg>`;
 }
 

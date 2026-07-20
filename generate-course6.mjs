@@ -822,6 +822,24 @@ function buildSection7() {
       para('Never pick up a bird by its legs alone. The bird\'s body weight pulling against the hip joint causes pain and can dislocate the joint. Hold the wings against the body and support the bird\'s weight from underneath. In commercial operations, trained catchers handle large numbers of birds; proper technique cuts wing and leg fractures, which hurt both bird welfare and carcass quality.'),
       para('Catch and handle birds in low light. In dim conditions, birds see poorly and stay calmer and less active. Cut the time between catch and loading, keep birds upright rather than inverted, and you reduce heat stress and the acid buildup in muscle tissue that hurts meat quality at processing.'),
       para('Never hold a bird tightly around the chest. The sternum and rib cage must be free to move for the bird to breathe. A handler gripping too tightly around the chest stops the bird from breathing. This is especially important for individual bird examinations and for holding birds during vaccination.'),
+
+      h2('7.5  How a Bird Spends Its Energy: The Priority Order'),
+      para('A bird spends the energy in its feed in a set order, a bit like paying bills. The bills that keep it alive get paid first. Whatever is left over at the end goes into the things that make you money: weight gain and eggs [37].'),
+      para('The order runs roughly like this. First comes basal metabolism, the energy just to stay alive: heart, breathing, and keeping the organs running. Next comes holding body temperature, which is why both a cold barn and a hot one cost you. Then feather cover, which itself helps hold body heat. Then activity, the energy to stand, walk, and get to feed and water. Only after all of that does anything go into body weight gain, and dead last, into egg production [37].'),
+
+      ...embedPng(imgFile('figure_7_5_energy_priority.png'), 'Figure 7.5: A bird pays its energy bills top to bottom. Staying alive, keeping warm, feathers, and activity are covered first. Growth and eggs are funded last, with whatever is left over. Under stress, acute phase proteins jump the queue and starve the bottom of the list first. Source: CPC Short Courses.'),
+
+      para('This order is why growth and eggs are the first things to slip when anything goes wrong. The bird protects the top of the list and cuts the bottom. It also sets up the next section. When oxidative stress or an infection hits, the body switches on an emergency response and starts building special immune proteins called acute phase proteins. Making them is expensive. The bird pulls amino acids out of its own muscle and diverts energy to the liver to build them, and at the same time it eats less [38]. That new demand jumps straight to the top of the priority list, so the bottom, weight gain and eggs, gets starved first, often before you see a single sick bird [38,39].'),
+
+      h2('7.6  Oxidative Stress: A Non-Infectious Cause of Poor Performance'),
+      para('Sometimes a flock just runs poorly. Feed intake drifts down, daily gain slips, feed conversion creeps up, and a few extra birds die every day, with no clear disease to point at. Before you reach for an antibiotic or blame the last vaccine, there is a common non-infectious cause worth ruling out: oxidative stress.'),
+      para('Every cell makes waste molecules called free radicals just by doing its normal work, and the bird keeps them in check with a built-in cleanup crew. Enzymes with names like superoxide dismutase, catalase, and glutathione peroxidase (which needs selenium to work) do most of the job, backed up by vitamin E, vitamin C, and selenium from the feed [39]. Oxidative stress is simply when the free radicals pile up faster than that crew can clear them.'),
+      para('What tips the balance is almost always something in the barn or the feed, not a germ. Heat, crowding, rancid fat or moldy (mycotoxin) feed, and the sheer speed a modern broiler grows all push free radical production up [39]. The woody breast described in Section 4.3 is this same process playing out in one overworked muscle.'),
+      para('Once the balance tips, the damage shows up first in the gut. The intestinal lining loses its tight seal and starts to leak, so bacteria and toxins that should stay in the gut cross into the blood, stir up inflammation, and drag down the immune system [40]. This is the part that gets missed: the bird was weakened by stress first, and the infection or the rough vaccine reaction came second [39,40].'),
+
+      ...embedPng(imgFile('figure_7_5_oxidative_stress.png'), 'Figure 7.6: Oxidative stress is a balance. Everyday metabolism makes free radicals, and the bird\'s antioxidant system clears them. Heat, crowding, rancid or moldy feed, and fast growth tip the balance, damaging the gut lining and immunity and showing up as lower intake, lower gain, worse feed conversion, and higher mortality. Source: CPC Short Courses.'),
+
+      para('The fix is not another antibiotic. It is finding and removing the trigger. Get the heat and ventilation right, cut crowding, and never feed rancid or moldy feed. Then support the bird\'s own defenses with adequate vitamin E, vitamin C, and selenium [39,40]. For the field routine that works through these non-infectious causes before jumping to disease, see Course 14 (Intro to Field Service) in this series.'),
     ],
   };
 }
@@ -943,6 +961,10 @@ function buildReferencesSection() {
       numberedRef('DSM Nutritional Products. Vitamin Supplementation Guidelines. Basel (Switzerland): DSM; 2006.'),
       numberedRef('DSM Nutritional Products. Optima: Nutricion Vitaminica de los animales para la produccion de alimentos de calidad. Basel (Switzerland): DSM; 2002.'),
       numberedRef('Vitamin Deficiencies in Poultry. In: Merck Veterinary Manual [Internet]. Merck Sharp & Dohme LLC; [cited 2026 May]. Available from: merckvetmanual.com/poultry/nutrition-and-management-poultry/vitamin-deficiencies-in-poultry'),
+      numberedRef('Lopez G, Leeson S. Review: energy partitioning in broiler chickens. Can J Anim Sci. 2008;88(2):205-212. doi:10.4141/cjas07087.'),
+      numberedRef('Barnes DM, Song Z, Klasing KC, Bottje W. Protein metabolism during an acute phase response in chickens. Amino Acids. 2002;22(1):15-26. doi:10.1007/s726-002-8198-6.'),
+      numberedRef('Oke OE, Akosile OA, Oni AI, Opowoye IO, Ishola CA, Adebiyi JO, Odeyemi AJ, Adjei-Mensah B, Uyanga VA, Abioja MO. Oxidative stress in poultry production. Poult Sci. 2024;103(9):104003. doi:10.1016/j.psj.2024.104003.'),
+      numberedRef('Mishra B, Jha R. Oxidative stress in the poultry gut: potential challenges and interventions. Front Vet Sci. 2019;6:60. doi:10.3389/fvets.2019.00060.'),
     ],
   };
 }
@@ -1052,19 +1074,21 @@ async function main() {
     { lvl: 2, text: '7.2  Housing Adjustments',                                                page: 31 },
     { lvl: 2, text: '7.3  Health Monitoring',                                                  page: 31 },
     { lvl: 2, text: '7.4  Handling and Welfare Considerations',                                page: 32 },
-    { lvl: 1, text: 'Summary and Key Takeaways',                                               page: 33 },
-    { lvl: 2, text: 'The Bird\'s Design Purpose',                                              page: 33 },
-    { lvl: 2, text: 'External Anatomy as a Health Tool',                                       page: 33 },
-    { lvl: 2, text: 'The Digestive System',                                                    page: 33 },
-    { lvl: 2, text: 'The Respiratory System',                                                  page: 33 },
-    { lvl: 2, text: 'The Circulatory System',                                                  page: 33 },
-    { lvl: 2, text: 'The Skeletal and Muscular Systems',                                       page: 34 },
-    { lvl: 2, text: 'The Reproductive System',                                                 page: 34 },
-    { lvl: 2, text: 'The Urinary System',                                                      page: 34 },
-    { lvl: 2, text: 'The Immune System',                                                       page: 34 },
-    { lvl: 2, text: 'Management Takeaways',                                                    page: 34 },
-    { lvl: 1, text: 'Recommended Peer-Reviewed Journals',                                      page: 36 },
-    { lvl: 1, text: 'References',                                                              page: 36 },
+    { lvl: 2, text: '7.5  How a Bird Spends Its Energy: The Priority Order',                    page: 32 },
+    { lvl: 2, text: '7.6  Oxidative Stress: A Non-Infectious Cause of Poor Performance',        page: 33 },
+    { lvl: 1, text: 'Summary and Key Takeaways',                                               page: 35 },
+    { lvl: 2, text: 'The Bird\'s Design Purpose',                                              page: 35 },
+    { lvl: 2, text: 'External Anatomy as a Health Tool',                                       page: 35 },
+    { lvl: 2, text: 'The Digestive System',                                                    page: 35 },
+    { lvl: 2, text: 'The Respiratory System',                                                  page: 35 },
+    { lvl: 2, text: 'The Circulatory System',                                                  page: 35 },
+    { lvl: 2, text: 'The Skeletal and Muscular Systems',                                       page: 36 },
+    { lvl: 2, text: 'The Reproductive System',                                                 page: 36 },
+    { lvl: 2, text: 'The Urinary System',                                                      page: 36 },
+    { lvl: 2, text: 'The Immune System',                                                       page: 36 },
+    { lvl: 2, text: 'Management Takeaways',                                                    page: 36 },
+    { lvl: 1, text: 'Recommended Peer-Reviewed Journals',                                      page: 38 },
+    { lvl: 1, text: 'References',                                                              page: 38 },
   ].map((e, i) => ({ ...e, anchor: `_Toc${String(100000 + i).padStart(8, '0')}` }));
 
   function escapeXml(s) {
