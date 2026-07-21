@@ -390,7 +390,7 @@ function buildBodySection() {
 
     para('When the lab finishes running your flock\'s blood samples, the report comes back with a titer number for each disease tested. The titer is a measure of how much antibody that bird\'s serum contains against that specific pathogen. On its own, a titer number does not tell you much. The CPC Learning Centre Serology 101 presentation is clear that results only make sense alongside everything else going on in the flock: vaccination history, production numbers, condemnations at the plant, clinical signs, and necropsy findings [1].'),
 
-    para('Three lab methods show up most often on a poultry serology report: ELISA, AGID and plate agglutination, and hemagglutination inhibition (HI). Each one answers the same basic question, how much antibody is in this sample, but they get there differently, and each has its own strengths.'),
+    para('Four lab methods show up most often on a poultry serology report: ELISA, AGID, plate agglutination, and hemagglutination inhibition (HI). Each one answers the same basic question, how much antibody is in this sample, but they get there differently, and each has its own strengths.'),
 
     h2('2.2  ELISA Testing'),
 
