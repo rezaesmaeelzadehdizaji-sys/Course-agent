@@ -406,7 +406,7 @@ function buildBodySection() {
 
     para('If the serum contains antibodies that match the antigen, a visible line forms in the gel where the two meet. When that line connects smoothly with the line from a known positive control, it is called a line of identity, and that is a positive result. If the lines stay separate, or bend away from each other instead of joining, the result is negative. A clear positive line usually shows up within 24 hours, though weak positives can take up to 48 hours to appear [5].'),
 
-    ...image(figBuf('fig15_3.png'), 'Figure 2.1: How an AGID result forms. Antigen and antibody diffuse through the gel and form a visible precipitin line where they meet. On the plate, a test line that fuses smoothly with the positive control line is a line of identity (positive); where no line forms, the result is negative. Source: CPC Short Courses.'),
+    ...image(figBuf('AGID.jpg'), 'Figure 2.1: How an AGID result forms. Antigen and antibody diffuse through the gel and form a visible precipitin line where they meet. On the plate, a test line that fuses smoothly with the positive control line is a line of identity (positive); where no line forms, the result is negative. Source: CPC Short Courses.', 5.8, 'jpg'),
 
     para('Plate agglutination is a third method. A drop of antigen is mixed directly with a drop of blood or serum on a plate, and if antibodies are present, the mixture clumps visibly within minutes [1].'),
 
