@@ -95,21 +95,33 @@ function pageBreak() {
   return new Paragraph({ children: [new PageBreak()] });
 }
 
-// PNG-only image embed (all Course 15 figures and photos are PNG)
-function image(buf, caption, widthIn = 5.8) {
+// Image embed. PNG by default; pass type 'jpg' for JPEG. Auto-detects dimensions for aspect ratio.
+function image(buf, caption, widthIn = 5.8, type = 'png') {
   if (!buf) return [];
   const dpi = 96;
   const wpx = Math.round(widthIn * dpi);
   let hpx = Math.round(wpx * 0.6);
+  const isJpg = (type === 'jpg' || type === 'jpeg');
   try {
-    const view = new DataView(buf.buffer, buf.byteOffset);
-    const pw = view.getUint32(16, false);
-    const ph = view.getUint32(20, false);
-    if (pw > 0 && ph > 0) hpx = Math.round(wpx * ph / pw);
+    if (isJpg) {
+      let i = 2, w = 0, h = 0;
+      while (i < buf.length) {
+        if (buf[i] !== 0xFF) { i++; continue; }
+        const m = buf[i + 1];
+        if (m >= 0xC0 && m <= 0xCF && m !== 0xC4 && m !== 0xC8 && m !== 0xCC) { h = buf.readUInt16BE(i + 5); w = buf.readUInt16BE(i + 7); break; }
+        i += 2 + buf.readUInt16BE(i + 2);
+      }
+      if (w > 0 && h > 0) hpx = Math.round(wpx * h / w);
+    } else {
+      const view = new DataView(buf.buffer, buf.byteOffset);
+      const pw = view.getUint32(16, false);
+      const ph = view.getUint32(20, false);
+      if (pw > 0 && ph > 0) hpx = Math.round(wpx * ph / pw);
+    }
   } catch (_) {}
   return [
     new Paragraph({
-      children: [new ImageRun({ data: buf, transformation: { width: wpx, height: hpx }, type: 'png' })],
+      children: [new ImageRun({ data: buf, transformation: { width: wpx, height: hpx }, type: isJpg ? 'jpg' : 'png' })],
       alignment: AlignmentType.CENTER,
       spacing:   { before: 160, after: 0 },
     }),
@@ -454,7 +466,7 @@ function buildBodySection() {
 
     para('The wing vein draw is a one-person job once you get the hang of it. Hold the bird by both legs, then tuck its legs under your non-dominant elbow so both your hands are free to work with the wing [6].'),
 
-    ...image(figBuf('fig15_6.png'), 'Figure 4.1: Brachial vein location and needle angle for a wing-vein blood draw. Source: CPC Short Courses.'),
+    ...image(figBuf('blood collection\'.jpg'), 'Photo 4.1: Drawing blood from the wing (brachial) vein. Feathers are parted on the underside of the wing to expose the vein (top left, arrow), then the needle goes in bevel up to draw the sample (bottom left and right). Source: Norecopa (norecopa.no); Kelly & Alworth, Lab Anim 2013;42:359-361; foodagribusiness.world.', 5.8, 'jpg'),
 
     bullet([{ text: 'Step 1: ', bold: true }, { text: 'Pull back a few feathers on the underside of the wing so you can see the brachial vein running along the inside of the wing [6].' }]),
     bullet([{ text: 'Step 2: ', bold: true }, { text: 'Line the needle up with the vein, bevel facing up, with the tip pointed toward the wing tip [6].' }]),
