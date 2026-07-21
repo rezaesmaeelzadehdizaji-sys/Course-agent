@@ -4,7 +4,7 @@ Verification date: 2026-06-10
 Verifier: Claude Code (CPC Short Courses agent)
 Course file: `Course 15/Serology_101.docx`
 
-Citation first-appearance order confirmed sequential 1 → 7 in document XML (no gaps or reversals).
+Citation first-appearance order confirmed sequential 1 → 8 in document XML (no gaps or reversals).
 
 ---
 
@@ -48,7 +48,15 @@ Citation first-appearance order confirmed sequential 1 → 7 in document XML (no
 - **Claims grounded:** HI mechanism — NDV HN protein agglutinates red blood cells; antibodies block (inhibit) agglutination; titer = highest dilution showing total inhibition, log2 scale (Section 2.4).
 - **Status:** VERIFIED (CrossRef + PubMed PMID 23820164, 2026-06-10). Every author initial, title word, journal, volume/issue/year, and page range matches the same physical source.
 
-## [6] Hy-Line International — Diagnostic Sample Collection, Part One (2016)
+## [6] Erf GF, et al. — Poultry (2023) — Two-Window Approach to Cellular and Humoral Immunity
+
+- **Full citation:** Erf GF, Kong HR, Falcon DM, Byrne KA. Two-Window Approach to Monitor and Assess Cellular and Humoral Immune Responses in Poultry. Poultry. 2023;2(1):82-97. doi:10.3390/poultry2010009
+- **Source type:** Peer-reviewed journal article (highest fabrication-risk category)
+- **Verification:** Online-confirmed 2026-07-21 against CrossRef (DOI 10.3390/poultry2010009). All 4 authors confirmed in order: Gisela F. Erf, Hyeonmin R. Kong, Daniel M. Falcon, Kristen A. Byrne. Journal "Poultry" (MDPI), 2023, volume 2, issue 1. CrossRef gives pages 82-97, matching the cited range exactly. Abstract confirms the paper's premise: standard vaccine-response monitoring in poultry relies on antibody titer (a T-dependent humoral response), while cell-mediated immune responses are also important to protection and are not captured by that approach, which motivated the paper's two-window (blood + growing-feather) method to assess both arms.
+- **Claims grounded:** serology (antibody titer) reflects only the humoral (B-cell/antibody) arm of the immune response and does not measure a bird's T-cell (cell-mediated) immune status (Section 3.1, new bullet).
+- **Status:** VERIFIED (CrossRef, 2026-07-21).
+
+## [7] Hy-Line International — Diagnostic Sample Collection, Part One (2016)
 
 - **Full citation:** Hy-Line International. Proper Collection and Handling of Diagnostic Samples: Part One, Serology and Blood Collection [Technical Update]. Hy-Line International; 2016. Available from: hyline.com
 - **Source type:** Breeder-company technical update (local extract)
@@ -56,7 +64,7 @@ Citation first-appearance order confirmed sequential 1 → 7 in document XML (no
 - **Claims grounded:** sample submission info list, bird selection (10-20, min 10), paired sampling 3-5 weeks, killed-vaccine peak 3-5 weeks, blood volume 2.0-3.0 mL → 1.0-1.5 mL serum, needle gauge table, wing-vein 6-step method, hematoma handling, clotting 80-100°F / 12-18 hrs flat, serum quality, "Do NOT send serum" 5-item list, gelled (dehydration) vs. slimy/cheese (spoilage) distinction, storage/shipping 45°F / freeze +14°F to -40°F (Sections 3.2, 4.1, 4.2, 5.1, 5.2).
 - **Status:** VERIFIED (local source).
 
-## [7] BioChek — Interpretation and Application of Results Manual (2017)
+## [8] BioChek — Interpretation and Application of Results Manual (2017)
 
 - **Full citation:** BioChek. Interpretation and Application of Results Manual. Reeuwijk, Netherlands: BioChek; 2017. Available from: biochek.com
 - **Source type:** Diagnostic-lab technical manual (local extract)
@@ -75,10 +83,11 @@ Citation first-appearance order confirmed sequential 1 → 7 in document XML (no
 | 3 | Zavala / IDEXX | Lab guidance | Verified (read in full) |
 | 4 | USDA APHIS NVSL AGID SOP | Government SOP | Verified (read in full) |
 | 5 | Choi et al. / J Vet Sci | Peer-reviewed | Verified online 2026-06-10 (CrossRef + PubMed PMID 23820164) |
-| 6 | Hy-Line International | Company technical | Verified (read in full) |
-| 7 | BioChek | Lab manual | Verified (read in full) |
+| 6 | Erf et al. / Poultry (MDPI) | Peer-reviewed | Verified online 2026-07-21 (CrossRef) |
+| 7 | Hy-Line International | Company technical | Verified (read in full) |
+| 8 | BioChek | Lab manual | Verified (read in full) |
 
-All 7 references verified. The five local-library sources ([1], [3], [4], [6], [7]) were verified by full read of the source this session. The live online source [2] and the peer-reviewed article [5] were verified online on 2026-06-10: [2] by direct page fetch (title/author/dates confirmed), [5] against CrossRef and PubMed (PMID 23820164: all 7 authors, title, journal, volume/issue/year, and 291-297 page range confirmed against one physical source).
+All 8 references verified. The five local-library sources ([1], [3], [4], [7], [8]) were verified by full read of the source this session. The live online source [2] and the two peer-reviewed articles ([5], [6]) were verified online: [2] by direct page fetch (title/author/dates confirmed, 2026-06-10), [5] against CrossRef and PubMed (PMID 23820164: all 7 authors, title, journal, volume/issue/year, and 291-297 page range confirmed against one physical source, 2026-06-10), [6] against CrossRef (all 4 authors, title, journal, volume/issue/year, and 82-97 page range confirmed, 2026-07-21).
 
 ---
 
@@ -104,3 +113,16 @@ A second pass read the entire generate-course15.mjs and generate-course15-figure
 - **Fix 3 — Figure 15.3 SVG title, incorrect test attribution:** The figure title read "Reading a Precipitin-Line Test (AGID / Plate Agglutination)." The precipitin-line diagram only illustrates AGID; including "Plate Agglutination" in the title misrepresents how that test works. Title corrected to "Reading an AGID Precipitin-Line Test." Figure regenerated.
 - **Transparency note — %CV scale discrepancy:** Source [1] (Bowes) uses: <30% excellent, 30-50% good, 51-80% fair, >81% poor/bimodal. Source [7] (BioChek) uses: <40% Excellent, 40-60% Good, >60% Need to Improve. The course presents BioChek's ranges as "current guidance" cited to [7], which is correct and clear. No change required, but documented here for traceability.
 - **Post-fix integrity checks:** w:dirty = 0, em dash = 0, bookmarkStart = hyperlink = 23, citation order 1-7 sequential, old problem text confirmed absent, corrected text confirmed present.
+
+---
+
+## 2026-07-21 Addendum — Avian Immune System reference review, new citation added
+
+The user pointed to `Avian medicine sources/Avian medicine/Avian_Immune_System_CPC.pdf` (identical content to the pre-existing, untracked `Course 15/Avian_Immune_System_CPC.docx`) and asked for it to be incorporated into related courses where it adds value. That document covers primary/secondary lymphoid organs (bursa, thymus, spleen, GALT, Harderian gland), B cells vs. T cells, and age-related necropsy interpretation, but carries no per-claim citations, only a blanket "Based on Merck Veterinary Manual, PubMed peer-reviewed literature, and Canadian poultry industry best practices" line. Per the project's citation standard, none of its specific figures were used without independent verification.
+
+- **Redundancy check:** `generate-course6.mjs` Section 3.7 ("The Immune System") already covers the bursa/thymus as B-cell/T-cell training organs, the spleen/cecal tonsils/Harderian gland as peripheral sites, the IBD-bursa link (cross-referenced to Course 7), and the Harderian-gland/eye-drop-vaccination link (cross-referenced to Course 8), all cited to a source [24]. `generate-course10.mjs` Sections 6.3 and 7.3 already teach age-related bursa/thymus involution as a necropsy interpretation point, cited to [2,3]. Per the "Cut Redundancy" rule, none of this was re-added to Course 15, Course 6, or Course 10.
+- **Numeric claims not used:** the PDF's specific involution windows (bursa involuted "by laying age, around 16-24 weeks"; thymic regression "around 3 months") were spot-checked against PubMed/ResearchGate literature on bursal/thymic involution. The literature indicates involution onset is earlier (around 10-12 weeks) with completion by ~23.5 weeks, not a clean 16-24 week window as stated in the source PDF. Since this figure could not be confirmed as-is and Course 10's existing qualitative treatment already serves the teaching point safely, no age-banded table was added anywhere.
+- **Genuine gap found:** Course 15 explains B-lymphocytes and antibodies (Section 1.1) but never states that serology (antibody titers) reflects only the humoral (B-cell) arm of the immune response, not the cellular (T-cell) arm. This is a real, non-duplicated limitation of serology that belongs in Section 3.1 ("What Serology Can and Cannot Tell You"), which is exactly the course's own teaching objective (LO3).
+- **New reference added:** [6] Erf GF, Kong HR, Falcon DM, Byrne KA. Two-Window Approach to Monitor and Assess Cellular and Humoral Immune Responses in Poultry. Poultry. 2023;2(1):82-97. doi:10.3390/poultry2010009 — verified against CrossRef (see entry above). A new bullet was added to Section 3.1: "Serology only shows part of the picture: the antibody (humoral) response. It says nothing about a bird's T-cell (cell-mediated) immune response, which also plays a role in disease protection and does not show up on any titer report [6]."
+- **Citation cascade renumbering:** inserting [6] mid-document required renumbering every existing [6] (Hy-Line) to [7] and every existing [7] (BioChek) to [8], including the combined marker [3,7] → [3,8]. Applied with the cascade-safe temp-marker technique across both `generate-course15.mjs` (24 instances of old [6], 3 of old [7]) and `generate-course15-figures.mjs` (2 instances of old [6], 1 of old [7], inside SVG `<text>` elements). Figures were regenerated (`node generate-course15-figures.mjs`) before the docx rebuild so the rasterized PNGs carry the corrected numbers.
+- **Post-fix integrity checks (2026-07-21):** w:dirty = 0, em dash = 0, bookmarkStart = hyperlink = 23 (TOC links unaffected, no headings changed), citation order 1-8 sequential, British-spelling sweep clean (same false positives as before: "raised," "rising," "CPC Learning Centre"), reference list confirmed in Word auto-numbered order with the new [6] entry between Choi et al. (old [5]) and Hy-Line (now [7]).
