@@ -508,7 +508,9 @@ function fig15_6() {
 if (!fs.existsSync(OUT_DIR)) fs.mkdirSync(OUT_DIR, { recursive: true });
 
 svgToPng(fig15_1(), 'fig15_1.png');
-svgToPng(fig15_2(), 'fig15_2.png');
+// fig15_2.png: replaced 2026-07-21 with a manually-supplied Figure 1.2 (primary vs.
+// secondary antibody response, IgM/IgG, B-cell/plasma-cell detail). Do not regenerate
+// from fig15_2() below, it would overwrite the manually-supplied file.
 svgToPng(fig15_3(), 'fig15_3.png');
 svgToPng(fig15_4(), 'fig15_4.png');
 svgToPng(fig15_5(), 'fig15_5.png');
