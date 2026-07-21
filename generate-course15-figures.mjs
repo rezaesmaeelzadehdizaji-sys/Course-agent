@@ -435,7 +435,7 @@ function fig15_5() {
   <!-- Standards bar -->
   <rect x="30" y="360" width="740" height="60" rx="6" fill="${C.lightGold}" stroke="${C.gold}"/>
   <text x="400" y="382" text-anchor="middle" fill="${C.darkBlue}" font-family="Arial, sans-serif" font-size="11" font-weight="bold">Current ELISA uniformity guide: under 40% CV is Excellent, 40-60% is Good, over 60% is Need to Improve</text>
-  <text x="400" y="400" text-anchor="middle" fill="${C.gray}" font-family="Arial, sans-serif" font-size="10">Target under 40% CV after a killed (inactivated) vaccine; under 60% CV after a live vaccine, with all birds testing positive [8]</text>
+  <text x="400" y="400" text-anchor="middle" fill="${C.gray}" font-family="Arial, sans-serif" font-size="10">Target under 40% CV after a killed (inactivated) vaccine; under 60% CV after a live vaccine, with all birds testing positive [9]</text>
 
   ${caption(W, H, 'Figure 6.2  |  A low %CV means the whole flock responded about the same way')}
 </svg>`;
@@ -491,12 +491,12 @@ function fig15_6() {
   <text x="445" y="120" fill="${C.gray}" font-family="Arial, sans-serif" font-size="11">- Bevel up, needle nearly parallel to the vein,</text>
   <text x="455" y="136" fill="${C.gray}" font-family="Arial, sans-serif" font-size="11">  tip pointed toward the wingtip</text>
   <text x="445" y="156" fill="${C.gray}" font-family="Arial, sans-serif" font-size="11">- 20-22 gauge needle, 0.5-1.0 inch, for birds</text>
-  <text x="455" y="172" fill="${C.gray}" font-family="Arial, sans-serif" font-size="11">  4 weeks and older [7]</text>
+  <text x="455" y="172" fill="${C.gray}" font-family="Arial, sans-serif" font-size="11">  4 weeks and older [8]</text>
 
   <!-- Bottom note -->
   <rect x="60" y="408" width="680" height="42" rx="6" fill="${C.lightGold}" stroke="${C.gold}"/>
   <text x="400" y="428" text-anchor="middle" fill="${C.darkBlue}" font-family="Arial, sans-serif" font-size="11" font-weight="bold">Go in under the skin first, then into the vein. Pull back gently. A hard pull collapses</text>
-  <text x="400" y="444" text-anchor="middle" fill="${C.darkBlue}" font-family="Arial, sans-serif" font-size="11" font-weight="bold">the vein and stops the flow before you have enough blood [7]</text>
+  <text x="400" y="444" text-anchor="middle" fill="${C.darkBlue}" font-family="Arial, sans-serif" font-size="11" font-weight="bold">the vein and stops the flow before you have enough blood [8]</text>
 
   ${caption(W, H, 'Figure 4.1  |  Brachial vein location and needle angle for a wing-vein blood draw')}
 </svg>`;

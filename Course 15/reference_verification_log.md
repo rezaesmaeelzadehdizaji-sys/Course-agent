@@ -4,7 +4,7 @@ Verification date: 2026-06-10
 Verifier: Claude Code (CPC Short Courses agent)
 Course file: `Course 15/Serology_101.docx`
 
-Citation first-appearance order confirmed sequential 1 → 8 in document XML (no gaps or reversals).
+Citation first-appearance order confirmed sequential 1 → 9 in document XML (no gaps or reversals).
 
 ---
 
@@ -24,7 +24,15 @@ Citation first-appearance order confirmed sequential 1 → 8 in document XML (no
 - **Claims grounded:** immunologic memory and booster/multiple-dose pattern (Section 1.2), co-cited with [1].
 - **Status:** VERIFIED (live online source, 2026-06-10).
 
-## [3] IDEXX — Zavala G. Serology Interpretation, Ten Principles (2017)
+## [3] Merck Veterinary Manual — Types of Vaccines for Animals (2026)
+
+- **Full citation:** Merck Veterinary Manual. Types of Vaccines for Animals. Kenilworth, NJ: Merck & Co.; 2026 [cited 2026 Jul]. Available from: merckvetmanual.com/pharmacology/vaccines-and-immunotherapy/types-of-vaccines-for-animals
+- **Source type:** Live online source (page can change → cited-date included)
+- **Verification:** Online-confirmed 2026-07-21 via live page fetch. Author Ian Rodney Tizard, BVMS, BSc, PhD, DSc (Hons), DACVM; reviewer Joyce Carnevale, DVM, DABVP; last updated April 2026. Page confirms: "Living viruses from vaccines... infect host cells and grow briefly. The infected cells then process the viral antigens, triggering a response dominated by cytotoxic T cells, a type 1 response" and "Killed organisms and purified antigens, in contrast, commonly stimulate responses dominated by antibodies, a type 2 response." Also confirms killed vaccines "may require multiple doses and also require the use of adjuvants to maximize their effectiveness."
+- **Claims grounded:** correction to Section 1.2 — a live vaccine drives a cell-mediated (Type 1, cytotoxic T-cell) dominant response; a killed vaccine drives an antibody (Type 2, humoral) dominant response and typically needs an adjuvant/multiple doses. Replaces a prior version of this paragraph that incorrectly stated killed vaccines produce a flatly "milder" response than live vaccines, which the user flagged as not matching the science (2026-07-21).
+- **Status:** VERIFIED (live online source, 2026-07-21).
+
+## [4] IDEXX — Zavala G. Serology Interpretation, Ten Principles (2017)
 
 - **Full citation:** Zavala G. Serology Interpretation, Real Science, Real Results: The Ten Principles to Interpret and Monitor with Confidence. IDEXX Laboratories; 2017. Available from: idexx.com/files/poultry_baselines_ten-principles-serology-interpretation.pdf
 - **Source type:** Diagnostic-lab technical guidance (local extract of IDEXX PDF)
@@ -32,7 +40,7 @@ Citation first-appearance order confirmed sequential 1 → 8 in document XML (no
 - **Claims grounded:** ELISA throughput (hundreds/thousands samples/day), ELISA cannot type strain (Sections 2.2, 3.1), %CV = SD/mean × 100 (Section 6.2), baseline comparison for interpretation (Section 3.1).
 - **Status:** VERIFIED (local source).
 
-## [4] USDA APHIS NVSL — Avian AGID SOP (2021)
+## [5] USDA APHIS NVSL — Avian AGID SOP (2021)
 
 - **Full citation:** United States Department of Agriculture, Animal and Plant Health Inspection Service, National Veterinary Services Laboratories. Agar Gel Immunodiffusion Test to Detect Antibodies to Type A Influenza Virus [SOP NVSL-SOP-0045.03]. Ames, IA: National Veterinary Services Laboratories; 2021 [cited 2026 Jun]. Available from: aphis.usda.gov/sites/default/files/Avian_AGID_SOP.pdf
 - **Source type:** Government institutional SOP
@@ -40,7 +48,7 @@ Citation first-appearance order confirmed sequential 1 → 8 in document XML (no
 - **Claims grounded:** AGID 7-well pattern, line of identity / positive vs. negative read, 24-48 hour read window (Section 2.3, Figure 2.1).
 - **Status:** VERIFIED (institutional source).
 
-## [5] Choi KS, et al. — J Vet Sci (2013) — HI test antigen for NDV
+## [6] Choi KS, et al. — J Vet Sci (2013) — HI test antigen for NDV
 
 - **Full citation:** Choi KS, Kye SJ, Jeon WJ, Park MJ, Kim S, Seul HJ, Kwon JH. Preparation and diagnostic utility of a hemagglutination inhibition test antigen derived from the baculovirus-expressed hemagglutinin-neuraminidase protein gene of Newcastle disease virus. J Vet Sci. 2013;14(3):291-297. doi:10.4142/jvs.2013.14.3.291
 - **Source type:** Peer-reviewed journal article (highest fabrication-risk category)
@@ -48,7 +56,7 @@ Citation first-appearance order confirmed sequential 1 → 8 in document XML (no
 - **Claims grounded:** HI mechanism — NDV HN protein agglutinates red blood cells; antibodies block (inhibit) agglutination; titer = highest dilution showing total inhibition, log2 scale (Section 2.4).
 - **Status:** VERIFIED (CrossRef + PubMed PMID 23820164, 2026-06-10). Every author initial, title word, journal, volume/issue/year, and page range matches the same physical source.
 
-## [6] Erf GF, et al. — Poultry (2023) — Two-Window Approach to Cellular and Humoral Immunity
+## [7] Erf GF, et al. — Poultry (2023) — Two-Window Approach to Cellular and Humoral Immunity
 
 - **Full citation:** Erf GF, Kong HR, Falcon DM, Byrne KA. Two-Window Approach to Monitor and Assess Cellular and Humoral Immune Responses in Poultry. Poultry. 2023;2(1):82-97. doi:10.3390/poultry2010009
 - **Source type:** Peer-reviewed journal article (highest fabrication-risk category)
@@ -56,7 +64,7 @@ Citation first-appearance order confirmed sequential 1 → 8 in document XML (no
 - **Claims grounded:** serology (antibody titer) reflects only the humoral (B-cell/antibody) arm of the immune response and does not measure a bird's T-cell (cell-mediated) immune status (Section 3.1, new bullet).
 - **Status:** VERIFIED (CrossRef, 2026-07-21).
 
-## [7] Hy-Line International — Diagnostic Sample Collection, Part One (2016)
+## [8] Hy-Line International — Diagnostic Sample Collection, Part One (2016)
 
 - **Full citation:** Hy-Line International. Proper Collection and Handling of Diagnostic Samples: Part One, Serology and Blood Collection [Technical Update]. Hy-Line International; 2016. Available from: hyline.com
 - **Source type:** Breeder-company technical update (local extract)
@@ -64,7 +72,7 @@ Citation first-appearance order confirmed sequential 1 → 8 in document XML (no
 - **Claims grounded:** sample submission info list, bird selection (10-20, min 10), paired sampling 3-5 weeks, killed-vaccine peak 3-5 weeks, blood volume 2.0-3.0 mL → 1.0-1.5 mL serum, needle gauge table, wing-vein 6-step method, hematoma handling, clotting 80-100°F / 12-18 hrs flat, serum quality, "Do NOT send serum" 5-item list, gelled (dehydration) vs. slimy/cheese (spoilage) distinction, storage/shipping 45°F / freeze +14°F to -40°F (Sections 3.2, 4.1, 4.2, 5.1, 5.2).
 - **Status:** VERIFIED (local source).
 
-## [8] BioChek — Interpretation and Application of Results Manual (2017)
+## [9] BioChek — Interpretation and Application of Results Manual (2017)
 
 - **Full citation:** BioChek. Interpretation and Application of Results Manual. Reeuwijk, Netherlands: BioChek; 2017. Available from: biochek.com
 - **Source type:** Diagnostic-lab technical manual (local extract)
@@ -79,15 +87,16 @@ Citation first-appearance order confirmed sequential 1 → 8 in document XML (no
 | # | Source | Type | Status |
 |---|--------|------|--------|
 | 1 | Bowes / CPC Learning Centre | CPC local | Verified (read in full) |
-| 2 | Merck Veterinary Manual | Live online | Verified online 2026-06-10 (live fetch) |
-| 3 | Zavala / IDEXX | Lab guidance | Verified (read in full) |
-| 4 | USDA APHIS NVSL AGID SOP | Government SOP | Verified (read in full) |
-| 5 | Choi et al. / J Vet Sci | Peer-reviewed | Verified online 2026-06-10 (CrossRef + PubMed PMID 23820164) |
-| 6 | Erf et al. / Poultry (MDPI) | Peer-reviewed | Verified online 2026-07-21 (CrossRef) |
-| 7 | Hy-Line International | Company technical | Verified (read in full) |
-| 8 | BioChek | Lab manual | Verified (read in full) |
+| 2 | Merck Veterinary Manual — Administration of Vaccines | Live online | Verified online 2026-06-10 (live fetch) |
+| 3 | Merck Veterinary Manual — Types of Vaccines | Live online | Verified online 2026-07-21 (live fetch) |
+| 4 | Zavala / IDEXX | Lab guidance | Verified (read in full) |
+| 5 | USDA APHIS NVSL AGID SOP | Government SOP | Verified (read in full) |
+| 6 | Choi et al. / J Vet Sci | Peer-reviewed | Verified online 2026-06-10 (CrossRef + PubMed PMID 23820164) |
+| 7 | Erf et al. / Poultry (MDPI) | Peer-reviewed | Verified online 2026-07-21 (CrossRef) |
+| 8 | Hy-Line International | Company technical | Verified (read in full) |
+| 9 | BioChek | Lab manual | Verified (read in full) |
 
-All 8 references verified. The five local-library sources ([1], [3], [4], [7], [8]) were verified by full read of the source this session. The live online source [2] and the two peer-reviewed articles ([5], [6]) were verified online: [2] by direct page fetch (title/author/dates confirmed, 2026-06-10), [5] against CrossRef and PubMed (PMID 23820164: all 7 authors, title, journal, volume/issue/year, and 291-297 page range confirmed against one physical source, 2026-06-10), [6] against CrossRef (all 4 authors, title, journal, volume/issue/year, and 82-97 page range confirmed, 2026-07-21).
+All 9 references verified. The five local-library sources ([1], [4], [5], [8], [9]) were verified by full read of the source this session. The two live online sources ([2], [3]) and the two peer-reviewed articles ([6], [7]) were verified online: [2] and [3] by direct page fetch (title/author/dates confirmed, 2026-06-10 and 2026-07-21 respectively), [6] against CrossRef and PubMed (PMID 23820164: all 7 authors, title, journal, volume/issue/year, and 291-297 page range confirmed against one physical source, 2026-06-10), [7] against CrossRef (all 4 authors, title, journal, volume/issue/year, and 82-97 page range confirmed, 2026-07-21).
 
 ---
 
@@ -128,3 +137,17 @@ The user pointed to `Avian medicine sources/Avian medicine/Avian_Immune_System_C
 - **Post-fix integrity checks (2026-07-21):** w:dirty = 0, em dash = 0, bookmarkStart = hyperlink = 23 (TOC links unaffected, no headings changed), citation order 1-8 sequential, British-spelling sweep clean (same false positives as before: "raised," "rising," "CPC Learning Centre"), reference list confirmed in Word auto-numbered order with the new [6] entry between Choi et al. (old [5]) and Hy-Line (now [7]).
 
 - **TOC page numbers were stale — recomputed and fixed.** The cached TOC page numbers in `tocEntries` had not been kept in sync with a prior editing pass (the 2026-06-11 fix that deleted an unsourced sentence from Section 2.3 shortened that page and was never reflected in the TOC) plus today's additions. Rendered the docx to PDF via LibreOffice (`soffice --headless --convert-to pdf`) and mapped every heading to its real page with `pdftotext -layout`. Result: Introduction was cached at page 2 but actually falls on page 3; 2.3/2.4 were cached one page later than actual; everything from Section 3 onward was cached two pages later than actual (Section 3 cached 9 → actual 8; Section 4 cached 11 → actual 9; Section 5 cached 13 → actual 11; Section 6 cached 15 → actual 13; Recommended Journals cached 17 → actual 15; References cached 18 → actual 16). Updated all 23 `tocEntries` page values in `generate-course15.mjs` to the measured values, regenerated the docx, re-rendered to PDF, and re-extracted: every cached TOC number now matches its heading's real page exactly.
+
+---
+
+## 2026-07-21 Second addendum — corrected live vs. killed vaccine claim (user-flagged science error)
+
+The user flagged the Section 1.2 paragraph on live vs. killed vaccine antibody response as not matching the science: the course said a live vaccine produces the stronger antibody response and a killed vaccine "produces a milder response on its own." The user's own research (Merck Veterinary Manual) states the opposite for humoral immunity, that killed/inactivated vaccines induce higher, more uniform, and more persistent antibody concentrations than live vaccines, and that the real reason breeder flocks get live-then-killed is a division of labor (live vaccine for breadth of cell-mediated/mucosal protection, killed booster for strong circulating antibody before lay), not one vaccine type being simply "weaker."
+
+- **Independent verification before rewriting:** rather than taking the flagged correction at face value, fetched the Merck Veterinary Manual "Types of Vaccines for Animals" page directly (merckvetmanual.com/pharmacology/vaccines-and-immunotherapy/types-of-vaccines-for-animals; author Ian Rodney Tizard, reviewer Joyce Carnevale, last updated April 2026, 2026-07-21). Confirmed verbatim: "Living viruses from vaccines... infect host cells and grow briefly. The infected cells then process the viral antigens, triggering a response dominated by cytotoxic T cells, a type 1 response" and "Killed organisms and purified antigens, in contrast, commonly stimulate responses dominated by antibodies, a type 2 response." Also confirmed killed vaccines "may require multiple doses and also require the use of adjuvants to maximize their effectiveness."
+- **Scope of the correction:** rewrote the paragraph to present live and killed vaccines as specializing in different arms of the immune response (live = cell-mediated/Type 1 dominant; killed = antibody/humoral/Type 2 dominant) rather than a stronger/weaker framing, and corrected the stated rationale for the live-first-killed-second breeder order accordingly. Deliberately did NOT carry forward the specific magnitude claims from the flagged research (killed antibody titers being quantitatively "higher, more uniform, and more persistent" than live) into the course text, because a poultry-specific comparative study located during verification (an experimental inactivated Newcastle disease vaccine trial) showed mixed results across vaccination schedules (live-followed-killed showed slightly higher titers than killed-followed-killed in one comparison, though killed-followed-killed showed a slower decline rate) and was judged too specific/nuanced a single study to generalize from without overclaiming. The rewritten text stays within what the verified Merck source directly supports.
+- **New reference added:** [3] Merck Veterinary Manual. Types of Vaccines for Animals. Kenilworth, NJ: Merck & Co.; 2026 [cited 2026 Jul]. Available from: merckvetmanual.com/pharmacology/vaccines-and-immunotherapy/types-of-vaccines-for-animals (see entry above). This is a different page from the existing [2] (Administration of Vaccines in Animals) and required its own reference per Vancouver style.
+- **Citation cascade renumbering:** inserting [3] mid-document required renumbering every existing [3]-[8] up by one to [4]-[9] throughout `generate-course15.mjs` and `generate-course15-figures.mjs`, including combined markers ([1,3] → [1,4]; [3,8] → [4,9]). Applied via a single-pass regex mapping (not sequential temp-markers this time) scoped strictly to the document-content region of each file, verified to leave unrelated code (regex character classes, array indices, a titer-scale array literal `[1,2,...,11]` in the figures file) untouched. Figures regenerated before the docx rebuild.
+- **Course 8 note (not fixed, flagged only):** a quick check of `Course 8/Revised Course 8.docx` found related imprecision: one passage says a killed vaccine "by itself... gives a weaker immune 'signal'," while another passage in the same document correctly calls inactivated vaccines "the cornerstone of antibody-based protection programs in laying and breeding flocks." This is a separate document from Course 15 with its own unclear source-of-truth status (generator marked DEPRECATED, multiple draft variants on disk) and was left untouched pending explicit direction from the user.
+- **Pagination and TOC:** the two-paragraph expansion of Section 1.2 pushed total pages from 17 to 18. Re-measured all headings via PDF render and updated 5 `tocEntries` values (Section 2/2.1 → page 6, Section 3.2 → page 9, Recommended Journals → page 16, References → page 17); all other entries were unaffected and re-confirmed unchanged.
+- **Post-fix integrity checks (2026-07-21):** w:dirty = 0, em dash = 0, bookmarkStart = hyperlink = 23 (no headings changed), citation order 1-9 sequential, British-spelling sweep clean (same false positives as before), TOC page numbers re-verified against a fresh PDF render to match exactly.
