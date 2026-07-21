@@ -2,7 +2,7 @@
 const JSZip = require('jszip');
 const fs = require('fs');
 const path = require('path');
-const DOCX = path.join(__dirname, 'Course 8', 'Vaccination_draft.docx');
+const DOCX = path.join(__dirname, 'Course 8', 'RV-revised-NB-edited course 8 draft.docx');
 const TXT  = path.join(__dirname, 'Course 8', '_vax_pages.txt');
 
 const norm = s => s.replace(/\s+/g, ' ').trim().toLowerCase();

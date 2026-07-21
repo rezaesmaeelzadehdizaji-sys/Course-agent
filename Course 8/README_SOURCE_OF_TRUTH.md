@@ -2,7 +2,7 @@
 
 **The course document is the source of truth, not a generator script.**
 
-- **Live file:** `Course 8/Vaccination_draft.docx` (and its rendered `Vaccination_draft.pdf`)
+- **Live file:** `Course 8/RV-revised-NB-edited course 8 draft.docx` (and its rendered `.pdf`). This file was originally created as `Vaccination_draft.docx`, renamed to `Revised Course 8.docx`, then renamed again (marked "final") to its current name — this document was not kept in sync with those renames until 2026-07-21. `Course 8/Revised Course 8.docx` is a superseded intermediate copy; do not edit it, it is not what's published. Confirm the live file by diffing its byte size against `dashboard/public/docs/course-08-vaccination-treatment.docx` (the two must match exactly after every publish).
 - **Companion summary:** `Course 8/Summary_Page_Course8_Vaccination.docx`
 
 ## Why there is no working generator
@@ -33,10 +33,26 @@ the June 2026 reviewer-comment pass live in the project root:
 - `patch-course8-reviewer.cjs` — content edits (intro immunology foundation,
   antibody table, live/killed vs modified-live, cold-chain definition,
   CPC-attribution thinning, Table 6.1, Section 8 culture & sensitivity).
-- `renumber-course8.cjs` — restores Vancouver citation order after any
-  reference is added or moved; physically reorders the bibliography.
-- `toc-refresh-course8.cjs` — refreshes cached TOC page numbers from the
-  rendered PDF so the PDF's table of contents matches the body.
+- `renumber-course8.cjs` — a **one-time** June 2026 script with a hardcoded
+  old→new citation map and hardcoded path to the old `Vaccination_draft.docx`
+  filename. Do not run as-is; use it only as a pattern reference for the
+  bibliography physical-reorder technique (find bib paragraphs via
+  `w:hanging="504"` + the bold-blue-label regex, relabel, sort, reassemble).
+- `toc-refresh-course8.cjs` — path corrected 2026-07-21 to point at the
+  current live file. Refreshes cached TOC page numbers by exact/prefix line
+  matching against `pdftotext` output. **Known limitation:** headings that
+  wrap across two lines in the rendered PDF (e.g. "Section 7: ... What to
+  Expect and When / to Act") or whose TOC text has drifted from the actual
+  heading text (e.g. TOC says "8.3 Treatment Routes" but the heading itself
+  reads "8.3 Treatment Route" — a pre-existing typo, not yet fixed) will not
+  be found by this matcher and must be checked by hand against the rendered
+  PDF pages. Always spot-check the "not found" list, don't assume they're
+  unchanged.
+- `patch-course8-killedvax-fix.cjs` — 2026-07-21: corrected the live-vs-killed
+  vaccine immunology paragraph and inserted a new reference (see
+  `reference_verification_log.md`). Kept as a worked example of the
+  placeholder-then-remap technique for inserting a mid-document citation
+  without the cascade regex catching the newly-inserted marker.
 
 ### Standard workflow after any edit
 
