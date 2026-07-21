@@ -342,6 +342,8 @@ function buildBodySection() {
 
     para('This course walks through how those blood tests work, what the results actually mean, and how to use them to make real decisions on your farm: whether your vaccination program is working, whether a disease has moved through your flock without you seeing it, and when a result is telling you something versus when it is just noise.'),
 
+    para('Reading a titer number off a page is the easy part. Weighing what it means for your flock, against vaccination history, other lab work, and disease patterns your veterinarian has seen play out across many flocks, takes the kind of judgment built over years of training and casework. This course will get you reading reports and asking sharper questions. The final interpretation, and the decision that follows it, is a call you make together with your veterinarian.'),
+
     h2('Learning Objectives'),
     numbered('Explain what antibodies are and what a titer result on a lab report actually represents.'),
     numbered('Read a serology report against the flock\'s vaccination history and health background, not just as numbers on a page.'),
@@ -427,6 +429,8 @@ function buildBodySection() {
     bullet('Test error is real. Lab equipment, reagent batches, and sample quality all add some noise to every result [1].'),
 
     para('This is also why a single titer number means very little without something to compare it to. A titer of 2,000 against avian reovirus might be routine for one flock and a red flag for another, depending on what that flock\'s vaccination program and history normally produce [1,3]. Build your own baseline from your own flocks over time, and compare new results against that baseline first.'),
+
+    para('All of this is exactly why serology results get read with your veterinarian, not alone. Weighing a titer against baseline, history, and everything else going on in the flock is a multi-part judgment call, and your veterinarian has built that judgment through years of training and cases most farmers never see. Bring your numbers to that conversation. The final read on what a result means, and what to do about it, is theirs to make.'),
 
     h2('3.2  Paired Samples: Confirming a Field Challenge'),
 
@@ -515,6 +519,8 @@ function buildBodySection() {
 
     // ── SECTION 6 ─────────────────────────────────────────────
     h1('Section 6: Interpreting Serologic Results'),
+
+    para('What follows is how to read the numbers on the page: the scale they sit on, what a mean titer tells you, what %CV tells you. Reading the numbers is a skill you can build. Deciding what those numbers mean for your flock, and what to do next, is a judgment call for you and your veterinarian to make together.'),
 
     h2('6.1  Reading the Titer Scale'),
 
@@ -663,7 +669,7 @@ const tocEntries = [
   { lvl: 2, text: '5.2  What the Lab Needs From You', page: 12 },
   { lvl: 1, text: 'Section 6: Interpreting Serologic Results', page: 13 },
   { lvl: 2, text: '6.1  Reading the Titer Scale', page: 13 },
-  { lvl: 2, text: '6.2  Flock Uniformity: %CV', page: 13 },
+  { lvl: 2, text: '6.2  Flock Uniformity: %CV', page: 14 },
   { lvl: 1, text: 'Recommended Journals and Resources', page: 15 },
   { lvl: 1, text: 'References', page: 16 },
 ];
