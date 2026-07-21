@@ -225,8 +225,8 @@ const children = [
   para('By the end of this course, participants will be able to:'),
 
   loItem(1, 'Explain what antibodies are and what a titer result on a lab report actually represents.'),
-  loItem(2, 'Read a serology report in the context of the flock\'s vaccination history and health background, not just as numbers on a page.'),
-  loItem(3, 'Describe what serology can and cannot tell you about flock health, so results are not over-read or under-read.'),
+  loItem(2, 'Read a serology report against the flock\'s vaccination history and health background, not just as numbers on a page.'),
+  loItem(3, 'Describe what serology can and cannot tell you about flock health, so you don\'t read too much into a result or miss what it\'s telling you.'),
   loItem(4, 'Draw a blood sample from a bird confidently and safely.'),
   loItem(5, 'Prepare and handle blood samples so the serum that reaches the lab is good enough to test.'),
   loItem(6, 'Fill out a lab submission form correctly, requesting the right tests for the question being asked.'),

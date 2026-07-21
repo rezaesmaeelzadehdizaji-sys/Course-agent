@@ -344,8 +344,8 @@ function buildBodySection() {
 
     h2('Learning Objectives'),
     numbered('Explain what antibodies are and what a titer result on a lab report actually represents.'),
-    numbered('Read a serology report in the context of the flock\'s vaccination history and health background, not just as numbers on a page.'),
-    numbered('Describe what serology can and cannot tell you about flock health, so results are not over-read or under-read.'),
+    numbered('Read a serology report against the flock\'s vaccination history and health background, not just as numbers on a page.'),
+    numbered('Describe what serology can and cannot tell you about flock health, so you don\'t read too much into a result or miss what it\'s telling you.'),
     numbered('Draw a blood sample from a bird confidently and safely.'),
     numbered('Prepare and handle blood samples so the serum that reaches the lab is good enough to test.'),
     numbered('Fill out a lab submission form correctly, requesting the right tests for the question being asked.'),
@@ -444,9 +444,9 @@ function buildBodySection() {
 
     h2('4.1  Equipment, Site Selection, and How Many Birds to Sample'),
 
-    para('Good serology starts before the needle ever goes into a bird. For routine monitoring, pick normal, healthy birds, not culls or birds that look sick; a sick bird\'s titer does not represent the flock. If you are working up a suspected disease problem, it is the opposite: sample the birds that are actually showing signs [6].'),
+    para('Good serology starts before the needle ever goes into a bird. For routine monitoring, pick normal, healthy birds, not culls or birds that look sick. A sick bird\'s titer does not represent the flock. If you are working up a suspected disease problem, it is the opposite: sample the birds that are actually showing signs [6].'),
 
-    para('For routine flock profiling, collect serum from 10 to 20 birds, with 20 the better target and 10 the minimum that still gives a usable estimate of the flock\'s antibody status [6]. The CPC Learning Centre Serology 101 presentation makes the same point from the lab\'s side: a small sample is being used to stand in for the whole flock, so the sample size has to be big enough for the result to mean something, and pooling several birds\' blood into one sample lowers the test\'s ability to pick up a positive [1].'),
+    para('For routine flock profiling, collect serum from 10 to 20 birds, with 20 the better target and 10 the minimum that still gives a usable estimate of the flock\'s antibody status [6]. The CPC Learning Centre Serology 101 presentation makes the same point from the lab\'s side: you\'re using a small sample to stand in for the whole flock, so it has to be big enough for the result to mean something. Pooling several birds\' blood into one sample makes it harder for the test to catch a positive [1].'),
 
     para('Use a disposable, sterile syringe, 3 cc or 5 cc depending on how much blood you need. Swap in a fresh needle every 5 to 10 birds, and always change all your equipment between flocks so you are not carrying disease from one barn to the next. A dull needle tears tissue instead of slipping into the vein, which makes the draw harder on you and the bird [6]. Needle size depends on where you are drawing from:'),
 
@@ -460,7 +460,7 @@ function buildBodySection() {
     ),
     new Paragraph({ spacing: { before: 80, after: 0 } }),
 
-    para('Two sites cover almost every situation on a commercial farm. The wing (brachial) vein is the everyday choice for birds 4 weeks and older; in younger birds this vein is too small to get a usable sample. Cardiac puncture, drawing blood directly from the heart, gives a larger, cleaner sample but should only be done by trained personnel, since poor technique can cause fatal bleeding [6]. The wing vein is the technique covered in the workshop.'),
+    para('Two sites cover almost every situation on a commercial farm. The wing (brachial) vein is the everyday choice for birds 4 weeks and older. In younger birds, this vein is too small to get a usable sample. Cardiac puncture, drawing blood directly from the heart, gives a larger, cleaner sample, but only trained personnel should do it: poor technique can cause fatal bleeding [6]. The wing vein is the technique covered in the workshop.'),
 
     h2('4.2  Drawing Blood from the Wing Vein'),
 
@@ -510,7 +510,7 @@ function buildBodySection() {
 
     para('Labeling matters as much as the sample itself. The CPC Learning Centre Serology 101 presentation lays out a typical lab code: a flock number, a letter for first or second bleeding (A or B), a code for the type of bird (BB for broiler breeder, for example), the flock\'s age in weeks, a submitter code, an owner code, and the test being requested, something like "123 A BB 18 X 345, IBD-XR" [1].'),
 
-    para('Write down everything the lab needs to put your numbers in context: flock ID and location, age, date of collection, the full vaccination program, and any health or production history worth flagging [6]. The BioChek lab manual makes the same point from its side: every sample needs to be labeled with company ID, flock ID, age, and bird type before it ever gets tested, or there is nothing to compare the titer against [7].'),
+    para('Write down everything the lab needs to put your numbers in context: flock ID and location, age, date of collection, the full vaccination program, and any health or production history worth flagging [6]. The BioChek lab manual makes the same point from its side: label every sample with company ID, flock ID, age, and bird type before it goes in for testing, or there is nothing to compare the titer against [7].'),
 
     // ── SECTION 6 ─────────────────────────────────────────────
     h1('Section 6: Interpreting Serologic Results'),
@@ -527,7 +527,7 @@ function buildBodySection() {
 
     h2('6.2  Flock Uniformity: %CV'),
 
-    para('The mean titer tells you how strong the response was on average. The %CV, short for coefficient of variation, tells you how even that response was across the flock. It is calculated as the standard deviation of the titers divided by the mean, multiplied by 100 [3].'),
+    para('The mean titer tells you how strong the response was on average. The %CV, short for coefficient of variation, tells you how even that response was across the flock. The lab gets that number by taking the standard deviation of the titers, dividing it by the mean, and multiplying by 100 [3].'),
 
     para('A low %CV means the birds you sampled were all sitting close to the same titer, a sign of a uniform vaccination response or a recent shared field exposure. A high %CV means some birds responded strongly and others barely responded at all, even though the mean might look fine [3,7].'),
 
