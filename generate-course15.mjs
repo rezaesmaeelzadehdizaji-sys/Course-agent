@@ -466,7 +466,7 @@ function buildBodySection() {
 
     para('The wing vein draw is a one-person job once you get the hang of it. Hold the bird by both legs, then tuck its legs under your non-dominant elbow so both your hands are free to work with the wing [6].'),
 
-    ...image(figBuf('blood collection\'.jpg'), 'Photo 4.1: Drawing blood from the wing (brachial) vein. Feathers are parted on the underside of the wing to expose the vein (top left, arrow), then the needle goes in bevel up to draw the sample (bottom left and right). Source: Norecopa (norecopa.no); Kelly & Alworth, Lab Anim 2013;42:359-361; foodagribusiness.world.', 5.8, 'jpg'),
+    ...image(figBuf('blood collection\'.jpg'), 'Photo 4.1: Wing (brachial) vein blood collection in a chicken, shown from three angles. The arrow (top left) marks the brachial vein on the inside of the wing; the other two panels show the needle drawing blood into the syringe. Source: Norecopa (norecopa.no); Kelly & Alworth, Lab Anim 2013;42:359-361; foodagribusiness.world.', 5.8, 'jpg'),
 
     bullet([{ text: 'Step 1: ', bold: true }, { text: 'Pull back a few feathers on the underside of the wing so you can see the brachial vein running along the inside of the wing [6].' }]),
     bullet([{ text: 'Step 2: ', bold: true }, { text: 'Line the needle up with the vein, bevel facing up, with the tip pointed toward the wing tip [6].' }]),
