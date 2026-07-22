@@ -473,6 +473,8 @@ function buildBodySection() {
 
     para('For routine flock profiling, collect serum from 10 to 20 birds, with 20 the better target and 10 the minimum that still gives a usable estimate of the flock\'s antibody status [15]. The CPC Learning Centre Serology 101 presentation makes the same point from the lab\'s side: you\'re using a small sample to stand in for the whole flock, so it has to be big enough for the result to mean something. Pooling several birds\' blood into one sample makes it harder for the test to catch a positive [1].'),
 
+    ...image(figBuf('sampleing guide.png'), 'Figure 4.1: Spreading the sample across the whole house. Walk the two diagonals from the entrance and pick birds at even spacing, so the sample stands for the whole flock and not just one corner or one age pocket. The worked example on the figure (24 birds, one about every 5 m along a 60 m diagonal) is only there to show how to space the walk. Use the number your purpose calls for: for routine flock profiling that is the 10 to 20 birds noted above. Source: BioChek Interpretation and Application of Results Manual.', 5.8, 'png'),
+
     para('Use a disposable, sterile syringe, 3 cc or 5 cc depending on how much blood you need. Swap in a fresh needle every 5 to 10 birds, and always change all your equipment between flocks so you are not carrying disease from one barn to the next. A dull needle tears tissue instead of slipping into the vein, which makes the draw harder on you and the bird [15]. Needle size depends on where you are drawing from:'),
 
     dataTable(
@@ -692,11 +694,11 @@ const tocEntries = [
   { lvl: 1, text: 'Section 4: Poultry Blood Sampling Techniques', page: 11 },
   { lvl: 2, text: '4.1  Equipment, Site Selection, and How Many Birds to Sample', page: 11 },
   { lvl: 2, text: '4.2  Drawing Blood from the Wing Vein', page: 12 },
-  { lvl: 1, text: 'Section 5: Sample Handling and Lab Submission', page: 13 },
-  { lvl: 2, text: '5.1  Clotting and Separating Serum', page: 13 },
+  { lvl: 1, text: 'Section 5: Sample Handling and Lab Submission', page: 14 },
+  { lvl: 2, text: '5.1  Clotting and Separating Serum', page: 14 },
   { lvl: 2, text: '5.2  What the Lab Needs From You', page: 14 },
   { lvl: 1, text: 'Section 6: Interpreting Serologic Results', page: 15 },
-  { lvl: 2, text: '6.1  Reading the Titer Scale', page: 15 },
+  { lvl: 2, text: '6.1  Reading the Titer Scale', page: 16 },
   { lvl: 2, text: '6.2  Flock Uniformity: %CV', page: 16 },
   { lvl: 1, text: 'Recommended Journals and Resources', page: 18 },
   { lvl: 1, text: 'References', page: 19 },
