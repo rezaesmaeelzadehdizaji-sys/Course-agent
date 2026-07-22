@@ -396,7 +396,7 @@ function buildBodySection() {
 
     para('ELISA stands for enzyme-linked immunosorbent assay, and it is the workhorse test for poultry serology. A test plate is coated with the antigen for the disease being tested. When diluted serum is added, any matching antibodies in the sample latch onto that antigen. A reagent is added that turns shades of blue depending on how much antibody is bound, and a plate reader converts that color into a titer number for every well [1].'),
 
-    ...image(figBuf('elisa kit].png'), 'Photo 2.1: A commercial ELISA test kit. The antigen-coated microplate (right), with the standards, controls, wash solution, and color reagents used to run each sample and read a titer for every well. Source: BYabscience.', 5.6, 'png'),
+    ...image(figBuf('elisa kit.jpg'), 'Photo 2.1: A commercial ELISA test kit. The antigen-coated microplates, plus the standards, conjugate, substrate, and stop solution used to run each sample and read a titer for every well. Source: Romer Labs (AgraQuant).', 5.2, 'jpg'),
 
     para('The biggest advantage of ELISA is speed. The test is fully automated, and a single lab can run hundreds, even thousands, of serum samples in a day. That is why ELISA is the default test for routine flock monitoring of infectious bronchitis, infectious bursal disease, and avian reovirus [4].'),
 
@@ -418,7 +418,7 @@ function buildBodySection() {
 
     para('Hemagglutination inhibition, or HI, is built around a quirk of certain viruses. Newcastle disease virus has a surface protein, hemagglutinin-neuraminidase (HN), that makes red blood cells stick together, or agglutinate, when mixed in a test tube. If a bird\'s serum contains antibodies against Newcastle disease virus, those antibodies bind to the HN protein and block it from clumping the red blood cells. That blocking is the "inhibition" in hemagglutination inhibition [6].'),
 
-    ...image(figBuf('HI-.jpg'), 'Figure 2.2: The principle behind the HI test. (A) Red blood cells alone settle into a compact button (no reaction). (B) Virus alone binds and clumps the red cells into a diffuse mat (hemagglutination). (C) When antibody is present, it coats the virus and blocks the clumping, so the cells settle back into a button (hemagglutination inhibition). Source: microbenotes.com.', 5.6, 'jpg'),
+    ...image(figBuf('HI-.jpg'), 'Figure 2.2: The principle behind the HI test. (A) Red blood cells alone settle into a compact button (no reaction). (B) Virus alone binds and clumps the red cells into a diffuse mat (hemagglutination). (C) When antibody is present, it coats the virus and blocks the clumping, so the cells settle back into a button (hemagglutination inhibition). Source: microbenotes.com.', 4.2, 'jpg'),
 
     para('To run the test, the lab makes a series of doubling dilutions of the serum, then adds a fixed amount of virus and red blood cells to each one. The titer is read as the highest dilution that still completely blocks the clumping. Because each step is a doubling dilution, titers are reported on what is called a log2 scale, the same doubling scale used for AGID titers [6]. Section 6.1 walks through how to read that scale on a lab report.'),
 
