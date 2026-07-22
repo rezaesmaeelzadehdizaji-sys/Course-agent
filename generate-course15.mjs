@@ -418,6 +418,8 @@ function buildBodySection() {
 
     para('Hemagglutination inhibition, or HI, is built around a quirk of certain viruses. Newcastle disease virus has a surface protein, hemagglutinin-neuraminidase (HN), that makes red blood cells stick together, or agglutinate, when mixed in a test tube. If a bird\'s serum contains antibodies against Newcastle disease virus, those antibodies bind to the HN protein and block it from clumping the red blood cells. That blocking is the "inhibition" in hemagglutination inhibition [6].'),
 
+    ...image(figBuf('HI.jpg'), 'Photo 2.3: An HI test read on a 96-well plate. Each row is one serum sample run across doubling dilutions (columns 1 to 12). A tight red button in the center of a well means antibody blocked the clumping (positive); a diffuse pink haze means the red cells clumped (negative). The titer is the last well still showing a button. Source: CPC Short Courses.', 5.8, 'jpg'),
+
     para('To run the test, the lab makes a series of doubling dilutions of the serum, then adds a fixed amount of virus and red blood cells to each one. The titer is read as the highest dilution that still completely blocks the clumping. Because each step is a doubling dilution, titers are reported on what is called a log2 scale, the same doubling scale used for AGID titers [6]. Section 6.1 walks through how to read that scale on a lab report.'),
 
     // ── SECTION 3 ─────────────────────────────────────────────
@@ -665,20 +667,20 @@ const tocEntries = [
   { lvl: 2, text: '2.2  ELISA Testing', page: 6 },
   { lvl: 2, text: '2.3  AGID and Plate Agglutination', page: 7 },
   { lvl: 2, text: '2.4  Hemagglutination Inhibition (HI) Testing', page: 8 },
-  { lvl: 1, text: 'Section 3: The Limitations of Serology', page: 8 },
-  { lvl: 2, text: '3.1  What Serology Can and Cannot Tell You', page: 8 },
-  { lvl: 2, text: '3.2  Paired Samples: Confirming a Field Challenge', page: 9 },
+  { lvl: 1, text: 'Section 3: The Limitations of Serology', page: 9 },
+  { lvl: 2, text: '3.1  What Serology Can and Cannot Tell You', page: 9 },
+  { lvl: 2, text: '3.2  Paired Samples: Confirming a Field Challenge', page: 10 },
   { lvl: 1, text: 'Section 4: Poultry Blood Sampling Techniques', page: 10 },
   { lvl: 2, text: '4.1  Equipment, Site Selection, and How Many Birds to Sample', page: 10 },
   { lvl: 2, text: '4.2  Drawing Blood from the Wing Vein', page: 11 },
   { lvl: 1, text: 'Section 5: Sample Handling and Lab Submission', page: 12 },
   { lvl: 2, text: '5.1  Clotting and Separating Serum', page: 12 },
   { lvl: 2, text: '5.2  What the Lab Needs From You', page: 13 },
-  { lvl: 1, text: 'Section 6: Interpreting Serologic Results', page: 13 },
+  { lvl: 1, text: 'Section 6: Interpreting Serologic Results', page: 14 },
   { lvl: 2, text: '6.1  Reading the Titer Scale', page: 14 },
-  { lvl: 2, text: '6.2  Flock Uniformity: %CV', page: 14 },
-  { lvl: 1, text: 'Recommended Journals and Resources', page: 16 },
-  { lvl: 1, text: 'References', page: 17 },
+  { lvl: 2, text: '6.2  Flock Uniformity: %CV', page: 15 },
+  { lvl: 1, text: 'Recommended Journals and Resources', page: 17 },
+  { lvl: 1, text: 'References', page: 18 },
 ];
 
 const entriesWithAnchor = tocEntries.map((e, i) => ({
