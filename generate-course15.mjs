@@ -410,6 +410,8 @@ function buildBodySection() {
 
     para('Plate agglutination is a third method. A drop of antigen is mixed directly with a drop of blood or serum on a plate, and if antibodies are present, the mixture clumps visibly within minutes [1].'),
 
+    ...image(figBuf('plate agglutination-MG.png'), 'Photo 2.1: Plate agglutination test for Mycoplasma gallisepticum. A smooth, even drop (a) is negative; visible clumping (b, c) is positive. Source: Kabir A, et al. Eur J Agric Food Sci. 2021.', 5.2, 'png'),
+
     h2('2.4  Hemagglutination Inhibition (HI) Testing'),
 
     para('Hemagglutination inhibition, or HI, is built around a quirk of certain viruses. Newcastle disease virus has a surface protein, hemagglutinin-neuraminidase (HN), that makes red blood cells stick together, or agglutinate, when mixed in a test tube. If a bird\'s serum contains antibodies against Newcastle disease virus, those antibodies bind to the HN protein and block it from clumping the red blood cells. That blocking is the "inhibition" in hemagglutination inhibition [6].'),
@@ -660,7 +662,7 @@ const tocEntries = [
   { lvl: 2, text: '2.1  Reading a Lab Report: What Serology Measures', page: 6 },
   { lvl: 2, text: '2.2  ELISA Testing', page: 6 },
   { lvl: 2, text: '2.3  AGID and Plate Agglutination', page: 6 },
-  { lvl: 2, text: '2.4  Hemagglutination Inhibition (HI) Testing', page: 7 },
+  { lvl: 2, text: '2.4  Hemagglutination Inhibition (HI) Testing', page: 8 },
   { lvl: 1, text: 'Section 3: The Limitations of Serology', page: 8 },
   { lvl: 2, text: '3.1  What Serology Can and Cannot Tell You', page: 8 },
   { lvl: 2, text: '3.2  Paired Samples: Confirming a Field Challenge', page: 9 },
