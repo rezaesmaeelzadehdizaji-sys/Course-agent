@@ -462,7 +462,7 @@ function buildBodySection() {
 
     para('The same paired approach works for checking how well a killed vaccine is taking. Titer response from a killed vaccine peaks 3 to 5 weeks after the shot, so a sample taken before vaccination and a second one 3 to 5 weeks after gives you a before and after picture of how the flock responded [15].'),
 
-    para('If a paired-sample result points to a specific pathogen, see Course 7 (Common Poultry Diseases) in this series for the clinical signs and lesions that go with it.'),
+    para('If a paired-sample result points to a specific pathogen, see Course 7 (Common Poultry Diseases) in this series for the clinical signs that go with it, and Course 11 (Necropsy, Common Diseases) for the post-mortem lesions.'),
 
     // ── SECTION 4 ─────────────────────────────────────────────
     h1('Section 4: Poultry Blood Sampling Techniques'),
