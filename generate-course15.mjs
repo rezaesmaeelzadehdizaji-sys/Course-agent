@@ -432,7 +432,7 @@ function buildBodySection() {
     bullet('Serology only shows part of the picture: the antibody (humoral) response. It says nothing about a bird\'s T-cell (cell-mediated) immune response, which also plays a role in disease protection and does not show up on any titer report [7].'),
     bullet('Seroconversion takes time. After exposure, it usually takes 4 to 20 days before antibody levels rise enough to show up on a test [1].'),
     bullet('A single sample is a snapshot, not a trend. One titer reading cannot tell you whether antibody levels are rising, holding steady, or already falling [1].'),
-    bullet('Serology cannot reliably tell field strain from vaccine strain. ELISA is a quantitative test, it measures how much antibody, not which exact strain triggered it [4].'),
+    bullet('Serology cannot reliably tell field strain from vaccine strain. ELISA is a quantitative test, it measures how much antibody, not which exact strain triggered it [4]. What it can flag is the size of the response: a real field infection usually pushes titers much higher than vaccination alone, so a titer well above what your program normally produces is a strong hint the birds met the field virus [1].'),
     bullet('Cross-reactions happen. Antibodies raised against one strain, or even one related pathogen, can sometimes register on a test built for a different one [1].'),
     bullet('Test error is real. Lab equipment, reagent batches, and sample quality all add some noise to every result [1].'),
 
