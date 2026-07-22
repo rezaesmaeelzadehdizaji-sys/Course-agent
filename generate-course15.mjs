@@ -396,6 +396,8 @@ function buildBodySection() {
 
     para('ELISA stands for enzyme-linked immunosorbent assay, and it is the workhorse test for poultry serology. A test plate is coated with the antigen for the disease being tested. When diluted serum is added, any matching antibodies in the sample latch onto that antigen. A reagent is added that turns shades of blue depending on how much antibody is bound, and a plate reader converts that color into a titer number for every well [1].'),
 
+    ...image(figBuf('elisa kit].png'), 'Photo 2.1: A commercial ELISA test kit. The antigen-coated microplate (right), with the standards, controls, wash solution, and color reagents used to run each sample and read a titer for every well. Source: BYabscience.', 5.6, 'png'),
+
     para('The biggest advantage of ELISA is speed. The test is fully automated, and a single lab can run hundreds, even thousands, of serum samples in a day. That is why ELISA is the default test for routine flock monitoring of infectious bronchitis, infectious bursal disease, and avian reovirus [4].'),
 
     para('ELISA does have one real limitation worth remembering: it tells you how much antibody is there, but not which strain triggered it. If your flock\'s infectious bronchitis titers come back higher than expected, ELISA cannot tell you which strain of the virus is behind it, only that the birds have responded to something [4].'),
@@ -410,7 +412,7 @@ function buildBodySection() {
 
     para('Plate agglutination is a third method. A drop of antigen is mixed directly with a drop of blood or serum on a plate, and if antibodies are present, the mixture clumps visibly within minutes [1].'),
 
-    ...image(figBuf('plate agglutination-MG.png'), 'Photo 2.1: Plate agglutination test for Mycoplasma gallisepticum. A smooth, even drop (a) is negative; visible clumping (b, c) is positive. Source: Kabir A, et al. Eur J Agric Food Sci. 2021.', 5.2, 'png'),
+    ...image(figBuf('plate agglutination-MG.png'), 'Photo 2.2: Plate agglutination test for Mycoplasma gallisepticum. A smooth, even drop (a) is negative; visible clumping (b, c) is positive. Source: Kabir A, et al. Eur J Agric Food Sci. 2021.', 5.2, 'png'),
 
     h2('2.4  Hemagglutination Inhibition (HI) Testing'),
 
@@ -661,19 +663,19 @@ const tocEntries = [
   { lvl: 1, text: 'Section 2: Serologic Tests', page: 6 },
   { lvl: 2, text: '2.1  Reading a Lab Report: What Serology Measures', page: 6 },
   { lvl: 2, text: '2.2  ELISA Testing', page: 6 },
-  { lvl: 2, text: '2.3  AGID and Plate Agglutination', page: 6 },
+  { lvl: 2, text: '2.3  AGID and Plate Agglutination', page: 7 },
   { lvl: 2, text: '2.4  Hemagglutination Inhibition (HI) Testing', page: 8 },
   { lvl: 1, text: 'Section 3: The Limitations of Serology', page: 8 },
   { lvl: 2, text: '3.1  What Serology Can and Cannot Tell You', page: 8 },
   { lvl: 2, text: '3.2  Paired Samples: Confirming a Field Challenge', page: 9 },
-  { lvl: 1, text: 'Section 4: Poultry Blood Sampling Techniques', page: 9 },
-  { lvl: 2, text: '4.1  Equipment, Site Selection, and How Many Birds to Sample', page: 9 },
-  { lvl: 2, text: '4.2  Drawing Blood from the Wing Vein', page: 10 },
-  { lvl: 1, text: 'Section 5: Sample Handling and Lab Submission', page: 11 },
-  { lvl: 2, text: '5.1  Clotting and Separating Serum', page: 11 },
-  { lvl: 2, text: '5.2  What the Lab Needs From You', page: 12 },
+  { lvl: 1, text: 'Section 4: Poultry Blood Sampling Techniques', page: 10 },
+  { lvl: 2, text: '4.1  Equipment, Site Selection, and How Many Birds to Sample', page: 10 },
+  { lvl: 2, text: '4.2  Drawing Blood from the Wing Vein', page: 11 },
+  { lvl: 1, text: 'Section 5: Sample Handling and Lab Submission', page: 12 },
+  { lvl: 2, text: '5.1  Clotting and Separating Serum', page: 12 },
+  { lvl: 2, text: '5.2  What the Lab Needs From You', page: 13 },
   { lvl: 1, text: 'Section 6: Interpreting Serologic Results', page: 13 },
-  { lvl: 2, text: '6.1  Reading the Titer Scale', page: 13 },
+  { lvl: 2, text: '6.1  Reading the Titer Scale', page: 14 },
   { lvl: 2, text: '6.2  Flock Uniformity: %CV', page: 14 },
   { lvl: 1, text: 'Recommended Journals and Resources', page: 16 },
   { lvl: 1, text: 'References', page: 17 },
