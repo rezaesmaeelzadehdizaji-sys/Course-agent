@@ -517,7 +517,7 @@ function buildBodySection() {
 
     para('Once the clot has fully formed, separate the serum by pouring it off or gently teasing the clot away from the side of the tube with a wooden stick. A good serum sample looks clear to pale yellow, like the tube on the right below [15].'),
 
-    ...image(figBuf('photo5_1_serum_tubes.png'), 'Photo 5.1: Blood collection tubes after clotting and centrifugation. The Serum tube (right) shows clear, pale serum separated from the clotted red cell layer below, the appearance you\'re looking for in a good sample. Source: Wikimedia Commons (CC BY-SA), Uwe Gille.', 4.0),
+    ...image(figBuf('photo5_1_serum_tubes.png'), 'Photo 5.1: Three tubes after spinning, and only one gives you serum. Left (EDTA K, red cap): the anticoagulant blocks clotting, so it stays whole blood with no clear layer on top. Middle (Li-Heparin, orange cap): also anticoagulated, so the pale top layer is plasma, which still holds fibrinogen and clotting factors, not serum. Right (Serum, clear cap): no anticoagulant, so the blood clots and spins down to clear, pale serum over a firm red cell clot, the appearance you want for serology. Source: Wikimedia Commons (CC BY-SA), Uwe Gille.', 4.0),
 
     h2('5.2  What the Lab Needs From You'),
 
