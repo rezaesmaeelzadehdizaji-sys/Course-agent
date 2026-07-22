@@ -7,7 +7,9 @@
 
 ## Verification Summary
 
-All 6 references verified against online authoritative sources. Zero fabricated citations. Verification method: direct URL access + cross-check of title, author, and publication details.
+All 9 references verified against online authoritative sources. Zero fabricated citations. Verification method: direct URL access + CrossRef metadata cross-check of title, author, and publication details.
+
+**2026-07-22 update (reviewer edits):** Addressed the reviewer's Course 14 comments. Reference [9] (Merck Veterinary Manual, Collection and Submission of Laboratory Samples from Animals, Gunn-Christie RG) was added to support a new Section 6.1 paragraph on barn-necropsy contamination bias and the diagnostic advantage of submitting an intact, chilled bird to the laboratory for culture, sensitivity, and typing. Reference [8] (Oke et al., oxidative stress) was verified against CrossRef and logged (it had been added in a prior revision but not previously documented here). First-appearance order remains sequential 1–9; no renumbering required.
 
 **2026-06-10 update:** A full sentence-level humanization/correctness pass was completed across the entire course body, and a Vancouver citation-order audit was performed. The audit found the original first-appearance order was [1, 2, 4, 5, 3, 6] (out of sequence: section 3.1 cited the old [4] and [5] before section 4.1 first cited the old [3]). Per CLAUDE.md's mandatory citation-reordering rule, all in-text citation numbers and the bibliography order were renumbered using the cascade-safe temp-marker technique:
 
@@ -103,7 +105,30 @@ First-appearance order is now confirmed sequential: 1, 2, 3, 4, 5, 6. The refere
 
 ---
 
-## In-Text Citation Audit (re-derived 2026-06-10 from the regenerated docx)
+### [8] Oke OE, et al. Oxidative stress in poultry production.
+- **Full citation:** Oke OE, Akosile OA, Oni AI, Opowoye IO, Ishola CA, Adebiyi JO, Odeyemi AJ, Adjei-Mensah B, Uyanga VA, Abioja MO. Oxidative stress in poultry production. Poult Sci. 2024;103(9):104003. doi:10.1016/j.psj.2024.104003
+- **Verified:** YES — metadata confirmed directly against the CrossRef API (`api.crossref.org/works/10.1016/j.psj.2024.104003`) on 2026-07-22
+- **Authors confirmed:** Oke OE | Akosile OA | Oni AI | Opowoye IO | Ishola CA | Adebiyi JO | Odeyemi AJ | Adjei-Mensah B | Uyanga VA | Abioja MO — all ten, in this exact order.
+- **Title / journal / year / volume / issue / article number confirmed:** "Oxidative stress in poultry production"; Poultry Science (Poult Sci); 2024; 103(9); 104003
+- **DOI confirmed:** 10.1016/j.psj.2024.104003
+- **Content supported:** oxidative stress as a non-infectious driver of underperformance (heat, crowding, rancid fat, moldy feed) that damages the gut lining, weakens immunity, lowers intake, slows growth, worsens feed conversion, and predisposes to secondary infection. Cited in Section 4.5.
+- **Notes:** First appears in Section 4.5, after refs [1]-[7], so it holds position [8] with no renumbering required.
+- **Status:** VERIFIED
+
+---
+
+### [9] Gunn-Christie RG. Collection and Submission of Laboratory Samples from Animals.
+- **Full citation:** Gunn-Christie RG. Collection and Submission of Laboratory Samples from Animals. Merck Veterinary Manual. Kenilworth, NJ: Merck & Co.; [cited 2026 Jul]. Available from: merckvetmanual.com
+- **Verified:** YES — page fetched 2026-07-22; author byline confirmed as Rebekah G. Gunn-Christie, DVM, DACVP.
+- **Source URL:** https://www.merckvetmanual.com/clinical-pathology-and-procedures/collection-and-submission-of-laboratory-samples/collection-and-submission-of-laboratory-samples-from-animals
+- **Content confirmed (direct quotes from the page):** "Autolyzed tissues are generally useless for histologic evaluation; prompt necropsy and organ sampling are critical." and "unfixed specimens (tissue, fluid, etc) should be collected aseptically and shipped promptly to avoid degradation," with separate aliquots submitted in "sterile, additive-free container[s]."
+- **Content supported (Section 6.1):** samples meant for bacterial culture must be collected clean/aseptically to be worth anything; opening a bird on a non-sterile barn floor introduces environmental contamination that biases culture; an intact, chilled bird submitted promptly to the diagnostic laboratory preserves diagnostic value (bacterial culture, antimicrobial sensitivity, strain typing); autolyzed tissue is near-useless under the microscope. Added 2026-07-22 in response to reviewer request.
+- **Notes:** Live authoritative webpage; cited date included per CLAUDE.md Cited-Date Rule. First appears in Section 6.1, after refs [1]-[8], so it appends as [9] with no renumbering required.
+- **Status:** VERIFIED
+
+---
+
+## In-Text Citation Audit (re-derived 2026-07-22 from the regenerated docx)
 
 | Citation | Section(s) | Claim supported |
 |----------|------------|----------------|
@@ -114,8 +139,11 @@ First-appearance order is now confirmed sequential: 1, 2, 3, 4, 5, 6. The refere
 | [5] | 4.1, 5.3 | Daily mortality recording and disposal of dead birds; documented working relationship with a veterinarian and written emergency response protocols |
 | [1,6] | 4.4 | Spot weighing 30–50 birds as a representative sample |
 | [6] | 4.3, 4.4 | Water:feed ratio 1.6–1.8:1 for growing broilers; daily gain calculation versus breed target; CV interpretation for uneven flocks |
+| [7] | 4.4 | Heavier broilers visit automatic weigh platforms less often, biasing the automatic average low near market weight; confirm with a manual spot weigh |
+| [8] | 4.5 | Oxidative stress as a non-infectious cause of poor performance; gut/immune damage and predisposition to secondary infection |
+| [9] | 6.1 | Aseptic/clean sample collection needed for culture; on-farm contamination bias; intact chilled bird submitted to the lab preserves culture, sensitivity, and typing; autolysis destroys diagnostic value |
 
-First-appearance order in the regenerated docx: 1, 2, 3, 4, 5, 6. Sequential Vancouver order confirmed.
+First-appearance order in the regenerated docx: 1, 2, 3, 4, 5, 6, 7, 8, 9. Sequential Vancouver order confirmed.
 
 ---
 
@@ -126,7 +154,7 @@ First-appearance order in the regenerated docx: 1, 2, 3, 4, 5, 6. Sequential Van
 - [ ] Wrong page range: NOT APPLICABLE — no page numbers cited (web/institutional sources)
 - [ ] Missing co-author: CHECKED — Bestman et al. all four authors confirmed
 - [ ] Wrong title word: CHECKED — Poultry Signals title confirmed verbatim
-- [ ] Paper cannot be located: NOT PRESENT — all 6 sources locatable
+- [ ] Paper cannot be located: NOT PRESENT — all 9 sources locatable
 - [ ] Hybrid citations: NOT PRESENT — each citation is a single coherent source
 
-**Result: CLEAN. No fabrication patterns detected. Citation order corrected to sequential 1–6 on 2026-06-10.**
+**Result: CLEAN. No fabrication patterns detected. All 9 references verified; first-appearance order sequential 1–9 (last confirmed 2026-07-22 after reviewer-driven edits added ref [9], Merck Vet Manual sample-submission guidance).**

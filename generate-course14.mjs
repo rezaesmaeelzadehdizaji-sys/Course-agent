@@ -532,7 +532,7 @@ function buildBodySection() {
 
     para('Look through the observation window before entering. Healthy broilers at mid-grow-out distribute fairly evenly across the floor when active and cluster loosely near feeders and drinkers during eating and drinking times. Tight piling in corners suggests chilling or poor ventilation. Birds crowding one end of the barn may be chasing a warm zone or avoiding a draft. A barn where all the birds are sitting flat and quiet during what should be an active period is worth investigating further [3,4].'),
 
-    para('Smell tells you things immediately. If you can smell ammonia at the barn door, the air inside is already carrying more than the birds should be living in. A sweet-rotten smell means there is carcass decomposing in the litter. A sour, acidic smell suggests wet litter and potential yeast or bacterial overgrowth [3]. Note what you smell before you step inside, because once you are in for a few minutes your nose adjusts.'),
+    para('Smell tells you things immediately. If you can smell ammonia at the barn door, the air inside is already carrying more than the birds should be living in. A sweet-rotten smell means there is carcass decomposing in the litter. A sour, acidic smell suggests wet litter and potential yeast or bacterial overgrowth [3]. Note what you smell before you step inside, because once you are in for a few minutes your nose desensitizes and stops registering it. The smell is still there. You have just quit noticing it.'),
 
     para('For a full systematic barn assessment framework covering Temperature, Feed, Light, Air, Water, and Sanitation and Space, see Course 3 (T-FLAWS Assessment Management Tool) in this series.'),
 
@@ -652,9 +652,9 @@ function buildBodySection() {
 
     ...image(elecWeigh, 'Photo 4.1: A suspended automatic weigh platform, its load-cell pan resting at bird level. Shown here early in the flock with chicks on it. Source: anyload.com.', 2.8, 'jpg'),
 
-    para('Do not retire the catch-and-weigh scale, though. Heavier birds visit the platform less often than lighter ones, and that bias grows as the flock approaches market weight, so the automatic average reads low exactly when you need it to be right [7]. Use the platform for the daily trend, and confirm it against a manual spot weigh before you call a market weight.'),
+    para('Keep your manual catch-and-weigh scale even after a platform goes in, and do not rely on the automatic reading alone. Heavier birds step onto the platform less often than lighter ones, and that bias gets worse as the flock nears market weight, so the automatic average reads low at exactly the point you need it to be right [7]. Use the platform for the daily trend, then confirm it with a hand-caught spot weigh before you call a market weight.'),
 
-    para('Calculate average daily gain: divide the current average weight by the flock\'s age in days, or use the difference from the last weigh-in divided by the days between. Compare to the breed target [6]. An automatic platform reports daily gain for you, but the same bias carries through the math: if the platform average is reading low, the gain figure is low with it.'),
+    para('There are two ways to work out average daily gain. The simplest is to divide the current average weight by the flock\'s age in days. The better one for tracking progress is to take the change in average weight since your last weigh-in and divide it by the number of days between the two weighs. Either way, compare the result against the breed target to see whether the flock is on pace [6]. An automatic platform runs this calculation for you around the clock, but it is only as good as the weights going into it. If the platform is reading body weight low, the daily gain it reports is low right along with it.'),
 
     para('The coefficient of variation (CV) is a simple check on how even the flock\'s weights are. A low number means the birds are growing at a similar pace. A high number means you have a wide mix of small and big birds in the same house. Uniformity is the share of birds within 10% of the average weight, and CV tracks it directly. A CV around 8% at day 21 means roughly 79% of the flock sits in that uniform band, which tells you management and conditions are on track. Once CV reaches 10 to 12%, only about 60 to 68% of the birds are uniform, and that is a red flag [6].'),
 
@@ -676,7 +676,7 @@ function buildBodySection() {
 
     h2('5.1  Building the Relationship'),
 
-    para('The farmer runs the farm. Your job is to support them, not supervise them. That distinction matters. This is the fourth element from Section 1, the relationship that decides whether your assessments and recommendations ever get acted on. Contract growers often deal with equipment issues, tight margins, labor challenges, and environmental problems that are outside their control but still affect flock performance [1]. A service technician who shows up understanding those pressures and comes prepared with useful information is welcome. One who shows up unprepared and lectures gets avoided.'),
+    para('The farmer runs the farm. Your job is to support them, not supervise them. That distinction matters. This is the fourth element from Section 1, the relationship that decides whether your assessments and recommendations ever get acted on. Contract growers often deal with equipment issues, tight margins, labor challenges, and environmental problems that are outside their control but still affect flock performance [1]. A service technician who shows up understanding those pressures and comes prepared with useful information is welcome. One who shows up unprepared and lectures the grower on everything wrong with the flock gets avoided.'),
 
     para('Come prepared every visit: know their flock history, remember what you discussed last time, and follow up on whatever you recommended. If you told them to check the drinker pressure on line 3, ask what they found. Consistency and follow-through build the trust that makes a grower call you when something first looks wrong, not three days later when it is already a bigger problem.'),
 
@@ -687,6 +687,8 @@ function buildBodySection() {
     para('Be specific about what you want changed and why. If you are asking them to raise the drinker height in house 2, explain what you saw that led to that recommendation. If you are asking them to cull more aggressively, explain what the grade-out data shows about small birds at market and what it costs per bird.'),
 
     para('Avoid jargon and condescension. Experienced commercial growers have seen more flocks than most textbooks describe. Many of them know their birds better than a newly graduated technician. Listen as much as you talk, especially when you are new to a farm.'),
+
+    para('One more thing about communication: it is not finished when you have said your piece. It is finished when what you said lands on the other side and turns into action. That is the whole point of the visit. Some growers want the why behind a recommendation before they will move on it. Others just want the how and will act once they trust you. Neither is wrong. Read the person in front of you and pitch it the way that gets the change made, because a recommendation that never gets acted on is the same as no recommendation at all.'),
 
     h2('5.3  The Visit Record'),
 
@@ -723,7 +725,9 @@ function buildBodySection() {
 
     h2('6.1  On-Farm Necropsy Basics'),
 
-    para('Be clear on the boundary before you open a bird. The necropsy and the diagnosis belong to the veterinarian, and you do not open birds on your own initiative to work out what killed them. Most of the time the right call is the simple one: leave the bird intact, keep it cool, and get it to the lab. Two situations change that, and both of them start with a phone call to your veterinarian. The first is when your veterinarian cannot get to the farm in person, the flock cannot wait, and they want eyes inside the bird now. The second is when they want a specific tissue collected and sent. Either way you are working under their direction and not on your own judgment, and you work inside the farm\'s biosecurity protocol, because nothing should leave that barn on your knife, your boots, or your coveralls.'),
+    para('Be clear on where your job ends before you ever open a bird. The necropsy and the diagnosis are the veterinarian\'s, not yours, and you do not open birds on your own to work out what killed them. Most of the time the right call is the simple one: leave the bird intact, keep it cool, and get it to the lab. Two situations change that, and both of them start with a phone call to your veterinarian. The first is when your veterinarian cannot get to the farm in person, the flock cannot wait, and they want eyes inside the bird now. The second is when they want a specific tissue collected and sent. Either way you are working under their direction and not on your own judgment, and you work inside the farm\'s biosecurity protocol, because nothing should leave that barn on your knife, your boots, or your coveralls.'),
+
+    para('There is a good reason the default is to send the bird rather than open it yourself. A barn floor is not a clean surface. The moment you cut into a carcass on the farm, the tissues pick up dust, litter bacteria, and whatever is on your hands and your knife, so any bacteria you might grow from that bird are mixed with barn contamination from the start. Samples meant for culture have to be collected clean to be worth anything [9]. An intact bird, kept cool and sent promptly to the diagnostic laboratory, arrives in far better shape for a proper necropsy, and it protects the results that matter most when the case needs bacterial culture, antimicrobial sensitivity, or strain typing to steer treatment. A bird left to break down loses that value fast: once the tissue starts to autolyze it is close to useless under the microscope [9].'),
 
     para('When one of those situations applies, a structured approach gives you the most information from the least time, and it means your veterinarian gets specific findings to act on instead of a vague impression.'),
 
@@ -797,6 +801,7 @@ function buildBodySection() {
     numberedRef('Aviagen. Ross Broiler Management Handbook. Huntsville, AL: Aviagen; 2025. Available from: aviagen.com/assets/Tech_Center/Ross_Broiler/Aviagen-ROSS-Broiler-Handbook-EN.pdf'),
     numberedRef('Chedad A, Aerts JM, Vranken E, Lippens M, Zoons J, Berckmans D. Do heavy broiler chickens visit automatic weighing systems less than lighter birds? Br Poult Sci. 2003;44(5):663-668. doi:10.1080/00071660310001643633'),
     numberedRef('Oke OE, Akosile OA, Oni AI, Opowoye IO, Ishola CA, Adebiyi JO, Odeyemi AJ, Adjei-Mensah B, Uyanga VA, Abioja MO. Oxidative stress in poultry production. Poult Sci. 2024;103(9):104003. doi:10.1016/j.psj.2024.104003.'),
+    numberedRef('Gunn-Christie RG. Collection and Submission of Laboratory Samples from Animals. Merck Veterinary Manual. Kenilworth, NJ: Merck & Co.; [cited 2026 Jul]. Available from: merckvetmanual.com'),
 
   ]; // end children
 
