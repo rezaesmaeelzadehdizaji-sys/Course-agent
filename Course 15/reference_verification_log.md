@@ -231,3 +231,9 @@ New subsection 6.3 "A Worked Example: Reading a Breeder ELISA Report":
 - Reads the IBV panel (Mean 4,047 / GMean 2,252 / %CV 93.6%, Max 12,755 / Min 339, groups 0-10) as non-uniform, the Mean-vs-GMean gap flagging a few high birds; ties back to Section 3.1 (IBV protection is local/cell-mediated, so a scattered antibody picture is common and not, by itself, a verdict on protection).
 
 All eight report values verified verbatim against the image. TOC recomputed (6.3 p17, Section 7 p19, Recommended Journals p20, References p21; course now 23 pages). Post-checks: dirty=0, em=0, bookmarks=hyperlinks=27, British sweep clean, citation order sequential 1-17. Course PDF re-exported.
+
+---
+
+## 2026-07-23 — added cell-mediated immunity to Section 1.1 (user-flagged completeness)
+
+User correctly noted that acquired (specific) immunity has two arms, humoral and cell-mediated, and Section 1.1 described only the humoral (antibody/B-lymphocyte) arm. Verified against the CPC Serology 101 bulletin [1], which lists specific/acquired immunity as including both "Cells - lymphocytes, macrophages" and "Antibodies - produced by B-lymphocytes," and states serology "tests only circulating antibody." Added a foundation paragraph in 1.1: acquired immunity has a humoral half (B-lymphocytes, antibodies) and a cell-mediated half (T-lymphocytes attacking infected cells); both learn and matter for protection; serology measures only the antibody half. Cited [1] (already the paragraph's citation, so no renumbering). Made the Section 3.1 first bullet reference Section 1.1 (reciprocal cross-link) instead of re-defining the T-cell arm, avoiding duplication. Citation order unchanged, sequential 1-17. TOC recomputed: added paragraph shifted 10 later headings down one page (1.2->5, Section 4->12, ... References->22); all re-verified against fresh render. Course PDF re-exported.

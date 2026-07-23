@@ -363,6 +363,8 @@ function buildBodySection() {
 
     para('The second layer is acquired immunity, and this is the layer that learns. When a bird is exposed to a specific disease agent, whether through vaccination or a field infection, its immune system builds antibodies aimed at that exact target. Antibodies are proteins made by a type of white blood cell called a B-lymphocyte, and each one is built to match a specific invader [1].'),
 
+    para('That antibody response is only one half of acquired immunity. The other half is the cell-mediated response, run by a different set of white blood cells, the T-lymphocytes, that attack the bird\'s own infected cells directly instead of making antibodies. Both halves learn, both are aimed at a specific invader, and both matter for protecting the bird [1]. The catch for this course is that serology measures only the antibody half. The cell-mediated half is just as real, but it does not show up as a titer, a point Section 3.1 comes back to.'),
+
     ...image(figBuf('fig15_1.png'), 'Figure 1.1: Innate immunity reacts to everything the same way. Acquired immunity learns and remembers. Source: CPC Short Courses.'),
 
     para('Picture an infectious bronchitis virus trying to attach to the cells lining a bird\'s trachea. That attachment is the first step of infection. If the virus arrives coated in antibodies the bird already made against it, it cannot attach, and the infection never gets started. The CPC Learning Centre Serology 101 presentation uses this exact example to explain why antibody levels matter [1].'),
@@ -429,7 +431,7 @@ function buildBodySection() {
 
     para('A titer number tells you that a bird\'s immune system has been exposed to something, vaccine or field strain, and made antibodies against it. It does not tell you everything else you might want to know, and treating it as the whole picture is where serology gets misread.'),
 
-    bullet('Serology only shows part of the picture: the antibody (humoral) response. It says nothing about a bird\'s T-cell (cell-mediated) immune response, which also plays a role in disease protection and does not show up on any titer report [7].'),
+    bullet('Serology only shows the antibody (humoral) arm, the one introduced in Section 1.1, not the cell-mediated (T-cell) arm. That T-cell side plays a real role in disease protection and never shows up on a titer report [7].'),
     bullet('Seroconversion takes time. After exposure, it usually takes 4 to 20 days before antibody levels rise enough to show up on a test [1].'),
     bullet('A single sample is a snapshot, not a trend. One titer reading cannot tell you whether antibody levels are rising, holding steady, or already falling [1].'),
     bullet('Serology cannot reliably tell field strain from vaccine strain. ELISA is a quantitative test, it measures how much antibody, not which exact strain triggered it [4]. What it can flag is the size of the response: a real field infection usually pushes titers much higher than vaccination alone, so a titer well above what your program normally produces is a strong hint the birds met the field virus [1].'),
@@ -711,7 +713,7 @@ const tocEntries = [
   { lvl: 1, text: 'Introduction', page: 3 },
   { lvl: 1, text: 'Section 1: The Role of Antibodies in Immunity', page: 3 },
   { lvl: 2, text: '1.1  Innate vs. Acquired Immunity', page: 3 },
-  { lvl: 2, text: '1.2  How Antibody Levels Build After Vaccination or Infection', page: 4 },
+  { lvl: 2, text: '1.2  How Antibody Levels Build After Vaccination or Infection', page: 5 },
   { lvl: 1, text: 'Section 2: Serologic Tests', page: 6 },
   { lvl: 2, text: '2.1  Reading a Lab Report: What Serology Measures', page: 6 },
   { lvl: 2, text: '2.2  ELISA Testing', page: 6 },
@@ -720,21 +722,21 @@ const tocEntries = [
   { lvl: 1, text: 'Section 3: The Limitations of Serology', page: 9 },
   { lvl: 2, text: '3.1  What Serology Can and Cannot Tell You', page: 9 },
   { lvl: 2, text: '3.2  Paired Samples: Confirming a Field Challenge', page: 11 },
-  { lvl: 1, text: 'Section 4: Poultry Blood Sampling Techniques', page: 11 },
-  { lvl: 2, text: '4.1  Equipment, Site Selection, and How Many Birds to Sample', page: 11 },
-  { lvl: 2, text: '4.2  Drawing Blood from the Wing Vein', page: 12 },
+  { lvl: 1, text: 'Section 4: Poultry Blood Sampling Techniques', page: 12 },
+  { lvl: 2, text: '4.1  Equipment, Site Selection, and How Many Birds to Sample', page: 12 },
+  { lvl: 2, text: '4.2  Drawing Blood from the Wing Vein', page: 13 },
   { lvl: 1, text: 'Section 5: Sample Handling and Lab Submission', page: 14 },
   { lvl: 2, text: '5.1  Clotting and Separating Serum', page: 14 },
-  { lvl: 2, text: '5.2  What the Lab Needs From You', page: 14 },
-  { lvl: 1, text: 'Section 6: Interpreting Serologic Results', page: 15 },
+  { lvl: 2, text: '5.2  What the Lab Needs From You', page: 15 },
+  { lvl: 1, text: 'Section 6: Interpreting Serologic Results', page: 16 },
   { lvl: 2, text: '6.1  Reading the Titer Scale', page: 16 },
-  { lvl: 2, text: '6.2  Flock Uniformity: %CV', page: 16 },
-  { lvl: 2, text: '6.3  A Worked Example: Reading a Breeder ELISA Report', page: 17 },
+  { lvl: 2, text: '6.2  Flock Uniformity: %CV', page: 17 },
+  { lvl: 2, text: '6.3  A Worked Example: Reading a Breeder ELISA Report', page: 18 },
   { lvl: 1, text: 'Section 7: Hands-On Workshop', page: 19 },
   { lvl: 2, text: '7.1  Drawing, Handling, and Submitting a Blood Sample', page: 19 },
   { lvl: 2, text: '7.2  Reading Real Results Together', page: 19 },
-  { lvl: 1, text: 'Recommended Journals and Resources', page: 20 },
-  { lvl: 1, text: 'References', page: 21 },
+  { lvl: 1, text: 'Recommended Journals and Resources', page: 21 },
+  { lvl: 1, text: 'References', page: 22 },
 ];
 
 const entriesWithAnchor = tocEntries.map((e, i) => ({
