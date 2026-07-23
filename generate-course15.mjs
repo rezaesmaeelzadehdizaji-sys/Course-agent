@@ -446,8 +446,6 @@ function buildBodySection() {
 
     para('Avian influenza (AI) is a different situation again. Here serology is used mostly to catch exposure, not to gauge protection. A positive AI antibody result on a surveillance test means the birds have met the virus [13], and in Canada avian influenza is a federally reportable disease [14]. So an AI titer is not a number you build with a vaccine and watch over time. It is a flag that, if it turns up, starts a reporting and investigation process with the CFIA.'),
 
-    para('The practical rule is to match the test to the disease. Serology still tells you about exposure and vaccine response across all of these. But as a read on protection specifically, it is strong for the antibody-driven diseases like Gumboro, fair for Newcastle, and weak for the respiratory and Marek\'s-type diseases whose main protection is cellular or local.'),
-
     para('This is also why a single titer number means very little without something to compare it to. A titer of 2,000 against avian reovirus might be routine for one flock and a red flag for another, depending on what that flock\'s vaccination program and history normally produce [1,4]. Build your own baseline from your own flocks over time, and compare new results against that baseline first.'),
 
     para('All of this is exactly why serology results get read with your veterinarian, not alone. Weighing a titer against baseline, history, and everything else going on in the flock is a multi-part judgment call, and your veterinarian has built that judgment through years of training and cases most farmers never see. Bring your numbers to that conversation. The final read on what a result means, and what to do about it, is theirs to make.'),
