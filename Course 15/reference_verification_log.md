@@ -215,3 +215,19 @@ The course carries a 1-hour workshop but the body had no workshop section (previ
 - 7.2 Reading Real Results Together: review real HI and ELISA reports against flock age/history/vaccination to practice interpretation, uniformity, and spotting field challenge [1].
 
 Citations reuse existing [15] (Hy-Line technique) and [1] (CPC interpretation); no new references, order still sequential 1-16. Added 3 TOC entries; recomputed pages (Section 7 p17, 7.1/7.2 p18, Recommended Journals p19, References p20). Course grew from 21 to 22 pages. Summary page workshop line updated to mention the results-interpretation half. Both PDFs (course + summary) re-exported. Post-checks: dirty=0, em=0, bookmarks=hyperlinks=26, British sweep clean.
+
+---
+
+## 2026-07-23 — added Section 6.3 worked ELISA example (Mean, GMT, %CV) + ref [17]
+
+User supplied a real IDEXX Compare Cases Report (elisa test.jpg) for a 23-week broiler breeder flock, four weeks after live+killed priming, with IBD and IBV panels, and asked for a paragraph on Mean titer, %CV, and geometric mean (GMT/GMean).
+
+Investigated the correct description of ELISA indices via the IDEXX publication *General Avian Serology, Vol. 1: Results Interpretation of Serological Tests* (Prof. Piotr Szeleszczuk), which defines AMT (arithmetic mean titer), GMT (geometric mean titer), SD, and %CV, and states the GMT "better reflects the distribution of titers in the studied population" and that a small GMT-mean gap with a low CV indicates a uniform flock. Added as reference [17]; it first-appears in 6.3 (after all of [1]-[16]), so it appends cleanly, in-text order remains sequential 1-17.
+
+New subsection 6.3 "A Worked Example: Reading a Breeder ELISA Report":
+- Figure 6.3 = the report image (Source: IDEXX Laboratories).
+- Explains Mean vs GMean/GMT vs %CV, why GMT is the more honest average on a doubling scale.
+- Reads the IBD panel (Mean 19,536 / GMean 19,244 / %CV 17.4%, groups 9-13) as tight and uniform, the picture wanted for an antibody-driven disease after a killed booster.
+- Reads the IBV panel (Mean 4,047 / GMean 2,252 / %CV 93.6%, Max 12,755 / Min 339, groups 0-10) as non-uniform, the Mean-vs-GMean gap flagging a few high birds; ties back to Section 3.1 (IBV protection is local/cell-mediated, so a scattered antibody picture is common and not, by itself, a verdict on protection).
+
+All eight report values verified verbatim against the image. TOC recomputed (6.3 p17, Section 7 p19, Recommended Journals p20, References p21; course now 23 pages). Post-checks: dirty=0, em=0, bookmarks=hyperlinks=27, British sweep clean, citation order sequential 1-17. Course PDF re-exported.

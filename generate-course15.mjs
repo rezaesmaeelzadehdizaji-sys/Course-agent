@@ -576,6 +576,18 @@ function buildBodySection() {
 
     para('These ranges are what you aim for after a killed (inactivated) vaccine. Live vaccines naturally spread titers wider, so the %CV runs higher. With a live vaccine, whether every bird tested positive at all matters more than the %CV number, since a live vaccine that did not reach every bird is a coverage problem the %CV alone will not show you [16].'),
 
+    h2('6.3  A Worked Example: Reading a Breeder ELISA Report'),
+
+    para('Here is a real ELISA report for a broiler breeder flock at 23 weeks of age, drawn four weeks after the birds finished their live and killed priming. Ten birds were tested for two diseases, infectious bursal disease (IBD) and infectious bronchitis (IBV), and the report gives the same handful of numbers for each: a count, a mean, a geometric mean, a standard deviation, a %CV, and the lowest and highest titer in the group.'),
+
+    ...image(figBuf('elisa test.jpg'), 'Figure 6.3: A real ELISA report for a 23-week breeder flock, four weeks after live and killed priming. The IBD result (top) is high and tight; the IBV result (bottom) is scattered. Source: IDEXX Laboratories.', 5.8, 'jpg'),
+
+    para('Three of those numbers do most of the work. The mean titer (labeled Mean) is the plain average of the ten birds. The geometric mean titer, labeled GMean or GMT, is a different kind of average: because titers climb in doubling steps rather than even ones, the GMT reflects the typical bird better than the plain mean, which a handful of very high birds can drag upward [17]. The %CV, the coefficient of variation, tells you how uniform the flock is, the same measure from Section 6.2. Read together, these three tell you not just how high the response is, but how even it is, and whether the average you are looking at is honest [17].'),
+
+    para('Look at the IBD result first. The mean is 19,536 and the GMean is 19,244, almost the same number, and the %CV is 17.4%. When the mean and the geometric mean sit that close together and the CV is that low, you are looking at a tight, uniform flock: every bird landed in about the same place, all high (titer groups 9 to 13 on the histogram). For IBD, which is fought off by antibody, that is exactly the picture you want four weeks after a killed booster.'),
+
+    para('Now look at the IBV result. The mean is 4,047, but the GMean is only 2,252, and the %CV is 93.6%. That gap between the plain mean and the geometric mean is the tell: a few high-titer birds, the top one at 12,755, are pulling the plain average up, while the geometric mean shows the typical bird sitting much lower, and the lowest bird is only 339. The histogram confirms it, with birds scattered from titer group 0 all the way to 10. This is a non-uniform response. As Section 3.1 covered, IBV protection leans on local and cell-mediated immunity that serology does not measure well, so a scattered antibody picture like this is common and does not, on its own, mean the flock is unprotected. It is a flag to look into, not a verdict.'),
+
     // ── SECTION 7 ─────────────────────────────────────────────
     h1('Section 7: Hands-On Workshop'),
 
@@ -627,6 +639,7 @@ function buildBodySection() {
     numberedRef('Canadian Food Inspection Agency. Avian influenza (bird flu). Ottawa: CFIA; [cited 2026 Jul]. Available from: inspection.canada.ca/en/animal-health/terrestrial-animals/diseases/reportable/avian-influenza'),
     numberedRef('Hy-Line International. Proper Collection and Handling of Diagnostic Samples: Part One, Serology and Blood Collection [Technical Update]. Hy-Line International; 2016. Available from: hyline.com'),
     numberedRef('BioChek. Interpretation and Application of Results Manual. Reeuwijk, Netherlands: BioChek; 2017. Available from: biochek.com'),
+    numberedRef('Szeleszczuk P. General Avian Serology. Vol. 1: Results Interpretation of Serological Tests. IDEXX Laboratories; [cited 2026 Jul]. Available from: idexx.com'),
 
   ]; // end children
 
@@ -716,11 +729,12 @@ const tocEntries = [
   { lvl: 1, text: 'Section 6: Interpreting Serologic Results', page: 15 },
   { lvl: 2, text: '6.1  Reading the Titer Scale', page: 16 },
   { lvl: 2, text: '6.2  Flock Uniformity: %CV', page: 16 },
-  { lvl: 1, text: 'Section 7: Hands-On Workshop', page: 17 },
-  { lvl: 2, text: '7.1  Drawing, Handling, and Submitting a Blood Sample', page: 18 },
-  { lvl: 2, text: '7.2  Reading Real Results Together', page: 18 },
-  { lvl: 1, text: 'Recommended Journals and Resources', page: 19 },
-  { lvl: 1, text: 'References', page: 20 },
+  { lvl: 2, text: '6.3  A Worked Example: Reading a Breeder ELISA Report', page: 17 },
+  { lvl: 1, text: 'Section 7: Hands-On Workshop', page: 19 },
+  { lvl: 2, text: '7.1  Drawing, Handling, and Submitting a Blood Sample', page: 19 },
+  { lvl: 2, text: '7.2  Reading Real Results Together', page: 19 },
+  { lvl: 1, text: 'Recommended Journals and Resources', page: 20 },
+  { lvl: 1, text: 'References', page: 21 },
 ];
 
 const entriesWithAnchor = tocEntries.map((e, i) => ({
