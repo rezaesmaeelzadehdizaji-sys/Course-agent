@@ -546,7 +546,7 @@ function buildBodySection() {
 
     para('Titer numbers on a lab report are not just any numbers, they follow a doubling pattern: 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, and so on. Each step up is twice the antibody level of the step before it. A titer of 32 means twice the antibody of a titer of 16, and so on up the scale [1].'),
 
-    ...image(figBuf('fig15_4.png'), 'Figure 6.1: Reading the doubling-dilution scale used for HI and AGID titer reports. Source: CPC Short Courses.'),
+    ...image(figBuf('fig 6.1.png'), 'Figure 6.1: The doubling-dilution titer scale used for HI and AGID reports, with what each range suggests for flock immunity and management. Each step up doubles the antibody level, not adds to it. Source: CPC Short Courses.'),
 
     para('Because the steps double, labs often report the same number as a log2 value instead, just counting the number of doubling steps from 1. A titer of 1024 and a log2 titer of 10 are the same result written two different ways. Either way the report shows it, what you are looking for is the same thing: where does this flock sit on the ladder, and is that where you would expect it to be [1]?'),
 
