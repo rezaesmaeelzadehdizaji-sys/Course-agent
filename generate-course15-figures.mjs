@@ -418,7 +418,7 @@ function fig15_5() {
   <line x1="50" y1="270" x2="280" y2="270" stroke="${C.gray}" stroke-width="1.5"/>
   <text x="165" y="290" text-anchor="middle" fill="${C.gray}" font-family="Arial, sans-serif" font-size="11">Titer groups, low to high</text>
   <rect x="50" y="300" width="310" height="40" rx="4" fill="${C.lightGreen}" stroke="${C.green}"/>
-  <text x="205" y="318" text-anchor="middle" fill="${C.green}" font-family="Arial, sans-serif" font-size="11" font-weight="bold">%CV under 40%: "Excellent" uniformity</text>
+  <text x="205" y="318" text-anchor="middle" fill="${C.green}" font-family="Arial, sans-serif" font-size="11" font-weight="bold">%CV under 30%: "Excellent" uniformity</text>
   <text x="205" y="334" text-anchor="middle" fill="${C.gray}" font-family="Arial, sans-serif" font-size="10">Even vaccine uptake across the flock</text>
 
   <!-- Right: Need to Improve -->
@@ -429,13 +429,13 @@ function fig15_5() {
   <line x1="440" y1="270" x2="670" y2="270" stroke="${C.gray}" stroke-width="1.5"/>
   <text x="555" y="290" text-anchor="middle" fill="${C.gray}" font-family="Arial, sans-serif" font-size="11">Titer groups, low to high</text>
   <rect x="440" y="300" width="310" height="40" rx="4" fill="${C.lightRed}" stroke="${C.red}"/>
-  <text x="595" y="318" text-anchor="middle" fill="${C.red}" font-family="Arial, sans-serif" font-size="11" font-weight="bold">%CV over 60%: "Need to Improve"</text>
-  <text x="595" y="334" text-anchor="middle" fill="${C.gray}" font-family="Arial, sans-serif" font-size="10">Missed birds, uneven water uptake, or field challenge</text>
+  <text x="595" y="318" text-anchor="middle" fill="${C.red}" font-family="Arial, sans-serif" font-size="11" font-weight="bold">%CV over 80%: "Poor" or bimodal</text>
+  <text x="595" y="334" text-anchor="middle" fill="${C.gray}" font-family="Arial, sans-serif" font-size="10">Missed birds, uneven uptake, or a field infection in the flock</text>
 
   <!-- Standards bar -->
   <rect x="30" y="360" width="740" height="60" rx="6" fill="${C.lightGold}" stroke="${C.gold}"/>
-  <text x="400" y="382" text-anchor="middle" fill="${C.darkBlue}" font-family="Arial, sans-serif" font-size="11" font-weight="bold">Current ELISA uniformity guide: under 40% CV is Excellent, 40-60% is Good, over 60% is Need to Improve</text>
-  <text x="400" y="400" text-anchor="middle" fill="${C.gray}" font-family="Arial, sans-serif" font-size="10">Target under 40% CV after a killed (inactivated) vaccine; under 60% CV after a live vaccine, with all birds testing positive [9]</text>
+  <text x="400" y="382" text-anchor="middle" fill="${C.darkBlue}" font-family="Arial, sans-serif" font-size="11" font-weight="bold">CPC uniformity guide: under 30% CV Excellent, 30-50% Good, 51-80% Fair, over 80% Poor or bimodal</text>
+  <text x="400" y="400" text-anchor="middle" fill="${C.gray}" font-family="Arial, sans-serif" font-size="10">Aim under 30% CV after a killed vaccine. A wide or two-humped (bimodal) spread, with high titers, can flag a field infection [1]</text>
 
   ${caption(W, H, 'Figure 6.2  |  A low %CV means the whole flock responded about the same way')}
 </svg>`;

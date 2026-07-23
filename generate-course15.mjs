@@ -556,24 +556,25 @@ function buildBodySection() {
 
     para('The mean titer tells you how strong the response was on average. The %CV, short for coefficient of variation, tells you how even that response was across the flock. The lab gets that number by taking the standard deviation of the titers, dividing it by the mean, and multiplying by 100 [4].'),
 
-    para('A low %CV means the birds you sampled were all sitting close to the same titer, a sign of a uniform vaccination response or a recent shared field exposure. A high %CV means some birds responded strongly and others barely responded at all, even though the mean might look fine [4,16].'),
+    para('A low %CV means the birds you sampled were all sitting close to the same titer, a sign of a uniform vaccination response or a recent shared field exposure. A high %CV means some birds responded strongly and others barely responded at all, even though the mean might look fine [4,16]. One cause of a suddenly high or two-humped (bimodal) %CV is a field infection moving through the flock, hitting some birds before others. When that uneven spread comes with titers running above your normal vaccine baseline, it points to an active field challenge, not just a patchy vaccination [1,16].'),
 
     ...image(figBuf('fig15_5.png'), 'Figure 6.2: A low %CV means the whole flock responded about the same way. Source: CPC Short Courses.'),
 
-    para('Current guidance from the BioChek lab manual gives the following %CV ranges [16]:'),
+    para('The CPC Learning Centre Serology 101 bulletin gives the following %CV ranges for flock uniformity [1]:'),
 
     dataTable(
       ['%CV', 'Flock Uniformity'],
       [
-        ['< 40%', 'Excellent'],
-        ['40–60%', 'Good'],
-        ['> 60%', 'Need to Improve'],
+        ['< 30%', 'Excellent'],
+        ['30–50%', 'Good'],
+        ['51–80%', 'Fair'],
+        ['> 80%', 'Poor or bimodal'],
       ],
       [4320, 4320]
     ),
     new Paragraph({ spacing: { before: 80, after: 0 } }),
 
-    para('These ranges apply to inactivated (killed) vaccines. Live vaccines naturally produce more spread between birds, so a %CV under 60% is the realistic target after a live vaccination. With live priming, whether every bird tested positive at all matters more than the %CV number, since a live vaccine that did not reach every bird is a coverage problem the %CV alone will not show you [16].'),
+    para('These ranges are what you aim for after a killed (inactivated) vaccine. Live vaccines naturally spread titers wider, so the %CV runs higher. With a live vaccine, whether every bird tested positive at all matters more than the %CV number, since a live vaccine that did not reach every bird is a coverage problem the %CV alone will not show you [16].'),
 
     // ── RECOMMENDED JOURNALS ─────────────────────────────────
     pageBreak(),

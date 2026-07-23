@@ -176,3 +176,21 @@ Institutional/web refs [1] (CPC Bowes bulletin), [2][3] (Merck vaccine pages), [
 
 - **Post-fix integrity checks (2026-07-22):** w:dirty = 0, em dash = 0, bookmarkStart = hyperlink = 23 (no headings added — content is inline paragraphs, not a new subsection), citation order 1-16 sequential, British-spelling sweep clean (false positives only: "raised," "CPC Learning Centre," "Animal Health Centre").
 - **Pagination and TOC:** the addition pushed total pages from 18 to 19. Re-measured all headings via LibreOffice PDF render + pdftotext and updated 12 tocEntries values (3.2 Paired Samples → 11, Section 4/4.1 → 11, 4.2 → 12, Section 5/5.1 → 13, 5.2 → 14, Section 6/6.1 → 15, 6.2 → 16, Recommended Journals → 18, References → 19). All cached TOC numbers re-verified against a fresh render to match exactly.
+
+---
+
+## 2026-07-23 addendum — %CV uniformity scale corrected to CPC Bowes; Figure 6.2 regenerated
+
+User flagged that a %CV of 40% is not "excellent" uniformity (under 30% is the real target) and that a high %CV can indicate a field infection/outbreak. Both verified against the local sources:
+
+- **CPC Learning Centre Serology 101 bulletin [1]** (local: Avian medicine sources/CPC learning centre/Technical Bulletins/SEROLOGY-101.pdf) gives a stricter scale than BioChek: **< 30% excellent, 30-50% good, 51-80% fair, > 81% poor or bimodal.** Its example histograms label uneven/bimodal spreads as "possible vaccine + field challenge."
+- **BioChek Interpretation Manual [16]** (local: Avian medicine/BIOCHEK-INTERPRETATION-Manual.pdf) uses < 40% Excellent / 40-60% Good / > 60% Need to Improve, and separately states elevated titers far above expected vaccine response "suggest that a field infection could be running through the flock."
+
+Decision: switched the course to the **CPC Bowes scale [1]** (this is a CPC course, and it matches the user's field experience). Changes:
+- Body table (6.2) changed from BioChek < 40% scale to CPC < 30% scale; intro re-attributed from BioChek [16] to "The CPC Learning Centre Serology 101 bulletin [1]."
+- Added a sentence to 6.2: a suddenly high or two-humped (bimodal) %CV with titers above the vaccine baseline points to an active field challenge [1,16].
+- Live-vaccine paragraph: dropped the BioChek-specific "< 60% for live" number (inconsistent with the CPC killed scale); kept the qualitative point that live runs wider and complete seroconversion matters more than %CV [16].
+- **Figure 6.2 (fig15_5.png) regenerated** from generate-course15-figures.mjs: was showing the BioChek "< 40% Excellent / over 60% Need to Improve" scale AND a stale citation [9] (pre-renumber BioChek number). Now shows the CPC scale (< 30% Excellent ... > 80% Poor or bimodal), the field-infection interpretation, and the correct [1] citation. This was a body/figure inconsistency the style scans would miss (numbers baked into the PNG).
+- Note: an unused brachial-vein SVG figure in the figures generator still carries stale [8] markers, but it is not embedded in the document (the body uses the supplied Photo 4.1 and Figure 4.1 instead), so it does not affect the course.
+
+Post-fix: citation order still sequential 1-16, table shows no 40%/60%, em=0, dirty=0, bookmarks=hyperlinks=23, no pagination change (TOC re-verified against fresh render).
