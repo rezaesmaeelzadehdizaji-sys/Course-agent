@@ -194,3 +194,14 @@ Decision: switched the course to the **CPC Bowes scale [1]** (this is a CPC cour
 - Note: an unused brachial-vein SVG figure in the figures generator still carries stale [8] markers, but it is not embedded in the document (the body uses the supplied Photo 4.1 and Figure 4.1 instead), so it does not affect the course.
 
 Post-fix: citation order still sequential 1-16, table shows no 40%/60%, em=0, dirty=0, bookmarks=hyperlinks=23, no pagination change (TOC re-verified against fresh render).
+
+---
+
+## 2026-07-23 — image source attributions confirmed by user (Reza)
+
+Final QA raised two open image-sourcing questions. User confirmed both captions carry the correct (previous) sources; no changes needed:
+
+- **Photo 4.1 (blood collection, updated three-panel image):** Source stands as "Norecopa (norecopa.no); Kelly & Alworth, Lab Anim 2013;42:359-361; foodagribusiness.world." — confirmed correct for the updated image.
+- **Figure 2.2 (HI principle diagram + real 96-well plate composite):** Source stands as "microbenotes.com" for the whole composite, including the real-plate half — confirmed correct.
+
+Course 15 final QA complete: structure (0 dirty, 0 em-dash, 23=23 TOC bookmarks/hyperlinks), all 16 references verified real and sequential 1-16, all temperature/unit conversions correct, %CV scale on CPC standard with Figure 6.2 bars computing to the labeled CV, TOC matches rendered pages exactly, farmer-flow tone clean. No outstanding items.
