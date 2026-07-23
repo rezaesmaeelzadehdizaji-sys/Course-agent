@@ -375,9 +375,9 @@ function buildBodySection() {
 
     para('The first time a bird meets a disease agent, whether that is its first vaccine dose or its first brush with field disease, the response is called the primary response. Antibody production starts slowly, the levels reached are modest, and they do not last long on their own. But the immune system does not forget: it sets aside memory cells tuned to that specific target [1,2].'),
 
-    ...image(figBuf('fig15_2.png'), 'Figure 1.2: Memory cells from the first exposure drive a faster, bigger response the second time. Source: CPC Short Courses.'),
-
     para('The second time the bird meets the same agent, those memory cells are already standing by. Antibody production ramps up faster and climbs much higher than it did the first time. This is the secondary response, and it is the reason a booster vaccination produces a stronger result than the first dose, and why a flock that has already been vaccinated and then runs into field disease often shows a sharp jump in titer [1,2].'),
+
+    ...image(figBuf('fig15_2.png'), 'Figure 1.2: Memory cells from the first exposure drive a faster, bigger response the second time. Source: CPC Short Courses.'),
 
     para('Live and killed vaccines are not simply a stronger and a weaker version of the same shot. They lean on different arms of the immune system. A live vaccine, even though it is a weakened strain, briefly infects and grows inside the bird\'s own cells much like a real infection would. That is what drives a strong cell-mediated response: cytotoxic T cells that hunt down and destroy infected cells directly. A killed vaccine works the other side. It stimulates a response dominated by antibodies instead, though it usually needs an adjuvant and more than one dose to get there [3].'),
 
