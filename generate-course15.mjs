@@ -580,7 +580,7 @@ function buildBodySection() {
 
     para('Here is a real ELISA report for a broiler breeder flock at 23 weeks of age, drawn four weeks after the birds finished their live and killed priming. Ten birds were tested for two diseases, infectious bursal disease (IBD) and infectious bronchitis (IBV), and the report gives the same handful of numbers for each: a count, a mean, a geometric mean, a standard deviation, a %CV, and the lowest and highest titer in the group.'),
 
-    ...image(figBuf('elisa test.jpg'), 'Figure 6.3: A real ELISA report for a 23-week breeder flock, four weeks after live and killed priming. The IBD result (top) is high and tight; the IBV result (bottom) is scattered. Source: IDEXX Laboratories.', 5.8, 'jpg'),
+    ...image(figBuf('elisa test.jpg'), 'Figure 6.3: A real ELISA report for a 23-week breeder flock, four weeks after live and killed priming. The IBD result (top) is high and tight; the IBV result (bottom) is scattered. Source: CPC Short Courses.', 5.8, 'jpg'),
 
     para('Three of those numbers do most of the work. The mean titer (labeled Mean) is the plain average of the ten birds. The geometric mean titer, labeled GMean or GMT, is a different kind of average: because titers climb in doubling steps rather than even ones, the GMT reflects the typical bird better than the plain mean, which a handful of very high birds can drag upward [17]. The %CV, the coefficient of variation, tells you how uniform the flock is, the same measure from Section 6.2. Read together, these three tell you not just how high the response is, but how even it is, and whether the average you are looking at is honest [17].'),
 
