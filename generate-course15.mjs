@@ -342,7 +342,7 @@ function buildBodySection() {
 
     para('This course walks through how those blood tests work, what the results actually mean, and how to use them to make real decisions on your farm: whether your vaccination program is working, whether a disease has moved through your flock without you seeing it, and when a result is telling you something versus when it is just noise.'),
 
-    para('Reading a titer number off a page is the easy part. Weighing what it means for your flock, against vaccination history, other lab work, and disease patterns your veterinarian has seen play out across many flocks, takes the kind of judgment built over years of training and casework. This course will get you reading reports and asking sharper questions. The final interpretation, and the decision that follows it, is a call you make together with your veterinarian.'),
+    para('Reading a titer number off a page is the easy part. What it means for your flock is the harder part. That read comes from weighing the number against vaccination history, other lab work, and the disease patterns your veterinarian has watched play out across many flocks, the kind of judgment built over years of training and casework. This course will get you reading reports and asking sharper questions. The final interpretation, and the decision that follows it, is a call you make together with your veterinarian.'),
 
     h2('Learning Objectives'),
     numbered('Explain what antibodies are and what a titer result on a lab report actually represents.'),
@@ -379,7 +379,7 @@ function buildBodySection() {
 
     para('Live and killed vaccines are not simply a stronger and a weaker version of the same shot. They lean on different arms of the immune system. A live vaccine, even though it is a weakened strain, briefly infects and grows inside the bird\'s own cells much like a real infection would. That is what drives a strong cell-mediated response: cytotoxic T cells that hunt down and destroy infected cells directly. A killed vaccine works the other side. It stimulates a response dominated by antibodies instead, though it usually needs an adjuvant and more than one dose to get there [3].'),
 
-    para('That is the real reason behind the usual order on a breeder farm: live vaccine first, killed vaccine second. A killed vaccine given alone would leave a gap in the cell-mediated protection a live dose builds. Priming with the live vaccine covers that ground, then the killed booster drives the strong, consistent circulating antibody level a breeder flock needs heading into lay, which is exactly the response killed vaccines are built to deliver [3].'),
+    para('That is the real reason behind the usual order on a breeder farm: live vaccine first, killed vaccine second. A killed vaccine given alone would leave a gap in the cell-mediated protection a live dose builds. Priming with the live vaccine covers that ground first. Then the killed booster drives the strong, consistent circulating antibody level a breeder flock needs heading into lay, which is exactly what killed vaccines are built to deliver [3].'),
 
     para('For more on building a vaccination program around this first dose, then booster pattern, see Course 8 (Vaccination) in this series.'),
 
