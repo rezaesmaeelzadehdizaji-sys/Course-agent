@@ -205,3 +205,13 @@ Final QA raised two open image-sourcing questions. User confirmed both captions 
 - **Figure 2.2 (HI principle diagram + real 96-well plate composite):** Source stands as "microbenotes.com" for the whole composite, including the real-plate half — confirmed correct.
 
 Course 15 final QA complete: structure (0 dirty, 0 em-dash, 23=23 TOC bookmarks/hyperlinks), all 16 references verified real and sequential 1-16, all temperature/unit conversions correct, %CV scale on CPC standard with Figure 6.2 bars computing to the labeled CV, TOC matches rendered pages exactly, farmer-flow tone clean. No outstanding items.
+
+---
+
+## 2026-07-23 — added Section 7: Hands-On Workshop
+
+The course carries a 1-hour workshop but the body had no workshop section (previous workshop courses, e.g. Course 10 Section 8, include one). Added Section 7: Hands-On Workshop, matching the Course 10 model (numbered section, first-person "we/you" voice, ends on the veterinarian's-call framing):
+- 7.1 Drawing, Handling, and Submitting a Blood Sample: bleed live birds, draw from the brachial vein, move to clot tube, judge serum, fill out the submission form and the crucial fields [15].
+- 7.2 Reading Real Results Together: review real HI and ELISA reports against flock age/history/vaccination to practice interpretation, uniformity, and spotting field challenge [1].
+
+Citations reuse existing [15] (Hy-Line technique) and [1] (CPC interpretation); no new references, order still sequential 1-16. Added 3 TOC entries; recomputed pages (Section 7 p17, 7.1/7.2 p18, Recommended Journals p19, References p20). Course grew from 21 to 22 pages. Summary page workshop line updated to mention the results-interpretation half. Both PDFs (course + summary) re-exported. Post-checks: dirty=0, em=0, bookmarks=hyperlinks=26, British sweep clean.

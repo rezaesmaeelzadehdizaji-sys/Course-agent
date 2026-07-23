@@ -214,7 +214,7 @@ const children = [
   new Paragraph({
     children: [
       new TextRun({ text: 'Workshop (1 hour): ', bold: true, color: MED_BLUE, size: 24, font: 'Calibri' }),
-      new TextRun({ text: 'Hands-on practice drawing blood samples, handling and labeling serum, and completing a lab submission form.', color: BODY_GRAY, size: 24, font: 'Calibri' }),
+      new TextRun({ text: 'Hands-on practice drawing blood samples, handling and labeling serum, and completing a lab submission form, followed by reading real HI and ELISA reports against flock history to practice interpretation.', color: BODY_GRAY, size: 24, font: 'Calibri' }),
     ],
     spacing: { before: 120, after: 160 },
   }),

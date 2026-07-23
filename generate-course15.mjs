@@ -576,6 +576,23 @@ function buildBodySection() {
 
     para('These ranges are what you aim for after a killed (inactivated) vaccine. Live vaccines naturally spread titers wider, so the %CV runs higher. With a live vaccine, whether every bird tested positive at all matters more than the %CV number, since a live vaccine that did not reach every bird is a coverage problem the %CV alone will not show you [16].'),
 
+    // ── SECTION 7 ─────────────────────────────────────────────
+    h1('Section 7: Hands-On Workshop'),
+
+    para('The workshop is where everything in this course turns into something your hands know. In the first half we draw blood from live birds and take a sample all the way from the wing to a lab-ready tube. In the second half we sit down with real lab reports and read them together. The lecture was just to get you ready for this part.'),
+
+    h2('7.1  Drawing, Handling, and Submitting a Blood Sample'),
+
+    para('We start by bleeding a few birds. You will find the brachial vein on the underside of the wing, set the needle, and draw the sample yourself, so the technique from Section 4 becomes something you have done, not just something you read. We will work through the practical points that separate a clean draw from a wasted one: how to hold the bird so both your hands are free, how gently to pull on the plunger, and what to do when the blood will not come [15].'),
+
+    para('From there we take the sample through the rest of the chain. You will move the blood into a clot tube the right way, let it clot and separate, and judge by eye whether the serum coming off is good enough to send. Then we fill out a real lab submission form together and talk through the information the lab cannot work without: flock ID, age, the vaccination program, the date drawn, and the exact tests you are asking for. A perfect sample with a blank form is still a wasted trip [15].'),
+
+    h2('7.2  Reading Real Results Together'),
+
+    para('The second half is all interpretation. We put real HI and ELISA reports up next to each flock\'s age, history, and vaccination program, and read them the way you would back on your own farm. You will practice the questions that matter: does the titer sit where the program would predict, is the flock uniform or spread out, and is a high or two-humped result pointing at a field challenge rather than a clean vaccine response [1]?'),
+
+    para('By the end you should be able to pick up a report and know which numbers matter, which are just noise, and which are worth a call to your veterinarian. That last step, deciding what a result means and what to do about it, stays a shared decision with your veterinarian. The workshop is what makes you a sharper partner in that conversation.'),
+
     // ── RECOMMENDED JOURNALS ─────────────────────────────────
     pageBreak(),
     h1('Recommended Journals and Resources'),
@@ -699,8 +716,11 @@ const tocEntries = [
   { lvl: 1, text: 'Section 6: Interpreting Serologic Results', page: 15 },
   { lvl: 2, text: '6.1  Reading the Titer Scale', page: 16 },
   { lvl: 2, text: '6.2  Flock Uniformity: %CV', page: 16 },
-  { lvl: 1, text: 'Recommended Journals and Resources', page: 18 },
-  { lvl: 1, text: 'References', page: 19 },
+  { lvl: 1, text: 'Section 7: Hands-On Workshop', page: 17 },
+  { lvl: 2, text: '7.1  Drawing, Handling, and Submitting a Blood Sample', page: 18 },
+  { lvl: 2, text: '7.2  Reading Real Results Together', page: 18 },
+  { lvl: 1, text: 'Recommended Journals and Resources', page: 19 },
+  { lvl: 1, text: 'References', page: 20 },
 ];
 
 const entriesWithAnchor = tocEntries.map((e, i) => ({
