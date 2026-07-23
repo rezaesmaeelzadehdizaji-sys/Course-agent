@@ -442,11 +442,13 @@ function buildBodySection() {
 
     para('The respiratory viruses are the clearest case. There are good commercial ELISA kits for infectious bronchitis (IB), infectious laryngotracheitis (ILT), and Marek\'s disease, and they earn their keep for tracking whether a flock was exposed and whether it responded to vaccination. What they do not tell you as well is how protected the birds actually are. IB and ILT both take hold right at the surface of the windpipe, nose, and eyes, and the birds fight them off mostly with local defenses at that surface and with immune cells, not with the blood antibody an ELISA measures [8,9]. Marek\'s disease is similar: its main protective immunity runs through the cell side rather than antibody [10]. So for these three, a good titer confirms the birds met the vaccine or the virus, but it lines up only loosely with real protection, because the part of the immune system holding the line is the part serology does not see.'),
 
-    para('Infectious bursal disease (IBD, or Gumboro) is the opposite case. Protection against Gumboro runs almost entirely through antibody, which is exactly what serology measures [11]. That is why an ELISA titer is a genuinely useful read on IBD protection, and why breeder titers and day-old maternal antibody levels are used to decide when to vaccinate the chicks. When the disease is fought with antibody, the antibody test tells you something real.'),
+    para('Infectious bronchitis deserves one extra note, because it is not only a respiratory disease. Some IBV strains are nephropathogenic: they move past the airway and target the kidneys, causing systemic disease [11]. Because that kind of infection travels through the body rather than staying at the tracheal surface, circulating antibody does more of the protective work against it. For those renal strains, a good serum titer lines up with protection better than it does for the purely respiratory forms, so with IBV, what a titer promises depends partly on which kind of strain you are dealing with.'),
 
-    para('Newcastle disease (ND) sits in the middle. Protection leans heavily on antibody, and the HI titer tracks protection against clinical disease well enough that HI is the standard ND test [12]. But antibody is not the whole story. Cell and local immunity help too, and even birds with high HI titers can still catch the virus and shed it. So for ND, a strong HI titer is a real and reassuring number, just not an ironclad guarantee.'),
+    para('Infectious bursal disease (IBD, or Gumboro) is the opposite case. Protection against Gumboro runs almost entirely through antibody, which is exactly what serology measures [12]. That is why an ELISA titer is a genuinely useful read on IBD protection, and why breeder titers and day-old maternal antibody levels are used to decide when to vaccinate the chicks. When the disease is fought with antibody, the antibody test tells you something real.'),
 
-    para('Avian influenza (AI) is a different situation again. Here serology is used mostly to catch exposure, not to gauge protection. A positive AI antibody result on a surveillance test means the birds have met the virus [13], and in Canada avian influenza is a federally reportable disease [14]. So an AI titer is not a number you build with a vaccine and watch over time. It is a flag that, if it turns up, starts a reporting and investigation process with the CFIA.'),
+    para('Newcastle disease (ND) sits in the middle. Protection leans heavily on antibody, and the HI titer tracks protection against clinical disease well enough that HI is the standard ND test [13]. But antibody is not the whole story. Cell and local immunity help too, and even birds with high HI titers can still catch the virus and shed it. So for ND, a strong HI titer is a real and reassuring number, just not an ironclad guarantee.'),
+
+    para('Avian influenza (AI) is a different situation again. Here serology is used mostly to catch exposure, not to gauge protection. A positive AI antibody result on a surveillance test means the birds have met the virus [14], and in Canada avian influenza is a federally reportable disease [15]. So an AI titer is not a number you build with a vaccine and watch over time. It is a flag that, if it turns up, starts a reporting and investigation process with the CFIA.'),
 
     para('This is also why a single titer number means very little without something to compare it to. A titer of 2,000 against avian reovirus might be routine for one flock and a red flag for another, depending on what that flock\'s vaccination program and history normally produce [1,4]. Build your own baseline from your own flocks over time, and compare new results against that baseline first.'),
 
@@ -456,11 +458,11 @@ function buildBodySection() {
 
     para('When you suspect a flock has been hit by field disease, a single blood draw will not confirm it. What confirms it is a rise in titer between two samples taken from the same birds, a few weeks apart. This is called paired sampling, and it is the most reliable way serology can support a disease diagnosis.'),
 
-    para('The first sample, sometimes called the acute sample, should be drawn as soon as you notice clinical signs. The second sample is drawn from the same birds 3 to 5 weeks later [15]. If the flock was actually challenged by that pathogen, a clear rise in titer between the two samples points to recent exposure to that disease [15].'),
+    para('The first sample, sometimes called the acute sample, should be drawn as soon as you notice clinical signs. The second sample is drawn from the same birds 3 to 5 weeks later [16]. If the flock was actually challenged by that pathogen, a clear rise in titer between the two samples points to recent exposure to that disease [16].'),
 
-    para('One practical tip: freeze the first sample instead of sending it right away, then run both samples together when the second one is collected. Testing them side by side in the same batch removes a lot of the lab-to-lab and reagent-batch variation that can otherwise muddy the comparison [15].'),
+    para('One practical tip: freeze the first sample instead of sending it right away, then run both samples together when the second one is collected. Testing them side by side in the same batch removes a lot of the lab-to-lab and reagent-batch variation that can otherwise muddy the comparison [16].'),
 
-    para('The same paired approach works for checking how well a killed vaccine is taking. Titer response from a killed vaccine peaks 3 to 5 weeks after the shot, so a sample taken before vaccination and a second one 3 to 5 weeks after gives you a before and after picture of how the flock responded [15].'),
+    para('The same paired approach works for checking how well a killed vaccine is taking. Titer response from a killed vaccine peaks 3 to 5 weeks after the shot, so a sample taken before vaccination and a second one 3 to 5 weeks after gives you a before and after picture of how the flock responded [16].'),
 
     para('If a paired-sample result points to a specific pathogen, see Course 7 (Common Poultry Diseases) in this series for the clinical signs that go with it, and Course 11 (Necropsy, Common Diseases) for the post-mortem lesions.'),
 
@@ -469,13 +471,13 @@ function buildBodySection() {
 
     h2('4.1  Equipment, Site Selection, and How Many Birds to Sample'),
 
-    para('Good serology starts before the needle ever goes into a bird. For routine monitoring, pick normal, healthy birds, not culls or birds that look sick. A sick bird\'s titer does not represent the flock. If you are working up a suspected disease problem, it is the opposite: sample the birds that are actually showing signs [15].'),
+    para('Good serology starts before the needle ever goes into a bird. For routine monitoring, pick normal, healthy birds, not culls or birds that look sick. A sick bird\'s titer does not represent the flock. If you are working up a suspected disease problem, it is the opposite: sample the birds that are actually showing signs [16].'),
 
-    para('For routine flock profiling, collect serum from 10 to 20 birds, with 20 the better target and 10 the minimum that still gives a usable estimate of the flock\'s antibody status [15]. The CPC Learning Centre Serology 101 presentation makes the same point from the lab\'s side: you\'re using a small sample to stand in for the whole flock, so it has to be big enough for the result to mean something. Pooling several birds\' blood into one sample makes it harder for the test to catch a positive [1].'),
+    para('For routine flock profiling, collect serum from 10 to 20 birds, with 20 the better target and 10 the minimum that still gives a usable estimate of the flock\'s antibody status [16]. The CPC Learning Centre Serology 101 presentation makes the same point from the lab\'s side: you\'re using a small sample to stand in for the whole flock, so it has to be big enough for the result to mean something. Pooling several birds\' blood into one sample makes it harder for the test to catch a positive [1].'),
 
     ...image(figBuf('sampleing guide.png'), 'Figure 4.1: Spreading the sample across the whole house. Walk the two diagonals from the entrance and pick birds at even spacing, so the sample stands for the whole flock and not just one corner or one age pocket. The worked example on the figure (24 birds, one about every 5 m along a 60 m diagonal) is only there to show how to space the walk. Use the number your purpose calls for: for routine flock profiling that is the 10 to 20 birds noted above. Source: BioChek Interpretation and Application of Results Manual.', 5.8, 'png'),
 
-    para('Use a disposable, sterile syringe, 3 cc or 5 cc depending on how much blood you need. Swap in a fresh needle every 5 to 10 birds, and always change all your equipment between flocks so you are not carrying disease from one barn to the next. A dull needle tears tissue instead of slipping into the vein, which makes the draw harder on you and the bird [15]. Needle size depends on where you are drawing from:'),
+    para('Use a disposable, sterile syringe, 3 cc or 5 cc depending on how much blood you need. Swap in a fresh needle every 5 to 10 birds, and always change all your equipment between flocks so you are not carrying disease from one barn to the next. A dull needle tears tissue instead of slipping into the vein, which makes the draw harder on you and the bird [16]. Needle size depends on where you are drawing from:'),
 
     dataTable(
       ['Site', 'Needle Length', 'Needle Gauge'],
@@ -487,41 +489,41 @@ function buildBodySection() {
     ),
     new Paragraph({ spacing: { before: 80, after: 0 } }),
 
-    para('Two sites cover almost every situation on a commercial farm. The wing (brachial) vein is the everyday choice for birds 4 weeks and older. In younger birds, this vein is too small to get a usable sample. Cardiac puncture, drawing blood directly from the heart, gives a larger, cleaner sample, but only trained personnel should do it: poor technique can cause fatal bleeding [15]. The wing vein is the technique covered in the workshop.'),
+    para('Two sites cover almost every situation on a commercial farm. The wing (brachial) vein is the everyday choice for birds 4 weeks and older. In younger birds, this vein is too small to get a usable sample. Cardiac puncture, drawing blood directly from the heart, gives a larger, cleaner sample, but only trained personnel should do it: poor technique can cause fatal bleeding [16]. The wing vein is the technique covered in the workshop.'),
 
     h2('4.2  Drawing Blood from the Wing Vein'),
 
-    para('The wing vein draw is a one-person job once you get the hang of it. Hold the bird by both legs, then tuck its legs under your non-dominant elbow so both your hands are free to work with the wing [15].'),
+    para('The wing vein draw is a one-person job once you get the hang of it. Hold the bird by both legs, then tuck its legs under your non-dominant elbow so both your hands are free to work with the wing [16].'),
 
     ...image(figBuf('blood collection\'.jpg'), 'Photo 4.1: Wing (brachial) vein blood collection in a chicken, shown from three angles. The arrow (top left) marks the brachial vein on the inside of the wing; the other two panels show the needle drawing blood into the syringe. Source: Norecopa (norecopa.no); Kelly & Alworth, Lab Anim 2013;42:359-361; foodagribusiness.world.', 5.8, 'jpg'),
 
-    bullet([{ text: 'Step 1: ', bold: true }, { text: 'Pull back a few feathers on the underside of the wing so you can see the brachial vein running along the inside of the wing [15].' }]),
-    bullet([{ text: 'Step 2: ', bold: true }, { text: 'Line the needle up with the vein, bevel facing up, with the tip pointed toward the wing tip [15].' }]),
-    bullet([{ text: 'Step 3: ', bold: true }, { text: 'Insert the needle under the skin first, then into the vein, about midway between the elbow and shoulder joints [15].' }]),
-    bullet([{ text: 'Step 4: ', bold: true }, { text: 'Pull back gently on the plunger. If the needle is in the vein, blood flows in with very little pull. Pulling too hard creates negative pressure that collapses the vein and stops the flow [15].' }]),
-    bullet([{ text: 'Step 5: ', bold: true }, { text: 'If a hematoma, a swelling under the skin from leaking blood, starts to form before you have collected enough, stop. Once a hematoma forms, the vein is impossible to see and the draw is over for that side. Try the opposite wing instead [15].' }]),
-    bullet([{ text: 'Step 6: ', bold: true }, { text: 'When you are done, remove the needle and press a finger gently over the site for a few seconds to help it clot [15].' }]),
+    bullet([{ text: 'Step 1: ', bold: true }, { text: 'Pull back a few feathers on the underside of the wing so you can see the brachial vein running along the inside of the wing [16].' }]),
+    bullet([{ text: 'Step 2: ', bold: true }, { text: 'Line the needle up with the vein, bevel facing up, with the tip pointed toward the wing tip [16].' }]),
+    bullet([{ text: 'Step 3: ', bold: true }, { text: 'Insert the needle under the skin first, then into the vein, about midway between the elbow and shoulder joints [16].' }]),
+    bullet([{ text: 'Step 4: ', bold: true }, { text: 'Pull back gently on the plunger. If the needle is in the vein, blood flows in with very little pull. Pulling too hard creates negative pressure that collapses the vein and stops the flow [16].' }]),
+    bullet([{ text: 'Step 5: ', bold: true }, { text: 'If a hematoma, a swelling under the skin from leaking blood, starts to form before you have collected enough, stop. Once a hematoma forms, the vein is impossible to see and the draw is over for that side. Try the opposite wing instead [16].' }]),
+    bullet([{ text: 'Step 6: ', bold: true }, { text: 'When you are done, remove the needle and press a finger gently over the site for a few seconds to help it clot [16].' }]),
 
-    para('If blood does not flow into the syringe, there are three usual reasons: the needle missed the vein, the needle is plugged with a clot, or a hematoma is already forming. Discard used needles straight into a sharps container. Never recap a used needle [15].'),
+    para('If blood does not flow into the syringe, there are three usual reasons: the needle missed the vein, the needle is plugged with a clot, or a hematoma is already forming. Discard used needles straight into a sharps container. Never recap a used needle [16].'),
 
     // ── SECTION 5 ─────────────────────────────────────────────
     h1('Section 5: Sample Handling and Lab Submission'),
 
     h2('5.1  Clotting and Separating Serum'),
 
-    para('Once blood is in the syringe, remove the needle before pushing the blood into the clot tube. Forcing blood back through the needle ruptures red blood cells, a problem called hemolysis, and a hemolyzed sample is a poor sample [15].'),
+    para('Once blood is in the syringe, remove the needle before pushing the blood into the clot tube. Forcing blood back through the needle ruptures red blood cells, a problem called hemolysis, and a hemolyzed sample is a poor sample [16].'),
 
-    para('Let the blood run gently down the inside wall of the tube, and keep the tube nearly flat while the clot forms. A flat tube gives the clot more surface area, and more surface area means more serum separates out. A tube left standing upright produces only a small amount of serum [15].'),
+    para('Let the blood run gently down the inside wall of the tube, and keep the tube nearly flat while the clot forms. A flat tube gives the clot more surface area, and more surface area means more serum separates out. A tube left standing upright produces only a small amount of serum [16].'),
 
-    para('Clotting works best at 80 to 100°F (27 to 38°C), and at that range, serum separates from the clot in about 12 to 18 hours. Cooler temperatures slow the process down and give you less serum. Do not shake the tubes, do not freeze them while the clot is forming, and do not leave them in a hot truck or in direct sun. All of these damage the sample [15].'),
+    para('Clotting works best at 80 to 100°F (27 to 38°C), and at that range, serum separates from the clot in about 12 to 18 hours. Cooler temperatures slow the process down and give you less serum. Do not shake the tubes, do not freeze them while the clot is forming, and do not leave them in a hot truck or in direct sun. All of these damage the sample [16].'),
 
-    para('Once the clot has fully formed, separate the serum by pouring it off or gently teasing the clot away from the side of the tube with a wooden stick. A good serum sample looks clear to pale yellow, like the tube on the right below [15].'),
+    para('Once the clot has fully formed, separate the serum by pouring it off or gently teasing the clot away from the side of the tube with a wooden stick. A good serum sample looks clear to pale yellow, like the tube on the right below [16].'),
 
     ...image(figBuf('photo5_1_serum_tubes.png'), 'Photo 5.1: Three tubes after spinning, and only one gives you serum. Left (EDTA K, red cap): the anticoagulant blocks clotting, so it stays whole blood with no clear layer on top. Middle (Li-Heparin, orange cap): also anticoagulated, so the pale top layer is plasma, which still holds fibrinogen and clotting factors, not serum. Right (Serum, clear cap): no anticoagulant, so the blood clots and spins down to clear, pale serum over a firm red cell clot, the appearance you want for serology. Source: Wikimedia Commons (CC BY-SA), Uwe Gille.', 4.0),
 
     h2('5.2  What the Lab Needs From You'),
 
-    para('Not every sample that makes it to the lab is worth testing. A sample is the wrong sample if any of these problems show up [15]:'),
+    para('Not every sample that makes it to the lab is worth testing. A sample is the wrong sample if any of these problems show up [16]:'),
 
     ...callout('Do NOT send serum samples to the lab that:', [
       'Contain less than 0.25 mL of serum',
@@ -531,13 +533,13 @@ function buildBodySection() {
       'Are gelled, slimy, or contain cheese-like particles',
     ]),
 
-    para('Each of these has a cause you can usually trace back. Hemolyzed (red) samples come from rough handling, forcing blood through a needle, or shaking the tube. Lipemic (cloudy, fatty) samples often come from birds sampled too soon after eating. Gelled samples usually come from dehydrated birds, common in hot weather or under stress. Slimy serum with cheese-like particles is a different problem: the sample sat too warm for too long and bacteria or mold moved in. Those bugs feed on the antibodies in the serum, so by the time it looks like that, the titer result is no longer trustworthy [15].'),
+    para('Each of these has a cause you can usually trace back. Hemolyzed (red) samples come from rough handling, forcing blood through a needle, or shaking the tube. Lipemic (cloudy, fatty) samples often come from birds sampled too soon after eating. Gelled samples usually come from dehydrated birds, common in hot weather or under stress. Slimy serum with cheese-like particles is a different problem: the sample sat too warm for too long and bacteria or mold moved in. Those bugs feed on the antibodies in the serum, so by the time it looks like that, the titer result is no longer trustworthy [16].'),
 
-    para('Once a serum sample passes the visual check, keep it cool, 45°F (7°C), and get it to the lab quickly. If it will not arrive within 3 to 5 days, freeze it instead, between +14°F and -40°F (-10°C and -40°C). Cap each tube tightly, group samples by flock in a sealed bag, and label every tube clearly. Avoid shipping on Thursdays or Fridays. A package that sits in a courier depot over the weekend arrives at the lab in worse shape than one mailed earlier in the week [15].'),
+    para('Once a serum sample passes the visual check, keep it cool, 45°F (7°C), and get it to the lab quickly. If it will not arrive within 3 to 5 days, freeze it instead, between +14°F and -40°F (-10°C and -40°C). Cap each tube tightly, group samples by flock in a sealed bag, and label every tube clearly. Avoid shipping on Thursdays or Fridays. A package that sits in a courier depot over the weekend arrives at the lab in worse shape than one mailed earlier in the week [16].'),
 
     para('Labeling matters as much as the sample itself. The CPC Learning Centre Serology 101 presentation lays out a typical lab code: a flock number, a letter for first or second bleeding (A or B), a code for the type of bird (BB for broiler breeder, for example), the flock\'s age in weeks, a submitter code, an owner code, and the test being requested, something like "123 A BB 18 X 345, IBD-XR" [1].'),
 
-    para('Beyond the label itself, give the lab the background it needs to make sense of the numbers: the flock\'s location, the date you collected, the full vaccination program, and any health or production history worth flagging [15]. As the BioChek lab manual puts it, without that context there is nothing to compare the titer against [16].'),
+    para('Beyond the label itself, give the lab the background it needs to make sense of the numbers: the flock\'s location, the date you collected, the full vaccination program, and any health or production history worth flagging [16]. As the BioChek lab manual puts it, without that context there is nothing to compare the titer against [17].'),
 
     // ── SECTION 6 ─────────────────────────────────────────────
     h1('Section 6: Interpreting Serologic Results'),
@@ -558,7 +560,7 @@ function buildBodySection() {
 
     para('The mean titer tells you how strong the response was on average. The %CV, short for coefficient of variation, tells you how even that response was across the flock. The lab gets that number by taking the standard deviation of the titers, dividing it by the mean, and multiplying by 100 [4].'),
 
-    para('A low %CV means the birds you sampled were all sitting close to the same titer, a sign of a uniform vaccination response or a recent shared field exposure. A high %CV means some birds responded strongly and others barely responded at all, even though the mean might look fine [4,16]. One cause of a suddenly high or two-humped (bimodal) %CV is a field infection moving through the flock, hitting some birds before others. When that uneven spread comes with titers running above your normal vaccine baseline, it points to an active field challenge, not just a patchy vaccination [1,16].'),
+    para('A low %CV means the birds you sampled were all sitting close to the same titer, a sign of a uniform vaccination response or a recent shared field exposure. A high %CV means some birds responded strongly and others barely responded at all, even though the mean might look fine [4,17]. One cause of a suddenly high or two-humped (bimodal) %CV is a field infection moving through the flock, hitting some birds before others. When that uneven spread comes with titers running above your normal vaccine baseline, it points to an active field challenge, not just a patchy vaccination [1,17].'),
 
     ...image(figBuf('fig15_5.png'), 'Figure 6.2: A low %CV means the whole flock responded about the same way. Source: CPC Short Courses.'),
 
@@ -576,7 +578,7 @@ function buildBodySection() {
     ),
     new Paragraph({ spacing: { before: 80, after: 0 } }),
 
-    para('These ranges are what you aim for after a killed (inactivated) vaccine. Live vaccines naturally spread titers wider, so the %CV runs higher. With a live vaccine, whether every bird tested positive at all matters more than the %CV number, since a live vaccine that did not reach every bird is a coverage problem the %CV alone will not show you [16].'),
+    para('These ranges are what you aim for after a killed (inactivated) vaccine. Live vaccines naturally spread titers wider, so the %CV runs higher. With a live vaccine, whether every bird tested positive at all matters more than the %CV number, since a live vaccine that did not reach every bird is a coverage problem the %CV alone will not show you [17].'),
 
     h2('6.3  A Worked Example: Reading a Breeder ELISA Report'),
 
@@ -584,7 +586,7 @@ function buildBodySection() {
 
     ...image(figBuf('elisa test.jpg'), 'Figure 6.3: A real ELISA report for a 23-week breeder flock, four weeks after live and killed priming. The IBD result (top) is high and tight; the IBV result (bottom) is scattered. Source: CPC Short Courses.', 5.8, 'jpg'),
 
-    para('Three of those numbers do most of the work. The mean titer (labeled Mean) is the plain average of the ten birds. The geometric mean titer, labeled GMean or GMT, is a different kind of average: because titers climb in doubling steps rather than even ones, the GMT reflects the typical bird better than the plain mean, which a handful of very high birds can drag upward [17]. The %CV, the coefficient of variation, tells you how uniform the flock is, the same measure from Section 6.2. Read together, these three tell you not just how high the response is, but how even it is, and whether the average you are looking at is honest [17].'),
+    para('Three of those numbers do most of the work. The mean titer (labeled Mean) is the plain average of the ten birds. The geometric mean titer, labeled GMean or GMT, is a different kind of average: because titers climb in doubling steps rather than even ones, the GMT reflects the typical bird better than the plain mean, which a handful of very high birds can drag upward [18]. The %CV, the coefficient of variation, tells you how uniform the flock is, the same measure from Section 6.2. Read together, these three tell you not just how high the response is, but how even it is, and whether the average you are looking at is honest [18].'),
 
     para('Look at the IBD result first. The mean is 19,536 and the GMean is 19,244, almost the same number, and the %CV is 17.4%. When the mean and the geometric mean sit that close together and the CV is that low, you are looking at a tight, uniform flock: every bird landed in about the same place, all high (titer groups 9 to 13 on the histogram). For IBD, which is fought off by antibody, that is exactly the picture you want four weeks after a killed booster.'),
 
@@ -597,9 +599,9 @@ function buildBodySection() {
 
     h2('7.1  Drawing, Handling, and Submitting a Blood Sample'),
 
-    para('We start by bleeding a few birds. You will find the brachial vein on the underside of the wing, set the needle, and draw the sample yourself, so the technique from Section 4 becomes something you have done, not just something you read. We will work through the practical points that separate a clean draw from a wasted one: how to hold the bird so both your hands are free, how gently to pull on the plunger, and what to do when the blood will not come [15].'),
+    para('We start by bleeding a few birds. You will find the brachial vein on the underside of the wing, set the needle, and draw the sample yourself, so the technique from Section 4 becomes something you have done, not just something you read. We will work through the practical points that separate a clean draw from a wasted one: how to hold the bird so both your hands are free, how gently to pull on the plunger, and what to do when the blood will not come [16].'),
 
-    para('From there we take the sample through the rest of the chain. You will move the blood into a clot tube the right way, let it clot and separate, and judge by eye whether the serum coming off is good enough to send. Then we fill out a real lab submission form together and talk through the information the lab cannot work without: flock ID, age, the vaccination program, the date drawn, and the exact tests you are asking for. A perfect sample with a blank form is still a wasted trip [15].'),
+    para('From there we take the sample through the rest of the chain. You will move the blood into a clot tube the right way, let it clot and separate, and judge by eye whether the serum coming off is good enough to send. Then we fill out a real lab submission form together and talk through the information the lab cannot work without: flock ID, age, the vaccination program, the date drawn, and the exact tests you are asking for. A perfect sample with a blank form is still a wasted trip [16].'),
 
     h2('7.2  Reading Real Results Together'),
 
@@ -635,6 +637,7 @@ function buildBodySection() {
     numberedRef('Chhabra R, Forrester A, Lemiere S, Awad F, Chantrey J, Ganapathy K. Mucosal, Cellular, and Humoral Immune Responses Induced by Different Live Infectious Bronchitis Virus Vaccination Regimes and Protection Conferred against Infectious Bronchitis Virus Q1 Strain. Clin Vaccine Immunol. 2015;22(9):1050-1059. doi:10.1128/CVI.00368-15'),
     numberedRef('Ou SC, Giambrone JJ. Infectious laryngotracheitis virus in chickens. World J Virol. 2012;1(5):142-149. doi:10.5501/wjv.v1.i5.142'),
     numberedRef('Merck Veterinary Manual. Marek\'s Disease in Poultry. Kenilworth, NJ: Merck & Co.; 2024 [cited 2026 Jul]. Available from: merckvetmanual.com/poultry/neoplasms-in-poultry/marek-s-disease-in-poultry'),
+    numberedRef('Kannaki TR, Venkatesh Yadav J, Priyanka E, Lakshman M. Pathology, tissue tropism and antibody response of nephropathogenic infectious bronchitis virus (IBV) Indian isolate in experimentally infected chicken. VirusDisease. 2021;32(3):568-575. doi:10.1007/s13337-021-00693-4'),
     numberedRef('Merck Veterinary Manual. Infectious Bursal Disease in Poultry. Kenilworth, NJ: Merck & Co.; 2024 [cited 2026 Jul]. Available from: merckvetmanual.com/poultry/infectious-bursal-disease/infectious-bursal-disease-in-poultry'),
     numberedRef('Liu M, Shen X, Yu Y, Li J, Fan J, Jia X, Dai Y. Effect of Different Levels of Maternally Derived Genotype VII Newcastle Disease Virus-Specific Hemagglutination Inhibition Antibodies on Protection against Virulent Challenge in Chicks. Viruses. 2023;15(9):1840. doi:10.3390/v15091840'),
     numberedRef('Azeem S, Yoon KJ. Diagnostic Assays for Avian Influenza Virus Surveillance and Monitoring in Poultry. Viruses. 2025;17(2):228. doi:10.3390/v17020228'),
