@@ -387,10 +387,10 @@ function fig15_4() {
 function fig15_5() {
   const W = 800, H = 460;
 
-  // Excellent: tight bell curve, CV < 40%
+  // Excellent: tight single peak, computed CV ~23% (< 30%)
   const exHeights = [1, 4, 14, 48, 26, 6, 1];
-  // Need to Improve: wide / two-humped spread, CV > 60%
-  const niHeights = [16, 22, 12, 8, 12, 18, 14];
+  // Poor / bimodal: two humps at the low and high ends, computed CV ~83% (> 80%)
+  const niHeights = [50, 14, 4, 2, 4, 9, 17];
 
   let histEx = '';
   exHeights.forEach((h, idx) => {
