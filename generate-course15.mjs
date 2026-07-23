@@ -535,7 +535,7 @@ function buildBodySection() {
 
     para('Labeling matters as much as the sample itself. The CPC Learning Centre Serology 101 presentation lays out a typical lab code: a flock number, a letter for first or second bleeding (A or B), a code for the type of bird (BB for broiler breeder, for example), the flock\'s age in weeks, a submitter code, an owner code, and the test being requested, something like "123 A BB 18 X 345, IBD-XR" [1].'),
 
-    para('Write down everything the lab needs to put your numbers in context: flock ID and location, age, date of collection, the full vaccination program, and any health or production history worth flagging [15]. The BioChek lab manual makes the same point from its side: label every sample with company ID, flock ID, age, and bird type before it goes in for testing, or there is nothing to compare the titer against [16].'),
+    para('Beyond the label itself, give the lab the background it needs to make sense of the numbers: the flock\'s location, the date you collected, the full vaccination program, and any health or production history worth flagging [15]. As the BioChek lab manual puts it, without that context there is nothing to compare the titer against [16].'),
 
     // ── SECTION 6 ─────────────────────────────────────────────
     h1('Section 6: Interpreting Serologic Results'),
