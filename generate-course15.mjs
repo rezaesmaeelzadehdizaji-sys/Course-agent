@@ -358,6 +358,7 @@ function buildBodySection() {
     para('The hands-on portion of this session is where it all comes together. You will practice drawing a blood sample, handling and labeling serum, and filling out a lab submission form, the same steps your flock\'s blood goes through before it ever reaches the lab.'),
 
     // ── SECTION 1 ─────────────────────────────────────────────
+    pageBreak(),
     h1('Section 1: The Role of Antibodies in Immunity'),
 
     h2('1.1  Innate vs. Acquired Immunity'),
@@ -389,6 +390,7 @@ function buildBodySection() {
     para('For more on building a vaccination program around this first dose, then booster pattern, see Course 8 (Vaccination) in this series.'),
 
     // ── SECTION 2 ─────────────────────────────────────────────
+    pageBreak(),
     h1('Section 2: Serologic Tests'),
 
     h2('2.1  Reading a Lab Report: What Serology Measures'),
@@ -450,6 +452,7 @@ function buildBodySection() {
     para('Newcastle disease works differently. There is really only one type of Newcastle virus out there, so there is nothing to sort out or subtype. When HI comes back on a Newcastle report, it is just telling you how much antibody your birds are carrying, which makes it a useful check on how well an ND vaccination program is holding up [8].'),
 
     // ── SECTION 3 ─────────────────────────────────────────────
+    pageBreak(),
     h1('Section 3: The Limitations of Serology'),
 
     h2('3.1  What Serology Can and Cannot Tell You'),
@@ -496,6 +499,7 @@ function buildBodySection() {
     para('If a paired-sample result points to a specific pathogen, see Course 7 (Common Poultry Diseases) in this series for the clinical signs that go with it, and Course 11 (Necropsy, Common Diseases) for the post-mortem lesions.'),
 
     // ── SECTION 4 ─────────────────────────────────────────────
+    pageBreak(),
     h1('Section 4: Poultry Blood Sampling Techniques'),
 
     h2('4.1  Equipment, Site Selection, and How Many Birds to Sample'),
@@ -536,6 +540,7 @@ function buildBodySection() {
     para('If blood does not flow into the syringe, there are three usual reasons: the needle missed the vein, the needle is plugged with a clot, or a hematoma is already forming. Discard used needles straight into a sharps container. Never recap a used needle [19].'),
 
     // ── SECTION 5 ─────────────────────────────────────────────
+    pageBreak(),
     h1('Section 5: Sample Handling and Lab Submission'),
 
     h2('5.1  Clotting and Separating Serum'),
@@ -571,6 +576,7 @@ function buildBodySection() {
     para('Beyond the label itself, give the lab the background it needs to make sense of the numbers: the flock\'s location, the date you collected, the full vaccination program, and any health or production history worth flagging [19]. As the BioChek lab manual puts it, without that context there is nothing to compare the titer against [20].'),
 
     // ── SECTION 6 ─────────────────────────────────────────────
+    pageBreak(),
     h1('Section 6: Interpreting Serologic Results'),
 
     para('What follows is how to read the numbers on the page: the scale they sit on, what a mean titer tells you, what %CV tells you. Reading the numbers is a skill you can build. Deciding what those numbers mean for your flock, and what to do next, is a judgment call for you and your veterinarian to make together.'),
@@ -610,6 +616,7 @@ function buildBodySection() {
     para('Now look at the IBV result. The mean is 4,047, but the GMean is only 2,252, and the %CV is 93.6%. That gap between the plain mean and the geometric mean is the tell: a few high-titer birds, the top one at 12,755, are pulling the plain average up, while the geometric mean shows the typical bird sitting much lower, and the lowest bird is only 339. The histogram confirms it, with birds scattered from titer group 0 all the way to 10. This is a non-uniform response. As Section 3.2 covered, IBV protection leans on local and cell-mediated immunity that serology does not measure well, so a scattered antibody picture like this is common and does not, on its own, mean the flock is unprotected. It is a flag to look into, not a verdict.'),
 
     // ── SECTION 7 ─────────────────────────────────────────────
+    pageBreak(),
     h1('Section 7: Hands-On Workshop'),
 
     para('The workshop is where everything in this course turns into something your hands know. In the first half we draw blood from live birds and take a sample all the way from the wing to a lab-ready tube. In the second half we sit down with real lab reports and read them together. The lecture was just to get you ready for this part.'),
@@ -740,35 +747,35 @@ const outZip = await JSZip.loadAsync(fs.readFileSync(OUT_FILE));
 // TOC entries (text must match heading text exactly, including section numbers and spacing)
 const tocEntries = [
   { lvl: 1, text: 'Introduction', page: 3 },
-  { lvl: 1, text: 'Section 1: The Role of Antibodies in Immunity', page: 3 },
-  { lvl: 2, text: '1.1  Innate vs. Acquired Immunity', page: 3 },
+  { lvl: 1, text: 'Section 1: The Role of Antibodies in Immunity', page: 4 },
+  { lvl: 2, text: '1.1  Innate vs. Acquired Immunity', page: 4 },
   { lvl: 2, text: '1.2  How Antibody Levels Build After Vaccination or Infection', page: 5 },
-  { lvl: 1, text: 'Section 2: Serologic Tests', page: 6 },
-  { lvl: 2, text: '2.1  Reading a Lab Report: What Serology Measures', page: 6 },
-  { lvl: 2, text: '2.2  ELISA Testing', page: 6 },
-  { lvl: 2, text: '2.3  AGID', page: 7 },
-  { lvl: 2, text: '2.4  Plate Agglutination', page: 8 },
-  { lvl: 2, text: '2.5  Hemagglutination Inhibition (HI) Testing', page: 9 },
-  { lvl: 1, text: 'Section 3: The Limitations of Serology', page: 10 },
-  { lvl: 2, text: '3.1  What Serology Can and Cannot Tell You', page: 10 },
-  { lvl: 2, text: '3.2  What a Titer Tells You About Protection', page: 11 },
-  { lvl: 2, text: '3.3  Putting a Titer in Context', page: 12 },
-  { lvl: 2, text: '3.4  Paired Samples: Confirming a Field Challenge', page: 12 },
-  { lvl: 1, text: 'Section 4: Poultry Blood Sampling Techniques', page: 13 },
-  { lvl: 2, text: '4.1  Equipment, Site Selection, and How Many Birds to Sample', page: 13 },
-  { lvl: 2, text: '4.2  Drawing Blood from the Wing Vein', page: 14 },
-  { lvl: 1, text: 'Section 5: Sample Handling and Lab Submission', page: 16 },
-  { lvl: 2, text: '5.1  Clotting and Separating Serum', page: 16 },
-  { lvl: 2, text: '5.2  What the Lab Needs From You', page: 16 },
-  { lvl: 1, text: 'Section 6: Interpreting Serologic Results', page: 17 },
-  { lvl: 2, text: '6.1  Reading the Titer Scale', page: 18 },
-  { lvl: 2, text: '6.2  Flock Uniformity: %CV', page: 19 },
-  { lvl: 2, text: '6.3  A Worked Example: Reading a Breeder ELISA Report', page: 20 },
-  { lvl: 1, text: 'Section 7: Hands-On Workshop', page: 21 },
-  { lvl: 2, text: '7.1  Drawing, Handling, and Submitting a Blood Sample', page: 21 },
-  { lvl: 2, text: '7.2  Reading Real Results Together', page: 21 },
-  { lvl: 1, text: 'Recommended Journals and Resources', page: 22 },
-  { lvl: 1, text: 'References', page: 23 },
+  { lvl: 1, text: 'Section 2: Serologic Tests', page: 7 },
+  { lvl: 2, text: '2.1  Reading a Lab Report: What Serology Measures', page: 7 },
+  { lvl: 2, text: '2.2  ELISA Testing', page: 7 },
+  { lvl: 2, text: '2.3  AGID', page: 8 },
+  { lvl: 2, text: '2.4  Plate Agglutination', page: 9 },
+  { lvl: 2, text: '2.5  Hemagglutination Inhibition (HI) Testing', page: 10 },
+  { lvl: 1, text: 'Section 3: The Limitations of Serology', page: 12 },
+  { lvl: 2, text: '3.1  What Serology Can and Cannot Tell You', page: 12 },
+  { lvl: 2, text: '3.2  What a Titer Tells You About Protection', page: 12 },
+  { lvl: 2, text: '3.3  Putting a Titer in Context', page: 13 },
+  { lvl: 2, text: '3.4  Paired Samples: Confirming a Field Challenge', page: 14 },
+  { lvl: 1, text: 'Section 4: Poultry Blood Sampling Techniques', page: 15 },
+  { lvl: 2, text: '4.1  Equipment, Site Selection, and How Many Birds to Sample', page: 15 },
+  { lvl: 2, text: '4.2  Drawing Blood from the Wing Vein', page: 16 },
+  { lvl: 1, text: 'Section 5: Sample Handling and Lab Submission', page: 18 },
+  { lvl: 2, text: '5.1  Clotting and Separating Serum', page: 18 },
+  { lvl: 2, text: '5.2  What the Lab Needs From You', page: 18 },
+  { lvl: 1, text: 'Section 6: Interpreting Serologic Results', page: 20 },
+  { lvl: 2, text: '6.1  Reading the Titer Scale', page: 20 },
+  { lvl: 2, text: '6.2  Flock Uniformity: %CV', page: 21 },
+  { lvl: 2, text: '6.3  A Worked Example: Reading a Breeder ELISA Report', page: 22 },
+  { lvl: 1, text: 'Section 7: Hands-On Workshop', page: 24 },
+  { lvl: 2, text: '7.1  Drawing, Handling, and Submitting a Blood Sample', page: 24 },
+  { lvl: 2, text: '7.2  Reading Real Results Together', page: 24 },
+  { lvl: 1, text: 'Recommended Journals and Resources', page: 25 },
+  { lvl: 1, text: 'References', page: 26 },
 ];
 
 const entriesWithAnchor = tocEntries.map((e, i) => ({
