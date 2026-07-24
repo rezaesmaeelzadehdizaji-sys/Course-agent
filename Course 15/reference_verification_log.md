@@ -275,3 +275,19 @@ Verified against the WOAH Terrestrial Manual chapter 3.3.11: "The test used in t
 Renumbering: WOAH first-appears in 2.4 after [6] Butcher and before the HI section, so inserted at position [7]; old [7]-[19] bumped to [8]-[20] via per-bracket integer increment on body-content lines only. In-text order re-verified sequential 1-20; 20 references total. Reference list now: 6=Butcher (MG/MS), 7=WOAH (pullorum/typhoid), 8=Choi (HI), 9=Erf, 10=Chhabra, 11=Ou, 12=Merck Marek, 13=Kannaki, 14=Merck IBD, 15=Liu, 16=Azeem, 17=CFIA, 18=Hy-Line, 19=BioChek, 20=Szeleszczuk.
 
 TOC recomputed against fresh render: the two added paragraphs pushed Section 3 9->10, 3.1 9->10, 3.2 11->12; all other pages absorbed. All 28 entries re-verified. dirty=0, em=0, bookmarks=hyperlinks=28. Course PDF re-exported.
+
+---
+
+## 2026-07-24 — AI: clarified PCR vs serology roles (user-flagged) + Section 3 restructured into 4 subsections
+
+**(1) AI diagnosis, PCR vs serology.** User correctly noted that avian influenza is detected/confirmed primarily by PCR (virus detection), not serology. Verified: RT-PCR on swab/tissue samples is the frontline diagnostic in Canada, run at CAHSN labs with reference lab NCFAD-CFIA Winnipeg (Public Health Ontario; Canada.ca enhanced-surveillance protocol). Serology detects antibodies = exposure, not active infection and not protection. Reference [16] (Azeem & Yoon, Viruses 2025;17(2):228) confirmed to cover both molecular RT-PCR detection and serological antibody assays (it categorizes AIV assays into virus detection, antigen, genomic material/RT-PCR, and antibody). Reworded the AI paragraph in the disease-protection block: serology catches exposure; it does not find an active infection; when AI is suspected the frontline test is PCR on swabs, which detects the virus and confirms a case [16]; AI is federally reportable in Canada [17], so a positive triggers CFIA reporting/investigation and confirmation comes from finding the virus by PCR, not from the antibody result. No new reference; [16]/[17] unchanged.
+
+**(2) Section 3 restructure.** User flagged Section 3.1 as too long (one heading carrying general limits, a full disease-by-disease protection discussion, and interpretation guidance). Split Section 3 into four subsections with NO content reordering (two h2 headings inserted, Paired Samples renumbered):
+- 3.1 What Serology Can and Cannot Tell You (intro + 6 limitation bullets)
+- 3.2 What a Titer Tells You About Protection (NEW: respiratory IB/ILT/Marek, nephropathogenic IBV, IBD, ND, AI)
+- 3.3 Putting a Titer in Context (NEW: baseline comparison + read-with-your-veterinarian; opener reworded to stand alone)
+- 3.4 Paired Samples: Confirming a Field Challenge (was 3.2)
+
+Fixed 3 internal cross-references to point at the moved content: Section 1.2 "a point Section 3.1 comes back to" -> 3.2; Section 6.3 "As Section 3.1 covered, IBV protection..." -> 3.2; Section 6.1 "building your own baseline... as Section 3.1 covers" -> 3.3. Verified no stale "Section 3.1 covers/covered/comes back" remains.
+
+Checks: citation order unchanged, sequential 1-20, 20 references. TOC fully recomputed against fresh render (course now 23 pages): the two new headings shifted Section 3.3 onward; all 30 TOC entries re-verified. dirty=0, em=0, bookmarks=hyperlinks=30. Course PDF re-exported.

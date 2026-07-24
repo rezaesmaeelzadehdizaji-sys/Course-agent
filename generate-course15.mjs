@@ -366,7 +366,7 @@ function buildBodySection() {
 
     para('The second layer is acquired immunity, and this is the layer that learns. When a bird is exposed to a specific disease agent, whether through vaccination or a field infection, its immune system builds antibodies aimed at that exact target. Antibodies are proteins made by a type of white blood cell called a B-lymphocyte, and each one is built to match a specific invader [1].'),
 
-    para('That antibody response is only one half of acquired immunity. The other half is the cell-mediated response, run by a different set of white blood cells, the T-lymphocytes, that attack the bird\'s own infected cells directly instead of making antibodies. Both halves learn, both are aimed at a specific invader, and both matter for protecting the bird [1]. The catch for this course is that serology measures only the antibody half. The cell-mediated half is just as real, but it does not show up as a titer, a point Section 3.1 comes back to.'),
+    para('That antibody response is only one half of acquired immunity. The other half is the cell-mediated response, run by a different set of white blood cells, the T-lymphocytes, that attack the bird\'s own infected cells directly instead of making antibodies. Both halves learn, both are aimed at a specific invader, and both matter for protecting the bird [1]. The catch for this course is that serology measures only the antibody half. The cell-mediated half is just as real, but it does not show up as a titer, a point Section 3.2 comes back to.'),
 
     ...image(figBuf('fig15_1.png'), 'Figure 1.1: Innate immunity reacts to everything the same way. Acquired immunity learns and remembers. Source: CPC Short Courses.'),
 
@@ -461,6 +461,8 @@ function buildBodySection() {
     bullet('Cross-reactions happen. Antibodies raised against one strain, or even one related pathogen, can sometimes register on a test built for a different one [1].'),
     bullet('Test error is real. Lab equipment, reagent batches, and sample quality all add some noise to every result [1].'),
 
+    h2('3.2  What a Titer Tells You About Protection'),
+
     para('That first limit, that serology sees only the antibody side, is the one that trips people up most, so it is worth spelling out what it means in practice: how much a titer tells you about protection depends on the disease. Different diseases are held off by different parts of the immune system, so the same strong titer can be a solid sign of protection for one disease and a much weaker sign of it for another.'),
 
     para('The respiratory viruses are the clearest case. There are good commercial ELISA kits for infectious bronchitis (IB), infectious laryngotracheitis (ILT), and Marek\'s disease, and they earn their keep for tracking whether a flock was exposed and whether it responded to vaccination. What they do not tell you as well is how protected the birds actually are. IB and ILT both take hold right at the surface of the windpipe, nose, and eyes, and the birds fight them off mostly with local defenses at that surface and with immune cells, not with the blood antibody an ELISA measures [10,11]. Marek\'s disease is similar: its main protective immunity runs through the cell side rather than antibody [12]. So for these three, a good titer confirms the birds met the vaccine or the virus, but it lines up only loosely with real protection, because the part of the immune system holding the line is the part serology does not see.'),
@@ -471,13 +473,15 @@ function buildBodySection() {
 
     para('Newcastle disease (ND) sits in the middle. Protection leans heavily on antibody, and the HI titer tracks protection against clinical disease well enough that HI is the standard ND test [15]. But antibody is not the whole story. Cell and local immunity help too, and even birds with high HI titers can still catch the virus and shed it. So for ND, a strong HI titer is a real and reassuring number, just not an ironclad guarantee.'),
 
-    para('Avian influenza (AI) is a different situation again. Here serology is used mostly to catch exposure, not to gauge protection. A positive AI antibody result on a surveillance test means the birds have met the virus [16], and in Canada avian influenza is a federally reportable disease [17]. So an AI titer is not a number you build with a vaccine and watch over time. It is a flag that, if it turns up, starts a reporting and investigation process with the CFIA.'),
+    para('Avian influenza (AI) is a different situation again, and serology plays a smaller role here. Antibody testing is used to catch exposure, not to gauge protection. A positive AI antibody result on a surveillance test means the birds have met the virus at some point [16]. What serology does not do is find an active infection. When AI is actually suspected, the frontline test is not an antibody test. It is PCR run on swabs from the birds, which picks up the virus itself and is what confirms a case [16]. In Canada, avian influenza is a federally reportable disease [17], so a positive finding is not a titer you build with a vaccine and watch over time. It is a flag that starts a reporting and investigation process with the CFIA, and confirmation comes from finding the virus by PCR, not from the antibody result.'),
 
-    para('This is also why a single titer number means very little without something to compare it to. A titer of 2,000 against avian reovirus might be routine for one flock and a red flag for another, depending on what that flock\'s vaccination program and history normally produce [1,4]. Build your own baseline from your own flocks over time, and compare new results against that baseline first.'),
+    h2('3.3  Putting a Titer in Context'),
+
+    para('A single titer number also means very little without something to compare it to. A titer of 2,000 against avian reovirus might be routine for one flock and a red flag for another, depending on what that flock\'s vaccination program and history normally produce [1,4]. Build your own baseline from your own flocks over time, and compare new results against that baseline first.'),
 
     para('All of this is exactly why serology results get read with your veterinarian, not alone. Weighing a titer against baseline, history, and everything else going on in the flock is a multi-part judgment call, and your veterinarian has built that judgment through years of training and cases most farmers never see. Bring your numbers to that conversation. The final read on what a result means, and what to do about it, is theirs to make.'),
 
-    h2('3.2  Paired Samples: Confirming a Field Challenge'),
+    h2('3.4  Paired Samples: Confirming a Field Challenge'),
 
     para('When you suspect a flock has been hit by field disease, a single blood draw will not confirm it. What confirms it is a rise in titer between two samples taken from the same birds, a few weeks apart. This is called paired sampling, and it is the most reliable way serology can support a disease diagnosis.'),
 
@@ -577,7 +581,7 @@ function buildBodySection() {
 
     para('Because the steps double, labs often report the same number as a log2 value instead, just counting the number of doubling steps from 1. A titer of 1024 and a log2 titer of 10 are the same result written two different ways. Either way the report shows it, what you are looking for is the same thing: where does this flock sit on the ladder, and is that where you would expect it to be [1]?'),
 
-    para('The lab report will also give you a mean titer for the flock, the average of all the individual titers from the birds you sampled. A mean titer on its own only means something next to what you would expect from your vaccination program at that age. That is why building your own baseline from your own flocks, as Section 3.1 covers, matters more than any single number on a single report [1].'),
+    para('The lab report will also give you a mean titer for the flock, the average of all the individual titers from the birds you sampled. A mean titer on its own only means something next to what you would expect from your vaccination program at that age. That is why building your own baseline from your own flocks, as Section 3.3 covers, matters more than any single number on a single report [1].'),
 
     h2('6.2  Flock Uniformity: %CV'),
 
@@ -613,7 +617,7 @@ function buildBodySection() {
 
     para('Look at the IBD result first. The mean is 19,536 and the GMean is 19,244, almost the same number, and the %CV is 17.4%. When the mean and the geometric mean sit that close together and the CV is that low, you are looking at a tight, uniform flock: every bird landed in about the same place, all high (titer groups 9 to 13 on the histogram). For IBD, which is fought off by antibody, that is exactly the picture you want four weeks after a killed booster.'),
 
-    para('Now look at the IBV result. The mean is 4,047, but the GMean is only 2,252, and the %CV is 93.6%. That gap between the plain mean and the geometric mean is the tell: a few high-titer birds, the top one at 12,755, are pulling the plain average up, while the geometric mean shows the typical bird sitting much lower, and the lowest bird is only 339. The histogram confirms it, with birds scattered from titer group 0 all the way to 10. This is a non-uniform response. As Section 3.1 covered, IBV protection leans on local and cell-mediated immunity that serology does not measure well, so a scattered antibody picture like this is common and does not, on its own, mean the flock is unprotected. It is a flag to look into, not a verdict.'),
+    para('Now look at the IBV result. The mean is 4,047, but the GMean is only 2,252, and the %CV is 93.6%. That gap between the plain mean and the geometric mean is the tell: a few high-titer birds, the top one at 12,755, are pulling the plain average up, while the geometric mean shows the typical bird sitting much lower, and the lowest bird is only 339. The histogram confirms it, with birds scattered from titer group 0 all the way to 10. This is a non-uniform response. As Section 3.2 covered, IBV protection leans on local and cell-mediated immunity that serology does not measure well, so a scattered antibody picture like this is common and does not, on its own, mean the flock is unprotected. It is a flag to look into, not a verdict.'),
 
     // ── SECTION 7 ─────────────────────────────────────────────
     h1('Section 7: Hands-On Workshop'),
@@ -756,22 +760,24 @@ const tocEntries = [
   { lvl: 2, text: '2.5  Hemagglutination Inhibition (HI) Testing', page: 9 },
   { lvl: 1, text: 'Section 3: The Limitations of Serology', page: 10 },
   { lvl: 2, text: '3.1  What Serology Can and Cannot Tell You', page: 10 },
-  { lvl: 2, text: '3.2  Paired Samples: Confirming a Field Challenge', page: 12 },
-  { lvl: 1, text: 'Section 4: Poultry Blood Sampling Techniques', page: 12 },
-  { lvl: 2, text: '4.1  Equipment, Site Selection, and How Many Birds to Sample', page: 12 },
-  { lvl: 2, text: '4.2  Drawing Blood from the Wing Vein', page: 13 },
+  { lvl: 2, text: '3.2  What a Titer Tells You About Protection', page: 10 },
+  { lvl: 2, text: '3.3  Putting a Titer in Context', page: 12 },
+  { lvl: 2, text: '3.4  Paired Samples: Confirming a Field Challenge', page: 12 },
+  { lvl: 1, text: 'Section 4: Poultry Blood Sampling Techniques', page: 13 },
+  { lvl: 2, text: '4.1  Equipment, Site Selection, and How Many Birds to Sample', page: 13 },
+  { lvl: 2, text: '4.2  Drawing Blood from the Wing Vein', page: 14 },
   { lvl: 1, text: 'Section 5: Sample Handling and Lab Submission', page: 15 },
   { lvl: 2, text: '5.1  Clotting and Separating Serum', page: 15 },
-  { lvl: 2, text: '5.2  What the Lab Needs From You', page: 15 },
-  { lvl: 1, text: 'Section 6: Interpreting Serologic Results', page: 16 },
+  { lvl: 2, text: '5.2  What the Lab Needs From You', page: 16 },
+  { lvl: 1, text: 'Section 6: Interpreting Serologic Results', page: 17 },
   { lvl: 2, text: '6.1  Reading the Titer Scale', page: 17 },
-  { lvl: 2, text: '6.2  Flock Uniformity: %CV', page: 17 },
-  { lvl: 2, text: '6.3  A Worked Example: Reading a Breeder ELISA Report', page: 18 },
+  { lvl: 2, text: '6.2  Flock Uniformity: %CV', page: 18 },
+  { lvl: 2, text: '6.3  A Worked Example: Reading a Breeder ELISA Report', page: 19 },
   { lvl: 1, text: 'Section 7: Hands-On Workshop', page: 20 },
   { lvl: 2, text: '7.1  Drawing, Handling, and Submitting a Blood Sample', page: 20 },
   { lvl: 2, text: '7.2  Reading Real Results Together', page: 20 },
-  { lvl: 1, text: 'Recommended Journals and Resources', page: 21 },
-  { lvl: 1, text: 'References', page: 22 },
+  { lvl: 1, text: 'Recommended Journals and Resources', page: 22 },
+  { lvl: 1, text: 'References', page: 23 },
 ];
 
 const entriesWithAnchor = tocEntries.map((e, i) => ({
