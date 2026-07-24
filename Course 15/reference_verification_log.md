@@ -371,3 +371,18 @@ Placed in 6.1 rather than 3.3 specifically to avoid moving [20]'s first appearan
 ## 2026-07-24 — removed redundant %CV table from Section 6.2 (duplicated Figure 6.2)
 
 User noted the %CV uniformity table repeated Figure 6.2. Confirmed: fig15_5 (Figure 6.2) already prints the full CPC scale along the bottom ("CPC uniformity guide: under 30% CV Excellent, 30-50% Good, 51-80% Fair, over 80% Poor or bimodal") plus the two worked histograms and the "aim under 30% after a killed vaccine" note, so the table added nothing the figure did not already show. Deleted the table and its lead-in sentence. Preserved the mandatory CPC Learning Centre body-text attribution by folding it into the following paragraph, which now reads "The uniformity ranges the CPC Learning Centre Serology 101 presentation uses, shown along the bottom of Figure 6.2, are what you aim for after a killed (inactivated) vaccine [1]." and keeps the live-vaccine coverage caveat [20]. No information lost (the four named ranges remain visible in the figure). [1] still appears elsewhere so no citation dropped; order stays sequential 1-21. TOC recomputed (course back to 23 pages; Recommended Journals ->22, References ->23; all other pages held). dirty=0, em=0, bookmarks=hyperlinks=30. Course PDF re-exported.
+
+---
+
+## 2026-07-24 — SECOND FULL CORRECTNESS PASS (re-verified after recent edits); fixed Marek citation
+
+Re-ran every mechanical sweep on the current file: dirty=0, em=0, en dashes only in the needle-gauge table (the %CV-table en dashes are gone with the table), species italics 8/8, no British forms (WOAH "Organisation" is the body's official name, allowed), bare "vet" only in "J Vet Sci", citation order sequential 1-21, bookmarks=hyperlinks=30, TOC matches render.
+
+Re-verified references against sources this pass:
+- [3] Merck "Types of Vaccines for Animals" — page title confirmed; supports the Section 1.2 live-vs-killed claim verbatim ("triggering a response dominated by cytotoxic T cells" for live; "killed organisms... stimulate responses dominated by antibodies... may require multiple doses and... adjuvants").
+- [5] USDA NVSL AGID SOP — confirmed real; supports the AGID timing claim verbatim ("visual precipitin lines can be detected within 24 hours... a weak positive reaction may take up to 48 hours").
+- (Previously verified this session: [6] Butcher, [7] WOAH, [9] Azeem, [10] CFIA, [15] Kannaki, [16] Merck IBD; all five peer-reviewed articles [8][11][12][13][17] exact via CrossRef+PubMed, including Ou+Giambrone co-author confirmed on PubMed.)
+
+**FIX — claim/source mismatch on Marek's disease:** the claim in Section 3.2 "Marek's disease... its main protective immunity runs through the cell side rather than antibody [14]" was cited to the Merck "Marek's Disease in Poultry" page, but on re-fetch that page covers pathogenesis (T-cell tropism, latency) and vaccine efficacy, NOT the immune basis of protection, so it did not support the claim. Verified the claim is scientifically correct (cell-mediated immunity, esp. CD8+ T cells, is paramount for MD protection; antibody has at most a minor role) and replaced ref [14] with a source that states it directly: Boodhoo N, Gurung A, Sharif S, Behboudi S. Marek's disease in chickens: a review with focus on immunology. Vet Res. 2016;47(1):119. doi:10.1186/s13567-016-0404-3 (confirmed via CrossRef: title, journal, vol 47 issue 1 art 119, 2016, 4 authors). [14] is used only for this claim, so this was a same-position swap: no renumbering, citation order stays sequential 1-21, no pagination change (References still p23).
+
+Every in-text citation [1]-[21] confirmed to map to the correct source. Reads clean end to end. Course 15 verified correct.
