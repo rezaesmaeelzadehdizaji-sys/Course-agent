@@ -564,7 +564,7 @@ function buildBodySection() {
 
     ...image(figBuf('fig15_5.png'), 'Figure 6.2: A low %CV means the whole flock responded about the same way. Source: CPC Short Courses.'),
 
-    para('The CPC Learning Centre Serology 101 bulletin gives the following %CV ranges for flock uniformity [1]:'),
+    para('The CPC Learning Centre Serology 101 presentation gives the following %CV ranges for flock uniformity [1]:'),
 
     dataTable(
       ['%CV', 'Flock Uniformity'],
