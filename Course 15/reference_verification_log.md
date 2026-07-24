@@ -261,3 +261,17 @@ Source confirmed live on ask.ifas.ufl.edu (EDIS): sole author Gary D. Butcher; d
 Renumbering: new source first-appears in 2.4 (after [5] AGID SOP, before [6] Choi HI), so inserted at position [6]; old [6]-[18] bumped to [7]-[19] via a per-bracket integer increment restricted to body-content lines only (above the first indented numberedRef call), leaving JS indices and TOC numbers untouched. In-text order re-verified sequential 1-19; 19 references total. Reference list now: 6=Butcher (MG/MS SPA), 7=Choi (HI antigen), 8=Erf, 9=Chhabra, 10=Ou, 11=Merck Marek, 12=Kannaki, 13=Merck IBD, 14=Liu, 15=Azeem, 16=CFIA, 17=Hy-Line, 18=BioChek, 19=Szeleszczuk.
 
 TOC recomputed against fresh render (the new subsection shifted pages): 2.4 p8, 2.5 p9, Section 5 p15, 5.1 p15, 6.1 p17, Section 7 p20, 7.1 p20; all 28 entries re-verified. dirty=0, em=0, bookmarks=hyperlinks=28. Course PDF re-exported.
+
+---
+
+## 2026-07-24 — added Salmonella pullorum/typhoid to subsection 2.4 + ref [7] WOAH
+
+User noted plate agglutination also tests Salmonella and asked to add it so 2.4 is not too short. Verified: the rapid whole-blood (and lab serum) plate agglutination test with crystal-violet stained antigen is the long-standing screen for pullorum disease and fowl typhoid (*Salmonella* Pullorum and *S.* Gallinarum). Added two paragraphs to 2.4: (1) plate agglutination is also the pullorum/typhoid screen, stained purple antigen, with a practical farm-side whole-blood version done right at the bird; (2) the whole-blood version's caveats: low sensitivity, false positives/negatives in inexperienced hands, unreliable in turkeys and ducks, confirm reactors in the lab.
+
+Source: World Organisation for Animal Health. Fowl typhoid and Pullorum disease. In: Manual of Diagnostic Tests and Vaccines for Terrestrial Animals. Chapter 3.3.11. Paris: WOAH; 2022. Available from: woah.org
+
+Verified against the WOAH Terrestrial Manual chapter 3.3.11: "The test used in the field is the rapid whole blood plate agglutination test... can be used on the farm"; "the sensitivity of the whole blood test is low and in inexperienced hands false-positive and false-negative results may be recorded... unreliable in turkeys and ducks"; lab serum agglutination uses "polyvalent crystal-violet-stained antigen." Genus *Salmonella* italicized (serovars Pullorum/Gallinarum roman, per convention) in body prose.
+
+Renumbering: WOAH first-appears in 2.4 after [6] Butcher and before the HI section, so inserted at position [7]; old [7]-[19] bumped to [8]-[20] via per-bracket integer increment on body-content lines only. In-text order re-verified sequential 1-20; 20 references total. Reference list now: 6=Butcher (MG/MS), 7=WOAH (pullorum/typhoid), 8=Choi (HI), 9=Erf, 10=Chhabra, 11=Ou, 12=Merck Marek, 13=Kannaki, 14=Merck IBD, 15=Liu, 16=Azeem, 17=CFIA, 18=Hy-Line, 19=BioChek, 20=Szeleszczuk.
+
+TOC recomputed against fresh render: the two added paragraphs pushed Section 3 9->10, 3.1 9->10, 3.2 11->12; all other pages absorbed. All 28 entries re-verified. dirty=0, em=0, bookmarks=hyperlinks=28. Course PDF re-exported.
