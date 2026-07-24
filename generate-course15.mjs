@@ -443,7 +443,7 @@ function buildBodySection() {
 
     para('To run the test, the lab makes a series of doubling dilutions of the serum, then adds a fixed amount of virus and red blood cells to each one. The titer is read as the highest dilution that still completely blocks the clumping. Because each step is a doubling dilution, titers are reported on what is called a log2 scale, the same doubling scale used for AGID titers [8]. Section 6.1 walks through how to read that scale on a lab report.'),
 
-    para('HI also does something the other three tests cannot. Because the reaction depends on the exact virus antigen used, an HI result is tied to a specific strain or subtype, not just a count of how much antibody is present. Run against a panel of reference antigens, HI is the standard way to tell avian influenza subtypes apart, such as H5 from H7, and to check how closely a circulating field virus matches the vaccine strain [9].'),
+    para('HI has one more strength, though how much it matters depends on the virus. Because the reaction depends on the exact antigen used, HI can do more than count antibody when a virus comes in several subtypes. Avian influenza is the clear case: its strains carry different H and N surface proteins, so HI run against a panel of reference antigens is the standard way to tell subtypes apart, such as H5 from H7, and to check how closely a circulating field virus matches the vaccine [9]. Newcastle disease is different: every strain belongs to a single serotype, so there is nothing to subtype, and HI simply measures how much antibody the birds carry [8].'),
 
     // ── SECTION 3 ─────────────────────────────────────────────
     h1('Section 3: The Limitations of Serology'),

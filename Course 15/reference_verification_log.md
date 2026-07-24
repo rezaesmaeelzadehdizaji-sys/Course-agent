@@ -306,3 +306,11 @@ Checks: citation order unchanged, sequential 1-20, 20 references. TOC fully reco
 **(2) Section 2.4 paragraph merge (user request).** Collapsed the four plate-agglutination paragraphs to two: one merged intro before Photo 2.2 (mycoplasma *M. gallisepticum*/*M. synoviae* AND *Salmonella* pullorum/typhoid, mechanism, speed/cost/IgM, stained-purple antigen, whole-blood farm-side version) citing [1][6][7]; one merged caveat after Photo 2.2 (screening test, false positives, whole-blood low sensitivity, turkeys/ducks unreliable, confirm reactors by ELISA/HI) citing [6][7][6,7]. No facts or citations lost; species italics preserved.
 
 Checks: TOC recomputed against fresh render (course 23 pages; 3.2 -> p11, 7.2 -> p21 shifted; all 30 entries verified). dirty=0, em=0, bookmarks=hyperlinks=30. Course PDF re-exported.
+
+---
+
+## 2026-07-24 — corrected HI strain-discrimination line: scoped to AI subtypes, ND is single-serotype (user catch)
+
+User correctly noted HI's strain/subtype-discriminating power applies to avian influenza (multiple H and N surface proteins) but NOT to Newcastle disease, which is a single serotype (APMV-1), so HI does not "type" ND strains, it measures ND antibody level. Verified: all NDV strains belong to APMV-1 (CFSPH Iowa State factsheet; PMC APMV-1 review), and AI carries multiple H/N subtypes distinguished by HI (reference [9] Azeem & Yoon).
+
+Reworded the HI-exception line in 2.5: HI's extra strength applies only when a virus comes in several subtypes; AI is the clear case (H5 vs H7, field-vs-vaccine match) cited [9]; Newcastle disease is the counter-case, every strain is one serotype so there is nothing to subtype and HI simply measures antibody level, cited [8] (Choi, the NDV HI-antigen paper already first-appearing earlier in 2.5). No new reference and no renumbering ([8] and [9] both already present in 2.5; [8] reuse, [9] unchanged). Citation order still sequential 1-20. No TOC change (added sentence absorbed on the HI page). dirty=0, em=0, bookmarks=hyperlinks=30. Course PDF re-exported.
