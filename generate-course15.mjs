@@ -407,8 +407,6 @@ function buildBodySection() {
 
     para('The biggest advantage of ELISA is speed. The test is fully automated, and a single lab can run hundreds, even thousands, of serum samples in a day. That is why ELISA is the default test for routine flock monitoring of infectious bronchitis, infectious bursal disease, and avian reovirus [4].'),
 
-    para('That general limit from Section 2.1 bites ELISA in particular. If your flock\'s infectious bronchitis titers come back higher than expected, the ELISA cannot tell you which strain of the virus is behind it, only that the birds have responded to something [4].'),
-
     h2('2.3  AGID'),
 
     para('Agar gel immunodiffusion, or AGID, works on a completely different principle than ELISA. Where ELISA reads antibody as an enzyme-linked color change, AGID is a gel-based precipitation test you read by eye. A small plate of gel is cut with a pattern of seven wells: one in the center and six arranged around it. The center well is filled with antigen, and serum samples go in the wells around it, including at least one known positive and one known negative control. Both the antigen and any antibodies in the serum spread out through the gel toward each other.'),
