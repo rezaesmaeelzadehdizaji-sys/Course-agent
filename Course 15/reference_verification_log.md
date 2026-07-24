@@ -355,3 +355,13 @@ The HI paragraph was also split into three short paragraphs (intro / AI / ND) fo
 **Sentence-level farmer-flow read (all 226 paragraphs):** reads as a field veterinarian talking to a farmer throughout. No AI-voice, academic jargon, passive constructions, or unclear sentences found. The deliberate "final call is your veterinarian's" framing (intro, 3.3, Section 6 lead-in, workshop close) is intentional and consistent. Unit conversions all correct (80-100°F=27-38°C; 45°F=7°C; +14/-40°F=-10/-40°C; 0.5-1.0 in=1.25-2.54 cm; 1.5 in=3.81 cm). Worked-example ELISA numbers internally consistent (IBD 19,536/GMean 19,244/CV 17.4%; IBV 4,047/GMean 2,252/CV 93.6%, min 339/max 12,755). %CV scale matches the CPC Bowes stricter scale.
 
 Conclusion: Course 15 verified correct. No content changes required by this pass.
+
+---
+
+## 2026-07-24 — added kit-brand interpretation caveat to Section 6.1 (user request)
+
+User asked to state that ELISA titers and their baselines differ by test-kit brand, so results must be interpreted alongside the manufacturer's manual. Added one paragraph at the end of Section 6.1 (Reading the Titer Scale): ELISA titers are not on a universal scale; each maker builds its test on its own antigens and converts the raw reading through its own software, so the same titer number does not mean the same thing across brands; the low/normal/high ranges are set by the kit maker; read results against the manual for the exact kit the lab runs and keep the baseline within one brand.
+
+Verified: IDEXX and BioChek each calculate antibody titers from S/P (sample-to-positive) ratios using their own software and interpretation guidelines, so titers are not directly comparable between manufacturers (confirmed via BioChek/IDEXX product documentation and comparative-ELISA literature). Cited to the two manufacturer interpretation manuals already in the reference list: [4] Zavala (IDEXX, Ten Principles to Interpret and Monitor) and [20] BioChek (Interpretation and Application of Results Manual). Both already first-appear before Section 6.1 (2.2 and 5.2 respectively), so citing [4,20] here required NO renumbering; citation order stays sequential 1-21.
+
+Placed in 6.1 rather than 3.3 specifically to avoid moving [20]'s first appearance earlier (which would have forced a cascade). TOC recomputed against fresh render (course now 24 pages; 6.2->19, 6.3->20, Recommended->23, References->24 shifted). dirty=0, em=0, bookmarks=hyperlinks=30. Course PDF re-exported.

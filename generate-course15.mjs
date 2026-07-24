@@ -585,6 +585,8 @@ function buildBodySection() {
 
     para('The lab report will also give you a mean titer for the flock, the average of all the individual titers from the birds you sampled. A mean titer on its own only means something next to what you would expect from your vaccination program at that age. That is why building your own baseline from your own flocks, as Section 3.3 covers, matters more than any single number on a single report [1].'),
 
+    para('One more thing shapes what these numbers mean: the test kit itself. ELISA titers do not come off a single universal scale. Each company builds its test around its own antigens and runs the raw reading through its own software, so a titer of 5,000 on one brand\'s kit does not mean the same thing as 5,000 on another\'s. The ranges that count as low, normal, or high are set by the kit maker, not by an industry standard. Read your results against the manual and target ranges for the exact kit your lab runs, and keep your baseline within one brand so you are comparing like with like. Change kits and you start the baseline over [4,20].'),
+
     h2('6.2  Flock Uniformity: %CV'),
 
     para('The mean titer tells you how strong the response was on average. The %CV, short for coefficient of variation, tells you how even that response was across the flock. The lab gets that number by taking the standard deviation of the titers, dividing it by the mean, and multiplying by 100 [4].'),
@@ -774,13 +776,13 @@ const tocEntries = [
   { lvl: 2, text: '5.2  What the Lab Needs From You', page: 16 },
   { lvl: 1, text: 'Section 6: Interpreting Serologic Results', page: 17 },
   { lvl: 2, text: '6.1  Reading the Titer Scale', page: 18 },
-  { lvl: 2, text: '6.2  Flock Uniformity: %CV', page: 18 },
-  { lvl: 2, text: '6.3  A Worked Example: Reading a Breeder ELISA Report', page: 19 },
+  { lvl: 2, text: '6.2  Flock Uniformity: %CV', page: 19 },
+  { lvl: 2, text: '6.3  A Worked Example: Reading a Breeder ELISA Report', page: 20 },
   { lvl: 1, text: 'Section 7: Hands-On Workshop', page: 21 },
   { lvl: 2, text: '7.1  Drawing, Handling, and Submitting a Blood Sample', page: 21 },
   { lvl: 2, text: '7.2  Reading Real Results Together', page: 21 },
-  { lvl: 1, text: 'Recommended Journals and Resources', page: 22 },
-  { lvl: 1, text: 'References', page: 23 },
+  { lvl: 1, text: 'Recommended Journals and Resources', page: 23 },
+  { lvl: 1, text: 'References', page: 24 },
 ];
 
 const entriesWithAnchor = tocEntries.map((e, i) => ({
