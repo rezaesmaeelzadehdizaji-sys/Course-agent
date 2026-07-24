@@ -334,3 +334,24 @@ EXCLUDED as unverifiable (per no-fabrication rule, user agreed):
 Merged into ONE CFIA reference [10] as the user requested: "Canadian Food Inspection Agency. Avian influenza (bird flu): prevention, preparedness and response, and exploring avian influenza vaccination in poultry in Canada. Ottawa: CFIA; [cited 2026 Jul]. Available from: inspection.canada.ca/.../avian-influenza". [10] first-appears in the 2.5 HI paragraph, so old [10]-[20] bumped +1 to [11]-[21] via per-bracket increment on body lines; existing [17] (CFIA reportable page, AI para in 3.2) is a distinct page/claim and became [18]. In-text order re-verified sequential 1-21; 21 references. Spot-verified remapped citations still point to original sources (AI subtyping->Azeem [9]; Canada policy->CFIA [10]; cell-mediated->Erf [11]; renal IBV->Kannaki [15]; ND HI->Liu [17]; reportable->CFIA general [18]).
 
 The HI paragraph was also split into three short paragraphs (intro / AI / ND) for readability. TOC recomputed against fresh render (course 23 pages; Section 5->16, 5.1->16, 6.1->18, Section 7->21, 7.1->21 shifted); all 30 entries verified. dirty=0, em=0, bookmarks=hyperlinks=30. American spelling (no "flavours"); no em dashes. Course PDF re-exported.
+
+---
+
+## 2026-07-24 — FULL CORRECTNESS PASS (every sentence + every reference re-verified)
+
+**Mechanical sweeps — all clean:**
+- dirty flags = 0; em dashes = 0; en dashes only inside table cells (needle length/gauge ranges, %CV ranges) which is permitted.
+- Species italics: 8/8 instances italic (Mycoplasma gallisepticum x3, M. synoviae x2, Salmonella x3) in body, caption, and references.
+- British spelling: only "Organisation" (World Organisation for Animal Health, WOAH's official legal name in ref [7]) and "organism" (correct American word, regex false-positive). "Centre" only in "CPC Learning Centre" and the cpclearningcentre URL. No true British forms.
+- Bare "vet": only "J Vet Sci" (journal abbreviation in ref [8]); no prose use of "vet".
+- Citation order sequential 1-21; bookmarks = hyperlinks = 30; all 30 TOC entries match the rendered PDF.
+
+**References — all 21 verified:**
+- Peer-reviewed articles verified field-by-field against CrossRef + PubMed: [8] Choi (J Vet Sci 2013;14(3):291-297, 7 authors match), [11] Erf (Poultry 2023;2(1):82-97, 4 authors match), [12] Chhabra (Clin Vaccine Immunol 2015;22(9):1050-1059, 6 authors match), [13] Ou (World J Virol 2012;1(5):142-149) — CrossRef listed only Ou but PubMed PMID 24175219 confirms BOTH "Ou SC; Giambrone JJ", pages 142-9, so the co-author is REAL not fabricated; [17] Liu (Viruses 2023;15(9):1840, 7 authors match). [15] Kannaki verified earlier.
+- Institutional/authoritative verified: [6] Butcher VM126/VM093 (EDIS), [7] WOAH Ch 3.3.11, [9] Azeem Viruses 2025;17(2):228, [10]/[18] CFIA pages, [16] Merck IBD (title + antibody-protection claim confirmed on page).
+- Disease-protection citation mapping confirmed correct: respiratory IB/ILT [12,13], Marek [14], renal IBV [15], IBD [16], ND [17], AI exposure/PCR [9], AI reportable [18].
+- ONE transparency note: [2] Merck "Administration of Vaccines in Animals" is cited alongside [1] for the primary/secondary (memory) response in Section 1.2. The Merck page supports the immunologic-memory/booster concept ("primary immune response and some immunologic memory"; "interval between doses depends on immunologic memory") but does not spell out the full slow-primary/fast-secondary kinetics; that detail is carried by [1] (CPC Serology 101). Claim is correct and sourced; [2] is supplementary. Left as-is.
+
+**Sentence-level farmer-flow read (all 226 paragraphs):** reads as a field veterinarian talking to a farmer throughout. No AI-voice, academic jargon, passive constructions, or unclear sentences found. The deliberate "final call is your veterinarian's" framing (intro, 3.3, Section 6 lead-in, workshop close) is intentional and consistent. Unit conversions all correct (80-100°F=27-38°C; 45°F=7°C; +14/-40°F=-10/-40°C; 0.5-1.0 in=1.25-2.54 cm; 1.5 in=3.81 cm). Worked-example ELISA numbers internally consistent (IBD 19,536/GMean 19,244/CV 17.4%; IBV 4,047/GMean 2,252/CV 93.6%, min 339/max 12,755). %CV scale matches the CPC Bowes stricter scale.
+
+Conclusion: Course 15 verified correct. No content changes required by this pass.
