@@ -400,3 +400,16 @@ User requested that every numbered Section begin on a fresh page rather than con
 User (practitioner) noted that in Canada serology is not really used for avian influenza in practice, and asked whether the AI paragraph in Section 3.2 ("What a Titer Tells You About Protection") could be dropped. Removed it: in a section about how well a titer reflects protection, AI is the one disease where the honest answer is "serology tells you almost nothing," and AI's serologic angle (HI subtyping H5/H7 and Canada's detection-and-containment approach) is already covered in Section 2.5 (HI Testing). Section 3.2 now surveys the diseases where serology meaningfully informs protection (IB, ILT, Marek, IBD, ND).
 
 Citation cleanup: the removed paragraph was the ONLY user of ref [18] (CFIA "Avian influenza (bird flu)" reportable page), so [18] was orphaned and removed from the bibliography; [9] (Azeem) survives because it is also cited in Section 2.5. Renumbered by decrementing in-text citations >=19: [19] Hy-Line -> [18], [20] BioChek -> [19], [21] Szeleszczuk -> [20]. In-text order re-verified sequential 1-20; 20 references total. Spot-checked remaps: Hy-Line collection/handling -> [18], BioChek/%CV -> [19], GMT/Szeleszczuk -> [20], kit-brand caveat -> [4,19]. TOC recomputed against fresh render: only 3.4 shifted (14 -> 13, pulled up by the shorter Section 3; Section 4 onward held by their page breaks); all 30 entries re-verified. dirty=0, em=0, bookmarks=hyperlinks=30. Course + PDF re-exported.
+
+---
+
+## 2026-07-24 — FINAL VERIFICATION after page-breaks + AI-paragraph removal (all correct, no changes needed)
+
+Re-ran the full suite after the two most recent structural changes (per-section page breaks; AI paragraph + ref [18] removal with renumber to 20 refs):
+
+- Mechanical: dirty=0, em=0, en dashes only in the needle-gauge table, species italics 8/8, no British forms, bare "vet" only in journal abbreviations "J Vet Sci" [8] and "Vet Res" [14]. bookmarks=hyperlinks=30.
+- Citation order sequential 1-20; 20 references. Reference list order confirmed: 1 CPC Bowes, 2 Merck Admin Vaccines, 3 Merck Types Vaccines, 4 Zavala, 5 USDA AGID, 6 Butcher, 7 WOAH, 8 Choi, 9 Azeem, 10 CFIA prevention/vaccination, 11 Erf, 12 Chhabra, 13 Ou, 14 Boodhoo (Marek), 15 Kannaki, 16 Merck IBD, 17 Liu, 18 Hy-Line, 19 BioChek, 20 Szeleszczuk. Orphaned CFIA "Avian influenza (bird flu)" reportable page correctly removed.
+- Citation->source mapping re-verified after the -1 shift: [9] Azeem retained (1 occurrence, in 2.5 HI subtyping "telling H5 apart from H7"); [18] Hy-Line -> blood-draw/handling steps; [19] BioChek -> lab context + kit-brand caveat [4,19]; [20] Szeleszczuk -> GMT (6.1) and Mean/GMT (6.3). Disease-protection block [11]-[17] all map correctly. Section 3.2 now ends on the Newcastle paragraph.
+- TOC: all 30 entries match the rendered PDF; each Section starts on its own page (Intro p3, S1 p4, S2 p7, S3 p12, S4 p15, S5 p18, S6 p20, S7 p24, Recommended p25, References p26).
+
+All 20 references were confirmed real and accurate in the two prior full passes (five peer-reviewed articles verified field-by-field via CrossRef + PubMed; Merck Types-of-Vaccines, Merck IBD, USDA AGID SOP, WOAH, Butcher VM093, Boodhoo Vet Res 2016, Azeem, CFIA all fetched/confirmed). No further changes required. Course 15 verified correct and final.
