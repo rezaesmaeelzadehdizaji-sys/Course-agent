@@ -433,7 +433,7 @@ function buildBodySection() {
 
     ...image(figBuf('plate agglutination-MG.png'), 'Photo 2.2: Plate agglutination test for Mycoplasma gallisepticum. A smooth, even drop (a) is negative; visible clumping (b, c) is positive. Source: Kabir A, et al. Eur J Agric Food Sci. 2021.', 5.2, 'png'),
 
-    para('The trade-off is that plate agglutination is a screening test, not a final answer. It reacts readily, so a recent oil-based vaccine, a cross-reacting organism, or even poorly handled serum can throw a false positive [6]. The whole-blood version trades a little more accuracy for its convenience: it is not very sensitive, an inexperienced reader can call both false positives and false negatives, and it is unreliable in turkeys and ducks, where healthy birds often react anyway [7]. Either way, read a positive plate as a signal to look closer, not proof the flock is infected. Confirm any suspicious reactor with a more specific test, an ELISA or HI, before you act on it [6,7].'),
+    para('The trade-off is that plate agglutination is a screening test, not a final answer. It reacts readily, so a recent oil-based vaccine, a cross-reacting organism, or even poorly handled serum can throw a false positive [6]. The whole-blood version is quicker and easier, but a bit less accurate: it is not very sensitive, an inexperienced reader can call both false positives and false negatives, and it is unreliable in turkeys and ducks, where healthy birds often react anyway [7]. Either way, read a positive plate as a signal to look closer, not proof the flock is infected. Confirm any suspicious reactor with a more specific test, an ELISA or HI, before you act on it [6,7].'),
 
     h2('2.5  Hemagglutination Inhibition (HI) Testing'),
 
