@@ -55,3 +55,13 @@ Susta, Martin. The course cites the verified title/journal, not the filename.
   "as of mid-2025/2026" framing and a cover-page + reference-section currency caveat, since
   a static document cannot track a live outbreak.
 - No citation took more than 2–3 minutes to locate; none marked [NEEDS SOURCE].
+
+---
+
+## 2026-07-24 — added AI vaccination outlook to Section 2.4 + ref [9] CFIA vaccination page
+
+Moved the CFIA vaccination-exploration content out of Course 15 (Serology 101, where it was off-topic) into Course 18, its natural home as a hot topic. Added one paragraph to Section 2.4 after the stamp-out paragraph: Canada's response has been stamping out, not vaccinating, partly for trade/surveillance reasons; a CFIA task force formed in 2023 is weighing vaccination [8]; the agency has moved to test it in a small confined field trial on a limited basis; not a routine option on Canadian farms today [9].
+
+Verified: CFIA prevention-preparedness-response page (existing ref [8]) states "a task force was formed in June 2023." New ref [9] = CFIA "Exploring avian influenza vaccination in poultry in Canada" (vaccination page), which describes the confined field trial as a "small-scale, controlled initiative," notes three vaccines licensed for restricted government use in the trial (not tested for efficacy), and that findings "may inform future decisions"; it also frames the trial around managing impacts on "animal health, surveillance and trade." BC deliberately NOT stated as the trial location (unconfirmed); the only BC mention in the course remains the existing disease-situation line ("British Columbia hit hardest", cited [4]).
+
+New ref [9] first-appears in 2.4 after [8], so old [9]-[18] bumped +1 to [10]-[19] via per-bracket increment on body lines. In-text order re-verified sequential 1-19; 19 references. CanNAISS confirmed correctly bumped [9]->[10]. TOC recomputed against fresh render (course now 16 pages; Section 3 onward shifted +1, 3.2 held at p10); all 21 TOC entries verified. dirty=0, em=0, bookmarks=hyperlinks=21. Course PDF re-exported.
