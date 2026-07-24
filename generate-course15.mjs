@@ -396,7 +396,7 @@ function buildBodySection() {
 
     h2('2.2  ELISA Testing'),
 
-    para('ELISA stands for enzyme-linked immunosorbent assay, and it is the workhorse test for poultry serology. A test plate is coated with the antigen for the disease being tested. When diluted serum is added, any matching antibodies in the sample latch onto that antigen. A reagent is added that turns shades of blue depending on how much antibody is bound, and a plate reader converts that color into a titer number for every well [1].'),
+    para('ELISA stands for enzyme-linked immunosorbent assay, and it is the workhorse test for poultry serology. A test plate is coated with the antigen for the disease being tested. When diluted serum is added, any matching antibodies in the sample latch onto that antigen. A reagent is added that turns shades of blue depending on how much antibody is bound, and a plate reader converts that color into a titer number for every well [1]. This antigen-coated format, where the color builds in step with the antibody the bird\'s serum brings to it, is called an indirect ELISA.'),
 
     ...image(figBuf('elisa kit.jpg'), 'Photo 2.1: A commercial ELISA test kit. The antigen-coated microplates, plus the standards, conjugate, substrate, and stop solution used to run each sample and read a titer for every well. Source: Romer Labs (AgraQuant).', 5.2, 'jpg'),
 
@@ -737,7 +737,7 @@ const tocEntries = [
   { lvl: 2, text: '6.3  A Worked Example: Reading a Breeder ELISA Report', page: 18 },
   { lvl: 1, text: 'Section 7: Hands-On Workshop', page: 19 },
   { lvl: 2, text: '7.1  Drawing, Handling, and Submitting a Blood Sample', page: 19 },
-  { lvl: 2, text: '7.2  Reading Real Results Together', page: 19 },
+  { lvl: 2, text: '7.2  Reading Real Results Together', page: 20 },
   { lvl: 1, text: 'Recommended Journals and Resources', page: 21 },
   { lvl: 1, text: 'References', page: 22 },
 ];
