@@ -291,3 +291,18 @@ TOC recomputed against fresh render: the two added paragraphs pushed Section 3 9
 Fixed 3 internal cross-references to point at the moved content: Section 1.2 "a point Section 3.1 comes back to" -> 3.2; Section 6.3 "As Section 3.1 covered, IBV protection..." -> 3.2; Section 6.1 "building your own baseline... as Section 3.1 covers" -> 3.3. Verified no stale "Section 3.1 covers/covered/comes back" remains.
 
 Checks: citation order unchanged, sequential 1-20, 20 references. TOC fully recomputed against fresh render (course now 23 pages): the two new headings shifted Section 3.3 onward; all 30 TOC entries re-verified. dirty=0, em=0, bookmarks=hyperlinks=30. Course PDF re-exported.
+
+---
+
+## 2026-07-24 — moved shared limitation to 2.1; noted HI as strain-discriminating exception; merged Section 2.4 paragraphs
+
+**(1) Universal-limitation consolidation (user question: does the "measures amount, not strain" limit apply to all four tests?).** Verified it does NOT apply uniformly: ELISA, AGID, and plate agglutination do not type strains, but HI is antigen-specific and is the standard test for differentiating subtypes/serotypes (H5 vs H7; antigenic relatedness), confirmed via WOAH/Springer HI-subtyping protocol literature and reference [9] (Azeem & Yoon 2025, which reviews HI for AI subtype identification). Changes:
+- Added a universal statement to 2.1: all four methods measure the antibody response, not the pathogen itself; they confirm exposure and strength but do not name the exact agent or prove active infection on their own; identifying the agent/confirming live infection is the job of PCR or culture. Cited [1] (CPC Serology 101 presentation, which frames serology as read alongside the wider diagnostic picture). No new reference; citation order preserved.
+- Trimmed the ELISA-specific "which strain" line in 2.2 to reference the 2.1 limit and keep only the IBV illustration (redundancy cut).
+- Added an HI-exception line to 2.5: because HI depends on the exact antigen used, it is tied to a specific strain/subtype and is the standard way to tell AI subtypes apart and gauge field-vs-vaccine match. Cited [9] (Azeem & Yoon 2025).
+
+**Renumber for the HI citation.** Azeem & Yoon now first-appears in 2.5 (HI line) rather than 3.2 (AI para), so its reference was moved from position 16 to position 9 in the bibliography and the block rotated: old [9]-[15] (Erf, Chhabra, Ou, Merck Marek, Kannaki, Merck IBD, Liu) -> [10]-[16]; old [16] (Azeem) -> [9]; CFIA stays [17]. In-text remap applied per-bracket on body lines only via lookup {9:10,10:11,11:12,12:13,13:14,14:15,15:16,16:9}. Verified each remapped number still points to its original source (HI/AI->Azeem [9]; cell-mediated bullet->Erf [10]; respiratory->Chhabra/Ou/Merck Marek [11,12,13]; renal IBV->Kannaki [14]; IBD->Merck IBD [15]; ND->Liu [16]). In-text order re-verified sequential 1-20; 20 references.
+
+**(2) Section 2.4 paragraph merge (user request).** Collapsed the four plate-agglutination paragraphs to two: one merged intro before Photo 2.2 (mycoplasma *M. gallisepticum*/*M. synoviae* AND *Salmonella* pullorum/typhoid, mechanism, speed/cost/IgM, stained-purple antigen, whole-blood farm-side version) citing [1][6][7]; one merged caveat after Photo 2.2 (screening test, false positives, whole-blood low sensitivity, turkeys/ducks unreliable, confirm reactors by ELISA/HI) citing [6][7][6,7]. No facts or citations lost; species italics preserved.
+
+Checks: TOC recomputed against fresh render (course 23 pages; 3.2 -> p11, 7.2 -> p21 shifted; all 30 entries verified). dirty=0, em=0, bookmarks=hyperlinks=30. Course PDF re-exported.

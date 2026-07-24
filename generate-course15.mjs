@@ -397,6 +397,8 @@ function buildBodySection() {
 
     para('Four lab methods show up most often on a poultry serology report: ELISA, AGID, plate agglutination, and hemagglutination inhibition (HI). Each one answers the same basic question, how much antibody is in this sample, but they get there differently, and each has its own strengths.'),
 
+    para('One point is worth setting straight before the individual tests, because it applies to every one of them. These methods measure the bird\'s antibody response, not the pathogen itself. They confirm that the flock was exposed to something and how strongly it reacted, but on their own they do not name the exact agent or prove there is an active infection right now. That is why a serology result is read alongside the rest of the picture, and why it points you toward a problem rather than closing the case by itself [1]. Naming the exact virus and confirming a live infection is the job of virus detection, PCR or culture, which is why those tools take over once a specific pathogen is suspected.'),
+
     h2('2.2  ELISA Testing'),
 
     para('ELISA stands for enzyme-linked immunosorbent assay, and it is the workhorse test for poultry serology. A test plate is coated with the antigen for the disease being tested. When diluted serum is added, any matching antibodies in the sample latch onto that antigen. A reagent is added that turns shades of blue depending on how much antibody is bound, and a plate reader converts that color into a titer number for every well [1]. This antigen-coated format, where the color builds in step with the antibody the bird\'s serum brings to it, is called an indirect ELISA.'),
@@ -405,7 +407,7 @@ function buildBodySection() {
 
     para('The biggest advantage of ELISA is speed. The test is fully automated, and a single lab can run hundreds, even thousands, of serum samples in a day. That is why ELISA is the default test for routine flock monitoring of infectious bronchitis, infectious bursal disease, and avian reovirus [4].'),
 
-    para('ELISA does have one real limitation worth remembering: it tells you how much antibody is there, but not which strain triggered it. If your flock\'s infectious bronchitis titers come back higher than expected, ELISA cannot tell you which strain of the virus is behind it, only that the birds have responded to something [4].'),
+    para('That general limit from Section 2.1 bites ELISA in particular. If your flock\'s infectious bronchitis titers come back higher than expected, the ELISA cannot tell you which strain of the virus is behind it, only that the birds have responded to something [4].'),
 
     h2('2.3  AGID'),
 
@@ -418,26 +420,22 @@ function buildBodySection() {
     h2('2.4  Plate Agglutination'),
 
     para([
-      { text: 'Plate agglutination is the third method, and it is the classic quick screen for the two mycoplasma infections, ' },
+      { text: 'Plate agglutination is the third method, and it screens for two different kinds of infection. One is the two mycoplasmas, ' },
       { text: 'Mycoplasma gallisepticum', italics: true },
       { text: ' and ' },
       { text: 'Mycoplasma synoviae', italics: true },
-      { text: '. A drop of antigen is mixed directly with a drop of blood or serum on a plate, and if antibodies are present, the mixture clumps visibly within minutes [1]. Its appeal is speed and cost. It is cheap, needs no machine, and can even flag a fresh infection a few days sooner than ELISA or HI, because it picks up the very first antibodies (IgM) a bird makes [6].' },
+      { text: '. The other is pullorum disease and fowl typhoid, caused by ' },
+      { text: 'Salmonella', italics: true },
+      { text: ' Pullorum and ' },
+      { text: 'Salmonella', italics: true },
+      { text: ' Gallinarum, the infections that breeder and hatchery-supply flocks are certified free of. The test is simple: a drop of antigen is mixed directly with a drop of blood or serum on a plate, and if matching antibodies are present, the mixture clumps visibly within minutes [1]. Its appeal is speed and cost. It is cheap, needs no machine, and can even flag a fresh infection a few days sooner than ELISA or HI, because it picks up the very first antibodies (IgM) a bird makes [6]. For the ' },
+      { text: 'Salmonella', italics: true },
+      { text: ' version the antigen is stained a deep purple so the clumping reads clearly against the blood, and there is a practical farm-side option: rather than waiting on serum, a drop of whole blood taken right at the bird is mixed with the stained antigen, and a reaction shows in a minute or two. That makes it easy to test a lot of birds on the spot [7].' },
     ]),
 
     ...image(figBuf('plate agglutination-MG.png'), 'Photo 2.2: Plate agglutination test for Mycoplasma gallisepticum. A smooth, even drop (a) is negative; visible clumping (b, c) is positive. Source: Kabir A, et al. Eur J Agric Food Sci. 2021.', 5.2, 'png'),
 
-    para('The trade-off is that plate agglutination is a screening test, not a final answer. It reacts readily, so a recent oil-based vaccine, a cross-reacting organism, or even poorly handled serum can throw a false positive [6]. Read a positive plate as a signal to look closer, not proof the flock is infected. Confirm any suspicious reactor with a more specific test, an ELISA or HI, before you act on it [6].'),
-
-    para([
-      { text: 'Plate agglutination is not only a mycoplasma test. It is also the long-standing screen for pullorum disease and fowl typhoid, caused by ' },
-      { text: 'Salmonella', italics: true },
-      { text: ' Pullorum and ' },
-      { text: 'Salmonella', italics: true },
-      { text: ' Gallinarum, the two infections that breeder and hatchery-supply flocks are certified free of. For these, the antigen is stained a deep purple so the clumping reads clearly against the blood, and there is a practical farm-side version. Rather than waiting on serum, a drop of whole blood taken right at the bird is mixed with the stained antigen on the plate, and a reaction shows in a minute or two. That makes it easy to test a lot of birds on the spot [7].' },
-    ]),
-
-    para('The whole-blood version trades some accuracy for that convenience. It is not very sensitive, an inexperienced reader can call both false positives and false negatives, and it is unreliable in turkeys and ducks, where healthy birds often react anyway. The rule holds here too: a reactor is a flag to confirm in the lab, not a diagnosis on its own [7].'),
+    para('The trade-off is that plate agglutination is a screening test, not a final answer. It reacts readily, so a recent oil-based vaccine, a cross-reacting organism, or even poorly handled serum can throw a false positive [6]. The whole-blood version trades a little more accuracy for its convenience: it is not very sensitive, an inexperienced reader can call both false positives and false negatives, and it is unreliable in turkeys and ducks, where healthy birds often react anyway [7]. Either way, read a positive plate as a signal to look closer, not proof the flock is infected. Confirm any suspicious reactor with a more specific test, an ELISA or HI, before you act on it [6,7].'),
 
     h2('2.5  Hemagglutination Inhibition (HI) Testing'),
 
@@ -447,6 +445,8 @@ function buildBodySection() {
 
     para('To run the test, the lab makes a series of doubling dilutions of the serum, then adds a fixed amount of virus and red blood cells to each one. The titer is read as the highest dilution that still completely blocks the clumping. Because each step is a doubling dilution, titers are reported on what is called a log2 scale, the same doubling scale used for AGID titers [8]. Section 6.1 walks through how to read that scale on a lab report.'),
 
+    para('HI also does something the other three tests cannot. Because the reaction depends on the exact virus antigen used, an HI result is tied to a specific strain or subtype, not just a count of how much antibody is present. Run against a panel of reference antigens, HI is the standard way to tell avian influenza subtypes apart, such as H5 from H7, and to check how closely a circulating field virus matches the vaccine strain [9].'),
+
     // ── SECTION 3 ─────────────────────────────────────────────
     h1('Section 3: The Limitations of Serology'),
 
@@ -454,7 +454,7 @@ function buildBodySection() {
 
     para('A titer number tells you that a bird\'s immune system has been exposed to something, vaccine or field strain, and made antibodies against it. It does not tell you everything else you might want to know, and treating it as the whole picture is where serology gets misread.'),
 
-    bullet('Serology only shows the antibody (humoral) arm, the one introduced in Section 1.1, not the cell-mediated (T-cell) arm. That T-cell side plays a real role in disease protection and never shows up on a titer report [9].'),
+    bullet('Serology only shows the antibody (humoral) arm, the one introduced in Section 1.1, not the cell-mediated (T-cell) arm. That T-cell side plays a real role in disease protection and never shows up on a titer report [10].'),
     bullet('Seroconversion takes time. After exposure, it usually takes 4 to 20 days before antibody levels rise enough to show up on a test [1].'),
     bullet('A single sample is a snapshot, not a trend. One titer reading cannot tell you whether antibody levels are rising, holding steady, or already falling [1].'),
     bullet('Serology cannot reliably tell field strain from vaccine strain. ELISA is a quantitative test, it measures how much antibody, not which exact strain triggered it [4]. What it can flag is the size of the response: a real field infection usually pushes titers much higher than vaccination alone, so a titer well above what your program normally produces is a strong hint the birds met the field virus [1].'),
@@ -465,15 +465,15 @@ function buildBodySection() {
 
     para('That first limit, that serology sees only the antibody side, is the one that trips people up most, so it is worth spelling out what it means in practice: how much a titer tells you about protection depends on the disease. Different diseases are held off by different parts of the immune system, so the same strong titer can be a solid sign of protection for one disease and a much weaker sign of it for another.'),
 
-    para('The respiratory viruses are the clearest case. There are good commercial ELISA kits for infectious bronchitis (IB), infectious laryngotracheitis (ILT), and Marek\'s disease, and they earn their keep for tracking whether a flock was exposed and whether it responded to vaccination. What they do not tell you as well is how protected the birds actually are. IB and ILT both take hold right at the surface of the windpipe, nose, and eyes, and the birds fight them off mostly with local defenses at that surface and with immune cells, not with the blood antibody an ELISA measures [10,11]. Marek\'s disease is similar: its main protective immunity runs through the cell side rather than antibody [12]. So for these three, a good titer confirms the birds met the vaccine or the virus, but it lines up only loosely with real protection, because the part of the immune system holding the line is the part serology does not see.'),
+    para('The respiratory viruses are the clearest case. There are good commercial ELISA kits for infectious bronchitis (IB), infectious laryngotracheitis (ILT), and Marek\'s disease, and they earn their keep for tracking whether a flock was exposed and whether it responded to vaccination. What they do not tell you as well is how protected the birds actually are. IB and ILT both take hold right at the surface of the windpipe, nose, and eyes, and the birds fight them off mostly with local defenses at that surface and with immune cells, not with the blood antibody an ELISA measures [11,12]. Marek\'s disease is similar: its main protective immunity runs through the cell side rather than antibody [13]. So for these three, a good titer confirms the birds met the vaccine or the virus, but it lines up only loosely with real protection, because the part of the immune system holding the line is the part serology does not see.'),
 
-    para('Infectious bronchitis deserves one extra note, because it is not only a respiratory disease. Some IBV strains are nephropathogenic: they move past the airway and target the kidneys, causing systemic disease [13]. Because that kind of infection travels through the body rather than staying at the tracheal surface, circulating antibody does more of the protective work against it. For those renal strains, a good serum titer lines up with protection better than it does for the purely respiratory forms, so with IBV, what a titer promises depends partly on which kind of strain you are dealing with.'),
+    para('Infectious bronchitis deserves one extra note, because it is not only a respiratory disease. Some IBV strains are nephropathogenic: they move past the airway and target the kidneys, causing systemic disease [14]. Because that kind of infection travels through the body rather than staying at the tracheal surface, circulating antibody does more of the protective work against it. For those renal strains, a good serum titer lines up with protection better than it does for the purely respiratory forms, so with IBV, what a titer promises depends partly on which kind of strain you are dealing with.'),
 
-    para('Infectious bursal disease (IBD, or Gumboro) is the opposite case. Protection against Gumboro runs almost entirely through antibody, which is exactly what serology measures [14]. That is why an ELISA titer is a genuinely useful read on IBD protection, and why breeder titers and day-old maternal antibody levels are used to decide when to vaccinate the chicks. When the disease is fought with antibody, the antibody test tells you something real.'),
+    para('Infectious bursal disease (IBD, or Gumboro) is the opposite case. Protection against Gumboro runs almost entirely through antibody, which is exactly what serology measures [15]. That is why an ELISA titer is a genuinely useful read on IBD protection, and why breeder titers and day-old maternal antibody levels are used to decide when to vaccinate the chicks. When the disease is fought with antibody, the antibody test tells you something real.'),
 
-    para('Newcastle disease (ND) sits in the middle. Protection leans heavily on antibody, and the HI titer tracks protection against clinical disease well enough that HI is the standard ND test [15]. But antibody is not the whole story. Cell and local immunity help too, and even birds with high HI titers can still catch the virus and shed it. So for ND, a strong HI titer is a real and reassuring number, just not an ironclad guarantee.'),
+    para('Newcastle disease (ND) sits in the middle. Protection leans heavily on antibody, and the HI titer tracks protection against clinical disease well enough that HI is the standard ND test [16]. But antibody is not the whole story. Cell and local immunity help too, and even birds with high HI titers can still catch the virus and shed it. So for ND, a strong HI titer is a real and reassuring number, just not an ironclad guarantee.'),
 
-    para('Avian influenza (AI) is a different situation again, and serology plays a smaller role here. Antibody testing is used to catch exposure, not to gauge protection. A positive AI antibody result on a surveillance test means the birds have met the virus at some point [16]. What serology does not do is find an active infection. When AI is actually suspected, the frontline test is not an antibody test. It is PCR run on swabs from the birds, which picks up the virus itself and is what confirms a case [16]. In Canada, avian influenza is a federally reportable disease [17], so a positive finding is not a titer you build with a vaccine and watch over time. It is a flag that starts a reporting and investigation process with the CFIA, and confirmation comes from finding the virus by PCR, not from the antibody result.'),
+    para('Avian influenza (AI) is a different situation again, and serology plays a smaller role here. Antibody testing is used to catch exposure, not to gauge protection. A positive AI antibody result on a surveillance test means the birds have met the virus at some point [9]. What serology does not do is find an active infection. When AI is actually suspected, the frontline test is not an antibody test. It is PCR run on swabs from the birds, which picks up the virus itself and is what confirms a case [9]. In Canada, avian influenza is a federally reportable disease [17], so a positive finding is not a titer you build with a vaccine and watch over time. It is a flag that starts a reporting and investigation process with the CFIA, and confirmation comes from finding the virus by PCR, not from the antibody result.'),
 
     h2('3.3  Putting a Titer in Context'),
 
@@ -668,6 +668,7 @@ function buildBodySection() {
     ]),
     numberedRef('World Organisation for Animal Health. Fowl typhoid and Pullorum disease. In: Manual of Diagnostic Tests and Vaccines for Terrestrial Animals. Chapter 3.3.11. Paris: WOAH; 2022 [cited 2026 Jul]. Available from: woah.org'),
     numberedRef('Choi KS, Kye SJ, Jeon WJ, Park MJ, Kim S, Seul HJ, Kwon JH. Preparation and diagnostic utility of a hemagglutination inhibition test antigen derived from the baculovirus-expressed hemagglutinin-neuraminidase protein gene of Newcastle disease virus. J Vet Sci. 2013;14(3):291-297. doi:10.4142/jvs.2013.14.3.291'),
+    numberedRef('Azeem S, Yoon KJ. Diagnostic Assays for Avian Influenza Virus Surveillance and Monitoring in Poultry. Viruses. 2025;17(2):228. doi:10.3390/v17020228'),
     numberedRef('Erf GF, Kong HR, Falcon DM, Byrne KA. Two-Window Approach to Monitor and Assess Cellular and Humoral Immune Responses in Poultry. Poultry. 2023;2(1):82-97. doi:10.3390/poultry2010009'),
     numberedRef('Chhabra R, Forrester A, Lemiere S, Awad F, Chantrey J, Ganapathy K. Mucosal, Cellular, and Humoral Immune Responses Induced by Different Live Infectious Bronchitis Virus Vaccination Regimes and Protection Conferred against Infectious Bronchitis Virus Q1 Strain. Clin Vaccine Immunol. 2015;22(9):1050-1059. doi:10.1128/CVI.00368-15'),
     numberedRef('Ou SC, Giambrone JJ. Infectious laryngotracheitis virus in chickens. World J Virol. 2012;1(5):142-149. doi:10.5501/wjv.v1.i5.142'),
@@ -675,7 +676,6 @@ function buildBodySection() {
     numberedRef('Kannaki TR, Venkatesh Yadav J, Priyanka E, Lakshman M. Pathology, tissue tropism and antibody response of nephropathogenic infectious bronchitis virus (IBV) Indian isolate in experimentally infected chicken. VirusDisease. 2021;32(3):568-575. doi:10.1007/s13337-021-00693-4'),
     numberedRef('Merck Veterinary Manual. Infectious Bursal Disease in Poultry. Kenilworth, NJ: Merck & Co.; 2024 [cited 2026 Jul]. Available from: merckvetmanual.com/poultry/infectious-bursal-disease/infectious-bursal-disease-in-poultry'),
     numberedRef('Liu M, Shen X, Yu Y, Li J, Fan J, Jia X, Dai Y. Effect of Different Levels of Maternally Derived Genotype VII Newcastle Disease Virus-Specific Hemagglutination Inhibition Antibodies on Protection against Virulent Challenge in Chicks. Viruses. 2023;15(9):1840. doi:10.3390/v15091840'),
-    numberedRef('Azeem S, Yoon KJ. Diagnostic Assays for Avian Influenza Virus Surveillance and Monitoring in Poultry. Viruses. 2025;17(2):228. doi:10.3390/v17020228'),
     numberedRef('Canadian Food Inspection Agency. Avian influenza (bird flu). Ottawa: CFIA; [cited 2026 Jul]. Available from: inspection.canada.ca/en/animal-health/terrestrial-animals/diseases/reportable/avian-influenza'),
     numberedRef('Hy-Line International. Proper Collection and Handling of Diagnostic Samples: Part One, Serology and Blood Collection [Technical Update]. Hy-Line International; 2016. Available from: hyline.com'),
     numberedRef('BioChek. Interpretation and Application of Results Manual. Reeuwijk, Netherlands: BioChek; 2017. Available from: biochek.com'),
@@ -760,7 +760,7 @@ const tocEntries = [
   { lvl: 2, text: '2.5  Hemagglutination Inhibition (HI) Testing', page: 9 },
   { lvl: 1, text: 'Section 3: The Limitations of Serology', page: 10 },
   { lvl: 2, text: '3.1  What Serology Can and Cannot Tell You', page: 10 },
-  { lvl: 2, text: '3.2  What a Titer Tells You About Protection', page: 10 },
+  { lvl: 2, text: '3.2  What a Titer Tells You About Protection', page: 11 },
   { lvl: 2, text: '3.3  Putting a Titer in Context', page: 12 },
   { lvl: 2, text: '3.4  Paired Samples: Confirming a Field Challenge', page: 12 },
   { lvl: 1, text: 'Section 4: Poultry Blood Sampling Techniques', page: 13 },
@@ -775,7 +775,7 @@ const tocEntries = [
   { lvl: 2, text: '6.3  A Worked Example: Reading a Breeder ELISA Report', page: 19 },
   { lvl: 1, text: 'Section 7: Hands-On Workshop', page: 20 },
   { lvl: 2, text: '7.1  Drawing, Handling, and Submitting a Blood Sample', page: 20 },
-  { lvl: 2, text: '7.2  Reading Real Results Together', page: 20 },
+  { lvl: 2, text: '7.2  Reading Real Results Together', page: 21 },
   { lvl: 1, text: 'Recommended Journals and Resources', page: 22 },
   { lvl: 1, text: 'References', page: 23 },
 ];
