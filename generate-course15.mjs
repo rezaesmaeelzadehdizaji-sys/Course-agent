@@ -595,21 +595,7 @@ function buildBodySection() {
 
     ...image(figBuf('fig15_5.png'), 'Figure 6.2: A low %CV means the whole flock responded about the same way. Source: CPC Short Courses.'),
 
-    para('The CPC Learning Centre Serology 101 presentation gives the following %CV ranges for flock uniformity [1]:'),
-
-    dataTable(
-      ['%CV', 'Flock Uniformity'],
-      [
-        ['< 30%', 'Excellent'],
-        ['30–50%', 'Good'],
-        ['51–80%', 'Fair'],
-        ['> 80%', 'Poor or bimodal'],
-      ],
-      [4320, 4320]
-    ),
-    new Paragraph({ spacing: { before: 80, after: 0 } }),
-
-    para('These ranges are what you aim for after a killed (inactivated) vaccine. Live vaccines naturally spread titers wider, so the %CV runs higher. With a live vaccine, whether every bird tested positive at all matters more than the %CV number, since a live vaccine that did not reach every bird is a coverage problem the %CV alone will not show you [20].'),
+    para('The uniformity ranges the CPC Learning Centre Serology 101 presentation uses, shown along the bottom of Figure 6.2, are what you aim for after a killed (inactivated) vaccine [1]. Live vaccines naturally spread titers wider, so the %CV runs higher. With a live vaccine, whether every bird tested positive at all matters more than the %CV number, since a live vaccine that did not reach every bird is a coverage problem the %CV alone will not show you [20].'),
 
     h2('6.3  A Worked Example: Reading a Breeder ELISA Report'),
 
@@ -781,8 +767,8 @@ const tocEntries = [
   { lvl: 1, text: 'Section 7: Hands-On Workshop', page: 21 },
   { lvl: 2, text: '7.1  Drawing, Handling, and Submitting a Blood Sample', page: 21 },
   { lvl: 2, text: '7.2  Reading Real Results Together', page: 21 },
-  { lvl: 1, text: 'Recommended Journals and Resources', page: 23 },
-  { lvl: 1, text: 'References', page: 24 },
+  { lvl: 1, text: 'Recommended Journals and Resources', page: 22 },
+  { lvl: 1, text: 'References', page: 23 },
 ];
 
 const entriesWithAnchor = tocEntries.map((e, i) => ({
