@@ -314,3 +314,23 @@ Checks: TOC recomputed against fresh render (course 23 pages; 3.2 -> p11, 7.2 ->
 User correctly noted HI's strain/subtype-discriminating power applies to avian influenza (multiple H and N surface proteins) but NOT to Newcastle disease, which is a single serotype (APMV-1), so HI does not "type" ND strains, it measures ND antibody level. Verified: all NDV strains belong to APMV-1 (CFSPH Iowa State factsheet; PMC APMV-1 review), and AI carries multiple H/N subtypes distinguished by HI (reference [9] Azeem & Yoon).
 
 Reworded the HI-exception line in 2.5: HI's extra strength applies only when a virus comes in several subtypes; AI is the clear case (H5 vs H7, field-vs-vaccine match) cited [9]; Newcastle disease is the counter-case, every strain is one serotype so there is nothing to subtype and HI simply measures antibody level, cited [8] (Choi, the NDV HI-antigen paper already first-appearing earlier in 2.5). No new reference and no renumbering ([8] and [9] both already present in 2.5; [8] reuse, [9] unchanged). Citation order still sequential 1-20. No TOC change (added sentence absorbed on the HI page). dirty=0, em=0, bookmarks=hyperlinks=30. Course PDF re-exported.
+
+---
+
+## 2026-07-24 — expanded HI subsection with AI subtyping context (Canada AI policy) + ref [10] CFIA
+
+User supplied a farmer-flow rewrite of the HI-exception paragraph adding Canadian AI-policy context (why subtyping matters: detection and containment vs vaccination) and a note on CFIA's vaccination field trial, with press sources. Verified all retained claims against CFIA primary pages before writing; deliberately EXCLUDED unverifiable specifics.
+
+Verified and included (cited to new [10], a single merged CFIA reference for the AI response + vaccination pages):
+- Canada's HPAI approach is stamping out / detection and containment, eradication rather than vaccination. CFIA prevention-preparedness-response page verbatim: "Canada has historically maintained a stamping out policy for HPAI with the goal of achieving disease eradication in poultry."
+- Outbreaks bring quarantines and movement restrictions (CFIA response page; primary control zones + general/specific permits on CFIA permits page).
+- CFIA formed an HPAI vaccination task force in June 2023 and is pursuing a small confined field trial (small-scale, controlled, on-farm) to test feasibility; vaccination is not a routine option on Canadian farms today. CFIA vaccination page verbatim: task force "formed in June 2023"; confined field trial = "small-scale, controlled initiative"; three vaccines licensed for restricted government use in the trial, not tested for efficacy; findings "may inform future decisions."
+
+EXCLUDED as unverifiable (per no-fabrication rule, user agreed):
+- Any BC / provincial location for the trial: CFIA does not disclose the trial location; press notes BC has the highest case count but nothing pins the trial to BC farms. BC kept OUT of the course text. (The only "BC" in the document is the CPC Bowes reference address, Abbotsford, BC.)
+- "Currently running on a specific number of farms" and a start date: reported as planned ("later this year", May 2026), so written as "studying / pursuing", not "currently running".
+- "Newcastle vaccination is standard practice in Canada": reframed to what is supported, HI on an ND report just measures antibody level, a useful check on how an ND vaccination program is holding up, cited [8].
+
+Merged into ONE CFIA reference [10] as the user requested: "Canadian Food Inspection Agency. Avian influenza (bird flu): prevention, preparedness and response, and exploring avian influenza vaccination in poultry in Canada. Ottawa: CFIA; [cited 2026 Jul]. Available from: inspection.canada.ca/.../avian-influenza". [10] first-appears in the 2.5 HI paragraph, so old [10]-[20] bumped +1 to [11]-[21] via per-bracket increment on body lines; existing [17] (CFIA reportable page, AI para in 3.2) is a distinct page/claim and became [18]. In-text order re-verified sequential 1-21; 21 references. Spot-verified remapped citations still point to original sources (AI subtyping->Azeem [9]; Canada policy->CFIA [10]; cell-mediated->Erf [11]; renal IBV->Kannaki [15]; ND HI->Liu [17]; reportable->CFIA general [18]).
+
+The HI paragraph was also split into three short paragraphs (intro / AI / ND) for readability. TOC recomputed against fresh render (course 23 pages; Section 5->16, 5.1->16, 6.1->18, Section 7->21, 7.1->21 shifted); all 30 entries verified. dirty=0, em=0, bookmarks=hyperlinks=30. American spelling (no "flavours"); no em dashes. Course PDF re-exported.
