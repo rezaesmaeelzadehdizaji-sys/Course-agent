@@ -298,7 +298,7 @@ function buildSection2() {
 
       h2('2.2 Flock Health and Welfare'),
       para('Here the auditor is confirming your birds are healthy and treated humanely, and that you can prove it. The single most important document is your daily mortality record. They will want to see dead birds counted and logged every day, with notes when something jumps. A barn with no mortality record, or one filled in all at once in the same pen, is a red flag.'),
-      para('They will check your vaccination records against what should have been given, look at how sick and lame birds are handled, and confirm you have a humane way to deal with culls. Catching and loading get attention too, since rough handling shows up as bruising and downgrades at the plant. The CPC Learning Centre Spotting Disease Early guide makes the same point an auditor is checking for: walking the barn every day with your eyes, ears, and nose catches problems while they are still small, and the daily record is where that walk gets written down [9]. For the full disease profiles behind the conditions an auditor may ask about, see Course 7 (Common Poultry Diseases) in this series.'),
+      para('They will check your vaccination records against what should have been given, look at how sick and lame birds are handled, and confirm you have a humane way to deal with culls. A lot of this health side rests on your flock veterinarian. Your vaccination program, your treatment and medication protocols, and how you handle a sick bird all come out of that relationship, and a farm that works closely with its veterinarian usually shows the cleanest health records an auditor will find. Catching and loading get attention too, since rough handling shows up as bruising and downgrades at the plant. The CPC Learning Centre Spotting Disease Early guide makes the same point an auditor is checking for: walking the barn every day with your eyes, ears, and nose catches problems while they are still small, and the daily record is where that walk gets written down [9]. For the full disease profiles behind the conditions an auditor may ask about, see Course 7 (Common Poultry Diseases) in this series.'),
 
       h2('2.3 Housing and Environment'),
       para('This is the part of the audit that happens by feel as much as by paper. The auditor walks in and reads the barn the way an experienced grower does. Is the air fresh or is there an ammonia bite at bird level? Is the litter dry and friable, or wet and capped? Is the light even down the length of the barn? Are birds spread out comfortably or packed and panting?'),
@@ -395,7 +395,7 @@ function buildSection5() {
 
       h2('5.1 Understanding Audit Reports'),
       para('Your audit report tells you one of two things: you passed clean, or you passed with a list of corrective actions to close out. A corrective action request, often shortened to a CAR, is the auditor saying that something did not meet the standard and here is what needs fixing. Most CARs are small and routine. They are not a punishment, and getting a couple of them does not mean you failed.'),
-      para('Read the report carefully and make sure you understand each item and its deadline. Some programs also require a minimum overall score along with closing out every critical item. On egg farms, for example, the Start Clean-Stay Clean food safety audit requires meeting all critical control elements and reaching at least a 90 percent score to keep Egg Quality Assurance certification [4,6]. If anything in the report is unclear, call your provincial board or your service rep before the clock runs out. It is far better to ask than to guess and miss the deadline.'),
+      para('Read the report carefully and make sure you understand each item and its deadline. Some programs also require a minimum overall score along with closing out every critical item. On egg farms, for example, the Start Clean-Stay Clean food safety audit requires meeting all critical control elements and reaching at least a 90 percent score to keep Egg Quality Assurance certification [4,6]. If anything in the report is unclear, call your provincial board or your service rep before the clock runs out. It is far better to ask than to guess and miss the deadline. And when a corrective action touches flock health, medication, or disease, bring in your flock veterinarian. They are the right person to help you fix the real problem, not just the paperwork, and to set up treatment, vaccination, and medication records that hold up at the next audit.'),
 
       h2('5.2 Implementing Corrective Actions'),
       para('Every corrective action comes with a deadline, so the first job is to sort them by what is due soonest and what carries the most risk. A missing water test you can close in a week. A ventilation upgrade may take longer and need a plan with a date. Either way, do not just paper over the issue. Fix the thing that caused it.'),
@@ -556,7 +556,7 @@ async function main() {
     { lvl: 2, text: '2.1 Biosecurity', page: 7 },
     { lvl: 2, text: '2.2 Flock Health and Welfare', page: 8 },
     { lvl: 2, text: '2.3 Housing and Environment', page: 8 },
-    { lvl: 2, text: '2.4 Feed and Water Management', page: 8 },
+    { lvl: 2, text: '2.4 Feed and Water Management', page: 9 },
     { lvl: 2, text: '2.5 Record-Keeping', page: 9 },
     { lvl: 2, text: '2.6 Safety and Compliance', page: 10 },
     { lvl: 1, text: 'Section 3: Preparing for an Audit', page: 11 },
@@ -571,7 +571,7 @@ async function main() {
     { lvl: 2, text: '4.4 Addressing Questions Calmly and Accurately', page: 15 },
     { lvl: 1, text: 'Section 5: After the Audit', page: 16 },
     { lvl: 2, text: '5.1 Understanding Audit Reports', page: 16 },
-    { lvl: 2, text: '5.2 Implementing Corrective Actions', page: 16 },
+    { lvl: 2, text: '5.2 Implementing Corrective Actions', page: 17 },
     { lvl: 2, text: '5.3 Continuous Improvement and Preparation for Future Audits', page: 17 },
     { lvl: 1, text: 'Section 6: Practical Tips for Staying Audit-Ready', page: 18 },
     { lvl: 2, text: '6.1 Daily Routines That Maintain Audit Readiness', page: 18 },
