@@ -391,7 +391,7 @@ function buildSection5() {
     children: [
       h1('Section 5: After the Audit'),
       para('The audit is not over when the auditor drives away. What you do with the report is what turns an audit from a yearly hurdle into a tool that makes your farm better. Most of the value is in the follow-up.'),
-      ...image(figBuf('fig16_4.png'), 'Figure 5.1: The corrective action loop. Read the report, get a deadline for each item, fix it for real, show proof, and keep it fixed so it cannot come back. Source: CPC Short Courses.'),
+      ...photoImage(figBuf('fig 5.jpg'), 'Figure 5.1: The corrective action loop. Read the report, get a deadline for each item, fix it for real, show proof, and keep it fixed so it cannot come back. Source: CPC Short Courses.', 5.9),
 
       h2('5.1 Understanding Audit Reports'),
       para('Your audit report tells you one of two things: you passed clean, or you passed with a list of corrective actions to close out. A corrective action request, often shortened to a CAR, is the auditor saying that something did not meet the standard and here is what needs fixing. Most CARs are small and routine. They are not a punishment, and getting a couple of them does not mean you failed.'),
@@ -571,7 +571,7 @@ async function main() {
     { lvl: 2, text: '4.4 Addressing Questions Calmly and Accurately', page: 15 },
     { lvl: 1, text: 'Section 5: After the Audit', page: 16 },
     { lvl: 2, text: '5.1 Understanding Audit Reports', page: 16 },
-    { lvl: 2, text: '5.2 Implementing Corrective Actions', page: 17 },
+    { lvl: 2, text: '5.2 Implementing Corrective Actions', page: 16 },
     { lvl: 2, text: '5.3 Continuous Improvement and Preparation for Future Audits', page: 17 },
     { lvl: 1, text: 'Section 6: Practical Tips for Staying Audit-Ready', page: 18 },
     { lvl: 2, text: '6.1 Daily Routines That Maintain Audit Readiness', page: 18 },

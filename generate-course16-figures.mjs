@@ -264,5 +264,6 @@ function fig4() {
 // fig2();
 // fig3() disabled: Figure 3.1 is now the custom-designed artwork supplied for the course (fig3.jpg).
 // fig3();
-fig4();
+// fig4() disabled: Figure 5.1 is now the custom-designed artwork supplied for the course (fig 5.jpg).
+// fig4();
 console.log('All Course 16 figures generated.');
