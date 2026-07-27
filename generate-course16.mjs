@@ -335,6 +335,7 @@ function buildSection3() {
 
       h2('3.2 Conducting Internal Pre-Audit Checks'),
       para('Now leave the desk and walk the barn the way the auditor will. Start at the road and move inward, because that is the path disease and the auditor both take. Stop at the entrance: is the footbath fresh, are the dedicated boots there, is the visitor log filled in? Move through the anteroom and into the barn. Check the air, the litter, the light, the feed lines, the drinkers, the density, the dead-bird area, and the chemical store.'),
+      para('One thing about density is worth stating plainly. Once a flock is placed, its density is locked in. You cannot thin out birds you already put in the barn, so density is not something you fix on a pre-audit walk. It is a placement decision. Get the number right before the chicks arrive by confirming it against your program limit and with your integrator or authorized agent, so the barn is already inside the rules. On the walk itself, all you are checking is that the density you placed is documented and that any high-density monitoring your program requires is being recorded [8].'),
       para('The trick is to walk it with fresh eyes. We all go barn-blind to the things we pass every day. One good way around it is to swap farms with a neighbor and check each other, or have your CPC service rep do a mock audit before the real one. They will see the empty bait station and the cracked footbath that you have stopped noticing. Write down everything you find, exactly as an auditor would, so you have a punch list to work through.'),
 
       h2('3.3 Fixing Common Deficiencies Before Inspection'),
@@ -560,7 +561,7 @@ async function main() {
     { lvl: 2, text: '3.1 Reviewing Records and Documentation', page: 11 },
     { lvl: 2, text: '3.2 Conducting Internal Pre-Audit Checks', page: 12 },
     { lvl: 2, text: '3.3 Fixing Common Deficiencies Before Inspection', page: 12 },
-    { lvl: 2, text: '3.4 Assigning Responsibilities to Farm Staff', page: 12 },
+    { lvl: 2, text: '3.4 Assigning Responsibilities to Farm Staff', page: 13 },
     { lvl: 1, text: 'Section 4: During the Audit', page: 14 },
     { lvl: 2, text: '4.1 Hosting Inspectors Professionally', page: 14 },
     { lvl: 2, text: '4.2 Providing Clear and Accurate Information', page: 14 },
