@@ -258,9 +258,10 @@ function fig4() {
   svgToPng(svg, 'fig16_4.png');
 }
 
-// fig1() disabled: Figure 1.1 is now the custom-designed "Fig 1.png" supplied for the course.
+// fig1() and fig2() disabled: Figures 1.1 and 2.1 are now the custom-designed
+// artwork supplied for the course (fig1.jpg, fig2.jpg).
 // fig1();
-fig2();
+// fig2();
 fig3();
 fig4();
 console.log('All Course 16 figures generated.');
