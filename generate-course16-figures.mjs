@@ -258,7 +258,8 @@ function fig4() {
   svgToPng(svg, 'fig16_4.png');
 }
 
-fig1();
+// fig1() disabled: Figure 1.1 is now the custom-designed "Fig 1.png" supplied for the course.
+// fig1();
 fig2();
 fig3();
 fig4();
