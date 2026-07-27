@@ -38,6 +38,28 @@ Two attribution claims were found to overstate their source and were corrected:
 - **Section 1.1** previously said both chicken programs "are built on a science-based foundation: the poultry Code of Practice." Only the Animal Care Program is built on the NFACC Code [3]; the On-Farm Food Safety Program is built on HACCP. Corrected to attribute each program to its actual foundation (confirmed: chickenfarmers.ca — ACP "science-based foundations from the Code of Practice developed by NFACC"; OFFSP "combines good production practices with HACCP").
 - **Section 2.1** previously said the CFIA National Avian On-Farm Biosecurity Standard "frames all of this around two ideas: exclusion and containment." The standard does not use that framing; it is organized around Access Management, Animal Health Management, and Operational Management (plus the CAZ/RAZ zone model). Corrected so "keep disease out / stop it spreading" is stated as the general goal, and the CFIA standard [7] is described by its actual structure. All other claims re-verified and confirmed accurate against the issuing bodies.
 
+### BCCMB corrective-action ranking re-verification (2026-07-27 — primary source check)
+A reviewer suggested the Section 3.3 ranked list was wrong and that "ammonia testing
+and recording" was the single largest corrective-action category. I fetched the actual
+BCCMB reports directly (2018 Public Accountability Report via readkong; 2021, 2023, 2024
+PARP summary PDFs from bcchicken.ca / BCFIRB) to check.
+
+Finding: the course list matches the 2018 report VERBATIM and in correct rank order:
+1) 73 CARs — not submitting the required annual water test (the "single most commonly missed item" — confirmed #1)
+2) 70 CARs — density calculations / high-density monitoring
+3) 65 CARs — barn and surrounding-area maintenance / rodent control
+4) 28 CARs — medications in feed / cross-contamination
+Incomplete SOPs are mentioned only as a category that DECREASED since 2017 (not top-4).
+"Ammonia testing/recording" appears in NONE of the BCCMB reports reviewed. The 2023/2024
+PARP reports no longer publish a ranked list (CARs are reported as compliance percentages;
+example infractions named are out-of-date water/soil testing and improper medication storage).
+
+Action: the suggested ammonia/SOP swap was REJECTED as unsupported and contradicted by the
+primary source. Two precision edits were made: reference [8] pinned to the "2018 Public
+Accountability Report", and the Section 3.3 framing changed from "Across Canadian poultry
+farms ... year after year" to attribute the ranking to the BC Chicken Marketing Board's own
+reporting (the ranked data is BC-specific and from the 2018 report).
+
 ### Self-flagging
 No citation was left in the bibliography that could not be located. No peer-reviewed
 article citations were used, so no author/volume/page fabrication risk applies. Every

@@ -339,7 +339,7 @@ function buildSection3() {
       para('The trick is to walk it with fresh eyes. We all go barn-blind to the things we pass every day. One good way around it is to swap farms with a neighbor and check each other, or have your CPC service rep do a mock audit before the real one. They will see the empty bait station and the cracked footbath that you have stopped noticing. Write down everything you find, exactly as an auditor would, so you have a punch list to work through.'),
 
       h2('3.3 Fixing Common Deficiencies Before Inspection'),
-      para('Most farms trip on the same handful of things, so check these first. Across Canadian poultry farms, the most common corrective actions year after year are a short, predictable list [8]:'),
+      para('Most farms trip on the same handful of things, so check these first. The BC Chicken Marketing Board audits every farm in the province, and in its reporting the most common corrective actions come down to a short, predictable list [8]:'),
       bullet('Annual water testing not done or out of date. Book the test now and file the result. This is the single most commonly missed item.'),
       bullet('Stocking density and high-density monitoring. Make sure your density math is current and documented, and that any high-density monitoring required by your program is being done and recorded.'),
       bullet('Barn and yard maintenance and rodent control. Tidy the perimeter, close gaps, and get bait stations stocked, mapped, and logged.'),
@@ -464,7 +464,7 @@ function buildReferencesSection() {
       numberedRef('Turkey Farmers of Canada. On-Farm Food Safety Program and Flock Care Program. Ottawa: Turkey Farmers of Canada; [cited 2026 Jun]. Available from: turkeyfarmersofcanada.ca'),
       numberedRef('Egg Quality Assurance (EQA). Trust in every egg: the EQA certification mark. [cited 2026 Jun]. Available from: eggquality.ca'),
       numberedRef('Canadian Food Inspection Agency. National Avian On-Farm Biosecurity Standard. 2nd ed. Ottawa: CFIA; [cited 2026 Jun]. Available from: inspection.canada.ca'),
-      numberedRef('British Columbia Chicken Marketing Board. Public Accountability Report. Abbotsford, BC: BCCMB; [cited 2026 Jun]. Available from: bcchicken.ca'),
+      numberedRef('British Columbia Chicken Marketing Board. 2018 Public Accountability Report. Abbotsford, BC: BCCMB [cited 2026 Jul]. Available from: bcchicken.ca'),
       numberedRef('Spotting Disease Early [Flock Management Guide]. CPC Learning Centre. Available from: cpclearningcentre.ca'),
       numberedRef('Leslie M. Drinking Water Management [Flock Management Guide]. CPC Learning Centre; 2011. Available from: cpclearningcentre.ca'),
       numberedRef('Chicken Farmers of Canada. Responsible Antimicrobial Use Strategy. Ottawa: Chicken Farmers of Canada; [cited 2026 Jun]. Available from: chickenfarmers.ca'),
