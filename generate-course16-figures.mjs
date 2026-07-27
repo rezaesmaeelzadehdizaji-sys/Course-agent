@@ -102,7 +102,7 @@ function fig1() {
       y: 70, h: 90, fill: C.lightBlue, stroke: C.medBlue,
       tag: 'FEDERAL', tagFill: C.medBlue,
       title: 'Canadian Food Inspection Agency (CFIA)',
-      lines: ['Sets the National Avian On-Farm Biosecurity Standard and federal food-safety', 'and animal-health rules. Steps in directly during a disease outbreak or recall.'],
+      lines: ['Sets the voluntary National Avian On-Farm Biosecurity Standard. Enforces', 'federal food-safety and animal-health law directly during an outbreak or recall.'],
     },
     {
       y: 175, h: 100, fill: C.lightGreen, stroke: C.green,
