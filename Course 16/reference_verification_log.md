@@ -33,6 +33,11 @@ First-appearance scan of the final docx confirmed citation order is sequential 1
 - CPC Learning Centre attribution: named explicitly in body text for refs [9] and [10] (PASS)
 - Cross-references: Course 2 (Biosecurity), Course 3 (T-FLAWS), Course 7 (Common Poultry Diseases), Course 17 (Regulatory Framework) — placed at the point of need.
 
+### Claims corrections (2026-07-27 — full claim-by-claim re-audit)
+Two attribution claims were found to overstate their source and were corrected:
+- **Section 1.1** previously said both chicken programs "are built on a science-based foundation: the poultry Code of Practice." Only the Animal Care Program is built on the NFACC Code [3]; the On-Farm Food Safety Program is built on HACCP. Corrected to attribute each program to its actual foundation (confirmed: chickenfarmers.ca — ACP "science-based foundations from the Code of Practice developed by NFACC"; OFFSP "combines good production practices with HACCP").
+- **Section 2.1** previously said the CFIA National Avian On-Farm Biosecurity Standard "frames all of this around two ideas: exclusion and containment." The standard does not use that framing; it is organized around Access Management, Animal Health Management, and Operational Management (plus the CAZ/RAZ zone model). Corrected so "keep disease out / stop it spreading" is stated as the general goal, and the CFIA standard [7] is described by its actual structure. All other claims re-verified and confirmed accurate against the issuing bodies.
+
 ### Self-flagging
 No citation was left in the bibliography that could not be located. No peer-reviewed
 article citations were used, so no author/volume/page fabrication risk applies. Every
