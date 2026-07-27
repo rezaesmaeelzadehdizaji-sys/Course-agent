@@ -262,6 +262,7 @@ function fig4() {
 // artwork supplied for the course (fig1.jpg, fig2.jpg).
 // fig1();
 // fig2();
-fig3();
+// fig3() disabled: Figure 3.1 is now the custom-designed artwork supplied for the course (fig3.jpg).
+// fig3();
 fig4();
 console.log('All Course 16 figures generated.');

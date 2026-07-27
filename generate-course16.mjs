@@ -327,7 +327,7 @@ function buildSection3() {
     children: [
       h1('Section 3: Preparing for an Audit'),
       para('Preparing for an audit is not about cleaning up for one big day. It is about running a quick self-check far enough ahead that you have time to fix what you find. Do this a few weeks out, not the night before. Small problems are cheap and easy to fix with time on your side. The same problems found on audit day become deficiencies on your report.'),
-      ...image(figBuf('fig16_3.png'), 'Figure 3.1: A simple pre-audit self-check. Pull your records, walk the barn the way an auditor would, fix what you find, and make sure every job has an owner. Source: CPC Short Courses.'),
+      ...photoImage(figBuf('fig3.jpg'), 'Figure 3.1: A simple pre-audit self-check. Pull your records, walk the barn the way an auditor would, fix what you find, and make sure every job has an owner. Source: CPC Short Courses.', 5.9),
 
       h2('3.1 Reviewing Records and Documentation'),
       para('Start at the desk, because records are where audits are most often lost. Pull out your binder or open your farm app and flip through the last twelve months. You are looking for gaps: days with no mortality count, a water test that is more than a year old, a treatment that was given but never logged, a vaccination record that does not match the program. Every blank is a question you would rather answer now than in front of an auditor.'),
