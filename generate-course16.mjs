@@ -327,6 +327,7 @@ function buildSection3() {
     children: [
       h1('Section 3: Preparing for an Audit'),
       para('Preparing for an audit is not about cleaning up for one big day. It is about running a quick self-check far enough ahead that you have time to fix what you find. Do this a few weeks out, not the night before. Small problems are cheap and easy to fix with time on your side. The same problems found on audit day become deficiencies on your report.'),
+      para('A fair question is whether you even get warning. For your regular annual audit, you usually do. Your board schedules it with you and sets a date that works for both sides, so you know audit week is coming and can get ready for it [1,2]. The exception is a triggered audit, brought on by something like a complaint, a disease concern, or a past problem. That kind can show up with little or no notice, which is the real reason to keep the barn audit-ready all year and not just before a booked date.'),
       ...photoImage(figBuf('fig3.jpg'), 'Figure 3.1: A simple pre-audit self-check. Pull your records, walk the barn the way an auditor would, fix what you find, and make sure every job has an owner. Source: CPC Short Courses.', 5.9),
 
       h2('3.1 Reviewing Records and Documentation'),
