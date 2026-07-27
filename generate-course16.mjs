@@ -365,6 +365,7 @@ function buildSection4() {
 
       h2('4.1 Hosting Inspectors Professionally'),
       para('Treat the auditor as a professional doing a necessary job, because that is what they are. Be there at the agreed time, have your records pulled and ready, and have your dedicated boots and coveralls set out for them at the entry. Respect your own biosecurity rules with them watching: if everyone changes boots and signs the log to enter, you do it too. Hosting the audit smoothly tells the auditor, before they read a single page, that this is a well-run farm.'),
+      ...photoImage(figBuf('Audit day.jpg'), 'Photo 4.1: Audit day starts at the entry. Records pulled and ready, dedicated boots and coveralls set out, the visitor log open, and the same boot change and sign-in everyone follows. A well-hosted entry tells the auditor this is a well-run farm before they read a page. Source: CPC Short Courses.', 5.9),
       para('Keep it businesslike and cooperative. You do not need to hover, argue, or oversell. Walk them through what they ask to see, answer plainly, and let the farm speak for itself. Auditors notice the tone of a visit, and a calm, organized host makes the whole day go faster for both of you.'),
 
       h2('4.2 Providing Clear and Accurate Information'),
@@ -565,8 +566,8 @@ async function main() {
     { lvl: 2, text: '3.4 Assigning Responsibilities to Farm Staff', page: 13 },
     { lvl: 1, text: 'Section 4: During the Audit', page: 14 },
     { lvl: 2, text: '4.1 Hosting Inspectors Professionally', page: 14 },
-    { lvl: 2, text: '4.2 Providing Clear and Accurate Information', page: 14 },
-    { lvl: 2, text: '4.3 Demonstrating Procedures and Practices', page: 14 },
+    { lvl: 2, text: '4.2 Providing Clear and Accurate Information', page: 15 },
+    { lvl: 2, text: '4.3 Demonstrating Procedures and Practices', page: 15 },
     { lvl: 2, text: '4.4 Addressing Questions Calmly and Accurately', page: 15 },
     { lvl: 1, text: 'Section 5: After the Audit', page: 16 },
     { lvl: 2, text: '5.1 Understanding Audit Reports', page: 16 },
