@@ -76,20 +76,38 @@ function numberedRef(text) {
 }
 function pageBreak() { return new Paragraph({ children: [new PageBreak()] }); }
 
+function imgDims(buf) {
+  // PNG: magic 0x89 'P' 'N' 'G'; IHDR width/height at bytes 16/20
+  if (buf[0] === 0x89 && buf[1] === 0x50 && buf[2] === 0x4E && buf[3] === 0x47) {
+    const view = new DataView(buf.buffer, buf.byteOffset);
+    return { w: view.getUint32(16, false), h: view.getUint32(20, false), type: 'png' };
+  }
+  // JPEG: magic 0xFF 0xD8; read height/width from the SOF marker
+  if (buf[0] === 0xFF && buf[1] === 0xD8) {
+    let i = 2;
+    while (i < buf.length - 8) {
+      if (buf[i] !== 0xFF) { i++; continue; }
+      const m = buf[i + 1];
+      if (m >= 0xC0 && m <= 0xCF && m !== 0xC4 && m !== 0xC8 && m !== 0xCC) {
+        return { h: buf.readUInt16BE(i + 5), w: buf.readUInt16BE(i + 7), type: 'jpg' };
+      }
+      i += 2 + buf.readUInt16BE(i + 2);
+    }
+  }
+  return null;
+}
+
 function image(buf, caption, widthIn = 5.9) {
   if (!buf) return [];
   const dpi = 96;
   const wpx = Math.round(widthIn * dpi);
   let hpx = Math.round(wpx * 0.66);
-  try {
-    const view = new DataView(buf.buffer, buf.byteOffset);
-    const pw = view.getUint32(16, false);
-    const ph = view.getUint32(20, false);
-    if (pw > 0 && ph > 0) hpx = Math.round(wpx * ph / pw);
-  } catch (_) {}
+  let type = 'png';
+  const d = imgDims(buf);
+  if (d && d.w > 0 && d.h > 0) { hpx = Math.round(wpx * d.h / d.w); type = d.type; }
   return [
     new Paragraph({
-      children: [new ImageRun({ data: buf, transformation: { width: wpx, height: hpx }, type: 'png' })],
+      children: [new ImageRun({ data: buf, transformation: { width: wpx, height: hpx }, type })],
       alignment: AlignmentType.CENTER, spacing: { before: 160, after: 0 },
     }),
     new Paragraph({
@@ -229,7 +247,7 @@ function buildSection1() {
     children: [
       h1('Section 1: Overview of the Regulatory Landscape'),
       para('Before we get into any single rule, it helps to see the whole map. Poultry in Canada is regulated at three levels at once: the federal government, the national industry, and your province. They are not in competition. Each one handles a different part of the job, and they are designed to fit together so that a chicken raised in British Columbia is held to the same core standard as one raised in Ontario or Nova Scotia.'),
-      ...image(figBuf('fig17_1.png'), 'Figure 1.1: The three layers of poultry regulation in Canada, and how they stack from federal law at the top down to your farm at the bottom. Source: CPC Short Courses.'),
+      ...image(figBuf('Slide1.JPG'), 'Figure 1.1: The three layers of poultry regulation in Canada, and how they stack from federal law at the top down to your farm at the bottom. Source: CPC Short Courses.'),
 
       h2('1.1 Who Regulates Poultry in Canada: Federal, Provincial, and Industry'),
       para('Start with the federal government, because it sets the rules everyone else builds on. Two bodies matter most. Agriculture and Agri-Food Canada is the federal department responsible for farming policy, research, and trade, and it is the department responsible for the national supply management system [1]. Alongside it sits the Canadian Food Inspection Agency, usually just called the CFIA. The CFIA is the federal regulator for food safety, animal health, and plant health, and for poultry that means it runs the rules on meat and egg inspection, humane transport, on-farm biosecurity standards, and the control of serious animal diseases [2].'),
@@ -260,7 +278,7 @@ function buildSection2() {
 
       h2('2.1 How Supply Management Works for Poultry and Eggs'),
       para('Supply management rests on three pillars. Get these three and you understand the whole system [4].'),
-      ...image(figBuf('fig17_2.png'), 'Figure 2.1: The three pillars of supply management. Production is matched to demand, imports are controlled, and prices are set to cover the cost of production. Source: CPC Short Courses.'),
+      ...image(figBuf('Slide2.JPG'), 'Figure 2.1: The three pillars of supply management. Production is matched to demand, imports are controlled, and prices are set to cover the cost of production. Source: CPC Short Courses.'),
       para('The first pillar is production discipline. Total Canadian production is matched to what Canadians will actually buy, and that total is divided among farmers as quota. Your quota is your share, your right to produce and sell a set amount. Because supply is matched to demand, the market does not swing between gluts and shortages the way an open market does.'),
       para('The second pillar is import control. Imports are managed through tariff rate quotas, which let a set amount of poultry come in at a low tariff and apply much higher tariffs above that. This keeps cheaper foreign product from flooding the market and undercutting the domestic price [4].'),
       para('The third pillar is producer pricing. Prices are set using a cost-of-production approach, so the price is built to cover what it actually costs an efficient farmer to raise the birds. Put the three together and you get the point of the whole system: stable supply, predictable prices, and a fair return for farmers, all without ongoing government subsidies.'),
@@ -310,7 +328,7 @@ function buildSection4() {
 
       h2('4.2 Reportable Diseases and Your Legal Duty to Report'),
       para('Some diseases are so serious that the law requires them to be reported. Under the federal Health of Animals Act, certain diseases are designated reportable, and anyone who owns or cares for the animals must notify the CFIA of a suspected case [15]. For poultry, the two that matter most are avian influenza and Newcastle disease. Both are reportable, which means you do not get to wait and see. A suspicion is enough to trigger the legal duty to report [16].'),
-      ...image(figBuf('fig17_3.png'), 'Figure 4.1: The steps to take the moment you suspect a reportable disease, from the first warning signs through to the CFIA response. Source: CPC Short Courses.'),
+      ...image(figBuf('Slide3.JPG'), 'Figure 4.1: The steps to take the moment you suspect a reportable disease, from the first warning signs through to the CFIA response. Source: CPC Short Courses.'),
       para('Here is how it works in practice. If you see warning signs, a sudden jump in mortality, a sharp drop in feed or water intake, or respiratory or nervous-system signs spreading through the flock, you call your veterinarian and report to the CFIA right away. You do not move birds, eggs, or equipment off the farm while you wait. The CFIA then investigates, samples the flock, and confirms or rules out the disease. If a disease like avian influenza is confirmed, the response can include quarantine, movement control, humane depopulation, and cleaning and disinfection, with federal compensation available for animals ordered destroyed [16]. Reporting fast is not only the law. It is the single best thing you can do to protect your own flock and the farms around you. For the clinical picture behind these diseases and how to recognize them, see Course 7 (Common Poultry Diseases) in this series.'),
 
       h2('4.3 Regulatory Requirements for Hatcheries, Breeders, and Supply Flocks'),
@@ -360,7 +378,7 @@ function buildSection6() {
 
       h2('6.1 What Records Need to Be Maintained'),
       para('The records you are required to keep are, almost entirely, the same records you should keep to run the place well. That is the key insight: compliance paperwork and good management are the same paperwork. Your on-farm food safety and animal care programs spell out the list, but it comes down to a handful of things kept current and on file [13].'),
-      ...image(figBuf('fig17_4.png'), 'Figure 6.1: The core records every poultry farm keeps. The paperwork an auditor wants is the same paperwork that runs a good barn. Source: CPC Short Courses.'),
+      ...image(figBuf('Slide4.JPG'), 'Figure 6.1: The core records every poultry farm keeps. The paperwork an auditor wants is the same paperwork that runs a good barn. Source: CPC Short Courses.'),
       bullet([{ text: 'Flock and mortality records: ', bold: true }, { text: 'daily mortality, flock performance, and placement and shipping dates.' }]),
       bullet([{ text: 'Treatment and medication records: ', bold: true }, { text: 'every drug given, the reason, the dose, and the withdrawal time observed before shipping.' }]),
       bullet([{ text: 'Feed and water records: ', bold: true }, { text: 'feed tags and source, medicated feed handling, and your annual water test result.' }]),
