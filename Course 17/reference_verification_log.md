@@ -1,6 +1,6 @@
 # Course 17 — Reference Verification Log
 **Course:** Regulatory Framework in Poultry Production
-**Date verified:** 2026-06-16
+**Date verified:** 2026-06-16; re-verified 2026-07-28 (all 25 confirmed real against live sources; statute chapters, publication numbers, and program names re-checked)
 **Verifier:** Claude (Phase 1 deep research + per-reference web verification)
 
 All 25 references are government legislation/agency pages, national supply-management
@@ -50,6 +50,7 @@ were confirmed against the official Justice Laws Website (federal) and BC Laws (
 ## Notes
 - No peer-reviewed journal articles are cited in this course; the four journals listed in
   "Recommended Peer-Reviewed Journals" are reading suggestions, not citations.
-- All `[cited 2026 Jun]` dates applied to live online government/industry pages per the
-  Cited-Date Rule. CPC local PDF (#14) carries no cited date per the same rule.
+- All `[cited 2026 Jul]` dates applied to live online government/industry pages per the
+  Cited-Date Rule (aligned to the July 2026 cover date). CPC local PDF (#14) carries no
+  cited date per the same rule.
 - No citation required more than 2–3 minutes to locate; none marked [NEEDS SOURCE].
