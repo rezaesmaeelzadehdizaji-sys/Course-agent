@@ -165,11 +165,11 @@ async function main() {
   // Learning Objectives (humanized)
   children.push(sectionHead('Learning Objectives'));
   children.push(numbered(1, 'Name the main federal, provincial, and industry bodies that regulate poultry production in Canada, and know what each one does.'));
-  children.push(numbered(2, 'Explain how the supply management system works for poultry and eggs, and what being part of it means for your farm.'));
-  children.push(numbered(3, 'Understand the role and importance of the NFACC Codes of Practice for poultry care, housing, welfare, transport, and handling.'));
-  children.push(numbered(4, 'Describe what current regulations require for biosecurity, animal health, and disease prevention.'));
-  children.push(numbered(5, 'Understand your obligations around food safety, processing, and selling poultry products, including slaughter, microbial control, and labeling.'));
-  children.push(numbered(6, 'Know which records you must keep, and what to expect during audits, inspections, and compliance checks.'));
+  children.push(numbered(2, 'Understand how supply management works for chicken, turkey, and eggs, and what your quota and the programs mean for the way you run the farm.'));
+  children.push(numbered(3, 'Know what the NFACC Codes of Practice expect for bird care, housing, welfare, transport, and handling, and why following them protects you in law.'));
+  children.push(numbered(4, 'Know what the rules require for biosecurity, bird health, and keeping disease off your farm.'));
+  children.push(numbered(5, 'Understand what falls on you for food safety and processing, from delivering clean birds through humane slaughter, pathogen control, and honest labeling.'));
+  children.push(numbered(6, 'Know which records you have to keep, and what actually happens when an auditor or inspector shows up.'));
   children.push(numbered(7, 'See how federal, provincial, and industry rules fit together, and how they shape what you do on the farm.'));
   children.push(numbered(8, 'Identify the practical steps that keep you compliant and let you benefit from the system: better welfare, stronger biosecurity, market access, and consumer trust.'));
 
