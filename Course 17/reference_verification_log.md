@@ -3,8 +3,9 @@
 **Date verified:** 2026-06-16; re-verified 2026-07-28 (all 25 confirmed real against live sources; statute chapters, publication numbers, and program names re-checked)
 **Verifier:** Claude (Phase 1 deep research + per-reference web verification)
 
-All 25 references are government legislation/agency pages, national supply-management
-bodies and on-farm assurance programs, or CPC Learning Centre materials. These are
+All 26 references are government legislation/agency pages, national supply-management
+bodies and on-farm assurance programs, provincial marketing-board program pages, or
+CPC Learning Centre materials. These are
 Tier-2 institutional sources with stable, verifiable URLs (not peer-reviewed articles),
 so verification is by confirming the issuing body, document title, and the specific
 claim each supports against the live source. Statutory citations (act, year, chapter)
@@ -34,9 +35,10 @@ were confirmed against the official Justice Laws Website (federal) and BC Laws (
 | 20 | Natural Products Marketing (BC) Act (RSBC 1996, c. 330) | bclaws.gov.bc.ca/.../96330_01; chapter 330 confirmed | ✅ confirmed |
 | 21 | BC Chicken Marketing Board — Governance / Our Story | bcchicken.ca; created under NPMA, holds quota, licenses, audits | ✅ confirmed |
 | 22 | BC Farm Industry Review Board — Regulated Marketing | www2.gov.bc.ca; supervises all BC marketing boards/commissions | ✅ confirmed |
-| 23 | Prevention of Cruelty to Animals Act (RSBC 1996, c. 372) | bclaws.gov.bc.ca/.../96372_01; chapter 372 confirmed | ✅ confirmed |
-| 24 | BC SPCA — What is the PCA Act? | spca.bc.ca; BC SPCA enforces; following NFACC Code is a defence | ✅ confirmed |
-| 25 | BC Egg; BC Broiler Hatching Egg Commission; BC Turkey Marketing Board | bcegg.com; bcbhec.com; bcturkey.com | ✅ confirmed |
+| 23 | BC Chicken Small Lot Permit Program; BC Egg small-lot/backyard guidelines; BC Turkey Direct Vendor program | bcchicken.ca (200–2,000 birds/yr no quota, >2,000 needs quota); bcegg.com (0–99 backyard exempt, 100–399 registered small lot, 400+ quota); bcturkey.com (Direct Vendor up to 300/yr, 50 personal use) — all confirmed on the boards' own pages 2026-07-30 | ✅ confirmed |
+| 24 | Prevention of Cruelty to Animals Act (RSBC 1996, c. 372) | bclaws.gov.bc.ca/.../96372_01; chapter 372 confirmed | ✅ confirmed |
+| 25 | BC SPCA — What is the PCA Act? | spca.bc.ca; BC SPCA enforces; following NFACC Code is a defence | ✅ confirmed |
+| 26 | BC Egg; BC Broiler Hatching Egg Commission; BC Turkey Marketing Board | bcegg.com; bcbhec.com; bcturkey.com | ✅ confirmed |
 
 ## Key facts cross-checked against ≥2 independent sources
 - Supply management three pillars (production discipline / import control via TRQ / cost-of-production pricing): Library of Parliament + Wikipedia/RBC supply-management explainer + FPCC.

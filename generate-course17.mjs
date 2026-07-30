@@ -394,6 +394,52 @@ function buildSection6() {
   };
 }
 
+// ---- BC small-lot / quota threshold table (Section 7.1) ----
+function bcThresholdTable() {
+  const colW = [2200, 3900, 2540]; // twips, sum = 8640
+  const hdrBg = MED_BLUE;
+  const altBg = 'EBF2FA';
+  const bdr = { style: BorderStyle.SINGLE, size: 2, color: 'AAAAAA' };
+  const cellBorders = { top: bdr, bottom: bdr, left: bdr, right: bdr };
+
+  const hdrCell = (text, i) => new TableCell({
+    width: { size: colW[i], type: WidthType.DXA },
+    borders: cellBorders,
+    shading: { type: ShadingType.SOLID, color: hdrBg },
+    children: [new Paragraph({
+      alignment: AlignmentType.CENTER, spacing: { before: 60, after: 60 },
+      children: [new TextRun({ text, bold: true, size: 19, color: 'FFFFFF', font: 'Calibri' })],
+    })],
+  });
+  const dataCell = (text, i, shade, bold = false) => new TableCell({
+    width: { size: colW[i], type: WidthType.DXA },
+    borders: cellBorders,
+    shading: { type: ShadingType.SOLID, color: shade ? altBg : 'FFFFFF' },
+    children: [new Paragraph({
+      alignment: AlignmentType.LEFT, spacing: { before: 50, after: 50 },
+      children: [new TextRun({ text, bold, size: 19, color: BODY_GRAY, font: 'Calibri' })],
+    })],
+  });
+
+  const headers = ['Poultry sector', 'Raise without quota (small lot or personal use)', 'Quota required above'];
+  const rows = [
+    ['Chicken (broilers)', 'Up to 2,000 birds per year, under the Small Lot Permit Program', '2,000 birds per year'],
+    ['Table eggs (laying hens)', 'Up to 399 hens: 0 to 99 backyard, 100 to 399 registered small lot', '400 hens'],
+    ['Turkeys', 'Up to 300 birds per year through Direct Vendor; up to 50 for personal use', '300 birds per year'],
+  ];
+
+  return new Table({
+    width: { size: 100, type: WidthType.PERCENTAGE },
+    margins: { top: 0, bottom: 0, left: 0, right: 0 },
+    rows: [
+      new TableRow({ children: headers.map((h, i) => hdrCell(h, i)), tableHeader: true }),
+      ...rows.map((row, ri) => new TableRow({
+        children: row.map((cell, ci) => dataCell(cell, ci, ri % 2 === 1, ci === 0)),
+      })),
+    ],
+  });
+}
+
 // ---- Section 7 ----
 function buildSection7() {
   return {
@@ -406,10 +452,17 @@ function buildSection7() {
       h2('7.1 How Provincial Regulations Overlay Federal and Industry Rules'),
       para('In British Columbia, supply management is delivered under a provincial law called the Natural Products Marketing (BC) Act [20]. That Act is what gives the provincial commodity boards their authority. The BC Chicken Marketing Board, for instance, was created under it and is the body that holds quota, licenses growers, and delivers and audits the national on-farm programs for BC chicken farmers [21]. If you grow chicken commercially in BC, the Board is the regulator you deal with most.'),
       para('Sitting above all the BC commodity boards is a provincial supervisory body, the BC Farm Industry Review Board, often shortened to BCFIRB. It supervises every regulated marketing board and commission in the province, hears appeals, and makes sure the boards act in the broader public interest [22]. So the BC chain runs from the provincial Act, to the supervisory BCFIRB, down to the individual commodity board, and finally to your farm. It mirrors the federal structure, just one level down.'),
+      para('One BC detail worth pinning down is exactly where the line sits between a small lot you can run without quota and a commercial operation that needs it. In BC that line is a bird count, and it is different for each sector. As of July 2026, the thresholds set by the BC boards are [23]:'),
+      bcThresholdTable(),
+      new Paragraph({
+        children: [new TextRun({ text: 'Table 7.1: Where the commercial (quota) line sits in BC, by poultry sector. Source: BC Chicken, Egg, and Turkey Marketing Boards.', italics: true, color: '555555', size: 20, font: 'Calibri' })],
+        alignment: AlignmentType.CENTER, spacing: { before: 80, after: 160 },
+      }),
+      para('These numbers are set by each BC board and can change, so confirm the current figure with your board before you rely on it. The moment you cross a threshold, you move out of the small-lot or personal-use world and into full quota and the on-farm programs that come with it.'),
 
       h2('7.2 The Role of Provincial Acts, Marketing Boards, and Welfare Laws'),
-      para('Provinces also carry their own animal welfare law, and this is where the welfare Codes from Section 3 gain real legal teeth. In British Columbia, the Prevention of Cruelty to Animals Act, the PCA Act, is the main law protecting farm animals from distress [23]. It is enforced by the BC SPCA, whose officers are appointed as special provincial constables for that purpose [24]. Here is the part that matters most for a farmer: under the PCA Act, following the generally accepted NFACC Code of Practice is recognized as a defense against a charge of causing distress. In plain terms, raising your birds to the Code is not just good practice. It is your legal protection.'),
-      para('The same multi-board structure covers every poultry type in the province. Alongside the BC Chicken Marketing Board sit BC Egg, the British Columbia Broiler Hatching Egg Commission, and the BC Turkey Marketing Board, each regulating its own sector under the same provincial Act and the same supervisory board [25]. The exact board names and some details differ from province to province, but the shape is the same everywhere: a provincial marketing law, a supervisory body, a commodity board for each poultry type, and a provincial welfare law backing the national Codes. Learn the pattern in one province and you can find your way around any of them.'),
+      para('Provinces also carry their own animal welfare law, and this is where the welfare Codes from Section 3 gain real legal teeth. In British Columbia, the Prevention of Cruelty to Animals Act, the PCA Act, is the main law protecting farm animals from distress [24]. It is enforced by the BC SPCA, whose officers are appointed as special provincial constables for that purpose [25]. Here is the part that matters most for a farmer: under the PCA Act, following the generally accepted NFACC Code of Practice is recognized as a defense against a charge of causing distress. In plain terms, raising your birds to the Code is not just good practice. It is your legal protection.'),
+      para('The same multi-board structure covers every poultry type in the province. Alongside the BC Chicken Marketing Board sit BC Egg, the British Columbia Broiler Hatching Egg Commission, and the BC Turkey Marketing Board, each regulating its own sector under the same provincial Act and the same supervisory board [26]. The exact board names and some details differ from province to province, but the shape is the same everywhere: a provincial marketing law, a supervisory body, a commodity board for each poultry type, and a provincial welfare law backing the national Codes. Learn the pattern in one province and you can find your way around any of them.'),
     ],
   };
 }
@@ -484,6 +537,7 @@ function buildReferencesSection() {
       numberedRef('Natural Products Marketing (BC) Act (RSBC 1996, c. 330). Victoria, BC: King’s Printer; [cited 2026 Jul]. Available from: bclaws.gov.bc.ca'),
       numberedRef('British Columbia Chicken Marketing Board. Governance and our story. Abbotsford, BC: BCCMB; [cited 2026 Jul]. Available from: bcchicken.ca'),
       numberedRef('British Columbia Farm Industry Review Board. Regulated marketing. Victoria, BC: Government of British Columbia; [cited 2026 Jul]. Available from: www2.gov.bc.ca'),
+      numberedRef('British Columbia Chicken Marketing Board. Small Lot Permit Program; BC Egg. Small lot and backyard flock guidelines; British Columbia Turkey Marketing Board. Direct Vendor (small lot) program. Abbotsford and Victoria, BC; [cited 2026 Jul]. Available from: bcchicken.ca; bcegg.com; bcturkey.com'),
       numberedRef('Prevention of Cruelty to Animals Act (RSBC 1996, c. 372). Victoria, BC: King’s Printer; [cited 2026 Jul]. Available from: bclaws.gov.bc.ca'),
       numberedRef('BC SPCA. What is the Prevention of Cruelty to Animals Act (PCA Act)? Vancouver, BC: BC SPCA; [cited 2026 Jul]. Available from: spca.bc.ca'),
       numberedRef('BC Egg Marketing Board; British Columbia Broiler Hatching Egg Commission; BC Turkey Marketing Board. Victoria and Abbotsford, BC; [cited 2026 Jul]. Available from: bcegg.com; bcbhec.com; bcturkey.com'),
@@ -587,13 +641,13 @@ async function main() {
     { lvl: 2, text: '6.2 How Audits, Inspections, and Compliance Checks Are Carried Out', page: 18 },
     { lvl: 1, text: 'Section 7: Provincial Variation in British Columbia', page: 19 },
     { lvl: 2, text: '7.1 How Provincial Regulations Overlay Federal and Industry Rules', page: 19 },
-    { lvl: 2, text: '7.2 The Role of Provincial Acts, Marketing Boards, and Welfare Laws', page: 19 },
-    { lvl: 1, text: 'Section 8: Implications for Farmers and Good Practices', page: 20 },
-    { lvl: 2, text: '8.1 What Compliance Means for Everyday Farm Management', page: 20 },
-    { lvl: 2, text: '8.2 The Advantages: Market Access, Consumer Trust, and Better Birds', page: 20 },
-    { lvl: 2, text: '8.3 The Risks of Non-Compliance and How to Avoid Them', page: 21 },
-    { lvl: 1, text: 'Recommended Peer-Reviewed Journals', page: 22 },
-    { lvl: 1, text: 'References', page: 23 },
+    { lvl: 2, text: '7.2 The Role of Provincial Acts, Marketing Boards, and Welfare Laws', page: 20 },
+    { lvl: 1, text: 'Section 8: Implications for Farmers and Good Practices', page: 21 },
+    { lvl: 2, text: '8.1 What Compliance Means for Everyday Farm Management', page: 21 },
+    { lvl: 2, text: '8.2 The Advantages: Market Access, Consumer Trust, and Better Birds', page: 21 },
+    { lvl: 2, text: '8.3 The Risks of Non-Compliance and How to Avoid Them', page: 22 },
+    { lvl: 1, text: 'Recommended Peer-Reviewed Journals', page: 23 },
+    { lvl: 1, text: 'References', page: 24 },
   ].map((e, i) => ({ ...e, anchor: `_Toc${String(100000 + i).padStart(8, '0')}` }));
 
   function escapeXml(s) { return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;'); }
