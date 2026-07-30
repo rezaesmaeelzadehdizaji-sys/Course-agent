@@ -274,7 +274,7 @@ function buildSection2() {
     headers: { default: buildHeader() }, footers: { default: buildFooter() },
     children: [
       h1('Section 2: Supply Management and Market Regulation'),
-      para('If you raise chicken, turkey, eggs, or hatching eggs in Canada, you are part of supply management. It is the single biggest thing that shapes how your farm operates, from how many birds you can place to the price you get for them. It is worth understanding well, because it is also the part of the system that gives you the most stability.'),
+      para('If you raise chicken, turkey, eggs, or hatching eggs commercially in Canada, you are part of supply management. It is the single biggest thing that shapes how your farm operates, from how many birds you can place to the price you get for them. It is worth understanding well, because it is also the part of the system that gives you the most stability.'),
 
       h2('2.1 How Supply Management Works for Poultry and Eggs'),
       para('Supply management rests on three pillars. Get these three and you understand the whole system [4].'),
@@ -404,7 +404,7 @@ function buildSection7() {
       para('So far we have talked about the national framework. But farming is also a provincial matter, so the rules land slightly differently in each province. The best way to see how the layers fit is to look at one province in detail. British Columbia makes a good example, and the same pattern repeats with local differences right across the country.'),
 
       h2('7.1 How Provincial Regulations Overlay Federal and Industry Rules'),
-      para('In British Columbia, supply management is delivered under a provincial law called the Natural Products Marketing (BC) Act [20]. That Act is what gives the provincial commodity boards their authority. The BC Chicken Marketing Board, for instance, was created under it and is the body that holds quota, licenses growers, and delivers and audits the national on-farm programs for BC chicken farmers [21]. If you grow chicken in BC, the Board is the regulator you deal with most.'),
+      para('In British Columbia, supply management is delivered under a provincial law called the Natural Products Marketing (BC) Act [20]. That Act is what gives the provincial commodity boards their authority. The BC Chicken Marketing Board, for instance, was created under it and is the body that holds quota, licenses growers, and delivers and audits the national on-farm programs for BC chicken farmers [21]. If you grow chicken commercially in BC, the Board is the regulator you deal with most.'),
       para('Sitting above all the BC commodity boards is a provincial supervisory body, the BC Farm Industry Review Board, often shortened to BCFIRB. It supervises every regulated marketing board and commission in the province, hears appeals, and makes sure the boards act in the broader public interest [22]. So the BC chain runs from the provincial Act, to the supervisory BCFIRB, down to the individual commodity board, and finally to your farm. It mirrors the federal structure, just one level down.'),
 
       h2('7.2 The Role of Provincial Acts, Marketing Boards, and Welfare Laws'),
