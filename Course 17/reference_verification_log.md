@@ -3,9 +3,9 @@
 **Date verified:** 2026-06-16; re-verified 2026-07-28 (all 25 confirmed real against live sources; statute chapters, publication numbers, and program names re-checked)
 **Verifier:** Claude (Phase 1 deep research + per-reference web verification)
 
-All 26 references are government legislation/agency pages, national supply-management
-bodies and on-farm assurance programs, provincial marketing-board program pages, or
-CPC Learning Centre materials. These are
+All 29 references are government legislation/agency pages, national supply-management
+bodies and on-farm assurance programs, provincial marketing-board program pages,
+veterinary regulatory/residue-avoidance bodies, or CPC Learning Centre materials. These are
 Tier-2 institutional sources with stable, verifiable URLs (not peer-reviewed articles),
 so verification is by confirming the issuing body, document title, and the specific
 claim each supports against the live source. Statutory citations (act, year, chapter)
@@ -30,15 +30,18 @@ were confirmed against the official Justice Laws Website (federal) and BC Laws (
 | 15 | Health of Animals Act (SC 1990, c. 21) | laws-lois.justice.gc.ca/eng/acts/h-3.3; reportable disease authority | ✅ confirmed |
 | 16 | CFIA — Fact sheet: Avian influenza (reportable disease) | inspection.canada.ca; HPAI/LPAI H5/H7 + ND reportable, must report to CFIA | ✅ confirmed |
 | 17 | Chicken Farmers of Canada — Responsible Antimicrobial Use Strategy | chickenfarmers.ca; removed preventive Cat I (2014) & Cat II (2018) | ✅ confirmed |
-| 18 | Safe Food for Canadians Act (SC 2012, c. 24) | laws-lois.justice.gc.ca/eng/acts/s-1.1; chapter 24 confirmed | ✅ confirmed |
-| 19 | CFIA — Understanding the Safe Food for Canadians Regulations (handbook) | inspection.canada.ca; SFCR in force 2019-01-15; licence/preventive controls/traceability; Part 6 humane slaughter | ✅ confirmed |
-| 20 | Natural Products Marketing (BC) Act (RSBC 1996, c. 330) | bclaws.gov.bc.ca/.../96330_01; chapter 330 confirmed | ✅ confirmed |
-| 21 | BC Chicken Marketing Board — Governance / Our Story | bcchicken.ca; created under NPMA, holds quota, licenses, audits | ✅ confirmed |
-| 22 | BC Farm Industry Review Board — Regulated Marketing | www2.gov.bc.ca; supervises all BC marketing boards/commissions | ✅ confirmed |
-| 23 | BC + Ontario small-lot / quota-exemption programs (Table 7.1) | BC: bcchicken.ca (up to 2,000 birds/yr no quota), bcegg.com (0–99 backyard, 100–399 registered small lot, 400+ quota), bcturkey.com (Direct Vendor up to 300/yr, 50 personal use). Ontario: ontariochicken.ca (Family Food up to 300, Artisanal 600–3,000), eggfarmersofontario.ca (99-hen exemption), turkeyfarmers.on.ca (up to 50; Small Scale Grower Program for larger volumes). All confirmed on the boards' own pages 2026-07-30 | ✅ confirmed |
-| 24 | Prevention of Cruelty to Animals Act (RSBC 1996, c. 372) | bclaws.gov.bc.ca/.../96372_01; chapter 372 confirmed | ✅ confirmed |
-| 25 | BC SPCA — What is the PCA Act? | spca.bc.ca; BC SPCA enforces; following NFACC Code is a defence | ✅ confirmed |
-| 26 | BC Egg; BC Broiler Hatching Egg Commission; BC Turkey Marketing Board | bcegg.com; bcbhec.com; bcturkey.com | ✅ confirmed |
+| 18 | CVMA — provincial/territorial veterinary regulatory bodies; VCPR | canadianveterinarians.net; vets licensed by provincial college (e.g. CVBC); valid VCPR required to prescribe — confirmed 2026-07-30 | ✅ confirmed |
+| 19 | Health Canada — responsible use of medically important antimicrobials in animals | canada.ca/en/health-canada; MIAs prescription-only since 2018-12-01, growth-promotion claims removed — confirmed 2026-07-30 | ✅ confirmed |
+| 20 | CgFARAD — Canadian global Food Animal Residue Avoidance Databank | cgfarad.ca (hosted cgfarad.usask.ca); science-based withdrawal-interval recommendations to licensed vets for extra-label drug use in food animals — confirmed 2026-07-30 | ✅ confirmed |
+| 21 | Safe Food for Canadians Act (SC 2012, c. 24) | laws-lois.justice.gc.ca/eng/acts/s-1.1; chapter 24 confirmed | ✅ confirmed |
+| 22 | CFIA — Understanding the Safe Food for Canadians Regulations (handbook) | inspection.canada.ca; SFCR in force 2019-01-15; licence/preventive controls/traceability; Part 6 humane slaughter | ✅ confirmed |
+| 23 | Natural Products Marketing (BC) Act (RSBC 1996, c. 330) | bclaws.gov.bc.ca/.../96330_01; chapter 330 confirmed | ✅ confirmed |
+| 24 | BC Chicken Marketing Board — Governance / Our Story | bcchicken.ca; created under NPMA, holds quota, licenses, audits | ✅ confirmed |
+| 25 | BC Farm Industry Review Board — Regulated Marketing | www2.gov.bc.ca; supervises all BC marketing boards/commissions | ✅ confirmed |
+| 26 | BC + Ontario small-lot / quota-exemption programs (Table 7.1) | BC: bcchicken.ca (up to 2,000 birds/yr no quota), bcegg.com (0–99 backyard, 100–399 registered small lot, 400+ quota), bcturkey.com (Direct Vendor up to 300/yr, 50 personal use). Ontario: ontariochicken.ca (Family Food up to 300, Artisanal 600–3,000), eggfarmersofontario.ca (99-hen exemption), turkeyfarmers.on.ca (up to 50; Small Scale Grower Program for larger volumes). All confirmed on the boards' own pages 2026-07-30 | ✅ confirmed |
+| 27 | Prevention of Cruelty to Animals Act (RSBC 1996, c. 372) | bclaws.gov.bc.ca/.../96372_01; chapter 372 confirmed | ✅ confirmed |
+| 28 | BC SPCA — What is the PCA Act? | spca.bc.ca; BC SPCA enforces; following NFACC Code is a defence | ✅ confirmed |
+| 29 | BC Egg; BC Broiler Hatching Egg Commission; BC Turkey Marketing Board | bcegg.com; bcbhec.com; bcturkey.com | ✅ confirmed |
 
 ## Key facts cross-checked against ≥2 independent sources
 - Supply management three pillars (production discipline / import control via TRQ / cost-of-production pricing): Library of Parliament + Wikipedia/RBC supply-management explainer + FPCC.
