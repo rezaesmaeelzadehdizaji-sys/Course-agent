@@ -392,7 +392,7 @@ C.push(kv2Table([
 C.push(spacer(60));
 C.push(options('Purpose of visit:', ['Routine / scheduled', 'Health investigation', 'Follow-up', 'Pre-placement', 'Audit / certification', 'Other']));
 C.push(options('Outside conditions:', ['Cold', 'Mild', 'Hot', 'Wet', 'Windy', 'Dry']));
-C.push(kv2Table(['Outside temp', '', 'Others present on visit', '']));
+C.push(kv1Table(['Outside temp', 'Others present on visit']));
 
 // ============================================================
 // 2 — FLOCK DETAILS
@@ -639,7 +639,7 @@ C.push(checkGrid([
 C.push(spacer(20));
 
 C.push(subHead('Culls & sick birds'));
-C.push(kv2Table(['No. of culls today', '', 'Sick / hospital pen used', '']));
+C.push(kv1Table(['No. of culls today', 'Sick / hospital pen used']));
 C.push(options('Cull management:', ['Prompt and humane', 'Delayed', 'Needs review']));
 C.push(spacer(30));
 
@@ -668,7 +668,7 @@ C.push(writeBox('Flock health notes (what you saw, where, how many):', 4));
 // ============================================================
 C.push(sectionBar(7, 'Mortality & Post-Mortem (Veterinarian)'));
 C.push(hint('Post-mortem examination and interpretation are the veterinarian’s role. Record gross findings by system and note samples taken.'));
-C.push(kv2Table(['Birds examined post-mortem', '', 'Fresh dead / culled / found dead', '']));
+C.push(kv1Table(['Birds examined post-mortem', 'Fresh dead / culled / found dead']));
 C.push(spacer(30));
 C.push(subHead('Gross findings by system'));
 C.push(kv1Table([
@@ -712,7 +712,7 @@ C.push(checkGrid([
   'Emergency backup / power failure plan in place',
   'Spare parts and basic tools on hand',
 ], 2));
-C.push(kv2Table(['Last generator test date', '', 'Alarm last verified', '']));
+C.push(kv1Table(['Last generator test date', 'Alarm last verified']));
 C.push(spacer(40));
 C.push(writeBox('Equipment notes and repairs needed:', 3));
 
