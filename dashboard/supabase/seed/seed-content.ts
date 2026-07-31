@@ -30,8 +30,21 @@ const supabase = createClient(
 )
 
 const DOCS_DIR = path.resolve(__dirname, '../../public/docs')
+const REPO_ROOT = path.resolve(__dirname, '../../..')
+
+// Courses whose source docx isn't a public/docs/course-NN-*.docx file.
+const DOCX_OVERRIDE: Record<number, string> = {
+  3: path.join(DOCS_DIR, 't-flaws-assessment-management-tool.docx'),
+  // Course 17 is still a draft (not published to public/docs); seed display
+  // content from the working draft in the project folder.
+  17: path.join(REPO_ROOT, 'Course 17', 'Regulatory_Framework_in_Poultry_Production_draft.docx'),
+}
 
 function findDocx(courseNumber: number): string | null {
+  if (DOCX_OVERRIDE[courseNumber]) {
+    const p = DOCX_OVERRIDE[courseNumber]
+    return fs.existsSync(p) ? p : null
+  }
   const nn = String(courseNumber).padStart(2, '0')
   const files = fs.readdirSync(DOCS_DIR).filter((f) => f.endsWith('.docx'))
   const match = files.find((f) => f.startsWith(`course-${nn}-`))
@@ -134,29 +147,35 @@ async function seedCourse(courseNumber: number) {
     subsections: toSubsectionRows(x.introduction.subsections),
   })
 
-  // Sections (letter = ' ' → UI shows the ordinal badge)
+  // Sections. A "X: Title" heading (T-FLAWS acronym) keeps its letter badge;
+  // otherwise letter = ' ' and the UI shows the section ordinal instead.
   const sectionRows = x.sections
     .filter((s) => s.subsections.length > 0)
-    .map((s, i) => ({
-      course_id: course.id,
-      section_key: `sec-${i + 1}`,
-      letter: ' ',
-      title: cleanTitle(s.title),
-      full_title: cleanTitle(s.title),
-      sort_order: i + 1,
-      subsections: toSubsectionRows(s.subsections),
-    }))
+    .map((s, i) => {
+      const lm = s.title.match(/^([A-Za-z]):\s+/)
+      return {
+        course_id: course.id,
+        section_key: `sec-${i + 1}`,
+        letter: lm ? lm[1].toUpperCase() : ' ',
+        title: cleanTitle(s.title),
+        full_title: cleanTitle(s.title),
+        sort_order: i + 1,
+        subsections: toSubsectionRows(s.subsections),
+      }
+    })
   if (sectionRows.length) await supabase.from('sections').insert(sectionRows)
 
-  // Journals
+  // Journals — only create the card when the course actually has a journals section.
   const { intro: jIntro, journals } = splitJournals(x.journals)
-  await supabase.from('journal_sections').insert({
-    course_id: course.id,
-    title: 'Recommended Peer-Reviewed Journals',
-    intro: jIntro,
-    journals,
-    institutional_resources: [],
-  })
+  if (journals.length > 0 || jIntro) {
+    await supabase.from('journal_sections').insert({
+      course_id: course.id,
+      title: 'Recommended Peer-Reviewed Journals',
+      intro: jIntro,
+      journals,
+      institutional_resources: [],
+    })
+  }
 
   // References — drop the lead-in prose sentence (some courses number via Word's
   // list auto-numbering, so citation text has no "[N]"/"N." prefix to key off).
