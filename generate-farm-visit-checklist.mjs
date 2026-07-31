@@ -664,10 +664,10 @@ C.push(spacer(40));
 C.push(writeBox('Flock health notes (what you saw, where, how many):', 4));
 
 // ============================================================
-// 7 — MORTALITY & POST-MORTEM (VETERINARIAN)
+// 7 — MORTALITY & POST-MORTEM
 // ============================================================
-C.push(sectionBar(7, 'Mortality & Post-Mortem (Veterinarian)'));
-C.push(hint('Post-mortem examination and interpretation are the veterinarian’s role. Record gross findings by system and note samples taken.'));
+C.push(sectionBar(7, 'Mortality & Post-Mortem'));
+C.push(hint('Record gross findings by system and note every sample taken for the laboratory.'));
 C.push(kv1Table(['Birds examined post-mortem', 'Fresh dead / culled / found dead']));
 C.push(spacer(30));
 C.push(subHead('Gross findings by system'));
