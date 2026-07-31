@@ -1461,6 +1461,17 @@ The user-facing dashboard is a **separate Vercel project** at `cpc-short-courses
 
 6. **Verify the dashboard tile.** Open `/dashboard` in a browser (or hit it with `curl -s`) and confirm the Course X tile shows the Complete badge and links to the live `.docx`. No Vercel redeploy is required for Step 5 to take effect — the server component reads Supabase live on each request.
 
+7. **Seed the structured dashboard detail page (MANDATORY — every final publish).** The course detail page (`/dashboard/courses/<id>`) must show the full structured view — Introduction, Sections with subsections, Journals & Resources, References — NOT a one-page metadata/disclaimer stub. Run the content seeder, which extracts Heading1 (sections) / Heading2 (subsections) plus intro/journals/references from the built docx and writes the `introductions`, `sections`, `journal_sections`, and `references` tables:
+   ```bash
+   cd dashboard && npx tsx supabase/seed/seed-content.ts <courseNumber>
+   ```
+   Notes:
+   - The seeder resolves `public/docs/course-NN-*.docx` by default. Courses whose docx filename doesn't follow that convention (e.g. Course 3 = `t-flaws-assessment-management-tool.docx`, or a draft in a `Course NN/` folder) need an entry in `DOCX_OVERRIDE` at the top of `seed-content.ts`.
+   - Section headings formatted `X: Title` (T-FLAWS) get a letter badge; all others fall back to the section ordinal.
+   - It is idempotent (deletes then re-inserts that course's content rows) and does NOT touch the `courses` row or the download path.
+   - The detail page reads Supabase live, so seeded content shows on reload with no extra Vercel redeploy. The UI generalization (array-shaped `sections.subsections`) is already deployed.
+   - Verify with a quick count that intro/sections/journals/refs are non-zero before reporting the course done.
+
 **LFS note:** all `.docx`/`.pdf`/`.png`/`.jpg` files are tracked by Git LFS (see [.gitattributes](.gitattributes)). Vercel does fetch LFS objects during build, so this is not the cause of the stall — the cause is the GitHub→Vercel webhook itself, which is why a manual `vercel deploy --prod` is required.
 
 **Why the two-stage publish exists.** The Lambda route at [dashboard/src/app/api/courses/\[courseId\]/generate-docx/route.ts](dashboard/src/app/api/courses/%5BcourseId%5D/generate-docx/route.ts) has a static-path shortcut (`public/docs/${slug}.docx`) that bypasses DB-driven generation when the file exists. But `/dashboard` itself is a separate Supabase-backed server component (`dashboard/src/app/dashboard/page.tsx`). So a course publish has two halves: (1) push the static `.docx` so the API can serve it, (2) update the Supabase row so the dashboard renders the tile. Skipping either half leaves a working download URL with no visible link, or a visible tile with no downloadable file. Both halves are mandatory.
