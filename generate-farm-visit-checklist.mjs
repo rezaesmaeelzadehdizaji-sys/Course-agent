@@ -673,8 +673,8 @@ C.push(spacer(30));
 C.push(subHead('Gross findings by system'));
 C.push(kv1Table([
   'Respiratory (trachea, air sacs, lungs)',
-  'Digestive (crop, proventriculus, gut, ceca)',
-  'Liver / spleen',
+  'Digestive (crop, proventriculus, gut, ceca, liver)',
+  'Immune (bursa of Fabricius, spleen, thymus)',
   'Kidneys / urate',
   'Heart / pericardium',
   'Reproductive (ovary, oviduct)',
