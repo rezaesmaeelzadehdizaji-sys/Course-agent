@@ -34,15 +34,17 @@ import { fileURLToPath } from 'url';
 const __dirname  = path.dirname(fileURLToPath(import.meta.url));
 const OUT_DIR    = path.join(__dirname, 'Farm Visit Checklist');
 const OUT_FILE   = path.join(OUT_DIR, 'Poultry_Farm_Visit_Checklist.docx');
-const LOGO_PATH  = path.join(__dirname, 'logo.png');
+const LOGO_PATH    = path.join(__dirname, 'Abbvet Logo-1.png');   // clinic logo + wordmark
+const TAGLINE_PATH = path.join(__dirname, 'Abbvet Logo-2.png');   // "together we ARE animal care"
 
-const MED_BLUE  = '2E74B5';
-const DARK_BLUE = '1F3864';
-const GOLD      = 'C9A84C';
+// Abbotsford Veterinary Clinic brand colors (sampled from logo)
+const MED_BLUE  = '2E6699';   // clinic blue
+const DARK_BLUE = '1F4E79';   // deep blue for the title
+const GOLD      = '6EBF4D';   // clinic green (accent rules / underlines)
 const BODY      = '3C3C3C';
 const GRAY      = '888888';
 const LABEL_BG  = 'EDF2F9';   // very light blue for label cells
-const HDR_BG    = '2E74B5';   // section bar / table header
+const HDR_BG    = '2E6699';   // section bar / table header (clinic blue)
 const ALT_BG    = 'F5F8FC';   // zebra
 
 const CONTENT_W = 9360;       // 1" side margins on Letter = 6.5" = 9360 twips
@@ -248,7 +250,7 @@ function checkGrid(items, cols = 2) {
 function writeBox(label = 'Observations / notes:', lines = 3) {
   const inner = [new Paragraph({ children: [run(label, { bold: true, size: 19, color: MED_BLUE })], spacing: { after: 60 } })];
   for (let i = 0; i < lines; i++) inner.push(new Paragraph({ spacing: { after: 0, line: 340, lineRule: 'auto' }, children: [run('', {})] }));
-  const bdr = { style: BorderStyle.SINGLE, size: 4, color: 'C9A84C' };
+  const bdr = { style: BorderStyle.SINGLE, size: 4, color: GOLD };
   return new Table({
     width: { size: 100, type: WidthType.PERCENTAGE },
     rows: [new TableRow({
@@ -319,7 +321,7 @@ function spacer(after = 100) { return new Paragraph({ spacing: { after }, childr
 function buildHeader() {
   return new Header({ children: [new Paragraph({
     children: [
-      new TextRun({ text: 'CPC  |  ', color: GRAY, size: 18, font: 'Calibri' }),
+      new TextRun({ text: 'Abbotsford Veterinary Clinic  |  ', color: GRAY, size: 18, font: 'Calibri' }),
       new TextRun({ text: 'Poultry Farm Visit Checklist', bold: true, color: MED_BLUE, size: 18, font: 'Calibri' }),
     ],
     alignment: AlignmentType.RIGHT,
@@ -348,19 +350,26 @@ const pageMargin = {
 // ============================================================
 // CONTENT
 // ============================================================
-const logoBuffer = fs.existsSync(LOGO_PATH) ? fs.readFileSync(LOGO_PATH) : null;
+const logoBuffer    = fs.existsSync(LOGO_PATH)    ? fs.readFileSync(LOGO_PATH)    : null;
+const taglineBuffer = fs.existsSync(TAGLINE_PATH) ? fs.readFileSync(TAGLINE_PATH) : null;
 const C = [];
 
 // ---- COVER BLOCK ----
-C.push(new Paragraph({ spacing: { before: 160, after: 0 }, children: [] }));
+C.push(new Paragraph({ spacing: { before: 200, after: 0 }, children: [] }));
 if (logoBuffer) {
-  C.push(new Paragraph({ alignment: AlignmentType.CENTER, spacing: { after: 120 },
-    children: [new ImageRun({ data: logoBuffer, transformation: { width: 110, height: 110 }, type: 'png' })] }));
+  // Abbvet Logo-1.png is 211 x 57 (3.70:1) — preserve aspect ratio
+  C.push(new Paragraph({ alignment: AlignmentType.CENTER, spacing: { after: 150 },
+    children: [new ImageRun({ data: logoBuffer, transformation: { width: 300, height: 81 }, type: 'png' })] }));
 }
 C.push(new Paragraph({ alignment: AlignmentType.CENTER, spacing: { after: 60 },
   children: [new TextRun({ text: 'POULTRY FARM VISIT CHECKLIST', bold: true, color: DARK_BLUE, size: 40, font: 'Calibri' })] }));
-C.push(new Paragraph({ alignment: AlignmentType.CENTER, spacing: { after: 160 },
+C.push(new Paragraph({ alignment: AlignmentType.CENTER, spacing: { after: 150 },
   children: [new TextRun({ text: 'Veterinary Barn Walkthrough & Report Worksheet', italics: true, color: MED_BLUE, size: 24, font: 'Calibri' })] }));
+if (taglineBuffer) {
+  // Abbvet Logo-2.png is 172 x 39 (4.41:1) — the "together we ARE animal care" tagline
+  C.push(new Paragraph({ alignment: AlignmentType.CENTER, spacing: { after: 140 },
+    children: [new ImageRun({ data: taglineBuffer, transformation: { width: 225, height: 51 }, type: 'png' })] }));
+}
 C.push(new Paragraph({ alignment: AlignmentType.CENTER, spacing: { after: 140 },
   children: [new TextRun({ text: '___________________________________', color: GOLD, size: 22, font: 'Calibri' })] }));
 C.push(new Paragraph({ alignment: AlignmentType.CENTER, spacing: { after: 40 },
