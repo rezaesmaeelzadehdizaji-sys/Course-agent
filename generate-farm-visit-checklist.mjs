@@ -515,8 +515,9 @@ C.push(checkGrid([
 ], 2));
 
 C.push(subHead('Light'));
+C.push(hint('Measure intensity at bird level with a lux meter (a handheld light meter). Take readings in several spots, including under fixtures and in the corners.'));
 C.push(checkGrid([
-  'Intensity adequate and even at bird level',
+  'Intensity adequate and even at bird level (lux meter)',
   'No dark spots where birds avoid feed / water',
   'Photoperiod matches the lighting program',
   'A real dark period is provided',
