@@ -185,8 +185,8 @@ C.push(readingsTable([
 ]));
 
 // 2. Environment quick scan
-C.push(sectionBar(2, 'Environment Quick Scan (T-FLAWS)'));
-C.push(hint('Readings at bird level. T-FLAWS: Temperature, Feed, Light, Air, Water, Sanitation & Space.'));
+C.push(sectionBar(2, 'Environment Quick Scan'));
+C.push(hint('Readings at bird level: temperature, feed, light, air, water, sanitation and space.'));
 C.push(readingsTable([
   ['Temperature at bird level', 'Breed target for age'],
   ['Ammonia (NH3)', 'Under 15 ppm; act above 20'],

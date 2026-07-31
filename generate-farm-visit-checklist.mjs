@@ -471,10 +471,10 @@ C.push(spacer(50));
 C.push(writeBox('Biosecurity notes and gaps:', 3));
 
 // ============================================================
-// 5 — ENVIRONMENT WALKTHROUGH (T-FLAWS)
+// 5 — ENVIRONMENT WALKTHROUGH
 // ============================================================
-C.push(sectionBar(5, 'Environment Walkthrough (T-FLAWS)'));
-C.push(hint('T-FLAWS: Temperature, Feed, Light, Air, Water, Sanitation & Space. Log readings at bird level, then work through each area.'));
+C.push(sectionBar(5, 'Environment Walkthrough'));
+C.push(hint('Log the readings at bird level, then work through each area: temperature, feed, light, air, water, and sanitation and space.'));
 C.push(subHead('Environment readings (measure at bird level)'));
 C.push(readingsTable([
   ['Temperature at bird level', 'Match breed guide for age; brooding day 0-2 ~32-34 C'],
@@ -491,7 +491,7 @@ C.push(readingsTable([
 ]));
 C.push(hint('Target guides are general starting points. Confirm against the flock’s own management guide (Ross, Cobb, Lohmann, Hy-Line) and the NFACC Code of Practice.'));
 
-C.push(subHead('T: Temperature'));
+C.push(subHead('Temperature'));
 C.push(checkGrid([
   'Bird-level temperature within target for age',
   'Heat even across the house (no cold ends)',
@@ -501,7 +501,7 @@ C.push(checkGrid([
   'Bird comfort matches the thermostat reading',
 ], 2));
 
-C.push(subHead('F: Feed'));
+C.push(subHead('Feed'));
 C.push(options('Feeder type:', ['Pan', 'Chain / trough', 'Tube', 'Supplemental paper / trays']));
 C.push(checkGrid([
   'Feeder space adequate for flock size',
@@ -514,7 +514,7 @@ C.push(checkGrid([
   'Feed form correct (crumble / pellet / mash), low fines',
 ], 2));
 
-C.push(subHead('L: Light'));
+C.push(subHead('Light'));
 C.push(checkGrid([
   'Intensity adequate and even at bird level',
   'No dark spots where birds avoid feed / water',
@@ -524,7 +524,7 @@ C.push(checkGrid([
   'Dimmers set correctly, no flicker',
 ], 2));
 
-C.push(subHead('A: Air'));
+C.push(subHead('Air'));
 C.push(checkGrid([
   'No ammonia sting at bird level (eyes / nose)',
   'Minimum ventilation adequate (CO2 in range)',
@@ -536,7 +536,7 @@ C.push(checkGrid([
   'No condensation on ceiling or walls',
 ], 2));
 
-C.push(subHead('W: Water'));
+C.push(subHead('Water'));
 C.push(options('Drinker type:', ['Nipple', 'Bell', 'Cup', 'Trough']));
 C.push(checkGrid([
   'Drinker height / pressure correct for age',
@@ -549,7 +549,7 @@ C.push(checkGrid([
   'Water temperature comfortable (not warm)',
 ], 2));
 
-C.push(subHead('S: Sanitation & Space'));
+C.push(subHead('Sanitation & Space'));
 C.push(checkGrid([
   'Stocking density within target for type',
   'Litter dry, friable, and of adequate depth',

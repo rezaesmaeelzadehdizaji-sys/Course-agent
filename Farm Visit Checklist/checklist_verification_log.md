@@ -12,16 +12,16 @@ management guide (Ross, Cobb, Lohmann, Hy-Line) and the NFACC Code of Practice.
 
 | # | Claim / target in checklist | Value used | Authoritative source | Status |
 |---|---|---|---|---|
-| 1 | Brooding temperature, day 0-2 | ~32-34 °C at bird level | Aviagen Ross Broiler Mgmt 2025; McGill (per project T-FLAWS deep research, 2+ sources) | Confirmed |
-| 2 | Relative humidity | 60-70% brooding; 50-60% grow-out | Alabama Extension; Ralco (project T-FLAWS research) | Confirmed |
+| 1 | Brooding temperature, day 0-2 | ~32-34 °C at bird level | Aviagen Ross Broiler Mgmt 2025; McGill University (2+ sources) | Confirmed |
+| 2 | Relative humidity | 60-70% brooding; 50-60% grow-out | Alabama Extension; Ralco Agriculture | Confirmed |
 | 3 | Ammonia (NH3) | aim <15 ppm; investigate >20; harmful >25 | EFSA (<15 ppm); DEFRA (20 ppm welfare max); National Chicken Council (<25 ppm) | Confirmed |
-| 4 | Carbon dioxide (CO2) | <3,000 ppm | SenseHub/MSD; Vostermans (project T-FLAWS research) | Confirmed |
+| 4 | Carbon dioxide (CO2) | <3,000 ppm | SenseHub/MSD; Vostermans Ventilation | Confirmed |
 | 5 | Light intensity, early days | ≥20 lux, NFACC first 3 days | NFACC Poultry Code of Practice | Confirmed (corrected — was "first 7 days") |
 | 6 | Dark period | ≥4 continuous hours per 24 h (NFACC min; many give 6+) | NFACC Poultry Code of Practice | Confirmed (corrected — was "≥6 h") |
 | 7 | Water:feed ratio | ~1.7-1.8:1 at normal temp; rises in heat | Mississippi State University Extension (1.6-1.8:1) | Confirmed |
 | 8 | Water temperature at drinker | 10-14 °C | Aviagen Water Quality 2025 | Confirmed |
 | 9 | Water pH | 6.0-8.0 | Aviagen Water Quality 2025 | Confirmed |
-| 10 | Litter moisture | ~20-25% | UGA Extension; Mississippi State (project T-FLAWS research) | Confirmed |
+| 10 | Litter moisture | ~20-25% | UGA Extension; Mississippi State Extension | Confirmed |
 | 11 | Stocking density (broiler) | ≤31 kg/m² normal; up to 38 kg/m² | NFACC Poultry Code of Practice | Confirmed |
 | 12 | Gait score | 0-5 (0 = walks with ease; 3 = obvious defect; 5 = unable to walk) | Bristol gait score / Kestin et al. 1992, Vet Record | Confirmed |
 | 13 | Footpad dermatitis (FPD) | 0-2 (0 clean; 1 mild; 2 severe ulceration); note some use 0-4 | 0-2 macroscopic scale; 0-4 Welfare Quality macro score | Confirmed |
