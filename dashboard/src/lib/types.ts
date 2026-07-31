@@ -26,13 +26,9 @@ export interface SubsectionData {
   imagePlaceholder?: { caption: string; description: string }
 }
 
-export interface SectionSubsections {
-  whatItIs: SubsectionData
-  whyItMatters: SubsectionData
-  howToAssess: SubsectionData
-  abnormalFindings: SubsectionData
-  managementResponses: SubsectionData & { imagePlaceholder: { caption: string; description: string } }
-}
+// Generalized: a section's subsections are an ordered list of {heading, paragraphs}.
+// (Course 3 / T-FLAWS originally used a fixed 5-key object; it has been migrated to this array shape.)
+export type SectionSubsections = SubsectionData[]
 
 export interface Section {
   id: string

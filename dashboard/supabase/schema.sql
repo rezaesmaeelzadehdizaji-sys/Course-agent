@@ -38,15 +38,12 @@ create table if not exists introductions (
 
 -- ============================================================
 -- SECTIONS
--- T-FLAWS component sections — 6 per course
--- subsections jsonb shape:
---   {
---     whatItIs:            { heading, paragraphs[] }
---     whyItMatters:        { heading, paragraphs[] }
---     howToAssess:         { heading, paragraphs[] }
---     abnormalFindings:    { heading, paragraphs[] }
---     managementResponses: { heading, paragraphs[], imagePlaceholder: { caption, description } }
---   }
+-- Content sections for a course (variable count).
+-- letter: the acronym letter for T-FLAWS (T/F/L/A/W/S); a single space for
+--   numbered courses, where the UI shows the section's ordinal (sort_order) instead.
+-- subsections jsonb shape (generalized — ordered array):
+--   [ { heading, paragraphs[], imagePlaceholder?: { caption, description } }, ... ]
+-- (Course 3 originally used a fixed 5-key object; migrated to this array shape.)
 -- ============================================================
 create table if not exists sections (
   id              uuid primary key default gen_random_uuid(),

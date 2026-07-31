@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import type { Section, SectionSubsections, SubsectionData } from '@/lib/types'
+import type { Section, SubsectionData } from '@/lib/types'
 import ParagraphEditor from './ParagraphEditor'
 import { updateSection } from '@/actions/sections'
 
@@ -10,34 +10,35 @@ interface Props {
   courseId: string
 }
 
-const SUBSECTION_LABELS: Array<{ key: keyof SectionSubsections; label: string }> = [
-  { key: 'whatItIs',            label: 'What It Is' },
-  { key: 'whyItMatters',        label: 'Why It Matters' },
-  { key: 'howToAssess',         label: 'How to Assess' },
-  { key: 'abnormalFindings',    label: 'What Abnormal Findings Indicate' },
-  { key: 'managementResponses', label: 'Recommended Management Responses' },
-]
-
 export default function SectionEditor({ section, courseId }: Props) {
   const [expanded, setExpanded] = useState(false)
-  const [subsections, setSubsections] = useState<SectionSubsections>(section.subsections)
+  const [subsections, setSubsections] = useState<SubsectionData[]>(
+    Array.isArray(section.subsections) ? section.subsections : [],
+  )
   const [saving, setSaving] = useState(false)
   const [saved, setSaved] = useState(false)
   const [error, setError] = useState('')
 
-  function handleParagraphsChange(key: keyof SectionSubsections, paragraphs: string[]) {
-    setSubsections(prev => ({
-      ...prev,
-      [key]: { ...prev[key], paragraphs },
-    }))
+  // Badge: use the acronym letter if present (T-FLAWS), else the section's ordinal.
+  const badge = section.letter && section.letter.trim() ? section.letter.trim() : String(section.sort_order)
+
+  function handleParagraphsChange(idx: number, paragraphs: string[]) {
+    setSubsections(prev => prev.map((s, i) => (i === idx ? { ...s, paragraphs } : s)))
     setSaved(false)
   }
 
-  function handleHeadingChange(key: keyof SectionSubsections, heading: string) {
-    setSubsections(prev => ({
-      ...prev,
-      [key]: { ...prev[key], heading },
-    }))
+  function handleHeadingChange(idx: number, heading: string) {
+    setSubsections(prev => prev.map((s, i) => (i === idx ? { ...s, heading } : s)))
+    setSaved(false)
+  }
+
+  function addSubsection() {
+    setSubsections(prev => [...prev, { heading: '', paragraphs: [] }])
+    setSaved(false)
+  }
+
+  function removeSubsection(idx: number) {
+    setSubsections(prev => prev.filter((_, i) => i !== idx))
     setSaved(false)
   }
 
@@ -63,12 +64,12 @@ export default function SectionEditor({ section, courseId }: Props) {
       >
         <div className="flex items-center gap-3">
           <span className="w-8 h-8 rounded-full bg-[#1F3864] text-white text-sm font-bold flex items-center justify-center flex-shrink-0">
-            {section.letter}
+            {badge}
           </span>
           <div>
-            <p className="text-sm font-semibold text-[#1F3864]">{section.full_title}</p>
+            <p className="text-sm font-semibold text-[#1F3864]">{section.full_title || section.title}</p>
             <p className="text-xs text-gray-400">
-              {SUBSECTION_LABELS.length} subsections
+              {subsections.length} {subsections.length === 1 ? 'subsection' : 'subsections'}
             </p>
           </div>
         </div>
@@ -83,45 +84,56 @@ export default function SectionEditor({ section, courseId }: Props) {
       {/* Expanded content */}
       {expanded && (
         <div className="border-t border-gray-100 p-4 space-y-6">
-          {SUBSECTION_LABELS.map(({ key, label }) => {
-            const sub = subsections[key] as SubsectionData
-            return (
-              <div key={key} className="space-y-2">
-                <div className="flex items-center gap-2">
-                  <h4 className="text-xs font-semibold text-[#2E74B5] uppercase tracking-wide">
-                    {label}
-                  </h4>
-                </div>
-
-                {/* Heading */}
-                <div>
-                  <label className="text-xs text-gray-500 block mb-1">Heading</label>
-                  <input
-                    type="text"
-                    value={sub?.heading ?? label}
-                    onChange={e => handleHeadingChange(key, e.target.value)}
-                    className="w-full border border-gray-200 rounded-lg px-3 py-1.5 text-sm focus:outline-none focus:ring-2 focus:ring-[#2E74B5]"
-                  />
-                </div>
-
-                {/* Paragraphs */}
-                <ParagraphEditor
-                  paragraphs={sub?.paragraphs ?? []}
-                  onChange={paras => handleParagraphsChange(key, paras)}
-                />
-
-                {/* Image placeholder for managementResponses */}
-                {key === 'managementResponses' && (
-                  <div className="border border-dashed border-gray-300 rounded-lg p-3 bg-gray-50 text-xs text-gray-500">
-                    <p className="font-medium mb-1">Image Placeholder</p>
-                    <p className="text-gray-400">
-                      Caption: {(sub as any)?.imagePlaceholder?.caption || '(none)'}
-                    </p>
-                  </div>
-                )}
+          {subsections.length === 0 && (
+            <p className="text-sm text-gray-400">No subsections yet.</p>
+          )}
+          {subsections.map((sub, idx) => (
+            <div key={idx} className="space-y-2">
+              <div className="flex items-center justify-between gap-2">
+                <h4 className="text-xs font-semibold text-[#2E74B5] uppercase tracking-wide">
+                  Subsection {idx + 1}
+                </h4>
+                <button
+                  onClick={() => removeSubsection(idx)}
+                  className="text-xs text-red-500 hover:text-red-700"
+                >
+                  Remove
+                </button>
               </div>
-            )
-          })}
+
+              {/* Heading */}
+              <div>
+                <label className="text-xs text-gray-500 block mb-1">Heading</label>
+                <input
+                  type="text"
+                  value={sub?.heading ?? ''}
+                  onChange={e => handleHeadingChange(idx, e.target.value)}
+                  className="w-full border border-gray-200 rounded-lg px-3 py-1.5 text-sm focus:outline-none focus:ring-2 focus:ring-[#2E74B5]"
+                />
+              </div>
+
+              {/* Paragraphs */}
+              <ParagraphEditor
+                paragraphs={sub?.paragraphs ?? []}
+                onChange={paras => handleParagraphsChange(idx, paras)}
+              />
+
+              {/* Optional image placeholder */}
+              {sub?.imagePlaceholder && (
+                <div className="border border-dashed border-gray-300 rounded-lg p-3 bg-gray-50 text-xs text-gray-500">
+                  <p className="font-medium mb-1">Image Placeholder</p>
+                  <p className="text-gray-400">Caption: {sub.imagePlaceholder.caption || '(none)'}</p>
+                </div>
+              )}
+            </div>
+          ))}
+
+          <button
+            onClick={addSubsection}
+            className="text-sm text-[#2E74B5] hover:underline"
+          >
+            + Add subsection
+          </button>
 
           {error && (
             <p className="text-sm text-red-600 bg-red-50 border border-red-200 rounded px-3 py-2">

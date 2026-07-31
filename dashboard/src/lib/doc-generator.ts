@@ -585,41 +585,21 @@ function buildTflawsSection(
     }),
   ];
 
-  const subs = section.subsections;
+  // subsections is an ordered array of { heading, paragraphs, imagePlaceholder? }
+  const subs = Array.isArray(section.subsections) ? section.subsections : [];
 
-  children.push(
-    new Paragraph({ style: "Heading2", children: [new TextRun({ text: subs.whatItIs.heading })] })
-  );
-  subs.whatItIs.paragraphs.forEach((p) => children.push(renderParagraph(p)));
+  subs.forEach((sub) => {
+    if (sub.heading) {
+      children.push(
+        new Paragraph({ style: "Heading2", children: [new TextRun({ text: sub.heading })] })
+      );
+    }
+    sub.paragraphs.forEach((p) => children.push(renderParagraph(p)));
 
-  children.push(
-    new Paragraph({ style: "Heading2", children: [new TextRun({ text: subs.whyItMatters.heading })] })
-  );
-  subs.whyItMatters.paragraphs.forEach((p) => children.push(renderParagraph(p)));
-
-  children.push(
-    new Paragraph({ style: "Heading2", children: [new TextRun({ text: subs.howToAssess.heading })] })
-  );
-  subs.howToAssess.paragraphs.forEach((p) => children.push(renderParagraph(p)));
-
-  children.push(
-    new Paragraph({
-      style: "Heading2",
-      children: [new TextRun({ text: subs.abnormalFindings.heading })],
-    })
-  );
-  subs.abnormalFindings.paragraphs.forEach((p) => children.push(renderParagraph(p)));
-
-  children.push(
-    new Paragraph({
-      style: "Heading2",
-      children: [new TextRun({ text: subs.managementResponses.heading })],
-    })
-  );
-  subs.managementResponses.paragraphs.forEach((p) => children.push(renderParagraph(p)));
-
-  const placeholder = subs.managementResponses.imagePlaceholder;
-  children.push(...buildScoringTableAndPhotos(section.id, placeholder.caption, images));
+    if (sub.imagePlaceholder) {
+      children.push(...buildScoringTableAndPhotos(section.id, sub.imagePlaceholder.caption, images));
+    }
+  });
 
   children.push(new Paragraph({ children: [new PageBreak()] }));
 

@@ -52,7 +52,7 @@ export default async function CourseDetailPage({ params }: Props) {
           <div>
             <div className="flex items-center gap-3 mb-2">
               <span className="text-xs font-semibold text-[#2E74B5] tracking-widest uppercase">
-                Course {course.course_number} of 17
+                Course {course.course_number}
               </span>
               <span className={`text-xs font-medium px-2 py-0.5 rounded-full ${cfg.bg} ${cfg.text}`}>
                 {course.status}
@@ -109,10 +109,10 @@ export default async function CourseDetailPage({ params }: Props) {
         </section>
       )}
 
-      {/* T-FLAWS Sections */}
+      {/* Sections */}
       {sections.length > 0 && (
         <section>
-          <h2 className="text-base font-semibold text-[#1F3864] mb-3">T-FLAWS Sections</h2>
+          <h2 className="text-base font-semibold text-[#1F3864] mb-3">Sections</h2>
           <div className="space-y-3">
             {sections.map((section) => (
               <SectionEditor key={section.id} section={section} courseId={course.id} />

@@ -5,6 +5,7 @@ import { createClient } from '@/lib/supabase/server'
 import type { SectionSubsections, IntroSubsection, JournalEntry, Reference } from '@/lib/types'
 
 export async function updateSection(sectionId: string, subsections: SectionSubsections) {
+  // subsections is now an ordered array of { heading, paragraphs }.
   const supabase = await createClient()
 
   const { data: section, error: fetchError } = await supabase
