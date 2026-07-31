@@ -18,10 +18,22 @@ export default function LoginPage() {
     e.preventDefault()
     setLoading(true)
     setError('')
-    const { error } = await supabase.auth.signInWithPassword({ email, password })
+    const { data, error } = await supabase.auth.signInWithPassword({ email, password })
     if (error) {
       setError(error.message)
     } else {
+      // Best-effort login notification — never block or fail the sign-in on it.
+      try {
+        const token = data.session?.access_token
+        if (token) {
+          await fetch('/api/notify-login', {
+            method: 'POST',
+            headers: { Authorization: `Bearer ${token}` },
+          })
+        }
+      } catch {
+        /* ignore notification errors */
+      }
       window.location.href = '/dashboard'
     }
     setLoading(false)
