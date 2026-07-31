@@ -87,7 +87,7 @@ function sectionBar(num, title) {
     ],
     shading: { type: ShadingType.SOLID, color: HDR_BG },
     keepNext: true, keepLines: true,
-    spacing: { before: 260, after: 120 },
+    spacing: { before: 150, after: 80 },
     border: {
       top:    { style: BorderStyle.SINGLE, size: 2, color: HDR_BG, space: 4 },
       bottom: { style: BorderStyle.SINGLE, size: 2, color: HDR_BG, space: 4 },
@@ -102,7 +102,7 @@ function subHead(text) {
   return new Paragraph({
     children: [new TextRun({ text, bold: true, color: MED_BLUE, size: 22, font: 'Calibri' })],
     keepNext: true, keepLines: true,
-    spacing: { before: 160, after: 80 },
+    spacing: { before: 110, after: 55 },
     border:  { bottom: { style: BorderStyle.SINGLE, size: 4, color: GOLD } },
   });
 }
@@ -346,8 +346,8 @@ function buildFooter() {
 }
 
 const pageMargin = {
-  top: convertInchesToTwip(0.9), bottom: convertInchesToTwip(0.9),
-  left: convertInchesToTwip(1), right: convertInchesToTwip(1),
+  top: convertInchesToTwip(0.7), bottom: convertInchesToTwip(0.7),
+  left: convertInchesToTwip(0.85), right: convertInchesToTwip(0.85),
 };
 
 // ============================================================
