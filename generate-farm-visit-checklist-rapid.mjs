@@ -77,7 +77,7 @@ function kv2Table(pairs) {
   const W = [1900, 2900, 1900, 2900];
   const rows = [];
   for (let i = 0; i < pairs.length; i += 2) {
-    rows.push(new TableRow({ height: { value: 330, rule: HeightRule.ATLEAST }, children: [labelCell(pairs[i], W[0]), blankCell(W[1]), labelCell(pairs[i + 1] || '', W[2]), blankCell(W[3])] }));
+    rows.push(new TableRow({ cantSplit: true, height: { value: 330, rule: HeightRule.ATLEAST }, children: [labelCell(pairs[i], W[0]), blankCell(W[1]), labelCell(pairs[i + 1] || '', W[2]), blankCell(W[3])] }));
   }
   return new Table({ width: { size: 100, type: WidthType.PERCENTAGE }, rows });
 }
@@ -87,13 +87,13 @@ function readingsTable(rows) {
   const W = [3100, 1700, 3600, 1200];
   const hdr = (t, i) => new TableCell({ width: { size: W[i], type: WidthType.DXA }, borders: cellBdr, shading: { type: ShadingType.SOLID, color: HDR_BG }, margins: { top: 30, bottom: 30, left: 80, right: 80 },
     children: [new Paragraph({ alignment: AlignmentType.CENTER, children: [run(t, { bold: true, size: 17, color: 'FFFFFF' })], spacing: { after: 0 } })] });
-  const body = rows.map((r, ri) => new TableRow({ height: { value: 300, rule: HeightRule.ATLEAST }, children: [
+  const body = rows.map((r, ri) => new TableRow({ cantSplit: true, height: { value: 300, rule: HeightRule.ATLEAST }, children: [
     new TableCell({ width: { size: W[0], type: WidthType.DXA }, borders: cellBdr, shading: { type: ShadingType.SOLID, color: ri % 2 ? ALT_BG : 'FFFFFF' }, margins: { top: 28, bottom: 28, left: 80, right: 80 }, children: [new Paragraph({ children: [run(r[0], { size: 17, bold: true })], spacing: { after: 0 } })] }),
     new TableCell({ width: { size: W[1], type: WidthType.DXA }, borders: cellBdr, shading: { type: ShadingType.SOLID, color: ri % 2 ? ALT_BG : 'FFFFFF' }, margins: { top: 28, bottom: 28, left: 80, right: 80 }, children: [new Paragraph({ spacing: { after: 0 } })] }),
     new TableCell({ width: { size: W[2], type: WidthType.DXA }, borders: cellBdr, shading: { type: ShadingType.SOLID, color: ri % 2 ? ALT_BG : 'FFFFFF' }, margins: { top: 28, bottom: 28, left: 80, right: 80 }, children: [new Paragraph({ children: [run(r[1], { size: 16, color: GRAY })], spacing: { after: 0 } })] }),
     new TableCell({ width: { size: W[3], type: WidthType.DXA }, borders: cellBdr, shading: { type: ShadingType.SOLID, color: ri % 2 ? ALT_BG : 'FFFFFF' }, margins: { top: 28, bottom: 28, left: 80, right: 80 }, children: [new Paragraph({ alignment: AlignmentType.CENTER, children: [new TextRun({ text: 'Y  /  N', size: 15, color: 'B0B0B0', font: 'Calibri' })], spacing: { after: 0 } })] }),
   ] }));
-  return new Table({ width: { size: 100, type: WidthType.PERCENTAGE }, rows: [new TableRow({ tableHeader: true, children: ['Parameter', 'Reading', 'Target guide', 'OK?'].map(hdr) }), ...body] });
+  return new Table({ width: { size: 100, type: WidthType.PERCENTAGE }, rows: [new TableRow({ cantSplit: true, tableHeader: true, children: ['Parameter', 'Reading', 'Target guide', 'OK?'].map(hdr) }), ...body] });
 }
 
 function checkGrid(items, cols = 2) {
@@ -108,7 +108,7 @@ function checkGrid(items, cols = 2) {
       cells.push(new TableCell({ width: { size: w, type: WidthType.DXA }, borders: none, margins: { top: 14, bottom: 14, left: 30, right: 100 },
         children: [new Paragraph({ children: txt ? [box(18), run(txt, { size: 18 })] : [], spacing: { after: 0 } })] }));
     }
-    rows.push(new TableRow({ children: cells }));
+    rows.push(new TableRow({ cantSplit: true, children: cells }));
   }
   return new Table({ width: { size: 100, type: WidthType.PERCENTAGE }, rows });
 }
@@ -116,9 +116,9 @@ function checkGrid(items, cols = 2) {
 function blankGridTable(headers, widths, nRows) {
   const hdr = (t, i) => new TableCell({ width: { size: widths[i], type: WidthType.DXA }, borders: cellBdr, shading: { type: ShadingType.SOLID, color: HDR_BG }, margins: { top: 30, bottom: 30, left: 70, right: 70 },
     children: [new Paragraph({ alignment: AlignmentType.CENTER, children: [run(t, { bold: true, size: 16, color: 'FFFFFF' })], spacing: { after: 0 } })] });
-  const rows = [new TableRow({ tableHeader: true, children: headers.map(hdr) })];
+  const rows = [new TableRow({ cantSplit: true, tableHeader: true, children: headers.map(hdr) })];
   for (let r = 0; r < nRows; r++) {
-    rows.push(new TableRow({ height: { value: 360, rule: HeightRule.ATLEAST }, children: headers.map((_, i) => new TableCell({ width: { size: widths[i], type: WidthType.DXA }, borders: cellBdr, shading: { type: ShadingType.SOLID, color: r % 2 ? ALT_BG : 'FFFFFF' }, margins: { top: 30, bottom: 30, left: 70, right: 70 }, children: [new Paragraph({ spacing: { after: 0 } })] })) }));
+    rows.push(new TableRow({ cantSplit: true, height: { value: 360, rule: HeightRule.ATLEAST }, children: headers.map((_, i) => new TableCell({ width: { size: widths[i], type: WidthType.DXA }, borders: cellBdr, shading: { type: ShadingType.SOLID, color: r % 2 ? ALT_BG : 'FFFFFF' }, margins: { top: 30, bottom: 30, left: 70, right: 70 }, children: [new Paragraph({ spacing: { after: 0 } })] })) }));
   }
   return new Table({ width: { size: 100, type: WidthType.PERCENTAGE }, rows });
 }
@@ -127,7 +127,7 @@ function writeBox(label, lines = 2) {
   const inner = [new Paragraph({ children: [run(label, { bold: true, size: 18, color: MED_BLUE })], spacing: { after: 40 } })];
   for (let i = 0; i < lines; i++) inner.push(new Paragraph({ spacing: { after: 0, line: 320, lineRule: 'auto' }, children: [run('', {})] }));
   const bdr = { style: BorderStyle.SINGLE, size: 4, color: GREEN };
-  return new Table({ width: { size: 100, type: WidthType.PERCENTAGE }, rows: [new TableRow({ children: [new TableCell({ width: { size: CONTENT_W, type: WidthType.DXA }, borders: { top: bdr, bottom: bdr, left: bdr, right: bdr }, margins: { top: 60, bottom: 60, left: 110, right: 110 }, children: inner })] })] });
+  return new Table({ width: { size: 100, type: WidthType.PERCENTAGE }, rows: [new TableRow({ cantSplit: true, children: [new TableCell({ width: { size: CONTENT_W, type: WidthType.DXA }, borders: { top: bdr, bottom: bdr, left: bdr, right: bdr }, margins: { top: 60, bottom: 60, left: 110, right: 110 }, children: inner })] })] });
 }
 
 // ---------- header / footer ----------
