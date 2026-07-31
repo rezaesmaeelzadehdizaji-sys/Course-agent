@@ -86,6 +86,7 @@ function sectionBar(num, title) {
       new TextRun({ text: title, bold: true, color: 'FFFFFF', size: 24, font: 'Calibri' }),
     ],
     shading: { type: ShadingType.SOLID, color: HDR_BG },
+    keepNext: true, keepLines: true,
     spacing: { before: 260, after: 120 },
     border: {
       top:    { style: BorderStyle.SINGLE, size: 2, color: HDR_BG, space: 4 },
@@ -100,6 +101,7 @@ function sectionBar(num, title) {
 function subHead(text) {
   return new Paragraph({
     children: [new TextRun({ text, bold: true, color: MED_BLUE, size: 22, font: 'Calibri' })],
+    keepNext: true, keepLines: true,
     spacing: { before: 160, after: 80 },
     border:  { bottom: { style: BorderStyle.SINGLE, size: 4, color: GOLD } },
   });
@@ -109,6 +111,7 @@ function subHead(text) {
 function hint(text) {
   return new Paragraph({
     children: [new TextRun({ text, italics: true, color: GRAY, size: 18, font: 'Calibri' })],
+    keepNext: true,
     spacing: { after: 100 },
   });
 }
@@ -174,7 +177,7 @@ function kv2Table(pairs) {
   for (let i = 0; i < pairs.length; i += 2) {
     const a = pairs[i];
     const b = pairs[i + 1] || '';
-    rows.push(new TableRow({
+    rows.push(new TableRow({ cantSplit: true,
       height: { value: 360, rule: HeightRule.ATLEAST },
       children: [
         labelCell(a, W[0]),
@@ -192,7 +195,7 @@ function kv1Table(labels) {
   const W = [2500, 6860];
   return new Table({
     width: { size: 100, type: WidthType.PERCENTAGE },
-    rows: labels.map(l => new TableRow({
+    rows: labels.map(l => new TableRow({ cantSplit: true,
       height: { value: 360, rule: HeightRule.ATLEAST },
       children: [labelCell(l, W[0]), blankCell(W[1])],
     })),
@@ -209,7 +212,7 @@ function readingsTable(rows) {
     margins: { top: 40, bottom: 40, left: 90, right: 90 },
     children: [new Paragraph({ alignment: AlignmentType.CENTER, children: [run(t, { bold: true, size: 18, color: 'FFFFFF' })], spacing: { after: 0 } })],
   });
-  const body = rows.map((r, ri) => new TableRow({
+  const body = rows.map((r, ri) => new TableRow({ cantSplit: true,
     height: { value: 340, rule: HeightRule.ATLEAST },
     children: [
       new TableCell({ width: { size: W[0], type: WidthType.DXA }, borders: cellBdr, shading: { type: ShadingType.SOLID, color: ri % 2 ? ALT_BG : 'FFFFFF' }, margins: { top: 40, bottom: 40, left: 90, right: 90 }, children: [new Paragraph({ children: [run(r[0], { size: 18, bold: true })], spacing: { after: 0 } })] }),
@@ -220,7 +223,7 @@ function readingsTable(rows) {
   }));
   return new Table({
     width: { size: 100, type: WidthType.PERCENTAGE },
-    rows: [new TableRow({ tableHeader: true, children: ['Parameter', 'Reading', 'Target guide', 'OK?'].map(hdr) }), ...body],
+    rows: [new TableRow({ cantSplit: true, tableHeader: true, children: ['Parameter', 'Reading', 'Target guide', 'OK?'].map(hdr) }), ...body],
   });
 }
 
@@ -241,7 +244,7 @@ function checkGrid(items, cols = 2) {
         children: [new Paragraph({ children: txt ? [box(19), run(txt, { size: 19 })] : [], spacing: { after: 0 } })],
       }));
     }
-    rows.push(new TableRow({ children: cells }));
+    rows.push(new TableRow({ cantSplit: true, children: cells }));
   }
   return new Table({ width: { size: 100, type: WidthType.PERCENTAGE }, rows });
 }
@@ -253,7 +256,7 @@ function writeBox(label = 'Observations / notes:', lines = 3) {
   const bdr = { style: BorderStyle.SINGLE, size: 4, color: GOLD };
   return new Table({
     width: { size: 100, type: WidthType.PERCENTAGE },
-    rows: [new TableRow({
+    rows: [new TableRow({ cantSplit: true,
       children: [new TableCell({
         width: { size: CONTENT_W, type: WidthType.DXA },
         borders: { top: bdr, bottom: bdr, left: bdr, right: bdr },
@@ -273,9 +276,9 @@ function blankGridTable(headers, widths, nRows) {
     margins: { top: 40, bottom: 40, left: 80, right: 80 },
     children: [new Paragraph({ alignment: AlignmentType.CENTER, children: [run(t, { bold: true, size: 17, color: 'FFFFFF' })], spacing: { after: 0 } })],
   });
-  const rows = [new TableRow({ tableHeader: true, children: headers.map(hdr) })];
+  const rows = [new TableRow({ cantSplit: true, tableHeader: true, children: headers.map(hdr) })];
   for (let r = 0; r < nRows; r++) {
-    rows.push(new TableRow({
+    rows.push(new TableRow({ cantSplit: true,
       height: { value: 380, rule: HeightRule.ATLEAST },
       children: headers.map((_, i) => new TableCell({
         width: { size: widths[i], type: WidthType.DXA },
@@ -298,7 +301,7 @@ function refTable(headers, widths, rows) {
     margins: { top: 40, bottom: 40, left: 80, right: 80 },
     children: [new Paragraph({ children: [run(t, { bold: true, size: 18, color: 'FFFFFF' })], spacing: { after: 0 } })],
   });
-  const dataRow = (r, ri) => new TableRow({
+  const dataRow = (r, ri) => new TableRow({ cantSplit: true,
     children: r.map((txt, i) => new TableCell({
       width: { size: widths[i], type: WidthType.DXA },
       borders: cellBdr,
@@ -309,7 +312,7 @@ function refTable(headers, widths, rows) {
   });
   return new Table({
     width: { size: 100, type: WidthType.PERCENTAGE },
-    rows: [new TableRow({ tableHeader: true, children: headers.map(hdr) }), ...rows.map(dataRow)],
+    rows: [new TableRow({ cantSplit: true, tableHeader: true, children: headers.map(hdr) }), ...rows.map(dataRow)],
   });
 }
 
@@ -322,7 +325,7 @@ function buildHeader() {
   return new Header({ children: [new Paragraph({
     children: [
       new TextRun({ text: 'Abbotsford Veterinary Clinic  |  ', color: GRAY, size: 18, font: 'Calibri' }),
-      new TextRun({ text: 'Poultry Farm Visit Checklist', bold: true, color: MED_BLUE, size: 18, font: 'Calibri' }),
+      new TextRun({ text: 'Comprehensive Farm Visit Checklist', bold: true, color: MED_BLUE, size: 18, font: 'Calibri' }),
     ],
     alignment: AlignmentType.RIGHT,
     border: { bottom: { style: BorderStyle.SINGLE, size: 4, color: GOLD } },
@@ -362,7 +365,7 @@ if (logoBuffer) {
     children: [new ImageRun({ data: logoBuffer, transformation: { width: 300, height: 81 }, type: 'png' })] }));
 }
 C.push(new Paragraph({ alignment: AlignmentType.CENTER, spacing: { after: 60 },
-  children: [new TextRun({ text: 'POULTRY FARM VISIT CHECKLIST', bold: true, color: DARK_BLUE, size: 40, font: 'Calibri' })] }));
+  children: [new TextRun({ text: 'COMPREHENSIVE POULTRY FARM VISIT CHECKLIST', bold: true, color: DARK_BLUE, size: 36, font: 'Calibri' })] }));
 C.push(new Paragraph({ alignment: AlignmentType.CENTER, spacing: { after: 150 },
   children: [new TextRun({ text: 'Veterinary Barn Walkthrough & Report Worksheet', italics: true, color: MED_BLUE, size: 24, font: 'Calibri' })] }));
 if (taglineBuffer) {
