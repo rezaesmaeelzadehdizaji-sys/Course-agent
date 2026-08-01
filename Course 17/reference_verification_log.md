@@ -5,10 +5,10 @@
 
 All 30 references are government legislation/agency pages, national supply-management
 bodies and on-farm assurance programs, provincial marketing-board program pages,
-veterinary regulatory/residue-avoidance bodies, or CPC Learning Centre materials. These are
-Tier-2 institutional sources with stable, verifiable URLs (not peer-reviewed articles),
-so verification is by confirming the issuing body, document title, and the specific
-claim each supports against the live source. Statutory citations (act, year, chapter)
+veterinary regulatory/residue-avoidance bodies, or CPC Learning Centre materials. All but
+one are Tier-2 institutional sources with stable, verifiable URLs; the exception is [18], a
+peer-reviewed Frontiers in Microbiology article verified by DOI and PMID. Verification is by
+confirming the issuing body/authors, document title, and the specific claim each supports. Statutory citations (act, year, chapter)
 were confirmed against the official Justice Laws Website (federal) and BC Laws (provincial).
 
 | # | Reference | Verified basis | Status |
@@ -54,8 +54,9 @@ were confirmed against the official Justice Laws Website (federal) and BC Laws (
 - PCA Act enforced by BC SPCA; NFACC Code compliance is a defence: spca.bc.ca + gov.bc.ca animal-welfare FAQ.
 
 ## Notes
-- No peer-reviewed journal articles are cited in this course; the four journals listed in
-  "Recommended Peer-Reviewed Journals" are reading suggestions, not citations.
+- One peer-reviewed journal article is cited ([18] Diarra & Malouin 2014, Front Microbiol
+  5:282, verified by DOI/PMID); the four journals listed in "Recommended Peer-Reviewed
+  Journals" are reading suggestions, not citations.
 - All `[cited 2026 Jul]` dates applied to live online government/industry pages per the
   Cited-Date Rule (aligned to the July 2026 cover date). CPC local PDF (#14) carries no
   cited date per the same rule.
