@@ -369,7 +369,7 @@ function buildSection5() {
         { text: 'Salmonella', italics: true },
         { text: ' and Food Safety) in this series.' },
       ]),
-      para('Labeling and grading round out the product standards. Eggs are graded and labeled under federal grading rules, and poultry meat carries inspection and labeling requirements so that what is on the package is accurate. Claims like organic, free-range, or raised without antibiotics are regulated too, which means a farmer cannot simply print them. They have to be backed by the practices and the program behind them. The single thread running through all of it is honesty: the label has to match what is actually in the package.'),
+      para('Labeling and grading round out the product standards. Eggs are graded and labeled under federal grading rules, and poultry meat carries inspection and labeling requirements so that what is on the package is accurate. Claims like organic, free-range, or raised without antibiotics (RWA) are regulated too, which means a farmer cannot simply print them. They have to be backed by the practices and the program behind them. The single thread running through all of it is honesty: the label has to match what is actually in the package.'),
     ],
   };
 }
