@@ -354,6 +354,7 @@ function buildSection5() {
 
       h2('5.1 Regulation of Poultry Products for Slaughter, Processing, and Sale'),
       para('The main federal law here is the Safe Food for Canadians Act, with its regulations that came fully into force on January 15, 2019 [22]. Together they pulled a patchwork of older food rules into one modern system run by the CFIA. Three ideas sit at the center of it. Licensing means businesses that process, import, or trade food across provincial or national borders need a federal license. Preventive controls mean those businesses must have a written plan to identify and control food safety hazards. Traceability means being able to trace product one step back to where it came from and one step forward to where it went [23].'),
+      ...image(figBuf('photo5_1_processing_line.jpg'), 'Photo 5.1: A poultry processing line, the federally inspected stage where a bird becomes food. Source: meatpoultry.com.'),
       para('Where a bird is processed decides which rules apply. A federally registered plant operates under CFIA inspection and can ship product between provinces and for export. A provincially licensed plant is inspected by the province and sells within that province. This is why your processor and your market are linked: the plant you ship to determines whether your birds can be sold across the country or only inside your province.'),
 
       h2('5.2 Standards for Labeling, Slaughter, Pathogen Control, and Processing'),
@@ -640,7 +641,7 @@ async function main() {
     { lvl: 2, text: '4.4 Who Oversees Your Veterinarian', page: 14 },
     { lvl: 1, text: 'Section 5: Food Safety, Processing, and Product Standards', page: 15 },
     { lvl: 2, text: '5.1 Regulation of Poultry Products for Slaughter, Processing, and Sale', page: 15 },
-    { lvl: 2, text: '5.2 Standards for Labeling, Slaughter, Pathogen Control, and Processing', page: 15 },
+    { lvl: 2, text: '5.2 Standards for Labeling, Slaughter, Pathogen Control, and Processing', page: 16 },
     { lvl: 1, text: 'Section 6: Record-Keeping, Audits, and Compliance', page: 17 },
     { lvl: 2, text: '6.1 What Records Need to Be Maintained', page: 17 },
     { lvl: 2, text: '6.2 How Audits, Inspections, and Compliance Checks Are Carried Out', page: 17 },
