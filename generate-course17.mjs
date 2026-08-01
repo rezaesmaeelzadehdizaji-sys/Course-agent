@@ -359,6 +359,7 @@ function buildSection5() {
 
       h2('5.2 Standards for Labeling, Slaughter, Pathogen Control, and Processing'),
       para('Inside the plant, the rules get specific in ways that still matter to farmers. Slaughter must be humane, and humane treatment at slaughter is a requirement the CFIA enforces directly. The CFIA has suspended plant licenses for failing to meet it, which is a reminder that the welfare standards you follow on the farm carry right through to the end of the line [23].'),
+      ...image(figBuf('photo5_2_salmonella_plate.jpg'), 'Photo 5.2: A culture plate of bacterial colonies grown from raw poultry, the kind of pathogen screening that runs behind the scenes at the plant. Source: meatpoultry.com.'),
       para([
         { text: 'Pathogen control is a major focus, especially for organisms like ' },
         { text: 'Salmonella', italics: true },
@@ -642,18 +643,18 @@ async function main() {
     { lvl: 1, text: 'Section 5: Food Safety, Processing, and Product Standards', page: 15 },
     { lvl: 2, text: '5.1 Regulation of Poultry Products for Slaughter, Processing, and Sale', page: 15 },
     { lvl: 2, text: '5.2 Standards for Labeling, Slaughter, Pathogen Control, and Processing', page: 16 },
-    { lvl: 1, text: 'Section 6: Record-Keeping, Audits, and Compliance', page: 17 },
-    { lvl: 2, text: '6.1 What Records Need to Be Maintained', page: 17 },
-    { lvl: 2, text: '6.2 How Audits, Inspections, and Compliance Checks Are Carried Out', page: 17 },
-    { lvl: 1, text: 'Section 7: Provincial Variation in British Columbia', page: 19 },
-    { lvl: 2, text: '7.1 How Provincial Regulations Overlay Federal and Industry Rules', page: 19 },
-    { lvl: 2, text: '7.2 The Role of Provincial Acts, Marketing Boards, and Welfare Laws', page: 20 },
-    { lvl: 1, text: 'Section 8: Implications for Farmers and Good Practices', page: 21 },
-    { lvl: 2, text: '8.1 What Compliance Means for Everyday Farm Management', page: 21 },
-    { lvl: 2, text: '8.2 The Advantages: Market Access, Consumer Trust, and Better Birds', page: 21 },
-    { lvl: 2, text: '8.3 The Risks of Non-Compliance and How to Avoid Them', page: 22 },
-    { lvl: 1, text: 'Recommended Peer-Reviewed Journals', page: 23 },
-    { lvl: 1, text: 'References', page: 24 },
+    { lvl: 1, text: 'Section 6: Record-Keeping, Audits, and Compliance', page: 18 },
+    { lvl: 2, text: '6.1 What Records Need to Be Maintained', page: 18 },
+    { lvl: 2, text: '6.2 How Audits, Inspections, and Compliance Checks Are Carried Out', page: 18 },
+    { lvl: 1, text: 'Section 7: Provincial Variation in British Columbia', page: 20 },
+    { lvl: 2, text: '7.1 How Provincial Regulations Overlay Federal and Industry Rules', page: 20 },
+    { lvl: 2, text: '7.2 The Role of Provincial Acts, Marketing Boards, and Welfare Laws', page: 21 },
+    { lvl: 1, text: 'Section 8: Implications for Farmers and Good Practices', page: 22 },
+    { lvl: 2, text: '8.1 What Compliance Means for Everyday Farm Management', page: 22 },
+    { lvl: 2, text: '8.2 The Advantages: Market Access, Consumer Trust, and Better Birds', page: 22 },
+    { lvl: 2, text: '8.3 The Risks of Non-Compliance and How to Avoid Them', page: 23 },
+    { lvl: 1, text: 'Recommended Peer-Reviewed Journals', page: 24 },
+    { lvl: 1, text: 'References', page: 25 },
   ].map((e, i) => ({ ...e, anchor: `_Toc${String(100000 + i).padStart(8, '0')}` }));
 
   function escapeXml(s) { return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;'); }
