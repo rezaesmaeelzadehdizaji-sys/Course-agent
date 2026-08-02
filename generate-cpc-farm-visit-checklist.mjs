@@ -480,8 +480,8 @@ C.push(readingsTable([
   ['Relative humidity', '60-70% brooding; 50-60% grow-out'],
   ['Ammonia (NH3)', 'Aim below 15 ppm; investigate above 20; harmful above 25'],
   ['Carbon dioxide (CO2)', 'Below 3,000 ppm; higher = too little ventilation'],
-  ['Light intensity at bird level', 'First 7 days at least 20 lux (long day); no dark spots'],
-  ['Photoperiod / dark period', 'After week 1, at least 6 h dark per 24 h'],
+  ['Light intensity at bird level', 'About 50-100 lux first 7 days, reduce with age (Course 3); no dark spots'],
+  ['Photoperiod / dark period', 'About 6 h dark per 24 h (Course 3 lighting program)'],
   ['Nipple flow rate', 'Match to age per drinker maker (rises with age)'],
   ['Water temperature at drinker', 'About 10-14 C'],
   ['Water pH', 'About 6.0-8.0 at the drinker'],
@@ -769,13 +769,22 @@ C.push(refTable(['Parameter', 'Target guide'], [3400, 5960], [
   ['Relative humidity', '60-70% brooding, 50-60% grow-out'],
   ['Ammonia (NH3)', 'Target under 15 ppm; investigate above 20; harmful above 25'],
   ['Carbon dioxide (CO2)', 'Keep under 3,000 ppm'],
-  ['Light (brooding, early days)', 'At least 20 lux for the first 7 days (long day to find feed)'],
-  ['Dark period', 'At least 6 hours dark per 24 h after week 1'],
   ['Water:feed ratio', 'About 1.7-1.8:1 at normal temperature; rises in heat'],
   ['Water temperature at drinker', 'About 10-14 C'],
   ['Water pH', 'About 6.0-8.0'],
   ['Litter moisture', 'About 20-25%'],
   ['Stocking density (broiler, NFACC)', 'Up to 31 kg/m2 conventional; up to 38 kg/m2 enhanced'],
+]));
+C.push(spacer(30));
+
+C.push(subHead('Lighting program by age (from Course 3)'));
+C.push(refTable(['Age', 'Light', 'Dark', 'Intensity'], [2500, 1680, 1680, 3600], [
+  ['Day 1-7', '18 h', '6 h', '50-100 lux'],
+  ['Day 7-13', '18 h', '6 h', '30-50 lux'],
+  ['Day 14-21', '18 h', '6 h', '20-30 lux'],
+  ['Day 22-27', '18 h', '6 h', '10-15 lux'],
+  ['Day 28-31', '22 h', '2 h', '5-10 lux'],
+  ['Day 32-harvest', '24 h', 'none', '3-5 lux'],
 ]));
 C.push(spacer(40));
 

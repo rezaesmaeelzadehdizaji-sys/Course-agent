@@ -17,24 +17,28 @@ the project guide. All values now match Course 3.
 | Relative humidity | 60-70% brooding; 50-60% grow-out | 60-70% brooding; 50-60% week 2+ | Yes |
 | Ammonia (NH3) | aim <15 ppm; investigate >20; harmful >25 | >10 ppm immune effects; 15-20 ppm clearer; >25 ppm eye damage | Yes |
 | Carbon dioxide (CO2) | <3,000 ppm | >3,000 ppm indicates inadequate ventilation | Yes |
-| Light intensity | first 7 days at least 20 lux | first 7 days minimum 20 lux, 23 h/day | Yes (corrected) |
-| Dark period | after week 1, at least 6 h dark per 24 h | after week 1, minimum 6 h dark per 24 h | Yes (corrected) |
+| Light intensity | 50-100 lux day 1-7, reducing with age (full Course 3 schedule embedded) | Day 1-7: 50-100 lux; 7-13: 30-50; 14-21: 20-30; 22-27: 10-15; 28-31: 5-10; 32-harvest: 3-5 | Yes (Course 3 table copied verbatim) |
+| Dark period | ~6 h dark per 24 h (2 h near harvest) | 6 h dark days 1-27; 2 h days 28-31; none at harvest | Yes |
 | Water:feed ratio | ~1.7-1.8:1 at normal temp | 1.7-1.8:1 at thermoneutral | Yes |
 | Water temperature at drinker | 10-14 C | 10-14 C at the nipple | Yes |
 | Water pH | 6.0-8.0 | 6.0-8.0 at the drinker | Yes |
 | Litter moisture | ~20-25% | 20-25% (corrected in Course 3 from "below 30%") | Yes |
 | Stocking density (broiler) | <=31 kg/m2; up to 38 | NFACC 31 kg/m2 conventional; 38 kg/m2 enhanced | Yes |
 
-## Alignment correction made this pass
+## Lighting: Course 3 schedule embedded (correction)
 
-**Light and dark period were re-aligned to Course 3.** The Abbotsford (AVC)
-editions of these checklists use the NFACC regulatory minimums (20 lux for the
-first 3 days; 4 continuous hours of darkness) at the user's direction, because
-not every farm follows Aviagen. The **CPC** editions instead follow the CPC
-series: Course 3 teaches the Aviagen best-practice values (20 lux for the first
-7 days; at least 6 hours of darkness after week 1). This is the one intended
-divergence between the AVC and CPC editions. Both are correct; each matches its
-own brand's reference.
+The checklist now carries Course 3's full lighting-program-by-age table verbatim
+(Day 1-7: 50-100 lux, 18 h light / 6 h dark, down to Day 32-harvest: 3-5 lux,
+24 h light). An earlier draft of this checklist used "20 lux for the first 7
+days," which was wrong for the CPC series: 20 lux is only the welfare floor, not
+the brooding target Course 3 teaches. Course 3 specifies 50-100 lux for the
+first 7 days and reduces intensity with age. The full schedule is now in the
+appendix so the CPC checklist matches Course 3 exactly.
+
+Note on the Abbotsford (AVC) editions: those use the NFACC regulatory minimums
+(20 lux for the first 3 days; 4 continuous hours of darkness), which is
+appropriate for a general veterinary tool not tied to any one management guide.
+The CPC editions instead follow Course 3. This is the intended AVC/CPC divergence.
 
 ## Scoring scales (welfare)
 
