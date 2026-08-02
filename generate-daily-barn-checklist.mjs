@@ -148,7 +148,7 @@ if (logoBuffer) C.push(new Paragraph({ alignment: AlignmentType.CENTER, spacing:
 C.push(new Paragraph({ alignment: AlignmentType.CENTER, spacing: { after: 40 }, children: [new TextRun({ text: TITLE, bold: true, color: DARK_BLUE, size: 40, font: 'Calibri' })] }));
 C.push(new Paragraph({ alignment: AlignmentType.CENTER, spacing: { after: 60 }, children: [new TextRun({ text: 'Your Every-Day Walk-Through', italics: true, color: MED_BLUE, size: 24, font: 'Calibri' })] }));
 C.push(new Paragraph({ alignment: AlignmentType.CENTER, spacing: { after: 90 }, children: [new TextRun({ text: '___________________________________', color: GOLD, size: 22, font: 'Calibri' })] }));
-C.push(para('Walk your barn the same way every day. The birds tell you what they need before any gauge does. Catching a small problem on your morning walk is what keeps it from turning into a big one. This walk covers the T-FLAWS checkpoints: Temperature, Feed, Light, Air, Water, and Sanitation. Tick what you check, note anything off, and fix what you can before you leave.', { after: 60 }));
+C.push(para('Walk your barn the same way every day. The birds tell you what they need before any gauge does. Catching a small problem on your morning walk is what keeps it from turning into a big one. The barn walk below follows the T-FLAWS checkpoints. Tick what you check, note anything off, and fix what you can before you leave.', { after: 60 }));
 
 // TODAY'S NUMBERS
 C.push(sectionBar("Today's Numbers"));
@@ -185,10 +185,34 @@ C.push(checkGrid([
 C.push(options('Birds to cull today:', ['None', 'A few (pull and record)'], { after: 40 }));
 C.push(hint('Pull weak, injured, or sick birds promptly and humanely. Write down how many, it tells a story over the week.'));
 
-// THE ENVIRONMENT WALK
-C.push(sectionBar('Walk the Barn: Air, Heat, Water, Feed, Light, Litter'));
+// THE T-FLAWS WALK
+C.push(sectionBar('Walk the Barn: The T-FLAWS Checkpoints'));
+C.push(hint('T-FLAWS is the CPC barn-walk framework: Temperature, Feed, Light, Air, Water, and Sanitation and Space. Walk it the same order every day. For the full method, see Course 3 (T-FLAWS Assessment Management Tool) in this series.'));
 
-C.push(subHead('Air'));
+C.push(subHead('T: Temperature'));
+C.push(options('How are the birds sitting?', ['Spread evenly (just right)', 'Huddled (too cold)', 'Panting / against the walls (too hot)'], { after: 40 }));
+C.push(checkGrid([
+  'Bird-level temperature on target for their age',
+  'Heaters or brooders working',
+  'Heat even across the barn, no cold ends',
+], 2));
+
+C.push(subHead('F: Feed'));
+C.push(checkGrid([
+  'Feed in every feeder, none empty or jammed',
+  'Feed fresh, no mold, crust, or off smell',
+  'Feeders at the right height for the birds',
+  'Feed getting eaten (pans not sitting full)',
+], 2));
+
+C.push(subHead('L: Light'));
+C.push(checkGrid([
+  'Lights on the right schedule and bright enough',
+  'Birds get a real dark period to rest',
+  'No bulbs out and no dark corners birds avoid',
+], 2));
+
+C.push(subHead('A: Air'));
 C.push(checkGrid([
   'No sharp ammonia sting in your eyes or nose',
   'Air does not feel stuffy, damp, or dusty',
@@ -198,15 +222,7 @@ C.push(checkGrid([
   'No moldy or sour smell',
 ], 2));
 
-C.push(subHead('Heat / comfort'));
-C.push(options('How are the birds sitting?', ['Spread evenly (just right)', 'Huddled (too cold)', 'Panting / against the walls (too hot)'], { after: 40 }));
-C.push(checkGrid([
-  'Bird-level temperature on target for their age',
-  'Heaters or brooders working',
-  'Heat even across the barn, no cold ends',
-], 2));
-
-C.push(subHead('Water'));
+C.push(subHead('W: Water'));
 C.push(checkGrid([
   'Every drinker working, none stuck',
   'Water clean and cool (press a nipple and feel)',
@@ -214,26 +230,12 @@ C.push(checkGrid([
   'Drinker height right for the birds',
 ], 2));
 
-C.push(subHead('Feed'));
-C.push(checkGrid([
-  'Feed in every feeder, none empty or jammed',
-  'Feed fresh, no mold, crust, or off smell',
-  'Feeders at the right height for the birds',
-  'Feed getting eaten (pans not sitting full)',
-], 2));
-
-C.push(subHead('Light'));
-C.push(checkGrid([
-  'Lights on the right schedule and bright enough',
-  'Birds get a real dark period to rest',
-  'No bulbs out and no dark corners birds avoid',
-], 2));
-
-C.push(subHead('Litter and floor'));
+C.push(subHead('S: Sanitation & Space'));
 C.push(checkGrid([
   'Litter dry and loose underfoot',
   'No wet spots or caking, check under drinkers',
-  'No unusual buildup or smell',
+  'Barn and equipment reasonably clean',
+  'Birds have room to move, feed, and drink',
 ], 2));
 
 // BEFORE YOU LEAVE
