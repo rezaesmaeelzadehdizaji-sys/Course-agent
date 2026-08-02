@@ -8,7 +8,7 @@
 import {
   Document, Packer, Paragraph, TextRun, AlignmentType,
   Header, Footer, PageNumber, Table, TableRow, TableCell, WidthType,
-  BorderStyle, ShadingType, convertInchesToTwip, ImageRun,
+  BorderStyle, ShadingType, convertInchesToTwip, ImageRun, HeightRule,
 } from 'docx';
 import JSZip from './node_modules/jszip/dist/jszip.js';
 import fs from 'fs';
@@ -84,34 +84,35 @@ const pageMargin = { top: convertInchesToTwip(0.9), bottom: convertInchesToTwip(
 
 // ---- at-a-glance table ----
 function glanceTable() {
-  const colW = [560, 820, 1180, 720, 1720, 2440, 1200]; // twips, sum = 8640
+  const colW = [440, 700, 900, 1240, 560, 1420, 2080, 1300]; // twips, sum = 8640
   const hdrBg = MED_BLUE, altBg = 'EBF2FA';
   const bdr = { style: BorderStyle.SINGLE, size: 2, color: 'AAAAAA' };
   const cellBorders = { top: bdr, bottom: bdr, left: bdr, right: bdr };
+  const ACTUAL = 3; // index of the blank "Actual (your weight)" column
   const hdrCell = (t, i) => new TableCell({
     width: { size: colW[i], type: WidthType.DXA }, borders: cellBorders,
-    shading: { type: ShadingType.SOLID, color: hdrBg },
-    children: [new Paragraph({ alignment: AlignmentType.CENTER, spacing: { before: 50, after: 50 }, children: [run(t, { bold: true, size: 17, color: 'FFFFFF' })] })],
+    shading: { type: ShadingType.SOLID, color: i === ACTUAL ? GOLD : hdrBg },
+    children: [new Paragraph({ alignment: AlignmentType.CENTER, spacing: { before: 50, after: 50 }, children: [run(t, { bold: true, size: 16, color: i === ACTUAL ? DARK_BLUE : 'FFFFFF' })] })],
   });
   const dataCell = (t, i, shade, bold = false) => new TableCell({
     width: { size: colW[i], type: WidthType.DXA }, borders: cellBorders,
-    shading: { type: ShadingType.SOLID, color: shade ? altBg : 'FFFFFF' },
-    children: [new Paragraph({ alignment: i <= 4 ? AlignmentType.CENTER : AlignmentType.LEFT, spacing: { before: 40, after: 40 }, children: [run(t, { size: 17, color: BODY_GRAY, bold })] })],
+    shading: { type: ShadingType.SOLID, color: i === ACTUAL ? 'FFFDF3' : (shade ? altBg : 'FFFFFF') },
+    children: [new Paragraph({ alignment: (i <= 5 && i !== ACTUAL) ? AlignmentType.CENTER : AlignmentType.LEFT, spacing: { before: 40, after: 40 }, children: [run(t, { size: 17, color: BODY_GRAY, bold })] })],
   });
-  const headers = ['Wk', 'Days', 'Target weight', 'FCR', 'House temp (bird level)', 'Light : Dark, intensity', 'Feed'];
+  const headers = ['Wk', 'Days', 'Target wt', 'Actual (your wt)', 'FCR', 'House temp (bird level)', 'Light : Dark, lux', 'Feed'];
   const rows = [
-    ['1', '1-7', '~210 g', '~0.83', '32-34°C to 29°C', '18 : 6, 50-100 lux', 'Starter'],
-    ['2', '8-14', '~535 g', '~1.03', '27-29°C', '18 : 6, 30-50 lux', 'Starter / Grower'],
-    ['3', '15-21', '~1,010 g', '~1.16', '26°C', '18 : 6, 20-30 lux', 'Grower'],
-    ['4', '22-28', '~1,615 g', '~1.29', '24°C', '18 : 6, 10-20 lux; day 28: 22 : 2, 3-5 lux', 'Grower / Finisher'],
-    ['5', '29-35', '~2,295 g', '~1.42', '21-22°C', '22 : 2, 3-5 lux', 'Finisher'],
-    ['6', '36-42', '~2,995 g', '~1.55', '20-21°C (min 18)', '22 : 2, 3-5 lux', 'Finisher'],
+    ['1', '1-7', '~210 g', '', '~0.83', '32-34°C to 29°C', '18 : 6, 50-100 lux', 'Starter'],
+    ['2', '8-14', '~535 g', '', '~1.03', '27-29°C', '18 : 6, 30-50 lux', 'Starter / Grower'],
+    ['3', '15-21', '~1,010 g', '', '~1.16', '26°C', '18 : 6, 20-30 lux', 'Grower'],
+    ['4', '22-28', '~1,615 g', '', '~1.29', '24°C', '18 : 6, 10-20 lux; day 28: 22 : 2, 3-5 lux', 'Grower / Finisher'],
+    ['5', '29-35', '~2,295 g', '', '~1.42', '21-22°C', '22 : 2, 3-5 lux', 'Finisher'],
+    ['6', '36-42', '~2,995 g', '', '~1.55', '20-21°C (min 18)', '22 : 2, 3-5 lux', 'Finisher'],
   ];
   return new Table({
     width: { size: 100, type: WidthType.PERCENTAGE }, margins: { top: 0, bottom: 0, left: 40, right: 40 },
     rows: [
       new TableRow({ children: headers.map((h, i) => hdrCell(h, i)), tableHeader: true }),
-      ...rows.map((r, ri) => new TableRow({ children: r.map((c, ci) => dataCell(c, ci, ri % 2 === 1, ci === 0)) })),
+      ...rows.map((r, ri) => new TableRow({ children: r.map((c, ci) => dataCell(c, ci, ri % 2 === 1, ci === 0)), height: { value: 460, rule: HeightRule.ATLEAST } })),
     ],
   });
 }
@@ -145,7 +146,7 @@ async function main() {
       headers: { default: buildHeader() }, footers: { default: buildFooter() },
       children: [
         ...coverChildren(),
-        para('Use this alongside your daily barn walk. Growth targets are Aviagen Ross 308 (as hatched); temperature and lighting are CPC targets. Read bird behavior and adjust: evenly spread birds are comfortable, huddling means too cold, panting means too hot.', { after: 160 }),
+        para('Use this alongside your daily barn walk. Growth targets are Aviagen Ross 308 (as hatched); temperature and lighting are CPC targets. Write your own day-7, 14, 21, 28, 35, and 42 weights in the gold Actual column to see how the flock tracks against target. Read bird behavior and adjust: evenly spread birds are comfortable, huddling means too cold, panting means too hot.', { after: 160 }),
         glanceTable(),
         new Paragraph({ spacing: { after: 80 } }),
 
