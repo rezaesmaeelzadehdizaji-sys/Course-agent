@@ -182,7 +182,7 @@ C.push(checkGrid([
 C.push(subHead('Air, light, and equipment'));
 C.push(checkGrid([
   'Minimum ventilation set and test-run',
-  'Lights bright for arrival (at least 20 lux)',
+  'Lights bright for arrival (about 50 to 100 lux for the first week)',
   'Heaters, alarms, and backup generator tested',
   'Biosecurity ready: footbath, boots, clean entry',
   'Placement plan and record sheets ready',
