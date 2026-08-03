@@ -101,6 +101,7 @@ function glanceTable() {
   });
   const headers = ['Wk', 'Days', 'Target wt', 'Actual (your wt)', 'FCR', 'House temp (bird level)', 'Light : Dark, lux', 'Feed'];
   const rows = [
+    ['0', 'Day 0 (place)', '~44 g', '', '-', '32-34°C', '18 : 6, 50-100 lux', 'Starter'],
     ['1', '1-7', '~210 g', '', '~0.83', '32-34°C to 29°C', '18 : 6, 50-100 lux', 'Starter'],
     ['2', '8-14', '~535 g', '', '~1.03', '27-29°C', '18 : 6, 30-50 lux', 'Starter / Grower'],
     ['3', '15-21', '~1,010 g', '', '~1.16', '26°C', '18 : 6, 20-30 lux', 'Grower'],
@@ -146,18 +147,18 @@ async function main() {
       headers: { default: buildHeader() }, footers: { default: buildFooter() },
       children: [
         ...coverChildren(),
-        para('Use this alongside your daily barn walk. Growth targets are Aviagen Ross 308 (as hatched); temperature and lighting are CPC targets. Write your own day-7, 14, 21, 28, 35, and 42 weights in the gold Actual column to see how the flock tracks against target. Read bird behavior and adjust: evenly spread birds are comfortable, huddling means too cold, panting means too hot.', { after: 160 }),
+        para('Use this alongside your daily barn walk. Growth targets are Aviagen Ross 308 (as hatched); temperature and lighting are CPC targets. A good day-old chick weighs about 44 g at placement. Write your own placement and day-7, 14, 21, 28, 35, and 42 weights in the gold Actual column to see how the flock tracks against target. Read bird behavior and adjust: evenly spread birds are comfortable, huddling means too cold, panting means too hot.', { after: 160 }),
         glanceTable(),
         new Paragraph({ spacing: { after: 80 } }),
 
         weekHead('Week 1  |  Days 1-7  |  Brooding'),
-        check('Pre-warm the litter. Hold bird-level temperature 32-34°C at day 1, then step to about 29°C by day 7 (about 0.5°C every 2-3 days). Keep RH 60-70%.'),
+        check('Pre-warm the litter. Start at bird-level temperature 32-34°C at day 1 and bring it down to about 29°C by day 7. That is a 3 to 5°C drop across the week, the biggest of the grow-out, so ease it off by what the chicks tell you: evenly spread and active is right. Keep RH 60-70%.'),
         check('Light 18 hours on to 6 hours off from day 1. Do not skip the dark period. 50-100 lux so every chick finds feed and water.'),
         check('Crop fill: 75% filled at 2 hours, over 80% at 8 hours, over 95% at 24 hours. Water at every drinker, feed on paper.'),
         check('Release chicks to the whole house by about day 7. Weigh at day 7 (target about 210 g) and check uniformity.'),
 
         weekHead('Week 2  |  Days 8-14'),
-        check('Temperature about 27-29°C. Keep reading bird distribution for comfort.'),
+        check('Temperature about 27-29°C, now easing down more slowly, roughly 0.5°C every 2-3 days as the birds feather in. Keep reading bird distribution for comfort.'),
         check('Lighting 18 : 6. Step intensity down to 30-50 lux.'),
         check('Move starter to grower feed around day 10 to 11. Keep litter dry. Watch for early coccidiosis (wet litter, loose droppings).'),
         check('Weigh at day 14 (target about 535 g).'),
