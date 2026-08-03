@@ -154,7 +154,7 @@ async function main() {
         weekHead('Week 1  |  Days 1-7  |  Brooding'),
         check('Pre-warm the litter. Start at bird-level temperature 32-34°C at day 1 and bring it down to about 29°C by day 7. That is a 3 to 5°C drop across the week, the biggest of the grow-out, so ease it off by what the chicks tell you: evenly spread and active is right. Keep RH 60-70%.'),
         check('Light 18 hours on to 6 hours off from day 1. Do not skip the dark period. Start at 50-100 lux so every chick finds feed and water, easing toward 20-30 lux by day 7.'),
-        check('Crop fill: 75% filled at 2 hours, over 80% at 8 hours, over 95% at 24 hours. Water at every drinker, feed on paper.'),
+        check('Crop fill: 75% full at 2 hours, 80% at 4 hours, 95% at 24 hours, 100% by 48 hours. Water at every drinker, feed on paper. An empty crop at 24 hours means that chick is already behind.'),
         check('Release chicks to the whole house by about day 7. Weigh at day 7 (target about 210 g) and check uniformity.'),
         check('Lock in your processing date and catching crew now, at placement. The catch date shapes the whole grow-out (target weight, feed program, feed withdrawal), so set it at the start, not the last week.'),
 
@@ -173,7 +173,7 @@ async function main() {
         weekHead('Week 4  |  Days 22-28'),
         check('Temperature about 24°C. Ventilation management is increasingly critical.'),
         check('Lighting 18 : 6 at 3-5 lux through day 27, then 22 hours light (2 hours dark) from day 28.'),
-        check('Move grower to finisher feed around day 25. Footpad and hock scoring. Keep ammonia under 25 ppm.'),
+        check('Move grower to finisher feed around day 25. Footpad and hock scoring. Keep ammonia low: open up ventilation once it climbs above 10 ppm.'),
         check('Weigh at day 28 (target about 1,615 g).'),
 
         weekHead('Week 5  |  Days 29-35'),
@@ -185,7 +185,8 @@ async function main() {
         weekHead('Week 6  |  Days 36-42  |  Finishing and catch prep'),
         check('Temperature 20-21°C (minimum 18). NFACC acceptable range 18-24°C. Maximize air speed for big birds.'),
         check('Lighting 24-hour (no dark) at 3-5 lux.'),
-        check('Confirm feed-withdrawal timing before catching. Final weights at day 42 (target about 2,995 g), FCR about 1.55.'),
+        check('Feed and water withdrawal: aim for the birds to be off feed about 8 to 12 hours total by slaughter, counting catching, transport, and the wait at the plant, not 8 to 12 hours on the farm on top of the trip. Too short leaves full guts that contaminate carcasses; too long costs weight and weakens the gut. Leave water in front of them until the catching crew is ready, then pull it just before they start. Follow your processor schedule.'),
+        check('Final weights at day 42 (target about 2,995 g), FCR about 1.55.'),
         check('Catching and loading welfare. Biosecurity for the crew. Complete shipping records (mortality, treatments, withdrawal times).'),
 
         weekHead('CPC lighting notes'),
@@ -194,7 +195,7 @@ async function main() {
         notesLine('Measure it:', 'use an LED light meter only. Judging lux by eye is unreliable.'),
 
         new Paragraph({ spacing: { after: 40 } }),
-        para([run('Targets sourced from: ', { bold: true, size: 18 }), run('Aviagen, Ross 308 Broiler Performance Objectives 2022 (body weight, FCR); Aviagen, Ross Broiler Management Handbook 2025 (crop fill, feeding program); CPC Learning Centre Broiler Lighting Program 2026 (lighting); CPC Learning Centre broiler temperature guide, NFACC-aligned (temperature). Ross 308 weights are as hatched; males run heavier, females lighter. Always fine-tune temperature and light by bird behavior.', { size: 18, color: '666666' })], { after: 0 }),
+        para([run('Aligned with the CPC Short Course series. ', { bold: true, size: 18 }), run('Growth targets: Aviagen Ross 308 Broiler Performance Objectives 2022. Temperature: CPC broiler temperature guide (NFACC-aligned). Lighting: CPC Broiler Lighting Program 2026. Crop fill, daily checks, ammonia, and water follow Course 3 (T-FLAWS); feed and water withdrawal follow Course 13 (Poultry Welfare); feed program per the Ross Broiler Management Handbook 2025. Ross 308 weights are as hatched; males run heavier, females lighter. Always fine-tune temperature and light by bird behavior.', { size: 18, color: '666666' })], { after: 0 }),
       ],
     }],
   });
