@@ -102,12 +102,12 @@ function glanceTable() {
   const headers = ['Wk', 'Days', 'Target wt', 'Actual (your wt)', 'FCR', 'House temp (bird level)', 'Light : Dark, lux', 'Feed'];
   const rows = [
     ['0', 'Day 0 (place)', '~44 g', '', '-', '32-34°C', '18 : 6, 50-100 lux', 'Starter'],
-    ['1', '1-7', '~210 g', '', '~0.83', '32-34°C to 29°C', '18 : 6, 50-100 lux', 'Starter'],
-    ['2', '8-14', '~535 g', '', '~1.03', '27-29°C', '18 : 6, 30-50 lux', 'Starter / Grower'],
-    ['3', '15-21', '~1,010 g', '', '~1.16', '26°C', '18 : 6, 20-30 lux', 'Grower'],
-    ['4', '22-28', '~1,615 g', '', '~1.29', '24°C', '18 : 6, 10-20 lux; day 28: 22 : 2, 3-5 lux', 'Grower / Finisher'],
-    ['5', '29-35', '~2,295 g', '', '~1.42', '21-22°C', '22 : 2, 3-5 lux', 'Finisher'],
-    ['6', '36-42', '~2,995 g', '', '~1.55', '20-21°C (min 18)', '22 : 2, 3-5 lux', 'Finisher'],
+    ['1', '1-7', '~210 g', '', '~0.83', '32-34°C to 29°C', '18 : 6, 50-100 to 20-30 lux', 'Starter'],
+    ['2', '8-14', '~535 g', '', '~1.03', '27-29°C', '18 : 6, 20-30 to 5-10 lux', 'Starter / Grower'],
+    ['3', '15-21', '~1,010 g', '', '~1.16', '26°C', '18 : 6, 3-5 lux', 'Grower'],
+    ['4', '22-28', '~1,615 g', '', '~1.29', '24°C', '18 : 6, 3-5 lux; day 28: 22 : 2', 'Grower / Finisher'],
+    ['5', '29-35', '~2,295 g', '', '~1.42', '21-22°C', '22 : 2, then 24 h no dark from day 32; 3-5 lux', 'Finisher'],
+    ['6', '36-42', '~2,995 g', '', '~1.55', '20-21°C (min 18)', '24 h, no dark; 3-5 lux', 'Finisher'],
   ];
   return new Table({
     width: { size: 100, type: WidthType.PERCENTAGE }, margins: { top: 0, bottom: 0, left: 40, right: 40 },
@@ -153,47 +153,48 @@ async function main() {
 
         weekHead('Week 1  |  Days 1-7  |  Brooding'),
         check('Pre-warm the litter. Start at bird-level temperature 32-34°C at day 1 and bring it down to about 29°C by day 7. That is a 3 to 5°C drop across the week, the biggest of the grow-out, so ease it off by what the chicks tell you: evenly spread and active is right. Keep RH 60-70%.'),
-        check('Light 18 hours on to 6 hours off from day 1. Do not skip the dark period. 50-100 lux so every chick finds feed and water.'),
+        check('Light 18 hours on to 6 hours off from day 1. Do not skip the dark period. Start at 50-100 lux so every chick finds feed and water, easing toward 20-30 lux by day 7.'),
         check('Crop fill: 75% filled at 2 hours, over 80% at 8 hours, over 95% at 24 hours. Water at every drinker, feed on paper.'),
         check('Release chicks to the whole house by about day 7. Weigh at day 7 (target about 210 g) and check uniformity.'),
+        check('Lock in your processing date and catching crew now, at placement. The catch date shapes the whole grow-out (target weight, feed program, feed withdrawal), so set it at the start, not the last week.'),
 
         weekHead('Week 2  |  Days 8-14'),
         check('Temperature about 27-29°C, now easing down more slowly, roughly 0.5°C every 2-3 days as the birds feather in. Keep reading bird distribution for comfort.'),
-        check('Lighting 18 : 6. Step intensity down to 30-50 lux.'),
+        check('Lighting 18 : 6, stepping intensity down from 20-30 to 5-10 lux across the week.'),
         check('Move starter to grower feed around day 10 to 11. Keep litter dry. Watch for early coccidiosis (wet litter, loose droppings).'),
         check('Weigh at day 14 (target about 535 g).'),
 
         weekHead('Week 3  |  Days 15-21'),
         check('Temperature about 26°C. Step up minimum ventilation as birds grow.'),
-        check('Lighting 18 : 6 at 20-30 lux. Supports rest behavior and bone development.'),
+        check('Lighting 18 : 6 at 3-5 lux (down to the low intensity by day 15). The dark period supports rest and bone development.'),
         check('Grower feed. Walk the barn for gait, leg health, and footpads. Peak coccidiosis and necrotic enteritis window.'),
         check('Weigh at day 21 (target about 1,010 g).'),
 
         weekHead('Week 4  |  Days 22-28'),
         check('Temperature about 24°C. Ventilation management is increasingly critical.'),
-        check('Lighting 18 : 6 at 10-20 lux through day 27, then switch to 22 : 2 at 3-5 lux from day 28.'),
+        check('Lighting 18 : 6 at 3-5 lux through day 27, then 22 hours light (2 hours dark) from day 28.'),
         check('Move grower to finisher feed around day 25. Footpad and hock scoring. Keep ammonia under 25 ppm.'),
         check('Weigh at day 28 (target about 1,615 g).'),
 
         weekHead('Week 5  |  Days 29-35'),
         check('Temperature about 21-22°C. Keep RH 50-70%. Air quality and ventilation at peak load.'),
-        check('Lighting 22 : 2 at 3-5 lux.'),
+        check('Lighting 22 : 2 through day 31, then 24-hour light (no dark) from day 32 to hold feed intake into harvest. 3-5 lux.'),
         check('Finisher feed. Have a heat-stress plan ready (water, air speed). Daily walk for mortality, culls, and leg health.'),
-        check('Weigh at day 35 (target about 2,295 g). Book catching crew and processor slot.'),
+        check('Weigh at day 35 (target about 2,295 g). Confirm the catch date, crew, and processing slot booked at placement, and firm up the timing.'),
 
         weekHead('Week 6  |  Days 36-42  |  Finishing and catch prep'),
         check('Temperature 20-21°C (minimum 18). NFACC acceptable range 18-24°C. Maximize air speed for big birds.'),
-        check('Lighting 22 : 2 at 3-5 lux.'),
+        check('Lighting 24-hour (no dark) at 3-5 lux.'),
         check('Confirm feed-withdrawal timing before catching. Final weights at day 42 (target about 2,995 g), FCR about 1.55.'),
         check('Catching and loading welfare. Biosecurity for the crew. Complete shipping records (mortality, treatments, withdrawal times).'),
 
         weekHead('CPC lighting notes'),
-        notesLine('Dark period:', 'the 6-hour dark period from day 1 supports circadian rhythm, welfare, and bone mineralization. Do not skip it.'),
-        notesLine('LED fixtures:', 'check for flicker at low lux. A steady 15 lux beats a flickering 10 lux.'),
-        notesLine('Measure it:', 'always use a light meter. Judging lux by eye is unreliable.'),
+        notesLine('Dark period and welfare:', 'keep the 6-hour dark period through the early and middle grow-out. CPC notes that 6-hour dark periods satisfy animal welfare requirements. The 24-hour light is only for the finishing phase, from day 32.'),
+        notesLine('Shipping earlier than 34 days:', 'move the light increase earlier in the cycle. For a 32-day ship, CPC goes to 24-hour light around day 30.'),
+        notesLine('Measure it:', 'use an LED light meter only. Judging lux by eye is unreliable.'),
 
         new Paragraph({ spacing: { after: 40 } }),
-        para([run('Targets sourced from: ', { bold: true, size: 18 }), run('Aviagen, Ross 308 Broiler Performance Objectives 2022 (body weight, FCR); Aviagen, Ross Broiler Management Handbook 2025 (crop fill, feeding program); CPC Learning Centre Broiler Lighting Guidelines (lighting); CPC Learning Centre broiler temperature guide, NFACC-aligned (temperature). Ross 308 weights are as hatched; males run heavier, females lighter. Always fine-tune temperature and light by bird behavior.', { size: 18, color: '666666' })], { after: 0 }),
+        para([run('Targets sourced from: ', { bold: true, size: 18 }), run('Aviagen, Ross 308 Broiler Performance Objectives 2022 (body weight, FCR); Aviagen, Ross Broiler Management Handbook 2025 (crop fill, feeding program); CPC Learning Centre Broiler Lighting Program 2026 (lighting); CPC Learning Centre broiler temperature guide, NFACC-aligned (temperature). Ross 308 weights are as hatched; males run heavier, females lighter. Always fine-tune temperature and light by bird behavior.', { size: 18, color: '666666' })], { after: 0 }),
       ],
     }],
   });
