@@ -163,7 +163,7 @@ function tempTable() {
     ['Day 14',   '27–29',          '79–84',          '26', '78', '-',     'Continue gradual weekly reduction of 2–3°C'],
     ['Day 21',   '26',                  '78',                  '24', '75', '-',     'Monitor bird distribution for comfort'],
     ['Day 28',   '24',                  '75',                  '22', '72', '-',     'Ventilation management becomes increasingly critical'],
-    ['Day 35',   '21–22',          '70–72',          '20', '68', '-',     'Maintain RH 50–70%'],
+    ['Day 35',   '21–22',          '70–72',          '20', '68', '-',     'Maintain RH 50–60%'],
     ['Day 42+',  '20–21 (min. 18)','68–70 (min. 65)','19', '66', '-',     'NFACC acceptable range: 18–24°C; adjust for season'],
   ];
 
