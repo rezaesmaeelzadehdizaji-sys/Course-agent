@@ -22,17 +22,16 @@ export default async function DashboardPage() {
 
   const dbCourses = (courses as Course[]) ?? []
 
-  // Course 18 is served from a static pre-built .docx and is not stored in the
-  // DB (the courses table CHECK constraint caps course_number at 17). Inject it
-  // here so it renders as a Complete course with a working static download.
+  // Course 18 is not stored in the DB (the courses table CHECK constraint caps
+  // course_number at 17). Inject it here so it renders as an In Progress course.
   // Skipped automatically if a real course 18 row is ever added to the DB.
   const STATIC_COURSES: Course[] = [
     {
       id: 'static-course-18',
       course_number: 18,
       slug: 'course-18-current-poultry-issues-hot-topics',
-      status: 'Complete',
-      progress_pct: 100,
+      status: 'In Progress',
+      progress_pct: 0,
       meta: {
         title: 'Current Poultry Issues (Hot Topics)',
         subtitle: 'Avian Influenza and Emerging Disease Issues in Canadian Poultry',
