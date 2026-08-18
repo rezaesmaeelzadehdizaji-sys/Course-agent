@@ -31,7 +31,7 @@ const supabase = createClient(supabaseUrl, serviceRoleKey, {
 })
 
 const EMAIL = 'rvanderwal@abbvet.ca'
-const PASSWORD = 'Ccp@shortcourses'
+const PASSWORD = 'Cpc@shortcourses'
 
 async function run() {
   console.log(`Creating dashboard user ${EMAIL}…`)
