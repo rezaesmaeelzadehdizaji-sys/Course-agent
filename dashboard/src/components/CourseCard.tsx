@@ -3,7 +3,7 @@ import type { Course, CourseStatus } from '@/lib/types'
 import DownloadButton from './DownloadButton'
 
 // Courses that have a companion summary page (served statically from public/docs).
-const SUMMARY_COURSES = new Set([3, 4, 5, 6, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18])
+const SUMMARY_COURSES = new Set([3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18])
 const summaryUrl = (n: number) => `/docs/course-${String(n).padStart(2, '0')}-summary.docx`
 
 interface Props {
