@@ -2,10 +2,9 @@ import Link from 'next/link'
 import type { Course, CourseStatus } from '@/lib/types'
 import DownloadButton from './DownloadButton'
 
-const PPT_URLS: Record<number, string> = {
-  3: 'https://github.com/rezaesmaeelzadehdizaji-sys/Course-agent/raw/main/Course%203/Course3_T-FLAWS_Presentation.pptx',
-  7: 'https://github.com/rezaesmaeelzadehdizaji-sys/Course-agent/raw/main/Course%207/Course7_Common_Poultry_Diseases_Presentation.pptx',
-}
+// Courses that have a companion summary page (served statically from public/docs).
+const SUMMARY_COURSES = new Set([3, 4, 5, 6, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18])
+const summaryUrl = (n: number) => `/docs/course-${String(n).padStart(2, '0')}-summary.docx`
 
 interface Props {
   course: Course
@@ -64,16 +63,17 @@ export default function CourseCard({ course }: Props) {
         {course.status === 'Complete' && (
           <DownloadButton courseId={course.id} courseNumber={course.course_number} slug={course.slug} updatedAt={course.updated_at} />
         )}
-        {PPT_URLS[course.course_number] && (
+        {SUMMARY_COURSES.has(course.course_number) && (
           <a
-            href={PPT_URLS[course.course_number]}
-            title="Download PowerPoint presentation"
+            href={summaryUrl(course.course_number)}
+            download
+            title="Download course summary page"
             className="text-xs font-medium text-white bg-[#1F3864] hover:bg-[#2E74B5] py-1.5 px-3 rounded-lg transition-colors flex items-center gap-1.5"
           >
             <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
             </svg>
-            <span>.pptx</span>
+            <span>Summary</span>
           </a>
         )}
       </div>
