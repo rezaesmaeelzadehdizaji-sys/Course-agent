@@ -204,7 +204,7 @@ const children = [
   }),
 
   new Paragraph({
-    children: [new TextRun({ text: 'July 2026', color: '595959', size: 22, font: 'Calibri' })],
+    children: [new TextRun({ text: 'August 2026', color: '595959', size: 22, font: 'Calibri' })],
     alignment: AlignmentType.CENTER,
     spacing: { before: 0, after: 360 },
   }),
@@ -214,10 +214,10 @@ const children = [
 
   para([
     { text: 'Who this course is for: ', bold: true },
-    { text: 'field service technicians and service representatives who visit contract poultry farms on behalf of an integrator, hatchery, or feed company. Throughout the course, you are the technician making the visit and the grower is the person you support.' },
+    { text: 'field service technicians and service representatives who visit commercial poultry farms on behalf of an animal health company, a poultry veterinary clinic, a hatchery, or a feed company. Throughout the course, you are the technician making the visit and the grower is the person you support.' },
   ]),
 
-  para('Field service is the link between the integrator and the farm. The service technician visits contract growers regularly, checks how the flock is progressing, catches problems before they get expensive, and keeps the farmer connected to veterinary, nutritional, and management support. In commercial Canadian poultry production, the service technician is usually the first call a grower makes when something looks wrong.'),
+  para('Field service is the link between the farm and everyone who supports it. The service technician visits growers regularly, checks how the flock is progressing, catches problems before they get expensive, and keeps the farmer connected to veterinary, nutritional, and management support. Under Canadian supply management the grower owns the birds and runs the farm, so nothing you recommend happens unless the grower decides it is worth doing. The course also separates the field service representative, who works for a veterinary or animal health company and handles vaccination, pre-placement preparation, and on-farm technical problems, from the feed company representative, whose job is the production data.'),
 
   para('This course covers the practical core of field service: how to prepare for a farm visit, how to walk a barn systematically, how to read a production record, how to communicate what you find, and when to escalate. The hands-on workshop gives participants practice in a real barn setting.'),
 
@@ -269,7 +269,7 @@ const children = [
 
   para('By the end of this course, participants will be able to:'),
 
-  loItem(1, 'Explain what field service really involves and where you fit between the integrator, the veterinarian, and the grower.'),
+  loItem(1, 'Explain what field service really involves and where you fit between the grower, the veterinary clinic, and the feed company.'),
   loItem(2, 'Get ready for a farm visit and follow Canadian biosecurity standards so you never carry disease from one barn to the next.'),
   loItem(3, 'Walk a barn the same way every time, reading the flock and the environment so nothing slips past you.'),
   loItem(4, 'Read the daily records for mortality, water, feed, and body weight, and catch a bad trend before it turns into a real problem.'),

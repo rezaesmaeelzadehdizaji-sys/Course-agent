@@ -3,11 +3,24 @@
 **Date re-verified (sentence-level + citation-order audit):** 2026-06-10
 **Date re-verified against live online sources:** 2026-07-14 — all 6 references confirmed real; reference [6] title corrected ("Ross 308 Broiler Management Handbook" → "Ross Broiler Management Handbook", the actual 2025 title). USDA manual, CFIA guide, Poultry Signals (2012, Roodbont, ISBN 9789087400798, 4 authors, subtitle confirmed), NFACC 2016 code, and Aviagen 2025 handbook all verified against their live/authoritative pages.
 
+**Date re-verified (BC field service / feed representative correction):** 2026-08-18 — Introduction and Sections 1.1/1.2 rewritten after the August 2026 BC farm visit and the follow-up discussion with Mike (CPC). Three references added; all twelve re-checked; all citations renumbered.
+
 ---
 
 ## Verification Summary
 
 All 9 references verified against online authoritative sources. Zero fabricated citations. Verification method: direct URL access + CrossRef metadata cross-check of title, author, and publication details.
+
+**2026-08-18 update (BC field service reality — reviewer open item closed):** Rich Vanderwal's review flagged that the Introduction and Section 1 described the US/Ontario vertical-integration contract model (integrator owns the birds, grower is a contract grower, service technician is the integrator's on-farm representative), which is wrong for British Columbia. The open item was held for the August 2026 on-farm visit. Following that visit, Mike (CPC) confirmed the actual split: a **field service representative** works for a veterinary care / animal health company, and may also be based out of a poultry clinic; that role covers vaccination, farm preparation ahead of chick placement, and on-site technical problems. A **feed company representative** is a separate role that collects and analyzes production data for the feed company and the farmer and stays in touch with the farmer and the veterinary clinic when mortality or a major problem comes up, and is *not* responsible for field service tasks. The Introduction, Section 1.1, Section 1.2, learning objective 1, the cover disclaimer, and one sentence in Section 5.1 were rewritten to match.
+
+Three references were added to support the corrected framing: [1] BCCMB Pricing Orders (grower is paid a live price per bird as the flock leaves the farm, i.e. the grower owns the birds), [2] BCCMB *BC Interior Region Quota Conditions* (a quota holder can only get chicken to market by contracting with a processor; the processor and its associated hatchery facilitate chick placements and live bird shipments), and [3] the CPC subject-matter communication above (the field service vs. feed representative split). All three first appear before the previously existing references, so the whole document was renumbered per CLAUDE.md's mandatory citation-reordering rule using the temp-marker technique:
+
+- new [1] = BCCMB Pricing Orders (added)
+- new [2] = BCCMB BC Interior Region Quota Conditions (added)
+- new [3] = CPC subject-matter communication (added)
+- old [1] (USDA) → new [4]; old [2] (CFIA) → new [5]; old [3] (CPC Spotting Disease Early) → new [6]; old [4] (Poultry Signals) → new [7]; old [5] (NFACC) → new [8]; old [6] (Aviagen) → new [9]; old [7] (Chedad) → new [10]; old [8] (Oke) → new [11]; old [9] (Gunn-Christie) → new [12]
+
+First-appearance order re-confirmed sequential 1–12 in the regenerated docx. The cover date moved to August 2026 and every `[cited]` month was aligned to 2026 Aug (CFIA page and Merck Vet Manual page both re-fetched 2026-08-18 and still live). **Note:** per-entry notes below that were written before 2026-08-18 refer to the old numbering; the entry headings carry the current numbers.
 
 **2026-07-22 update (reviewer edits):** Addressed the reviewer's Course 14 comments. Reference [9] (Merck Veterinary Manual, Collection and Submission of Laboratory Samples from Animals, Gunn-Christie RG) was added to support a new Section 6.1 paragraph on barn-necropsy contamination bias and the diagnostic advantage of submitting an intact, chilled bird to the laboratory for culture, sensitivity, and typing. Reference [8] (Oke et al., oxidative stress) was verified against CrossRef and logged (it had been added in a prior revision but not previously documented here). First-appearance order remains sequential 1–9; no renumbering required.
 
@@ -24,7 +37,42 @@ First-appearance order is now confirmed sequential: 1, 2, 3, 4, 5, 6. The refere
 
 ## Reference List with Verification Status
 
-### [1] USDA APHIS. Poultry Industry Manual.
+### [1] BCCMB. Pricing Orders.
+- **Full citation:** British Columbia Chicken Marketing Board. Pricing Orders [Internet]. Abbotsford, BC: British Columbia Chicken Marketing Board [cited 2026 Aug]. Available from: bcchicken.ca/pricing-orders
+- **Verified:** YES — page fetched 2026-08-18
+- **Source URL:** https://bcchicken.ca/pricing-orders/
+- **Content confirmed (direct quote from the page):** "The BC Chicken Marketing Board sets the minimum 'Live Price' (or 'Farm Gate Price') – the amount the farmer receives per live chicken as it leaves the farm"
+- **Content supported:** under Canadian supply management the grower owns the birds and is paid a live price per bird as the flock leaves the farm (Introduction and Section 1.1). Distinguishes the Canadian model from the US integrator model, where the integrator owns the birds.
+- **Publisher address confirmed:** 1848 McCallum Rd #220, Abbotsford, BC (BCCMB contact page, fetched 2026-08-18).
+- **Notes:** Live provincial marketing board webpage; cited date included per CLAUDE.md Cited-Date Rule. Institutional authorship. Listed in CLAUDE.md as an authoritative BC supply-management source.
+- **Status:** VERIFIED
+
+---
+
+### [2] BCCMB. BC Interior Region Quota Conditions.
+- **Full citation:** British Columbia Chicken Marketing Board. BC Interior Region Quota Conditions: Supplementary Guide to the BCCMB General Orders. Abbotsford, BC: British Columbia Chicken Marketing Board; 2025 Nov [cited 2026 Aug]. Available from: bcchicken.ca/wp-content/uploads/2025/11/BC-Interior-Quota-Conditions-Growers-Guide.pdf
+- **Verified:** YES — PDF downloaded and text extracted 2026-08-18
+- **Source URL:** https://bcchicken.ca/wp-content/uploads/2025/11/BC-Interior-Quota-Conditions-Growers-Guide.pdf
+- **Title confirmed:** cover reads "BC Interior Region Quota Conditions / Supplementary Guide to the BCCMB General Orders", verbatim.
+- **Date confirmed:** "November 2025" on the cover.
+- **Content confirmed (direct quotes from the PDF):** "A key to chicken-growing is arrangements with a processor. You may hold chicken quota, but you can only get it to market by contracting with a processor." and "This includes chick placements and live bird shipments, which will be facilitated by this processor and its associated hatchery."
+- **Content supported:** the grower holds quota licensed by the provincial marketing board; quota alone does not get chicken to market; the processor and its associated hatchery set up chick placements and live bird shipments (Section 1.1).
+- **Notes:** Official BCCMB grower guidance document. Institutional authorship. The document's guidance on processor arrangements is written for the BC Interior region; the course states it as "in most regions", which is consistent with the source and is not over-claimed as national.
+- **Status:** VERIFIED
+
+---
+
+### [3] CPC. Field service and feed representative roles in British Columbia poultry production.
+- **Full citation:** Canadian Poultry Consultants Ltd. Field service and feed representative roles in British Columbia poultry production [subject-matter communication with CPC Learning Centre staff]; 2026 Aug.
+- **Verified:** YES — confirmed directly with Mike (CPC) during the August 2026 BC visit and relayed by the project owner (Reza) on 2026-08-18.
+- **Content confirmed:** field service representatives are representatives of veterinary care / animal health companies and may also be based out of poultry clinics; their responsibilities include vaccination, farm preparation ahead of chick placement, and handling technical issues on site. Feed representatives collect and analyze production data for the feed company and the farmer, and stay in touch with farmers and veterinary clinics in case of mortality or major problems, but are not responsible for field service tasks.
+- **Content supported:** the two-role split in Section 1.1 and the feed representative's data role in Section 1.2.
+- **Notes:** This is CPC subject-matter input, not a published document, so it is cited as a subject-matter communication with no URL. It is CPC-confirmed in the sense required by CLAUDE.md (the CPC team stated it), so it does NOT carry [NEEDS SOURCE]. Body text names the CPC Learning Centre explicitly ("The CPC Learning Centre draws the line this way") per the CPC attribution rule. If CPC later publishes a written bulletin covering this, replace this entry with the bulletin citation.
+- **Status:** VERIFIED (CPC subject-matter confirmation)
+
+---
+
+### [4] USDA APHIS. Poultry Industry Manual.
 - **Full citation:** United States Department of Agriculture, Animal and Plant Health Inspection Service. Poultry Industry Manual. Washington, DC: National Animal Health Emergency Management System. Available from: aphis.usda.gov/sites/default/files/poultry_ind_manual.pdf
 - **Verified:** YES
 - **Source URL:** https://www.aphis.usda.gov/sites/default/files/poultry_ind_manual.pdf
@@ -34,8 +82,8 @@ First-appearance order is now confirmed sequential: 1, 2, 3, 4, 5, 6. The refere
 
 ---
 
-### [2] CFIA. Poultry Service Industry Biosecurity Guide.
-- **Full citation:** Canadian Food Inspection Agency. Poultry Service Industry Biosecurity Guide [Internet]. Ottawa: Canadian Food Inspection Agency. Available from: inspection.canada.ca/en/animal-health/terrestrial-animals/biosecurity/standards-and-principles/poultry-service-industry [cited 2026 Jun]
+### [5] CFIA. Poultry Service Industry Biosecurity Guide.
+- **Full citation:** Canadian Food Inspection Agency. Poultry Service Industry Biosecurity Guide [Internet]. Ottawa: Canadian Food Inspection Agency. Available from: inspection.canada.ca/en/animal-health/terrestrial-animals/biosecurity/standards-and-principles/poultry-service-industry [cited 2026 Aug]
 - **Verified:** YES
 - **Source URL:** https://inspection.canada.ca/en/animal-health/terrestrial-animals/biosecurity/standards-and-principles/poultry-service-industry
 - **Content confirmed:** CFIA zone system (Controlled Access Zone, Service Area, Restricted Access Zone), vehicle parking requirements (15 m from air inlets/exhaust fans), documentation requirements for service providers, PPE requirements by zone.
@@ -44,7 +92,7 @@ First-appearance order is now confirmed sequential: 1, 2, 3, 4, 5, 6. The refere
 
 ---
 
-### [3] CPC Learning Centre. Spotting Disease Early.
+### [6] CPC Learning Centre. Spotting Disease Early.
 - **Full citation:** CPC Learning Centre. Spotting Disease Early [Flock Management Guide]. CPC Learning Centre. Available from: cpclearningcentre.ca
 - **Verified:** YES — read directly from local PDF at `D:\Course agent\Avian medicine sources\CPC learning centre\Broilers-Disease Profiles\Flock Management\spotting_disease_early.pdf`
 - **Content confirmed:** Water consumption drop detected 1–2 days before feed drop; water and feed consumption recorded at same time daily; bird conformation eight-point check (color, size, position, heat, soiling, discharges, alertness, vocalization); submit 10–12 live moribund birds if mortality present; keep daily lists and compare abnormal to normal; use all senses; record keeping for pattern recognition.
@@ -53,7 +101,7 @@ First-appearance order is now confirmed sequential: 1, 2, 3, 4, 5, 6. The refere
 
 ---
 
-### [4] Bestman M, Ruis M, Heijmans J, van Middelkoop K. Poultry Signals.
+### [7] Bestman M, Ruis M, Heijmans J, van Middelkoop K. Poultry Signals.
 - **Full citation:** Bestman M, Ruis M, Heijmans J, van Middelkoop K. Poultry Signals: A Practical Guide for Bird-Focused Poultry Farming. Zutphen: Roodbont Publishers; 2012.
 - **Verified:** YES
 - **Source confirmed via:** AbeBooks listing (ISBN 9789087400798, publisher Roodbont, 2012); Biblio.com listing confirms same details; local PDF in `D:\Course agent\Avian medicine sources\Avian medicine\Poultry Signals _ A Practical Guide for Poultry Farming.pdf` confirms authorship (Bestman, Ruis, Heijmans, van Middelkoop), publisher (Roodbont Publishers B.V., Zutphen, Netherlands), 2012.
@@ -68,7 +116,7 @@ First-appearance order is now confirmed sequential: 1, 2, 3, 4, 5, 6. The refere
 
 ---
 
-### [5] NFACC. Code of Practice for Poultry.
+### [8] NFACC. Code of Practice for Poultry.
 - **Full citation:** National Farm Animal Care Council. Code of Practice for the Care and Handling of Hatching Eggs, Breeders, Chickens and Turkeys. Lacombe: National Farm Animal Care Council; 2016. Available from: nfacc.ca/poultry-code-of-practice
 - **Verified:** YES
 - **Source URL:** https://www.nfacc.ca/poultry-code-of-practice
@@ -79,7 +127,7 @@ First-appearance order is now confirmed sequential: 1, 2, 3, 4, 5, 6. The refere
 
 ---
 
-### [6] Aviagen. Ross Broiler Management Handbook. 2025.
+### [9] Aviagen. Ross Broiler Management Handbook. 2025.
 - **Full citation:** Aviagen. Ross Broiler Management Handbook. Huntsville, AL: Aviagen; 2025. Available from: aviagen.com/assets/Tech_Center/Ross_Broiler/Aviagen-ROSS-Broiler-Handbook-EN.pdf
 - **Verified:** YES
 - **Source URL:** https://www.aviagen.com/assets/Tech_Center/Ross_Broiler/Aviagen-ROSS-Broiler-Handbook-EN.pdf
@@ -91,7 +139,7 @@ First-appearance order is now confirmed sequential: 1, 2, 3, 4, 5, 6. The refere
 
 ---
 
-### [7] Chedad A, et al. Do heavy broiler chickens visit automatic weighing systems less than lighter birds?
+### [10] Chedad A, et al. Do heavy broiler chickens visit automatic weighing systems less than lighter birds?
 - **Full citation:** Chedad A, Aerts JM, Vranken E, Lippens M, Zoons J, Berckmans D. Do heavy broiler chickens visit automatic weighing systems less than lighter birds? Br Poult Sci. 2003;44(5):663-668. doi:10.1080/00071660310001643633
 - **Verified:** YES — metadata confirmed directly against the CrossRef API (`api.crossref.org/works/10.1080/00071660310001643633`) on 2026-07-15
 - **Authors confirmed:** Chedad A. | Aerts J.-M. | Vranken E. | Lippens M. | Zoons J. | Berckmans D. — all six, in this exact order. NOTE: an initial from-memory guess had only four authors (omitting Lippens and Zoons). CrossRef verification caught this before publication. This is exactly the "missing co-author" fabrication pattern listed in CLAUDE.md.
@@ -105,7 +153,7 @@ First-appearance order is now confirmed sequential: 1, 2, 3, 4, 5, 6. The refere
 
 ---
 
-### [8] Oke OE, et al. Oxidative stress in poultry production.
+### [11] Oke OE, et al. Oxidative stress in poultry production.
 - **Full citation:** Oke OE, Akosile OA, Oni AI, Opowoye IO, Ishola CA, Adebiyi JO, Odeyemi AJ, Adjei-Mensah B, Uyanga VA, Abioja MO. Oxidative stress in poultry production. Poult Sci. 2024;103(9):104003. doi:10.1016/j.psj.2024.104003
 - **Verified:** YES — metadata confirmed directly against the CrossRef API (`api.crossref.org/works/10.1016/j.psj.2024.104003`) on 2026-07-22
 - **Authors confirmed:** Oke OE | Akosile OA | Oni AI | Opowoye IO | Ishola CA | Adebiyi JO | Odeyemi AJ | Adjei-Mensah B | Uyanga VA | Abioja MO — all ten, in this exact order.
@@ -117,8 +165,8 @@ First-appearance order is now confirmed sequential: 1, 2, 3, 4, 5, 6. The refere
 
 ---
 
-### [9] Gunn-Christie RG. Collection and Submission of Laboratory Samples from Animals.
-- **Full citation:** Gunn-Christie RG. Collection and Submission of Laboratory Samples from Animals. Merck Veterinary Manual. Kenilworth, NJ: Merck & Co.; [cited 2026 Jul]. Available from: merckvetmanual.com
+### [12] Gunn-Christie RG. Collection and Submission of Laboratory Samples from Animals.
+- **Full citation:** Gunn-Christie RG. Collection and Submission of Laboratory Samples from Animals. Merck Veterinary Manual. Kenilworth, NJ: Merck & Co.; [cited 2026 Aug]. Available from: merckvetmanual.com
 - **Verified:** YES — page fetched 2026-07-22; author byline confirmed as Rebekah G. Gunn-Christie, DVM, DACVP.
 - **Source URL:** https://www.merckvetmanual.com/clinical-pathology-and-procedures/collection-and-submission-of-laboratory-samples/collection-and-submission-of-laboratory-samples-from-animals
 - **Content confirmed (direct quotes from the page):** "Autolyzed tissues are generally useless for histologic evaluation; prompt necropsy and organ sampling are critical." and "unfixed specimens (tissue, fluid, etc) should be collected aseptically and shipped promptly to avoid degradation," with separate aliquots submitted in "sterile, additive-free container[s]."
@@ -128,22 +176,27 @@ First-appearance order is now confirmed sequential: 1, 2, 3, 4, 5, 6. The refere
 
 ---
 
-## In-Text Citation Audit (re-derived 2026-07-22 from the regenerated docx)
+## In-Text Citation Audit (re-derived 2026-08-18 from the regenerated docx)
 
 | Citation | Section(s) | Claim supported |
 |----------|------------|----------------|
-| [1] | Introduction, 1.1, 1.2, 4.2, 4.4, 5.1 | Service tech is the first call when something looks wrong; weekly visit schedule and production-chain role (scheduling, load-out); feed conversion/daily gain/mortality/condemnations tracked by integrators; highest daily mortality in the first week of life; spot weighing 30–50 birds (shared with [6]); flock problems outside the tech's control that still affect performance |
-| [2] | 2.1, 2.2, 2.3, 5.3 | CFIA zone system (CAZ, Service Area, RAZ); pre-arrival communication and enhanced cleaning/essential-visits-only during disease alerts; visitor log and on-premises documentation; vehicle positioning away from air inlets/exhaust fans; PPE/coveralls and footwear requirements |
-| [3] | 3.1, 3.2, 3.3, 4.3, 6.1, 6.2 | Barn observation before entry and smell cues (ammonia, decomposition, wet litter); litter feel check; bird conformation eight-point check and handling birds from multiple barn areas; water consumption drop precedes feed drop, recorded at the same time daily; post-mortem sample submission when cause of mortality is unclear; sample collection, packaging, and lab call for diagnostics |
-| [4] | 3.1 | Stop and listen before entering the barn; use all senses (Look-Think-Act approach) |
-| [5] | 4.1, 5.3 | Daily mortality recording and disposal of dead birds; documented working relationship with a veterinarian and written emergency response protocols |
-| [1,6] | 4.4 | Spot weighing 30–50 birds as a representative sample |
-| [6] | 4.3, 4.4 | Water:feed ratio 1.6–1.8:1 for growing broilers; daily gain calculation versus breed target; CV interpretation for uneven flocks |
-| [7] | 4.4 | Heavier broilers visit automatic weigh platforms less often, biasing the automatic average low near market weight; confirm with a manual spot weigh |
-| [8] | 4.5 | Oxidative stress as a non-infectious cause of poor performance; gut/immune damage and predisposition to secondary infection |
-| [9] | 6.1 | Aseptic/clean sample collection needed for culture; on-farm contamination bias; intact chilled bird submitted to the lab preserves culture, sensitivity, and typing; autolysis destroys diagnostic value |
+| [1] | Introduction, 1.1 | Under Canadian supply management the grower owns the birds and runs the farm; the grower is paid a live price per bird as the flock leaves the farm |
+| [2] | 1.1 | Quota alone does not get chicken to market; the grower needs an arrangement with a licensed processor, and the processor and its associated hatchery set up chick placements and live bird shipments |
+| [3] | 1.1, 1.2 | Field service representative works for a veterinary or animal health company and is often based out of a poultry clinic, covering vaccination, pre-placement farm preparation, and on-site technical problems; the feed company representative is a separate role that gathers and works through production data and is not there to do field service work |
+| [4] | 1.2, 4.2, 4.4, 5.1 | Feed conversion, daily gain, mortality rate, and condemnations at the plant are the tracked production numbers; highest daily mortality in the first week of life; spot weighing 30–50 birds (shared with [9]); farm problems outside the grower's control that still affect performance |
+| [5] | 2.1, 2.2, 2.3, 5.3 | CFIA zone system (CAZ, Service Area, RAZ); pre-arrival communication and enhanced cleaning/essential-visits-only during disease alerts; visitor log and on-premises documentation; vehicle positioning away from air inlets/exhaust fans; PPE/coveralls and footwear requirements |
+| [6] | 3.1, 3.2, 3.3, 4.3, 6.1, 6.2 | Barn observation before entry and smell cues (ammonia, decomposition, wet litter); litter feel check; bird conformation eight-point check and handling birds from multiple barn areas; water consumption drop precedes feed drop, recorded at the same time daily; post-mortem sample submission when cause of mortality is unclear; sample collection, packaging, and lab call for diagnostics |
+| [7] | 3.1 | Stop and listen before entering the barn; use all senses (Look-Think-Act approach) |
+| [8] | 4.1, 5.3 | Daily mortality recording and disposal of dead birds; documented working relationship with a veterinarian and written emergency response protocols |
+| [4,9] | 4.4 | Spot weighing 30–50 birds as a representative sample |
+| [9] | 4.3, 4.4 | Water:feed ratio 1.6–1.8:1 for growing broilers; daily gain calculation versus breed target; CV interpretation for uneven flocks |
+| [10] | 4.4 | Heavier broilers visit automatic weigh platforms less often, biasing the automatic average low near market weight; confirm with a manual spot weigh |
+| [11] | 4.5 | Oxidative stress as a non-infectious cause of poor performance; gut/immune damage and predisposition to secondary infection |
+| [12] | 6.1 | Aseptic/clean sample collection needed for culture; on-farm contamination bias; intact chilled bird submitted to the lab preserves culture, sensitivity, and typing; autolysis destroys diagnostic value |
 
-First-appearance order in the regenerated docx: 1, 2, 3, 4, 5, 6, 7, 8, 9. Sequential Vancouver order confirmed.
+First-appearance order in the regenerated docx: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12. Sequential Vancouver order confirmed.
+
+**Claims dropped in this revision (no longer in the course, so no longer cited):** "the service technician is typically the first person a grower calls when something looks wrong"; "a typical service technician visits each contract farm once a week"; "service technicians assist with scheduling chick arrivals, confirming feed delivery timing, and calling market load-out"; "the integrator supplies chicks, feed, medication, and technical service". All four were supported by the USDA Poultry Industry Manual, which describes the US integrator model, and none of them describe how the job works in British Columbia.
 
 ---
 
@@ -154,7 +207,7 @@ First-appearance order in the regenerated docx: 1, 2, 3, 4, 5, 6, 7, 8, 9. Seque
 - [ ] Wrong page range: NOT APPLICABLE — no page numbers cited (web/institutional sources)
 - [ ] Missing co-author: CHECKED — Bestman et al. all four authors confirmed
 - [ ] Wrong title word: CHECKED — Poultry Signals title confirmed verbatim
-- [ ] Paper cannot be located: NOT PRESENT — all 9 sources locatable
+- [ ] Paper cannot be located: NOT PRESENT — all 12 sources locatable (ref [3] is a CPC subject-matter communication, documented above rather than published)
 - [ ] Hybrid citations: NOT PRESENT — each citation is a single coherent source
 
-**Result: CLEAN. No fabrication patterns detected. All 9 references verified; first-appearance order sequential 1–9 (last confirmed 2026-07-22 after reviewer-driven edits added ref [9], Merck Vet Manual sample-submission guidance).**
+**Result: CLEAN. No fabrication patterns detected. All 12 references verified; first-appearance order sequential 1–12 (last confirmed 2026-08-18 after the BC field service / feed representative correction added refs [1], [2], and [3] and renumbered the document).**

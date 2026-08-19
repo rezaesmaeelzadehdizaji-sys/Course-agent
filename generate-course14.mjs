@@ -367,14 +367,14 @@ function buildCoverSection() {
     }),
 
     new Paragraph({
-      children: [new TextRun({ text: 'July 2026', color: '595959', size: 22, font: 'Calibri' })],
+      children: [new TextRun({ text: 'August 2026', color: '595959', size: 22, font: 'Calibri' })],
       alignment: AlignmentType.CENTER,
       spacing: { before: 0, after: 480 },
     }),
 
     new Paragraph({
       children: [new TextRun({
-        text: 'This course is produced by the CPC Learning Centre for educational purposes. Content is intended for trained poultry industry professionals. It does not replace the advice of a licensed veterinarian, integrator management manuals, or regulatory requirements. Always follow current CFIA, NFACC, and integrator-specific protocols.',
+        text: 'This course is produced by the CPC Learning Centre for educational purposes. Content is intended for trained poultry industry professionals. It does not replace the advice of a licensed veterinarian, breed management manuals, or regulatory requirements. Always follow current CFIA, NFACC, provincial marketing board, and company-specific protocols.',
         color: '888888', size: 18, font: 'Calibri', italics: true,
       })],
       alignment: AlignmentType.CENTER,
@@ -434,16 +434,16 @@ function buildBodySection() {
 
     para([
       { text: 'Who this course is for: ', bold: true },
-      { text: 'field service technicians and service representatives who visit contract poultry farms on behalf of an integrator, hatchery, or feed company. Throughout the course, you are the technician making the visit and the grower is the person you support.' },
+      { text: 'field service technicians and service representatives who visit commercial poultry farms on behalf of an animal health company, a poultry veterinary clinic, a hatchery, or a feed company. Throughout the course, you are the technician making the visit and the grower is the person you support.' },
     ]),
 
-    para('Field service is what connects the farm to the rest of the production system. A field service technician or representative visits contract growers on a regular schedule, checks how the flock is progressing, catches problems before they become expensive, and keeps the farmer connected to veterinary, nutritional, and management support. In commercial Canadian poultry production, the service technician is typically the first person a grower calls when something looks wrong [1].'),
+    para('Field service is what connects the farm to the rest of the production system. A field service technician or representative visits growers on a regular schedule, checks how the flock is progressing, catches problems before they become expensive, and keeps the farmer connected to veterinary, nutritional, and management support. One thing shapes every visit you will ever make. Under Canadian supply management the grower owns the birds and runs the farm [1]. Nothing you recommend happens unless the grower decides it is worth doing.'),
 
     para('This course covers the practical core of field service: how to prepare for a farm visit, how to walk a barn systematically, how to read a production record, how to communicate what you find to the farmer, and when to escalate. The two-hour workshop that follows this lecture gives you the chance to practice these skills in a barn setting.'),
 
     para('By the end of this course, you should be able to:'),
 
-    numbered('Explain what field service really involves and where you fit between the integrator, the veterinarian, and the grower.'),
+    numbered('Explain what field service really involves and where you fit between the grower, the veterinary clinic, and the feed company.'),
     numbered('Get ready for a farm visit and follow Canadian biosecurity standards so you never carry disease from one barn to the next.'),
     numbered('Walk a barn the same way every time, reading the flock and the environment so nothing slips past you.'),
     numbered('Read the daily records for mortality, water, feed, and body weight, and catch a bad trend before it turns into a real problem.'),
@@ -457,21 +457,21 @@ function buildBodySection() {
 
     h2('1.1  What Field Service Means in Commercial Poultry'),
 
-    para('In a contract production system, the integrator supplies chicks, feed, medication, and technical service. The grower supplies labor, housing, and utilities. The service technician is the integrator\'s representative on farm, the person who turns company protocols into what actually happens in the barn [1].'),
+    para('Start with who owns what, because it sets the tone of every visit. Canadian poultry runs under supply management, not the integrator model described in American manuals. The grower holds quota licensed by the provincial marketing board, owns the birds in the barn, and is paid a live price per bird as the flock leaves the farm [1]. Quota on its own does not get chicken to market. The grower also needs an arrangement with a licensed processor, and in most regions that processor and its associated hatchery are the ones who set up chick placements and live bird shipments [2].'),
 
-    para('A typical service technician visits each contract farm once a week and provides management advice specific to the flock age and strain [1]. Visits become more frequent during health challenges or critical growth phases: the first week of placement, late-stage grow-out before market, or whenever disease is suspected. Between visits, the technician stays reachable for the grower\'s questions.'),
+    para('Two different people show up at that barn door, and they are not doing the same job. The CPC Learning Centre draws the line this way. A field service representative works for a veterinary or animal health company, and is often based out of a poultry clinic. That is the person who runs vaccination, gets the farm ready before the chicks arrive, and sorts out technical problems on site [3]. A feed company representative is a different role. The feed rep gathers the production data and works through it, for the feed company and for the farmer, and stays in touch with the grower and the veterinary clinic when mortality climbs or something bigger goes wrong. Feed reps are not there to do field service work [3].'),
 
-    para('Service technicians assist with scheduling chick arrivals, confirming feed delivery timing, and calling market load-out when the flock is ready to ship [1]. They carry company policy changes to the grower and report flock progress back to management. Think of the role as two-directional: information flows both ways through you.'),
+    para('How often you go depends on which of those two jobs is yours and on what the flock needs. Placement week pulls you in. So does the run-up to shipping, and any health challenge at any age. Between visits, stay reachable. A grower who can get you on the phone at seven in the morning tells you about a problem on day one instead of day three. Information moves both ways through you: what you see in the barn goes back to your clinic or company, and what they know comes back to the grower.'),
 
     ...image(photo1_1, 'Photo 1.1: A commercial broiler flock at mid-grow-out. Field service visits typically begin with a visual assessment of how birds distribute across the barn floor. Source: CPC Short Courses.', 5.5, 'jpg'),
 
     h2('1.2  Where You Fit in the Production Chain'),
 
-    para('The chain runs from the integrator\'s management and veterinary team, through you, to the grower and their birds. Your job is to be the most reliable, most consistent link in that chain.'),
+    para('The chain runs from the grower and their birds, through you, to the veterinary clinic, the feed company, the hatchery, and the processor. Your job is to be the most reliable, most consistent link in that chain.'),
 
-    para('The company veterinarian is your resource for disease diagnosis and treatment decisions. You are not the veterinarian, but you are the veterinarian\'s eyes and ears on farm. When you describe what you\'re seeing clearly and accurately, the veterinarian can give you better guidance without having to drive to every farm.'),
+    para('The veterinarian is your resource for disease diagnosis and treatment decisions. You are not the veterinarian, but you are the veterinarian\'s eyes and ears on farm. When you describe what you\'re seeing clearly and accurately, the veterinarian can give you better guidance without having to drive to every farm.'),
 
-    para('Integrators track production closely: feed conversion, daily gain, mortality rate, and condemnations at the plant [1]. Margins in this business are tight enough that small shifts in any of these numbers matter. Your job is to turn those numbers into action on the farm. A flock with a slowly climbing mortality rate may look stable to management until someone on the ground identifies the feeding line that\'s running half-speed.'),
+    para('Everyone with money in the flock watches the same numbers: feed conversion, daily gain, mortality rate, and condemnations at the plant [4]. Pulling those numbers together is usually a job for the feed representative [3]. Turning them into action on the farm is yours. Margins in this business are tight enough that small shifts in any of these numbers matter. A flock with a slowly climbing mortality rate may look stable on a spreadsheet until someone on the ground finds the feed line running half-speed.'),
 
     h2('1.3  Three Outcomes of Every Visit'),
 
@@ -495,23 +495,23 @@ function buildBodySection() {
 
     para('Show up prepared. Pull the farm\'s production records before you leave the office. Review the previous mortality trend, the last body weight check, the water and feed consumption figures from the past week, and any concerns noted in the last visit report. Know the flock\'s age, breed, and vaccination status before you walk in the door.'),
 
-    para('Check for any active disease alerts from CFIA or the provincial authority for your region. If a notifiable disease is circulating nearby, your visit protocol changes. Enhanced cleaning and disinfection apply, and in some cases only essential visits are allowed [2].'),
+    para('Check for any active disease alerts from CFIA or the provincial authority for your region. If a notifiable disease is circulating nearby, your visit protocol changes. Enhanced cleaning and disinfection apply, and in some cases only essential visits are allowed [5].'),
 
-    para('The CFIA Poultry Service Industry Biosecurity Guide is explicit on this point. Call the producer before you arrive. Ask about the flock\'s current health status, any vaccination or treatment given since your last visit, and any concerns they have about the birds [2]. A phone call before you get there saves surprises at the barn door.'),
+    para('The CFIA Poultry Service Industry Biosecurity Guide is explicit on this point. Call the producer before you arrive. Ask about the flock\'s current health status, any vaccination or treatment given since your last visit, and any concerns they have about the birds [5]. A phone call before you get there saves surprises at the barn door.'),
 
     h2('2.2  Canadian Biosecurity Requirements for Service Personnel'),
 
-    para('The CFIA Poultry Service Industry Biosecurity Guide establishes a risk-based zone system for all poultry premises [2]. Understanding it is not optional. It is the minimum standard for any service personnel entering a commercial poultry operation in Canada.'),
+    para('The CFIA Poultry Service Industry Biosecurity Guide establishes a risk-based zone system for all poultry premises [5]. Understanding it is not optional. It is the minimum standard for any service personnel entering a commercial poultry operation in Canada.'),
 
-    para('Sign the visitor logbook at the farm entrance for every visit. The CFIA guide requires that service providers always leave documentation on the premises about their service activity. A signed visitor log satisfies this requirement [2].'),
+    para('Sign the visitor logbook at the farm entrance for every visit. The CFIA guide requires that service providers always leave documentation on the premises about their service activity. A signed visitor log satisfies this requirement [5].'),
 
-    para('Vehicle positioning matters: park so that your vehicle does not cross in front of barn air inlets or exhaust fans. Disease can travel through the air and straight into the barn through these openings [2].'),
+    para('Vehicle positioning matters: park so that your vehicle does not cross in front of barn air inlets or exhaust fans. Disease can travel through the air and straight into the barn through these openings [5].'),
 
     ...image(bioZone, 'Figure 2.1: The CFIA risk-based zone system for a poultry premises. The zones nest from the Controlled Access Zone at the outer farm, through the transitional Service Area, to the Restricted Access Zone where the birds live. The icons trace the order a visit follows: sign in and park clear of the air inlets, then change into clean coveralls and footwear and wash hands at the line of separation. From there you work in the Restricted Access Zone, under the highest biosecurity demands. Source: CPC Short Courses.', 5.9, 'jpg'),
 
     h2('2.3  PPE and the Biosecurity Entry'),
 
-    para('Before entering the Restricted Access Zone, put on clean premises-designated or disposable coveralls and boots [2]. Change footwear between zones. Disinfect your boot soles at the foot bath, or swap boot covers, whenever you move from a lower-risk area to a higher-risk one.'),
+    para('Before entering the Restricted Access Zone, put on clean premises-designated or disposable coveralls and boots [5]. Change footwear between zones. Disinfect your boot soles at the foot bath, or swap boot covers, whenever you move from a lower-risk area to a higher-risk one.'),
 
     para('At the end of the visit, bag any contaminated items, wipe down equipment surfaces, and disinfect before leaving. If you are visiting multiple farms in a day, change coveralls and boots between premises. On high-risk days, such as a regional disease alert or a farm with confirmed illness, consider showering out before you move to your next stop.'),
 
@@ -520,7 +520,7 @@ function buildBodySection() {
     ...(bootsImg ? productImage(bootsImg, 'Photo 2.1: Elastic Top Boots. Dedicated barn footwear prevents cross-contamination between farms. Source: canadianpoultry.ca/shop.') : []),
     ...(evoWashImg ? productImage(evoWashImg, 'Photo 2.2: Chlorinated EVO Wash. Foaming chlorine wash for footwear and boot dips at farm entry. Source: canadianpoultry.ca/shop.') : []),
 
-    ...image(photo2_1, 'Photo 2.3: Biosecurity entry at a commercial poultry barn. Clean coveralls and boot dip are the minimum entry standard for service personnel under CFIA guidelines [2]. Source: CPC Short Courses.', 5.5, 'png'),
+    ...image(photo2_1, 'Photo 2.3: Biosecurity entry at a commercial poultry barn. Clean coveralls and boot dip are the minimum entry standard for service personnel under CFIA guidelines [5]. Source: CPC Short Courses.', 5.5, 'png'),
 
     // ── SECTION 3 ─────────────────────────────────────────────
     pageBreak(),
@@ -528,11 +528,11 @@ function buildBodySection() {
 
     h2('3.1  What to Notice Before You Go Inside'),
 
-    para('The barn walk starts before you touch the door handle. The CPC Learning Centre Spotting Disease Early guide puts it plainly: use all your senses [3]. Stop outside for a moment and listen, without disturbing the flock [4]. Healthy birds in a well-managed barn produce a low, even, contented murmur. If what you hear is silence, alarm calls, or labored breathing, write it down before you open the door.'),
+    para('The barn walk starts before you touch the door handle. The CPC Learning Centre Spotting Disease Early guide puts it plainly: use all your senses [6]. Stop outside for a moment and listen, without disturbing the flock [7]. Healthy birds in a well-managed barn produce a low, even, contented murmur. If what you hear is silence, alarm calls, or labored breathing, write it down before you open the door.'),
 
-    para('Look through the observation window before entering. Healthy broilers at mid-grow-out distribute fairly evenly across the floor when active and cluster loosely near feeders and drinkers during eating and drinking times. Tight piling in corners suggests chilling or poor ventilation. Birds crowding one end of the barn may be chasing a warm zone or avoiding a draft. A barn where all the birds are sitting flat and quiet during what should be an active period is worth investigating further [3,4].'),
+    para('Look through the observation window before entering. Healthy broilers at mid-grow-out distribute fairly evenly across the floor when active and cluster loosely near feeders and drinkers during eating and drinking times. Tight piling in corners suggests chilling or poor ventilation. Birds crowding one end of the barn may be chasing a warm zone or avoiding a draft. A barn where all the birds are sitting flat and quiet during what should be an active period is worth investigating further [6,7].'),
 
-    para('Smell tells you things immediately. If you can smell ammonia at the barn door, the air inside is already carrying more than the birds should be living in. A sweet-rotten smell means there is carcass decomposing in the litter. A sour, acidic smell suggests wet litter and potential yeast or bacterial overgrowth [3]. Note what you smell before you step inside, because once you are in for a few minutes your nose desensitizes and stops registering it. The smell is still there. You have just quit noticing it.'),
+    para('Smell tells you things immediately. If you can smell ammonia at the barn door, the air inside is already carrying more than the birds should be living in. A sweet-rotten smell means there is carcass decomposing in the litter. A sour, acidic smell suggests wet litter and potential yeast or bacterial overgrowth [6]. Note what you smell before you step inside, because once you are in for a few minutes your nose desensitizes and stops registering it. The smell is still there. You have just quit noticing it.'),
 
     para('For a full systematic barn assessment framework covering Temperature, Feed, Light, Air, Water, and Sanitation and Space, see Course 3 (T-FLAWS Assessment Management Tool) in this series.'),
 
@@ -546,15 +546,15 @@ function buildBodySection() {
 
     para('Check feeders and drinkers at multiple points, not just the first few near the entry door. A failed auger, a blocked joint, or a drinker line out of adjustment can leave a whole section without access while the controller still reads normal.'),
 
-    para('Pick up a handful of litter. Squeeze it. Good litter forms a loose ball but does not ooze moisture and does not smell of ammonia when you hold it close. Dry, dusty litter with visible feather packs is also wrong. Good litter is friable, slightly moist, and crumbles when you drop it [3].'),
+    para('Pick up a handful of litter. Squeeze it. Good litter forms a loose ball but does not ooze moisture and does not smell of ammonia when you hold it close. Dry, dusty litter with visible feather packs is also wrong. Good litter is friable, slightly moist, and crumbles when you drop it [6].'),
 
     para('Measure ammonia at bird level, not at standing height. Use an electronic ammonia meter or a colorimetric detector tube held at or below knee height, and record the reading in your visit notes against the litter and ventilation observations from the walk.'),
 
     h2('3.3  Bird Conformation Assessment'),
 
-    para('Once you have a picture of the flock as a whole, catch a sample of birds for individual assessment. The CPC Learning Centre Spotting Disease Early guide recommends randomly selecting birds from different areas of the barn and examining them from head to toes [3]. Do not just catch the birds closest to you at the door.'),
+    para('Once you have a picture of the flock as a whole, catch a sample of birds for individual assessment. The CPC Learning Centre Spotting Disease Early guide recommends randomly selecting birds from different areas of the barn and examining them from head to toes [6]. Do not just catch the birds closest to you at the door.'),
 
-    para('The guide walks through what to check on each bird [3]:'),
+    para('The guide walks through what to check on each bird [6]:'),
 
     bullet('Color: a pale comb suggests anemia or chilling, and a pale, shrunken, dry comb points to dehydration; a dark, dusky, or purple comb is cyanosis, which signals circulatory or respiratory compromise, not dehydration.'),
     bullet('Size: swollen infraorbital sinus or swollen joints indicate inflammation; underweight or depleted muscle mass indicates a performance problem.'),
@@ -563,11 +563,11 @@ function buildBodySection() {
     bullet('Soiling: vent soiling, caked toes, or stained feathers point to enteric problems and abnormal droppings.'),
     bullet('Discharges: healthy eyes, nostrils, and the vent do not discharge; any discharge means investigate the color, consistency, and smell.'),
     bullet('Alertness: a healthy bird is quick to react to your presence; a sick bird is slow, droopy-eyed, and does not respond normally when you approach.'),
-    bullet('Vocalization: snicking, sneezing, or rattling respiration are audible signs; note which birds are making the sound and how many [3].'),
+    bullet('Vocalization: snicking, sneezing, or rattling respiration are audible signs; note which birds are making the sound and how many [6].'),
 
     new Paragraph({ spacing: { before: 0, after: 160 } }),
 
-    para('If you are keeping a daily list and comparing bird-by-bird across visits, you will find abnormalities that a single snapshot misses. The guide makes the point clearly: if you keep a list from day to day and evaluate the abnormal alongside the normal, you will be surprised by how much you actually see [3].'),
+    para('If you are keeping a daily list and comparing bird-by-bird across visits, you will find abnormalities that a single snapshot misses. The guide makes the point clearly: if you keep a list from day to day and evaluate the abnormal alongside the normal, you will be surprised by how much you actually see [6].'),
 
     // ── SECTION 4 ─────────────────────────────────────────────
     pageBreak(),
@@ -577,13 +577,13 @@ function buildBodySection() {
 
     para('Pull the record book before your barn walk, not after. Knowing the trend going into the walk tells you what to look for. A mortality spike that started three days ago is more alarming than a spike that started yesterday.'),
 
-    para('The NFACC Code of Practice requires that mortalities and culls be recorded daily and that dead birds be removed and disposed of daily [5]. A farm without current mortality records is both a compliance gap and a management blind spot. If a grower is not keeping daily records, raise it directly and help them put a simple system in place.'),
+    para('The NFACC Code of Practice requires that mortalities and culls be recorded daily and that dead birds be removed and disposed of daily [8]. A farm without current mortality records is both a compliance gap and a management blind spot. If a grower is not keeping daily records, raise it directly and help them put a simple system in place.'),
 
-    para('Under the NFACC Code, cases involving unexpected illness, death, or increases in mortality rates must be investigated. Consult a veterinarian and submit samples to a lab if the cause is not clear [5]. That language defines your responsibility: unexpected increases require action, not just observation.'),
+    para('Under the NFACC Code, cases involving unexpected illness, death, or increases in mortality rates must be investigated. Consult a veterinarian and submit samples to a lab if the cause is not clear [8]. That language defines your responsibility: unexpected increases require action, not just observation.'),
 
     h2('4.2  Mortality Patterns: Normal vs. Concerning'),
 
-    para('In a well-managed commercial broiler flock, cumulative mortality typically runs between 3 and 5% over the full grow-out cycle, with the highest daily rates in the first week of life [1]. Know the normal pattern so you recognize when something is off.'),
+    para('In a well-managed commercial broiler flock, cumulative mortality typically runs between 3 and 5% over the full grow-out cycle, with the highest daily rates in the first week of life [4]. Know the normal pattern so you recognize when something is off.'),
 
     para('Here is what the pattern usually looks like across a standard grow-out:'),
 
@@ -638,33 +638,33 @@ function buildBodySection() {
 
     h2('4.3  Water and Feed as Early Warning Signals'),
 
-    para('The CPC Learning Centre Spotting Disease Early guide explains it plainly: when a disease or stress occurs, a decrease in water consumption is usually noticed a day or two before the decrease in feed consumption [3]. Water meters that record daily consumption are your earliest warning system.'),
+    para('The CPC Learning Centre Spotting Disease Early guide explains it plainly: when a disease or stress occurs, a decrease in water consumption is usually noticed a day or two before the decrease in feed consumption [6]. Water meters that record daily consumption are your earliest warning system.'),
 
-    para('Record water and feed consumption at the same time every day. The guide recommends this specifically so that comparisons are valid across days [3]. A reading taken at 6 a.m. one day and 2 p.m. the next gives you a misleading comparison.'),
+    para('Record water and feed consumption at the same time every day. The guide recommends this specifically so that comparisons are valid across days [6]. A reading taken at 6 a.m. one day and 2 p.m. the next gives you a misleading comparison.'),
 
-    para('The water-to-feed ratio at thermoneutral temperatures runs approximately 1.6 to 1.8 parts water per part feed for growing broilers [6]. A ratio that drops below 1.5 has two common causes. The first is restricted water access, so check pressure, drinker height, and blocked lines first. If the water system is fine, the birds are backing off the water on their own. That is the early disease signal: they cut water a day or two before feed, so the ratio dips before either number looks alarming on its own [3]. A ratio climbing above 2.0 to 2.5 in cool weather means the opposite. Either feed intake has fallen away while water held steady, or something is pushing the birds to drink more. Kidney damage from a nephropathogenic infectious bronchitis strain will do it, and so will high dietary salt. A drinker leak inflating the meter reading looks the same on paper. A genuine rise in water intake usually shows up as watery droppings and wet litter within a day or two.'),
+    para('The water-to-feed ratio at thermoneutral temperatures runs approximately 1.6 to 1.8 parts water per part feed for growing broilers [9]. A ratio that drops below 1.5 has two common causes. The first is restricted water access, so check pressure, drinker height, and blocked lines first. If the water system is fine, the birds are backing off the water on their own. That is the early disease signal: they cut water a day or two before feed, so the ratio dips before either number looks alarming on its own [6]. A ratio climbing above 2.0 to 2.5 in cool weather means the opposite. Either feed intake has fallen away while water held steady, or something is pushing the birds to drink more. Kidney damage from a nephropathogenic infectious bronchitis strain will do it, and so will high dietary salt. A drinker leak inflating the meter reading looks the same on paper. A genuine rise in water intake usually shows up as watery droppings and wet litter within a day or two.'),
 
     h2('4.4  Spot Weighing and Weight Uniformity'),
 
-    para('As the flock approaches market weight, spot-weigh by randomly catching birds from several different areas of the barn. Thirty to 50 birds spread across the house is a reasonable sample [1,6]. Avoid catching only near the door; birds there tend to be more active and often represent a different weight distribution than birds deeper in the barn.'),
+    para('As the flock approaches market weight, spot-weigh by randomly catching birds from several different areas of the barn. Thirty to 50 birds spread across the house is a reasonable sample [4,9]. Avoid catching only near the door; birds there tend to be more active and often represent a different weight distribution than birds deeper in the barn.'),
 
-    para('Many barns now run automatic weigh platforms as well. These sit at bird level for the whole flock, and birds step onto them on their own through the day, so the system logs hundreds of weighings and reports a running average and CV without anyone catching a bird. That gives you a daily trend line instead of a snapshot two or three times a week. Calibrate the automatic equipment at least once per flock [6].'),
+    para('Many barns now run automatic weigh platforms as well. These sit at bird level for the whole flock, and birds step onto them on their own through the day, so the system logs hundreds of weighings and reports a running average and CV without anyone catching a bird. That gives you a daily trend line instead of a snapshot two or three times a week. Calibrate the automatic equipment at least once per flock [9].'),
 
     ...image(elecWeigh, 'Photo 4.1: A suspended automatic weigh platform, its load-cell pan resting at bird level. Shown here early in the flock with chicks on it. Source: anyload.com.', 2.8, 'jpg'),
 
-    para('Keep your manual catch-and-weigh scale even after a platform goes in, and do not rely on the automatic reading alone. Heavier birds step onto the platform less often than lighter ones, and that bias gets worse as the flock nears market weight, so the automatic average reads low at exactly the point you need it to be right [7]. Use the platform for the daily trend, then confirm it with a hand-caught spot weigh before you call a market weight.'),
+    para('Keep your manual catch-and-weigh scale even after a platform goes in, and do not rely on the automatic reading alone. Heavier birds step onto the platform less often than lighter ones, and that bias gets worse as the flock nears market weight, so the automatic average reads low at exactly the point you need it to be right [10]. Use the platform for the daily trend, then confirm it with a hand-caught spot weigh before you call a market weight.'),
 
-    para('There are two ways to work out average daily gain. The simplest is to divide the current average weight by the flock\'s age in days. The better one for tracking progress is to take the change in average weight since your last weigh-in and divide it by the number of days between the two weighs. Either way, compare the result against the breed target to see whether the flock is on pace [6]. An automatic platform runs this calculation for you around the clock, but it is only as good as the weights going into it. If the platform is reading body weight low, the daily gain it reports is low right along with it.'),
+    para('There are two ways to work out average daily gain. The simplest is to divide the current average weight by the flock\'s age in days. The better one for tracking progress is to take the change in average weight since your last weigh-in and divide it by the number of days between the two weighs. Either way, compare the result against the breed target to see whether the flock is on pace [9]. An automatic platform runs this calculation for you around the clock, but it is only as good as the weights going into it. If the platform is reading body weight low, the daily gain it reports is low right along with it.'),
 
-    para('The coefficient of variation (CV) is a simple check on how even the flock\'s weights are. A low number means the birds are growing at a similar pace. A high number means you have a wide mix of small and big birds in the same house. Uniformity is the share of birds within 10% of the average weight, and CV tracks it directly. A CV around 8% at day 21 means roughly 79% of the flock sits in that uniform band, which tells you management and conditions are on track. Once CV reaches 10 to 12%, only about 60 to 68% of the birds are uniform, and that is a red flag [6].'),
+    para('The coefficient of variation (CV) is a simple check on how even the flock\'s weights are. A low number means the birds are growing at a similar pace. A high number means you have a wide mix of small and big birds in the same house. Uniformity is the share of birds within 10% of the average weight, and CV tracks it directly. A CV around 8% at day 21 means roughly 79% of the flock sits in that uniform band, which tells you management and conditions are on track. Once CV reaches 10 to 12%, only about 60 to 68% of the birds are uniform, and that is a red flag [9].'),
 
-    para('A wide spread at three to four weeks almost always traces back to the first week: poor water or feed access during brooding, an early disease challenge, or uneven temperature that pushed some chicks off feed [6]. By then it shows in the weight data even when the cause is long gone. Weigh a sample at set ages, day-old, 7 days, and 21 days, then weekly from 35 days to the end, so you are tracking uniformity across the flock instead of finding out at settlement.'),
+    para('A wide spread at three to four weeks almost always traces back to the first week: poor water or feed access during brooding, an early disease challenge, or uneven temperature that pushed some chicks off feed [9]. By then it shows in the weight data even when the cause is long gone. Weigh a sample at set ages, day-old, 7 days, and 21 days, then weekly from 35 days to the end, so you are tracking uniformity across the flock instead of finding out at settlement.'),
 
     h2('4.5  When the Numbers Are Bad but No Disease Shows'),
 
     para('Sometimes the data tells a clear story of a flock going backwards. Feed intake is off, daily gain is behind target, feed conversion is creeping up, and a few extra birds die every day. Yet the barn walk, and even a necropsy, turns up no clear disease. This is the moment a lot of people jump to the wrong conclusion. The grower blames the last vaccine, someone blames the hatchery, and the call to the veterinarian starts with "the birds are sick." Often they are not sick in the infectious sense at all.'),
 
-    para('One of the most common non-infectious reasons a flock underperforms is oxidative stress. It builds up when something in the barn or the feed pushes the birds harder than their bodies can keep up with: heat, crowding, rancid fat, or moldy feed. It damages the gut lining and weakens the immune system, so the bird eats less, grows slower, converts feed worse, and is more likely to pick up a secondary infection [8]. When that secondary infection or a rough vaccine reaction finally shows up, it gets the blame, but the stress came first.'),
+    para('One of the most common non-infectious reasons a flock underperforms is oxidative stress. It builds up when something in the barn or the feed pushes the birds harder than their bodies can keep up with: heat, crowding, rancid fat, or moldy feed. It damages the gut lining and weakens the immune system, so the bird eats less, grows slower, converts feed worse, and is more likely to pick up a secondary infection [11]. When that secondary infection or a rough vaccine reaction finally shows up, it gets the blame, but the stress came first.'),
 
     para('There is a simple reason poor performance is the first thing you see. A bird pays its energy bills in a fixed order. Staying alive, keeping warm, feathers, and activity get paid first, and weight gain and eggs get paid last with whatever is left over. Under stress, the body also builds emergency immune proteins that jump to the front of that line, so growth and eggs are exactly what gets cut first, often before a single bird looks sick. For the full mechanism, the energy priority order, and how the bird\'s antioxidant defenses work, see Course 6 (Poultry Anatomy and Physiology) in this series.'),
 
@@ -676,7 +676,7 @@ function buildBodySection() {
 
     h2('5.1  Building the Relationship'),
 
-    para('The farmer runs the farm. Your job is to support them, not supervise them. That distinction matters. This is the fourth element from Section 1, the relationship that decides whether your assessments and recommendations ever get acted on. Contract growers often deal with equipment issues, tight margins, labor challenges, and environmental problems that are outside their control but still affect flock performance [1]. A service technician who shows up understanding those pressures and comes prepared with useful information is welcome. One who shows up unprepared and lectures the grower on everything wrong with the flock gets avoided.'),
+    para('The farmer runs the farm. Your job is to support them, not supervise them. That distinction matters. This is the fourth element from Section 1, the relationship that decides whether your assessments and recommendations ever get acted on. Growers deal with equipment issues, tight margins, labor challenges, and environmental problems that are outside their control but still affect flock performance [4]. A service technician who shows up understanding those pressures and comes prepared with useful information is welcome. One who shows up unprepared and lectures the grower on everything wrong with the flock gets avoided.'),
 
     para('Come prepared every visit: know their flock history, remember what you discussed last time, and follow up on whatever you recommended. If you told them to check the drinker pressure on line 3, ask what they found. Consistency and follow-through build the trust that makes a grower call you when something first looks wrong, not three days later when it is already a bigger problem.'),
 
@@ -698,9 +698,9 @@ function buildBodySection() {
 
     ...image(visitRecord, 'Photo 5.1: A standardized visit form filled in during the barn walk. Working from a printed form prompts you through the same checks in the same order on every farm, so nothing gets skipped. Source: CPC Short Courses.', 5.5, 'png'),
 
-    para('Leave a copy with the farmer; keep one in your records. The CFIA Poultry Service Industry Biosecurity Guide requires that service providers leave documentation of their service activity on the premises [2]. The visit record satisfies this requirement and builds the farm health history at the same time.'),
+    para('Leave a copy with the farmer; keep one in your records. The CFIA Poultry Service Industry Biosecurity Guide requires that service providers leave documentation of their service activity on the premises [5]. The visit record satisfies this requirement and builds the farm health history at the same time.'),
 
-    para('The NFACC Code of Practice recommends that producers establish and document a working relationship with a veterinarian, and that they keep written emergency response protocols [5]. Your visit records are part of that documentation chain.'),
+    para('The NFACC Code of Practice recommends that producers establish and document a working relationship with a veterinarian, and that they keep written emergency response protocols [8]. Your visit records are part of that documentation chain.'),
 
     h2('5.4  When to Call the Veterinarian'),
 
@@ -725,29 +725,27 @@ function buildBodySection() {
 
     h2('6.1  On-Farm Necropsy Basics'),
 
-    para('Be clear on where your job ends before you ever open a bird. The necropsy and the diagnosis are the veterinarian\'s, not yours, and you do not open birds on your own to work out what killed them. Most of the time the right call is the simple one: leave the bird intact, keep it cool, and get it to the lab. Two situations change that, and both of them start with a phone call to your veterinarian. The first is when your veterinarian cannot get to the farm in person, the flock cannot wait, and they want eyes inside the bird now. The second is when they want a specific tissue collected and sent. Either way you are working under their direction and not on your own judgment, and you work inside the farm\'s biosecurity protocol, because nothing should leave that barn on your knife, your boots, or your coveralls.'),
+    para('Be clear on where your job ends before you ever open a bird. The necropsy and the diagnosis are the veterinarian\'s, not yours, and you do not open birds on your own to work out what killed them. Most of the time the right call is the simple one: leave the bird intact, keep it cool, and get it to the lab.'),
 
-    para('There is a good reason the default is to send the bird rather than open it yourself. A barn floor is not a clean surface. The moment you cut into a carcass on the farm, the tissues pick up dust, litter bacteria, and whatever is on your hands and your knife, so any bacteria you might grow from that bird are mixed with barn contamination from the start. Samples meant for culture have to be collected clean to be worth anything [9]. An intact bird, kept cool and sent promptly to the diagnostic laboratory, arrives in far better shape for a proper necropsy, and it protects the results that matter most when the case needs bacterial culture, antimicrobial sensitivity, or strain typing to steer treatment. A bird left to break down loses that value fast: once the tissue starts to autolyze it is close to useless under the microscope [9].'),
+    para('There is a good reason the default is to send the bird rather than open it yourself. A barn floor is not a clean surface. The moment you cut into a carcass on the farm, the tissues pick up dust, litter bacteria, and whatever is on your hands and your knife, so any bacteria you might grow from that bird are mixed with barn contamination from the start. Samples meant for culture have to be collected clean to be worth anything [12]. An intact bird, kept cool and sent promptly to the diagnostic laboratory, arrives in far better shape for a proper necropsy, and it protects the results that matter most when the case needs bacterial culture, antimicrobial sensitivity, or strain typing to steer treatment. A bird left to break down loses that value fast: once the tissue starts to autolyze it is close to useless under the microscope [12].'),
 
-    para('When one of those situations applies, a structured approach gives you the most information from the least time, and it means your veterinarian gets specific findings to act on instead of a vague impression.'),
+    para('Two situations change that, and both of them start with a phone call to your veterinarian. The first is when your veterinarian cannot get to the farm in person, the flock cannot wait, and they want eyes inside the bird now. The second is when they want a specific tissue collected and sent. Either way you are working under their direction and not on your own judgment, and you work inside the farm\'s biosecurity protocol, because nothing should leave that barn on your knife, your boots, or your coveralls. When one of those situations applies, a structured approach gives you the most information from the least time, and it means your veterinarian gets specific findings to act on instead of a vague impression.'),
 
-    para('Work from the outside in. First look at the feathers, skin, and muscle condition before you open the bird. Then examine the body cavity systematically. Note what is present and what is absent. A pale liver is just as significant as a swollen one. Empty intestines tell you something different than hemorrhagic intestines.'),
+    para('Work from the outside in. First look at the feathers, skin, and muscle condition before you open the bird. Then examine the body cavity systematically. Note what is present and what is absent. A pale liver is just as significant as a swollen one. Empty intestines tell you something different than hemorrhagic intestines. For a complete guide to post-mortem examination technique and what normal organs look like, see Course 10 (Necropsy, Normal Birds) in this series.'),
 
     para('At the farm, you are sorting findings into two categories. The first is management or trauma-related: skin scratches, bruising, ascites fluid with no other lesions, or pasting from wet litter. The second points to systemic disease: generalized organ changes, abnormal content in the respiratory tract, petechial hemorrhages, fibrin on the serosal surfaces, or unusual odors from specific organs. For the post-mortem lesions that separate one disease from another, see Course 11 (Necropsy, Common Diseases) in this series.'),
 
     para('Whatever you find, get it on the record instead of carrying it out of the barn in your head. Write down the color, size, location, and consistency of every lesion, and photograph it in place before you cut into it. Use good light, a clean background, and put something in frame for scale. This matters most in the situation where your veterinarian cannot get to the farm, because then your notes and photos are what they are reading the case from. The two minutes it takes to shoot them properly is often the most useful part of the whole exercise.'),
 
-    para('Never substitute an on-farm post-mortem for lab submission when the cause of mortality is unclear [3]. When mortality is present, the CPC Learning Centre Spotting Disease Early guide is clear that you should send live moribund birds representing the current clinical picture, not birds that died hours ago [3]. Section 6.2 covers how many birds to send and how to package them. Your job at the farm is to give the pathologist enough information to get started, not to make the final diagnosis.'),
-
-    para('For a complete guide to post-mortem examination technique and what normal organs look like, see Course 10 (Necropsy, Normal Birds) in this series.'),
+    para('Never substitute an on-farm post-mortem for lab submission when the cause of mortality is unclear [6]. When mortality is present, the CPC Learning Centre Spotting Disease Early guide is clear that you should send live moribund birds representing the current clinical picture, not birds that died hours ago [6]. Section 6.2 covers how many birds to send and how to package them. Your job at the farm is to give the pathologist enough information to get started, not to make the final diagnosis.'),
 
     h2('6.2  Sample Collection'),
 
     para('When the veterinarian asks you to collect and submit samples, how you handle them determines whether the lab gets usable results. Poorly collected, badly stored, or carelessly transported samples waste everyone\'s time and delay the diagnosis. For the full sample selection, packaging, and lab submission protocol, see Course 9 (The Value of Poultry Diagnostics) in this series.'),
 
-    para('The best submission is 10 to 12 live moribund birds showing the current clinical signs, packaged to arrive alive at the lab [3]. Second best is fresh mortality: birds that have died within the past 2 to 4 hours, chilled but not frozen. Frozen birds lose tissue architecture and many diagnostic tests cannot be run on them.'),
+    para('The best submission is 10 to 12 live moribund birds showing the current clinical signs, packaged to arrive alive at the lab [6]. Second best is fresh mortality: birds that have died within the past 2 to 4 hours, chilled but not frozen. Frozen birds lose tissue architecture and many diagnostic tests cannot be run on them.'),
 
-    para('Label every sample bag clearly: farm ID, flock age, placement date, clinical signs you observed, vaccines given and dates, any treatments given and when. A completed submission form reduces the number of phone calls the lab has to make to you and gets your results back faster [3].'),
+    para('Label every sample bag clearly: farm ID, flock age, placement date, clinical signs you observed, vaccines given and dates, any treatments given and when. A completed submission form reduces the number of phone calls the lab has to make to you and gets your results back faster [6].'),
 
     para('Transport is where a good sample gets ruined, and the risk runs in both directions through the year. Keep samples at about 4 degrees Celsius (refrigerator temperature) the whole way to the lab. In summer that means ice packs in an insulated cooler, not a sample bag riding on the truck seat or sitting in the sun on a loading dock. In winter the danger flips: a box left in an unheated truck bed or dropped at a depot overnight will freeze solid, and that costs you the same tests you were trying to run. Chilled, never frozen, and never left in ambient temperature longer than it has to be.'),
 
@@ -793,15 +791,18 @@ function buildBodySection() {
     pageBreak(),
     h1('References'),
 
+    numberedRef('British Columbia Chicken Marketing Board. Pricing Orders [Internet]. Abbotsford, BC: British Columbia Chicken Marketing Board [cited 2026 Aug]. Available from: bcchicken.ca/pricing-orders'),
+    numberedRef('British Columbia Chicken Marketing Board. BC Interior Region Quota Conditions: Supplementary Guide to the BCCMB General Orders. Abbotsford, BC: British Columbia Chicken Marketing Board; 2025 Nov [cited 2026 Aug]. Available from: bcchicken.ca/wp-content/uploads/2025/11/BC-Interior-Quota-Conditions-Growers-Guide.pdf'),
+    numberedRef('Canadian Poultry Consultants Ltd. Field service and feed representative roles in British Columbia poultry production [subject-matter communication with CPC Learning Centre staff]; 2026 Aug.'),
     numberedRef('United States Department of Agriculture, Animal and Plant Health Inspection Service. Poultry Industry Manual. Washington, DC: National Animal Health Emergency Management System. Available from: aphis.usda.gov/sites/default/files/poultry_ind_manual.pdf'),
-    numberedRef('Canadian Food Inspection Agency. Poultry Service Industry Biosecurity Guide [Internet]. Ottawa: Canadian Food Inspection Agency. Available from: inspection.canada.ca/en/animal-health/terrestrial-animals/biosecurity/standards-and-principles/poultry-service-industry [cited 2026 Jun]'),
+    numberedRef('Canadian Food Inspection Agency. Poultry Service Industry Biosecurity Guide [Internet]. Ottawa: Canadian Food Inspection Agency. Available from: inspection.canada.ca/en/animal-health/terrestrial-animals/biosecurity/standards-and-principles/poultry-service-industry [cited 2026 Aug]'),
     numberedRef('CPC Learning Centre. Spotting Disease Early [Flock Management Guide]. CPC Learning Centre. Available from: cpclearningcentre.ca'),
     numberedRef('Bestman M, Ruis M, Heijmans J, van Middelkoop K. Poultry Signals: A Practical Guide for Bird-Focused Poultry Farming. Zutphen: Roodbont Publishers; 2012.'),
     numberedRef('National Farm Animal Care Council. Code of Practice for the Care and Handling of Hatching Eggs, Breeders, Chickens and Turkeys. Lacombe: National Farm Animal Care Council; 2016. Available from: nfacc.ca/poultry-code-of-practice'),
     numberedRef('Aviagen. Ross Broiler Management Handbook. Huntsville, AL: Aviagen; 2025. Available from: aviagen.com/assets/Tech_Center/Ross_Broiler/Aviagen-ROSS-Broiler-Handbook-EN.pdf'),
     numberedRef('Chedad A, Aerts JM, Vranken E, Lippens M, Zoons J, Berckmans D. Do heavy broiler chickens visit automatic weighing systems less than lighter birds? Br Poult Sci. 2003;44(5):663-668. doi:10.1080/00071660310001643633'),
     numberedRef('Oke OE, Akosile OA, Oni AI, Opowoye IO, Ishola CA, Adebiyi JO, Odeyemi AJ, Adjei-Mensah B, Uyanga VA, Abioja MO. Oxidative stress in poultry production. Poult Sci. 2024;103(9):104003. doi:10.1016/j.psj.2024.104003.'),
-    numberedRef('Gunn-Christie RG. Collection and Submission of Laboratory Samples from Animals. Merck Veterinary Manual. Kenilworth, NJ: Merck & Co.; [cited 2026 Jul]. Available from: merckvetmanual.com'),
+    numberedRef('Gunn-Christie RG. Collection and Submission of Laboratory Samples from Animals. Merck Veterinary Manual. Kenilworth, NJ: Merck & Co.; [cited 2026 Aug]. Available from: merckvetmanual.com'),
 
   ]; // end children
 
@@ -877,9 +878,9 @@ const outZip = await JSZip.loadAsync(fs.readFileSync(OUT_FILE));
 // TOC entries (text must match heading text exactly, including section numbers and spacing)
 const tocEntries = [
   { lvl: 1, text: 'Introduction', page: 3 },
-  { lvl: 1, text: 'Section 1: The Role of Field Service', page: 3 },
-  { lvl: 2, text: '1.1  What Field Service Means in Commercial Poultry', page: 3 },
-  { lvl: 2, text: '1.2  Where You Fit in the Production Chain', page: 4 },
+  { lvl: 1, text: 'Section 1: The Role of Field Service', page: 4 },
+  { lvl: 2, text: '1.1  What Field Service Means in Commercial Poultry', page: 4 },
+  { lvl: 2, text: '1.2  Where You Fit in the Production Chain', page: 5 },
   { lvl: 2, text: '1.3  Three Outcomes of Every Visit', page: 5 },
   { lvl: 1, text: 'Section 2: Before the Visit', page: 6 },
   { lvl: 2, text: '2.1  Pre-Visit Preparation', page: 6 },
@@ -898,12 +899,12 @@ const tocEntries = [
   { lvl: 1, text: 'Section 5: Working with the Farmer', page: 16 },
   { lvl: 2, text: '5.1  Building the Relationship', page: 16 },
   { lvl: 2, text: '5.2  Communicating Findings', page: 16 },
-  { lvl: 2, text: '5.3  The Visit Record', page: 16 },
-  { lvl: 2, text: '5.4  When to Call the Veterinarian', page: 17 },
+  { lvl: 2, text: '5.3  The Visit Record', page: 17 },
+  { lvl: 2, text: '5.4  When to Call the Veterinarian', page: 18 },
   { lvl: 1, text: 'Section 6: Practical Field Skills', page: 19 },
   { lvl: 2, text: '6.1  On-Farm Necropsy Basics', page: 19 },
   { lvl: 2, text: '6.2  Sample Collection', page: 20 },
-  { lvl: 2, text: '6.3  The Farm Health Record Over Time', page: 20 },
+  { lvl: 2, text: '6.3  The Farm Health Record Over Time', page: 21 },
   { lvl: 1, text: 'Workshop: Practical Field Visit Exercise', page: 22 },
   { lvl: 1, text: 'Recommended Journals and Resources', page: 23 },
   { lvl: 1, text: 'References', page: 24 },
