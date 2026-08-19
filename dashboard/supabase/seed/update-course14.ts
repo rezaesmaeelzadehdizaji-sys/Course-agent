@@ -35,9 +35,9 @@ const META = {
   title: "Intro to Field Service",
   subtitle: "Practical Skills for Barn Visits, Flock Assessment, and Working with Farmers",
   organization: "CPC Short Courses",
-  date: "July 2026",
-  version: "1.0",
-  disclaimer: "This course is produced by the CPC Learning Centre for educational purposes. Content is intended for trained poultry industry professionals. It does not replace the advice of a licensed veterinarian, integrator management manuals, or regulatory requirements. Always follow current CFIA, NFACC, and integrator-specific protocols.",
+  date: "August 2026",
+  version: "1.1",
+  disclaimer: "This course is produced by the CPC Learning Centre for educational purposes. Content is intended for trained poultry industry professionals. It does not replace the advice of a licensed veterinarian, primary breeder management guides, or regulatory requirements. Always follow current CFIA, NFACC, provincial marketing board, and company-specific protocols.",
 }
 
 async function run() {
