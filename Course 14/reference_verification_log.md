@@ -42,7 +42,8 @@ First-appearance order is now confirmed sequential: 1, 2, 3, 4, 5, 6. The refere
 - **Verified:** YES — page fetched 2026-08-18
 - **Source URL:** https://bcchicken.ca/pricing-orders/
 - **Content confirmed (direct quote from the page):** "The BC Chicken Marketing Board sets the minimum 'Live Price' (or 'Farm Gate Price') – the amount the farmer receives per live chicken as it leaves the farm"
-- **Content supported:** under Canadian supply management the grower owns the birds and is paid a live price per bird as the flock leaves the farm (Introduction and Section 1.1). Distinguishes the Canadian model from the US integrator model, where the integrator owns the birds.
+- **Content supported:** under Canadian supply management the grower markets the chicken and is paid a live price per bird as the flock leaves the farm (Introduction and Section 1.1).
+- **CLAIM TIGHTENED 2026-08-18 (second pass):** the first draft of this revision wrote "the grower owns the birds." Neither BCCMB page states that in those words; it is an inference from the live-price language. Per the rule that the cited source must directly support the claim, the course wording was changed to what the sources do say: the grower holds the quota, markets the chicken, and is paid a live price per bird as the flock leaves the farm. The contrast with the US integrator model still lands, without an ownership assertion that no source states. If CPC or BCCMB can point to a written statement on bird ownership, the stronger wording can be restored with that citation.
 - **Publisher address confirmed:** 1848 McCallum Rd #220, Abbotsford, BC (BCCMB contact page, fetched 2026-08-18).
 - **Notes:** Live provincial marketing board webpage; cited date included per CLAUDE.md Cited-Date Rule. Institutional authorship. Listed in CLAUDE.md as an authoritative BC supply-management source.
 - **Status:** VERIFIED
@@ -57,7 +58,8 @@ First-appearance order is now confirmed sequential: 1, 2, 3, 4, 5, 6. The refere
 - **Date confirmed:** "November 2025" on the cover.
 - **Content confirmed (direct quotes from the PDF):** "A key to chicken-growing is arrangements with a processor. You may hold chicken quota, but you can only get it to market by contracting with a processor." and "This includes chick placements and live bird shipments, which will be facilitated by this processor and its associated hatchery."
 - **Content supported:** the grower holds quota licensed by the provincial marketing board; quota alone does not get chicken to market; the processor and its associated hatchery set up chick placements and live bird shipments (Section 1.1).
-- **Notes:** Official BCCMB grower guidance document. Institutional authorship. The document's guidance on processor arrangements is written for the BC Interior region; the course states it as "in most regions", which is consistent with the source and is not over-claimed as national.
+- **Notes:** Official BCCMB grower guidance document. Institutional authorship.
+- **SCOPE CORRECTED 2026-08-18 (second pass):** the first draft of this revision generalized the processor/hatchery point to "in most regions." The source makes it specifically about growers in the BC Interior. The course now attributes it that way in the body text ("The BC Chicken Marketing Board puts it plainly for growers in the BC Interior"), so the regional scope of the source is visible to the reader instead of being quietly widened.
 - **Status:** VERIFIED
 
 ---
@@ -67,6 +69,7 @@ First-appearance order is now confirmed sequential: 1, 2, 3, 4, 5, 6. The refere
 - **Verified:** YES — confirmed directly with Mike (CPC) during the August 2026 BC visit and relayed by the project owner (Reza) on 2026-08-18.
 - **Content confirmed:** field service representatives are representatives of veterinary care / animal health companies and may also be based out of poultry clinics; their responsibilities include vaccination, farm preparation ahead of chick placement, and handling technical issues on site. Feed representatives collect and analyze production data for the feed company and the farmer, and stay in touch with farmers and veterinary clinics in case of mortality or major problems, but are not responsible for field service tasks.
 - **Content supported:** the two-role split in Section 1.1 and the feed representative's data role in Section 1.2.
+- **WORDING TIGHTENED 2026-08-18 (second pass):** three phrases were pulled back to match the account exactly. "is often based out of a poultry clinic" became "may also be based out of a poultry clinic" (the account says "may also be", not a frequency). The task list was reworded as "The work includes ..." because the account says responsibilities "include tasks such as", i.e. examples rather than a complete definition. "Feed reps are not there to do field service work" became "What the feed rep does not carry is the field service work itself", matching "not responsible for field service tasks the way field service reps are."
 - **Notes:** This is CPC subject-matter input, not a published document, so it is cited as a subject-matter communication with no URL. It is CPC-confirmed in the sense required by CLAUDE.md (the CPC team stated it), so it does NOT carry [NEEDS SOURCE]. Body text names the CPC Learning Centre explicitly ("The CPC Learning Centre draws the line this way") per the CPC attribution rule. If CPC later publishes a written bulletin covering this, replace this entry with the bulletin citation.
 - **Status:** VERIFIED (CPC subject-matter confirmation)
 
@@ -180,8 +183,8 @@ First-appearance order is now confirmed sequential: 1, 2, 3, 4, 5, 6. The refere
 
 | Citation | Section(s) | Claim supported |
 |----------|------------|----------------|
-| [1] | Introduction, 1.1 | Under Canadian supply management the grower owns the birds and runs the farm; the grower is paid a live price per bird as the flock leaves the farm |
-| [2] | 1.1 | Quota alone does not get chicken to market; the grower needs an arrangement with a licensed processor, and the processor and its associated hatchery set up chick placements and live bird shipments |
+| [1] | Introduction, 1.1 | The grower is paid a live price (farm gate price) per bird as the flock leaves the farm, i.e. the grower markets the chicken |
+| [2] | Introduction, 1.1 | The grower holds quota licensed by the provincial marketing board; quota alone does not get chicken to market; a BC Interior grower can only get chicken to market by contracting with a processor, and that processor and its hatchery set up chick placements and live bird shipments |
 | [3] | 1.1, 1.2 | Field service representative works for a veterinary or animal health company and is often based out of a poultry clinic, covering vaccination, pre-placement farm preparation, and on-site technical problems; the feed company representative is a separate role that gathers and works through production data and is not there to do field service work |
 | [4] | 1.2, 4.2, 4.4, 5.1 | Feed conversion, daily gain, mortality rate, and condemnations at the plant are the tracked production numbers; highest daily mortality in the first week of life; spot weighing 30–50 birds (shared with [9]); farm problems outside the grower's control that still affect performance |
 | [5] | 2.1, 2.2, 2.3, 5.3 | CFIA zone system (CAZ, Service Area, RAZ); pre-arrival communication and enhanced cleaning/essential-visits-only during disease alerts; visitor log and on-premises documentation; vehicle positioning away from air inlets/exhaust fans; PPE/coveralls and footwear requirements |
