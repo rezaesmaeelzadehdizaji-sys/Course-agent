@@ -1,6 +1,6 @@
 # Course 17 — Reference Verification Log
 **Course:** Regulatory Framework in Poultry Production
-**Date verified:** 2026-06-16; re-verified 2026-07-28 (all 25 confirmed real against live sources; statute chapters, publication numbers, and program names re-checked)
+**Date verified:** 2026-06-16; re-verified 2026-07-28; full re-audit 2026-08-19 (all 31 confirmed real against live sources; statute chapters, publication numbers, and program names re-checked)
 **Verifier:** Claude (Phase 1 deep research + per-reference web verification)
 
 All 31 references are government legislation/agency pages, national supply-management
@@ -36,7 +36,7 @@ were confirmed against the official Justice Laws Website (federal) and BC Laws (
 | 21 | Health Canada — responsible use of medically important antimicrobials in animals | canada.ca/en/health-canada; MIAs prescription-only since 2018-12-01, growth-promotion claims removed — confirmed 2026-07-30 | ✅ confirmed |
 | 22 | CgFARAD — Canadian global Food Animal Residue Avoidance Databank | cgfarad.ca (hosted cgfarad.usask.ca); science-based withdrawal-interval recommendations to licensed vets for extra-label drug use in food animals — confirmed 2026-07-30 | ✅ confirmed |
 | 23 | Safe Food for Canadians Act (SC 2012, c. 24) | laws-lois.justice.gc.ca/eng/acts/s-1.1; chapter 24 confirmed | ✅ confirmed |
-| 24 | CFIA — Understanding the Safe Food for Canadians Regulations (handbook) | inspection.canada.ca; SFCR in force 2019-01-15; licence/preventive controls/traceability; Part 6 humane slaughter; grading + method-of-production claim substantiation | ✅ confirmed |
+| 24 | CFIA — Understanding the Safe Food for Canadians Regulations (handbook) | inspection.canada.ca; SFCR in force 2019-01-15; licence/preventive controls/traceability; Part 6 humane slaughter; grading + method-of-production claim substantiation. 2026-08-19: confirmed SFCR replaced registration with licensing, so Section 5.2 wording corrected to "federally licensed grading stations by CFIA-licensed graders"; CFIA licence-suspension power over grading stations confirmed | ✅ confirmed |
 | 25 | Natural Products Marketing (BC) Act (RSBC 1996, c. 330) | bclaws.gov.bc.ca/.../96330_01; chapter 330 confirmed | ✅ confirmed |
 | 26 | BC Chicken Marketing Board — Governance; General Orders (over-/under-production) | bcchicken.ca; created under NPMA, holds quota, licenses, audits; General Orders Parts 26-27 give ~94-106% tolerance per period, overproduction levy on excess, overage deducted from a later period — confirmed 2026-07-30 | ✅ confirmed |
 | 27 | BC Farm Industry Review Board — Regulated Marketing | www2.gov.bc.ca; supervises all BC marketing boards/commissions | ✅ confirmed |
@@ -53,6 +53,33 @@ were confirmed against the official Justice Laws Website (federal) and BC Laws (
 - AI/ND reportable under Health of Animals Act: CFIA AI fact sheet + CFIA Newcastle disease page.
 - CFC AMU strategy removed Cat I (2014) and Cat II (2018) preventive use: chickenfarmers.ca + Canadian Poultry Magazine.
 - PCA Act enforced by BC SPCA; NFACC Code compliance is a defence: spca.bc.ca + gov.bc.ca animal-welfare FAQ.
+
+## Re-audit 2026-08-19 (full figures and claims pass)
+
+Every number and named-body claim in the body text and in all four figures was re-extracted
+and re-checked against live sources. The four figures carry no numeric claims, so no
+body/figure number drift is possible in this course. Claims re-confirmed live on 2026-08-19:
+
+| Claim (location) | Value in course | Live confirmation |
+|---|---|---|
+| CFC AMU strategy stage (4.3) | Cat I gone 2014, Cat II gone 2018, Cat III (bacitracin) is the current reduction target | chickenfarmers.ca Category III reduction page: after re-assessing the end-2020 elimination goal, CFC now pursues Cat III preventive-use reduction through a non-regulatory approach — course wording is current ✅ |
+| BC chicken small lot (Table 7.1) | Up to 2,000 birds/yr | bcchicken.ca Small Lot Program: permits to a maximum of 2,000 birds per calendar year, cannot be combined with quota ✅ |
+| BC eggs small lot (Table 7.1) | 0–99 backyard, 100–399 registered small lot, 400+ quota | bcegg.com Small Lot Farms: 0–99 backyard, 100–399 small lot registration, 400+ quota hens ✅ |
+| BC turkey small lot (Table 7.1) | 300/yr Direct Vendor; 50 personal use | bcturkey.com Direct Vendor Program: up to 300 turkeys per quota year; >50/yr for personal consumption falls under Board Order ✅ |
+| Ontario chicken small lot (Table 7.1) | 300 Family Food; 600–3,000 Artisanal | ontariochicken.ca Family Food (300/premise/yr) and Artisanal Chicken Program (600–3,000/yr, production licence) ✅ |
+| BCCMB tolerance band (7.1) | ~94 to 106 percent, overproduction levy, excess deducted from a later period | BCCMB General Orders ±6% sleeve; above the 6% sleeve an overproduction levy applies and the increment is deducted against future production periods ✅ (note: the Board can temporarily adjust the sleeves for a given period, e.g. the Feb 2025 A-195 notice, which is why the course says "roughly") |
+| CFIA enforces humane slaughter (5.2) | CFIA has suspended plant licenses for failing to meet it | CFIA suspended the SFC licence of Cami International Poultry Ltd. (Welland, ON) citing non-compliance with humane receiving and handling requirements under SFCR Parts 4 and 6 ✅ |
+| Egg grading oversight (5.2) | Graded at federally licensed stations by CFIA-licensed graders; CFIA can suspend | Only CFIA-licensed graders may grade eggs; grading limited to licensed egg operators under SFCR; CFIA may suspend an SFC licence for non-compliance ✅ |
+
+Mechanical validation re-run on the rebuilt docx (2026-08-19): 0 em dashes, 0 en dashes,
+0 `w:dirty` flags, 0 bare "vet", 0 [NEEDS SOURCE], 0 British spellings, 0 double-escaped
+ampersands, citation first-appearance order sequential 1–31, all 3 *Salmonella* instances
+italicized, 31 cached TOC rows with 31 matching bookmarks and hyperlinks, all 31 TOC page
+numbers verified against a LibreOffice PDF render, header/footer format correct on all 11
+sections, and cover date (July 2026) aligned with every `[cited 2026 Jul]`.
+
+The companion summary page agenda was rebuilt on 2026-08-19 to mirror the body H1/H2
+headings exactly (it had gone stale when Sections 4.2 and 4.4 were added to the body).
 
 ## Notes
 - One peer-reviewed journal article is cited ([18] Diarra & Malouin 2014, Front Microbiol

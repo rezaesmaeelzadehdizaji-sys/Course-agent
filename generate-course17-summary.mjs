@@ -134,33 +134,35 @@ async function main() {
   children.push(para('Raising healthy birds is only half the job. Running a poultry farm in Canada also means working inside a set of rules that cover animal welfare, biosecurity, food safety, marketing, supply management, and the records you keep. Those rules exist to protect bird health, public health, and a fair marketplace for every producer. When you understand how they apply to your barn, you stay in compliance, you steer clear of legal trouble, and you run an operation that buyers and consumers trust.'));
   children.push(para('This course walks through the main federal and provincial regulations, the industry codes, and the supply management system that shape poultry farming in Canada. It lays out what you actually have to do, from the daily work in the barn to the day an inspector shows up at your door.'));
 
-  // Agenda (locked headings from source)
+  // Agenda (mirrors the Course 17 body H1/H2 headings exactly)
   children.push(sectionHead('Agenda'));
   children.push(numbered(1, 'Overview of the Regulatory Landscape'));
-  children.push(subItem('a', 'Who regulates poultry in Canada: federal vs provincial vs industry bodies'));
-  children.push(subItem('b', 'Key regulatory agencies and organizations'));
-  children.push(numbered(2, 'Supply Management & Market Regulation'));
-  children.push(subItem('a', 'How supply management works for poultry and eggs'));
-  children.push(subItem('b', 'Relevant legislation and organizational oversight'));
-  children.push(numbered(3, 'Animal Welfare & Care Standards'));
-  children.push(subItem('a', 'Codes of Practice for care and handling of poultry'));
-  children.push(subItem('b', 'Mandated housing, environment, feeding, transport, and handling standards'));
-  children.push(numbered(4, 'Biosecurity, Animal Health & Disease Prevention'));
-  children.push(subItem('a', 'On-farm biosecurity standards and disease-control regulations'));
-  children.push(subItem('b', 'Regulatory requirements for hatcheries, breeders, supply flocks'));
-  children.push(numbered(5, 'Food Safety, Processing & Product Standards'));
-  children.push(subItem('a', 'Regulation of poultry products for slaughter, processing, sale'));
-  children.push(subItem('b', 'Standards for labeling, slaughter, pathogen control, processing'));
-  children.push(numbered(6, 'Record-Keeping, Audits & Compliance'));
-  children.push(subItem('a', 'What records need to be maintained'));
-  children.push(subItem('b', 'How audits, inspections, and compliance checks are carried out'));
-  children.push(numbered(7, 'Provincial Variation: Example from British Columbia'));
-  children.push(subItem('a', 'How provincial regulations overlay federal/industry rules'));
-  children.push(subItem('b', 'Role of provincial acts, marketing boards, welfare laws'));
-  children.push(numbered(8, 'Implications for Farmers & Good Practices'));
-  children.push(subItem('a', 'What compliance means for everyday farm management'));
-  children.push(subItem('b', 'Advantages: access to markets, consumer trust, animal welfare, disease prevention'));
-  children.push(subItem('c', 'Risks of non-compliance and how to avoid them'));
+  children.push(subItem('a', 'Who Regulates Poultry in Canada: Federal, Provincial, and Industry'));
+  children.push(subItem('b', 'Key Regulatory Agencies and Organizations'));
+  children.push(numbered(2, 'Supply Management and Market Regulation'));
+  children.push(subItem('a', 'How Supply Management Works for Poultry and Eggs'));
+  children.push(subItem('b', 'Relevant Legislation and Organizational Oversight'));
+  children.push(numbered(3, 'Animal Welfare and Care Standards'));
+  children.push(subItem('a', 'Codes of Practice for the Care and Handling of Poultry'));
+  children.push(subItem('b', 'Mandated Housing, Environment, Feeding, Transport, and Handling Standards'));
+  children.push(numbered(4, 'Biosecurity, Animal Health, and Disease Prevention'));
+  children.push(subItem('a', 'On-Farm Biosecurity Standards and Disease-Control Regulations'));
+  children.push(subItem('b', 'Reportable Diseases and Your Legal Duty to Report'));
+  children.push(subItem('c', 'Regulatory Requirements for Hatcheries, Breeders, and Supply Flocks'));
+  children.push(subItem('d', 'Who Oversees Your Veterinarian'));
+  children.push(numbered(5, 'Food Safety, Processing, and Product Standards'));
+  children.push(subItem('a', 'Regulation of Poultry Products for Slaughter, Processing, and Sale'));
+  children.push(subItem('b', 'Standards for Labeling, Slaughter, Pathogen Control, and Processing'));
+  children.push(numbered(6, 'Record-Keeping, Audits, and Compliance'));
+  children.push(subItem('a', 'What Records Need to Be Maintained'));
+  children.push(subItem('b', 'How Audits, Inspections, and Compliance Checks Are Carried Out'));
+  children.push(numbered(7, 'Provincial Variation in British Columbia'));
+  children.push(subItem('a', 'How Provincial Regulations Overlay Federal and Industry Rules'));
+  children.push(subItem('b', 'The Role of Provincial Acts, Marketing Boards, and Welfare Laws'));
+  children.push(numbered(8, 'Implications for Farmers and Good Practices'));
+  children.push(subItem('a', 'What Compliance Means for Everyday Farm Management'));
+  children.push(subItem('b', 'The Advantages: Market Access, Consumer Trust, and Better Birds'));
+  children.push(subItem('c', 'The Risks of Non-Compliance and How to Avoid Them'));
 
   // Learning Objectives (humanized)
   children.push(sectionHead('Learning Objectives'));
