@@ -313,3 +313,65 @@ All four courses re-verified after rebuild: 0 em dashes, 0 `w:dirty`, 0 [NEEDS S
 unescaped or double-escaped ampersands, 0 British spellings in prose, TOC rows equal bookmarks
 equal hyperlinks, and every cached TOC page number re-checked heading by heading against a
 fresh LibreOffice PDF render (Course 12: 33 pages, Course 14: 26, Course 17: 27, Course 3: 23).
+
+---
+
+## Course 3 generator reconciled to the published revision, 2026-08-20
+
+Per user direction, the last revised version (the published
+`T-FLAWS_Assessment_Management_Tool.docx`) was kept as the authority and
+`generate-course3-tflaws.mjs` was brought up to reproduce it, so the generator is now the
+source of truth for Course 3.
+
+**What the published revision contained that the generator did not.** Diffing the two showed
+the published file was a later revision with 19 references against the generator's 15.
+
+Four references added:
+
+| # | Added reference |
+|---|---|
+| 3 | Bell DD, Weaver WD (eds). *Commercial Chicken Meat and Egg Production*, 5th ed. Springer, 2002 |
+| 13 | Leighton GM, Drury JP, Small J, Miller ET. Unfamiliarity generates costly aggression in interspecific avian dominance hierarchies. *Nature Communications*. 2024;15:335 |
+| 14 | Miller ET, et al. Fighting over food unites the birds of North America in a continental dominance hierarchy. *Behavioral Ecology*. 2017;28(6):1454-1463 |
+| 15 | Francis ML, et al. Effects of supplementary feeding on interspecific dominance hierarchies in garden birds. *PLoS One*. 2018;13(9):e0202152 |
+
+Four references corrected: [2] to *Water Quality in Poultry Production* (2025); [5] to
+Pottguter R, *Poultry Signals*, Roodbont 2009 (was wrongly attributed to Bestman et al. 2012);
+[7] to *Best Practices in Biosecurity for Ross Broiler Operations*; [8] to CFIA *Biosecurity
+Guide for Commercial Poultry Production*.
+
+**Reconciliation applied to the generator:** 46 in-text citation markers remapped
+(1:1, 2:2, 3:4, 4:5, 5:6, 6:7, 7:8, 8:9, 9:10, 10:11, 11:12, 12:16, 13:17, 14:18, 15:19); the
+pecking-order sentence extended from `[16,17]` to `[16,17,13,14,15]` to match the published
+text; and the reference block rebuilt with all 19 entries. Renumbering was confined to the
+body portion of the source so the reference block's own labels could not be touched.
+
+**Verified:** generator output is now an exact text match to the published file, 377/377
+paragraphs, 14/14 media files, ampersand in reference [3] renders correctly with no
+double-escape.
+
+### Stale TOC found in the published file and fixed
+
+Once the generator matched, its cached TOC was checked against a LibreOffice render and 35 of
+41 entries were wrong, drifting between +1 and -3 pages. The published file pointed
+"References" to page 32 in a 31-page document, which confirms the cached TOC had gone stale
+against content edits rather than being a render artifact.
+
+All 41 page numbers were recomputed and rewritten. Re-verified heading by heading: all
+correct. A final paragraph-by-paragraph diff against the published file shows **35 differing
+paragraphs, all of them TOC rows, and zero body content differences**, so the rebuild is the
+published course with its navigation repaired.
+
+Course 3 was then republished (course folder final, dashboard copy, Vercel, content re-seed).
+
+### Two observations left as-is, for a decision
+
+1. **Reference [3] (Bell & Weaver) is never cited in the body.** It exists in the published
+   list with no in-text pointer. Preserved rather than removed, since removing it would
+   renumber the whole list.
+2. **The list is not in first-appearance order**, though the page says "References listed in
+   order of appearance." Actual first-appearance order is 9, 1, 12, 6, 4, 11, 16, 17, 13, 14,
+   15, 5, 18, 19, 2, 10, 7, 8. The list is grouped thematically (books and standards, then CPC
+   materials, then journal articles). This conflicts with the project's Vancouver
+   order-of-appearance rule. Fixing it would renumber all 19 references and every in-text
+   citation, so it is flagged rather than done unilaterally.
