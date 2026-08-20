@@ -122,3 +122,42 @@ recomputed against a fresh LibreOffice PDF render and rewritten in the generator
 re-verified heading by heading. Post-cut validation: 0 em/en dashes, 0 `w:dirty`, 0 bare
 "vet", 0 [NEEDS SOURCE], 0 British spellings, 0 escaping bugs, citations sequential 1-31,
 3/3 *Salmonella* runs italic, 31 TOC rows with 31 matching bookmarks and hyperlinks.
+
+## Quota enforcement correction 2026-08-20 (Sections 2.2 and 7.1)
+
+The course previously described the quota penalty as one-sided ("going over your quota is not
+free"). Under-production is penalized too, by a different mechanism, so both passages were
+corrected against the primary source rather than a summary.
+
+**Source consulted directly:** BCCMB *General Orders* (Aug 26, 2011, amended by Board motion
+May 26, 2017 and March 5, 2026), Part 26 Undermarketing, Part 27 Overmarketing and
+Overplacement, and Section 31.3. Retrieved from bcchicken.ca and read in full text, not
+paraphrased from a secondary summary. Cited as ref [26].
+
+| Rule | What the General Orders actually say |
+|---|---|
+| 26.1 | A grower who markets fewer kilograms than allotted may be allotted the undermarketed amount in the sixth quota production period following |
+| 26.2 | **"Undermarketing exceeding 6% of the allotment to the grower shall be forfeited."** This is the under-production penalty: forfeiture of the shortfall beyond the sleeve, not a levy |
+| 26.6 | For annualized growers, undermarketing beyond 6% over the calendar year is likewise "forfeit or lost" |
+| 27.1–27.2 | A grower shall not market in excess of allotment; the excess weight is deducted from the allotment in the sixth quota production period following |
+| 27.6 | Overmarketing levies of $0.44/kg above 102% and $0.88/kg above 104%, but the Board **only collects from growers when provincial production exceeds 102% on a two-period average**, each grower's share calculated per Schedule 19 |
+| 27.7 | Unpaid levies lead to allotment reductions (250 kg, then 10% of quota held) until paid |
+| 31.3 | A grower may apply to widen the Part 26 sleeve from 6% to 10% where a diagnosed disease problem caused the shortfall, with lab or veterinary diagnosis, full disclosure, and proof a complete cleaning and disinfection protocol was done before the next flock |
+
+Corrections applied:
+- **Section 2.2** now frames quota as a target to hit rather than only a ceiling, and states
+  that missing outside the band in either direction costs you. Also fixed a grammatical slip
+  ("everyone production" to "everyone's production").
+- **Section 7.1** now gives the real two-sided mechanism: the 6 percent sleeve either way
+  (roughly 94 to 106 percent), the six-period deduction and the province-triggered
+  overmarketing levy on the over side, carry-forward within the sleeve and forfeiture beyond
+  it on the under side, and the 10 percent disease exemption under 31.3.
+
+Note the levy nuance now reflected in the text: a grower going over their own allotment is not
+automatically levied. Grower levies are collected only when the province as a whole exceeds
+102% on the two-period average, which is why the course says "if the province as a whole runs
+over its allocation you can be billed an overmarketing levy on your share of it."
+
+Pagination re-checked after the rewrite: unchanged at 26 pages, all 31 TOC page numbers still
+correct. Sweeps clean: 0 em/en dashes, 0 `w:dirty`, 0 bare "vet", 0 [NEEDS SOURCE], 0 British
+spellings, citations sequential 1-31, 31 TOC rows with matching bookmarks and hyperlinks.
