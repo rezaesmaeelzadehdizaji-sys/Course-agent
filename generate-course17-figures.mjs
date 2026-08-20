@@ -95,7 +95,7 @@ function fig1() {
   <rect width="${W}" height="${H}" fill="white"/>
   ${titleBar(W, 'The Three Layers of Poultry Regulation in Canada')}
   ${body}
-  ${caption(W, H, 'Federal law sets the floor, national industry bodies set the programs, and your provincial board delivers and audits them.')}
+  ${caption(W, H, 'Each layer builds on the one above it, and all three land on your farm.')}
 </svg>`;
   svgToPng(svg, 'fig17_1.png');
 }
@@ -149,9 +149,9 @@ function fig3() {
     { y: 72,  h: 78, fill: C.lightRed, stroke: C.red, title: 'You see warning signs',
       lines: ['Sudden high mortality, a sharp drop in feed or water intake,', 'or respiratory or nervous-system signs spreading through the flock.'] },
     { y: 188, h: 86, fill: C.lightAmber, stroke: C.amber, title: 'Call your veterinarian and report to the CFIA right away',
-      lines: ['Avian influenza and Newcastle disease are reportable under the Health of', 'Animals Act. By law, suspected cases must be reported to the CFIA. Do not wait', 'for confirmation, and do not move birds, eggs, or equipment off the farm.'] },
+      lines: ['Do not wait for confirmation. Report on suspicion, then hold everything', 'in place: no birds, eggs, or equipment leave the farm until the CFIA', 'tells you otherwise.'] },
     { y: 312, h: 70, fill: C.lightBlue, stroke: C.medBlue, title: 'The CFIA investigates',
-      lines: ['Inspectors sample the flock and confirm or rule out the disease.', 'You tighten biosecurity and hold everything in place while they work.'] },
+      lines: ['Inspectors sample the flock and confirm or rule out the disease.', 'Keep your biosecurity tight while they work.'] },
     { y: 420, h: 78, fill: C.lightGreen, stroke: C.green, title: 'If confirmed: control and recover',
       lines: ['Quarantine and movement control, humane depopulation if required,', 'cleaning and disinfection, and federal compensation for ordered destruction.'] },
   ];

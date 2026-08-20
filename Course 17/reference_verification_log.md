@@ -95,3 +95,30 @@ numbers still correct.
   August 2026 cover date). Refs [14] (CPC local PDF) and [18] (journal article) carry no
   cited date per the same rule.
 - No citation required more than 2–3 minutes to locate; none marked [NEEDS SOURCE].
+
+## Redundancy pass 2026-08-20 (figures, captions, body)
+
+Every figure's rendered text, every caption, and every body paragraph were extracted and
+compared for shared phrasing and restated facts. Eight duplications were removed:
+
+| # | What was duplicated | Where it was kept | What was cut |
+|---|---|---|---|
+| 1 | The three-layer statement ("federal sets the floor, national bodies set the programs, provincial board delivers and audits") appeared in the Introduction, in the Section 1 opener, and word-for-word as the Figure 1.1 subtitle | Introduction, plus the Figure 1.1 diagram | Section 1 opener no longer re-lists the three levels; Figure 1.1 subtitle reworded to state the relationship instead of echoing the Introduction |
+| 2 | "stable supply, predictable prices, and a fair return ... without ongoing government subsidies" appeared verbatim in the Figure 2.1 footer and at the end of Section 2.1 | Figure 2.1 footer | The body's repeat, replaced with a farmer-facing beat about the settlement statement |
+| 3 | Section 4.2 prose transcribed Figure 4.1 step by step (call the veterinarian, report, hold everything in place, quarantine/depopulation/cleaning/compensation, report fast) | Figure 4.1 | ~60 words of prose transcription; the paragraph now carries only the [16] citation anchor and the Course 7 cross-reference |
+| 4 | Figure 4.1 box 2 restated the legal basis (AI and ND reportable under the Health of Animals Act, report on suspicion) that Section 4.2 body already establishes with refs [15] and [16] | Section 4.2 body | The legal-basis sentences in the figure box; it now carries only the action |
+| 5 | "hold everything in place" appeared in two Figure 4.1 boxes | Box 2 | Box 3 reworded to "Keep your biosecurity tight while they work" |
+| 6 | "the compliance paperwork is the good-management paperwork" appeared in Section 6.1 body, the Figure 6.1 caption, and the Figure 6.1 footer | Section 6.1 body (cited) and the figure footer | The caption's second sentence |
+| 7 | The Table 7.1 caption restated its own first sentence ("the most you can raise without quota" then "above these limits you need quota") | First sentence | The second sentence |
+| 8 | AAFC's and the CFIA's functions were enumerated in the Section 1.1 narrative and again in the Section 1.2 glossary, including the verbatim clause "policy environment that supply management operates within" | Section 1.2 glossary (the scannable reference the reader returns to) | Section 1.1 now places each body in its layer rather than re-listing its functions; the 1.2 AAFC entry no longer repeats the "policy environment" clause |
+
+Re-scanned after the cuts: zero figure-to-body prose overlaps, zero caption-to-body overlaps,
+and the only remaining repeated phrases across body paragraphs are unavoidable proper nouns
+(organization names such as "Farm Products Council of Canada" and program names such as
+"on-farm food safety and animal care programs").
+
+The cuts shortened the course from 28 pages to 26. All 31 cached TOC page numbers were
+recomputed against a fresh LibreOffice PDF render and rewritten in the generator, then
+re-verified heading by heading. Post-cut validation: 0 em/en dashes, 0 `w:dirty`, 0 bare
+"vet", 0 [NEEDS SOURCE], 0 British spellings, 0 escaping bugs, citations sequential 1-31,
+3/3 *Salmonella* runs italic, 31 TOC rows with 31 matching bookmarks and hyperlinks.
