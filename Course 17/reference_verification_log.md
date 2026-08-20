@@ -192,3 +192,58 @@ citations sequential 1-31, 31 TOC rows with matching bookmarks and hyperlinks.
 plain 2017 in its body (line referencing the 2036 battery-cage phase-out) and in its
 bibliography. It carries the same staleness and should get the same 2025-amendment treatment
 when that course is next touched. Not changed here, since this pass was scoped to Course 17.
+
+---
+
+## Course 13 follow-up applied 2026-08-20
+
+The open item above was actioned. Course 13 (Poultry Welfare) received the same NFACC
+currency fix, and the check turned up a second, more serious problem in the same sentence.
+
+**Misattributed claim (corrected).** Section 4.2 read: "The NFACC Code of Practice for
+Pullets and Laying Hens (2017) requires that all battery cage systems be phased out by 2036,
+with no new battery cages installed after 2017 [7]." The 2036 deadline is correct, but the
+Code contains **no** requirement barring new conventional cages after 2017. The full Code PDF
+was downloaded from nfacc.ca and searched: the only installation-dated requirement in
+Section 2.5 is that enriched cages installed after January 1, 2032 must include foraging and
+dust-bathing amenities. The "no new conventional housing" commitment is an **Egg Farmers of
+Canada** industry commitment announced in **February 2016**, not a Code requirement. This was
+a real citation attached to a claim its source does not make.
+
+Section 4.2 now states what the Code actually requires, verified verbatim from the Code PDF
+Section 2.5 REQUIREMENTS block:
+- All hens in enriched cage or non-cage systems meeting the Code by July 1, 2036
+- Any hen still in a conventional cage after July 1, 2031 must have at least 580.6 cm2
+  (90 sq in), rendered in the course as "at least 90 square inches"
+- Enriched cages installed after January 1, 2032 must include foraging and dust-bathing
+  amenities
+
+and separately credits the EFC February 2016 commitment to EFC, as new reference [15].
+
+**2025 amendments added.** A new paragraph in 4.2 covers the July 2025 amendments (round
+feeder space, minimum space for pullets over 8 weeks in multi-tier systems, maximum tiers),
+which are directly relevant since 4.2 discusses multi-tier aviaries and keel fractures.
+
+**References updated.** Ref [7] now reads "2017, amendments published 2025 Jul 31". The 2016
+poultry Code ref carries the revision-in-progress note. A new EFC press-release reference was
+inserted at position 15.
+
+**Citation renumbering.** The EFC citation first appears in 4.2, ahead of the old refs
+[15]-[20], so all citations were renumbered: old [15]-[20] became [16]-[21]. The renumber was
+scoped to content lines only, deliberately excluding JavaScript arrays such as the SVG
+coordinate array `const colX = [20, 55, 175, 440, 600]` on line 332, which a naive bracket
+replace would have corrupted. Verified after rebuild: first-appearance order sequential
+1 to 21.
+
+**Cited-date rule.** Course 13 had a mixed set: 3 refs said `[cited 2026 Jun]` against a
+July 2026 cover. All now read `[cited 2026 Jul]`, matching the cover month.
+
+**Pagination.** The added paragraph pushed the course from 33 to 34 pages and moved 10
+headings. All 40 cached TOC page numbers were recomputed against a fresh PDF render,
+rewritten, and re-verified heading by heading.
+
+**Post-change sweeps:** 0 em/en dashes, 0 `w:dirty`, 0 [NEEDS SOURCE], 0 unescaped or
+double-escaped ampersands, 0 British spellings in prose (the single "behaviour" hit sits
+inside a verbatim journal-article title, which is exempt), 0 bare "vet" in prose (the three
+hits are the journal abbreviations Vet Rec, Vet Med Sci, and Prev Vet Med), 40 TOC rows with
+40 matching bookmarks and hyperlinks.
