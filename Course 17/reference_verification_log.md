@@ -76,16 +76,22 @@ Mechanical validation re-run on the rebuilt docx (2026-08-19): 0 em dashes, 0 en
 ampersands, citation first-appearance order sequential 1–31, all 3 *Salmonella* instances
 italicized, 31 cached TOC rows with 31 matching bookmarks and hyperlinks, all 31 TOC page
 numbers verified against a LibreOffice PDF render, header/footer format correct on all 11
-sections, and cover date (July 2026) aligned with every `[cited 2026 Jul]`.
+sections, and cover date aligned with every cited date.
 
 The companion summary page agenda was rebuilt on 2026-08-19 to mirror the body H1/H2
 headings exactly (it had gone stale when Sections 4.2 and 4.4 were added to the body).
+
+On 2026-08-20 the cover date was moved to August 2026 and all 29 live-source cited dates
+re-stamped `[cited 2026 Aug]` to match, along with the "As of August 2026" currency note on
+Table 7.1. Pagination re-checked after the change: unchanged at 28 pages, all 31 TOC page
+numbers still correct.
 
 ## Notes
 - One peer-reviewed journal article is cited ([18] Diarra & Malouin 2014, Front Microbiol
   5:282, verified by DOI/PMID); the four journals listed in "Recommended Peer-Reviewed
   Journals" are reading suggestions, not citations.
-- All `[cited 2026 Jul]` dates applied to live online government/industry pages per the
-  Cited-Date Rule (aligned to the July 2026 cover date). CPC local PDF (#14) carries no
+- All 29 `[cited 2026 Aug]` dates applied to live online government/industry pages per the
+  Cited-Date Rule (moved from 2026 Jul to 2026 Aug on 2026-08-20 to stay aligned with the
+  August 2026 cover date). Refs [14] (CPC local PDF) and [18] (journal article) carry no
   cited date per the same rule.
 - No citation required more than 2–3 minutes to locate; none marked [NEEDS SOURCE].
