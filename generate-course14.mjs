@@ -700,7 +700,7 @@ function buildBodySection() {
 
     para('Leave a copy with the farmer; keep one in your records. The CFIA Poultry Service Industry Biosecurity Guide requires that service providers leave documentation of their service activity on the premises [5]. The visit record satisfies this requirement and builds the farm health history at the same time.'),
 
-    para('The NFACC Code of Practice recommends that producers establish and document a working relationship with a veterinarian, and that they keep written emergency response protocols [8]. Your visit records are part of that documentation chain.'),
+    para('The NFACC Code of Practice requires that a working relationship with a veterinarian be established, and it recommends on top of that a written emergency response and self-quarantine protocol [8]. The veterinarian relationship is not optional, so treat it as something the farm has to be able to show. Your visit records are part of that documentation chain.'),
 
     h2('5.4  When to Call the Veterinarian'),
 

@@ -247,3 +247,69 @@ double-escaped ampersands, 0 British spellings in prose (the single "behaviour" 
 inside a verbatim journal-article title, which is exempt), 0 bare "vet" in prose (the three
 hits are the journal abbreviations Vet Rec, Vet Med Sci, and Prev Vet Med), 40 TOC rows with
 40 matching bookmarks and hyperlinks.
+
+---
+
+## Series-wide NFACC sweep 2026-08-20
+
+Every generator citing NFACC was checked: Courses 3, 4, 5, 6, 12, 13, 14, 16, 17.
+
+**Staleness result:** only Courses 13 and 17 ever cited the amended *Pullets and Laying Hens*
+Code, and both were fixed. All other courses cite only the 2016 *Hatching Eggs, Breeders,
+Chickens and Turkeys* Code, which remains the Code in force, so those citations are correct.
+
+**Claim verification.** Both Code PDFs were downloaded from nfacc.ca and every
+NFACC-attributed claim in the series was checked against the actual requirement text.
+Twelve claims verified clean; three did not and were corrected.
+
+| Course | Claim | Finding | Action |
+|---|---|---|---|
+| 12 | "NFACC requires compromised birds **at placement** to be euthanized within 1 hour of completion of flock processing" | The Code rule is a **hatchery** requirement: "Injured or malformed chicks and poults that are suffering ... must be euthanized as soon as possible, within 1 hour after completion of flock processing." It sits among the hatch-residue, break-out and vent-sexing bullets. "Completion of flock processing" has no on-farm meaning | Callout re-scoped to name the hatchery, then points back to the general prompt-euthanasia requirement already stated earlier in the section rather than restating it |
+| 14 | "The NFACC Code of Practice **recommends** that producers establish and document a working relationship with a veterinarian" | The Code states "A working relationship with a veterinarian **must be** established." That is a requirement. The written emergency response/self-quarantine protocol in the same sentence genuinely is a recommended practice | Split into requirement plus recommendation, with an explicit "not optional" line |
+| 3 | "Keep ammonia under 25 ppm at bird level. NFACC requires it" | Found only in `generate-course3-revised.mjs`, which is an **obsolete generator** (see below). The live Course 3 has no such claim | No change needed |
+
+**Verified correct, no action:** 4 consecutive hours darkness required and 6 recommended
+(Courses 3, 13); layers recommended minimum 8 hours darkness (Course 13, confirmed under
+RECOMMENDED PRACTICES); 31 kg/m2 conventional and 38 kg/m2 enhanced density (Courses 3, 6);
+sick or injured birds with obvious signs of pain must be promptly treated or euthanized
+(Course 12, verbatim); mortalities and culls recorded daily, dead birds removed and disposed
+of daily, unexpected illness or death must be investigated (Course 14); Course 16 audit
+description.
+
+### Course 3 hazard found and contained (IMPORTANT)
+
+`generate-course3-revised.mjs` and `generate-course3-tflaws.mjs` **both write to the same
+output path**, `Course 3/T-FLAWS_Assessment_Management_Tool_draft.docx`.
+
+`generate-course3-revised.mjs` is **obsolete and dangerous**. It still produces the fabricated
+T-FLAWS acronym ("T: Toes", "F: Feathers"), the banned Unicode box-drawing gold rule, and the
+non-compliant cover line "COURSE 3 OF 17: CPC SHORT COURSES". Running it silently replaces the
+correct draft with the fabricated-acronym document.
+
+That happened during this sweep and was caught by diffing the rebuilt file against the
+published final before publishing. Nothing incorrect was published: the draft was restored
+from git, the edits to the obsolete generator were reverted, and the published final
+`T-FLAWS_Assessment_Management_Tool.docx` and its dashboard copy were never touched.
+
+Also noted: the published Course 3 final does not match either generator's current output
+(citation numbers differ, e.g. published `[4,11]` vs generator `[3,10]`), so both Course 3
+generators are out of sync with what is published. **Do not regenerate Course 3 from either
+generator without first reconciling them against the published final.**
+
+### Publish state after this sweep
+
+| Course | Change | Published |
+|---|---|---|
+| 12 | Hatchery euthanasia rule re-scoped | Yes, dashboard updated |
+| 14 | Veterinarian relationship restored to a Code requirement | Yes, dashboard updated |
+| 17 | Veterinarian consultation added to 4.2; US chick/hatching-egg import rules added to 4.3 | Draft only, by design |
+| 3 | None needed | Untouched |
+
+Course 14's `Intro_to_Field_Service_RV-edited-final.docx` was verified paragraph by paragraph
+against the rebuild before overwriting: the only difference was the intended correction, so no
+manual edits were lost. It was then synced to the rebuild so the two cannot diverge.
+
+All four courses re-verified after rebuild: 0 em dashes, 0 `w:dirty`, 0 [NEEDS SOURCE], 0
+unescaped or double-escaped ampersands, 0 British spellings in prose, TOC rows equal bookmarks
+equal hyperlinks, and every cached TOC page number re-checked heading by heading against a
+fresh LibreOffice PDF render (Course 12: 33 pages, Course 14: 26, Course 17: 27, Course 3: 23).
