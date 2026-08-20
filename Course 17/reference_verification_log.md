@@ -161,3 +161,34 @@ over its allocation you can be billed an overmarketing levy on your share of it.
 Pagination re-checked after the rewrite: unchanged at 26 pages, all 31 TOC page numbers still
 correct. Sweeps clean: 0 em/en dashes, 0 `w:dirty`, 0 bare "vet", 0 [NEEDS SOURCE], 0 British
 spellings, citations sequential 1-31, 31 TOC rows with matching bookmarks and hyperlinks.
+
+## NFACC Code currency check 2026-08-20 (refs [6] and [7], Section 3.1)
+
+Both NFACC Codes were re-checked against nfacc.ca to confirm the cited editions are still the
+editions in force. One was stale.
+
+**Ref [7] — Pullets and Laying Hens Code: STALE, corrected.** The 2017 Code was amended, with
+the finalized amendments published by NFACC on 2025 Jul 31 (amendment initiated 2023,
+15-member Code Amendment Committee, public consultation 2025 Mar 27 to May 26). The
+amendments cover round feeder space for pullets and laying hens (sections 1.1.3 and 2.3),
+minimum space allowance for pullets over 8 weeks in multi-tier systems (1.1.4), and the
+maximum number of tiers allowed in laying and rearing facilities (1.1.5 and 2.6). Citing it as
+plain "2017" understated what a layer or pullet producer is actually held to. Reference now
+reads "2017, amendments published 2025 Jul 31" and Section 3.1 names the three changed areas
+and tells the reader to work from the amended version.
+
+**Ref [6] — Hatching Eggs, Breeders, Chickens and Turkeys Code: still current, revision under
+way.** The 2016 Code remains the Code in force. NFACC initiated an update in 2023; its own
+page gives a public comment period of September to October 2026 and a projected completion of
+September 2027. The reference now carries that status in a parenthetical, and Section 3.1
+tells the reader a new Code is coming so they can watch for it. Timeline stated as expected
+and projected, because NFACC publishes it as a projection.
+
+Pagination re-checked: unchanged at 26 pages, all 31 TOC page numbers still correct. Sweeps
+clean: 0 em/en dashes, 0 `w:dirty`, 0 bare "vet", 0 [NEEDS SOURCE], 0 British spellings,
+citations sequential 1-31, 31 TOC rows with matching bookmarks and hyperlinks.
+
+**Open item for another course:** Course 13 (Poultry Welfare) cites the same layer Code as
+plain 2017 in its body (line referencing the 2036 battery-cage phase-out) and in its
+bibliography. It carries the same staleness and should get the same 2025-amendment treatment
+when that course is next touched. Not changed here, since this pass was scoped to Course 17.
