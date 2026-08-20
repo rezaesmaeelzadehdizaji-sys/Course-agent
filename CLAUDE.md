@@ -1525,7 +1525,9 @@ If the user wants to disable the dialog globally for all documents: `File → Op
 - ❌ Setting `<w:updateFields w:val="true"/>` while leaving `w:dirty="true"` on the field — Word still treats the field as dirty and re-fires the dialog. The two fixes go together: strip dirty AND set updateFields=false.
 
 ### Reference implementation
-See [generate-course3-revised.mjs](generate-course3-revised.mjs) — the post-build patch block at the bottom of the file is the canonical pattern. Copy it for any new course generator.
+See [generate-course3-tflaws.mjs](generate-course3-tflaws.mjs) — the post-build patch block at the bottom of the file is the canonical pattern. Copy it for any new course generator. It strips `w:dirty`, injects the cached TOC rows, sets `updateFields=false`, adds the TOC1/TOC2 styles, and ends with a sanity check that throws if any `w:dirty` flag survives.
+
+**Note:** this pointer previously named `generate-course3-revised.mjs`, which was deleted in August 2026. That file was an obsolete generator still producing the fabricated T-FLAWS acronym ("T: Toes"), and it wrote to the same draft path as `generate-course3-tflaws.mjs`, so running it silently replaced the correct Course 3 draft. It is recoverable from git history if its patch block is ever needed for reference.
 
 ### Drop-in code (paste verbatim after `Packer.toBuffer(doc)`)
 
