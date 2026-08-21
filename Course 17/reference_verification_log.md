@@ -11,6 +11,8 @@ peer-reviewed Frontiers in Microbiology article verified by DOI and PMID. Verifi
 confirming the issuing body/authors, document title, and the specific claim each supports. Statutory citations (act, year, chapter)
 were confirmed against the official Justice Laws Website (federal) and BC Laws (provincial).
 
+> **SUPERSEDED NUMBERING.** This table uses the pre-August 2026 reference numbers. Course 17 now has 34 references; see the AUTHORITATIVE REFERENCE AUDIT at the end of this file.
+
 | # | Reference | Verified basis | Status |
 |---|-----------|----------------|--------|
 | 1 | Agriculture and Agri-Food Canada — mandate/role | agriculture.canada.ca; AAFC is the federal dept responsible for FPCC | ✅ confirmed |
@@ -375,3 +377,80 @@ Course 3 was then republished (course folder final, dashboard copy, Vercel, cont
    materials, then journal articles). This conflicts with the project's Vancouver
    order-of-appearance rule. Fixing it would renumber all 19 references and every in-text
    citation, so it is flagged rather than done unilaterally.
+
+---
+
+# AUTHORITATIVE REFERENCE AUDIT — 2026-08-21 (34 references, current numbering)
+
+**This section supersedes the 31-row table at the top of this file.** That table uses the
+pre-August numbering and is retained only as history. Course 17 now carries **34 references**
+after the import content was added and one hybrid citation was split into three.
+
+**Integrity checks on the built docx:** 34 reference entries, 34 distinct references cited in
+the body, **zero uncited**, **zero cited-but-missing**, and first-appearance order sequential
+1 to 34. All carry `[cited 2026 Aug]` except [14] (CPC local PDF) and [21] (journal article),
+which correctly carry none per the Cited-Date Rule.
+
+| # | Reference | Verification |
+|---|---|---|
+| 1 | AAFC. About Agriculture and Agri-Food Canada: mandate and role | agriculture.canada.ca ✅ |
+| 2 | CFIA. About the CFIA: mandate, food safety, and animal health | inspection.canada.ca ✅ |
+| 3 | Farm Products Council of Canada. Who we are and what we do | canada.ca/en/farm-products-council ✅ |
+| 4 | Library of Parliament. Canada's Supply Management System (publication 2018-42-E) | **Re-verified 2026-08-21.** Publication No. 2018-42-E, 30 November 2018, author Khamla Heminthavong. Title and number exact; the paper's three pillars (production control, pricing, import control) match the course ✅ |
+| 5 | Farm Products Agencies Act (RSC 1985, c. F-4) | **Re-verified 2026-08-21** on Justice Laws. Chapter F-4 confirmed ✅ |
+| 6 | NFACC Code — Hatching Eggs, Breeders, Chickens, and Turkeys (2016) | Verified 2026-08-20; 2016 Code still in force, revision projected 2027 ✅ |
+| 7 | NFACC Code — Pullets and Laying Hens (2017, amendments published 2025 Jul 31) | Verified 2026-08-20 against nfacc.ca ✅ |
+| 8 | Chicken Farmers of Canada. Raised by a Canadian Farmer Animal Care Program | chickenfarmers.ca ✅ |
+| 9 | Egg Farmers of Canada. Start Clean-Stay Clean and Animal Care Program | eggfarmers.ca ✅ |
+| 10 | Turkey Farmers of Canada. Flock Care Program and On-Farm Food Safety Program | turkeyfarmersofcanada.ca ✅ |
+| 11 | CFIA. Health of Animals Regulations Part XII: Transport of Animals | In force 2020-02-20 ✅ |
+| 12 | CFIA. National Avian On-Farm Biosecurity Standard | **Re-verified 2026-08-21.** Real CFIA document (2009), PDF live on inspection.canada.ca; exclusion/containment framing matches ✅ |
+| 13 | Chicken Farmers of Canada. Raised by a Canadian Farmer On-Farm Food Safety Program | chickenfarmers.ca; HACCP-based ✅ |
+| 14 | CPC Learning Centre. Spotting Disease Early [Flock Management Guide] | Local CPC library PDF; no cited date per rule ✅ |
+| 15 | Health of Animals Act (SC 1990, c. 21) | **Re-verified 2026-08-21** on Justice Laws. Chapter 21 confirmed ✅ |
+| 16 | CFIA. Fact sheet: avian influenza (reportable disease) | inspection.canada.ca ✅ |
+| 17 | CFIA. Applying to import live animals, semen, embryos, animal products and by-products | **NEW, verified 2026-08-21.** Page title taken verbatim. Confirms the permit application covers "live animals, hatching eggs and animal germplasm" and directs importers to "Check the Automated Import Reference System for import requirements" ✅ |
+| 18 | CFIA. Import Reference Document (As referenced in the Health of Animals Regulations), Section 12: hatching eggs | **NEW, verified 2026-08-21.** Section 12 states the certificate must say the flock "is free from communicable disease" and has not been exposed to Newcastle disease, fowl typhoid, HPAI, pullorum, or ornithosis ✅ |
+| 19 | USDA APHIS. Export of Day-Old Poultry and Hatching Eggs to Canada [veterinary health certificate] | **NEW, verified 2026-08-21.** Confirms the 90-day residency condition, the pullorum eradication program recognized by Canada, and the control-zone condition for Newcastle disease and HPAI ✅ |
+| 20 | Chicken Farmers of Canada. Responsible Antimicrobial Use Strategy | Cat I removed 2014, Cat II 2018, Cat III current non-regulatory target ✅ |
+| 21 | Diarra MS, Malouin F. Front Microbiol. 2014;5:282 | **Re-verified 2026-08-21 via the CrossRef API.** Authors, title, journal, year, volume and article number all match exactly. doi:10.3389/fmicb.2014.00282 ✅ |
+| 22 | CFIA CCVB. The Regulation of Veterinary Biologics in Canada: Overview (guideline 4.10E) | **Corrected 2026-08-21** to the real CFIA guideline title. Confirms manufacturers must demonstrate purity, potency, safety and efficacy ✅ |
+| 23 | CVMA. Provincial and territorial veterinary regulatory bodies; VCPR | canadianveterinarians.net ✅ |
+| 24 | Health Canada. Responsible use of medically important antimicrobials in animals | Prescription requirement effective 2018-12-01 ✅ |
+| 25 | CgFARAD. Withdrawal interval recommendations for extra-label drug use in food animals | **Corrected 2026-08-21.** Confirmed real and the claim holds, but CgFARAD has **moved off University of Saskatchewan servers** and now lives at cgfarad.ca, so the outdated "Saskatoon: University of Saskatchewan" attribution was removed ✅ |
+| 26 | Safe Food for Canadians Act (SC 2012, c. 24) | **Re-verified 2026-08-21** on Justice Laws. Chapter 24 confirmed, and the Act's in-force date of 2019-01-15 matches the course ✅ |
+| 27 | CFIA. Understanding the Safe Food for Canadians Regulations: a handbook for food businesses | inspection.canada.ca ✅ |
+| 28 | Natural Products Marketing (BC) Act (RSBC 1996, c. 330) | **Re-verified 2026-08-21** on BC Laws and CanLII. Chapter 330 confirmed; the Act continues BCFIRB ✅ |
+| 29 | BCCMB. Governance; General Orders (over- and under-production) | General Orders read in full 2026-08-20; Parts 26 and 27 and section 31.3 confirmed ✅ |
+| 30 | BCFIRB. Regulated marketing | www2.gov.bc.ca ✅ |
+| 31 | BC and Ontario small-lot / quota-exemption programs (Table 7.1) | All figures re-verified live 2026-08-19 on the boards' own pages ✅ |
+| 32 | Prevention of Cruelty to Animals Act (RSBC 1996, c. 372) | **Re-verified 2026-08-21** on BC Laws and CanLII. Chapter 372 confirmed; Part 2.1 Standards of Care present ✅ |
+| 33 | BC SPCA. What is the Prevention of Cruelty to Animals Act (PCA Act)? | **Re-verified 2026-08-21.** Page title exact; confirms BC SPCA officers are appointed special provincial constables under the Police Act ✅ |
+| 34 | BC Egg; BC Broiler Hatching Egg Commission; BC Turkey Marketing Board | bcegg.com; bcbhec.com; bcturkey.com ✅ |
+
+## Hybrid citation found and split (2026-08-21)
+
+The import reference added on 2026-08-20 was carrying three claims drawn from three different
+documents: the permit and AIRS requirement, the health-certificate disease list, and the
+90-day residency plus pullorum/NPIP conditions. That is the hybrid-citation pattern CLAUDE.md
+bans, where one citation is made to cover material from more than one physical source.
+
+It was split into [17], [18] and [19] above, and the two import paragraphs were rewritten so
+each claim sits with the document that actually states it.
+
+One claim was deliberately dropped. The earlier text said the CFIA also blocks shipments that
+"merely traveled through" a US control zone and that the shipment must be able to show its
+route. That transit rule appears to be real, but the only sources found for it were secondary
+summaries rather than a primary CFIA page, so the sentence was narrowed to the control-zone
+condition the APHIS certificate states verbatim. Worth revisiting if a primary CFIA source
+turns up.
+
+## Corrections made during this audit
+
+1. **[25] CgFARAD** was attributed to the University of Saskatchewan, which no longer hosts it.
+2. **[22] CCVB** carried a descriptive title rather than the real CFIA guideline title (4.10E).
+3. **[17]** carried a composite descriptive title rather than the real CFIA page title.
+
+Rebuild verified after all corrections: 27 pages, all 31 cached TOC page numbers correct
+against a fresh render, 0 em dashes, 0 `w:dirty`, 0 bare "vet", 0 [NEEDS SOURCE], 0 unescaped
+or double-escaped ampersands, 0 British spellings, citations sequential 1 to 34.
