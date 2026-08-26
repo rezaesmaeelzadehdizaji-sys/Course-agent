@@ -454,3 +454,57 @@ turns up.
 Rebuild verified after all corrections: 27 pages, all 31 cached TOC page numbers correct
 against a fresh render, 0 em dashes, 0 `w:dirty`, 0 bare "vet", 0 [NEEDS SOURCE], 0 unescaped
 or double-escaped ampersands, 0 British spellings, citations sequential 1 to 34.
+
+---
+
+## Sentence-level pass, 2026-08-25 (every paragraph read individually)
+
+Every one of the 173 body paragraphs was read and each sentence tested against the three
+farmer-flow questions. Twelve fixes were applied. Automated sweeps alone would have caught
+none of them.
+
+### Fixes from reading, not sweeping
+
+| # | Location | Problem | Fix |
+|---|---|---|---|
+| 1 | Section 1 opener | "The three layers are not in competition" had **no antecedent in the section**. The sentence that introduced them was removed during the 2026-08-20 redundancy pass, leaving a dangling reference | Reintroduced compactly as "Federal, national, provincial: the three layers are not in competition", without repeating the Introduction's wording |
+| 2 | Section 1.2, producer agencies | "These set national production" is an incomplete phrase | "set national production levels" |
+| 3 | Section 4.1, biosecurity | Subject and verb separated by a 25-word comma list, so the sentence could not be read in one pass | List moved to the end after a colon, subject and verb now adjacent |
+| 4 | Section 4.3, antimicrobials | Logic ran out of order: named bacitracin, then said "That is exactly where the effort now sits" pointing forward, then explained the categories | Reordered to what is finished, then what is current, then what it means on the farm. The dangling transition is gone |
+| 5 | Section 4.3, vaccines | 47-word closing sentence | Split into three |
+| 6 | Section 4.4, CgFARAD | **Grammar error:** "your medication records and your veterinarian direction always go together" | "your veterinarian's direction" |
+| 7 | Section 5.2, labeling | Single ~200-word paragraph | Split at the pivot question "So how does a regulator actually check?" |
+| 8 | Section 7.1, BC quota | Single 9-sentence paragraph, and "the Board General Orders" was missing its possessive | Split into two paragraphs; "the Board's General Orders" |
+| 9 | Section 4.1, CPC guide | 43-word sentence | Split into two |
+| 10 | Section 4.3, US certificate | 44-word sentence | Split into three |
+| 11 | Section 4.4, extra-label use | 47-word sentence with nested appositives | Split into three |
+| 12 | Section 5.2, RWA claims | 49-word sentence | Split into three |
+
+Fixes 1, 4 and 8 are the ones that mattered most for a reader: a dangling reference, a
+paragraph whose argument ran backwards, and two paragraphs long enough to lose the thread in.
+
+### Deliberately left long
+
+Two sentences still run past 42 words and both were left alone: the Introduction's roadmap of
+what the course covers, and the sentence listing the three commodity care programs with their
+citations. Both are enumerations that a reader scans as lists rather than parses as prose, and
+splitting either reads worse.
+
+### Final state
+
+| Check | Result |
+|---|---|
+| Body paragraphs / references | 173 / 34 |
+| References cited, sequential 1 to 34 | yes, none uncited, none cited without an entry |
+| Em dashes / en dashes in prose | 0 / 0 |
+| `w:dirty` | 0 |
+| Bare "vet" | 0 |
+| [NEEDS SOURCE] | 0 |
+| Unescaped or double-escaped ampersands | 0 / 0 |
+| British spellings | none |
+| AI-tell phrases (16-pattern scan) | none |
+| Semicolons in body prose | 0 (the 5 hits are all Table 7.1 cells) |
+| Cited-date consistency | all `[cited 2026 Aug]`, matching the August 2026 cover |
+| *Salmonella* italics | 3 of 3 |
+| TOC rows / bookmarks / hyperlinks | 31 / 31 / 31 |
+| TOC page numbers | all 31 verified against a fresh render, 27 pages |
