@@ -72,7 +72,7 @@ export default function DownloadButton({ courseId, courseNumber, slug, updatedAt
       <button
         onClick={handleDownload}
         disabled={loading}
-        title="Download Word document"
+        title="Download the main course draft (Word document)"
         className="text-xs font-medium text-white bg-[#1F3864] hover:bg-[#2E74B5] py-1.5 px-3 rounded-lg transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-1.5"
       >
         {loading ? (
@@ -85,7 +85,7 @@ export default function DownloadButton({ courseId, courseNumber, slug, updatedAt
             <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
             </svg>
-            <span>.docx</span>
+            <span>Main Draft</span>
           </>
         )}
       </button>
