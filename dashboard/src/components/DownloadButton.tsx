@@ -8,17 +8,36 @@ interface Props {
   courseNumber: number
   slug: string
   updatedAt?: string
+  title?: string
 }
 
-export default function DownloadButton({ courseId, courseNumber, slug, updatedAt }: Props) {
+export default function DownloadButton({ courseId, courseNumber, slug, updatedAt, title }: Props) {
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState('')
+
+  // Best-effort download alert — never blocks or fails the download.
+  async function notifyDownload(token?: string) {
+    if (!token) return
+    try {
+      await fetch('/api/notify-download', {
+        method: 'POST',
+        headers: { Authorization: `Bearer ${token}`, 'Content-Type': 'application/json' },
+        body: JSON.stringify({ courseNumber, kind: 'Main Draft', title }),
+      })
+    } catch { /* ignore */ }
+  }
 
   async function handleDownload() {
     setLoading(true)
     setError('')
 
     try {
+      // Grab the session token up front so we can send the download alert
+      // even on the static-file path.
+      const supabase = createClient()
+      const { data: { session } } = await supabase.auth.getSession()
+      const token = session?.access_token
+
       // First try the static pre-built file (served directly by CDN, no 4.5MB limit).
       // Cache-bust with updated_at so browsers/CDN don't return a stale copy after re-upload.
       const cacheBuster = updatedAt ? `?v=${encodeURIComponent(updatedAt)}` : `?v=${Date.now()}`
@@ -31,12 +50,11 @@ export default function DownloadButton({ courseId, courseNumber, slug, updatedAt
         document.body.appendChild(a)
         a.click()
         document.body.removeChild(a)
+        void notifyDownload(token)
         return
       }
 
       // Fall back to API-generated docx for courses without a pre-built file
-      const supabase = createClient()
-      const { data: { session } } = await supabase.auth.getSession()
       if (!session) throw new Error('Not logged in — please refresh the page')
 
       const res = await fetch(`/api/courses/${courseId}/generate-docx`, {
@@ -60,6 +78,7 @@ export default function DownloadButton({ courseId, courseNumber, slug, updatedAt
       a.click()
       document.body.removeChild(a)
       setTimeout(() => URL.revokeObjectURL(url), 5000)
+      void notifyDownload(token)
     } catch (err) {
       setError(err instanceof Error ? err.message : 'Download failed')
     } finally {

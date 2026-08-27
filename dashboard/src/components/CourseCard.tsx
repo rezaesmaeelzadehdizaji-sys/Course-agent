@@ -1,10 +1,10 @@
 import Link from 'next/link'
 import type { Course, CourseStatus } from '@/lib/types'
 import DownloadButton from './DownloadButton'
+import SummaryButton from './SummaryButton'
 
 // Courses that have a companion summary page (served statically from public/docs).
 const SUMMARY_COURSES = new Set([3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18])
-const summaryUrl = (n: number) => `/docs/course-${String(n).padStart(2, '0')}-summary.docx`
 
 interface Props {
   course: Course
@@ -61,20 +61,10 @@ export default function CourseCard({ course }: Props) {
           </Link>
         )}
         {course.status === 'Complete' && (
-          <DownloadButton courseId={course.id} courseNumber={course.course_number} slug={course.slug} updatedAt={course.updated_at} />
+          <DownloadButton courseId={course.id} courseNumber={course.course_number} slug={course.slug} updatedAt={course.updated_at} title={title} />
         )}
         {SUMMARY_COURSES.has(course.course_number) && (
-          <a
-            href={summaryUrl(course.course_number)}
-            download
-            title="Download course summary page"
-            className="text-xs font-medium text-white bg-[#1F3864] hover:bg-[#2E74B5] py-1.5 px-3 rounded-lg transition-colors flex items-center gap-1.5"
-          >
-            <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
-            </svg>
-            <span>Summary</span>
-          </a>
+          <SummaryButton courseNumber={course.course_number} title={title} />
         )}
       </div>
     </div>
