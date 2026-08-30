@@ -541,3 +541,42 @@ canadianveterinarians.net. Old [23] to [34] shifted to [24] to [35].
 0 [NEEDS SOURCE], 0 escaping bugs, 0 British spellings (note "license" is used, not the
 British "licence"), no sentence in the new text over 42 words, 31/31/31 TOC rows, bookmarks
 and hyperlinks, and all 31 TOC page numbers still correct at 27 pages.
+
+---
+
+## Label-change detail added to Section 4.4, 2026-08-25
+
+**Context: a claim that was checked and NOT written.** The user noted that preventive label
+claims appear to have been removed from most antibiotics. That was researched across Health
+Canada, CFIA and industry sources and **could not be verified as stated**, so it was not put
+in the course. What the sources actually show:
+
+- **2018 removed growth promotion and production claims, not prevention claims.** Health
+  Canada's own material from that change states the vast majority of these products "also have
+  preventative or treatment claims, and therefore will still be available on the market."
+- **Prevention remains a permitted claim.** Health Canada's current wording is that medically
+  important antimicrobials in food animals should only be used to "treat or prevent" disease.
+- **What is being tightened now is duration, not prevention.** A post-market re-evaluation
+  covering roughly 18 active ingredients (~101 products) targets labels with *unspecified or
+  prolonged durations of use*, which is what supported long, continuous in-feed use.
+- The disappearance of preventive antibiotic use in Canadian chicken is real but came from
+  **Chicken Farmers of Canada's own strategy** (Category I eliminated 2014, Category II end of
+  2018), not from Health Canada stripping prevention off labels.
+
+**What was added instead**, all verified on the Health Canada page already cited as reference
+[25] (*Responsible use of Medically Important Antimicrobials in animals*), which documents the
+label changes alongside the prescription requirement it was already cited for:
+
+- Growth promotion claims and their associated directions for use came off medically important
+  antimicrobial labels.
+- Responsible-use statements were added to the labels of all in-feed and in-water MIAs.
+- A **Pr** designation now appears on the principal display panel, which is the fastest visual
+  check that a product is prescription-only.
+
+No new reference was needed. Section 4.4 was then split into two paragraphs, a Health Canada
+block and a veterinarian-responsibility block, since the addition pushed it to 11 sentences.
+
+**Verified after rebuild:** 35 references, all cited, sequential 1 to 35, none uncited. 0 em
+dashes, 0 `w:dirty`, 0 bare "vet", 0 [NEEDS SOURCE], 0 escaping bugs, 0 British spellings, no
+sentence in the new text over 42 words, 31/31/31 TOC rows/bookmarks/hyperlinks, and all 31 TOC
+page numbers still correct at 27 pages.
