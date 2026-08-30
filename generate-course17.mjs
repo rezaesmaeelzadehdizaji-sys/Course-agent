@@ -464,7 +464,8 @@ function buildSection7() {
       h2('7.1 How Provincial Regulations Overlay Federal and Industry Rules'),
       para('In British Columbia, supply management is delivered under a provincial law called the Natural Products Marketing (BC) Act [31]. That Act is what gives the provincial commodity boards their authority. The BC Chicken Marketing Board, for instance, was created under it and is the body that holds quota, licenses growers, and delivers and audits the national on-farm programs for BC chicken farmers [32]. If you grow chicken commercially in BC, the Board is the regulator you deal with most.'),
       para('That authority includes enforcing your quota, and it cuts both ways. Under the Board\'s General Orders you get a 6 percent sleeve on either side of your allotment in a production period, so roughly 94 to 106 percent. Go over, and the excess weight comes off your allotment six periods later, and if the province as a whole runs over its allocation you can be billed an overmarketing levy on your share of it. Come up short, and you can carry the shortfall forward and get it back six periods later, but only the part that sits inside the sleeve. Miss by more than 6 percent and the rest is forfeited. If a diagnosed disease problem caused the shortfall, you can apply to widen that sleeve to 10 percent, backed by lab or veterinary documentation and proof you completed a full cleanout before the next flock went in [32].'),
-      para('Sitting above all the BC commodity boards is a provincial supervisory body, the BC Farm Industry Review Board, often shortened to BCFIRB. It supervises every regulated marketing board and commission in the province, hears appeals, and makes sure the boards act in the broader public interest [33]. So the BC chain runs from the provincial Act, to the supervisory BCFIRB, down to the individual commodity board, and finally to your farm. It mirrors the federal structure, just one level down.'),
+      para('Sitting above all the BC commodity boards is a provincial supervisory body, the BC Farm Industry Review Board, often shortened to BCFIRB. It supervises every regulated marketing board and commission in the province, hears appeals, and makes sure the boards act in the broader public interest [33]. Figure 7.1 lays out that whole chain. It mirrors the federal structure, just one level down.'),
+      ...image(figBuf('fig 7.1.jpg'), 'Figure 7.1: The BC chicken authority hierarchy, from the provincial Act down to the farm that holds the quota. Source: CPC Short Courses.'),
       para('One detail worth pinning down is exactly where the line sits between a small lot you can run without quota and a commercial operation that needs it. That line is a bird count, and it differs by province and by sector. As of August 2026, here is the most you can raise before you need quota in British Columbia and in Ontario, side by side [34]:'),
       provincialThresholdTable(),
       new Paragraph({
@@ -667,12 +668,12 @@ async function main() {
     { lvl: 1, text: 'Section 7: Provincial Variation in British Columbia', page: 20 },
     { lvl: 2, text: '7.1 How Provincial Regulations Overlay Federal and Industry Rules', page: 20 },
     { lvl: 2, text: '7.2 The Role of Provincial Acts, Marketing Boards, and Welfare Laws', page: 21 },
-    { lvl: 1, text: 'Section 8: Implications for Farmers and Good Practices', page: 22 },
-    { lvl: 2, text: '8.1 What Compliance Means for Everyday Farm Management', page: 22 },
-    { lvl: 2, text: '8.2 The Advantages: Market Access, Consumer Trust, and Better Birds', page: 22 },
-    { lvl: 2, text: '8.3 The Risks of Non-Compliance and How to Avoid Them', page: 23 },
-    { lvl: 1, text: 'Recommended Peer-Reviewed Journals', page: 24 },
-    { lvl: 1, text: 'References', page: 25 },
+    { lvl: 1, text: 'Section 8: Implications for Farmers and Good Practices', page: 23 },
+    { lvl: 2, text: '8.1 What Compliance Means for Everyday Farm Management', page: 23 },
+    { lvl: 2, text: '8.2 The Advantages: Market Access, Consumer Trust, and Better Birds', page: 23 },
+    { lvl: 2, text: '8.3 The Risks of Non-Compliance and How to Avoid Them', page: 24 },
+    { lvl: 1, text: 'Recommended Peer-Reviewed Journals', page: 25 },
+    { lvl: 1, text: 'References', page: 26 },
   ].map((e, i) => ({ ...e, anchor: `_Toc${String(100000 + i).padStart(8, '0')}` }));
 
   function escapeXml(s) { return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;'); }

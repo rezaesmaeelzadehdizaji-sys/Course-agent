@@ -705,3 +705,39 @@ citations. Both are enumerations a reader scans as lists.
 **Course 17 is content-complete and verified.** It remains a draft by design: publishing it
 still needs the static docx in `dashboard/public/docs/`, an `update-course17.ts` Supabase
 script, and a content seed.
+
+---
+
+## Figure 7.1 added to Section 7.1, 2026-08-30
+
+User-supplied figure, `Course 17/fig 7.1.jpg` (1024x559 JPEG), embedded in Section 7.1 as
+**Figure 7.1**.
+
+**Content checked before embedding.** The figure shows the BC chicken authority hierarchy in
+four levels, and every level matches content already verified in this course:
+
+| Figure level | Matches |
+|---|---|
+| 1. Provincial Act: Natural Products Marketing (BC) Act | reference [31], chapter 330 verified on BC Laws |
+| 2. Supervisory board: BCFIRB, supervises boards | reference [33], and the body text |
+| 3. Commodity board: BC Chicken Marketing Board, direct regulator, enforces quota and licensing, audits programs | reference [32], and the body text "holds quota, licenses growers, and delivers and audits the national on-farm programs" |
+| 4. Producer: your farm, receives and maintains quota | Section 7.1 quota mechanics, General Orders Parts 26 and 27 |
+
+**Numbering.** Figures run 1.1, 2.1, 4.1, 6.1, so this is 7.1. It sits alongside Table 7.1,
+which is a separate sequence per the Figure/Photo/Table labeling convention. No conflict.
+Labeled Figure rather than Photo because it is a diagram.
+
+**Say-it-once applied.** The BCFIRB paragraph previously closed by spelling out the same chain
+the figure shows: "So the BC chain runs from the provincial Act, to the supervisory BCFIRB,
+down to the individual commodity board, and finally to your farm." That is now "Figure 7.1
+lays out that whole chain," so the prose points at the figure instead of duplicating it. The
+caption does not repeat that sentence either.
+
+**Pagination.** The image pushed the course from 27 to 28 pages and moved six headings from
+Section 8 onward. All 31 cached TOC page numbers were recomputed against a fresh render and
+re-verified.
+
+**Verified after rebuild:** 9 media files (was 8), 37 references all cited and sequential
+1 to 37, 0 em dashes, 0 `w:dirty`, 0 bare "vet", 0 [NEEDS SOURCE], 0 escaping bugs, 0 British
+spellings, 31/31/31 TOC rows/bookmarks/hyperlinks, all 31 TOC page numbers correct at
+28 pages.
