@@ -508,3 +508,36 @@ splitting either reads worse.
 | *Salmonella* italics | 3 of 3 |
 | TOC rows / bookmarks / hyperlinks | 31 / 31 / 31 |
 | TOC page numbers | all 31 verified against a fresh render, 27 pages |
+
+---
+
+## National Examining Board added to Section 4.4, 2026-08-25
+
+Section 4.4 described only the provincial half of veterinary regulation. The national
+qualifying step was missing, so the section did not explain how a veterinarian gets vetted in
+the first place.
+
+**Verified before writing:**
+- The **National Examining Board (NEB)** is a committee of the Canadian Veterinary Medical
+  Association. It administers the qualifying examinations (BCSE, NAVLE, CPE) and issues the
+  **Certificate of Qualification (CQ)**, which attests to the knowledge, skills and abilities
+  of a newly graduated veterinarian from an accredited program.
+- **The NEB has no power to license or discipline veterinarians.** The CQ makes a candidate
+  *eligible* to apply for licensure; setting requirements and granting a license are under the
+  sole authority of the individual provincial licensing body.
+- Regulating a profession is a provincial responsibility, and each province's licensing body
+  is established by statute.
+
+The existing text was therefore correct, not wrong: the provincial college does license and
+discipline. The NEB is the layer above it, and the two together mirror the course's own
+national-standard-then-provincial-enforcement spine, which the new text points out.
+
+New reference **[23]** — Canadian Veterinary Medical Association, National Examining Board.
+*About the NEB and the Certificate of Qualification (CQ)*. Page title verbatim from
+canadianveterinarians.net. Old [23] to [34] shifted to [24] to [35].
+
+**Verified after rebuild:** 35 references, all 35 cited, first-appearance order sequential
+1 to 35, none uncited and none cited without an entry. 0 em dashes, 0 `w:dirty`, 0 bare "vet",
+0 [NEEDS SOURCE], 0 escaping bugs, 0 British spellings (note "license" is used, not the
+British "licence"), no sentence in the new text over 42 words, 31/31/31 TOC rows, bookmarks
+and hyperlinks, and all 31 TOC page numbers still correct at 27 pages.
