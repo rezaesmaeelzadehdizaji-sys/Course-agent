@@ -632,3 +632,76 @@ index.
 position, none uncited. 0 em dashes, 0 `w:dirty`, 0 bare "vet", 0 [NEEDS SOURCE], 0 escaping
 bugs, 0 British spellings, no new sentence over 42 words, 31/31/31 TOC rows, bookmarks and
 hyperlinks, all 31 TOC page numbers correct at 27 pages.
+
+---
+
+# FINAL PRE-SEND CHECK — 2026-08-25
+
+Full verification of Course 17 as a finished deliverable: every sentence read, every number
+traced to a source, every reference checked, and the whole automated suite re-run.
+
+## Three fixes found by reading, after the recent additions
+
+The NEB, label-change, free-run and claim-requirement additions were each verified on their
+own, but inserting them created three problems only visible when reading the sections whole:
+
+| Location | Problem | Fix |
+|---|---|---|
+| Section 5.2 closing | The paragraph began "**And** because a false or misleading label is prohibited outright..." That "And" originally continued the previous sentence, but two new paragraphs had been inserted between them, leaving the conjunction dangling across them | Rewritten to stand on its own: "A false or misleading label is prohibited outright, so the CFIA can..." |
+| Section 5.2 | "Organic carries its own third-party certification on top" became redundant once the very next paragraph gave the fuller version (certification, organic feed, no antibiotics, outdoor access) | Removed the short version; the fuller one stands |
+| Introduction | The scope note repeated the cover-page disclaimer nearly word for word ("It does not replace the official text of any law or the manual of the program you are audited under") | Trimmed to what it uniquely adds: "This course explains the framework, not the fine print of every rule." The mandated cover disclaimer is untouched |
+
+This is the same lesson as the 2026-08-20 dangling-reference case: **inserting verified content
+into a verified document can still break the document.** Each insertion needs a re-read of the
+whole section, not just of the new text.
+
+## Every number traced to a source
+
+Every numeric claim in body prose was extracted with its context and matched to the source
+verified for it earlier in this log.
+
+| Claim | Source verified |
+|---|---|
+| Poultry Code published 2016; public comment fall 2026; new Code 2027 | nfacc.ca, 2026-08-20 |
+| Layer Code 2017, amended July 2025 | NFACC amendments published 2025-07-31, 2026-08-20 |
+| HAR Part XII in force February 20, 2020; unchanged since 1977 | CFIA and Canada Gazette |
+| Import: 90 days in the exporting region; pullorum eradication program | USDA APHIS certificate, 2026-08-21 |
+| Penicillin, Category II, out of preventive use 2018 | CFC strategy |
+| Prescription requirement since December 1, 2018 | Health Canada, 2026-08-25 |
+| SFCR fully in force January 15, 2019 | Justice Laws, 2026-08-21 |
+| Organic under Part 13 of the SFCR | CFIA, 2026-08-25 |
+| BCCMB 6 percent sleeve, roughly 94 to 106 percent | General Orders Parts 26/27, read in full 2026-08-20 |
+| Miss by more than 6 percent and it is forfeited | General Order 26.2, verbatim |
+| Sleeve can widen to 10 percent for a diagnosed disease problem | General Order 31.3 |
+| Table 7.1: 2,000 / 300 / 600 to 3,000 / 399 / 99 / 300 / 50 / 50 | Board pages, live 2026-08-19 |
+
+The four figures carry **no numeric claims**, so there is no body-to-figure number drift
+possible in this course. Re-confirmed after Figure 4.1 was edited.
+
+## Final state
+
+| Check | Result |
+|---|---|
+| Body paragraphs / references | 179 / 37 |
+| Citation order (character position) | **sequential 1 to 37**, none uncited, none cited without an entry |
+| Em dashes / en dashes in prose | 0 / 0 |
+| `w:dirty` | 0 |
+| Bare "vet" | 0 |
+| [NEEDS SOURCE] | 0 |
+| Unescaped / double-escaped ampersands | 0 / 0 |
+| British or nonstandard spellings (23-pattern scan, incl. "preventative") | none |
+| AI-tell phrases (15-pattern scan) | none |
+| Semicolons in body prose | 0 (all hits are Table 7.1 cells) |
+| *Salmonella* italics | 3 of 3 |
+| Cover date vs cited dates | August 2026 vs all `[cited 2026 Aug]`, aligned |
+| TOC rows / bookmarks / hyperlinks | 31 / 31 / 31 |
+| TOC page numbers | all 31 correct against a fresh render, 27 pages |
+| Redundancy (repeated 8-grams in prose) | only TOC-vs-heading artifacts and official program titles |
+
+Two sentences remain over 42 words, both deliberately: the Introduction's roadmap of what the
+course covers, and the sentence listing the three commodity care programs with their
+citations. Both are enumerations a reader scans as lists.
+
+**Course 17 is content-complete and verified.** It remains a draft by design: publishing it
+still needs the static docx in `dashboard/public/docs/`, an `update-course17.ts` Supabase
+script, and a content seed.
