@@ -580,3 +580,55 @@ block and a veterinarian-responsibility block, since the addition pushed it to 1
 dashes, 0 `w:dirty`, 0 bare "vet", 0 [NEEDS SOURCE], 0 escaping bugs, 0 British spellings, no
 sentence in the new text over 42 words, 31/31/31 TOC rows/bookmarks/hyperlinks, and all 31 TOC
 page numbers still correct at 27 pages.
+
+---
+
+## Claim requirements added to Section 5.2, 2026-08-25
+
+The section said claims must be "backed by the practices and the program behind them" without
+saying what any of them actually require. Added, with each requirement verified against the
+CFIA page that states it.
+
+**Organic**, new reference [29] (CFIA, *Organic claims on food labels*; Canada Organic Regime
+under Part 13 of the Safe Food for Canadians Regulations): third-party certification,
+certified organic feed, no antibiotics, and outdoor access.
+
+**Raised without antibiotics**, new reference [30] (CFIA, *Method of production claims on food
+labels*): no antibiotics by any route from birth to slaughter, explicitly including feed,
+water, injection, local application and egg injection. No feed-sourcing requirement, which is
+the practical difference from organic. Vaccines and **chemical coccidiostats such as amprolium
+and decoquinate are permitted**; **ionophores are not** and cost the claim. Quoted CFIA
+wording: products "may claim 'raised without the use of antibiotics' if the animals were
+raised with the following veterinary drugs or biological products ... chemical coccidiostats,
+such as amprolium and decoquinate."
+
+### A welfare framing that was deliberate
+
+The user's original framing was that under RWA a farmer "can't use antibiotics even when they
+get a bacterial outbreak." That is not how the rule works, and writing it that way would have
+implied withholding treatment from sick birds, contradicting this course's own welfare and
+veterinarian content. The CFIA criterion is that the bird must not have *received*
+antibiotics, so a treated bird simply cannot carry the claim. The course now says so directly:
+"None of this means leaving a sick flock untreated. If your birds need antibiotics, you treat
+them, and that call belongs with your veterinarian. What you lose is the claim on those birds,
+not the right to look after them."
+
+### Citation-order bug caught in the verification tooling
+
+The first build placed organic at [30] and RWA at [29], but organic is cited first inside the
+same paragraph, so the true order ran ... 28, 30, 29, 31 ... a Vancouver violation.
+
+**The standing check did not catch it.** It recorded each reference's first appearance by
+*paragraph index*, so two references first appearing in the same paragraph tied, and
+`Object.entries` then returned them in ascending numeric order, which masked the real
+sequence. Re-checked by joining the body into one string and scanning by **character
+position**, which exposed it. The two references were swapped in both the body and the
+bibliography, and the character-position check now reports sequential 1 to 37.
+
+Any future citation-order check on this project should use character position, not paragraph
+index.
+
+**Verified after rebuild:** 37 references, all cited, sequential 1 to 37 by character
+position, none uncited. 0 em dashes, 0 `w:dirty`, 0 bare "vet", 0 [NEEDS SOURCE], 0 escaping
+bugs, 0 British spellings, no new sentence over 42 words, 31/31/31 TOC rows, bookmarks and
+hyperlinks, all 31 TOC page numbers correct at 27 pages.
