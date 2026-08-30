@@ -741,3 +741,27 @@ re-verified.
 1 to 37, 0 em dashes, 0 `w:dirty`, 0 bare "vet", 0 [NEEDS SOURCE], 0 escaping bugs, 0 British
 spellings, 31/31/31 TOC rows/bookmarks/hyperlinks, all 31 TOC page numbers correct at
 28 pages.
+
+---
+
+## BC SPCA acronym expanded, 2026-08-30
+
+Section 7.2 used "BC SPCA" without ever expanding it, while the course expands every other
+acronym on first use (CFIA, BCFIRB, NFACC, RWA, CgFARAD, PCA Act). Flagged by the user.
+
+Expansion verified rather than assumed, per the project rule on acronym expansions: **British
+Columbia Society for the Prevention of Cruelty to Animals**, confirmed on the BC SPCA's own
+site, which has a dedicated page answering what BC SPCA stands for. Reference [36] is that
+same organization's page, so the existing citation already covers it.
+
+The sentence now reads "It is enforced by the BC SPCA, the British Columbia Society for the
+Prevention of Cruelty to Animals, whose officers are appointed as special provincial
+constables for that purpose [36]." The short form leads because that is what a farmer will
+recognize, with the legal name as the appositive.
+
+**Checked the rest of the series.** Only Course 6 also mentions the SPCA, and there it appears
+solely as the author field of a bibliography entry ("BC SPCA. Egg-Laying Hens..."), where the
+short form is correct citation practice. No change needed.
+
+**Verified after rebuild:** 37 references all cited and sequential 1 to 37, 0 em dashes,
+0 `w:dirty`, 0 bare "vet", all 31 TOC page numbers still correct at 28 pages.
