@@ -815,3 +815,28 @@ and tables. Content-complete and verified.
 Still a draft by design. Publishing needs three things: the static docx copied to
 `dashboard/public/docs/`, an `update-course17.ts` Supabase script to flip the row to Complete,
 and a content seed so the dashboard detail page renders the structured view.
+
+---
+
+# PUBLISHED — 2026-08-30
+
+Course 17 marked final and published to the dashboard.
+
+| Step | Result |
+|---|---|
+| Final file in course folder | `Course 17/Regulatory_Framework_in_Poultry_Production.docx` |
+| Dashboard body | `course-17-regulatory-framework-in-poultry-production.docx`, live, **MD5 identical** to disk |
+| Dashboard summary | `course-17-summary.docx`, live, **MD5 identical** to disk |
+| Vercel | forced production deploy, READY |
+| Supabase row | status **Complete**, progress 100, slug `course-17-regulatory-framework-in-poultry-production`, id `769b922f-fe87-45ab-a080-e13f41c65d5c` |
+| Structured content seed | `C17: intro(4p/1s) sections=8 journals=4 refs=37` |
+| End-to-end | both files downloaded from the live URL, open cleanly as valid docx, correct cover line |
+
+The seed counts cross-check the document: 8 sections matches the 8 body sections, 4 journals
+matches the Recommended Peer-Reviewed Journals list, and 37 references matches the verified
+bibliography exactly.
+
+`seed-content.ts` had a `DOCX_OVERRIDE` entry pointing Course 17 at the working draft in the
+project folder. It now points at the published file in `public/docs`, and is kept as an
+explicit pin rather than deleted so the `course-17-*` prefix match can never resolve to
+`course-17-summary.docx` instead of the body.
