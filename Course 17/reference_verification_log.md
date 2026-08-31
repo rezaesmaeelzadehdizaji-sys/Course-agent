@@ -765,3 +765,53 @@ short form is correct citation practice. No change needed.
 
 **Verified after rebuild:** 37 references all cited and sequential 1 to 37, 0 em dashes,
 0 `w:dirty`, 0 bare "vet", all 31 TOC page numbers still correct at 28 pages.
+
+---
+
+# FINAL SIGN-OFF — 2026-08-30
+
+Course 17 re-verified end to end after Figure 7.1 and the BC SPCA expansion, and the summary
+page checked against the body.
+
+## Automated suite: 23 of 23 checks passed
+
+| Group | Checks |
+|---|---|
+| Citations | order sequential 1 to 37 by character position; no uncited reference; no citation without an entry |
+| Style | no em dashes; no en dashes in prose; no bare "vet"; no [NEEDS SOURCE]; no British or nonstandard spellings (23 patterns, including "preventative"); no AI-tell phrases (14 patterns); no semicolons in body prose |
+| XML integrity | no `w:dirty` flags; `updateFields=false`; no unescaped ampersands; no double-escaped ampersands |
+| Formatting | species names italicized; cited dates match the cover month; TOC rows = bookmarks = hyperlinks |
+| Headers and footers | all 11 populated headers and all 11 populated footers carry the correct CPC format, gold rule and live PAGE/NUMPAGES fields (the twelfth of each is the intentionally blank cover) |
+| Figures and media | 9 media files; 8 captions; every caption names a source |
+| Pagination | all 31 cached TOC page numbers correct against a fresh render, 28 pages |
+
+### One failure that was a bug in the checker, not the document
+
+The first run reported 2 semicolons in body prose. Both were the `;` inside the XML entity
+`&apos;` in "veterinarian's" and "Board's". Decoding entities before counting gives **zero**
+prose semicolons. The checker was fixed rather than the document. Worth remembering: any
+character-level sweep over `<w:t>` content has to decode `&apos;`, `&quot;` and `&amp;` first,
+or it will report phantom hits.
+
+## Summary page checked against the body
+
+`Summary_Page_Course17_Regulatory_Framework.docx` regenerated and compared to the course body:
+
+- **Agenda matches exactly.** All 27 body headings (8 Heading1 sections and 19 Heading2
+  subsections) map one to one onto the agenda's 8 numbered items and 19 lettered sub-items.
+- **Learning objectives match verbatim.** All 8 are identical to the body's.
+- **Cover metadata aligned:** August 2026 on both, same course title, Duration: 2-Hour Lecture.
+- Sweeps on the summary itself: 0 em/en dashes, 0 bare "vet", 0 [NEEDS SOURCE], 0 escaping
+  bugs, 0 British spellings, 0 prose semicolons, 0 `w:dirty`.
+
+No changes were required. Everything added to the body since the agenda was last synced went
+into existing subsections, so no heading or objective changed.
+
+## State at sign-off
+
+28 pages, 179 body paragraphs, 37 references, 9 embedded images, 8 captioned figures, photos
+and tables. Content-complete and verified.
+
+Still a draft by design. Publishing needs three things: the static docx copied to
+`dashboard/public/docs/`, an `update-course17.ts` Supabase script to flip the row to Complete,
+and a content seed so the dashboard detail page renders the structured view.
