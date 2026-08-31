@@ -840,3 +840,38 @@ bibliography exactly.
 project folder. It now points at the published file in `public/docs`, and is kept as an
 explicit pin rather than deleted so the `course-17-*` prefix match can never resolve to
 `course-17-summary.docx` instead of the body.
+
+---
+
+## Organic reframed as an ongoing commitment, 2026-08-30 (republished)
+
+Section 5.2 described organic as an entry bar: certification, organic feed, no antibiotics,
+outdoor access. It did not say that organic is a **standing** obligation, which is the part
+that actually decides whether a farm can live with it.
+
+**Verified before writing:**
+- **Annual inspection.** To retain organic certification an operator must pass an annual
+  inspection by the certification body, covering all production and processing operations and
+  taking place during the production season.
+- **Organic plan.** Certification requires verification that the operator complies with the
+  Canadian Organic Standards, including the requirements relating to the organic plan, and
+  compliance plan forms are filed annually.
+
+**Terminology corrected against the source.** The suggestion used "Organic System Plan," which
+is the United States NOP term. Canada's standard, CAN/CGSB-32.310, says **"organic plan"**, so
+the course uses that. Also noted while checking: **CAN/CGSB-32.310-2026 now supersedes the
+2020 edition.** The course does not cite the standard directly, so nothing needed changing,
+but it is worth knowing for future courses that reference organic production.
+
+**New reference [30]**, CFIA *Canada Organic Regime operating manual*. The annual-inspection
+and organic-plan requirements live in the operating manual, not on the "Organic claims on food
+labels" page already cited as [29], so attaching them to [29] would have repeated the Course
+13 mistake of bolting a claim onto a source that does not state it. Old [30] to [37] shifted
+to [31] to [38].
+
+The paragraph was also split so organic and RWA each get their own, and it now closes on the
+point: "Organic is a standing commitment, not just a harder door to get through."
+
+**Verified after rebuild:** 18 of 18 automated checks passed, 38 references all cited and
+sequential 1 to 38 by character position, no sentence in the new text over 42 words, all 31
+TOC page numbers still correct at 28 pages.
