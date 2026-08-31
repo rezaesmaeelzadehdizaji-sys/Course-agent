@@ -35,9 +35,9 @@ const REPO_ROOT = path.resolve(__dirname, '../../..')
 // Courses whose source docx isn't a public/docs/course-NN-*.docx file.
 const DOCX_OVERRIDE: Record<number, string> = {
   3: path.join(DOCS_DIR, 't-flaws-assessment-management-tool.docx'),
-  // Course 17 is still a draft (not published to public/docs); seed display
-  // content from the working draft in the project folder.
-  17: path.join(REPO_ROOT, 'Course 17', 'Regulatory_Framework_in_Poultry_Production_draft.docx'),
+  // Course 17 published 2026-08-30. Pinned explicitly so the course-17-* prefix
+  // match can never resolve to course-17-summary.docx.
+  17: path.join(DOCS_DIR, 'course-17-regulatory-framework-in-poultry-production.docx'),
 }
 
 function findDocx(courseNumber: number): string | null {
