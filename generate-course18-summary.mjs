@@ -127,12 +127,12 @@ async function main() {
   }));
   children.push(para('CPC Short Courses', { bold: true, color: '595959', alignment: AlignmentType.CENTER, after: 80 }));
   children.push(para('Duration: 2-Hour Lecture', { color: '595959', size: 22, alignment: AlignmentType.CENTER, after: 80 }));
-  children.push(para('June 2026', { color: '595959', size: 22, alignment: AlignmentType.CENTER, after: 360 }));
+  children.push(para('September 2026', { color: '595959', size: 22, alignment: AlignmentType.CENTER, after: 360 }));
 
   // Introduction (farmer-flow)
   children.push(sectionHead('Introduction'));
   children.push(para('Poultry farming never stands still. New diseases show up, old ones come back in new forms, and a virus that was a wild-bird problem one year can be in your barn the next. Avian influenza has shown every farmer in Canada how fast a hot topic can turn into a real emergency. This course keeps you current on the issues that matter most right now: where avian influenza stands today, how it is behaving, and what other diseases are emerging on the radar in Canada.'));
-  children.push(para('The goal is simple. The earlier you understand a threat, the better you can protect your flock, your livelihood, and the farms around you. We will look at what avian influenza is and where it stands now, how it spreads and gets onto farms, your legal duty to report it, and how an outbreak is handled. Then we will turn to the emerging and re-emerging diseases on the radar in Canada, how surveillance catches them early, and the part you play in keeping the whole industry ahead of the next threat.'));
+  children.push(para('The goal is simple. The earlier you understand a threat, the better you can protect your flock, your livelihood, and the farms around you. We will look at what avian influenza is and where it stands now, how it spreads and gets onto farms, your legal duty to report it, and how an outbreak is handled. Then we will turn to the emerging and re-emerging diseases on the radar in Canada, how surveillance catches them early, and the part you play in keeping the whole industry ahead of the next threat. We finish with antimicrobial resistance, the slow-moving threat sitting behind every disease, and what responsible antibiotic use looks like on your farm.'));
 
   // Agenda (locked headings)
   children.push(sectionHead('Agenda'));
@@ -149,15 +149,20 @@ async function main() {
   children.push(subItem('b', 'Diseases on the radar in Canada'));
   children.push(subItem('c', 'Surveillance and early warning'));
   children.push(subItem('d', 'What farmers should do'));
+  children.push(numbered(4, 'Antimicrobial Resistance (AMR)'));
+  children.push(subItem('a', 'What AMR is and why it is a hot topic'));
+  children.push(subItem('b', 'What Canada and the poultry industry are doing about it'));
+  children.push(subItem('c', 'What it means for your farm'));
 
   // Learning Objectives
   children.push(sectionHead('Learning Objectives'));
-  children.push(numbered(1, 'Explain why staying current on poultry hot topics protects your farm, and where to find reliable information.'));
-  children.push(numbered(2, 'Describe what avian influenza is, the difference between low and high pathogenic strains, and where the disease stands today in Canada and globally.'));
+  children.push(numbered(1, 'Explain why staying current on poultry hot topics protects your farm, and where to find information you can trust.'));
+  children.push(numbered(2, 'Describe what avian influenza is, the difference between low and high pathogenic strains, and where the disease stands today in Canada and around the world.'));
   children.push(numbered(3, 'Recognize the warning signs of avian influenza and carry out your legal duty to report a suspected case to the CFIA.'));
   children.push(numbered(4, 'Understand how an avian influenza outbreak is handled in Canada, and the biosecurity steps that protect your flock during high-risk periods.'));
   children.push(numbered(5, 'Explain what makes a disease emerging or re-emerging, and name the disease issues currently on the radar in Canada.'));
-  children.push(numbered(6, 'Understand how disease surveillance and early-warning systems work, and the part you play in them.'));
+  children.push(numbered(6, 'Understand how disease surveillance and early warning work, and the part you play in catching the next threat early.'));
+  children.push(numbered(7, 'Explain what antimicrobial resistance is, what Canada and the poultry industry have done about it, and what responsible antibiotic use means on your farm.'));
 
   // Important Notes
   children.push(sectionHead('Important Notes'));
