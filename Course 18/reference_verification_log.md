@@ -469,3 +469,74 @@ References went from 23 to 31, renumbered by first appearance. Course grew from 
   (neighbour, metres, labour); the only remaining "centre" hits are the CPC Learning Centre
 - *E. coli* italicized, joining the two *Salmonella* mentions
 - bare-"vet" hits are journal abbreviations only
+
+---
+
+## 2026-08-31 (later) — CITATION DEFECT FOUND IN REVIEW AND REPAIRED
+
+A reviewer caught a real error introduced by my own renumbering pass earlier the same day.
+Reported accurately, and confirmed on inspection.
+
+### The defect
+Two references were silently dropped from the bibliography and their in-text numbers left
+stale, so in Section 2.1:
+- **[7]** had become PHAC (health professionals) while still carrying the "about 70 US human
+  H5N1 cases" figure. That is a CDC number and PHAC is the wrong source for it.
+- **[8]** had become Thomas et al., *Infectious Diseases of Wild Birds* (2007), cited three
+  times for the November 2025 Washington H5N5 fatality, the duck and watering-basin
+  investigation, and the 135 contacts monitored. A 2007 textbook cannot support a 2025 event.
+
+### Root cause
+An earlier edit script accidentally inserted a newline inside the string literal of the
+"People have been infected too..." paragraph, splitting it across two source lines. The
+renumbering scanner classified body content with a **line-start** test, so the continuation
+line (which began with a space) failed that test and every citation on it was invisible to the
+scan. Those two sources never entered the first-appearance order, were dropped when the
+bibliography was rebuilt from that order, and their in-text numbers were never remapped. The
+paragraph was rejoined afterwards, which restored the prose but preserved the stale numbers.
+
+The scanner also reported "total references: 31" when 23 existing plus 10 new should have been
+33. That arithmetic was visible at the time and should have been checked. It is now checked
+explicitly: the repair script asserts that the bibliography entry count equals the number of
+distinct citations found in the body, and fails loudly otherwise.
+
+### Repair
+- Restored **[7]** CDC, H5 bird flu: current situation, and **[8]** Kibiger et al., MMWR
+  2026;75(17):221-225, at their correct first-appearance positions.
+- Shifted every later citation by +2 and reordered the bibliography to match.
+- Re-ran a **full bracket-by-bracket audit**: all 33 citations checked against the source they
+  now resolve to, paragraph by paragraph. Every one is correct. The [10] uses in 2.2 and 3.1
+  were confirmed to be correctly pointing at the wild-bird textbook, as the reviewer noted.
+- Scanning is now **region-based** (the span between buildIntroSection and
+  buildReferencesSection) rather than line-based, so a wrapped or split source line can no
+  longer hide a citation.
+
+### Structural changes made in the same pass
+**Section 2.4 split.** It had grown to roughly three pages under one heading. Now:
+- 2.4 The Outbreak Response and What Happens to Your Farm (response, control zones and permits,
+  compensation, and the depopulation and mental-health passage moved to the end)
+- 2.5 The Vaccination Question
+- 2.6 Surveillance and Protecting Your Flock
+
+Moving the mental-health passage ahead of the vaccination material changed first-appearance
+order, so citations were re-derived again: [19] to [16], and [16]-[18] each up one.
+
+**Learning objectives.** Three added, in the body and mirrored in the summary page, covering
+what the course now teaches but did not promise: protecting yourself and your staff around a
+zoonotic virus; what happens to a healthy farm inside a control zone and what compensation
+does and does not cover; and where the vaccination question stands. Ten objectives total.
+
+**Summary agenda** updated to match the new headings: 2d renamed, 2e and 2f added.
+
+### Verification
+- 33 references, citations sequential 1-33, bibliography physically reordered to match
+- every bracket audited against its resolved source, paragraph by paragraph
+- 23 TOC entries, all page numbers recomputed against a fresh render, 0 mismatches, 23 links
+- dirty 0, em/en dashes 0, unescaped ampersands 0, British-spelling sweep clean
+- 23 pages
+
+### Still open (additions, not corrections)
+Glossary, knowledge checks, and the "first 24 hours" action card. The action card is the one
+worth doing first; it would be the piece that outlives the document and gets pinned up in a
+barn office. All three change the structure of a course in a series where no other course
+carries them, so they remain a series-level decision.

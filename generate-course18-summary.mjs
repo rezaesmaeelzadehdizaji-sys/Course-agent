@@ -143,7 +143,9 @@ async function main() {
   children.push(subItem('a', 'What avian influenza is and the current situation'));
   children.push(subItem('b', 'How it spreads and gets onto farms'));
   children.push(subItem('c', 'Recognizing it and your legal duty to report'));
-  children.push(subItem('d', 'The outbreak response and protecting your farm'));
+  children.push(subItem('d', 'The outbreak response and what happens to your farm'));
+  children.push(subItem('e', 'The vaccination question'));
+  children.push(subItem('f', 'Surveillance and protecting your flock'));
   children.push(numbered(3, 'Emerging and Re-Emerging Disease Issues'));
   children.push(subItem('a', 'What emerging means and what drives it'));
   children.push(subItem('b', 'Diseases on the radar in Canada'));
@@ -159,10 +161,13 @@ async function main() {
   children.push(numbered(1, 'Explain why staying current on poultry hot topics protects your farm, and where to find information you can trust.'));
   children.push(numbered(2, 'Describe what avian influenza is, the difference between low and high pathogenic strains, and where the disease stands today in Canada and around the world.'));
   children.push(numbered(3, 'Recognize the warning signs of avian influenza and carry out your legal duty to report a suspected case to the CFIA.'));
-  children.push(numbered(4, 'Understand how an avian influenza outbreak is handled in Canada, and the biosecurity steps that protect your flock during high-risk periods.'));
-  children.push(numbered(5, 'Explain what makes a disease emerging or re-emerging, and name the disease issues currently on the radar in Canada.'));
-  children.push(numbered(6, 'Understand how disease surveillance and early warning work, and the part you play in catching the next threat early.'));
-  children.push(numbered(7, 'Explain what antimicrobial resistance is, what Canada and the poultry industry have done about it, and what responsible antibiotic use means on your farm.'));
+  children.push(numbered(4, 'Protect yourself and your staff around a zoonotic virus, and know what to tell your physician after an exposure.'));
+  children.push(numbered(5, 'Understand how an avian influenza outbreak is handled in Canada, and the biosecurity steps that protect your flock during high-risk periods.'));
+  children.push(numbered(6, 'Describe what happens to a healthy farm caught inside a control zone, what it takes to move birds, eggs, feed, or manure, and what compensation does and does not cover.'));
+  children.push(numbered(7, 'Explain where the vaccination question stands in Canada and why it is not an option on your farm today.'));
+  children.push(numbered(8, 'Explain what makes a disease emerging or re-emerging, and name the disease issues currently on the radar in Canada.'));
+  children.push(numbered(9, 'Understand how disease surveillance and early warning work, and the part you play in catching the next threat early.'));
+  children.push(numbered(10, 'Explain what antimicrobial resistance is, what Canada and the poultry industry have done about it, and what responsible antibiotic use means on your farm.'));
 
   // Important Notes
   children.push(sectionHead('Important Notes'));
