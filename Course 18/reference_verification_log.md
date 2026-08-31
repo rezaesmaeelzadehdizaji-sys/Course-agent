@@ -142,3 +142,46 @@ Photo 2.1, 2.2, 3.1, 3.2), so the existing figures did not renumber.
 - Citation first-appearance order sequential 1-20
 - 8 media parts embedded (logo + 3 figures + 4 photos), all at correct aspect ratios
 - AI-tell phrase scan clean; one 43-word sentence in 4.3 broken into three
+
+---
+
+## 2026-08-30 (later) — Redesigned figures reviewed, two accepted, one rejected
+
+User supplied three redesigned figure images. Each was read at full resolution and its text
+compared word-for-word against the original SVG-generated figure.
+
+| File | Replaces | Verdict |
+|---|---|---|
+| `fig1-new.jpg` | `fig18_1.png` (Figure 2.2, How Avian Influenza Reaches Your Barn) | **ACCEPTED** — every label and sub-line identical to the original, no typos, better design |
+| `fig3.jpg` | `fig18_3.png` (Figure 3.1, Catching an Emerging Disease Early) | **ACCEPTED** — all four chain steps identical to the original, "CanNAISS" spelled correctly in both the heading and the map label, no typos |
+| `fig2.jpg` | `fig18_2.png` (Figure 2.1, The Widening Reach of H5N1) | **REJECTED, original kept** — see below |
+
+### Why fig2.jpg was not used
+1. **Typo:** "Motly mild" (should be "Mostly mild") in the Sporadic human cases row.
+2. **Typo:** the H5N1 virus badge reads "affecied".
+3. **Garbled annotation:** "Contaminated egg surfaces and mg of virus shedding" is not a
+   sentence, and it duplicates a near-identical arrow label on the same egg tray.
+4. **Content loss:** it drops the **"Dairy cattle (new since 2024)"** row and replaces it with
+   "Farmed poultry context and production routes." The dairy-cattle jump is the single most
+   important "widening reach" fact in the course, is stated in the Section 2.1 body text and
+   cited to [5], and is what makes the figure's point. The replacement row is about
+   transmission routes, which is already the subject of Figure 2.2, so it is both a loss and a
+   duplication.
+5. **Unlabeled/meaningless elements:** floating red "affected" tags and a "Farmed avian
+   diversity and non-mammalian carriers" caption that states nothing the course teaches.
+
+A corrected redesign of Figure 2.1 would need the five original rows in order (Wild birds →
+Domestic poultry → Wild and farmed mammals → Dairy cattle, new since 2024 → Sporadic human
+cases), the original wording, and no invented annotations.
+
+### Cover and citation dates moved to September 2026
+Cover date, the cover disclaimer, the Introduction currency note, the References currency
+note, and all 10 live-source `[cited 2026 ...]` tags were moved from August to **September
+2026**, per the rule that the cited month matches the cover month. The underlying CFIA
+situation figures were verified against the page state of 2026-08-24 and are unchanged.
+
+### Build checks after the swap (all pass)
+dirty=0; updateFields=false; TOC rows = bookmarks = hyperlinks = 21; PDF link annotations =
+21; all 21 cached TOC page numbers re-verified against a fresh render (0 mismatches, still 19
+pages); em/en dashes=0; unescaped ampersands=0; citations sequential 1-20; 8 media parts
+(logo + fig18_2.png + 6 jpg).
