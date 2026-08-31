@@ -364,3 +364,108 @@ both Salmonella mentions italicized.
 - Photo 3.1 still carries the pooled source line inherited from Course 11 Photo 5.6
   ("CPC Learning Centre; Picture Book of Infectious Poultry Diseases (FAO-CEVA)"). It should be
   narrowed to whichever of the two the photograph actually came from.
+
+---
+
+## 2026-08-31 — External review acted on: 8 additions made, 4 declined
+
+A review of the course proposed a list of gaps. Every factual claim in that review was
+verified independently before anything was written. One of its claims was wrong and was not
+used; the rest checked out and were added.
+
+### Verified and added
+
+**1. Avian metapneumovirus, Section 3.2.** The review called this the most conspicuous
+omission and was right. Verified: first Canadian commercial detection confirmed in two Ontario
+turkey flocks on **17 April 2024** (subtype B), then Manitoba and Quebec within the same year;
+Ontario had over 100 confirmed cases by late September 2025; now described as endemic in
+Ontario; turkeys hardest hit with mortality reported up to 40%; in chickens and layers lower
+mortality but secondary *E. coli* and drops in eggs and feed; vaccines in limited use under
+CFIA-approved doses pending full licensing. Sources: Ontario Animal Health Network detection
+notice; Canadian Poultry Magazine, 16 Jan 2026. **The review's date of "May 2024" was wrong;
+the confirmed date is April 2024.** New refs [24] and [25].
+
+**2. Local spread and proximity risk, Section 2.2.** Verified against Howden et al.,
+Transbound Emerg Dis 2025;2025:4099285 (PMID 40697881): of **127 infected commercial premises**
+in BC in 2022-23, **21 (16.5%) were independent introductions and 82 (64.6%) local spread**,
+and **proximity under 200 m to an infected premises predicted future infection better than
+contact with one**. This reframes the section from "keep wild birds out" to "in a dense
+production area your neighborhood is part of your risk." New ref [9].
+
+**3. Worker health actions, Section 2.1.** The section ended at "not a reason for panic" with
+no action. Added PPE for handling sick or dead birds, self-monitoring after exposure, telling
+your physician you work with poultry, and the seasonal flu shot rationale (reducing the chance
+of a human and an avian virus reassorting in the same person). Verified that Health Canada has
+authorized Arepanrix H5N1 and that PHAC holds doses for people at elevated occupational risk,
+**specifically including those routinely involved in poultry culling**. New ref [7].
+
+**4. Control zones and movement permits, Section 2.4.** Previously one clause. Verified against
+the CFIA permits-and-conditions page: birds, their products and by-products, and things exposed
+to birds cannot move into, out of, within or through a primary control zone without permission;
+there are general and specific permits; the CFIA runs an interactive tool. Written from the
+perspective of the uninfected farm inside the zone, which is the outbreak experience most
+producers actually have. New ref [12].
+
+**5. Compensation, stated honestly, Section 2.4.** The existing line was accurate but
+incomplete. Verified against the CFIA compensation page: compensation covers animals and things
+ordered destroyed and their disposal, at market value **up to maximum amounts in the
+regulations**, and the agency states it "may not provide the full replacement value." It
+explicitly does **not** cover **loss of future revenues**, and **things ordered cleaned and
+disinfected are not eligible**. Checked Course 17 first: it mentions compensation once and does
+not own the topic, so Course 18 is the right home. New ref [13].
+
+**6. The vaccination trial, Section 2.4.** The existing text ("has moved to test it in a small,
+confined field trial") was already stale. Verified against the CFIA field-trial statement
+(modified 2026-08-04): the trial **launched in August 2026 on two commercial farms in
+Manitoba**, first phase beginning **3 August 2026 at an egg-laying operation**, with a **turkey
+operation expected in 2027**; the CFIA states plainly it "does not represent a decision to
+implement HPAI vaccination in Canada, a vaccination program, or a change to current HPAI disease
+control measures," and that vaccinated birds can still be infected and spread the virus. New
+ref [15].
+
+**7. Depopulation and the human toll, Section 2.4.** A scan of all 16 built courses found
+**zero** coverage of farmer mental health anywhere in the series. Added a short passage
+acknowledging what a mass depopulation does to a farm family, pointing to the Do More
+Agriculture Foundation and provincial farm help lines. New ref [17].
+
+**8. What replaces the antibiotics, Section 4.3.** The section told farmers to use fewer
+antibiotics without saying what happens when they do. Added the gut-health consequence
+(necrotic enteritis and coccidiosis) with the Canadian context that the great majority of
+medically important antibiotic use in broilers has gone to necrotic enteritis control, plus
+the program that fills the gap. Added a pointer to CgFARAD for extralabel withdrawal intervals,
+correctly framed as a service **the veterinarian** requests, not the farmer. New refs [30], [31].
+
+### Declined, with reasons
+
+**Italy's vaccination pilot.** The review stated Italy "started a pilot program in egg layers
+and meat turkeys in May 2026." Verified: the pilot was announced for May 2026 but has been
+**postponed indefinitely** as of July 2026 reporting. Not used. The UK's 24-week turkey trial
+(March 2026) is real but was left out as thin context for a Canadian audience once the Canadian
+trial detail was made concrete.
+
+**Promoting vaccination to its own subsection 2.5.** Declined as an autonomous change. The
+CLAUDE.md heading-lock rule makes the summary agenda the source of truth for course structure,
+and the agenda runs 2a-2d. Adding 2.5 means changing the approved agenda, which is the user's
+call. The content was strengthened in place instead.
+
+**Glossary, knowledge checks, and a one-page action card.** Declined as an autonomous change,
+though the action card is a genuinely good idea. None of the 18 courses in the series carries a
+glossary, an assessment, or a takeaway card, and CLAUDE.md requires structural consistency
+across all of them. Adding these to Course 18 alone would break that. This is a series-level
+decision to put to the user.
+
+**Course description framing for AMR.** The summary and course introduction were already
+updated earlier the same day to name all four sections, including AMR, so learners are no
+longer surprised by the turn at Section 4.
+
+### Result
+References went from 23 to 31, renumbered by first appearance. Course grew from 20 to 23 pages.
+
+### Verification
+- citations sequential 1-31; bibliography physically reordered to match
+- all 21 cached TOC page numbers recomputed against a fresh render, 0 mismatches, 21 PDF links
+- em/en dashes 0; unescaped ampersands 0; dirty flags 0
+- British-spelling sweep: three forms introduced during drafting were caught and converted
+  (neighbour, metres, labour); the only remaining "centre" hits are the CPC Learning Centre
+- *E. coli* italicized, joining the two *Salmonella* mentions
+- bare-"vet" hits are journal abbreviations only
