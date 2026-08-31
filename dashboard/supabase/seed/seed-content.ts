@@ -38,6 +38,9 @@ const DOCX_OVERRIDE: Record<number, string> = {
   // Course 17 published 2026-08-30. Pinned explicitly so the course-17-* prefix
   // match can never resolve to course-17-summary.docx.
   17: path.join(DOCS_DIR, 'course-17-regulatory-framework-in-poultry-production.docx'),
+  // Course 18 re-seeded 2026-08-30 after the claims audit. Pinned for the same
+  // reason as 17, so the course-18-* prefix can never resolve to the summary file.
+  18: path.join(DOCS_DIR, 'course-18-current-poultry-issues-hot-topics.docx'),
 }
 
 function findDocx(courseNumber: number): string | null {
