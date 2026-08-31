@@ -670,3 +670,23 @@ Verified against the body programmatically, not by eye:
 spelling sweep clean; bare "vet" hits are the three journal abbreviations only; *E. coli* and
 both *Salmonella* mentions italicized; all cited dates read [cited 2026 Sep]; figure and photo
 caption sequences correct (Figure 2.1, 2.2, 3.1; Photo 2.1, 2.2, 3.1, 3.2, 3.3).
+
+---
+
+## 2026-08-31 — Duplicate compensation sentence removed
+
+Caught in review. The first paragraph of 2.4 ended with "The CFIA may compensate you for birds
+ordered destroyed, based on market value up to the maximum amounts set in the regulations [12]",
+and the dedicated compensation paragraph two paragraphs later made the same point at greater
+length and more accurately, including the ceilings and the two exclusions.
+
+The sentence was added when the compensation sourcing was corrected earlier in the day, before
+the fuller paragraph existed. It should have been removed when that paragraph was written. This
+is the "Cut Redundancy, Say It Once" rule: the fact now lives once, in the paragraph that owns
+it.
+
+Deleted from paragraph one. The paragraph now closes on the 14-day restocking requirement and
+hands off to the control-zone paragraph. Reference [12] still appears twice in that paragraph
+for quarantine and for the restocking interval, so no renumbering was needed; verified 33
+citations still sequential with none orphaned. "may compensate" now appears zero times; the
+topic is covered once in its own paragraph. 23 pages, TOC 23/23, 23 links, unchanged.
