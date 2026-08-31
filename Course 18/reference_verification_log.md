@@ -619,3 +619,54 @@ References returned from 34 to 33, renumbered by first appearance. 23 pages, 23 
 verified against a fresh render, 0 mismatches, 23 links. Confirmed zero occurrences of
 "Mycoplasma" anywhere in the document and no orphaned reference. The [7] CDC and [8] MMWR
 citations repaired earlier were re-checked and remain intact.
+
+---
+
+## 2026-08-31 — Final full pass: sentences, claims, references, numbers
+
+### Citations
+33 references, 33 distinct cited, sequential 1-33, no citation exceeds the list length, and
+**no reference is left uncited**. Every bracket was resolved against the entry it points to,
+paragraph by paragraph. The [7] CDC and [8] Kibiger MMWR repairs hold.
+
+### Numbers
+Every number in every body paragraph was extracted and checked for a supporting citation. All
+quantitative claims carry one. The only uncited numbers are the document's own date, a heading
+number, and bibliography publication data.
+
+### Sentences
+- Five sentences over 40 words were found and broken. **Now zero.** Two were in content added
+  earlier the same day (the CFIA sign list at 47 words, the aMPV endemic framing at 51).
+- The 2.5 split left a dangling reference: the subsection opened "whether vaccination will ever
+  join that toolbox", with "that toolbox" now pointing back across a heading boundary. Rewritten
+  to "The question the whole sector is watching is whether vaccination will ever join that
+  response."
+
+### Cross-references
+Found 6 after removing one. CLAUDE.md sets a guideline of 2 to 3 per course. The duplicate
+pointer to Course 7 in 4.3 was removed, since Course 7 is already signposted in 2.3 and 4.3 was
+carrying two cross-references in one short subsection, which is exactly the habit the rule
+targets. The remaining six each land at a genuine gap: Course 8 (PPE routine, and treatment/AMR),
+Course 2 (biosecurity), Course 7 (comparing AI signs), Course 17 (reportable-disease framework),
+Course 3 (daily monitoring). **This is still above the stated guideline and is flagged for the
+user to decide**, since the course has grown to four sections and 23 pages.
+
+### Photo added
+**Photo 3.3**, avian metapneumovirus, reused from Course 11 (`aMPV.jpg`, its Photo 5.8). Top row
+is what the farmer sees from outside: swollen head in broilers and breeders, infraorbital
+sinusitis in turkeys. Bottom row is the post-mortem picture, captioned as what the laboratory
+finds and why the secondary bacteria do the damage. Source carried over unchanged from Course 11:
+CEVA Handbook of Poultry Diseases. This was the only newly added disease still without an image.
+
+### Summary page
+Verified against the body programmatically, not by eye:
+- all **15** body subsections match the **15** agenda sub-items, in order
+- all **10** learning objectives match the body **verbatim**
+- September 2026 throughout, no em or en dashes, spelling sweep clean
+
+### Build state
+23 pages; 23 TOC entries all verified against a fresh render with 0 mismatches; 23 bookmarks and
+23 PDF link annotations; dirty flags 0; updateFields false; unescaped ampersands 0; British
+spelling sweep clean; bare "vet" hits are the three journal abbreviations only; *E. coli* and
+both *Salmonella* mentions italicized; all cited dates read [cited 2026 Sep]; figure and photo
+caption sequences correct (Figure 2.1, 2.2, 3.1; Photo 2.1, 2.2, 3.1, 3.2, 3.3).
