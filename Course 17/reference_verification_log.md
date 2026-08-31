@@ -905,3 +905,27 @@ was left as the user designed it. Worth knowing if the image is ever regenerated
 production deploy READY, live file MD5 identical to disk, downloaded and confirmed to open as
 valid docx carrying the new figure and the organic-plan text, and structured content re-seeded
 as `intro(4p/1s) sections=8 journals=4 refs=38`.
+
+## Figure 7.1 updated again, 2026-08-30
+
+The user replaced `fig 7.1.jpg` in place with a revised version and the generator was pointed
+back to it. The only change from the interim `fig 7.1 new.jpg` is the figure's own title,
+which now reads "The BC chicken authority hierarchy", matching the caption. All four levels
+and their bullets are unchanged, so the content verification against references [31], [32],
+[33] and the BCCMB General Orders sleeve mechanics still stands.
+
+Dimensions identical at 1407x768, so embed height and pagination were unaffected: 28 pages
+with all 31 TOC page numbers correct, 38 references all cited and sequential 1 to 38.
+
+**A publish step failed and was caught.** The copy to
+`Course 17/Regulatory_Framework_in_Poultry_Production.docx` returned "Device or resource
+busy" because that file was open in Word. The shell chain stopped there, so **the dashboard
+copy was left stale as well** and the commit captured only the draft, the image and the
+generator. Checking the three MD5s afterwards exposed it: the draft was current while the
+final and the dashboard copy still carried the previous build. The dashboard copy was then
+refreshed and redeployed. The course-folder final file remains locked and still needs
+refreshing once Word releases it.
+
+**Housekeeping.** `Course 17/fig 7.1 new.jpg` is now superseded and unreferenced. Left in
+place, but its name implies currency, which is the same ambiguity behind the Course 3
+generator incident. Worth deleting.
