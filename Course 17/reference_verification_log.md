@@ -875,3 +875,28 @@ point: "Organic is a standing commitment, not just a harder door to get through.
 **Verified after rebuild:** 18 of 18 automated checks passed, 38 references all cited and
 sequential 1 to 38 by character position, no sentence in the new text over 42 words, all 31
 TOC page numbers still correct at 28 pages.
+
+## Figure 7.1 replaced, 2026-08-30
+
+Swapped `fig 7.1.jpg` for the user's revised `fig 7.1 new.jpg` (1407x768, aspect ratio 0.5458,
+effectively identical to the original 0.5459, so the embed height is unchanged at 3.22 inches
+and pagination held at 28 pages).
+
+**Content re-checked against the verified text.** The revised figure carries more detail than
+the original, and every line matches:
+
+| Figure content | Matches |
+|---|---|
+| Natural Products Marketing (BC) Act, "creates regulatory bodies", "establishes authority for all boards" | reference [31]; body text "That Act is what gives the provincial commodity boards their authority" |
+| BCFIRB, "oversees all marketing boards", "hears industry appeals" | reference [33]; body text "supervises every regulated marketing board and commission in the province, hears appeals" |
+| BC Chicken Marketing Board, "your direct regulator", "holds and manages quota", "licenses producers and audits compliance" | reference [32]; body text "holds quota, licenses growers, and delivers and audits the national on-farm programs" |
+| Your farm, "receives quota and quota sleeves", "maintains quota" | the sleeve mechanics in 7.1, verified against BCCMB General Orders Parts 26 and 27 |
+
+The caption is unchanged and still describes the figure accurately.
+
+**One observation, not changed.** The figure's footer line reads "The regulations and audits an
+auditor wants are the same regulations that run a good barn." That echoes the Section 6.1
+thesis that compliance paperwork and good management are the same paperwork, and it is close
+to a caption sentence removed from Figure 6.1 during the redundancy pass. It is a thematic
+echo across two sections rather than duplicated prose, and it is baked into the image, so it
+was left as the user designed it. Worth knowing if the image is ever regenerated.
