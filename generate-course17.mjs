@@ -18,7 +18,7 @@ import { fileURLToPath } from 'url';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const OUT_DIR   = path.join(__dirname, 'Course 17');
-const OUT_FILE  = path.join(OUT_DIR, 'Regulatory_Framework_in_Poultry_Production_draft.docx');
+const OUT_FILE  = path.join(OUT_DIR, 'Regulatory_Framework_in_Poultry_Production.docx');
 const LOGO_PATH = path.join(__dirname, 'logo.png');
 const COURSE_TITLE = 'Regulatory Framework in Poultry Production';
 

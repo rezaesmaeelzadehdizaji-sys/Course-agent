@@ -935,3 +935,24 @@ refreshed once Word released it, so the draft, the final and the dashboard copy 
 same MD5. The superseded `fig 7.1 new.jpg` was deleted; only `fig 7.1.jpg` remains, which is
 the file the generator references. It is recoverable from git history if ever needed. The only
 remaining mentions of the old filename are the historical notes above.
+
+## Consolidated to a single course file, 2026-08-30
+
+`Course 17/` held two identical copies of the course, `..._draft.docx` and the final
+`Regulatory_Framework_in_Poultry_Production.docx`, which is misleading about which one is
+current. Flagged by the user.
+
+Resolved by pointing the generator's `OUT_FILE` at the non-draft name and deleting the draft.
+There is now **one** course file in the folder, and the generator maintains it, so a rebuild
+cannot recreate the second copy.
+
+Checked first that this was safe: the generator's `figBuf()` reads loose image files from the
+course folder, not from a source docx, so making the output filename the same as the published
+name carries none of the self-extraction risk described in the CLAUDE.md pitfall about using a
+docx as both source and output.
+
+The rebuilt single file was compared against the published dashboard copy and is
+content-identical: 221 paragraphs, 8 embedded images, same text and same image hashes. No
+republish was needed.
+
+Also removed a stray untracked scratch file, `dashboard/_tmp_h.mjs`.
