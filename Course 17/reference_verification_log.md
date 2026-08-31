@@ -929,3 +929,9 @@ refreshing once Word releases it.
 **Housekeeping.** `Course 17/fig 7.1 new.jpg` is now superseded and unreferenced. Left in
 place, but its name implies currency, which is the same ambiguity behind the Course 3
 generator incident. Worth deleting.
+
+**Resolved 2026-08-30.** Both outstanding items are closed. The course-folder final file was
+refreshed once Word released it, so the draft, the final and the dashboard copy now share the
+same MD5. The superseded `fig 7.1 new.jpg` was deleted; only `fig 7.1.jpg` remains, which is
+the file the generator references. It is recoverable from git history if ever needed. The only
+remaining mentions of the old filename are the historical notes above.
