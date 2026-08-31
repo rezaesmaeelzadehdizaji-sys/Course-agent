@@ -591,3 +591,31 @@ Course 15 was added for the serology.
 34 references, citations sequential 1-34, bibliography reordered by first appearance.
 *Mycoplasma gallisepticum* italicized in body prose. 23 pages, 23 TOC entries recomputed against
 a fresh render, 0 mismatches, 23 links. dirty 0, em/en dashes 0, British-spelling sweep clean.
+
+---
+
+## 2026-08-31 — MG passage REMOVED (decision reversed)
+
+The Mycoplasma gallisepticum material added earlier the same day has been taken out at the
+user's direction, on the correct grounds: the current BC breeder situation is not documented in
+any public source.
+
+Both paragraphs were removed, along with reference [28] (Merck Veterinary Manual, *Mycoplasma
+gallisepticum* infection in poultry). The sourced biology paragraph went with it rather than
+being kept alone: without a current Canadian hook it was general MG background, which Course 7
+already carries, and it would not have earned a place in a section about what is moving right
+now.
+
+**Why this was the right call.** Everything else in this course can be traced to a public
+document a reader could go and check. The BC claim could not, and a course that is otherwise
+fully sourced should not carry one line that rests on internal knowledge, however reliable the
+person reporting it. It would also have been the fastest-dating sentence in the document.
+
+If the situation is later reported publicly, by CAHSS, a provincial network, the CFIA, or CPC
+itself in a citable bulletin, the passage can go back in with a real citation. The removed text
+is recoverable from git history (commit c6b6d5b).
+
+References returned from 34 to 33, renumbered by first appearance. 23 pages, 23 TOC entries
+verified against a fresh render, 0 mismatches, 23 links. Confirmed zero occurrences of
+"Mycoplasma" anywhere in the document and no orphaned reference. The [7] CDC and [8] MMWR
+citations repaired earlier were re-checked and remain intact.
