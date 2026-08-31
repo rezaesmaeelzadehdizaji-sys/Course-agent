@@ -234,3 +234,133 @@ dirty=0; updateFields=false; TOC rows = bookmarks = hyperlinks = 21; PDF link an
 21; all 21 cached TOC page numbers verified against a fresh render (0 mismatches, 19 pages);
 em/en dashes=0; unescaped ampersands=0; citations sequential 1-20; cover and all cited dates
 September 2026; 8 media parts (logo PNG + 7 JPEG), all at correct aspect ratios.
+
+---
+
+## 2026-08-30 — FULL CLAIMS AND REFERENCES AUDIT (every claim, every reference)
+
+Complete claim-by-claim audit per the CLAUDE.md "Full Figures and Claims Audit" procedure.
+Every number and every attributed statement in the body text, every figure label, and every
+photo caption was extracted and checked against the source actually cited for it, not merely
+against whether that source exists.
+
+### Claims confirmed correct against their cited source (20)
+
+| # | Claim | Source checked | Result |
+|---|---|---|---|
+| 1 | LPAI causes little or no clinical signs; HPAI causes severe illness and mortality | CFIA facts page | verbatim match |
+| 2 | Reportable under the Health of Animals Act; a suspicion must be reported; do not wait for lab confirmation | CFIA facts page: "all suspected cases must be reported... for immediate investigation"; "AI should be suspected on the basis of clinical signs" | confirmed |
+| 3 | Clade 2.3.4.4b reached North America late 2021, spread across Canada through 2022 | first North American detection was Newfoundland, late Nov / Dec 2021, then continental spread in 2022 | confirmed |
+| 4 | More than 650 farms/flocks infected, roughly 17.5 million birds, BC more than half | CFIA status-by-province, updated 2026-08-24: 10 current + 645 released = 655 IPs; 17,561,900 birds; BC 10,107,000 = 57.6% | confirmed |
+| 5 | 82 commercial flocks lost in 2025 | CFIA reporting via trade press (BC 31, AB 16, ON 15, MB 7, QC 7, SK 6) | confirmed |
+| 6 | Dairy cattle infected since 2024, spread cow-to-cow through milking | AVMA; outbreak first reported 2024-03-25 | confirmed |
+| 7 | Mammals affected include cats, foxes, skunks, marine mammals, sheep, goats, alpacas | AVMA / USDA APHIS: dairy cattle, goats, alpacas, sheep all confirmed | confirmed (figure list matches) |
+| 8 | About 70 US human H5N1 cases since 2024, mostly mild, one fatal, no person-to-person spread | CDC | confirmed |
+| 9 | H5N5 death Nov 2025, Washington backyard flock owner, first human H5N5 case; traced to the owner's own apparently healthy ducks and watering-basin sediment; ~135 exposed persons monitored, no secondary cases | MMWR 2026;75(17):221-225, PMID 42096351 | verbatim match |
+| 10 | Wild waterfowl are the natural reservoir, are not normally affected, but still transmit to domestic birds | CFIA facts page, verbatim | confirmed |
+| 11 | Quarantine, movement control, humane destruction, cleaning and disinfection | CFIA | confirmed |
+| 12 | HPAI vaccination task force formed 2023 | CFIA: "a task force was formed in June 2023" | confirmed |
+| 13 | Confined field trial; trade and surveillance are the brake | CFIA vaccination page, modified 2026-08-04 | confirmed |
+| 14 | CanNAISS tests flocks showing signs, pre-slaughter, and hatchery flocks, and supports trade | CanNAISS documentation: passive, targeted, pre-slaughter, hatchery supply flock components; meets WOAH and EU trade requirements | confirmed |
+| 15 | DMV/1639 causes false layer syndrome; hens look healthy but never lay properly | Hassan 2021 (Viruses), PMID 34960757: "highly pathogenic to the female reproductive tract causing marked cystic lesions in the oviduct"; false layer syndrome in Eastern Canadian layer flocks | confirmed |
+| 16 | Two previously unrecognized recombinant IBV variants found in 2024 in Canadian flocks with egg-production drops | Farooq 2024 (Genes), PMID 39596680: isolates T-62 and CL-61, both recombinants | confirmed |
+| 17 | FAdV8b has displaced FAdV8a and FAdV11 as the most common IBH strain since 2015 | Ojkic 2026 (JVDI), PMID 41562204, verbatim | confirmed |
+| 18 | Ceftiofur and Salmonella Heidelberg: resistance in retail chicken and human infections moved together; the Quebec voluntary withdrawal dropped it sharply, then it rose again on reintroduction | Dutil 2010 (EID), PMID 20031042: r = 0.9, p < 0.0001; Quebec 62% to 7% to 20% | confirmed |
+| 19 | Health Canada, since December 2018: prescription required for all medically important antimicrobials, growth-promotion claims removed | Health Canada | confirmed (correctly says growth-promotion, not preventive) |
+| 20 | CFC eliminated preventive use of Category I (2014) and Category II (2018); Category III is a voluntary reduction, not a ban | Chicken Farmers of Canada | confirmed |
+
+### Errors found and corrected (6)
+
+**1. Reportable-disease statement was legally imprecise.**
+Was: "In Canada, the H5 and H7 subtypes are reportable by law [1]." That implies only H5 and H7
+are reportable. CFIA's actual rule: "Highly pathogenic avian influenza **and** low pathogenic
+avian influenza by subtypes H5 and H7 is a reportable disease."
+Now: "every high pathogenic strain is reportable by law, and so is low pathogenic avian
+influenza of the H5 and H7 subtypes, because those two can turn from mild to deadly once they
+get into domestic birds [1]."
+
+**2. HPAI mortality speed was overstated and unsourced.**
+Was: "It can kill most of a flock within a day or two." Not on the cited CFIA page, and faster
+than the authoritative figure.
+Now: "In an unvaccinated flock it can push mortality to nearly 100 percent within a few days of
+exposure [4]." Merck Veterinary Manual: "mortality rates can be as high as 100% a few days
+after exposure in unvaccinated birds." New reference [4] added.
+
+**3. The clinical-sign list did not match the source cited for it.**
+Was: "a sharp drop in feed and water intake, a fall in egg production, swelling and purple
+discoloration of the comb and wattles, and respiratory or nervous-system signs [1]." Feed and
+water intake and respiratory/nervous signs are not on the CFIA page.
+Now the list is CFIA's own, which is also more concrete for a farmer: "birds gone quiet and
+deeply depressed, a drop in egg production with soft-shelled or shell-less eggs, diarrhea,
+swelling of the skin under the eyes, combs and wattles swollen and congested, and hemorrhages
+on the hocks [1]."
+
+**4. DMV/1639 geographic claim was not supported.**
+Was: "became one of the most commonly found infectious bronchitis strains in Ontario **and
+Quebec** [13]." The cited paper's dataset is 86.5% Ontario samples; it makes no Quebec-specific
+frequency claim.
+Now, using what the paper actually reports: "first picked up in Canada in 2015, in an Ontario
+layer flock with production problems and rising mortality... by 2016 it had become the most
+important viral chicken pathogen in the province, hitting every kind of chicken operation, and
+it is now the most frequently detected infectious bronchitis variant in Canadian testing [15]."
+All four elements are verbatim findings in Ojkic 2024.
+
+**5. Three IBH claims were attributed to a paper that does not contain them.**
+The cited genotyping paper has no bird-age data, no immunosuppression discussion, and does not
+say testing "climbed steeply."
+- "three to five weeks old" — the figure is correct, but the source was wrong. El-Shall 2022
+  states "poultry between the ages of 3-5 weeks." Re-cited to new reference [18].
+- "testing and confirmed cases have climbed steeply over the past decade" — overstated. Now
+  "IBH outbreaks have been rising in Canada and worldwide since about 2015 [19]," which is what
+  Ojkic 2026 says.
+- "IBH often takes hold after something else has already weakened the birds' immune systems" —
+  not in the cited paper. Now sourced to El-Shall 2022, which also supplies the nuance now
+  added: IBH was historically secondary to IBD or chicken anemia virus but "was observed in
+  recent outbreaks as an independent primary pathogen."
+
+**6. Downtime and compensation were attributed to a page that contains neither.**
+Was: "there is a required downtime before any new birds come in. Federal compensation is
+available for birds that are ordered destroyed [9]." Neither statement appears on the CFIA
+prevention-preparedness-response page.
+Now sourced to new reference [10], the CFIA "what to expect if your animals are infected" page,
+and stated with its actual figures: quarantine is formally a Declaration of Infected Place; no
+birds, eggs, or manure move without CFIA permission; new birds normally cannot come in until at
+least 14 days after the final cleaning and disinfection inspection is approved; and "The CFIA
+may compensate you for birds ordered destroyed, based on market value up to the maximum amounts
+set in the regulations."
+
+### Three new references added and verified
+- **[4]** Merck Veterinary Manual. Avian influenza in poultry and wild birds. Rahway, NJ: Merck & Co.; [cited 2026 Sep].
+- **[10]** Canadian Food Inspection Agency. Avian influenza: what to expect if your animals are infected. Ottawa: CFIA; [cited 2026 Sep].
+- **[18]** El-Shall NA, El-Hamid HSA, Elkady MF, Ellakany HF, Elbestawy AR, Gado AR, et al. Epidemiology, pathology, prevention, and control strategies of inclusion body hepatitis and hepatitis-hydropericardium syndrome in poultry: a comprehensive review. Front Vet Sci. 2022;9:963199. doi:10.3389/fvets.2022.963199 — verified against PubMed PMID 36304412 (12 authors, first 6 plus et al).
+
+All citations renumbered by first appearance: 20 references became 23.
+Old [4]-[8] to [5]-[9]; old [9]-[15] to [11]-[17]; old [16]-[20] to [19]-[23].
+
+### Figure and photo audit (Step A / Step C)
+Every figure label was read at full resolution and checked against the body text.
+- Figure 2.1 rows carry one number, "new since 2024" for dairy cattle, consistent with the body
+  and confirmed (outbreak first reported March 2024). The mammal list "sheep, goats, and
+  alpacas" is confirmed against USDA APHIS.
+- Figures 2.2 and 3.1 contain no numeric claims. "CanNAISS" is spelled correctly in both places.
+- Photo 3.2's "three to five week old broiler flock" now matches the body text and is sourced.
+- No body/figure numeric inconsistency found.
+
+### Unsourced-specifics scan (Step D)
+Every number in every body paragraph was extracted and checked for a supporting citation. All
+quantitative claims carry one. The only uncited numbers are course cross-references
+("Course 2", "Course 3", "Course 8"), the document's own date, and bibliography publication data.
+
+### Build checks
+dirty=0; updateFields=false; TOC rows = bookmarks = hyperlinks = 21; PDF links = 21; all 21
+cached TOC page numbers verified against a fresh render (0 mismatches, 19 pages); em/en
+dashes=0; unescaped ampersands=0; citations sequential 1-23; British-spelling sweep clean;
+bare-"vet" hits = 3, all journal abbreviations (J Vet Diagn Invest twice, Front Vet Sci);
+both Salmonella mentions italicized.
+
+### Flagged for the user, not changed
+- Course 7 states IBH presents at "3-7 weeks"; Course 18 now says three to five weeks, sourced
+  to El-Shall 2022. Merck gives "under 6 weeks." Worth aligning Course 7 in a future pass.
+- Photo 3.1 still carries the pooled source line inherited from Course 11 Photo 5.6
+  ("CPC Learning Centre; Picture Book of Infectious Poultry Diseases (FAO-CEVA)"). It should be
+  narrowed to whichever of the two the photograph actually came from.
