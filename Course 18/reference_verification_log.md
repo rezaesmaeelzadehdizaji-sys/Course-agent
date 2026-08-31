@@ -185,3 +185,52 @@ dirty=0; updateFields=false; TOC rows = bookmarks = hyperlinks = 21; PDF link an
 21; all 21 cached TOC page numbers re-verified against a fresh render (0 mismatches, still 19
 pages); em/en dashes=0; unescaped ampersands=0; citations sequential 1-20; 8 media parts
 (logo + fig18_2.png + 6 jpg).
+
+---
+
+## 2026-08-30 (final) — fig2.jpg accepted, all three figures now the redesigned versions
+
+Third revision of `fig2.jpg` reviewed at full resolution, element by element. **ACCEPTED** and
+swapped in as Figure 2.1, replacing `fig18_2.png`.
+
+All five species rows now match the original SVG figure word for word:
+
+| Row | Text verified |
+|---|---|
+| Title | The Widening Reach of H5N1 (Clade 2.3.4.4b) |
+| 1 | Wild birds / The natural reservoir, spread along migratory flyways worldwide |
+| 2 | Domestic poultry / Heavy losses in commercial and backyard flocks across Canada |
+| 3 | Wild and farmed mammals / Foxes, skunks, cats, marine mammals; sheep, goats, and alpacas |
+| 4 | **Dairy cattle (new since 2024)** / First jump into US dairy herds; spread cow-to-cow through milking |
+| 5 | Sporadic human cases / Mostly mild, in people with close animal contact; no sustained human spread |
+| Caption | Once a bird virus, H5N1 now reaches many mammals and, rarely, people. The risk to most farmers is still occupational. |
+
+Every defect flagged in the two earlier revisions is resolved:
+- "Motly mild" corrected to "Mostly mild"
+- The garbled virus badge ("affecied", then "HSN1 cifecied", which also misspelled the virus
+  name) removed entirely
+- The nonsense "Contaminated egg surfaces and mg of virus shedding" label removed, along with
+  its duplicate on the same egg tray
+- The vague "Farmed avian diversity and non-mammalian carriers" caption and the floating
+  "affected" tags removed
+- The dairy-cattle row, dropped in revision 1, is restored with the correct wording, so the
+  figure again supports the Section 2.1 claim cited to [5]
+
+The one remaining annotation, "Occupational exposure: close contact with infected birds or
+contaminated equipment," is accurate and consistent with the Section 2.1 body text.
+
+### Figure inventory after this change
+| Course figure | File | Origin |
+|---|---|---|
+| Figure 2.1 | `fig2.jpg` | redesigned, replaces fig18_2.png |
+| Figure 2.2 | `fig1-new.jpg` | redesigned, replaces fig18_1.png |
+| Figure 3.1 | `fig3.jpg` | redesigned, replaces fig18_3.png |
+
+The three original SVG-rendered PNGs (`fig18_1.png`, `fig18_2.png`, `fig18_3.png`) are kept in
+the course folder as the fallback source but are no longer referenced by the generator.
+
+### Build checks after the swap (all pass)
+dirty=0; updateFields=false; TOC rows = bookmarks = hyperlinks = 21; PDF link annotations =
+21; all 21 cached TOC page numbers verified against a fresh render (0 mismatches, 19 pages);
+em/en dashes=0; unescaped ampersands=0; citations sequential 1-20; cover and all cited dates
+September 2026; 8 media parts (logo PNG + 7 JPEG), all at correct aspect ratios.
