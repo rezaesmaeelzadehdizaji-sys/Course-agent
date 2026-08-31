@@ -540,3 +540,54 @@ Glossary, knowledge checks, and the "first 24 hours" action card. The action car
 worth doing first; it would be the piece that outlives the document and gets pinned up in a
 barn office. All three change the structure of a course in a series where no other course
 carries them, so they remain a series-level decision.
+
+---
+
+## 2026-08-31 — Mycoplasma gallisepticum in BC breeders added to 3.2
+
+Added at the user's report that CPC is currently dealing with MG-positive breeder flocks in
+British Columbia. The user was explicit that this is a BC situation and not Canada-wide.
+
+### Sourcing, split deliberately
+
+**The biology is fully sourced.** New ref [28], Merck Veterinary Manual, *Mycoplasma
+gallisepticum* infection in poultry, supports every general claim made:
+- "vertically transmitted (transovarian) in a small percentage of hatching eggs from infected
+  breeders to progeny"
+- "Once individuals or flocks are infected, they remain infected for life and act as carriers
+  or reservoirs"
+- control rests on sourcing "chicks or poults from M. gallisepticum-free breeder flocks" plus
+  "good biosecurity" and "serological testing to continually confirm infection-free status"
+
+**The current BC situation is NOT publicly sourceable.** Searched CAHSS, OAHN-equivalent
+provincial reporting, CFIA, and the trade press: there is no public report of current MG
+activity in BC breeder flocks. OAHN publishes quarterly poultry reports for Ontario; no
+equivalent public BC report was found.
+
+It is therefore written as what it is, a CPC field observation, attributed in the prose:
+"As this course goes out, CPC veterinarians are working with MG-positive breeder flocks in the
+province." No flock counts, no percentages, no dates beyond "as this course goes out", because
+none were given and none may be invented. The sentence immediately after states plainly that
+this is a BC picture and not a national one.
+
+**This wording needs CPC sign-off before the course is published.** It is the one claim in the
+course that rests on internal knowledge rather than a citable source, and it will date faster
+than anything else in the document.
+
+### Why it earns its place
+Section 3.1 defines a re-emerging disease as "an old foe coming back, often in a changed form
+that the usual vaccines or management do not fully cover", but until now 3.2 delivered only
+emerging cases: a variant that outran the vaccine (DMV/1639), a rising trend (IBH), and a brand
+new arrival (aMPV). MG is the re-emerging case the section was missing, and the breeder angle is
+the part that makes it matter: a positive at the top of the pyramid reaches everything hatched
+below it.
+
+Checked for overlap first. Course 7 covers MG clinically and mostly in turkeys (infectious
+sinusitis); Course 15 covers the plate agglutination serology. Neither covers breeders or
+vertical transmission, so this is complementary rather than duplicated. A cross-reference to
+Course 15 was added for the serology.
+
+### Verification
+34 references, citations sequential 1-34, bibliography reordered by first appearance.
+*Mycoplasma gallisepticum* italicized in body prose. 23 pages, 23 TOC entries recomputed against
+a fresh render, 0 mismatches, 23 links. dirty 0, em/en dashes 0, British-spelling sweep clean.
