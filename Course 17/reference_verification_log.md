@@ -900,3 +900,8 @@ thesis that compliance paperwork and good management are the same paperwork, and
 to a caption sentence removed from Figure 6.1 during the redundancy pass. It is a thematic
 echo across two sections rather than duplicated prose, and it is baked into the image, so it
 was left as the user designed it. Worth knowing if the image is ever regenerated.
+
+**Republished 2026-08-30** after the organic expansion and the Figure 7.1 replacement: Vercel
+production deploy READY, live file MD5 identical to disk, downloaded and confirmed to open as
+valid docx carrying the new figure and the organic-plan text, and structured content re-seeded
+as `intro(4p/1s) sections=8 journals=4 refs=38`.
