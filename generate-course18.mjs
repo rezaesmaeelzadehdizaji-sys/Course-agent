@@ -357,6 +357,17 @@ function buildSection4() {
       h2('4.3 What It Means for Your Farm'),
       para('For you, antimicrobial stewardship is now just part of good farming, not an optional extra. The guiding idea is simple: use antibiotics as little as possible and as much as necessary. That means treating real, diagnosed disease under your veterinarian’s direction instead of reaching for antibiotics out of habit. Record every treatment with its dose and withdrawal time. Then respect that withdrawal time to the day before any birds or eggs leave the farm. If a drug is ever used off-label and the withdrawal time is not obvious, your veterinarian can request a science-based interval from CgFARAD, the Canadian residue-avoidance service set up for exactly that question [32].'),
       para('It is worth being honest about what happens when the antibiotics come out. Gut health is where it shows first. Necrotic enteritis and coccidiosis are the two that press hardest, and in Canadian broilers the great majority of medically important antibiotic use has been aimed at necrotic enteritis in the first place [33]. Take the drug away and put nothing in its place and you will meet that disease. What fills the gap is not one product but a program: coccidiosis vaccination or a proper rotation, clean water, and dry litter. Feed that does not swing on the birds helps too, and so does the biosecurity that keeps the challenge low in the first place [33].'),
+      para([
+        { text: 'It also helps to know which bugs this actually bites on. Two are worth knowing by name on a broiler farm. ' },
+        { text: 'Escherichia coli', italics: true },
+        { text: ' is the one behind colibacillosis, the everyday bacterial loss that follows a viral knock or a bad air week. The other is ' },
+        { text: 'Enterococcus cecorum', italics: true },
+        { text: ', which turned up in Canada in an Ontario broiler flock in 2008 and shows itself as lameness, sore joints, and birds going down on their legs [34]. Both are getting harder to treat. Canadian surveillance running from the farm through to retail keeps finding ' },
+        { text: 'E. coli', italics: true },
+        { text: ' carrying resistance to antimicrobials that matter in human medicine [35], and broiler ' },
+        { text: 'E. cecorum', italics: true },
+        { text: ' isolates carry resistance genes for tetracycline, lincomycin, spectinomycin, tylosin, and even vancomycin, sitting on mobile pieces of DNA that pass between bacteria [36]. That is the thing stewardship is really protecting: the day the usual treatment stops working on a bug that is already in your barn.' },
+      ]),
       para('The best way to use fewer antibiotics is to need fewer. Strong biosecurity, good vaccination, clean water, and solid day-to-day management keep birds healthy enough that they rarely need treating in the first place. Stewardship and good husbandry are the same thing seen from two sides. For the full picture on treatment, vaccination, and antimicrobial stewardship on the farm, see Course 8 (Fundamentals of Poultry Vaccination and Treatment) in this series.'),
     ],
   };
@@ -421,6 +432,9 @@ function buildReferencesSection() {
       numberedRef('Chicken Farmers of Canada. Responsible Antimicrobial Use Strategy. Ottawa: Chicken Farmers of Canada; [cited 2026 Sep]. Available from: chickenfarmers.ca'),
       numberedRef('Canadian Global Food Animal Residue Avoidance Databank (CgFARAD). Request withdrawal information. Saskatoon, SK: University of Saskatchewan; [cited 2026 Sep]. Available from: cgfarad.ca'),
       numberedRef('Chicken Farmers of Canada. Necrotic enteritis and coccidiosis. Ottawa: Chicken Farmers of Canada; [cited 2026 Sep]. Available from: chickenfarmers.ca'),
+      numberedRef('Stalker MJ, Brash ML, Weisz A, Ouckama RM, Slavic D. Arthritis and osteomyelitis associated with Enterococcus cecorum infection in broiler and broiler breeder chickens in Ontario, Canada. J Vet Diagn Invest. 2010;22(4):643-645. doi:10.1177/104063871002200426'),
+      numberedRef('Medrano H, Hill S, Boulianne M, Cereno T, Deckert AE, Charlebois A, et al. Widespread dissemination of Salmonella, Escherichia coli and Campylobacter resistant to medically important antimicrobials in the poultry production continuum in Canada. PLOS One. 2025;20(2):e0319086. doi:10.1371/journal.pone.0319086'),
+      numberedRef('Huang Y, Boyen F, Antonissen G, Vereecke N, Van Immerseel F. The genetic landscape of antimicrobial resistance genes in Enterococcus cecorum broiler isolates. Antibiotics (Basel). 2024;13(5):409. doi:10.3390/antibiotics13050409'),
     ],
   };
 }

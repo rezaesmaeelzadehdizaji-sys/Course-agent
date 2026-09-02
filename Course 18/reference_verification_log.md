@@ -735,3 +735,45 @@ rather than questioning it. Worth noting for future passes: an error already in 
 easy to propagate when extending it, because it reads as established wording.
 
 No numbers, citations or references were affected. Still 23 pages, TOC 23/23, 23 links.
+
+---
+
+## 2026-09-02 — The two broiler bacteria AMR actually bites on, added to 4.3
+
+The user reported from the field that the two bacterial isolates they see most from broilers are
+non-hemolytic *E. coli* and *Enterococcus cecorum*, both increasingly resistant. Unlike the BC
+MG situation, this one **is** publicly documented, so it was written with real citations rather
+than as a field observation.
+
+### Three new references, all verified
+- **[34]** Stalker MJ, Brash ML, Weisz A, Ouckama RM, Slavic D. Arthritis and osteomyelitis
+  associated with *Enterococcus cecorum* infection in broiler and broiler breeder chickens in
+  Ontario, Canada. J Vet Diagn Invest. 2010;22(4):643-645. PMID 20622242. First Canadian cases,
+  an Ontario broiler flock, August 2008. Same Guelph Animal Health Laboratory group already
+  cited in this course.
+- **[35]** Medrano H, Hill S, Boulianne M, Cereno T, Deckert AE, Charlebois A, et al. Widespread
+  dissemination of *Salmonella*, *Escherichia coli* and *Campylobacter* resistant to medically
+  important antimicrobials in the poultry production continuum in Canada. PLOS One.
+  2025;20(2):e0319086. Verified via CrossRef; 10 authors, first 6 plus et al.
+- **[36]** Huang Y, Boyen F, Antonissen G, Vereecke N, Van Immerseel F. The genetic landscape of
+  antimicrobial resistance genes in *Enterococcus cecorum* broiler isolates. Antibiotics (Basel).
+  2024;13(5):409. PMID 38786138. Source of the specific resistance list used in the text:
+  tetracycline, lincomycin, spectinomycin, tylosin and vancomycin, carried on mobile genetic
+  elements.
+
+### Two things deliberately NOT claimed
+- **"Most prevalent isolates."** The user's ranking is clinical experience. CIPARS treats *E.
+  coli* as an **indicator** organism rather than reporting it as the most common isolate, so a
+  prevalence ranking could not be sourced. The text says "Two are worth knowing by name on a
+  broiler farm", which makes no ranking claim.
+- **"Non-hemolytic."** Could not be verified as the standard descriptor in the literature within
+  a reasonable search, so it was left out rather than asserted. Flagged to the user: if they want
+  it, it needs either a source or explicit framing as a CPC laboratory observation.
+
+Placed in 4.3 after the gut-health paragraph, where the farmer is asking what AMR means for them
+in practice. It complements the *Salmonella* Heidelberg example in 4.1, which is a food-safety
+angle, by naming the bugs that are actually in the barn.
+
+References 33 to 36, renumbered by first appearance with a hard count assertion in the script
+this time. All Latin names italicized: *Escherichia coli*, *E. coli*, *Enterococcus cecorum*,
+*E. cecorum*. Still 23 pages, TOC 23/23, 23 links, citations sequential 1-36.
