@@ -713,3 +713,25 @@ Agenda now matches all 15 body subsections exactly.
 **Not added: any mention of the action card.** The "First 24 Hours" card is still undecided
 ("we may keep it or take it off later"), so it is deliberately not referenced from the summary
 yet. If it is kept, one line in Important Notes is the natural place for it.
+
+---
+
+## 2026-09-02 — Overclaim corrected: AMR does not sit behind "every disease"
+
+Caught by the user. Three places described antimicrobial resistance as the threat "behind every
+disease". That is wrong: AMR builds behind antibiotic **use**, and most of what this course
+actually teaches is viral, avian influenza, infectious bronchitis, inclusion body hepatitis and
+avian metapneumovirus, none of which is treated with antibiotics.
+
+| Location | Was | Now |
+|---|---|---|
+| Introduction (body) | "the slow-moving threat sitting behind every disease" | "the slow-moving problem that builds behind every antibiotic treatment" |
+| Section 4.1 opener | "not a single disease but a slow-moving threat that sits behind every disease: antimicrobial resistance, or AMR" | "not a disease at all. It is antimicrobial resistance, or AMR, and it builds quietly behind every antibiotic treatment given, on farms and in hospitals alike" |
+| Introduction (summary page) | same as the body introduction | same correction |
+
+The 4.1 opener was original course text. The two introduction sentences were written on
+2026-08-31 when AMR was added to the introductions, and they repeated the existing framing
+rather than questioning it. Worth noting for future passes: an error already in the document is
+easy to propagate when extending it, because it reads as established wording.
+
+No numbers, citations or references were affected. Still 23 pages, TOC 23/23, 23 links.
