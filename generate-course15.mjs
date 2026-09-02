@@ -294,7 +294,7 @@ function buildCoverSection() {
     }),
     new Paragraph({
       children: [new TextRun({
-        text: 'This course is produced by the CPC Learning Centre for educational purposes. Content is intended for trained poultry industry professionals. It does not replace the advice of a licensed veterinarian, integrator management manuals, or regulatory requirements. Always follow current CFIA, NFACC, and integrator-specific protocols.',
+        text: 'This course is produced by the CPC Learning Centre for educational purposes. Content is intended for trained poultry industry professionals. It does not replace the advice of a licensed veterinarian, integrator management manuals, or regulatory requirements. Always follow current CFIA, NFACC, and integrator-specific protocols. The CPC team reviews and updates this series. If you spot something that needs correcting, tell us at admin@canadianpoultry.ca.',
         color: '888888', size: 18, font: 'Calibri', italics: true,
       })],
       alignment: AlignmentType.CENTER, spacing: { before: 0, after: 0 },

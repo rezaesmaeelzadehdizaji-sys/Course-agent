@@ -315,7 +315,7 @@ function buildCoverSection() {
 
     // Disclaimer
     new Paragraph({
-      children: [new TextRun({ text: 'This course has been developed for educational purposes for commercial poultry farmers in Canada. Content is drawn from peer-reviewed literature, industry management guides, and regulatory documents. This material does not replace the advice of a licensed veterinarian or regulatory authority.', color: '808080', size: 18, font: 'Calibri', italics: true })],
+      children: [new TextRun({ text: 'This course has been developed for educational purposes for commercial poultry farmers in Canada. Content is drawn from peer-reviewed literature, industry management guides, and regulatory documents. This material does not replace the advice of a licensed veterinarian or regulatory authority. The CPC team reviews and updates this series. If you spot something that needs correcting, tell us at admin@canadianpoultry.ca.', color: '808080', size: 18, font: 'Calibri', italics: true })],
       alignment: AlignmentType.CENTER,
       spacing:   { before: 0, after: 120 },
     }),

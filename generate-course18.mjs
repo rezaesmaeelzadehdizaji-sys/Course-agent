@@ -187,7 +187,7 @@ function buildCoverSection() {
       alignment: AlignmentType.CENTER, spacing: { before: 0, after: 800 },
     }),
     new Paragraph({
-      children: [new TextRun({ text: 'This course has been developed for educational purposes for commercial poultry farmers in Canada. Because it covers current issues, the disease situation, figures, and dates in it reflect September 2026 and will change over time. It does not replace the current guidance of the Canadian Food Inspection Agency, your provincial marketing board, or your veterinarian. Always confirm the present disease situation and reporting requirements with the CFIA and a licensed veterinarian before acting. The CPC team reviews and updates this series as the situation moves. If you spot something that has changed, tell us so we can correct it.', color: '808080', size: 18, font: 'Calibri', italics: true })],
+      children: [new TextRun({ text: 'This course has been developed for educational purposes for commercial poultry farmers in Canada. Because it covers current issues, the disease situation, figures, and dates in it reflect September 2026 and will change over time. It does not replace the current guidance of the Canadian Food Inspection Agency, your provincial marketing board, or your veterinarian. Always confirm the present disease situation and reporting requirements with the CFIA and a licensed veterinarian before acting. The CPC team reviews and updates this series. If you spot something that needs correcting, tell us at admin@canadianpoultry.ca.', color: '808080', size: 18, font: 'Calibri', italics: true })],
       alignment: AlignmentType.CENTER, spacing: { before: 0, after: 120 },
     }),
     pageBreak(),

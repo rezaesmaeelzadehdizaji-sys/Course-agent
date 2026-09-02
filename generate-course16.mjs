@@ -212,7 +212,7 @@ function buildCoverSection() {
       alignment: AlignmentType.CENTER, spacing: { before: 0, after: 800 },
     }),
     new Paragraph({
-      children: [new TextRun({ text: 'This course has been developed for educational purposes for commercial poultry farmers in Canada. Content is drawn from national on-farm assurance programs, regulatory standards, industry guides, and the CPC Learning Centre. It does not replace the official program manuals, the advice of your provincial marketing board, or the direction of a licensed veterinarian or regulatory authority. Always follow the current version of the program you are audited under.', color: '808080', size: 18, font: 'Calibri', italics: true })],
+      children: [new TextRun({ text: 'This course has been developed for educational purposes for commercial poultry farmers in Canada. Content is drawn from national on-farm assurance programs, regulatory standards, industry guides, and the CPC Learning Centre. It does not replace the official program manuals, the advice of your provincial marketing board, or the direction of a licensed veterinarian or regulatory authority. Always follow the current version of the program you are audited under. The CPC team reviews and updates this series. If you spot something that needs correcting, tell us at admin@canadianpoultry.ca.', color: '808080', size: 18, font: 'Calibri', italics: true })],
       alignment: AlignmentType.CENTER, spacing: { before: 0, after: 120 },
     }),
     pageBreak(),

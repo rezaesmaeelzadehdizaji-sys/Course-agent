@@ -174,7 +174,7 @@ async function main() {
   children.push(bullet('Participants should bring note-taking items.'));
   children.push(bullet('A certificate of completion is available to all participants.'));
   children.push(bullet('Hot-topic content changes quickly. Always confirm the current disease situation with the CFIA and your veterinarian.'));
-  children.push(bullet('The CPC team keeps this series current. If you spot something that has changed, tell us so we can correct it.'));
+  children.push(bullet('The CPC team reviews and updates this series. If you spot something that needs correcting, tell us at admin@canadianpoultry.ca.'));
 
   const doc = new Document({
     creator: 'CPC Short Courses',

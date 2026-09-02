@@ -432,7 +432,7 @@ const doc = new Document({
           alignment: AlignmentType.CENTER,
           spacing:   { before: 0, after: 0 },
           children:  [run(
-            'This course has been developed for educational purposes for commercial poultry farmers in Canada. ' +
+            'This course has been developed for educational purposes for commercial poultry farmers in Canada.  The CPC team reviews and updates this series. If you spot something that needs correcting, tell us at admin@canadianpoultry.ca.' +
             'Content is drawn from the field experience of Canadian poultry consultants, peer-reviewed scientific ' +
             'literature, and industry management guides. This material does not replace the advice of a licensed ' +
             'veterinarian or regulatory authority.',
