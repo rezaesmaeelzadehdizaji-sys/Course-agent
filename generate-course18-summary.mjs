@@ -140,7 +140,7 @@ async function main() {
   children.push(subItem('a', 'What hot topics are and why they matter to your farm'));
   children.push(subItem('b', 'Where to get reliable, current information'));
   children.push(numbered(2, 'Avian Influenza'));
-  children.push(subItem('a', 'What avian influenza is and the current situation'));
+  children.push(subItem('a', 'What avian influenza is and where it stands today'));
   children.push(subItem('b', 'How it spreads and gets onto farms'));
   children.push(subItem('c', 'Recognizing it and your legal duty to report'));
   children.push(subItem('d', 'The outbreak response and what happens to your farm'));

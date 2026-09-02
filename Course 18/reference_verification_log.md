@@ -690,3 +690,26 @@ hands off to the control-zone paragraph. Reference [12] still appears twice in t
 for quarantine and for the restocking interval, so no renumbering was needed; verified 33
 citations still sequential with none orphaned. "may compensate" now appears zero times; the
 topic is covered once in its own paragraph. 23 pages, TOC 23/23, 23 links, unchanged.
+
+---
+
+## 2026-09-02 — Summary page re-verified against the body, one pre-existing mismatch fixed
+
+Checked programmatically rather than by eye, after the 2.4 split, the objective additions, the
+compensation-duplicate removal and the aMPV photo.
+
+**Result: aligned.** All 10 learning objectives match the body verbatim. Date reads September
+2026. No em or en dashes, no British forms, no unescaped ampersands.
+
+**One mismatch found and corrected.** Agenda item 2a read "What avian influenza is and the
+current situation" while the body heading is "2.1 What Avian Influenza Is and Where It Stands
+Today". This predates the recent work: it has been out of sync since the original June summary
+and was not introduced by the 2.4 split. The agenda line was aligned to the body heading rather
+than the reverse, because the body heading is the one embedded in the course TOC, its bookmarks
+and its hyperlinks, so changing it would mean reworking all three for no gain.
+
+Agenda now matches all 15 body subsections exactly.
+
+**Not added: any mention of the action card.** The "First 24 Hours" card is still undecided
+("we may keep it or take it off later"), so it is deliberately not referenced from the summary
+yet. If it is kept, one line in Important Notes is the natural place for it.
