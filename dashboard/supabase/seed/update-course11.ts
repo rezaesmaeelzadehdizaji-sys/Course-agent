@@ -37,7 +37,7 @@ const META = {
   organization: "CPC Short Courses",
   date: "June 2026",
   version: "1.0",
-  disclaimer: "This course is intended for educational purposes only. Necropsy and diagnosis are the work of a licensed veterinarian or pathologist, and this material does not replace their advice, diagnosis, or treatment. Always handle dead birds and tissues under your farm biosecurity plan, and consult your veterinarian for flock health decisions.",
+  disclaimer: "This course is intended for educational purposes only. Necropsy and diagnosis are the work of a licensed veterinarian or pathologist, and this material does not replace their advice, diagnosis, or treatment. Always handle dead birds and tissues under your farm biosecurity plan, and consult your veterinarian for flock health decisions. The CPC team reviews and updates this series. If you spot something that needs correcting, tell us at admin@canadianpoultry.ca.",
 }
 
 async function run() {

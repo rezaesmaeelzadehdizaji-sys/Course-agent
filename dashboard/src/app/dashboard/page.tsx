@@ -36,13 +36,14 @@ export default async function DashboardPage() {
         title: 'Current Poultry Issues (Hot Topics)',
         subtitle: 'Avian Influenza and Emerging Disease Issues in Canadian Poultry',
         organization: 'CPC Short Courses',
-        date: 'June 2026',
+        date: 'September 2026',
         version: '1.0',
         disclaimer:
-          'This course covers current issues; disease figures reflect mid-2026 and will change over time. Always confirm the current situation with the CFIA and a licensed veterinarian.',
+          'This course covers current issues; disease figures reflect September 2026 and will change over time. Always confirm the current situation with the CFIA and a licensed veterinarian.' +
+          ' The CPC team reviews and updates this series. If you spot something that needs correcting, tell us at admin@canadianpoultry.ca.',
       },
       created_at: '',
-      updated_at: '2026-06-16T00:00:00.000Z',
+      updated_at: '2026-09-02T00:00:00.000Z',
     },
   ]
   const allCourses = [

@@ -37,7 +37,7 @@ const META = {
   organization: "CPC Short Courses",
   date: "August 2026",
   version: "1.1",
-  disclaimer: "This course is produced by the CPC Learning Centre for educational purposes. Content is intended for trained poultry industry professionals. It does not replace the advice of a licensed veterinarian, primary breeder management guides, or regulatory requirements. Always follow current CFIA, NFACC, provincial marketing board, and company-specific protocols.",
+  disclaimer: "This course is produced by the CPC Learning Centre for educational purposes. Content is intended for trained poultry industry professionals. It does not replace the advice of a licensed veterinarian, primary breeder management guides, or regulatory requirements. Always follow current CFIA, NFACC, provincial marketing board, and company-specific protocols. The CPC team reviews and updates this series. If you spot something that needs correcting, tell us at admin@canadianpoultry.ca.",
 }
 
 async function run() {

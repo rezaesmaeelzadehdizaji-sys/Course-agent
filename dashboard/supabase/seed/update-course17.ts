@@ -38,7 +38,7 @@ const META = {
   organization: "CPC Short Courses",
   date: "August 2026",
   version: "1.0",
-  disclaimer: "This course has been developed for educational purposes for commercial poultry farmers in Canada. It summarizes federal and provincial laws, national supply management, industry codes, and on-farm assurance programs as a general guide. It does not replace the official text of any act or regulation, the manuals of the program you are audited under, the direction of your provincial marketing board, or the advice of a licensed veterinarian or regulatory authority. Always follow the current version of the law and program that applies to your farm.",
+  disclaimer: "This course has been developed for educational purposes for commercial poultry farmers in Canada. It summarizes federal and provincial laws, national supply management, industry codes, and on-farm assurance programs as a general guide. It does not replace the official text of any act or regulation, the manuals of the program you are audited under, the direction of your provincial marketing board, or the advice of a licensed veterinarian or regulatory authority. Always follow the current version of the law and program that applies to your farm. The CPC team reviews and updates this series. If you spot something that needs correcting, tell us at admin@canadianpoultry.ca.",
 }
 
 async function run() {

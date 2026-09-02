@@ -37,7 +37,7 @@ const META = {
   organization: "CPC Short Courses",
   date: "July 2026",
   version: "1.0",
-  disclaimer: "This course is intended for educational purposes only. It does not replace the advice, diagnosis, or treatment of a licensed veterinarian. Euthanasia practices on your farm must comply with the NFACC Code of Practice and your applicable Chicken Farmers of Canada or provincial requirements. Always consult your veterinarian or flock advisor for the method appropriate to a specific situation.",
+  disclaimer: "This course is intended for educational purposes only. It does not replace the advice, diagnosis, or treatment of a licensed veterinarian. Euthanasia practices on your farm must comply with the NFACC Code of Practice and your applicable Chicken Farmers of Canada or provincial requirements. Always consult your veterinarian or flock advisor for the method appropriate to a specific situation. The CPC team reviews and updates this series. If you spot something that needs correcting, tell us at admin@canadianpoultry.ca.",
 }
 
 async function run() {

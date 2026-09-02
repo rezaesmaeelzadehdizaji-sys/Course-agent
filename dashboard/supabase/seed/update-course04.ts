@@ -37,7 +37,7 @@ const META = {
   organization: "Canadian Poultry Training Series",
   date: "April 2026",
   version: "1.0",
-  disclaimer: "This course is intended for educational purposes for commercial poultry farmers in Canada. Always consult a licensed veterinarian or food safety authority for specific regulatory or treatment decisions.",
+  disclaimer: "This course is intended for educational purposes for commercial poultry farmers in Canada. Always consult a licensed veterinarian or food safety authority for specific regulatory or treatment decisions. The CPC team reviews and updates this series. If you spot something that needs correcting, tell us at admin@canadianpoultry.ca.",
 }
 
 async function run() {

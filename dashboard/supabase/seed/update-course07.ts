@@ -37,7 +37,7 @@ const META = {
   organization: "Canadian Poultry Training Series",
   date: "April 2026",
   version: "1.0",
-  disclaimer: "This course is intended for educational purposes. Always consult a licensed veterinarian for disease diagnosis and treatment decisions.",
+  disclaimer: "This course is intended for educational purposes. Always consult a licensed veterinarian for disease diagnosis and treatment decisions. The CPC team reviews and updates this series. If you spot something that needs correcting, tell us at admin@canadianpoultry.ca.",
 }
 
 async function run() {

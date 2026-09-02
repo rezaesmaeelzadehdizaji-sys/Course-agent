@@ -37,7 +37,7 @@ const META = {
   organization: "CPC Short Courses",
   date: "June 2026",
   version: "1.0",
-  disclaimer: "This course is intended for educational purposes for commercial poultry farmers in Canada. It does not replace the advice of a licensed veterinarian or pathologist. Always handle dead birds and tissues under your farm biosecurity plan.",
+  disclaimer: "This course is intended for educational purposes for commercial poultry farmers in Canada. It does not replace the advice of a licensed veterinarian or pathologist. Always handle dead birds and tissues under your farm biosecurity plan. The CPC team reviews and updates this series. If you spot something that needs correcting, tell us at admin@canadianpoultry.ca.",
 }
 
 async function run() {

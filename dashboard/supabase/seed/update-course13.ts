@@ -37,7 +37,7 @@ const META = {
   organization: "CPC Short Courses",
   date: "July 2026",
   version: "1.0",
-  disclaimer: "This course has been developed for educational purposes for commercial poultry farmers in Canada. Content is drawn from peer-reviewed literature, industry management guides, and regulatory codes of practice. This material does not replace the advice of a licensed veterinarian or regulatory authority.",
+  disclaimer: "This course has been developed for educational purposes for commercial poultry farmers in Canada. Content is drawn from peer-reviewed literature, industry management guides, and regulatory codes of practice. This material does not replace the advice of a licensed veterinarian or regulatory authority. The CPC team reviews and updates this series. If you spot something that needs correcting, tell us at admin@canadianpoultry.ca.",
 }
 
 async function run() {
