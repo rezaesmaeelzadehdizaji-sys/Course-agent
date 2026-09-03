@@ -256,3 +256,50 @@ mammoth clean; 32 media parts intact.
 
 This also silently fixed three standing violations in that file: British spelling, en dashes in
 body prose, and the absence of numbered citations.
+
+---
+
+## 2026-09-03 — Series-wide sweep for stale drafts, and British spellings found in published courses
+
+Swept every course-folder docx against its published copy, checking for the four problems found
+in the Course 7 draft: British spelling, en dashes in prose, author-date references, and missing
+in-text citations.
+
+### On the original question: the drafts are largely fine
+Most course-folder files are **byte-identical to their published copy** (Courses 3, 5, 6, 10,
+12, 13, 14, 15, 16, 18 and the Course 8 master). The Course 7 draft was the outlier and has
+already been dealt with. Files that did flag are working artifacts, not deliverables:
+`refs.docx`, `requested photos.docx`, `_source_images.docx`, `Avian_Immune_System_CPC.docx`, and
+superseded variants such as `Revised Course 8.docx`, `Revised Course 9 ...`, and
+`Poultry_Anatomy_and_Physiology_Revised.docx`. None of those is served anywhere.
+
+### What the sweep did turn up: American-English violations in published courses
+More significant than the draft question. Thirteen British forms across the published set, of
+which **six were genuine** and are now fixed:
+
+| Course | Was | Now |
+|---|---|---|
+| 5 Sustainability | `neighbours` / `Neighbours` x4 | `neighbors` / `Neighbors` |
+| 7 Common Poultry Diseases | `laboured` breathing | `labored` |
+| 8 Vaccination and Treatment | the trade-off is `labour` | `labor` |
+
+Course 5 was internally inconsistent, using "from neighbors:" and "let your neighbours know" in
+the same passage.
+
+**The Course 8 one was invisible to a plain search.** The word was split across three runs,
+`" is labo"` + `"u"` + `"r: every bird..."`, so the XML contained no contiguous "labour" even
+though the rendered text did. A literal replace found nothing and reported success. Fixed by
+deleting the orphaned single-character run. Worth remembering: a spelling sweep must run on the
+**joined** `<w:t>` text, and a fix that reports zero replacements against a known hit means the
+word is split, not absent.
+
+### Deliberately left alone, per the rule's own exemption
+The American-English rule does not apply to direct verbatim citations or proper names:
+- `World Organisation for Animal Health` (Courses 7, 15) is WOAH's official name
+- `A Colour Atlas of Poultry Diseases` (Course 11, twice) is a book title by Vegad JL
+- `behaviour` (Course 13) sits inside the verbatim title of Morrissey et al., Animals 2016
+- `programmed` (T-FLAWS, twice) is correct American English; the sweep regex overreached
+
+### Verification
+All five touched files: mammoth clean, no unescaped ampersands, media parts intact (16, 32, 14,
+32, 14), and zero remaining `labour` or `neighbour` in the rendered text.
