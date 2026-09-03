@@ -1,4 +1,16 @@
 // ============================================================
+// WARNING, READ BEFORE RUNNING (added 2026-09-03)
+// This generator NO LONGER reproduces the published Course 9.
+// Its output has 192 paragraphs; the published course has 196, and carries later
+// hand edits made outside this script. The current final is:
+//     Course 9/Value_of_Poultry_Diagnostics_V2.docx
+// which is byte-identical to dashboard/public/docs/course-09-value-of-poultry-diagnostics.docx.
+// Running this will write The_Value_of_Poultry_Diagnostics_revised.docx, a SUPERSEDED
+// file whose previous copy now lives in Course 9/_superseded/. Do not treat that output
+// as the course, and never copy it over the V2 file or to the dashboard without diffing first.
+// ============================================================
+
+// ============================================================
 // generate-course9.mjs — Course 9: The Value of Poultry Diagnostics
 // CPC Short Courses — Canadian Poultry Training Series
 // Farmer-Flow writing mode, American English, Vancouver citations
