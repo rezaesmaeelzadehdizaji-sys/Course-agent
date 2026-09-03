@@ -136,3 +136,84 @@ unescaped-ampersand check before writing.
 ### Note
 The live dashboard will keep serving the previous build until a production deploy is run from
 `dashboard/`. The corrected file is committed to `dashboard/public/docs/`.
+
+---
+
+## 2026-09-03 — Ornithobacterium rhinotracheale profile added to Section 7
+
+Added after the user raised ORT/influenza co-infection research. Two of the claims in that
+research summary were checked and one was wrong, so the corrected figures are what went in.
+
+### Verification of the co-infection claims
+
+**The core study is real and verified.** Pan Q, Liu A, Zhang F, Ling Y, Ou C, Hou N, et al.
+Co-infection of broilers with *Ornithobacterium rhinotracheale* and H9N2 avian influenza virus.
+BMC Vet Res. 2012;8:104. Survival by group, quoted from the paper:
+
+| Group | Survival |
+|---|---|
+| ORT then H9N2 | 20% |
+| ORT + H9N2 simultaneous | 30% |
+| **ORT alone** | **50%** |
+| H9N2 then ORT | 70% |
+| H9N2 alone | 90% |
+
+**Correction:** the summary given to me said "90 percent survival in groups infected with
+either ORT or H9N2 alone". **ORT alone was 50%, not 90%.** Only H9N2 alone was 90%. The
+synergy is real (30% or 20% against 50%) but not the 90-to-30 collapse implied. The course text
+uses 30% against 50%, which is the honest comparison.
+
+**The "second field study" could not be found.** The claimed "60 to 70 percent higher mortality"
+matches the same experiment restated as percentage-point differences (70% and 80% mortality
+against 10% for H9N2 alone). Treated as one source, not two, and not cited as independent
+corroboration.
+
+**The sequence finding was kept** because it supports the mechanism: ORT first was worst, virus
+first was mildest, consistent with ORT damaging the airway ahead of the virus.
+
+### The Canadian caveat
+The user raised that H9N2 may be under-detected in Canada rather than absent. Verified and
+correct: under the Health of Animals Act only HPAI of any subtype, plus **low pathogenic H5 and
+H7**, are reportable. H9N2 is neither, so surveillance is not looking for it. The profile says
+so plainly rather than claiming Canada is free of it. This converges with the Barbosa review,
+which notes ORT itself "has been neglected in poultry farms, mainly due to the lack of
+appropriate diagnostic protocols".
+
+### Why Section 7 and not Course 18
+Checked all 16 built courses first: **ORT appeared nowhere in the series**, and neither did
+H9N2. Course 18 was the wrong home, since its Section 3.2 is "Diseases on the Radar in Canada"
+and H9N2 is not established here; putting it there risked implying otherwise. Course 18 also
+already teaches co-infection twice with Canadian examples (aMPV to secondary *E. coli*, IBH
+after IBDV or chicken anemia virus). Course 7 had a genuine gap instead.
+
+### New references, both verified
+- **[23]** Barbosa EV, Cardoso CV, Silva RCF, Cerqueira AMF, Liberal MHT, Castro HC.
+  *Ornithobacterium rhinotracheale*: an update review about an emerging poultry pathogen.
+  Vet Sci. 2019;7(1):3. doi:10.3390/vetsci7010003 (PMID 31892160)
+- **[24]** Pan Q, et al. BMC Vet Res. 2012;8:104. doi:10.1186/1746-6148-8-104 (PMC3424113)
+
+Old [23] and [24] shifted to [25] and [26].
+
+### A defect caught during the work, worth recording
+The first patch attempt inserted the profile *before* running the renumber, so the renumber
+rewrote the new paragraph's own [23] and [24] into [25] and [26], pointing the ORT text at the
+CFIA Newcastle notice and the NFACC Code. Caught by the first-appearance check, reverted, and
+redone with the new citations held as placeholder tokens until after renumbering. A second
+issue surfaced the same way: one existing citation was the composite **[19,23]**, which a
+literal `[23]` replace does not match, leaving [25] uncited. Both fixed.
+
+**Order of operations rule:** when inserting cited content into an existing document, renumber
+first or tag the new citations, and always match composite brackets, not just standalone ones.
+
+### Verification
+- citations sequential **1 to 26**, none orphaned, first-appearance order correct
+- 35 pages, unchanged; the profile absorbed into existing whitespace
+- ORT lands on page 26 and its TOC row reads 26
+- 5 TOC rows shifted by one page (sections 8 onward) and were corrected; **all 54 rows verified
+  against a fresh render, 0 mismatches**
+- mammoth 0 messages, no unescaped ampersands, 32 media parts intact
+- *Ornithobacterium rhinotracheale* italicized in both the heading and the TOC row
+
+### Not applied to the draft copy
+`Course 7/Common_Poultry_Diseases_draft.docx` has a differently shaped bibliography and was left
+alone. The published file and V.1 both carry the profile.
