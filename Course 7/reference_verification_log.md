@@ -217,3 +217,42 @@ first or tag the new citations, and always match composite brackets, not just st
 ### Not applied to the draft copy
 `Course 7/Common_Poultry_Diseases_draft.docx` has a differently shaped bibliography and was left
 alone. The published file and V.1 both carry the profile.
+
+---
+
+## 2026-09-03 — Course 7 draft brought into Vancouver style
+
+`Common_Poultry_Diseases_draft.docx` was skipped during the ORT work because its bibliography
+was "differently shaped". On inspection it was not a formatting difference but a superseded
+file. It had:
+
+- **zero in-text citations** (V.1 has 35)
+- an **alphabetised author-date reference list** in APA style, ending at Zuidhof, split under
+  four headings (Key Peer-Reviewed Journals Consulted, Key Institutional Government and Industry
+  Resources, Surveillance and Epidemiology Reports, Selected Scientific Articles and Book
+  Chapters), with no "References" section at all
+- British spelling and en dashes that had already been corrected in V.1
+
+Converting its list to numbered style would not have produced Vancouver. Vancouver numbers by
+**order of first appearance in the text**, and the draft had no in-text citations to order by, so
+any numbering would have been arbitrary. Numbering an alphabetised list would also breach the
+project rule "List references in order of appearance. Do not alphabetize."
+
+### Checked for unique content first
+Compared body paragraphs between the two files: 124 in the draft, 125 in V.1, and the 17 that
+looked draft-only turned out to be the uncorrected twins of V.1's 18. The differences were
+`grey eye` against `gray eye`, and `24-48 hours` with an en dash against `24 to 48 hours`. **The
+draft carried nothing V.1 lacks.**
+
+### Action
+The draft was replaced with V.1's content, which already is the Vancouver version of the same
+course. The filename is kept, since the `_draft` alongside a published file is the pattern used
+in other course folders. The previous content is recoverable from git history.
+
+### Verification of the draft after the change
+35 in-text citations, 26 distinct, sequential 1 to 26; 26 numbered references; zero APA
+author-date entries remaining; the ORT profile present; zero en dashes; zero British "grey";
+mammoth clean; 32 media parts intact.
+
+This also silently fixed three standing violations in that file: British spelling, en dashes in
+body prose, and the absence of numbered citations.
