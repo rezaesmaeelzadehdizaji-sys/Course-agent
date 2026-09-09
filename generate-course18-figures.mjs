@@ -165,61 +165,9 @@ function fig3() {
   svgToPng(svg, 'fig18_3.png');
 }
 
-// ============================================================
-// FIGURE 2.2 — The Four Flyways That Bring Avian Influenza to Canada
-// ============================================================
-function figFlyways() {
-  const W = 900, H = 592;
-  let body = `<defs>
-    <marker id="fdn" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
-      <polygon points="0 0, 10 4, 0 8" fill="#666666"/></marker>
-    <marker id="fup" markerWidth="10" markerHeight="8" refX="1" refY="4" orient="auto">
-      <polygon points="10 0, 0 4, 10 8" fill="#666666"/></marker>
-    <marker id="feu" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
-      <polygon points="0 0, 10 4, 0 8" fill="${C.darkBlue}"/></marker>
-  </defs>`;
+// NOTE: the flyway figure is now a user-supplied map at Course 18/fig18_flyways_map.png.
+// The generated version was superseded in Sept 2026 and removed. See git history if needed.
 
-  body += `<rect x="30" y="62" width="660" height="52" rx="8" fill="${C.lightBlue}" stroke="${C.medBlue}" stroke-width="1.8"/>`;
-  body += wrapText(360, 84, ['CANADA: where the birds breed, spring and summer'], { fill: C.darkBlue, size: 14, weight: 'bold' });
-  body += wrapText(360, 103, ['Wild ducks and geese arrive, mix on the same water, and shed virus without looking sick'], { fill: C.gray, size: 11.5 });
+fig1(); fig2(); fig3();
 
-  body += `<rect x="706" y="62" width="164" height="52" rx="8" fill="${C.lightGray}" stroke="${C.gray}" stroke-width="1.5" stroke-dasharray="5 3"/>`;
-  body += wrapText(788, 84, ['NORTHWEST EUROPE'], { fill: C.darkBlue, size: 12, weight: 'bold' });
-  body += wrapText(788, 101, ['where H5N1 came from'], { fill: C.gray, size: 10.5, style: 'italic' });
-  body += `<line x1="788" y1="118" x2="788" y2="146" stroke="${C.darkBlue}" stroke-width="2.4" stroke-dasharray="6 4" marker-end="url(#feu)"/>`;
-
-  const bandY = 152, bandH = 300, bw = 199, gap = 14;
-  const bands = [
-    { name: 'PACIFIC',     fill: C.lightTeal,   stroke: C.teal,   where: ['British Columbia', 'and Yukon'],                  note: ['Source region for the 2024', 'west to east spread'] },
-    { name: 'CENTRAL',     fill: C.lightGreen,  stroke: C.green,  where: ['Alberta, Saskatchewan', 'Northwest Territories'], note: ['Prairie staging ponds', 'and sloughs'] },
-    { name: 'MISSISSIPPI', fill: C.lightAmber,  stroke: C.amber,  where: ['Manitoba', 'and Ontario'],                        note: ['Open country, nothing', 'to funnel the birds'] },
-    { name: 'ATLANTIC',    fill: C.lightPurple, stroke: C.purple, where: ['Quebec and', 'Atlantic Canada'],                  note: ['Where H5N1 first', 'landed in 2021'] },
-  ];
-  bands.forEach((b, i) => {
-    const x = 30 + i * (bw + gap);
-    body += `<rect x="${x}" y="${bandY}" width="${bw}" height="${bandH}" rx="9" fill="${b.fill}" stroke="${b.stroke}" stroke-width="2"/>`;
-    body += wrapText(x + bw / 2, bandY + 30, [b.name], { fill: b.stroke, size: 15, weight: 'bold' });
-    body += wrapText(x + bw / 2, bandY + 52, ['FLYWAY'], { fill: b.stroke, size: 10.5, weight: 'bold' });
-    body += wrapText(x + bw / 2, bandY + 84, b.where, { fill: C.gray, size: 12.5, lh: 17 });
-    const ax = x + bw / 2;
-    body += `<line x1="${ax}" y1="${bandY + 136}" x2="${ax}" y2="${bandY + 212}" stroke="#666666" stroke-width="2.6" marker-start="url(#fup)" marker-end="url(#fdn)"/>`;
-    body += wrapText(x + bw / 2, bandY + 244, b.note, { fill: C.gray, size: 10.5, style: 'italic', lh: 14 });
-  });
-
-  body += wrapText(450, bandY + bandH + 26, ['Up in spring to breed, down in fall to winter. Those two windows are when your risk is highest.'], { fill: C.darkBlue, size: 12, weight: 'bold' });
-
-  body += `<rect x="30" y="${bandY + bandH + 40}" width="840" height="46" rx="8" fill="${C.paleBlue}" stroke="${C.medBlue}" stroke-width="1.6"/>`;
-  body += wrapText(450, bandY + bandH + 62, ['UNITED STATES, MEXICO AND SOUTH AMERICA: where the same birds winter'], { fill: C.darkBlue, size: 13, weight: 'bold' });
-  body += wrapText(450, bandY + bandH + 79, ['Flocks from different flyways mix on wintering water, then carry what they picked up back north'], { fill: C.gray, size: 11 });
-
-  const svg = `<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}">
-  <rect width="${W}" height="${H}" fill="white"/>
-  ${titleBar(W, 'The Four Flyways That Bring Avian Influenza to Canada')}
-  ${body}
-  ${caption(W, H, 'Every province sits under a flyway. The reservoir flies overhead twice a year, and it gives no warning.')}
-</svg>`;
-  svgToPng(svg, 'fig18_flyways.png');
-}
-
-fig1(); fig2(); fig3(); figFlyways();
 console.log('All Course 18 figures generated.');
