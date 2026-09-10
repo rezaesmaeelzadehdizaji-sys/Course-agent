@@ -165,8 +165,19 @@ function fig3() {
   svgToPng(svg, 'fig18_3.png');
 }
 
-// NOTE: the flyway figure is now a user-supplied map at Course 18/fig18_flyways_map.png.
+// NOTE: the flyway figure is a user-supplied map at Course 18/fig18_flyways_map.png.
 // The generated version was superseded in Sept 2026 and removed. See git history if needed.
+//
+// That PNG is NOT the raw export. The raw export is Course 18/new figure.png. Two edits were
+// applied to the shipped copy in Sept 2026, both by pixel patch, not by re-rendering:
+//   1. Removed the note under Saskatchewan reading "(Administered by BOTH Central & Mississippi
+//      Flyway Councils)". It raised a question the course never answers, and the dual council
+//      membership is administrative only: it has no bearing on farm risk. CFIA data backs that,
+//      Saskatchewan is 5th by infected premises, and single-flyway BC leads by 4x.
+//   2. Demoted the remaining bold "Saskatchewan" to a plain geographic label (Segoe UI 16px,
+//      #040506) matching Manitoba / Ontario / Nunavut, so it makes no flyway claim.
+// The patch preserved the green/orange flyway boundary and the two faint province lines at
+// x=744 and x=835. To revise the figure, edit new figure.png in a design tool and re-apply.
 
 fig1(); fig2(); fig3();
 
