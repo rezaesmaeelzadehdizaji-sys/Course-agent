@@ -219,7 +219,7 @@ function provinceTable() {
     shading: { type: ShadingType.SOLID, color: hdrBg },
     children: [new Paragraph({
       alignment: i === 0 ? AlignmentType.LEFT : AlignmentType.CENTER,
-      spacing: { before: 60, after: 60 },
+      spacing: { before: 30, after: 30 },
       children: [run(text, { bold: true, size: 18, color: 'FFFFFF' })],
     })],
   });
@@ -230,7 +230,7 @@ function provinceTable() {
     shading: { type: ShadingType.SOLID, color: shade ? altBg : 'FFFFFF' },
     children: [new Paragraph({
       alignment: i === 0 ? AlignmentType.LEFT : AlignmentType.CENTER,
-      spacing: { before: 50, after: 50 },
+      spacing: { before: 20, after: 20 },
       children: [run(text, { size: 18, color: BODY_GRAY, bold })],
     })],
   });
@@ -254,11 +254,12 @@ function provinceTable() {
     width: { size: 100, type: WidthType.PERCENTAGE },
     margins: { top: 0, bottom: 0, left: 0, right: 0 },
     rows: [
-      new TableRow({ children: headers.map((h, i) => hdrCell(h, i)), tableHeader: true }),
+      new TableRow({ children: headers.map((h, i) => hdrCell(h, i)), tableHeader: true, cantSplit: true }),
       ...rows.map((row, ri) => new TableRow({
+        cantSplit: true,
         children: row.map((cell, ci) => dataCell(cell, ci, ri % 2 === 1, false)),
       })),
-      new TableRow({ children: totalRow.map((cell, ci) => dataCell(cell, ci, false, true)) }),
+      new TableRow({ cantSplit: true, children: totalRow.map((cell, ci) => dataCell(cell, ci, false, true)) }),
     ],
   });
 }
