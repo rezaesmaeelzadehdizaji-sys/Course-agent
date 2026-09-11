@@ -827,9 +827,6 @@ const doc = new Document({
         new Paragraph({ spacing: { before: 80, after: 80 }, children: [
           run('18.', { bold: true }), run('  Canadian Food Inspection Agency (CFIA). Biosecurity Guide for Commercial Poultry Production. CFIA, Ottawa, ON, Canada.'),
         ]}),
-        new Paragraph({ spacing: { before: 80, after: 80 }, children: [
-          run('19.', { bold: true }), run('  Bell DD, Weaver WD (eds). Commercial Chicken Meat and Egg Production, 5th ed. Springer Science & Business Media, New York, 2002.'),
-        ]}),
       ],
     },
   ],
