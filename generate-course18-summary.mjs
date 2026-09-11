@@ -136,7 +136,7 @@ async function main() {
 
   // Agenda (locked headings)
   children.push(sectionHead('Agenda'));
-  children.push(numbered(1, 'Staying Current: Why Hot Topics Matter'));
+  children.push(numbered(1, 'Staying Current on Poultry Hot Topics'));
   children.push(subItem('a', 'What hot topics are and why they matter to your farm'));
   children.push(subItem('b', 'Where to get reliable, current information'));
   children.push(numbered(2, 'Avian Influenza'));
