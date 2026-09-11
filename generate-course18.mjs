@@ -464,7 +464,6 @@ function buildReferencesSection() {
     headers: { default: buildHeader() }, footers: { default: buildFooter() },
     children: [
       h1('References'),
-      para('References listed in order of appearance.'),
       numberedRef('Canadian Food Inspection Agency. Facts about avian influenza. Ottawa: CFIA; [cited 2026 Sep]. Available from: inspection.canada.ca'),
       numberedRef('Capua I, Alexander DJ, editors. Avian Influenza and Newcastle Disease: A Field and Laboratory Manual. Milan: Springer; 2009.'),
       numberedRef('Spackman E, editor. Avian Influenza Virus (Methods in Molecular Biology, vol. 436). Totowa, NJ: Humana Press; 2008.'),
