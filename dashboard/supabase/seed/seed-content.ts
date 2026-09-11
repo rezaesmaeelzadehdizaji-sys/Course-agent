@@ -49,7 +49,13 @@ function findDocx(courseNumber: number): string | null {
     return fs.existsSync(p) ? p : null
   }
   const nn = String(courseNumber).padStart(2, '0')
-  const files = fs.readdirSync(DOCS_DIR).filter((f) => f.endsWith('.docx'))
+  // Exclude the companion summary page. A bare course-NN- prefix match returns the
+  // first file alphabetically, which silently picked course-05-summary.docx over
+  // course-05-sustainability.docx and course-09-summary.docx over
+  // course-09-value-of-poultry-diagnostics.docx, seeding an empty detail page.
+  const files = fs
+    .readdirSync(DOCS_DIR)
+    .filter((f) => f.endsWith('.docx') && !/-summary.docx$/i.test(f))
   const match = files.find((f) => f.startsWith(`course-${nn}-`))
   return match ? path.join(DOCS_DIR, match) : null
 }
