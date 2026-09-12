@@ -18,7 +18,7 @@ import { fileURLToPath } from 'url';
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const OUT_DIR   = path.join(__dirname, 'Course 18');
-const OUT_FILE  = path.join(OUT_DIR, 'Current_Poultry_Issues_Hot_Topics_draft.docx');
+const OUT_FILE  = path.join(OUT_DIR, 'Current_Poultry_Issues_Hot_Topics.docx');
 const LOGO_PATH = path.join(__dirname, 'logo.png');
 const COURSE_TITLE = 'Current Poultry Issues (Hot Topics)';
 
