@@ -215,9 +215,10 @@ C.push(bullet('Do not wait overnight to see if it settles down.', RED));
 
 // 5 — neighbor breaks
 C.push(sectionBar('5.  IF YOUR NEIGHBOR BREAKS AND YOU ARE CLEAN'));
-C.push(bullet('You are probably inside a primary control zone even though your flock is healthy.'));
+C.push(bullet('You are probably inside a primary control zone even though your flock is healthy. It reaches about 10 km out.'));
+C.push(bullet('Being inside it does not mean your birds are destroyed. Only positive flocks and tied barns are depopulated.'));
 C.push(bullet('Birds, hatching eggs, table eggs, manure, litter, feed, and anything else that has been around birds need CFIA permission to move into, out of, within, or through that zone.'));
-C.push(bullet('Some moves run under a general permit, some need a specific one. The CFIA has an online tool that tells you which.'));
+C.push(bullet('Some moves run under a general permit, some need a specific one. The CFIA online tool tells you which.'));
 C.push(bullet('Know now who at your processor, hatchery, and feed mill handles permits.'));
 
 // 6 — protect yourself

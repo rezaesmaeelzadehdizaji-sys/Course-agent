@@ -2,9 +2,13 @@ import Link from 'next/link'
 import type { Course, CourseStatus } from '@/lib/types'
 import DownloadButton from './DownloadButton'
 import SummaryButton from './SummaryButton'
+import ActionCardButton from './ActionCardButton'
 
 // Courses that have a companion summary page (served statically from public/docs).
 const SUMMARY_COURSES = new Set([3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18])
+
+// Courses with a one-page emergency action card (served statically from public/docs).
+const ACTION_CARD_COURSES = new Set([18])
 
 interface Props {
   course: Course
@@ -65,6 +69,9 @@ export default function CourseCard({ course }: Props) {
         )}
         {SUMMARY_COURSES.has(course.course_number) && (
           <SummaryButton courseNumber={course.course_number} title={title} />
+        )}
+        {ACTION_CARD_COURSES.has(course.course_number) && (
+          <ActionCardButton courseNumber={course.course_number} title={title} />
         )}
       </div>
     </div>

@@ -29,7 +29,7 @@ export async function POST(request: NextRequest) {
   let body: { courseNumber?: number | string; kind?: string; title?: string } = {}
   try { body = await request.json() } catch { /* no body */ }
   const courseNumber = body.courseNumber ?? '?'
-  const kind = body.kind === 'Summary' ? 'Summary page' : 'Main draft'
+  const kind = body.kind === 'Summary' ? 'Summary page' : body.kind === 'ActionCard' ? 'First 24 Hours action card' : 'Main draft'
   const title = body.title ? String(body.title).slice(0, 200) : ''
 
   const ip = request.headers.get('x-forwarded-for')?.split(',')[0]?.trim() || 'unknown'
