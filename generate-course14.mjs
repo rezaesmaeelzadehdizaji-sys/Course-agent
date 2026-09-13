@@ -367,7 +367,7 @@ function buildCoverSection() {
     }),
 
     new Paragraph({
-      children: [new TextRun({ text: 'August 2026', color: '595959', size: 22, font: 'Calibri' })],
+      children: [new TextRun({ text: 'September 2026', color: '595959', size: 22, font: 'Calibri' })],
       alignment: AlignmentType.CENTER,
       spacing: { before: 0, after: 480 },
     }),
@@ -434,16 +434,16 @@ function buildBodySection() {
 
     para([
       { text: 'Who this course is for: ', bold: true },
-      { text: 'field service technicians and service representatives who visit commercial poultry farms on behalf of an animal health company, a poultry veterinary clinic, a hatchery, or a feed company. Throughout the course, you are the technician making the visit and the grower is the person you support.' },
+      { text: 'service technicians who work for a veterinary care unit, such as the CPC poultry clinic, and visit commercial poultry farms. Throughout the course, you are the technician making the visit and the grower is the person you support.' },
     ]),
 
-    para('Field service is what connects the farm to the rest of the production system. A field service technician or representative visits growers on a regular schedule, checks how the flock is progressing, catches problems before they become expensive, and keeps the farmer connected to veterinary, nutritional, and management support. One thing shapes every visit you will ever make. Under Canadian supply management the grower holds the quota, markets the chicken, and is paid a live price per bird as the flock leaves the farm [1,2]. Nothing you recommend happens unless the grower decides it is worth doing.'),
+    para('Field service is what connects the farm to the rest of the production system. A service technician visits growers, checks how the flock is progressing, catches problems before they become expensive, and keeps the farmer connected to veterinary, nutritional, and management support. One thing shapes every visit you will ever make. Under Canadian supply management the grower holds the quota, markets the chicken, and is paid a live price per bird as the flock leaves the farm [1,2]. Nothing you recommend happens unless the grower decides it is worth doing.'),
 
     para('This course covers the practical core of field service: how to prepare for a farm visit, how to walk a barn systematically, how to read a production record, how to communicate what you find to the farmer, and when to escalate. The two-hour workshop that follows this lecture gives you the chance to practice these skills in a barn setting.'),
 
     para('By the end of this course, you should be able to:'),
 
-    numbered('Explain what field service really involves and where you fit between the grower, the veterinary clinic, and the feed company.'),
+    numbered('Explain what field service really involves and where you fit between the grower, the feed company, and the veterinarian.'),
     numbered('Get ready for a farm visit and follow Canadian biosecurity standards so you never carry disease from one barn to the next.'),
     numbered('Walk a barn the same way every time, reading the flock and the environment so nothing slips past you.'),
     numbered('Read the daily records for mortality, water, feed, and body weight, and catch a bad trend before it turns into a real problem.'),
@@ -459,19 +459,21 @@ function buildBodySection() {
 
     para('Start with who holds what, because it sets the tone of every visit. Canadian poultry runs under supply management, not the integrator model described in American manuals. The grower holds quota licensed by the provincial marketing board, markets the chicken, and is paid a live price per bird as the flock leaves the farm [1,2]. Quota on its own does not get chicken to market. The grower also needs an arrangement with a licensed processor. The BC Chicken Marketing Board puts it plainly for growers in the BC Interior: you may hold quota, but you can only get it to market by contracting with a processor, and that processor and its hatchery are the ones who set up chick placements and live bird shipments [2].'),
 
-    para('More than one person shows up at that barn door, and they are usually not doing the same job. In British Columbia the split generally runs like this. A field service representative works for a veterinary care or animal health company, and may also be based out of a poultry clinic. The work usually includes vaccination, getting the farm ready ahead of chick placement, and handling technical problems on site [3]. A feed company representative is a different role. The feed rep typically gathers the production data and works through it, for the feed company and for the farmer, and stays in touch with the grower and the veterinary clinic when mortality climbs or something bigger goes wrong. Field service work itself is not usually part of that job [3]. Titles and duties do vary between companies, so on any farm that is new to you it is worth asking who covers what.'),
+    para('Two of the people who come to that barn door are easy to mix up, and they are not doing the same job. The CPC Learning Centre describes the split this way. You, the service technician, come from the veterinary clinic. Your work covers vaccination, getting the farm ready ahead of chick placement, and technical problems on site [3]. The feed company representative is a different role. When a grower is under contract with a feed company, the feed rep is there to make that contract pay off, for the feed company and for the grower. Feed reps follow the production numbers closely and do whatever they can to show the program is working [3]. Field service work stays with you.'),
 
-    para('How often you go depends on which of those two jobs is yours and on what the flock needs. Placement week pulls you in. So does the run-up to shipping, and any health challenge at any age. Between visits, stay reachable. A grower who can get you on the phone at seven in the morning tells you about a problem on day one instead of day three. Information moves both ways through you: what you see in the barn goes back to your clinic or company, and what they know comes back to the grower.'),
+    para('Your visits follow the placement and vaccination schedule. On top of those, when something goes wrong, rising mortality being the classic case, the grower calls it in as a field call and you go out to find out what the problem is [3]. The feed rep keeps a different rhythm. How often a feed rep visits depends on the contract, but growers and their feed reps are in frequent contact [3]. Between your visits, stay reachable. A grower who can get you on the phone at seven in the morning tells you about a problem on day one instead of day three. Information moves both ways through you: what you see in the barn goes back to the clinic, and what the clinic knows comes back to the grower.'),
 
     ...image(photo1_1, 'Photo 1.1: A commercial broiler flock at mid-grow-out. Field service visits typically begin with a visual assessment of how birds distribute across the barn floor. Source: CPC Short Courses.', 5.5, 'jpg'),
 
     h2('1.2  Where You Fit in the Production Chain'),
 
-    para('The chain runs from the grower and their birds, through you, to the veterinary clinic, the feed company, the hatchery, and the processor. Your job is to be the most reliable, most consistent link in that chain.'),
+    para('Around every flock there is a chain of people: the grower, you and the veterinarian at your clinic, the feed rep, the hatchery, and the processor. Your job is to be the most reliable, most consistent link in that chain.'),
 
     para('The veterinarian is your resource for disease diagnosis and treatment decisions. You are not the veterinarian, but you are the veterinarian\'s eyes and ears on farm. When you describe what you\'re seeing clearly and accurately, the veterinarian can give you better guidance without having to drive to every farm.'),
 
-    para('Everyone with money in the flock watches the same numbers: feed conversion, daily gain, mortality rate, and condemnations at the plant [4]. Pulling those numbers together is often a job for the feed representative [3]. Turning them into action on the farm is yours. Margins in this business are tight enough that small shifts in any of these numbers matter. A flock with a slowly climbing mortality rate may look stable on a spreadsheet until someone on the ground finds the feed line running half-speed.'),
+    para('Everyone with money in the flock watches the same numbers: feed conversion, daily gain, mortality rate, and condemnations at the plant [4]. Margins in this business are tight enough that small shifts in any of these numbers matter. What you add is the view from inside the barn. A flock with a slowly climbing mortality rate may look stable on a spreadsheet until someone on the ground finds the feed line running half-speed.'),
+
+    para('It also pays to know how a mortality problem travels, because you are often not the first to hear about it. In the CPC Learning Centre\'s experience, a grower under contract with a feed company usually calls the feed rep first when mortality jumps. The feed rep drops the dead birds off at the clinic, and the clinic reports back to either the feed rep or the grower, whichever the feed rep prefers [3]. So when a mortality field call comes in, check first whether birds from that farm have already come through the clinic and what the veterinarian found. You will walk into that barn knowing a lot more.'),
 
     h2('1.3  Three Outcomes of Every Visit'),
 
@@ -791,18 +793,18 @@ function buildBodySection() {
     pageBreak(),
     h1('References'),
 
-    numberedRef('British Columbia Chicken Marketing Board. Pricing Orders [Internet]. Abbotsford, BC: British Columbia Chicken Marketing Board [cited 2026 Aug]. Available from: bcchicken.ca/pricing-orders'),
-    numberedRef('British Columbia Chicken Marketing Board. BC Interior Region Quota Conditions: Supplementary Guide to the BCCMB General Orders. Abbotsford, BC: British Columbia Chicken Marketing Board; 2025 Nov [cited 2026 Aug]. Available from: bcchicken.ca/wp-content/uploads/2025/11/BC-Interior-Quota-Conditions-Growers-Guide.pdf'),
-    numberedRef('Canadian Poultry Consultants Ltd. Field service and feed representative roles in British Columbia poultry production [subject-matter communication; provisional, pending written confirmation by the CPC team]; 2026 Aug.'),
+    numberedRef('British Columbia Chicken Marketing Board. Pricing Orders [Internet]. Abbotsford, BC: British Columbia Chicken Marketing Board [cited 2026 Sep]. Available from: bcchicken.ca/pricing-orders'),
+    numberedRef('British Columbia Chicken Marketing Board. BC Interior Region Quota Conditions: Supplementary Guide to the BCCMB General Orders. Abbotsford, BC: British Columbia Chicken Marketing Board; 2025 Nov [cited 2026 Sep]. Available from: bcchicken.ca/wp-content/uploads/2025/11/BC-Interior-Quota-Conditions-Growers-Guide.pdf'),
+    numberedRef('Canadian Poultry Consultants. Service technician and feed representative roles in British Columbia poultry production [subject-matter communication]; 2026 Sep.'),
     numberedRef('United States Department of Agriculture, Animal and Plant Health Inspection Service. Poultry Industry Manual. Washington, DC: National Animal Health Emergency Management System. Available from: aphis.usda.gov/sites/default/files/poultry_ind_manual.pdf'),
-    numberedRef('Canadian Food Inspection Agency. Poultry Service Industry Biosecurity Guide [Internet]. Ottawa: Canadian Food Inspection Agency. Available from: inspection.canada.ca/en/animal-health/terrestrial-animals/biosecurity/standards-and-principles/poultry-service-industry [cited 2026 Aug]'),
+    numberedRef('Canadian Food Inspection Agency. Poultry Service Industry Biosecurity Guide [Internet]. Ottawa: Canadian Food Inspection Agency. Available from: inspection.canada.ca/en/animal-health/terrestrial-animals/biosecurity/standards-and-principles/poultry-service-industry [cited 2026 Sep]'),
     numberedRef('CPC Learning Centre. Spotting Disease Early [Flock Management Guide]. CPC Learning Centre. Available from: cpclearningcentre.ca'),
     numberedRef('Bestman M, Ruis M, Heijmans J, van Middelkoop K. Poultry Signals: A Practical Guide for Bird-Focused Poultry Farming. Zutphen: Roodbont Publishers; 2012.'),
     numberedRef('National Farm Animal Care Council. Code of Practice for the Care and Handling of Hatching Eggs, Breeders, Chickens and Turkeys. Lacombe: National Farm Animal Care Council; 2016. Available from: nfacc.ca/poultry-code-of-practice'),
     numberedRef('Aviagen. Ross Broiler Management Handbook. Huntsville, AL: Aviagen; 2025. Available from: aviagen.com/assets/Tech_Center/Ross_Broiler/Aviagen-ROSS-Broiler-Handbook-EN.pdf'),
     numberedRef('Chedad A, Aerts JM, Vranken E, Lippens M, Zoons J, Berckmans D. Do heavy broiler chickens visit automatic weighing systems less than lighter birds? Br Poult Sci. 2003;44(5):663-668. doi:10.1080/00071660310001643633'),
     numberedRef('Oke OE, Akosile OA, Oni AI, Opowoye IO, Ishola CA, Adebiyi JO, Odeyemi AJ, Adjei-Mensah B, Uyanga VA, Abioja MO. Oxidative stress in poultry production. Poult Sci. 2024;103(9):104003. doi:10.1016/j.psj.2024.104003.'),
-    numberedRef('Gunn-Christie RG. Collection and Submission of Laboratory Samples from Animals. Merck Veterinary Manual. Kenilworth, NJ: Merck & Co.; [cited 2026 Aug]. Available from: merckvetmanual.com'),
+    numberedRef('Gunn-Christie RG. Collection and Submission of Laboratory Samples from Animals. Merck Veterinary Manual. Kenilworth, NJ: Merck & Co.; [cited 2026 Sep]. Available from: merckvetmanual.com'),
 
   ]; // end children
 
@@ -878,36 +880,36 @@ const outZip = await JSZip.loadAsync(fs.readFileSync(OUT_FILE));
 // TOC entries (text must match heading text exactly, including section numbers and spacing)
 const tocEntries = [
   { lvl: 1, text: 'Introduction', page: 3 },
-  { lvl: 1, text: 'Section 1: The Role of Field Service', page: 4 },
-  { lvl: 2, text: '1.1  What Field Service Means in Commercial Poultry', page: 4 },
+  { lvl: 1, text: 'Section 1: The Role of Field Service', page: 3 },
+  { lvl: 2, text: '1.1  What Field Service Means in Commercial Poultry', page: 3 },
   { lvl: 2, text: '1.2  Where You Fit in the Production Chain', page: 5 },
   { lvl: 2, text: '1.3  Three Outcomes of Every Visit', page: 5 },
-  { lvl: 1, text: 'Section 2: Before the Visit', page: 7 },
-  { lvl: 2, text: '2.1  Pre-Visit Preparation', page: 7 },
-  { lvl: 2, text: '2.2  Canadian Biosecurity Requirements for Service Personnel', page: 7 },
-  { lvl: 2, text: '2.3  PPE and the Biosecurity Entry', page: 8 },
-  { lvl: 1, text: 'Section 3: The Barn Walk', page: 10 },
-  { lvl: 2, text: '3.1  What to Notice Before You Go Inside', page: 10 },
-  { lvl: 2, text: '3.2  The Systematic Walk: What to Look For', page: 10 },
-  { lvl: 2, text: '3.3  Bird Conformation Assessment', page: 11 },
-  { lvl: 1, text: 'Section 4: Reading Performance Data', page: 13 },
-  { lvl: 2, text: '4.1  Daily Records: What They Tell You', page: 13 },
-  { lvl: 2, text: '4.2  Mortality Patterns: Normal vs. Concerning', page: 13 },
-  { lvl: 2, text: '4.3  Water and Feed as Early Warning Signals', page: 13 },
-  { lvl: 2, text: '4.4  Spot Weighing and Weight Uniformity', page: 14 },
-  { lvl: 2, text: '4.5  When the Numbers Are Bad but No Disease Shows', page: 16 },
-  { lvl: 1, text: 'Section 5: Working with the Farmer', page: 17 },
-  { lvl: 2, text: '5.1  Building the Relationship', page: 17 },
-  { lvl: 2, text: '5.2  Communicating Findings', page: 17 },
-  { lvl: 2, text: '5.3  The Visit Record', page: 18 },
-  { lvl: 2, text: '5.4  When to Call the Veterinarian', page: 19 },
-  { lvl: 1, text: 'Section 6: Practical Field Skills', page: 20 },
-  { lvl: 2, text: '6.1  On-Farm Necropsy Basics', page: 20 },
-  { lvl: 2, text: '6.2  Sample Collection', page: 21 },
-  { lvl: 2, text: '6.3  The Farm Health Record Over Time', page: 22 },
-  { lvl: 1, text: 'Workshop: Practical Field Visit Exercise', page: 23 },
-  { lvl: 1, text: 'Recommended Journals and Resources', page: 24 },
-  { lvl: 1, text: 'References', page: 25 },
+  { lvl: 1, text: 'Section 2: Before the Visit', page: 6 },
+  { lvl: 2, text: '2.1  Pre-Visit Preparation', page: 6 },
+  { lvl: 2, text: '2.2  Canadian Biosecurity Requirements for Service Personnel', page: 6 },
+  { lvl: 2, text: '2.3  PPE and the Biosecurity Entry', page: 7 },
+  { lvl: 1, text: 'Section 3: The Barn Walk', page: 9 },
+  { lvl: 2, text: '3.1  What to Notice Before You Go Inside', page: 9 },
+  { lvl: 2, text: '3.2  The Systematic Walk: What to Look For', page: 9 },
+  { lvl: 2, text: '3.3  Bird Conformation Assessment', page: 10 },
+  { lvl: 1, text: 'Section 4: Reading Performance Data', page: 12 },
+  { lvl: 2, text: '4.1  Daily Records: What They Tell You', page: 12 },
+  { lvl: 2, text: '4.2  Mortality Patterns: Normal vs. Concerning', page: 12 },
+  { lvl: 2, text: '4.3  Water and Feed as Early Warning Signals', page: 12 },
+  { lvl: 2, text: '4.4  Spot Weighing and Weight Uniformity', page: 13 },
+  { lvl: 2, text: '4.5  When the Numbers Are Bad but No Disease Shows', page: 15 },
+  { lvl: 1, text: 'Section 5: Working with the Farmer', page: 16 },
+  { lvl: 2, text: '5.1  Building the Relationship', page: 16 },
+  { lvl: 2, text: '5.2  Communicating Findings', page: 16 },
+  { lvl: 2, text: '5.3  The Visit Record', page: 17 },
+  { lvl: 2, text: '5.4  When to Call the Veterinarian', page: 18 },
+  { lvl: 1, text: 'Section 6: Practical Field Skills', page: 19 },
+  { lvl: 2, text: '6.1  On-Farm Necropsy Basics', page: 19 },
+  { lvl: 2, text: '6.2  Sample Collection', page: 20 },
+  { lvl: 2, text: '6.3  The Farm Health Record Over Time', page: 21 },
+  { lvl: 1, text: 'Workshop: Practical Field Visit Exercise', page: 22 },
+  { lvl: 1, text: 'Recommended Journals and Resources', page: 23 },
+  { lvl: 1, text: 'References', page: 24 },
 ];
 
 // Assign anchor IDs

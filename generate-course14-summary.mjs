@@ -204,7 +204,7 @@ const children = [
   }),
 
   new Paragraph({
-    children: [new TextRun({ text: 'August 2026', color: '595959', size: 22, font: 'Calibri' })],
+    children: [new TextRun({ text: 'September 2026', color: '595959', size: 22, font: 'Calibri' })],
     alignment: AlignmentType.CENTER,
     spacing: { before: 0, after: 360 },
   }),
@@ -214,10 +214,10 @@ const children = [
 
   para([
     { text: 'Who this course is for: ', bold: true },
-    { text: 'field service technicians and service representatives who visit commercial poultry farms on behalf of an animal health company, a poultry veterinary clinic, a hatchery, or a feed company. Throughout the course, you are the technician making the visit and the grower is the person you support.' },
+    { text: 'service technicians who work for a veterinary care unit, such as the CPC poultry clinic, and visit commercial poultry farms. Throughout the course, you are the technician making the visit and the grower is the person you support.' },
   ]),
 
-  para('Field service is the link between the farm and everyone who supports it. The service technician visits growers regularly, checks how the flock is progressing, catches problems before they get expensive, and keeps the farmer connected to veterinary, nutritional, and management support. Under Canadian supply management the grower holds the quota, markets the chicken, and is paid a live price per bird, so nothing you recommend happens unless the grower decides it is worth doing. The course also looks at how the field service representative, who generally works for a veterinary care or animal health company and covers work like vaccination, pre-placement preparation, and on-farm technical problems, differs from the feed company representative, whose job is usually the production data.'),
+  para('Field service is the link between the farm and everyone who supports it. The service technician visits growers, checks how the flock is progressing, catches problems before they get expensive, and keeps the farmer connected to veterinary, nutritional, and management support. Under Canadian supply management the grower holds the quota, markets the chicken, and is paid a live price per bird, so nothing you recommend happens unless the grower decides it is worth doing. The course also sets out how your role differs from the feed company representative. Your work is vaccination, farm preparation before placement, and technical problems on site. The feed rep is there to make the grower\'s feed contract pay off, for the feed company and for the grower.'),
 
   para('This course covers the practical core of field service: how to prepare for a farm visit, how to walk a barn systematically, how to read a production record, how to communicate what you find, and when to escalate. The hands-on workshop gives participants practice in a real barn setting.'),
 
@@ -269,7 +269,7 @@ const children = [
 
   para('By the end of this course, participants will be able to:'),
 
-  loItem(1, 'Explain what field service really involves and where you fit between the grower, the veterinary clinic, and the feed company.'),
+  loItem(1, 'Explain what field service really involves and where you fit between the grower, the feed company, and the veterinarian.'),
   loItem(2, 'Get ready for a farm visit and follow Canadian biosecurity standards so you never carry disease from one barn to the next.'),
   loItem(3, 'Walk a barn the same way every time, reading the flock and the environment so nothing slips past you.'),
   loItem(4, 'Read the daily records for mortality, water, feed, and body weight, and catch a bad trend before it turns into a real problem.'),

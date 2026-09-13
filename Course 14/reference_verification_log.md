@@ -5,6 +5,8 @@
 
 **Date re-verified (BC field service / feed representative correction):** 2026-08-18 — Introduction and Sections 1.1/1.2 rewritten after the August 2026 BC farm visit and the follow-up discussion with Mike (CPC). Three references added; all twelve re-checked; all citations renumbered.
 
+**Date re-verified (service technician / feed rep answers confirmed):** 2026-09-13. Reza confirmed the open role questions from his direct work with Mike at CPC, so Sections 1.1 and 1.2 were rewritten to state them plainly, reference [3] lost its provisional marker, and the cover moved to September 2026. All four live online sources ([1], [2], [5], [12]) were re-fetched on 2026-09-13 and are unchanged; every `[cited]` month is now 2026 Sep.
+
 ---
 
 ## Verification Summary
@@ -38,7 +40,7 @@ First-appearance order is now confirmed sequential: 1, 2, 3, 4, 5, 6. The refere
 ## Reference List with Verification Status
 
 ### [1] BCCMB. Pricing Orders.
-- **Full citation:** British Columbia Chicken Marketing Board. Pricing Orders [Internet]. Abbotsford, BC: British Columbia Chicken Marketing Board [cited 2026 Aug]. Available from: bcchicken.ca/pricing-orders
+- **Full citation:** British Columbia Chicken Marketing Board. Pricing Orders [Internet]. Abbotsford, BC: British Columbia Chicken Marketing Board [cited 2026 Sep]. Available from: bcchicken.ca/pricing-orders
 - **Verified:** YES — page fetched 2026-08-18
 - **Source URL:** https://bcchicken.ca/pricing-orders/
 - **Content confirmed (direct quote from the page):** "The BC Chicken Marketing Board sets the minimum 'Live Price' (or 'Farm Gate Price') – the amount the farmer receives per live chicken as it leaves the farm"
@@ -51,7 +53,7 @@ First-appearance order is now confirmed sequential: 1, 2, 3, 4, 5, 6. The refere
 ---
 
 ### [2] BCCMB. BC Interior Region Quota Conditions.
-- **Full citation:** British Columbia Chicken Marketing Board. BC Interior Region Quota Conditions: Supplementary Guide to the BCCMB General Orders. Abbotsford, BC: British Columbia Chicken Marketing Board; 2025 Nov [cited 2026 Aug]. Available from: bcchicken.ca/wp-content/uploads/2025/11/BC-Interior-Quota-Conditions-Growers-Guide.pdf
+- **Full citation:** British Columbia Chicken Marketing Board. BC Interior Region Quota Conditions: Supplementary Guide to the BCCMB General Orders. Abbotsford, BC: British Columbia Chicken Marketing Board; 2025 Nov [cited 2026 Sep]. Available from: bcchicken.ca/wp-content/uploads/2025/11/BC-Interior-Quota-Conditions-Growers-Guide.pdf
 - **Verified:** YES — PDF downloaded and text extracted 2026-08-18
 - **Source URL:** https://bcchicken.ca/wp-content/uploads/2025/11/BC-Interior-Quota-Conditions-Growers-Guide.pdf
 - **Title confirmed:** cover reads "BC Interior Region Quota Conditions / Supplementary Guide to the BCCMB General Orders", verbatim.
@@ -64,15 +66,21 @@ First-appearance order is now confirmed sequential: 1, 2, 3, 4, 5, 6. The refere
 
 ---
 
-### [3] CPC. Field service and feed representative roles in British Columbia poultry production.
-- **Full citation:** Canadian Poultry Consultants Ltd. Field service and feed representative roles in British Columbia poultry production [subject-matter communication; provisional, pending written confirmation by the CPC team]; 2026 Aug.
-- **Verified:** YES — confirmed directly with Mike (CPC) during the August 2026 BC visit and relayed by the project owner (Reza) on 2026-08-18.
-- **Content confirmed:** field service representatives are representatives of veterinary care / animal health companies and may also be based out of poultry clinics; their responsibilities include vaccination, farm preparation ahead of chick placement, and handling technical issues on site. Feed representatives collect and analyze production data for the feed company and the farmer, and stay in touch with farmers and veterinary clinics in case of mortality or major problems, but are not responsible for field service tasks.
-- **Content supported:** the two-role split in Section 1.1 and the feed representative's data role in Section 1.2.
-- **WORDING TIGHTENED 2026-08-18 (second pass):** three phrases were pulled back to match the account exactly. "is often based out of a poultry clinic" became "may also be based out of a poultry clinic" (the account says "may also be", not a frequency). The task list was reworded as "The work includes ..." because the account says responsibilities "include tasks such as", i.e. examples rather than a complete definition. "Feed reps are not there to do field service work" became "What the feed rep does not carry is the field service work itself", matching "not responsible for field service tasks the way field service reps are."
-- **Notes:** This is CPC subject-matter input, not a published document, so it is cited as a subject-matter communication with no URL. It is CPC-confirmed in the sense required by CLAUDE.md (the CPC team stated it), so it does NOT carry [NEEDS SOURCE]. Body text names the CPC Learning Centre explicitly ("The CPC Learning Centre draws the line this way") per the CPC attribution rule. If CPC later publishes a written bulletin covering this, replace this entry with the bulletin citation.
-- **SOFTENED 2026-08-18 (third pass, at the user's direction):** Reza is still working this through with CPC, so the course no longer presents the split as a settled CPC Learning Centre position. Changes: the attribution sentence "The CPC Learning Centre draws the line this way" was replaced with "In British Columbia the split generally runs like this"; the duty lists were hedged ("usually includes", "typically gathers", "often a job for"); "What the feed rep does not carry is the field service work itself" became "Field service work itself is not usually part of that job"; and a closing sentence was added telling the technician that titles and duties vary between companies and to ask on any unfamiliar farm who covers what. The reference entry is now marked provisional. Note this is a deliberate, user-directed departure from the CLAUDE.md rule that CPC sources must be named explicitly in the prose: that rule is written for published CPC bulletins and guides, and this is an unpublished verbal account that CPC has not yet confirmed in writing. When CPC confirms it, restore the explicit "The CPC Learning Centre ..." attribution and drop the provisional marker and the hedges.
-- **Status:** PROVISIONAL (CPC subject-matter input, awaiting written confirmation)
+### [3] CPC. Service technician and feed representative roles in British Columbia poultry production.
+- **Full citation:** Canadian Poultry Consultants. Service technician and feed representative roles in British Columbia poultry production [subject-matter communication]; 2026 Sep.
+- **Verified:** YES. First raised with Mike (CPC) during the August 2026 BC visit (relayed 2026-08-18); the remaining open questions were answered by Reza on 2026-09-13 from his direct, day-to-day work alongside Mike at CPC.
+- **Content confirmed (2026-09-13 answers):**
+  - Terminology: write the role as **service technician**, working for a veterinary care unit such as the CPC poultry clinic (this settles the "field service representative" vs "service technician" question and makes the service technician the reader throughout).
+  - Service technician scope: vaccination, farm preparation before placement, and technical issues on site. Confirmed as correct.
+  - Feed rep scope: not limited to production data; feed reps "do whatever they can to justify the benefit for the feed company and of course for the producer with their contract."
+  - First call when mortality rises: on a farm under contract with a feed company, the feed rep is usually called first; the feed rep drops the mortality off at the clinic; the clinic then reports back to either the feed rep or the farm owner, whichever suits the feed rep.
+  - Visit frequency: feed rep visits depend on the contract, but farm owners and feed reps are in frequent contact. Service technician visits follow the placement and vaccination schedule, plus field calls when the farmer calls about an emergency such as rising mortality, when the technician goes to the farm to find out what the problem is.
+- **Content supported:** the two-role split and the service technician visit pattern in Section 1.1; the mortality call flow in Section 1.2.
+- **Deliberately NOT written into the course:** the answer on the first call says the feed rep "is being called first and billed". Whether that means the clinic bills the feed company for the diagnostic work, or something else, was not clear, so billing is left out of the course pending clarification. Do not add it without a plain statement of who pays whom.
+- **Citation name corrected 2026-09-13:** the August entry read "Canadian Poultry Consultants Ltd." That suffix had not been checked. canadianpoultry.ca brands itself "Canadian Poultry Consultants", which also matches the CLAUDE.md CPC citation format, so "Ltd." was dropped. Business directory listings (Canadian Poultry Magazine company page, Abbotsford News directory) describe it as a full-service poultry veterinary practice in Abbotsford offering vaccination and field service, which supports describing the service technician as working for a veterinary care unit such as the CPC poultry clinic.
+- **History:** August 2026 drafts described a "field service representative" working for a veterinary or animal health company, then softened the split (hedges plus a provisional marker) while the answers were outstanding. With the answers confirmed, the hedges, the "titles and duties vary" sentence, and the provisional marker were removed, and the explicit CPC Learning Centre attribution was restored in the body text ("The CPC Learning Centre describes the split this way" in 1.1; "In the CPC Learning Centre's experience" in 1.2), per the CLAUDE.md attribution rule.
+- **Notes:** CPC subject-matter input, not a published document, so it is cited as a subject-matter communication with no URL. If CPC later publishes a bulletin on these roles, cite the bulletin instead.
+- **Status:** VERIFIED (CPC subject-matter confirmation, 2026-09-13)
 
 ---
 
@@ -87,7 +95,7 @@ First-appearance order is now confirmed sequential: 1, 2, 3, 4, 5, 6. The refere
 ---
 
 ### [5] CFIA. Poultry Service Industry Biosecurity Guide.
-- **Full citation:** Canadian Food Inspection Agency. Poultry Service Industry Biosecurity Guide [Internet]. Ottawa: Canadian Food Inspection Agency. Available from: inspection.canada.ca/en/animal-health/terrestrial-animals/biosecurity/standards-and-principles/poultry-service-industry [cited 2026 Aug]
+- **Full citation:** Canadian Food Inspection Agency. Poultry Service Industry Biosecurity Guide [Internet]. Ottawa: Canadian Food Inspection Agency. Available from: inspection.canada.ca/en/animal-health/terrestrial-animals/biosecurity/standards-and-principles/poultry-service-industry [cited 2026 Sep]
 - **Verified:** YES
 - **Source URL:** https://inspection.canada.ca/en/animal-health/terrestrial-animals/biosecurity/standards-and-principles/poultry-service-industry
 - **Content confirmed:** CFIA zone system (Controlled Access Zone, Service Area, Restricted Access Zone), vehicle parking requirements (15 m from air inlets/exhaust fans), documentation requirements for service providers, PPE requirements by zone.
@@ -170,7 +178,7 @@ First-appearance order is now confirmed sequential: 1, 2, 3, 4, 5, 6. The refere
 ---
 
 ### [12] Gunn-Christie RG. Collection and Submission of Laboratory Samples from Animals.
-- **Full citation:** Gunn-Christie RG. Collection and Submission of Laboratory Samples from Animals. Merck Veterinary Manual. Kenilworth, NJ: Merck & Co.; [cited 2026 Aug]. Available from: merckvetmanual.com
+- **Full citation:** Gunn-Christie RG. Collection and Submission of Laboratory Samples from Animals. Merck Veterinary Manual. Kenilworth, NJ: Merck & Co.; [cited 2026 Sep]. Available from: merckvetmanual.com
 - **Verified:** YES — page fetched 2026-07-22; author byline confirmed as Rebekah G. Gunn-Christie, DVM, DACVP.
 - **Source URL:** https://www.merckvetmanual.com/clinical-pathology-and-procedures/collection-and-submission-of-laboratory-samples/collection-and-submission-of-laboratory-samples-from-animals
 - **Content confirmed (direct quotes from the page):** "Autolyzed tissues are generally useless for histologic evaluation; prompt necropsy and organ sampling are critical." and "unfixed specimens (tissue, fluid, etc) should be collected aseptically and shipped promptly to avoid degradation," with separate aliquots submitted in "sterile, additive-free container[s]."
@@ -186,7 +194,7 @@ First-appearance order is now confirmed sequential: 1, 2, 3, 4, 5, 6. The refere
 |----------|------------|----------------|
 | [1] | Introduction, 1.1 | The grower is paid a live price (farm gate price) per bird as the flock leaves the farm, i.e. the grower markets the chicken |
 | [2] | Introduction, 1.1 | The grower holds quota licensed by the provincial marketing board; quota alone does not get chicken to market; a BC Interior grower can only get chicken to market by contracting with a processor, and that processor and its hatchery set up chick placements and live bird shipments |
-| [3] | 1.1, 1.2 | Field service representative works for a veterinary or animal health company and is often based out of a poultry clinic, covering vaccination, pre-placement farm preparation, and on-site technical problems; the feed company representative is a separate role that gathers and works through production data and is not there to do field service work |
+| [3] | 1.1, 1.2 | The service technician works for a veterinary care unit such as the CPC poultry clinic and covers vaccination, farm preparation before placement, and technical problems on site; on a contract farm the feed rep works to make the feed contract pay off for the feed company and the grower, follows the production numbers, and is in frequent contact with the grower, with visit frequency set by the contract; technician visits follow placement and vaccination plus field calls for emergencies such as rising mortality; when mortality jumps on a contract farm the feed rep is usually called first, drops the dead birds at the clinic, and the clinic reports back to the feed rep or the grower |
 | [4] | 1.2, 4.2, 4.4, 5.1 | Feed conversion, daily gain, mortality rate, and condemnations at the plant are the tracked production numbers; highest daily mortality in the first week of life; spot weighing 30–50 birds (shared with [9]); farm problems outside the grower's control that still affect performance |
 | [5] | 2.1, 2.2, 2.3, 5.3 | CFIA zone system (CAZ, Service Area, RAZ); pre-arrival communication and enhanced cleaning/essential-visits-only during disease alerts; visitor log and on-premises documentation; vehicle positioning away from air inlets/exhaust fans; PPE/coveralls and footwear requirements |
 | [6] | 3.1, 3.2, 3.3, 4.3, 6.1, 6.2 | Barn observation before entry and smell cues (ammonia, decomposition, wet litter); litter feel check; bird conformation eight-point check and handling birds from multiple barn areas; water consumption drop precedes feed drop, recorded at the same time daily; post-mortem sample submission when cause of mortality is unclear; sample collection, packaging, and lab call for diagnostics |
@@ -214,4 +222,4 @@ First-appearance order in the regenerated docx: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 1
 - [ ] Paper cannot be located: NOT PRESENT — all 12 sources locatable (ref [3] is a CPC subject-matter communication, documented above rather than published)
 - [ ] Hybrid citations: NOT PRESENT — each citation is a single coherent source
 
-**Result: CLEAN. No fabrication patterns detected. All 12 references verified; first-appearance order sequential 1–12 (last confirmed 2026-08-18 after the BC field service / feed representative correction added refs [1], [2], and [3] and renumbered the document).**
+**Result: CLEAN. No fabrication patterns detected. All 12 references verified; first-appearance order sequential 1–12 (last confirmed 2026-09-13 after the service technician / feed rep answers were confirmed and written into Sections 1.1 and 1.2; all four live online sources re-fetched the same day).**
