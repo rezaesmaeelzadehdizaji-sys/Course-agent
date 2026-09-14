@@ -21,8 +21,9 @@ records (a 2010 article matched a 2022 PMID). Four of the resolved PMIDs were in
 confirmed by reading the abstract directly.
 
 **Currency caveat.** This is a hot-topics course. Disease-situation figures reflect
-September 2026 and are framed as such in the text. The province table carries its reporting
-date in its lead-in and tells the reader to check the CFIA page for the current count.
+September 2026 and are framed as such in the text. The province map (Figure 2.1, which replaced
+the province table on 2026-09-14) carries its reporting date in its lead-in and caption, and the
+text tells the reader to check the CFIA page for the current count.
 
 **Legend.** SEP = verified or re-verified in the 2026-09-11/12 pass. JUN = verified
 2026-06-16; reference text and the claim it supports are unchanged since, and the page
@@ -107,7 +108,7 @@ remains live at the cited issuing body.
 | Claim in course | Source | Confirmed value |
 |---|---|---|
 | 2025 commercial flock losses | [5] | 82 commercial flocks, 31 of them in BC |
-| Province table | [6] | 656 premises, 17,561,900 birds; provinces sum exactly to CFIA totals |
+| Province map (Figure 2.1; replaced the province table 2026-09-14) | [6] | 656 premises, 17,561,900 birds; provinces sum exactly to CFIA totals; map premises counts match cell for cell |
 | Raw milk testing | [9] | 11,925 samples as of 2026-09-03, all negative |
 | US human cases | [13] | About 70 H5N1 cases, 1 death, 41 dairy and 26 poultry |
 | BC transmission study | [22] | 127 premises; 16.5 percent independent; 64.6 percent local spread; under 200 m beats contact |

@@ -9,7 +9,6 @@ import {
   Document, Packer, Paragraph, TextRun, AlignmentType, PageBreak,
   Header, Footer, PageNumber, BorderStyle, convertInchesToTwip, HeadingLevel,
   LevelFormat, TableOfContents, ImageRun,
-  Table, TableRow, TableCell, WidthType, ShadingType,
 } from 'docx';
 import JSZip from './node_modules/jszip/dist/jszip.js';
 import fs from 'fs';
@@ -202,68 +201,6 @@ function buildCoverSection() {
 }
 
 
-// CFIA infected premises and bird losses by province, cumulative since December 2021.
-// Source: CFIA "Status of ongoing avian influenza response by province", data updated 2026-09-04,
-// parsed from the published table rather than a summary. Re-confirm before any reuse: this is a
-// hot-topics course and these figures move.
-function provinceTable() {
-  const colW   = [3400, 2600, 2640];   // must sum to 8640 twips
-  const hdrBg  = '2E74B5';
-  const altBg  = 'EBF2FA';
-  const bdr    = { style: BorderStyle.SINGLE, size: 2, color: 'AAAAAA' };
-  const cellBorders = { top: bdr, bottom: bdr, left: bdr, right: bdr };
-
-  const hdrCell = (text, i) => new TableCell({
-    width: { size: colW[i], type: WidthType.DXA },
-    borders: cellBorders,
-    shading: { type: ShadingType.SOLID, color: hdrBg },
-    children: [new Paragraph({
-      alignment: i === 0 ? AlignmentType.LEFT : AlignmentType.CENTER,
-      spacing: { before: 30, after: 30 },
-      children: [run(text, { bold: true, size: 18, color: 'FFFFFF' })],
-    })],
-  });
-
-  const dataCell = (text, i, shade, bold) => new TableCell({
-    width: { size: colW[i], type: WidthType.DXA },
-    borders: cellBorders,
-    shading: { type: ShadingType.SOLID, color: shade ? altBg : 'FFFFFF' },
-    children: [new Paragraph({
-      alignment: i === 0 ? AlignmentType.LEFT : AlignmentType.CENTER,
-      spacing: { before: 20, after: 20 },
-      children: [run(text, { size: 18, color: BODY_GRAY, bold })],
-    })],
-  });
-
-  const headers = ['Province', 'Infected premises', 'Birds lost'];
-  const rows = [
-    ['British Columbia', '279', '10,107,000'],
-    ['Alberta', '115', '2,552,000'],
-    ['Ontario', '72', '1,512,000'],
-    ['Quebec', '70', '1,543,100'],
-    ['Saskatchewan', '67', '1,284,000'],
-    ['Manitoba', '33', '551,000'],
-    ['Nova Scotia', '13', '12,000'],
-    ['Newfoundland and Labrador', '4', '500'],
-    ['New Brunswick', '2', 'Under 100'],
-    ['Prince Edward Island', '1', '200'],
-  ];
-  const totalRow = ['Canada', '656', '17,561,900'];
-
-  return new Table({
-    width: { size: 100, type: WidthType.PERCENTAGE },
-    margins: { top: 0, bottom: 0, left: 0, right: 0 },
-    rows: [
-      new TableRow({ children: headers.map((h, i) => hdrCell(h, i)), tableHeader: true, cantSplit: true }),
-      ...rows.map((row, ri) => new TableRow({
-        cantSplit: true,
-        children: row.map((cell, ci) => dataCell(cell, ci, ri % 2 === 1, false)),
-      })),
-      new TableRow({ cantSplit: true, children: totalRow.map((cell, ci) => dataCell(cell, ci, false, true)) }),
-    ],
-  });
-}
-
 function buildIntroSection() {
   return {
     properties: { page: { margin: pageMargin } },
@@ -326,12 +263,9 @@ function buildSection2() {
       h2('2.1 What Avian Influenza Is and Where It Stands Today'),
       para('Avian influenza, or bird flu, is a viral disease caused by influenza A viruses. The viruses are sorted by two proteins on their surface, called H and N, which is where names like H5N1 come from [1]. The basic virology is well described in standard references for anyone who wants the depth [2,3]. What a farmer needs to know is that not all strains are equal. Low pathogenic avian influenza, or LPAI, often causes mild signs or none at all. High pathogenic avian influenza, or HPAI, is the dangerous one. In an unvaccinated flock it can push mortality to nearly 100 percent within a few days of exposure [4]. In Canada, every high pathogenic strain is reportable by law, and so is low pathogenic avian influenza of the H5 and H7 subtypes, because those two can turn from mild to deadly once they get into domestic birds [1]. We come back to what that means for you shortly.'),
       para('The strain behind this is an H5N1 from clade 2.3.4.4b. It reached North America in late 2021 and has not left. More than 650 Canadian farms and flocks have been hit and roughly 17.5 million birds are gone. 2025 cost another 82 commercial flocks, and 2026 has been quieter without being over [5].'),
-      para('Where those losses landed is not even across the country. This is every infected premises since December 2021 and the birds lost with them, as the CFIA reported it on September 4, 2026 [6]. Treat it as a snapshot rather than a final tally. The outbreak is still running, and these numbers climb with every new detection, so check the CFIA page for the current count before you quote them.'),
-      provinceTable(),
-      new Paragraph({ spacing: { before: 80, after: 0 } }),
-      para('The three territories are not in the table because the CFIA lists no infected premises in them.'),
-      ...image(figBuf('hpai-birds-impacted-canada.png'), 'Figure 2.1: The same CFIA numbers as the table, drawn as a map. Each dot is roughly 50,000 birds, so it shows the pattern rather than an exact count. The dots sit where poultry is raised in each province, not on the actual infected farms. The solid red patch in southwestern British Columbia is the Fraser Valley, and Section 2.2 explains why a production area that tight gets hit so hard. Source: CPC Short Courses, using CFIA data.'),
+      para('Where those losses landed is not even across the country. Figure 2.1 maps every infected premises since December 2021 and the birds lost with them, as the CFIA reported it on September 4, 2026 [6]. Treat it as a snapshot rather than a final tally. The outbreak is still running, and these numbers climb with every new detection, so check the CFIA page for the current count before you quote them. The three territories are left off the map because the CFIA lists no infected premises in them.'),
       para('What sets it apart is how far it has moved beyond birds. Since 2024 it has spread cow to cow through the milking process in American dairy herds, and it has killed mammals from cats and foxes to marine mammals [7]. The cattle part has not happened here. Canada has never had a confirmed case in cattle, and the American dairy strain has never been found in any animal or person in this country [8]. The CFIA has tested nearly 12,000 raw milk samples off trucks at plants in every province. All negative [9].'),
+      ...image(figBuf('hpai-birds-impacted-canada.png'), 'Figure 2.1: Infected premises and birds lost to avian influenza by province, December 2021 to September 4, 2026. Each dot is roughly 50,000 birds, so it shows the pattern rather than an exact count. The dots sit where poultry is raised in each province, not on the actual infected farms. The solid red patch in southwestern British Columbia is the Fraser Valley, and Section 2.2 explains why a production area that tight gets hit so hard. Source: CPC Short Courses, using CFIA data.'),
       para('People get infected too, almost always after close contact with sick animals. Canada’s record is two people. In November 2024 a 13-year-old girl in the Fraser Valley became the first to catch it inside this country. She was critically ill and she recovered [10]. She was not a poultry worker, and nobody ever found her source. The closest genetic match was the virus circulating in local wild birds [11]. The other was a traveler who brought it home from China in 2014 [12]. Neither came out of barn work or a cull, after hundreds of infected farms and millions of destroyed birds.'),
       para('The American numbers are bigger, and they show where the risk sits. About 70 H5N1 cases since 2024, most of them mild, one fatal, and no spread between people [13]. Around 41 came from dairy cattle and 26 from poultry, mostly barn workers and culling crews [13]. A separate H5N5 case killed a Washington State backyard flock owner in November 2025, the first time that virus had been found in a person [14]. That makes both American deaths backyard flock owners, not commercial workers. The Washington virus came from the owner’s own ducks. Two died. The rest of the flock tested positive while looking perfectly normal [14]. Waterfowl can carry this and show you nothing. H5N5 is here too, and it killed a backyard layer flock in Newfoundland and Labrador in early 2025 [15].'),
       para('For you the risk stays occupational, not a reason for panic. Wear protective equipment for sick or dead birds, and treat a barn with heavy unexplained death loss as a place to cover up before you walk in. Watch for fever, cough, or sore or watery eyes for a few days afterward, and if you get sick, tell your physician you work with poultry. That changes what they test you for. Get your seasonal flu shot too. It will not stop bird flu, but it lowers the odds of a human virus and a bird virus meeting in you. Canada has authorized a human H5N1 vaccine and lists people involved in poultry culling among the priority groups, though each province decides whether to offer it [16,17]. For the full protective-equipment routine, see Course 8 (Fundamentals of Poultry Vaccination and Treatment) in this series.'),
@@ -609,10 +543,10 @@ async function main() {
     { lvl: 2, text: '1.2 Where to Get Reliable, Current Information', page: 5 },
     { lvl: 1, text: 'Section 2: Avian Influenza', page: 6 },
     { lvl: 2, text: '2.1 What Avian Influenza Is and Where It Stands Today', page: 6 },
-    { lvl: 2, text: '2.2 How It Spreads and Gets Onto Farms', page: 9 },
+    { lvl: 2, text: '2.2 How It Spreads and Gets Onto Farms', page: 8 },
     { lvl: 2, text: '2.3 Recognizing It and Your Legal Duty to Report', page: 11 },
     { lvl: 2, text: '2.4 The Outbreak Response and What Happens to Your Farm', page: 12 },
-    { lvl: 2, text: '2.5 The Vaccination Question', page: 14 },
+    { lvl: 2, text: '2.5 The Vaccination Question', page: 13 },
     { lvl: 2, text: '2.6 Surveillance and Protecting Your Flock', page: 14 },
     { lvl: 1, text: 'Section 3: Emerging and Re-Emerging Disease Issues', page: 15 },
     { lvl: 2, text: '3.1 What Emerging Means and What Drives It', page: 15 },
