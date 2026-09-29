@@ -122,7 +122,6 @@ function filingTable() {
     ['Necropsy', 'Necropsy session', 'Once the bird is open. This is most of the list, since Course 11 teaches disease recognition through internal lesions.'],
     ['Plant', 'Plant visit', 'The processing floor itself. Needs arranged plant access, not a farm visit or a necropsy table.'],
     ['Equipment / product', 'Vendor or lab supply', 'A device, kit, or sample photographed on its own. No bird in frame at all.'],
-    ['Diagram', 'CPC redraw', 'Not a photograph. An anatomy or process diagram currently redrawn from a textbook or manufacturer source; needs original CPC artwork, not a photo shoot.'],
   ];
   const bodyRows = rows.map((r, ri) => new TableRow({
     cantSplit: true,
@@ -154,22 +153,47 @@ function photoTable(items) {
 }
 
 // ============================================================
-// DATA — every non-CPC-sourced Photo/Figure caption found across
-// the 16 built courses (Course 3, 4, 7, 9, 16 had none). Excludes:
-//  - captions sourced solely to "CPC Learning Centre" (already CPC's own)
-//  - Course 5's 7 uncaptioned SVG figures (diagrams, not real photos)
-//  - Course 7's 31 AI-rendered placeholders (already tracked in
-//    "Course 7/requested photos.docx", a separate, existing list)
+// DATA — every real-world (farm/animal) Photo across the 16 built
+// courses that is not a genuine CPC-owned photo. Two ways an item
+// lands here:
+//   (a) Borrowed — sourced from a textbook, journal, manufacturer
+//       site, or Wikimedia, with a real attribution shown in the
+//       course.
+//   (b) AI-generated — an AI-rendered placeholder with no real
+//       source at all, currently captioned "Source: CPC Short
+//       Courses" like a genuine photo, which is indistinguishable
+//       from a real one by caption text alone.
+// Diagrams, charts, and infographics (Figure captions) are excluded
+// on purpose, whatever their origin — the user has confirmed those
+// are fine as-is and are not part of this request.
+// Also excluded: captions sourced solely to "CPC Learning Centre"
+// (already CPC's own).
 // ============================================================
 
 const DATA = {
   'Barn walk': [
+    { course: 3,  ref: 'Photo 2.1', need: 'Broilers evenly spread across the litter with good access to feeders, an early flock assessment scene.', source: 'AI-generated placeholder, no real source (same AI image also used as Course 7 Photo 5 and Course 16 Photo 2.1)' },
+    { course: 3,  ref: 'Photo 6.1', need: 'A Danish-entry biosecurity setup at a barn door: clean/dirty line, bench, boot change, footbath.', source: 'AI-generated placeholder, no real source (same AI image also used as Course 7 Photo 7 and Course 14 Photo 2.3)' },
     { course: 5,  ref: 'Photo 1.1', need: 'Front exterior or wide interior shot of a Canadian commercial broiler barn.', source: 'Chicken Farmers of Canada, CC BY 2.0' },
+    { course: 7,  ref: 'Photo 1',   need: 'Modern Canadian commercial barn exterior with a digital flock-management monitor at the entrance and a rainwater treatment setup.', source: 'AI-generated placeholder, no real source' },
+    { course: 7,  ref: 'Photo 2',   need: 'Interior wide shot of a modern Canadian cage-free or enriched layer barn.', source: 'AI-generated placeholder, no real source' },
+    { course: 7,  ref: 'Photo 3',   need: 'Interior of a Canadian commercial turkey grow-out barn with mature toms on dry shavings.', source: 'AI-generated placeholder, no real source' },
+    { course: 7,  ref: 'Photo 4',   need: 'Canadian commercial waterfowl operation: ducks or geese housed with bell drinkers or a pond area, dry bedding.', source: 'AI-generated placeholder, no real source' },
+    { course: 7,  ref: 'Photo 5',   need: 'A farmer walking a broiler flock during daily inspection, healthy birds with a couple ruffled or huddled.', source: 'AI-generated placeholder, no real source (same image reused in Course 3 Photo 2.1, Course 14 Photo 5.1, Course 16 Photo 2.1; one real photo fixes all four)' },
+    { course: 7,  ref: 'Photo 6',   need: 'Outside of a barn showing contamination entry points: wild birds near vents, tire tracks, an open feed hopper.', source: 'AI-generated placeholder, no real source' },
+    { course: 7,  ref: 'Photo 7',   need: 'A Danish-entry biosecurity setup at a barn door with brooding chicks visible on the clean side.', source: 'AI-generated placeholder, no real source (same image reused in Course 3 Photo 6.1, Course 14 Photo 2.3; one real photo fixes all three)' },
+    { course: 7,  ref: 'Photo 12',  need: 'A broiler house at 2 to 5 weeks during an inclusion body hepatitis outbreak, scattered mortality on the litter.', source: 'AI-generated placeholder, no real source' },
+    { course: 7,  ref: 'Photo 19',  need: 'A layer flock during an IBV hit: thin-shelled or misshapen eggs on the collection belt, barn visible behind.', source: 'AI-generated placeholder, no real source' },
+    { course: 7,  ref: 'Photo 26',  need: 'A turkey barn at 4 to 12 weeks during hemorrhagic enteritis: bloody droppings, sudden-death birds scattered.', source: 'AI-generated placeholder, no real source' },
+    { course: 7,  ref: 'Photo 30',  need: 'Mixed-species farm risk scene: chickens, turkeys, and ducks or geese close together, ideally with a wild bird in frame.', source: 'AI-generated placeholder, no real source' },
     { course: 13, ref: 'Photo 4.1', need: 'A conventional battery cage next to enriched cage systems with nesting curtains and scratch pads.', source: 'Egg Farmers of Alberta (eggs.ab.ca)' },
     { course: 13, ref: 'Photo 4.2', need: 'Three cage-free layer housing systems: floor housing, a multi-tier aviary, and free range with outdoor access.', source: 'Egg Farmers of Alberta (eggs.ab.ca)' },
     { course: 13, ref: 'Photo 4.3', need: 'A broiler breeder barn on floor housing, with nest boxes and feed and water lines.', source: 'Chicken Farmers of Canada (chicken.ca)' },
     { course: 13, ref: 'Photo 5.2', need: 'Dry, friable litter next to dark, wet, caked litter, side by side.', source: 'fresheggsdaily.blog and fidarfeed.com' },
+    { course: 14, ref: 'Photo 2.3', need: 'Biosecurity entry at a commercial poultry barn: clean coveralls and a boot dip station.', source: 'AI-generated placeholder, no real source (duplicate of Course 7 Photo 7)' },
     { course: 14, ref: 'Photo 4.1', need: 'A suspended automatic weigh platform at bird level, shown early in the flock with chicks on it.', source: 'anyload.com' },
+    { course: 14, ref: 'Photo 5.1', need: 'A technician or farmer filling in a standardized visit form during the barn walk.', source: 'AI-generated placeholder, no real source (duplicate of Course 7 Photo 5)' },
+    { course: 16, ref: 'Photo 2.1', need: 'A farmer on the daily barn walk with the daily record kept alongside it.', source: 'AI-generated placeholder, no real source (duplicate of Course 7 Photo 5)' },
   ],
   'Bird handling': [
     { course: 5,  ref: 'Photo 4.1', need: 'Day-old broiler chicks arriving and settling at placement, spread out on litter with feed and water in reach.', source: 'USDA/Joe Valbuena, public domain' },
@@ -185,9 +209,29 @@ const DATA = {
     { course: 13, ref: 'Photo 3.2', need: "Keel bone check on a live bird: fingers running the length of the keel to feel for a fracture.", source: 'Kittelsen et al., Avian Pathology 2023 (palpation panel)' },
     { course: 13, ref: 'Photo 3.3', need: 'How feather pecking escalates: broken feathers, a balding patch, irritated skin, an open bleeding wound.', source: 'Aviagen Brief, Feathering in Broiler Breeder Females, 2024; Poultry Hub Australia' },
     { course: 15, ref: 'Photo 4.1', need: 'Wing (brachial) vein blood collection technique on a live chicken, shown from three angles.', source: 'Norecopa (norecopa.no); Kelly & Alworth, Lab Anim 2013;42:359-361' },
+    { course: 7,  ref: 'Photo 10',  need: 'Broilers showing respiratory signs at flock level: swollen sinuses, watery eyes, nasal discharge, open-mouth breathing.', source: 'AI-generated placeholder, no real source' },
+    { course: 7,  ref: 'Photo 13',  need: 'A broiler with obvious ascites, held by a farmer or photographed in-pen to show the distended belly.', source: 'AI-generated placeholder, no real source' },
+    { course: 7,  ref: 'Photo 16',  need: "A pullet or layer with classic Marek's presentation: one-legged paralysis, one gray iris, in a small-flock setting.", source: 'AI-generated placeholder, no real source' },
+    { course: 7,  ref: 'Photo 31',  need: 'A single sick broiler pulled out and placed in an isolation pen with clean water, dry bedding, a heat lamp.', source: 'AI-generated placeholder, no real source' },
   ],
   'Bird exam': [
     { course: 5,  ref: 'Photo 4.3', need: 'Footpad dermatitis scored 0 to 2 on a broiler foot: normal, mild hyperkeratosis, and a failing lesion with hemorrhage or swelling.', source: 'American Association of Avian Pathologists, 2022' },
+    { course: 7,  ref: 'Photo 8',   need: 'Close-up of broiler droppings showing bloody or tarry coccidiosis-type droppings, depressed bird in the background.', source: 'AI-generated placeholder, no real source' },
+    { course: 7,  ref: 'Photo 9',   need: 'Day-old to first-week broiler chicks with early mortality or an unabsorbed yolk sac (yolk sacculitis field picture).', source: 'AI-generated placeholder, no real source' },
+    { course: 7,  ref: 'Photo 11',  need: 'White, chalky, watery IBD-type droppings on broiler litter, with a ruffled, depressed bird in the same frame.', source: 'AI-generated placeholder, no real source' },
+    { course: 7,  ref: 'Photo 14',  need: 'Necrotic enteritis field picture: foul, loose, orange-brown or mucoid droppings, depressed birds nearby.', source: 'AI-generated placeholder, no real source' },
+    { course: 7,  ref: 'Photo 15',  need: 'A breeder or layer hen head close-up with classic fowl cholera signs: swollen, dark, matte wattles.', source: 'AI-generated placeholder, no real source' },
+    { course: 7,  ref: 'Photo 17',  need: 'A breeder or layer with ILT signs: bloody mucus around the beak, watery eyes, gasping.', source: 'AI-generated placeholder, no real source' },
+    { course: 7,  ref: 'Photo 18',  need: 'A layer osteoporosis / cage-fatigue hen: collapsed, unable to stand, visibly deformed keel.', source: 'AI-generated placeholder, no real source' },
+    { course: 7,  ref: 'Photo 20',  need: 'A layer or breeder hen with aMPV signs: swollen head or sinuses, watery eyes, possible head tilt.', source: 'AI-generated placeholder, no real source' },
+    { course: 7,  ref: 'Photo 21',  need: 'A duck or goose with botulism "limberneck": neck drooped, head unable to be held up.', source: 'AI-generated placeholder, no real source' },
+    { course: 7,  ref: 'Photo 22',  need: 'An adult duck with Duck Viral Enteritis: visible blood around the bill or vent, dead bird on the ground.', source: 'AI-generated placeholder, no real source' },
+    { course: 7,  ref: 'Photo 23',  need: 'A young duckling under 3 weeks with Duck Virus Hepatitis: fallen on its side, head thrown back in opisthotonos.', source: 'AI-generated placeholder, no real source' },
+    { course: 7,  ref: 'Photo 24',  need: "Goslings or young Muscovy ducklings with Derzsy's disease: lethargic, poor feathering, stunted.", source: 'AI-generated placeholder, no real source' },
+    { course: 7,  ref: 'Photo 25',  need: 'A duckling 1 to 7 weeks old with Riemerellosis: watery eyes, greenish diarrhea, head tremor.', source: 'AI-generated placeholder, no real source' },
+    { course: 7,  ref: 'Photo 27',  need: 'A turkey with Histomoniasis (Blackhead): depressed bird, sulfur-colored droppings behind it.', source: 'AI-generated placeholder, no real source' },
+    { course: 7,  ref: 'Photo 28',  need: 'A turkey with Mycoplasma gallisepticum: swollen infraorbital sinuses, foamy eye, nasal discharge, head close-up.', source: 'AI-generated placeholder, no real source' },
+    { course: 7,  ref: 'Photo 29',  need: 'A feral or racing pigeon with PPMV-1 neurological signs: twisted neck or opisthotonos, perched on a barn roofline.', source: 'AI-generated placeholder, no real source' },
     { course: 10, ref: 'Photo 3.1', need: 'Head-to-toe outside check on a bird before it is opened: feathers, skin, head, legs, feet, hocks, footpads, keel.', source: 'Cobb Post Mortem Guide, Breeders, 2022' },
     { course: 11, ref: 'Photo 4.4', need: 'Chick navels showing omphalitis: a red, hyperemic unhealed navel and an unabsorbed yolk sac.', source: 'ASA Handbook on Poultry Diseases; Diseases of Poultry, 14th ed' },
     { course: 11, ref: 'Photo 4.9', need: 'External HPAI signs: facial swelling, a cyanotic blue-purple comb and wattle, hemorrhages on the shanks and feet.', source: 'Diseases of Poultry, 14th ed.; Picture Book of Infectious Poultry Diseases (FAO-CEVA); CEVA Handbook of Poultry Diseases; ASA Handbook on Poultry Diseases' },
@@ -201,7 +245,9 @@ const DATA = {
     { course: 6,  ref: 'Photo 3.1', need: 'Proventriculus and gizzard removed from a chicken, plus a gizzard opened to show the koilin lining.', source: 'Wikimedia Commons / Bjferstern, CC BY-SA 3.0' },
     { course: 6,  ref: 'Photo 3.3', need: 'Skeletal and muscular anatomy of the chicken: muscle groups on one side, the labeled skeleton on the other.', source: 'USDA' },
     { course: 10, ref: 'Photo 2.5', need: 'Full necropsy routine in six steps: euthanize, open the beak, open the body wall, lift the breast plate, work through the organs, open the skull.', source: 'Cobb Post Mortem Guide, Breeders, 2022' },
+    { course: 10, ref: 'Photo 3.3', need: 'The heart in place at the front of the opened chest, in its normal position and orientation.', source: 'AI-generated placeholder, no real source' },
     { course: 10, ref: 'Photo 3.4', need: 'The syrinx exposed, a pair of healthy lungs lifted out, and the abdominal air sacs in a normal bird.', source: 'Cobb Post Mortem Guide, Breeders, 2022 (2 panels); Li W et al., Scientific Reports 2020 (1 panel)' },
+    { course: 10, ref: 'Photo 3.8', need: 'The full digestive tract laid out from front to back, crop through cloaca, at necropsy.', source: 'AI-generated placeholder, no real source' },
     { course: 10, ref: 'Photo 3.7', need: 'Proventriculus and gizzard with a ruler for scale, plus a gizzard opened to show the koilin lining.', source: 'Wikimedia Commons / Bjferstern, CC BY-SA 3.0' },
     { course: 10, ref: 'Photo 3.10', need: 'A laying hen opened up with the reproductive tract still in place: pre-ovulatory follicles and an active oviduct.', source: 'Apperson et al., Veterinary Sciences 2017, CC BY 4.0' },
     { course: 10, ref: 'Photo 4.1', need: 'Meat-bird musculoskeletal check in three views: breast muscle, leg and foot, a long bone cut to show the growth plate.', source: 'Cobb Post Mortem Guide, Breeders, 2022' },
@@ -243,6 +289,7 @@ const DATA = {
   ],
   'Equipment / product': [
     { course: 5,  ref: 'Photo 5.1', need: 'Solar panels installed on a Canadian barn roof.', source: 'Robin Stott / geograph.org.uk, CC BY-SA 2.0' },
+    { course: 10, ref: 'Photo 2.1', need: 'A basic farm necropsy kit laid out on a clean, disinfectable surface.', source: 'AI-generated placeholder, no real source' },
     { course: 12, ref: 'Photo 3.2', need: 'The three KED device sizes and correct placement at the skull base.', source: 'Poultry Industry Council, Practical Guidelines for On-Farm Euthanasia of Poultry, 2nd ed., 2016' },
     { course: 12, ref: 'Photo 3.3', need: 'The non-penetrating captive bolt device and correct head placement.', source: 'Poultry Industry Council, Practical Guidelines for On-Farm Euthanasia of Poultry, 2nd ed., 2016' },
     { course: 12, ref: 'Photo 3.5', need: 'A CO2 euthanasia station: cylinders, regulator, sealed chamber, exhaust fan.', source: 'Poultry Industry Council, Practical Guidelines for On-Farm Euthanasia of Poultry, 2nd ed., 2016' },
@@ -251,16 +298,6 @@ const DATA = {
     { course: 15, ref: 'Photo 2.2', need: 'Plate agglutination test drops for Mycoplasma gallisepticum: a smooth negative drop next to a clumped positive.', source: 'Kabir A, et al. Eur J Agric Food Sci. 2021' },
     { course: 15, ref: 'Photo 5.1', need: 'Three spun blood tubes side by side: EDTA whole blood, heparin plasma, clear serum.', source: 'Wikimedia Commons, Uwe Gille' },
     { course: 17, ref: 'Photo 5.2', need: 'A culture plate of bacterial colonies grown from a raw poultry sample.', source: 'meatpoultry.com' },
-  ],
-  'Diagram (CPC redraw, not a photo)': [
-    { course: 6,  ref: 'Figure 3.1', need: 'Labeled internal-anatomy diagram of the chicken showing all major organ systems.', source: 'Purina Animal Nutrition LLC' },
-    { course: 6,  ref: 'Figure 3.2', need: 'Digestive-tract diagram from gizzard outlet to vent.', source: 'USDA' },
-    { course: 6,  ref: 'Figure 3.4', need: 'Hen and rooster reproductive-tract diagram.', source: 'USDA' },
-    { course: 6,  ref: 'Figure 3.5', need: 'Avian urinary-system diagram, kidneys and ureters to the cloaca.', source: 'USDA, Happy Morning Farm LLC' },
-    { course: 10, ref: 'Figure 5.1', need: "Working diagram of the hen's reproductive tract with timing per section.", source: 'Cobb Post Mortem Guide, Breeders, 2022 (illustration)' },
-    { course: 12, ref: 'Figure 5.1', need: 'The three field checks for confirming death diagram.', source: 'Poultry Industry Council, Practical Guidelines for On-Farm Euthanasia of Poultry, 2nd ed., 2016' },
-    { course: 15, ref: 'Figure 2.2', need: 'The HI test principle diagram alongside a real result plate.', source: 'microbenotes.com' },
-    { course: 15, ref: 'Figure 4.1', need: 'Diagonal-walk sampling diagram.', source: 'BioChek Interpretation and Application of Results Manual' },
   ],
 };
 
@@ -280,19 +317,20 @@ C.push(new Paragraph({ alignment: AlignmentType.CENTER, spacing: { after: 40 }, 
 C.push(new Paragraph({ alignment: AlignmentType.CENTER, spacing: { after: 60 }, children: [new TextRun({ text: 'Photos to request from the CPC team, across all built courses', italics: true, color: MED_BLUE, size: 22, font: 'Calibri' })] }));
 C.push(new Paragraph({ alignment: AlignmentType.CENTER, spacing: { after: 90 }, children: [new TextRun({ text: '___________________________________', color: GOLD, size: 22, font: 'Calibri' })] }));
 
-C.push(para(`Every course was scanned for every "Photo" and "Figure" caption in its current final file, and each one was checked against its Source line. This list keeps only the ${totalCount} that are currently attributed to somewhere other than CPC: textbooks, journal articles, manufacturer sites, and Wikimedia Commons among them. Once CPC supplies a real replacement for an item below, that item drops out and the course gets rebuilt with the new photo and a "Source: CPC Short Courses" caption.`, { after: 80 }));
-C.push(para('Courses 3, 4, 7, 9, and 16 have no items on this list; every photo and figure in those four is already CPC-owned. Course 5 also has seven diagrams with no source line at all (they are CPC\'s own charts, just missing a caption) and Course 7 has 31 AI-rendered placeholder photos awaiting real replacements. Neither of those is a borrowed photo, so neither is on this list; the Course 7 placeholders already have their own tracking document at Course 7/requested photos.docx.', { after: 0 }));
+C.push(para(`Every course was scanned for every "Photo" caption in its current final file. Real-world subjects only, farm scenes, live birds, lesions, equipment. Diagrams, charts, and infographics are excluded on purpose, whatever their origin; those are fine as they are and are not part of this request.`, { after: 80 }));
+C.push(para(`Two things put a photo on this list. Borrowed: sourced from a textbook, journal, manufacturer site, or Wikimedia, with a real attribution shown in the course (77 items). AI-generated: an AI-rendered placeholder with no real source at all, currently captioned "Source: CPC Short Courses" exactly like a genuine photo, which is why it cannot be told apart from a real one by caption text alone (39 items, 31 of them in Course 7 already, 8 more found in Courses 3, 10, 14, and 16). ${totalCount} items in total. Once CPC supplies a real replacement, that item drops out and the course gets rebuilt with the new photo and a proper "Source: CPC Short Courses" caption.`, { after: 80 }));
+C.push(para('Only Courses 4 and 9 have no items on this list. Every other course has at least one, and Course 7 has the most since its whole disease gallery was built on AI placeholders pending real photos.', { after: 0 }));
 
 // FILING SYSTEM
 C.push(sectionBar('How This List Is Filed'));
-C.push(para('Every item below is tagged with one of these seven values. The value tells CPC what kind of session produces the replacement, not what course it is for.', { after: 100 }));
+C.push(para('Every item below is tagged with one of these six values. The value tells CPC what kind of session produces the replacement, not what course it is for, and not whether the current image is borrowed or AI-generated.', { after: 100 }));
 C.push(filingTable());
 C.push(spacer(100));
-C.push(bullet('Necropsy carries most of the list (39 of 85) because Course 11 teaches disease recognition almost entirely through internal lesions; nearly every disease profile in that course needs a real opened-bird photo.'));
+C.push(bullet('Necropsy carries most of the list (41 of 116) because Course 11 teaches disease recognition almost entirely through internal lesions; nearly every disease profile in that course needs a real opened-bird photo.'));
 C.push(bullet('Bird exam is its own line, separate from Necropsy, because the lesion is external and disappears once the bird is opened. It has to be caught before the bird goes on the table.'));
 C.push(bullet('Plant is its own line because a processing-line photo needs arranged plant access. It is not a farm visit and not a necropsy-table shot.'));
 C.push(bullet('Equipment / product items need no bird and no farm visit at all: a device, a kit, or a sample photographed on a bench is enough.'));
-C.push(bullet('Diagram items are not photo requests. CPC cannot "go shoot" an anatomy diagram; these need an illustrator to redraw them in CPC\'s own style, not a photo day.'));
+C.push(bullet('Two AI images are reused across several courses under different captions: the flock-walk scene (Course 7 Photo 5) also stands in for Course 3 Photo 2.1, Course 14 Photo 5.1, and Course 16 Photo 2.1; the biosecurity-entry scene (Course 7 Photo 7) also stands in for Course 3 Photo 6.1 and Course 14 Photo 2.3. One real photo of each scene clears every row it is tied to.'));
 C.push(bullet('No status column. This list only reflects what each course currently shows; it does not track what has already been sent or delivered.'));
 C.push(bullet('The table carries no prose beyond the "what CPC needs to supply" cell; context and reasoning live in this section, not in the list itself.'));
 
@@ -312,6 +350,7 @@ C.push(sectionBar('Notes for CPC'));
 C.push(bullet('Where "What CPC needs to supply" describes several panels in one item (for example, a lesion composite in Course 11), one real photo per panel is the ideal outcome; a single strong photo of the most important panel is an acceptable start.'));
 C.push(bullet('Shots should be real Canadian commercial-flock conditions wherever the subject allows it, landscape orientation where possible, and well lit.'));
 C.push(bullet('Where a lesion or clinical sign is the point of the photo, it must be clearly visible; use a close-up if needed.'));
+C.push(bullet('One Course 4 photo (Photo 1.1, chicks at placement on litter with a feeder line) could not be confirmed as either a real sourced photo or an AI placeholder from the files on hand. It looks like a real photo on visual inspection and is not on this list, but is worth a quick visual confirmation from CPC since its provenance is not documented.'));
 C.push(bullet('This list regenerates from the courses themselves. As photos land, rerun the extraction against the updated course files and this list shrinks.'));
 
 // ============================================================
