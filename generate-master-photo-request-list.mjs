@@ -212,7 +212,7 @@ const DATA = {
     { course: 6,  ref: 'Photo 2.1', need: "Close view of a live hen's comb and eye, showing healthy color.", source: 'Wikimedia Commons, CC BY 2.0' },
     { course: 6,  ref: 'Photo 2.2', need: 'A healthy chicken foot, top and bottom, with smooth shanks and an unblemished pad.', source: 'Aviagen' },
     { course: 6,  ref: 'Photo 5.1', need: 'A healthy commercial white leghorn laying hen, live, showing comb, eyes, and posture.', source: 'USDA Agricultural Research Service / Stephen Ausmus, Public Domain' },
-    { course: 8,  ref: 'Photo 4.3', need: 'A confirmed wing web vaccination take nodule at the stab site.', source: 'Tesfaye YT et al., Acta Vet Scand. 2022;64:38, CC BY 4.0' },
+    { course: 8,  ref: 'Photo 4.3', need: 'A confirmed wing web vaccination take nodule at the stab site.', source: 'Andrews SJ et al., Trop Anim Health Prod. 2022;54:315, CC BY 4.0' },
     { course: 12, ref: 'Photo 1.1', need: 'Day-old chicks settling in at placement, active and spread across fresh litter, chick check underway.', source: 'cobbgenetics.com' },
     { course: 12, ref: 'Photo 2.1', need: 'Common chick culls in one frame: cross-beak, splayed or twisted legs, twisted neck, infected navel, labored breathing.', source: 'salto.com.ph; ceva.vn; Olkowski et al., Acta Vet Scand 2019; Taha & Mohammed, J Educ Sci 2022' },
     { course: 12, ref: 'Photo 3.1', need: 'Manual cervical dislocation shown step by step: securing the bird, gripping the head, the stretch that separates the neck at the skull base.', source: 'Poultry Industry Council, Practical Guidelines for On-Farm Euthanasia of Poultry, 2nd ed., 2016' },

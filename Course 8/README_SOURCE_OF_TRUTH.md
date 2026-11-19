@@ -2,7 +2,8 @@
 
 **The course document is the source of truth, not a generator script.**
 
-- **Live file:** `Course 8/RV-revised-NB-edited course 8 draft.docx` (and its rendered `.pdf`). This file was originally created as `Vaccination_draft.docx`, renamed to `Revised Course 8.docx`, then renamed again (marked "final") to its current name — this document was not kept in sync with those renames until 2026-07-21. `Course 8/Revised Course 8.docx` is a superseded intermediate copy; do not edit it, it is not what's published. Confirm the live file by diffing its byte size against `dashboard/public/docs/course-08-vaccination-treatment.docx` (the two must match exactly after every publish).
+- **Live file (November 2026):** `Course 8/Vaccination_and_Treatment_V3.docx`. Older versions are in `_superseded/` (V1, V2). Rebuild with `node patch-course8-v3-audit.cjs` (it reads `_superseded/Vaccination_and_Treatment_V2.docx`), then refresh TOC pages with `node toc-refresh-course8-v3.cjs "<docx>" "<pdftotext pages .txt>"`. Confirm the live file by comparing its hash with `dashboard/public/docs/course-08-vaccination-treatment.docx`. Everything below this bullet is history from before the V-numbered names.
+- **Former live file (July 2026):** `Course 8/RV-revised-NB-edited course 8 draft.docx` (and its rendered `.pdf`). This file was originally created as `Vaccination_draft.docx`, renamed to `Revised Course 8.docx`, then renamed again (marked "final") to its current name — this document was not kept in sync with those renames until 2026-07-21. `Course 8/Revised Course 8.docx` is a superseded intermediate copy; do not edit it, it is not what's published. Confirm the live file by diffing its byte size against `dashboard/public/docs/course-08-vaccination-treatment.docx` (the two must match exactly after every publish).
 - **Companion summary:** `Course 8/Summary_Page_Course8_Vaccination.docx`
 
 ## Why there is no working generator

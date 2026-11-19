@@ -248,3 +248,63 @@ Following the same fix already applied to Course 15 (Serology 101), the user fla
 - **Files published:** copied the corrected docx to `dashboard/public/docs/course-08-vaccination-treatment.docx` (byte-size confirmed matching).
 - **Not fixed, left untouched:** `Course 8/Revised Course 8.docx` (superseded intermediate, not the live/published file).
 - **Post-fix integrity checks (2026-07-21):** mammoth `extractRawText` — 0 messages; 0 em dashes; 0 `w:dirty` flags; 0 unescaped `&`; British-spelling sweep clean (only "CPC Learning Centre" proper-noun hits); citation first-appearance order sequential 1-25.
+
+
+---
+
+## 2026-11-19 Addendum: full claims-and-references audit, V3 (28 references)
+
+**File:** `Vaccination_and_Treatment_V3.docx`, built from the published V2 by `patch-course8-v3-audit.cjs`. V2 moved to `_superseded/`.
+**Method:** every reference re-checked online or against the local PDF, and every cited sentence checked against the text of the source it cites. Before this addendum, the log covered only the original 20 references plus the July addendum. This addendum covers all 28 in V3 numbering.
+
+### Reference-by-reference status (V3 numbering)
+
+| # | Reference | Identifier checked | Fields / claim check |
+|---|---|---|---|
+| 1 | CPC General Principles of Vaccination | Local PDF `principles_of_vaccination.pdf` | Supports: art of vaccination, healthy birds only, incineration, coarse >100 / fine 50-100 / aerosol <50 microns, stair-step, 2% blue-dye tongue check, 2% wing web check, 18 g needles of 6 or 12 mm changed every 200-500 birds, 0.5 mL dose, wing web for AE and fowl cholera, no chlorine for 24 h after water vaccination, biosecurity build-up. It does NOT support -196 °C storage (it says -80 °C), so that claim was re-cited to [7]. |
+| 2 | Burns Grogan K et al. Avian Immune System, Merial 2008 | Local PDF | Authors confirmed. Supports the IgM/IgY/IgA table, Harderian gland, cecal tonsil, BALT. Now also cited in 2.1, replacing [5], which does not cover the pathway. |
+| 3 | CPC Maternal Antibody Transfer | Local PDF | Supports yolk IgG and albumen IgA (NOT IgM, which was removed), 10% / 2,500 of 25,000 chicks without antibody, no magic titer numbers, and "high titered hens produce high titered chicks" (5.1 reworded to match). |
+| 4 | Swayne DE, Diseases of Poultry 14th ed. 2020 | Wiley-Blackwell, standard | Unchanged. |
+| 5 | Merck VM, Vaccination Programs for Poultry (Stewart-Brown, Apr 2023) | merckvetmanual.com, fetched 2026-11-19 | Example schedules only. Supports in-ovo at 17-19 d, IBD combined with Marek's, vectored vaccines, AE at 10-12 wk (course said 10-15, corrected), killed pre-lay shots at 16-18 wk for breeders and 18 wk for layers (course said 14-16 and 18-20, corrected). Removed from claims it does not contain: nozzle wear, stacking live vaccines, the disease-complexity paragraph. |
+| 6 | Merck VM, Types of Vaccines for Animals (2026) | Verified 2026-07-21 | Unchanged. Cited date aligned to Nov. |
+| 7 | Montiel E. Marek's troubleshooting, Merial 2005 | Local PDF | Has a liquid nitrogen handling section, so it is now cited for LN2 storage. It does NOT mention litter exposure from day one, so that sentence was re-cited to [4]. |
+| 8 | CPC IBD Disease Profile | Local PDF | Unchanged. |
+| 9 | Rohollahzadeh H et al. Comp Clin Path 2018;27(5):1241-1255 | doi:10.1007/s00580-018-2728-z (CrossRef) | All 5 authors, title, journal, volume, issue and pages match. |
+| 10 | Merck VM, Newcastle Disease in Poultry (Dimitrov, updated Jul 2026) | merckvetmanual.com, fetched 2026-11-19 | Year corrected from 2023 to 2026. Now also supports 1.7: NDV conjunctivitis in people is transitory and "limited primarily to laboratory workers and vaccination teams". This replaces the unsourced "regularly affects personnel". |
+| 11 | CPC IBV Disease Profile | Local PDF | Quote corrected to the verbatim wording: "highly transmissible and **is** a tremendous hazard for unvaccinated flocks". |
+| 12 | **NEW** Dizaji R. Infectious Bronchitis in Chickens [Fact Sheet], CPC Learning Centre 2026 | `Course 8/CPC-FactSheet_infectious-bronchitis_two-page.pdf` (added at the user's request) | Supports: strain change and patchy immunity; partial coverage lets vaccine virus grow harsher; second live coarse spray at 2-3 wk; killed IB at 16-20 wk only works after proper live priming; DMV/1639 first found in Ontario in 2015 and since reached other provinces; not yet found by CPC in BC; vaccines alone have not controlled it. |
+| 13 | Merial. Water Vaccination | Local PDF `Water-Vax.pdf` | Supports the 72 h chlorinator window, charcoal filter, 40% of daily intake, Table 1.1 volumes, 21 °C, milk at 454 g/190 L, 15% vial loss, sump pump, proportioner warning, burning vials, PPE. Its drinker minimums are 1 bell per 100, 1 nipple per 15, 1 cup per 30, and 1 trough per 150 (6 ft) or 200 (8 ft). The V2 figures (1/50, 1/10-12, 1/25) were cited to [12,13,14] but appear in none of them, so V3 states the Merial minimums with [13] and says more space is better. |
+| 14 | Fernandez A. Drinking Water Vaccination, Aviagen Brief, Sept 2008 | Local PDF + en.aviagen.com | Named author added. Supports 1.5-2 h consumption, plastic equipment and the hard-metal warning (replacing Bist [old 15] for the metal claim), about 3 weeks for antibodies to develop, and the blue-dye check of 100 birds with at least 90% stained. It does NOT give a 72 h chlorinator window, so it was removed from those lines. |
+| 15 | Cobb-Vantress. Cobb Vaccination Management Guide, Jul 2025 | Local PDF + cobbgenetics.com | Title confirmed. Supports the 0.03 mL eye drop; wing web for Fowl Pox, AE, Chicken Anemia and live fowl cholera; take checks at 7-10 d on 50-100 birds with two-nodule scoring; 18 g ¼ in needles changed every 500-1,000; neck SC technique; breast IM 3-5 cm from the keel at 45 degrees toward the vent; oil-vaccine self-injection "poses a serious danger" and needs immediate medical attention; milk at 500 g/200 L; chlorine off 48 h; water withdrawal. |
+| 16 | Ojkic D, Susta L, Martin E. J Vet Diagn Invest 2024;36(6):804-808 | doi:10.1177/10406387241265955, PMID 39108146 | Fields match. Abstract: 50.3% of typed Canadian IBVs from 2014-2023 were US-related variants, and DMV/1639 has been a continuous challenge since 2015. It says nothing about Ontario vs BC, so the old sentence was rewritten. |
+| 17 | Merial. Coarse Spray Vaccination | Local PDF | Supports 4.5-5.0 bar, the volumes, 1 m height, 4 m from the wall, fans off plus 20 min, sprayer care, PPE including a mask. |
+| 18 | CPC ILT Disease Profile | Local PDF | Respiratory and ocular natural route confirmed. |
+| 19 | Al-Rasheed M et al. Vaccine 2023;41(31):4508-4524 | doi:10.1016/j.vaccine.2023.05.073 (CrossRef) | All fields match. |
+| 20 | Andreasen JR Jr et al. Avian Dis 1989;33(3):516-523 | PMID 2549939 (PubMed esummary) | All 6 authors and fields match. |
+| 21 | Butcher GD, Miles RD, Nilipour AH. ND and IB Vaccine Reactions in Commercial Broilers | doi:10.32473/edis-vm097-2002; local PDF | The old entry mixed "VM132" with a VM097 URL. The local PDF is VM132 (originally June 10, 2002), and EDIS now hosts it as VM097 (revised 2017). Entry rewritten with year and DOI. Supports a reaction at 2-3 d lasting 5-7 d, "no reaction needs to be investigated", special handling of MG flocks (less aggressive route, antibiotic therapy), secondary E. coli, and reactivity order fine spray > coarse > eye drop > water. MS removed (the source discusses MG only). |
+| 22 | CPC Fowl Pox in the Fraser Valley | Local PDF | Supports slow roll-through, vaccinating in the face of an outbreak, and confirming the diagnosis first. It does NOT give "7 to 10 days to build immunity", which was removed. |
+| 23 | Merial. Injection of Inactivated Vaccines | Local PDF `Inactive-Vax.pdf` | Supports storage at 2-8 °C in the dark, do not freeze, out of the fridge 24 h ahead, 22 °C, no vaccinating on a feed day, shake 30 s, mineral-oil calibration with 5 doses before and halfway through, 18 g needles, SC preferred (IM causes abscesses and condemnations), needle changed by 1,000, a checker for missed birds, injector cleaning, and for self-injection "consult a doctor immediately". V2 said a needle-stick was "generally low risk", which **contradicted the source and was corrected**. [23] was removed from claims it does not contain: the 20-30 degree angle, 2-3 h after a feed push, a 1.0 mL dose, the lump resolving in 2-3 weeks, sharps disposal, site rotation. |
+| 24 | **NEW** WHO. Antimicrobial resistance [Fact sheet] | who.int/news-room/fact-sheets/detail/antimicrobial-resistance | Replaces CIPARS for the AMR definition (the CIPARS page does not define AMR). |
+| 25 | PHAC. CIPARS 2023: Key and Integrated Findings | canada.ca page, title confirmed, page date 2025-09-18 | Year corrected from 2023 to 2025. Now cited only for resistant Salmonella tracked across chickens, chicken meat and people. |
+| 26 | **NEW** Canadian Academy of Health Sciences. AMR/AMU in Food-Producing Animals in Canada, 2025 | Local PDF `CAHS-AMU-Report_EN_Final-1.pdf` | Supports letting culture and susceptibility testing guide drug choice, especially before high-importance drugs. |
+| 27 | Health Canada. Responsible use of Medically Important Antimicrobials in animals | canada.ca page, fetched 2026-11-19 | Title and the Dec 1, 2018 prescription-only rule confirmed; OTC MIAs became prescription drugs. The page does not list categories and does not mention any "Veterinary Health Certificate". |
+| 28 | **NEW** Health Canada. Categorization of Antimicrobial Drugs Based on Importance in Human Medicine (Version April 2009) | canada.ca page | Category IV is "not used in human medicine", and its examples include ionophores. Replaces the unsourced line "nearly all antibiotics used routinely in poultry". |
+
+**Removed:** old [15], Bist RB et al. Poult Sci 2024;103(12):104295 (doi:10.1016/j.psj.2024.104295). The paper is real (CrossRef, all 9 authors match), but it is a sustainability review and does not support the metal-ion claim it was attached to.
+
+**Citation remap (V2 to V3):** 1-11 unchanged; new fact sheet = 12; 12 to 13, 13 to 14, 14 to 15; 15 removed; 16-20 unchanged; 23 to 21, 21 to 22, 22 to 23; new WHO = 24; 24 to 25; new CAHS = 26; 25 to 27; new HC categorization = 28. First-appearance order verified sequential 1-28. The bibliography was physically reordered, and its count was asserted equal to the number of distinct citations.
+
+### Other corrections (non-reference)
+- The Photo 4.3 credit "Tesfaye YT et al., Acta Vet Scand 2022;64:38" was wrong; that citation is a pig anesthesia paper (PMID 36522634). The image is the right-hand panel of Fig. 2 in Andrews SJ et al., Trop Anim Health Prod 2022;54:315 (PMC9508032, CC BY 4.0), confirmed by visual comparison.
+- Section 6 cross-referenced a "Hatchery Management and Incubation Biology course in this series" that does not exist, so it was removed. Course 7 cross-references cut from 3 to 2.
+- "Veterinary Health Certificate" removed from the LOs and the summary page. It appears in neither CPC source file nor on the Health Canada page.
+- Killed ILT bullet in 5.2 removed (no source, and the table already lists ILT as live only). The killed IBV component is no longer said to boost "mucosal" immunity.
+- "Gumboro" removed in 3 places, per the June 2026 series-wide decision that had not reached this file.
+- Avian Pathology publisher corrected: it is the official journal of the WVPA, published by Taylor & Francis, not by the Houghton Poultry Research Station.
+- Figure 1.1 (generate-course8-figures.mjs) contradicted Section 1.6 by putting water back on at +4 h. It now shows +2 h, the 40% dose rule, and the chlorine window of 72 h before to 24 h after.
+- Wrong internal section pointers in 2.9 fixed. 2.8 typos fixed ("waster", a missing period).
+- Sentence-level farmer-flow rewrites: the 5.3 injector and midway-calibration paragraphs, the 2.4 cold-chain paragraph, the three 2.8 troubleshooting bullets, and the Section 3 opener ("Field and experimental studies show...").
+- Cover date and all live-source cited dates set to November 2026.
+
+### Integrity checks (2026-11-19)
+mammoth 0 messages; 0 em/en dashes; 0 w:dirty; 0 unescaped &; British-spelling sweep clean (only the "CPC Learning Centre" proper noun, and "learning-centre" in a URL); every genus name italic; no "vet" short form; TOC page numbers re-mapped from a fresh LibreOffice render (11 rows changed, every row found).
