@@ -10,7 +10,7 @@ const JSZip = require('jszip');
 const fs = require('fs');
 
 const SRC = 'Course 8/_superseded/Vaccination_and_Treatment_V2.docx';
-const OUT = 'Course 8/Vaccination_and_Treatment_V3.docx';
+const OUT = process.env.C8_OUT || 'Course 8/Vaccination_and_Treatment_V3.docx';   // C8_OUT: build elsewhere, e.g. while the docx is open in Word
 const NEWFIG = 'Course 8/fig1_2.png';           // corrected water timeline (Figure 1.1)
 
 const esc = s => s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
@@ -368,6 +368,19 @@ function insertAfter(find, text) {
   const firstBib = xml.indexOf(bibParas[0]);
   const lastBib = xml.indexOf(bibParas[bibParas.length - 1]) + bibParas[bibParas.length - 1].length;
   xml = xml.slice(0, firstBib) + newBib + xml.slice(lastBib);
+
+  // ---------------- Section starts: page-break paragraph -> pageBreakBefore on the heading ----------------
+  // A paragraph holding only <w:br w:type="page"/> before a Heading 1 lands alone on a blank page
+  // whenever the previous page fills exactly (page 18 before Section 2 did). Sections 8 and the
+  // Journals already used pageBreakBefore on the heading, so make every section start the same.
+  {
+    let fixed = 0;
+    xml = xml.replace(/<w:p\b[^>]*>(?:<w:pPr>(?:(?!<\/w:pPr>)[\s\S])*<\/w:pPr>)?<w:r>(?:<w:rPr>(?:(?!<\/w:rPr>)[\s\S])*<\/w:rPr>)?<w:br w:type="page"\/><\/w:r><\/w:p>(<w:p\b[^>]*>)(<w:pPr>)((?:(?!<\/w:pPr>)[\s\S])*?<w:pStyle w:val="Heading1"\/>(?:<w:keepNext\/>)?(?:<w:keepLines\/>)?)/g,
+      (m, pOpen, pPrOpen, head) => { fixed++; return pOpen + pPrOpen + head + (/<w:pageBreakBefore\/>/.test(m) ? '' : '<w:pageBreakBefore/>'); });
+    if (fixed !== 8) throw new Error(`expected 8 section-start page breaks, converted ${fixed}`);
+    if (/<w:p\b[^>]*><w:r><w:br w:type="page"\/><\/w:r><\/w:p><w:p\b[^>]*><w:pPr><w:pStyle w:val="Heading1"/.test(xml)) throw new Error('page-break paragraph survived before a Heading 1');
+    log.push(`SECTION BREAKS converted: ${fixed}`);
+  }
 
   // ---------------- Italicize genus names introduced by the new text ----------------
   // Splits the run holding the word into pre / italic word / post runs.

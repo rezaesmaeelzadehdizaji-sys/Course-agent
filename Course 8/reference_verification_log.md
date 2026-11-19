@@ -308,3 +308,5 @@ Following the same fix already applied to Course 15 (Serology 101), the user fla
 
 ### Integrity checks (2026-11-19)
 mammoth 0 messages; 0 em/en dashes; 0 w:dirty; 0 unescaped &; British-spelling sweep clean (only the "CPC Learning Centre" proper noun, and "learning-centre" in a URL); every genus name italic; no "vet" short form; TOC page numbers re-mapped from a fresh LibreOffice render (11 rows changed, every row found).
+
+**Follow-up (2026-11-19):** page 18 was blank. Sections 1-7 and the Quick Reference started after a separate paragraph holding only a page break, which landed alone on its own page whenever the page before filled exactly. All eight now use pageBreakBefore on the heading (as Section 8 and the Journals already did). No blank pages remain (52 pages); TOC page numbers re-mapped from a fresh render.
