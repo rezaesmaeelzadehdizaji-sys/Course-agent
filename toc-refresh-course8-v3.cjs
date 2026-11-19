@@ -13,7 +13,7 @@ const norm = s => s.replace(/&amp;/g, '&').replace(/[‘’]/g, "'").replace(/\s
   let xml = await zip.file('word/document.xml').async('string');
   const sdt = xml.match(/<w:sdt>[\s\S]*?<\/w:sdt>/)[0];
   // body starts after the TOC: first page (after page 2) whose lines include "introduction" as a heading line
-  let cursor = pages.findIndex((p, i) => i > 2 && p.includes('introduction'));
+  let cursor = pages.findIndex((p, i) => i >= 1 && p.includes('introduction'));   // TOC rows read "introduction 3", so only the heading line matches exactly
   if (cursor < 0) throw new Error('Introduction page not found');
   let changed = 0; const missed = [];
   const newSdt = sdt.replace(/<w:hyperlink[^>]*>([\s\S]*?)<\/w:hyperlink>/g, (full, inner) => {
