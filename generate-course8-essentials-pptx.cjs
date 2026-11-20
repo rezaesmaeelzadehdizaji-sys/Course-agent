@@ -235,12 +235,13 @@ async function photo(s, file, x, y, w, h, credit) {
   }
   {
     const s = content('Step 4: check your work', 'Walk the barn every half hour. The water should look white or blue and be gone in about two hours. With a blue dye, check tongues of 100 birds from at least three spots: at least 90% should be blue [2]. Why it matters: the CPC Learning Centre IB fact sheet explains that strong, even immunity gives viruses like infectious bronchitis fewer chances to change, while patchy immunity lets new types arise [5].');
-    stat(s, 0.5, 1.25, 4.2, '90 of 100', 'birds should have a blue tongue when you check', { bigSize: 48, bigH: 0.95, labelH: 0.6 });
-    bullets(s, ['Walk the barn every 30 minutes', 'Water white or blue in the lines', 'All gone in about 2 hours'], { x: 0.5, y: 3.0, w: 4.2, h: 1.8, fontSize: 16 });
-    s.addShape(pres.ShapeType.roundRect, { x: 5.1, y: 1.25, w: 4.4, h: 3.6, fill: { color: NAVY }, line: { color: NAVY }, rectRadius: 0.08, objectName: 'quote' });
-    text(s, 'Why every bird matters', { x: 5.4, y: 1.45, w: 3.8, h: 0.4, fontSize: 16, bold: true, color: GOLD });
-    text(s, 'Strong, even flock immunity gives a virus like infectious bronchitis fewer chances to change. Patchy immunity lets new types arise.', { x: 5.4, y: 1.95, w: 3.8, h: 2.0, fontSize: 18, italic: true, color: WHITE });
-    text(s, 'CPC Learning Centre, IB fact sheet', { x: 5.4, y: 4.15, w: 3.8, h: 0.4, fontSize: 12, color: MIDBLUE });
+    stat(s, 0.5, 1.2, 4.3, '90 of 100', 'birds should have a blue tongue when you check', { bigSize: 44, bigH: 0.8, labelH: 0.4 });
+    await photo(s, 'cobb_water_nipple.jpg', 0.5, 2.6, 4.3, 2.3, 'Is every bird drinking? Source: Cobb-Vantress, 2025.');
+    card(s, 5.1, 1.25, 4.4, 1.6, 'Walk the barn', ['Every 30 minutes', 'Water white or blue in the lines', 'All gone in about 2 hours'], { bodySize: 15 });
+    s.addShape(pres.ShapeType.roundRect, { x: 5.1, y: 3.0, w: 4.4, h: 1.9, fill: { color: NAVY }, line: { color: NAVY }, rectRadius: 0.08, objectName: 'quote' });
+    text(s, 'Why every bird matters', { x: 5.4, y: 3.12, w: 3.8, h: 0.35, fontSize: 15, bold: true, color: GOLD });
+    text(s, 'Strong, even flock immunity gives a virus like infectious bronchitis fewer chances to change. Patchy immunity lets new types arise.', { x: 5.4, y: 3.5, w: 3.8, h: 1.0, fontSize: 14, italic: true, color: WHITE });
+    text(s, 'CPC Learning Centre, IB fact sheet', { x: 5.4, y: 4.5, w: 3.8, h: 0.3, fontSize: 11, color: MIDBLUE });
   }
 
   section('4. Other Methods');
@@ -252,9 +253,14 @@ async function photo(s, file, x, y, w, h, credit) {
       { x: 0.5, y: 1.2, w: 9.0, colW: [2.4, 6.6], rowH: 0.52, border: { type: 'solid', pt: 0.5, color: 'D5DEEA' }, margin: 0.08, valign: 'middle', fontFace: 'Calibri' });
   }
   {
-    const s = content('Spray and eye drop', 'Spray: one walk covers the barn. Steady 4.5 to 5.0 bar (65 to 75 psi), commercial distilled water (what CPC uses), nozzle down 1 m above heads, within 4 m of the wall, fans off during and 20 minutes after, sprayer for vaccine only [6]. Eye drop: one drop of about 0.03 mL on the eye [7]; hold the bird until the drop disappears; blue-dye check on 2% of birds [1].');
-    card(s, 0.5, 1.2, 4.35, 3.7, 'Spray', ['Steady 4.5 to 5.0 bar (65 to 75 psi)', 'Commercial distilled water (what CPC uses)', 'Nozzle down, 1 m above the heads', 'Within 4 m of the wall', 'Fans off, and 20 min after', 'Sprayer for vaccine only'], { bodySize: 15 });
-    card(s, 5.15, 1.2, 4.35, 3.7, 'Eye drop', ['One drop of about 0.03 mL', 'Head tilted, eye facing up', 'Never touch the dropper to the eye', 'Hold until the drop disappears', 'Blue tongues on 2% of birds'], { bodySize: 15, fill: NAVY, titleColor: GOLD, bodyColor: WHITE });
+    const s = content('Spray: one walk covers the barn', 'Spray covers the whole barn in one walk. Droplet size is everything: drops that are too fine go too deep and the birds react harder. Steady 4.5 to 5.0 bar (65 to 75 psi), commercial distilled water (what CPC uses), nozzle down 1 m above heads, within 4 m of the wall, fans off during and 20 minutes after, sprayer for vaccine only [6]. The photo shows a three-person backpack crew: one sprayer for each side of the house and one down the middle [7].');
+    await photo(s, 'cobb_spray_backpack.jpg', 0.5, 1.15, 4.6, 3.75, 'Three-person spray crew. Source: Cobb-Vantress, 2025.');
+    card(s, 5.4, 1.2, 4.1, 2.85, 'Spray settings', ['Steady 4.5 to 5.0 bar (65 to 75 psi)', 'Commercial distilled water (what CPC uses)', 'Nozzle down, 1 m above the heads', 'Within 4 m of the wall', 'Fans off, and 20 min after', 'Sprayer for vaccine only'], { bodySize: 15 });
+  }
+  {
+    const s = content('Eye drop: one drop, one bird', 'Eye drop is the most exact way to give a live respiratory vaccine. Tilt the head so the eye faces up and let one drop of about 0.03 mL fall onto the eye [7]. Never touch the dropper to the eye. Hold the bird until the drop disappears when it blinks. With a blue dye, check the tongues of 2% of the birds [1].');
+    await photo(s, 'cobb_eye_drop.jpg', 0.5, 1.15, 4.6, 3.75, 'Eye drop vaccination. Source: Cobb-Vantress, 2025.');
+    card(s, 5.4, 1.2, 4.1, 3.1, 'Eye drop', ['One drop of about 0.03 mL', 'Head tilted, eye facing up', 'Never touch the dropper to the eye', 'Hold until the drop disappears', 'Blue tongues on 2% of birds'], { bodySize: 15, fill: NAVY, titleColor: GOLD, bodyColor: WHITE });
   }
   {
     const s = content('Boosters at 2 to 3 weeks: now a 7-day withdrawal', 'Depending on the farm, CPC’s veterinary team recommends a second round of live vaccine in week 2 to 3: the Zoetis live Massachusetts and Connecticut type IB vaccine by coarse spray [5], and on some farms a live IBD vaccine, Bursine 2. Until 2026 every vaccine used in a food animal in Canada had a withdrawal period of at least 21 days. Since February 2, 2026, CFIA Memorandum 2026-01 sets 7 days for six live IB and IBD vaccines made in the U.S., so broilers can be boosted closer to slaughter age: CLONEVAC D-78, UNIVAX PLUS, Bursine 2, MILDVAC-Ma5, and the two Zoetis live bronchitis vaccines (Massachusetts type; Massachusetts and Connecticut type) [12]. During the changeover, stock still labeled 21 days may be used with 7 days. Every other vaccine: follow the label [12].');
@@ -263,6 +269,11 @@ async function photo(s, file, x, y, w, h, credit) {
     card(s, 4.3, 1.2, 5.2, 1.25, 'IB booster, week 2 to 3', 'Zoetis live Massachusetts and Connecticut type vaccine, by coarse spray.', { bullet: false, bodySize: 15 });
     card(s, 4.3, 2.6, 5.2, 1.25, 'IBD booster, on some farms', 'Bursine 2, week 2 to 3. Your veterinarian decides by farm.', { bullet: false, bodySize: 15 });
     card(s, 0.5, 4.05, 9.0, 0.85, null, 'Every other vaccine keeps the withdrawal on its label: at least 21 days. Check before you vaccinate.', { bullet: false, bodySize: 15, fill: NAVY, bodyColor: WHITE });
+  }
+  {
+    const s = content('Giving the wing web stab', 'A two-pronged needle is dipped in vaccine and pushed through the thin skin of the wing web, mostly for fowl pox [1]. Go through the web on the underside of the wing, clear of feathers, blood vessels, and bone [7].');
+    await photo(s, 'cobb_wing_web.jpg', 0.5, 1.15, 4.6, 3.75, 'Wing web vaccination. Source: Cobb-Vantress, 2025.');
+    card(s, 5.4, 1.2, 4.1, 3.2, 'The stab', ['Two-pronged needle dipped in vaccine', 'Through the thin web on the underside of the wing', 'Clear of feathers, blood vessels, and bone', 'Mostly used for fowl pox'], { bodySize: 15 });
   }
   {
     const s = content('Wing web: the take shows on the bird', 'A two-pronged needle goes through the thin skin of the wing web, mostly for fowl pox [1]. Seven to ten days later, check 2% of the flock [1] and at least 50 to 100 birds at random [7]. Two small bumps is a good take. No bump means the bird was missed and is not protected [7].');
@@ -278,10 +289,11 @@ async function photo(s, file, x, y, w, h, credit) {
   }
   {
     const s = content('Injection, and one serious warning', 'Killed vaccines go under the skin at the back of the neck. Out of the fridge 24 hours ahead to warm to about 22 degrees; shake well for 30 seconds and often; not on a feed day; a second person catches missed birds [8]. Self-injection with oil vaccine is an emergency: oil in a finger or hand can cut off blood flow and cause serious injury [7]. See a doctor right away and take the label [8].');
-    card(s, 0.5, 1.2, 4.35, 3.7, 'Injection basics', ['Out of the fridge 24 h ahead (about 22°C)', 'Shake well, 30 seconds, and often', 'Not on a feed day', 'A second person catches missed birds'], { bodySize: 15 });
-    s.addShape(pres.ShapeType.roundRect, { x: 5.15, y: 1.2, w: 4.35, h: 3.7, fill: { color: RED }, line: { color: RED }, rectRadius: 0.08, objectName: 'warning' });
-    text(s, 'Injected yourself?', { x: 5.45, y: 1.4, w: 3.8, h: 0.5, fontSize: 22, bold: true, color: WHITE });
-    text(s, 'Treat it as an emergency, even for a tiny amount. Oil in a finger can cut off the blood flow. See a doctor right away and take the vaccine label.', { x: 5.45, y: 2.0, w: 3.8, h: 2.6, fontSize: 17, color: WHITE });
+    await photo(s, 'cobb_sc_neck.jpg', 0.5, 1.15, 4.6, 3.75, 'Under the skin of the neck. Source: Cobb-Vantress, 2025.');
+    card(s, 5.4, 1.2, 4.1, 1.85, 'Injection basics', ['Out of the fridge 24 h ahead (about 22°C)', 'Shake well, 30 seconds, and often', 'Not on a feed day', 'A second person catches missed birds'], { bodySize: 14 });
+    s.addShape(pres.ShapeType.roundRect, { x: 5.4, y: 3.2, w: 4.1, h: 1.5, fill: { color: RED }, line: { color: RED }, rectRadius: 0.08, objectName: 'warning' });
+    text(s, 'Injected yourself?', { x: 5.55, y: 3.28, w: 3.8, h: 0.4, fontSize: 16, bold: true, color: WHITE });
+    text(s, 'Treat it as an emergency, even for a tiny amount. Oil in a finger can cut off the blood flow. See a doctor right away and take the vaccine label.', { x: 5.55, y: 3.68, w: 3.8, h: 0.95, fontSize: 13, color: WHITE });
   }
 
   section('5. After Vaccination');

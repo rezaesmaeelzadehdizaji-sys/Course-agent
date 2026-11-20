@@ -40,3 +40,7 @@ numbers mapped from a LibreOffice render; 13 pages with no blank pages.
 
 ## 2026-11-19 update
 Added the CPC week 2 to 3 booster recommendation (Section 4.1, attributed to CPC), CPC's use of commercial distilled water for spray, and the CFIA 7-day vaccine withdrawal (Section 6.2, ref 12). V3 numbers in the table above were updated to the 29-reference list. Rebuilt at 13 pages with no blank pages; TOC re-mapped.
+
+## 2026-11-20 update: Cobb photos
+Five real photographs from the Cobb Vaccination Management Guide (Ess. ref 7, already verified) were added to the handbook and the deck, the same images used in V3 (see `Course 8/reference_verification_log.md`, Addendum 5, for the page-by-page check of each caption against the Cobb text). Handbook: Photo 3.1 (nipple line, 3.4), Photo 4.1 (three-person backpack spray crew, 4.1), Photo 4.2 (eye drop, 4.2), Photo 4.3 (wing web applicator, 4.3; the take photo became 4.4), Photo 4.5 (injection under the neck skin, 4.4). Every caption reads "Source: Cobb-Vantress, Cobb Vaccination Management Guide, 2025." No reference was added or renumbered. Deck: 23 slides; "Spray and eye drop" split into two photo slides, a new "Giving the wing web stab" slide, and photos on the water check and injection slides. Notes cite [7] for the crew layout and the wing web site.
+Integrity: handbook rebuilt at 15 pages (was 13), no orphan or blank pages, TOC re-mapped (28 rows, stable on a second pass); mammoth 0 messages; 0 dashes; 0 w:dirty; 0 unescaped &. Deck XML parses with 0 errors, 0 dashes.

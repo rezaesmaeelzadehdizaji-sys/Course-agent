@@ -242,6 +242,7 @@ function buildS3() {
     h2('3.4 Check Your Work'),
     para('Do not just assume it worked. Walk the barn every half hour during vaccination. The water in the lines should look white (milk) or blue (a colored stabilizer), and it should all be gone within about two hours.'),
     para('If you used a blue dye, you can see who drank. Check the tongues of 100 birds from at least three different spots in the barn. At least 90% should be stained blue [@AVIAGEN].'),
+    ...image('cobb_water_nipple.jpg', 'Photo 3.1: Broilers at a nipple drinker line. On vaccination day, walk the house to check that all the birds are drinking. Source: Cobb-Vantress, Cobb Vaccination Management Guide, 2025.', 4.4),
     callout('Why every bird matters. Some viruses, like infectious bronchitis, change all the time. The CPC Learning Centre Infectious Bronchitis fact sheet explains that strong, even flock immunity gives the virus fewer chances to multiply and change, while patchy immunity lets new types arise [@IBFS].'),
   ]);
 }
@@ -264,18 +265,22 @@ function buildS4() {
     bullet('Hold the nozzle pointing down, 1 m (3 ft) above the birds’ heads, and stay within 4 m (12 ft) of the wall.'),
     bullet('Turn the fans off while you spray and keep them off for 20 minutes after. On hot days, vaccinate very early in the morning.'),
     bullet('Use the sprayer for vaccine only. Never use it for disinfectant or pesticide.'),
+    ...image('cobb_spray_backpack.jpg', 'Photo 4.1: A three-person backpack spray crew in a broiler house: one sprayer for each side of the house and one down the middle. Source: Cobb-Vantress, Cobb Vaccination Management Guide, 2025.', 5.2),
     labeled('Boosting at 2 to 3 weeks.', 'Depending on the farm, CPC’s veterinary team recommends a second round of live vaccine in week 2 to 3: a live infectious bronchitis vaccine (the Zoetis Massachusetts and Connecticut type) by coarse spray [@IBFS], and on some farms a live IBD vaccine (Bursine 2) as well.'),
     h2('4.2 Eye Drop'),
     para('Eye drop is the most exact way to give a live respiratory vaccine: one drop, one bird. Hold the bird firmly, tilt its head so the eye faces up, and let one drop of about 0.03 mL fall onto the eye [@COBB]. Do not touch the dropper to the eye. Hold the bird until the drop disappears when it blinks. If you added blue dye, check the tongues of 2% of the birds afterward: a blue tongue means the drop went in [@GP].'),
+    ...image('cobb_eye_drop.jpg', 'Photo 4.2: Eye drop vaccination. One hand steadies the head while the dropper tip is tilted toward the open eye. The tip never touches the eye. Source: Cobb-Vantress, Cobb Vaccination Management Guide, 2025.', 3.8),
     h2('4.3 Wing Web'),
     para('A two-pronged needle is dipped in vaccine and pushed through the thin skin of the wing web, the flap of skin on the inside of the wing. It is mostly used for fowl pox [@GP]. This is the only method that shows you proof on the bird. Seven to ten days later, check the wing web of 2% of the flock [@GP], and at least 50 to 100 birds picked at random around the barn [@COBB]. Two small bumps, one from each prong, is a good "take". No bump means that bird was missed and is not protected [@COBB].'),
-    ...image('pox_take_wingweb.jpg', 'Photo 4.1: A take after wing web vaccination (circled). A small firm bump like this means the vaccine went in and the bird is responding. Source: Andrews SJ et al., Trop Anim Health Prod. 2022;54:315 (CC BY 4.0).', 1.35),
+    ...image('cobb_wing_web.jpg', 'Photo 4.3: Wing web vaccination. The two-pronged applicator goes through the web on the underside of the wing, clear of feathers, blood vessels, and bone. Source: Cobb-Vantress, Cobb Vaccination Management Guide, 2025.', 3.8),
+    ...image('pox_take_wingweb.jpg', 'Photo 4.4: A take after wing web vaccination (circled). A small firm bump like this means the vaccine went in and the bird is responding. Source: Andrews SJ et al., Trop Anim Health Prod. 2022;54:315 (CC BY 4.0).', 1.35),
     h2('4.4 Injection'),
     para('Killed vaccines are injected one bird at a time, usually under the loose skin at the back of the neck. Before pullets move to the laying barn, your veterinarian will often schedule a round of these. The Merial injection bulletin gives the key steps [@INJ]:'),
     bullet('Take the vaccine out of the fridge 24 hours ahead so it warms to about 22°C. Cold oil vaccine is thick and hard to inject.'),
     bullet('Shake it well for 30 seconds before you start, and often while you work.'),
     bullet('Do not vaccinate on a feed day. A full crop plus handling makes birds bring up feed.'),
     bullet('Have a second person watch for missed birds (head shaking, bleeding, wet feathers) and vaccinate them again.'),
+    ...image('cobb_sc_neck.jpg', 'Photo 4.5: Injection under the skin at the back of the neck. The needle goes into the pocket under the lifted skin, pointing toward the body. Source: Cobb-Vantress, Cobb Vaccination Management Guide, 2025.', 3.0),
     callout('If you inject yourself with an oil vaccine, treat it as an emergency, even if only a tiny amount went in. Oil injected into a finger or hand can cut off the blood supply and cause serious injury [@COBB]. See a doctor right away and take the vaccine label with you [@INJ].'),
   ]);
 }
