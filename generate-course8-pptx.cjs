@@ -284,7 +284,7 @@ async function photo(s, file, x, y, w, h, credit) {
     bullets(s, ['Walk the flock every 30 minutes', 'Solution white or blue in the lines, never clear', 'All of it gone within 2 hours', { text: 'Blue tongues on at least 90 of 100 birds checked', options: { bold: true, color: NAVY } }], { x: 0.5, y: 1.2, w: 4.4, h: 2.2, fontSize: 16 });
     text(s, 'Usual reasons it fails', { x: 0.5, y: 3.4, w: 4.4, h: 0.35, fontSize: 16, bold: true, color: RED });
     text(s, 'Chlorine left in the lines \u2022 maternal antibody still high \u2022 birds not thirsty \u2022 immunosuppression \u2022 wrong strain for your area', { x: 0.5, y: 3.8, w: 4.4, h: 1.1, fontSize: 14 });
-    await photo(s, 'Commercial broiler flock.jpg', 5.2, 1.2, 4.3, 3.6, 'Broilers on nipple lines. Source: CPC Short Courses.');
+    await photo(s, 'cobb_water_nipple_deck.jpg', 5.2, 1.2, 4.3, 3.6, 'Broilers at a nipple line. Source: Cobb-Vantress, 2025.');
   }
   {
     const s = content('Protect yourself from the vaccine', 'Live Newcastle virus can cause conjunctivitis in people. Wear gloves, a mask, and safety glasses for preparation and administration [14,16]. The Merck Veterinary Manual notes cases are usually short-lived and mostly in laboratory workers and vaccination crews handling large amounts of virus [10]. If vaccine gets in your eyes, flush with water and see a physician. Burn empty vials and containers [14], incinerate unused reconstituted vaccine [1], wash hands and forearms. Vaccinate only healthy birds [1].');
@@ -324,8 +324,13 @@ async function photo(s, file, x, y, w, h, credit) {
     });
     text(s, 'Water and volume', { x: 0.5, y: 3.2, w: 4.3, h: 0.35, fontSize: 16, bold: true, color: NAVY });
     bullets(s, ['Commercial distilled water (what CPC uses)', 'Day 1 on farm: 3 L per 10,000 birds', 'Over 7 days: 7 to 8 L per 10,000 birds'], { x: 0.5, y: 3.6, w: 4.3, h: 1.4, fontSize: 14 });
-    text(s, 'In the barn', { x: 5.2, y: 3.2, w: 4.3, h: 0.35, fontSize: 16, bold: true, color: NAVY });
-    bullets(s, ['Sprayer used for vaccine only, ever', 'Lights dimmed, birds grouped, walk slowly', 'Hot weather: go very early in the morning'], { x: 5.2, y: 3.6, w: 4.3, h: 1.4, fontSize: 14 });
+    text(s, 'Before you start', { x: 5.2, y: 3.2, w: 4.3, h: 0.35, fontSize: 16, bold: true, color: NAVY });
+    bullets(s, ['Sprayer used for vaccine only, ever', 'Check the pattern against a light', 'Practice run with water 1 to 2 days before'], { x: 5.2, y: 3.6, w: 4.3, h: 1.4, fontSize: 14 });
+  }
+  {
+    const s = content('A spray crew at work', 'The Cobb guide shows a three-person backpack crew in a broiler house: one sprayer for each side of the house and one down the middle [16]. In the barn: lights dimmed, broilers grouped along the wall and no more than 4 m (12 ft) from you, nozzle pointed down 1 m (3 ft) above their heads, slow steady walk. Fans off during the run and for 20 minutes after. On hot days go very early in the morning [18]. Gloves, mask, and safety glasses [16].');
+    await photo(s, 'cobb_spray_backpack.jpg', 0.5, 1.15, 5.3, 3.8, 'A three-person backpack spray crew. Source: Cobb-Vantress, 2025.');
+    card(s, 6.1, 1.2, 3.4, 3.7, 'In the barn', ['One sprayer for each side, one down the middle', 'Lights dimmed, birds grouped', 'Nozzle down, 1 m above the heads', 'Walk slowly and steadily', 'Hot weather: go very early'], { bodySize: 14 });
   }
   {
     const s = content('Spray troubleshooting', 'Low titers: check the water for chlorine, pressure (too high makes a fine mist), walking speed, vial rinsing [18]. High CV, a wide spread bird to bird: uneven coverage. Little or no response: cold chain first, then diluent [18]. Serology at about 21 days is a good coverage check. The CPC Learning Centre IB fact sheet recommends a second live dose by coarse spray at 2 to 3 weeks of age on top of the day-1 hatchery spray [12]. And from the General Principles guide: if germs build up over flock after flock without cleanout and disinfection, the challenge can overwhelm what the vaccine can handle [1]. Mask for spray; N95 for fine spray.');
@@ -355,13 +360,9 @@ async function photo(s, file, x, y, w, h, credit) {
   {
     const s = content('How eye drop works, and how to do it', 'IgA guards the eye, airways, and gut [2]. The Harderian gland behind the eye is a major IgA producer and fires when vaccine touches the eye [2]. Extra vaccine drains through the tear duct into the nose and upper throat, the entry points for ILT and IB [19]. The CPC ILT profile notes ILT naturally enters through the airway and the eye, so eye drop copies the natural route; it is the standard route for ILT [19]. Technique: hold firmly, head tilted so the eye faces up, dropper 1 to 2 cm above the eye, never touching it, one drop on the eye not the lid, hold until it is absorbed and the bird blinks.');
     const flow = [['Drop on the eye', 'Absorbed through the eye surface'], ['Harderian gland', 'Behind the eye, makes local IgA'], ['Tear duct', 'Carries vaccine to nose and throat']];
-    flow.forEach(([t, d], i) => {
-      const y = 1.2 + i * 1.2;
-      badge(s, 0.5, y, 0.7, String(i + 1));
-      text(s, t, { x: 1.4, y: y + 0.0, w: 3.4, h: 0.38, fontSize: 17, bold: true, color: NAVY });
-      text(s, d, { x: 1.4, y: y + 0.4, w: 3.4, h: 0.45, fontSize: 14 });
-    });
-    card(s, 5.1, 1.2, 4.4, 3.7, 'Technique', ['Hold the bird firmly, head controlled', 'Tilt so the eye faces up', 'Dropper 1 to 2 cm above; never touch the eye', 'One drop on the eye, not the eyelid', 'Hold until it is absorbed and the bird blinks'], { bodySize: 15 });
+    await photo(s, 'cobb_eye_drop.jpg', 0.5, 1.15, 4.4, 3.4, 'Eye drop, tip tilted toward the eye. Source: Cobb-Vantress, 2025.');
+    card(s, 5.1, 1.2, 4.4, 2.6, 'Technique', ['Hold the bird firmly, head controlled', 'Tilt so the eye faces up', 'Dropper 1 to 2 cm above; never touch the eye', 'One drop on the eye, not the eyelid', 'Hold until it is absorbed and the bird blinks'], { bodySize: 14 });
+    card(s, 5.1, 3.95, 4.4, 0.95, null, 'Drop on the eye, then the Harderian gland, then the tear duct: local IgA right where the virus gets in.', { bullet: false, bodySize: 13, fill: TINT });
   }
   {
     const s = content('Check the dropper, then check the birds', 'Eye drop vaccines are made to be given as one drop of about 0.03 mL (30 \u00B5L) [16]. Count drops into 1 mL before you start: about 30 to 35 is right. Far fewer: drops too big, vaccine runs off. Far more: too small, birds short-dosed. Use the specified diluent, never tap water; mix gently; prepare only 1 to 2 hours\u2019 worth. Blue-dye check: tongues of 2% of birds right after handling [1]. Rotate operators; fatigue causes errors. Serology at 14 to 21 days is the best confirmation. No visible reaction at day 5 to 7 with ND or IB vaccines is a warning: a mild reaction is expected, and none usually means little immune stimulation took place [22].');
@@ -376,9 +377,14 @@ async function photo(s, file, x, y, w, h, credit) {
   divider('SECTION 4', 'Wing web vaccination', 'The only route that shows you proof on the bird.',
     'A two-pronged needle puts live vaccine into the skin of the wing web. Seven to ten days later you can see whether it took. Fowl Pox is the main target; some programs also use it for AE, chicken anemia virus, and live fowl cholera vaccines in breeder pullets [1,16].');
   {
-    const s = content('Fowl Pox and the wing web', 'The CPC Learning Centre Fowl Pox profile: Fowl Pox is slow-moving and rolls through a flock bird to bird, so you can vaccinate healthy birds ahead of the wave and many will build immunity before the virus reaches them. Confirm the diagnosis at the lab first [23]. The two-pronged applicator must go through both skin layers of the web, avoiding feathers, blood vessels, and bone. Never into the muscle. Dip between birds without hitting the bottom of the vial; keep the vial cool [16]. Applicator needles: change every 500 to 1,000 birds [16].');
+    const s = content('Fowl Pox and the wing web', 'The CPC Learning Centre Fowl Pox profile: Fowl Pox is slow-moving and rolls through a flock bird to bird, so you can vaccinate healthy birds ahead of the wave and many will build immunity before the virus reaches them. Confirm the diagnosis at the lab first [23].');
     await photo(s, 'photo2_1.jpg', 0.5, 1.15, 4.4, 3.4, 'Dry Fowl Pox on comb and wattles. Source: Lucyin (CC BY-SA 4.0).');
-    card(s, 5.2, 1.15, 4.3, 3.75, 'Why the wing web works', ['Puts live vaccine into the skin, where pox naturally enters', 'Slow outbreaks: vaccinate ahead of the wave', 'Confirm the diagnosis at the lab first', 'Through both skin layers; never the muscle', 'Also used for AE, CAV, and live fowl cholera in breeder pullets'], { bodySize: 14 });
+    card(s, 5.2, 1.15, 4.3, 3.75, 'Why the wing web works', ['Puts live vaccine into the skin, where pox naturally enters', 'Slow outbreaks: vaccinate ahead of the wave', 'Confirm the diagnosis at the lab first', 'Also used for AE, CAV, and live fowl cholera in breeder pullets'], { bodySize: 14 });
+  }
+  {
+    const s = content('Giving the wing web stab', 'The two-pronged applicator must go through both skin layers of the web on the underside of the wing, avoiding feathers, blood vessels, and bone. Never into the muscle. Dip between birds without hitting the bottom of the vial; keep the vial cool. Applicator needles: change every 500 to 1,000 birds [16].');
+    await photo(s, 'cobb_wing_web.jpg', 0.5, 1.15, 4.9, 3.75, 'Wing web stab, underside of the wing. Source: Cobb-Vantress, 2025.');
+    card(s, 5.7, 1.2, 3.8, 3.7, 'The stab', ['Underside of the wing web', 'Through both skin layers', 'Clear of feathers, vessels, and bone', 'Never into the muscle', 'New needles every 500 to 1,000 birds'], { bodySize: 14 });
   }
   {
     const s = content('Reading the take at 7 to 10 days', 'Check at 7 to 10 days [16]. The CPC General Principles rule of thumb: 2% of the flock [1]; Cobb says at least 50 to 100 birds picked at random [16]. Good take: two nodules, one from each prong. Weak: one. Miss: none [16]. A large, weeping lesion with spreading redness points to bacterial contamination: dirty applicator, contaminated vial, or vaccine in the muscle [1]. If one bird in five has no take, one in five is unprotected, and in an outbreak those birds are the leading edge. Low takes: check cold chain records, needle sharpness, restraint, reconstitution.');
@@ -418,8 +424,9 @@ async function photo(s, file, x, y, w, h, credit) {
   }
   {
     const s = content('Under the skin or into the breast', 'SC is preferred for killed vaccines: IM can cause abscesses and condemnations [24]. SC: lift a tent of skin at the back of the neck, needle through the skin into the pocket pointing down the neck toward the body; you feel resistance through the skin, then it moves freely; if not, pull out and retry [16,24]. Full dose before withdrawing. IM: breast muscle 3 to 5 cm (1 to 1.5 in) to one side of the keel, needle toward the tail at about 45 degrees; not on the midline, not too deep [16]. Pre-warming also reduces harsh local reactions [16].');
-    card(s, 0.5, 1.2, 4.35, 3.7, 'Subcutaneous (preferred)', ['Back of the neck, on the midline', 'Lift a tent of skin', 'Needle points down the neck, toward the body', 'Resistance, then it slides freely', 'Full dose before you pull out'], { bodySize: 15, fill: NAVY, titleColor: GOLD, bodyColor: WHITE });
-    card(s, 5.15, 1.2, 4.35, 3.7, 'Intramuscular (only if the label says)', ['Breast muscle, 3 to 5 cm from the keel', 'Needle toward the tail at about 45\u00B0', 'Never on the keel midline', 'Not too deep: avoid the body cavity', 'More abscesses and condemnations than SC'], { bodySize: 15 });
+    await photo(s, 'cobb_sc_neck.jpg', 0.5, 1.15, 3.0, 3.75, 'SC in the neck. Source: Cobb-Vantress, 2025.');
+    card(s, 3.7, 1.2, 2.8, 3.7, 'Subcutaneous (preferred)', ['Back of the neck, on the midline', 'Lift a tent of skin', 'Needle points down the neck, toward the body', 'Resistance, then it slides freely', 'Full dose before you pull out'], { bodySize: 13, fill: NAVY, titleColor: GOLD, bodyColor: WHITE });
+    card(s, 6.7, 1.2, 2.8, 3.7, 'Intramuscular', ['Only if the label says', 'Breast muscle, 3 to 5 cm from the keel', 'Needle toward the tail at about 45\u00B0', 'Never on the keel midline', 'Not too deep: avoid the body cavity', 'More abscesses and condemnations than SC'], { bodySize: 13 });
   }
   {
     const s = content('Self-injection with oil vaccine is an emergency', 'The Cobb guide calls accidental human injection with oil emulsion products a serious danger: oil in a finger or hand can cut off circulation and cause severe injury, and a doctor usually has to clean it out [16]. The Merial bulletin: consult a doctor immediately [24]. Go even if only a tiny amount went in, take the vaccine label, and record the incident. Prevention: handlers present each bird at the right angle so the vaccinator is not reaching or struggling [16].');

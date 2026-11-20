@@ -368,3 +368,18 @@ Scope: V3, Course 8 Essentials, the summary page, and both decks, against the fu
 - **Section 2.4 spray volume table:** the "Volume per 1,000 birds" column was removed because it only divided the other column by 10. The table now gives Age and Volume per 10,000 birds (3 L at day 1 on farm; 7 to 8 L over 7 days), which is how the Merial Coarse Spray bulletin [18] states it. The "Volume targets [18]:" label is now kept on the same page as the table. No reference change.
 - **Photo 6.1:** the suspected AI-rendered in-ovo machine image was replaced with a real photograph supplied by the user (`Course 8/Inovo.jpg`, 980x513), credited "Source: poultry.network." as instructed. The new caption only describes what the photo shows (injection heads over a tray of eggs, one head per egg); the old caption's claims about dosing and throughput were dropped. The reuse license of the poultry.network image was not independently confirmed; the user directed its use.
 - Rebuilt with `patch-course8-v3-audit.cjs` (166 edits, 29 references, unchanged order); TOC refreshed in two passes; 52 pages, no blank pages; mammoth 0 messages, 0 w:dirty, 0 em dashes.
+
+## Addendum 5 (2026-11-20): real photos from the Cobb guide
+The user directed that photos from the Cobb Vaccination Management Guide (ref 16; local copy `Course 8/Cobb_Vaccination_Guide.pdf`) replace the suspected AI images. Each image was extracted from the PDF itself, and each caption was written from the text on the same Cobb page, credited "Source: Cobb-Vantress, Cobb Vaccination Management Guide, 2025."
+
+| Photo | Cobb page | What the caption says | Cobb text it rests on |
+|---|---|---|---|
+| 1.2 (replaces vial-in-bucket render) | p. 20 (guide p. 18) | Broilers at a nipple line; walk the house to check that all birds are drinking | "Walk through the house to check if the birds are all drinking water." |
+| 2.1 (replaces spray-in-barn render) | p. 16 (guide p. 14) | Three-person backpack crew: one sprayer per side, one down the middle | "Three backpack sprayers (one sprayer for each side of the house and a third to go through the middle)." (guide p. 13) |
+| 3.1 (re-added; old image showed the drop on the forehead) | p. 22 (guide p. 20) | Head steadied, dropper tip tilted toward the open eye, tip never touches the eye | "gently restrain the head ... carefully tilt the tip of the bottle towards the eye ... The tip of the bottle should never touch the eye." |
+| 4.2 (replaces wing-web render with baked-in caption) | p. 23 (guide p. 21) | Two-pronged applicator through the web on the underside of the wing, clear of feathers, vessels, and bone | "pierce the web on the underside of the wing, avoiding feathers, blood vessels and bones." |
+| 5.2 (new, in 5.4) | p. 26 (guide p. 24) | SC in the back of the neck, needle in the pocket under lifted skin, pointing toward the body | "The skin on the back of the neck should be lifted to create a pocket ... with the needle pointing toward the bird's body." |
+
+No reference added or renumbered (Cobb is already ref 16). V3 rebuilt at 54 pages (two photos added), TOC refreshed in two passes, no blank pages, mammoth 0 messages, 0 w:dirty, 0 dashes, no duplicate docPr ids, every image rel resolves.
+
+The lecture deck (47 slides) uses the same five photos: the water check slide (now the Cobb nipple-line shot), a new "A spray crew at work" slide, the eye drop technique slide, a new "Giving the wing web stab" slide (the technique notes moved there from the Fowl Pox slide), and the SC/IM slide. Photo 2.2 (hatchery spray cabinet render) is still a suspected AI image.

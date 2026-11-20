@@ -365,7 +365,7 @@ function insertAfter(find, text) {
     'Extra vaccine drains from the eye down this duct into the nose and throat, so protection reaches the nose and the top of the windpipe too, which is where respiratory viruses like ILT get in [18].');
   rep('For some serotypes, eye drop is specified in the vaccine protocol to ensure adequate Harderian gland stimulation.', 'Some IB vaccine labels call for eye drop.');
   deletePara('Avian Metapneumovirus (aMPV):');   // no source supports it
-  deleteImageWithCaption('Photo 3.1: A single drop of live vaccine');   // image shows the drop falling on the forehead, not the eye
+  // Photo 3.1 (old image showed the drop on the forehead) is swapped for a real Cobb photo near the end.
   rep('drops placed too far left', 'drops landing on the eyelid');
   rep('Eye drop vaccination has one additional disposal step because used droppers are also biohazardous waste.',
     'Eye drop adds one disposal step: used droppers count as biohazard waste, so burn them with the empty vials.');
@@ -532,27 +532,65 @@ function insertAfter(find, text) {
     log.push('SPRAY VOLUME TABLE: per-1,000 column removed');
   }
 
-  // ---------------- Photo 6.1: real in-ovo photo replaces the suspected AI render ----------------
-  // User supplied Course 8/Inovo.jpg (980x513) on 2026-11-20, credited to poultry.network.
+  // ---------------- Real photos replace the suspected AI images (2026-11-20) ----------------
+  // 6.1: user-supplied Course 8/Inovo.jpg, credited to poultry.network.
+  // 1.2, 2.1, 3.1, 4.2 and the new 5.2: photos from the Cobb Vaccination Management Guide (2025, ref 16)
+  // in Course 8/Cobb_Vaccination_Guide.pdf, extracted from pp. 20, 16, 22, 23 and 26, as the user directed.
   let rels = await zip.file('word/_rels/document.xml.rels').async('string');
   {
-    const i = xml.indexOf('Photo 6.1:');
-    const ps = xml.lastIndexOf('<w:p ', i), ds = xml.lastIndexOf('<w:drawing>', ps), de = xml.indexOf('</w:drawing>', ds) + 12;
-    if (i < 0 || ds < 0 || de > ps) throw new Error('Photo 6.1 drawing not found');
-    let d = xml.slice(ds, de);
-    const rid = d.match(/r:embed="([^"]+)"/)[1];
-    if ((xml.match(new RegExp(`r:embed="${rid}"`, 'g')) || []).length !== 1) throw new Error('Photo 6.1 image rel is shared');
-    const cx = 5305425, cy = Math.round(cx * 513 / 980);
-    d = d.replace(/<wp:extent cx="\d+" cy="\d+"\/>/, `<wp:extent cx="${cx}" cy="${cy}"/>`)
-         .replace(/<a:ext cx="\d+" cy="\d+"\/>/, `<a:ext cx="${cx}" cy="${cy}"/>`);
-    xml = xml.slice(0, ds) + d + xml.slice(de);
-    const relRe = new RegExp(`(<Relationship [^>]*Id="${rid}"[^>]*Target=")[^"]+(")`);
-    if (!relRe.test(rels)) throw new Error('Photo 6.1 rel not found');
-    rels = rels.replace(relRe, '$1media/image_inovo.jpg$2');
-    zip.file('word/media/image_inovo.jpg', fs.readFileSync('Course 8/Inovo.jpg'));
-    rep(/Photo 6\.1: An automated in-ovo vaccination machine[\s\S]*?Source: CPC Short Courses\./,
+    const COBB = 'Source: Cobb-Vantress, Cobb Vaccination Management Guide, 2025.';
+    let relN = 0, docPrN = 0;
+    const addImageRel = (file, media) => {
+      const id = `rIdC8photo${++relN}`;
+      rels = rels.replace('</Relationships>', `<Relationship Id="${id}" Type="http://schemas.openxmlformats.org/officeDocument/2006/relationships/image" Target="media/${media}"/></Relationships>`);
+      zip.file(`word/media/${media}`, fs.readFileSync(file));
+      return id;
+    };
+    const setDrawing = (d, rid, widthIn, pw, ph) => {
+      const cx = Math.round(widthIn * 914400), cy = Math.round(cx * ph / pw);
+      if ((d.match(/<w:drawing>/g) || []).length !== 1) throw new Error('expected one drawing in the photo paragraph');
+      return d.replace(/r:embed="[^"]+"/, `r:embed="${rid}"`)
+        .replace(/<wp:extent cx="\d+" cy="\d+"\/>/, `<wp:extent cx="${cx}" cy="${cy}"/>`)
+        .replace(/<a:ext cx="\d+" cy="\d+"\/>/, `<a:ext cx="${cx}" cy="${cy}"/>`);
+    };
+    const captionPara = text => '<w:p><w:pPr><w:spacing w:after="240"/><w:jc w:val="center"/></w:pPr><w:r><w:rPr><w:i/><w:iCs/><w:color w:val="555555"/><w:sz w:val="20"/><w:szCs w:val="20"/></w:rPr>' +
+      `<w:t xml:space="preserve">${text}</w:t></w:r></w:p>`;
+    const photoAt = captionFind => {
+      const cap = findPara(captionFind), at = xml.indexOf(cap), before = xml.slice(0, at);
+      const imgStart = Math.max(before.lastIndexOf('<w:p '), before.lastIndexOf('<w:p>'));
+      const imgPara = xml.slice(imgStart, at);
+      if (!/<w:drawing>/.test(imgPara) || !/^<w:p[ >][\s\S]*<\/w:p>$/.test(imgPara)) throw new Error('no drawing paragraph before caption: ' + captionFind);
+      return { cap, at, imgStart, imgPara };
+    };
+    const swapPhoto = (captionFind, file, media, pw, ph, widthIn, caption) => {
+      const { cap, at, imgStart, imgPara } = photoAt(captionFind);
+      const d = setDrawing(imgPara, addImageRel(file, media), widthIn, pw, ph);
+      xml = xml.slice(0, imgStart) + d + captionPara(caption) + xml.slice(at + cap.length);
+      log.push('PHOTO swapped: ' + caption.slice(0, 12));
+    };
+    const insertPhotoAfter = (paraFind, templateCaption, file, media, pw, ph, widthIn, caption) => {
+      let d = photoAt(templateCaption).imgPara;
+      d = d.replace(/ w14:(paraId|textId)="[^"]*"/g, '').replace(/ wp14:(anchorId|editId)="[^"]*"/g, '').replace('<w:lastRenderedPageBreak/>', '')
+        .replace(/<wp:docPr id="\d+" name="[^"]*"/, () => { const n = 880000 + (++docPrN); return `<wp:docPr id="${n}" name="Picture ${n}"`; });
+      d = setDrawing(d, addImageRel(file, media), widthIn, pw, ph);
+      const p = findPara(paraFind);
+      xml = xml.replace(p, p + d + captionPara(caption));
+      log.push('PHOTO inserted: ' + caption.slice(0, 12));
+    };
+
+    swapPhoto('Photo 1.2:', 'Course 8/cobb_water_nipple.jpg', 'image_cobb_water.jpg', 1470, 539, 5.8,
+      'Photo 1.2: Broilers at a nipple drinker line. On vaccination day, walk the house to check that all the birds are drinking. ' + COBB);
+    swapPhoto('Photo 2.1:', 'Course 8/cobb_spray_backpack.jpg', 'image_cobb_spray.jpg', 1485, 912, 5.8,
+      'Photo 2.1: A three-person backpack spray crew in a broiler house: one sprayer for each side of the house and one down the middle. ' + COBB);
+    swapPhoto('Photo 3.1:', 'Course 8/cobb_eye_drop.jpg', 'image_cobb_eyedrop.jpg', 1011, 683, 4.8,
+      'Photo 3.1: Eye drop vaccination. One hand steadies the head while the dropper tip is tilted toward the open eye. The tip never touches the eye. ' + COBB);
+    swapPhoto('Photo 4.2:', 'Course 8/cobb_wing_web.jpg', 'image_cobb_wingweb.jpg', 1161, 808, 4.8,
+      'Photo 4.2: Wing web vaccination. The two-pronged applicator goes through the web on the underside of the wing, clear of feathers, blood vessels, and bone. ' + COBB);
+    insertPhotoAfter('Subcutaneous (SC) injection: This route puts the vaccine under the skin', 'Photo 5.1:', 'Course 8/cobb_sc_neck.jpg', 'image_cobb_scneck.jpg', 1485, 1122, 4.6,
+      'Photo 5.2: Subcutaneous injection in the back of the neck. The needle goes into the pocket under the lifted skin, pointing toward the body. ' + COBB);
+    swapPhoto('Photo 6.1:', 'Course 8/Inovo.jpg', 'image_inovo.jpg', 980, 513, 5.8,
       'Photo 6.1: In-ovo injection heads lined up over a tray of eggs at the hatchery, one head for each egg. Source: poultry.network.');
-    log.push('PHOTO 6.1 replaced with Inovo.jpg (poultry.network)');
+    for (const n of ['1.2', '2.1', '3.1', '4.2', '5.2', '6.1']) if ((joined(xml).match(new RegExp(`Photo ${n.replace('.', '\.')}:`, 'g')) || []).length !== 1) throw new Error('photo caption count wrong for ' + n);
   }
 
   // ---------------- Checks ----------------
