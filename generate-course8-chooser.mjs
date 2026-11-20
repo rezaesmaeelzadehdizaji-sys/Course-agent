@@ -124,7 +124,8 @@ const doc = new Document({
       versions,
       ...quickCheck,
       ...advice,
-      p([t('Questions about which course fits your team? Talk to the CPC team at admin@canadianpoultry.ca.', { italics: true, color: BLUE })], { align: AlignmentType.CENTER, before: 120, after: 0 }),
+      p([t('Questions about which course fits your team?', { italics: true, color: BLUE })], { align: AlignmentType.CENTER, before: 120, after: 0 }),
+      p([t('Talk to the CPC team at +1(604) 854-6600 or admin@canadianpoultry.ca.', { italics: true, color: BLUE })], { align: AlignmentType.CENTER, after: 0 }),
     ],
   }],
 });
