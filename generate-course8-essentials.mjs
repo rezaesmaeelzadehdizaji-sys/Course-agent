@@ -194,7 +194,7 @@ function buildS1() {
     labeled('Killed vaccines', 'contain a germ that has been killed, usually mixed in oil. They cannot grow, so they have to be injected into each bird [@GP]. They work best as a boost after the flock has already had a live vaccine: given that way, they build high, even protection [@GP]. That is why pullets get a round of killed injections before they start laying.'),
     h2('1.3 Protection From the Hen'),
     para('Chicks are not born empty-handed. The hen passes antibodies to the chick through the egg, and these protect it for its first couple of weeks [@MAB]. These are called maternal antibodies. They fade on their own.'),
-    para('This matters for timing. Vaccinate chicks while their maternal antibodies are still high, and those antibodies can knock out the vaccine before it works. Vaccinate too late, and the chicks are left unprotected [@MAB]. Your veterinarian uses blood tests from the breeder flock to pick the right day.'),
+    para('This matters for timing. Vaccinate chicks while their maternal antibodies are still high, and those antibodies can knock out the vaccine before it works. Vaccinate too late, and the chicks are left unprotected [@MAB]. Your veterinarian uses blood tests from the breeder flock to pick the right day [@GP].'),
     callout('Even a good breeder flock can produce chicks where one in ten carries no maternal antibody at all. In a flock of 25,000 chicks, that is 2,500 or more birds with no protection from the hen [@MAB].'),
   ]);
 }
@@ -221,9 +221,9 @@ function buildS2() {
 function buildS3() {
   return body([
     h1('Section 3: Vaccinating Through the Water'),
-    para('Water vaccination is the most common way to vaccinate a whole flock. The birds drink the vaccine from their own drinkers, and you never have to catch a bird. It sounds easy, which is exactly why it goes wrong so often. The four steps below are where it succeeds or fails.'),
+    para('Water vaccination is a simple, quick way to vaccinate a whole flock [@AVIAGEN]. The birds drink the vaccine from their own drinkers, and you never have to catch a bird. It sounds easy, which is exactly why it goes wrong so often. The four steps below are where it succeeds or fails.'),
     h2('3.1 Get the Water Lines Ready'),
-    para('Chlorine is great for killing germs in the water. The trouble is, it kills vaccine too. If chlorine is still in the lines on vaccination day, the vaccine is dead before a single bird drinks it. This is the most common avoidable mistake.'),
+    para('Chlorine is great for killing germs in the water. The trouble is, it kills vaccine too. If chlorine is still in the lines on vaccination day, the vaccine is dead before a single bird drinks it. It is one of the easiest mistakes to make, and one of the easiest to avoid.'),
     (newSteps(), null),
     step('Turn off the chlorinator 72 hours before vaccinating. On town water that has chlorine in it, put a charcoal filter on the line for those 72 hours [@WATER].'),
     step('Clean the drinkers with mild soap only. Do not use disinfectant [@WATER].'),
@@ -258,7 +258,7 @@ function buildS4() {
     bullet([{ text: 'Injection: ', bold: true }, { text: 'killed vaccines, given before pullets start laying.' }]),
     bullet([{ text: 'At the hatchery: ', bold: true }, { text: 'Marek’s disease, injected into the egg at day 18.' }]),
     h2('4.1 Spray'),
-    para('Spray covers a whole barn in one walk, with no catching and no thirsty birds. Droplet size is everything: drops that are too fine go deep into the lungs and the birds react harder. Follow the Merial coarse spray settings [@SPRAY]:'),
+    para('Spray covers a whole barn in one walk, with no catching and no thirsty birds. Droplet size is everything: drops that are too fine go too deep into the airways and the birds react harder. Follow the Merial coarse spray settings [@SPRAY]:'),
     bullet('Keep the pressure steady at 4.5 to 5.0 bar (65 to 75 psi).'),
     bullet('Use distilled water, never chlorinated water. CPC uses commercial distilled water.'),
     bullet('Hold the nozzle pointing down, 1 m (3 ft) above the birds’ heads, and stay within 4 m (12 ft) of the wall.'),

@@ -205,9 +205,9 @@ async function photo(s, file, x, y, w, h, credit) {
   }
 
   section('3. Water Vaccination');
-  divider('PART 3', 'Vaccinating through the water', 'The most common way to vaccinate a flock, and the easiest to get wrong.', 'Birds drink the vaccine from their own drinkers and you never catch a bird. Four steps decide whether it works: get the lines ready, mix it right, run the day, check your work.');
+  divider('PART 3', 'Vaccinating through the water', 'A simple, quick way to vaccinate a whole flock, and an easy one to get wrong.', 'Birds drink the vaccine from their own drinkers and you never catch a bird. Four steps decide whether it works: get the lines ready, mix it right, run the day, check your work.');
   {
-    const s = content('Step 1: get the chlorine out', 'Chlorine kills germs in the water, and it kills vaccine too. This is the most common avoidable mistake. Chlorinator off 72 hours before; charcoal filter on town water [4]. Clean drinkers with mild soap, no disinfectant [4]. Flush and rinse lines with skim milk, 454 g per 190 L [4]. Keep chlorine and medication out for 24 hours after [1].');
+    const s = content('Step 1: get the chlorine out', 'Chlorine kills germs in the water, and it kills vaccine too. It is one of the easiest mistakes to make, and one of the easiest to avoid. Chlorinator off 72 hours before; charcoal filter on town water [4]. Clean drinkers with mild soap, no disinfectant [4]. Flush and rinse lines with skim milk, 454 g per 190 L [4]. Keep chlorine and medication out for 24 hours after [1].');
     const steps = [['72 h before', 'Chlorinator off. Charcoal filter on town water.'], ['Day before', 'Clean drinkers with mild soap. No disinfectant.'], ['Before mixing', 'Rinse lines with milk: 454 g per 190 L.'], ['24 h after', 'Still no chlorine or medication.']];
     steps.forEach(([t, d], i) => {
       const x = 0.5 + i * 2.3;

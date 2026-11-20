@@ -327,3 +327,39 @@ Added at the user's request (CPC veterinary team).
 - **Placement:** new labeled paragraph "Boosting at 2 to 3 weeks." at the end of Section 1.2; cross-reference added to Section 8.4; Section 2.4 water sentence.
 - **Citation remap:** new [13]; former [13] to [28] are now [14] to [29]. First-appearance order verified 1 to 29; bibliography count asserted.
 - **Checks:** mammoth 0 messages, 0 dashes, 0 w:dirty, no blank pages (53 pages), TOC page numbers re-mapped. The lecture deck's speaker-note citations were shifted to match (78 numbers), and a new slide covers the boosters and the 7-day withdrawal.
+
+## 2026-11-19 Addendum 3: full double-check pass (all files)
+
+Scope: V3, Course 8 Essentials, the summary page, and both decks, against the full checklist
+(memory: feedback_double_check_everything_checklist).
+
+- **References (29):** all re-confirmed today. Currency re-checked: Health Canada's 2009
+  categorization is still in force (the 2025 revision consultation closed August 16, 2025 with no
+  final version published; ionophores still Category IV). CIPARS 2023 is still the latest edition
+  in the series (publications.gc.ca HP37-54E). The CFIA memo was verified when it was added.
+- **Unsupported claims removed:**
+  - aMPV eye drop/spray bullet (no source);
+  - killed Newcastle injection "in commercial broiler programs" (no source; not Canadian practice);
+  - "three to five diseases" per product (now "several");
+  - "regulatory priority in Canadian flocks" cited to Swayne (now "food safety priority");
+  - how a frozen oil vaccine looks (now "can break the emulsion; discard separated or lumpy vials");
+  - uncited superlatives: "most common avoidable failure" (chlorine), "most widely used" (water
+    vaccination), "most often overlooked" (fans), "most common complication" (E. coli; Butcher says
+    common), "most common causes" (injection reactions; Cobb does not rank them).
+- **Caption accuracy:** Photo 3.1 removed. Its caption said the drop lands on the conjunctiva, but
+  the image shows it falling onto the forehead, which is the wrong technique for a teaching photo.
+- **Redundancy cut:** the 1.1 "two immune mechanisms" paragraph repeated the primer's "two arms";
+  the droplet sizes are now stated once (Section 2, aerosol added there), and 7.2 points to them;
+  the "vaccinate healthy birds" sentence in 1.7 was cut (home is 7.2); the 2.8 "all seven methods
+  depend on..." paragraph repeated the Introduction; the 2.9 stair-step text is now stated once.
+- **Sentence-level tone:** about 30 passages rewritten in farmer language, including the
+  modified-live paragraph, IBD and Newcastle bullets, the milk "raincoat" (now attributed to the CPC
+  Learning Centre General Principles guide), the 2.1 Harderian/BALT paragraph, the 2.2 bullets, the
+  eye drop opener and 3.1, the 4.4 opener, the in-ovo paragraph, MG and E. coli in 7.2, and selection
+  pressure in 8.1. Summary page: intro sentence and LOs 1, 7, 8, 10 rewritten (headings locked).
+  Essentials: "lungs" corrected to "airways", one citation added, superlatives removed.
+- **Kept on purpose:** the July CPC reviewer thinned CPC Learning Centre attributions in V3, so they
+  were not re-added throughout; new CPC content is attributed in the prose.
+- **Checks:** V3 52 pages, Essentials 13 pages, no blank pages; TOC re-mapped; mammoth 0 messages; 0
+  dashes, 0 w:dirty, genus names italic, American spelling, no "vet"; cross-references only to Course
+  7 (x2) and Course 2 (x1); citation order 1 to 29 asserted; decks parse with 0 malformed parts.

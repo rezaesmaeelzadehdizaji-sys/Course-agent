@@ -86,6 +86,17 @@ function insertLabeledAfter(anchorFind, templateFind, label, bodyText) {
   xml = xml.replace(anchor, anchor + clone);
   log.push('INSERT labeled after ' + anchorFind.slice(0, 50));
 }
+// Remove a figure: the caption paragraph and the drawing paragraph right before it.
+function deleteImageWithCaption(captionFind) {
+  const cap = findPara(captionFind);
+  const at = xml.indexOf(cap);
+  const before = xml.slice(0, at);
+  const imgStart = before.lastIndexOf('<w:p ') > before.lastIndexOf('<w:p>') ? before.lastIndexOf('<w:p ') : before.lastIndexOf('<w:p>');
+  const imgPara = xml.slice(imgStart, at);
+  if (!/<w:drawing>/.test(imgPara) || !/^<w:p[ >][\s\S]*<\/w:p>$/.test(imgPara)) throw new Error('no drawing paragraph before caption: ' + captionFind);
+  xml = xml.slice(0, imgStart) + xml.slice(at + cap.length);
+  log.push('DELETE image+caption ' + captionFind.slice(0, 40));
+}
 function insertAfter(find, text) {
   const p = findPara(find);
   let clone = p.replace(/<w:bookmark(Start|End)[^>]*\/>/g, '').replace(/\sw14:paraId="[^"]*"/, '').replace(/\sw14:textId="[^"]*"/, '');
@@ -310,6 +321,83 @@ function insertAfter(find, text) {
 
   // ---------------- Journals ----------------
   rep('published by the Houghton Poultry Research Station;', 'official journal of the World Veterinary Poultry Association, published by Taylor & Francis;');
+
+  // ---------------- Second full double-check pass (2026-11-19): tone, redundancy, unsupported claims ----------------
+  // Numbers below are V2 numbers (renumbered automatically further down).
+  rep('The protocols in this course are practical foundations. They are not a substitute for veterinary advice.',
+    'The steps in this course are the practical basics. They do not replace advice from your veterinarian.');
+  rep('Because the same CPC team designs the program, supplies the vaccines, and checks it on farm, your birds stay on a steady, predictable path from placement to production.',
+    'The same CPC team designs the program, supplies the vaccines, and checks the results on farm, so nothing falls through the cracks between placement and production.');
+  rep(/Modified-live vaccines \(MLVs\) contain a live virus[\s\S]*?in this course are modified-live vaccines \[4,5\]\./,
+    'Modified-live vaccines (MLVs) carry a weakened virus. It still grows in the bird, but it does not make the bird sick. Because it grows, it builds strong protection right where it lands, in the gut, the eye, or the airways, and one dose is often enough. The catch is that live vaccine is fragile. Break the cold chain, or let it touch chlorine or disinfectant, and it dies. And because the virus is growing in the flock, expect a mild reaction. Most vaccines given in the water, by spray, by eye drop, or in the wing web in this course are modified-live [4,5].');
+  deletePara('Two immune mechanisms run in parallel after vaccination');   // repeats the primer's "two arms" paragraph
+  rep('The primary use of water vaccination in broiler production. The vaccine targets the bursa of Fabricius and stimulates humoral immunity to protect against the immunosuppressive effects of the field virus [8].',
+    'The main reason broiler farms vaccinate in the water. The vaccine protects the bursa of Fabricius, where the chick’s antibody-making cells develop, so the field virus cannot wreck the chick’s immune system [8].');
+  rep('Live attenuated lentogenic strains including La Sota, Clone 30, and B1 (Hitchner B1) go into the water and replicate in the gut and upper airways.',
+    'Mild live strains such as La Sota, Clone 30, and B1 (Hitchner B1) go into the water and grow in the gut and upper airways.');
+  rep('Cold chain failure is one of the most common and least visible causes of vaccination failure in the field.',
+    'A broken cold chain is one of the easiest failures to miss, because you cannot see it.');
+  rep('The milk proteins coat the vaccine virus particles and provide a physical buffer against any water impurities or pH fluctuations that might inactivate the live virus.',
+    'The CPC Learning Centre General Principles guide calls the milk protein a raincoat for the virus: it coats the vaccine and soaks up the dirt and chlorine traces in the water that would kill it [1].');
+  deletePara('Vaccination of stressed or diseased flocks leads to poor immune response');   // home is Section 7.2
+  rep(/Spray vaccination applies live respiratory vaccines as liquid droplets[\s\S]*?Fine spray is covered in Section 2\.9\./,
+    'Droplet size decides where the vaccine lands. Coarse droplets, over 100 microns, land on the eyes and the inside of the nose. Fine droplets, 50 to 100 microns, travel deeper into the windpipe. Aerosol droplets, under 50 microns, can reach the air sacs [1]. Coarse spray is covered in Sections 2.1 to 2.8. Fine spray, the follow-up step in a flock that is already primed, is in Section 2.9.');
+  rep('Once the droplets land on the conjunctiva or nares, the same immune pathway as eye drop vaccination is triggered. The vaccine antigen reaches the Harderian gland and the bronchus-associated lymphoid tissue (BALT), stimulating local IgA production and mucosal immunity across the respiratory tract.',
+    'Once the droplets land on the eye or in the nose, the vaccine works the same way as an eye drop: it reaches the Harderian gland behind the eye and the immune tissue in the airways, and both make local IgA [2].');
+  rep('The target disease requires mucosal respiratory immunity rather than systemic protection.', 'The disease is one you stop in the airways, not in the blood.');
+  rep('A rapid prime-boost schedule requires vaccinating large numbers in a short window.', 'You need to vaccinate a lot of birds in a short window.');
+  rep('Precision per-bird dosing is required (ILT, high-priority primer doses).', 'Every bird needs an exact dose (ILT, key first doses).');
+  rep('Water-soluble vaccines are specified by label for the water route.', 'The label says the vaccine goes in the water.');
+  rep('Ventilation control is the factor most often overlooked in spray vaccination. Fans moving air through the barn during the spray will push droplets away from the birds before they are inhaled and remove the vaccine cloud from the air space before coverage is complete.',
+    'Fans are easy to forget on spray day. Running fans blow the vaccine cloud away from the birds and out of the barn before they can breathe it in.');
+  rep(/Photo 2\.2: A hatchery spray cabinet[\s\S]*?Source: CPC Short Courses\./,
+    'Photo 2.2: Left, a hatchery spray cabinet putting coarse droplets over a tray of day-old chicks. Right, chicks after spray vaccination, with blue dye droplets on their heads and backs. Source: CPC Short Courses.');
+  deletePara('All seven vaccination methods in this course depend on the same foundation');   // repeats the Introduction
+  rep(/Fine spray particles are inhaled past the nares and conjunctiva[\s\S]*?building on the existing immune memory \[1\]\./,
+    'Fine spray droplets are small enough to be breathed in past the eyes and nose and land in the windpipe, so they build protection deeper in the airways than coarse spray can reach [1]. The CPC Learning Centre General Principles guide describes vaccination as a stair-step: coarse spray first, then finer spray or a slightly stronger strain to push protection deeper [1].');
+  rep(/Fine spray fits into a vaccination program as a booster after initial priming[\s\S]*?stronger reaction that fine spray delivers\./,
+    'Fine spray is a booster, never a first vaccine. Prime the flock first with water or coarse spray, then follow with fine spray and a slightly stronger strain. It fits layer and breeder programs best, where the long laying cycle leaves room for several rounds of respiratory vaccine. On broiler farms fine spray is less common. The day-old IB spray at the hatchery is coarse spray with a mild strain, because a newly hatched chick’s airways cannot handle a deep, harsh reaction.');
+  rep(/Eye drop vaccination puts a single drop of live vaccine directly onto the conjunctival surface[\s\S]*?first make contact with the bird\./,
+    'Eye drop vaccination puts one drop of live vaccine on each bird’s eye. From there it works on the gland behind the eye and drains down into the nose and throat (Section 3.1), building protection right where respiratory germs get in.');
+  rep(/IgA is the key antibody at mucosal surfaces[\s\S]*?upper respiratory mucosa\./,
+    'When vaccine touches the eye, it triggers IgA, the antibody that guards the wet surfaces of the eye, airways, and gut (see the primer in the Introduction) [2].');
+  rep('When a vaccine drop is absorbed through the conjunctiva, excess vaccine and the IgA response generated at the eye drains through this duct into the nasal cavity and upper pharynx. This extends mucosal protection to include the nasal passages and the beginning of the trachea, the entry points for ILT and IBV [18].',
+    'Extra vaccine drains from the eye down this duct into the nose and throat, so protection reaches the nose and the top of the windpipe too, which is where respiratory viruses like ILT get in [18].');
+  rep('For some serotypes, eye drop is specified in the vaccine protocol to ensure adequate Harderian gland stimulation.', 'Some IB vaccine labels call for eye drop.');
+  deletePara('Avian Metapneumovirus (aMPV):');   // no source supports it
+  deleteImageWithCaption('Photo 3.1: A single drop of live vaccine');   // image shows the drop falling on the forehead, not the eye
+  rep('drops placed too far left', 'drops landing on the eyelid');
+  rep('Eye drop vaccination has one additional disposal step because used droppers are also biohazardous waste.',
+    'Eye drop adds one disposal step: used droppers count as biohazard waste, so burn them with the empty vials.');
+  rep('Wing web vaccination is a hands-on individual-bird procedure. The quality of every injection depends on correct restraint, correct site identification, and correct needle placement. Movement at the time of injection can compromise vaccine delivery, resulting in partial or failed vaccine uptake.',
+    'Wing web is one bird at a time, and every bird depends on three things: a firm hold, the right spot, and a clean stab. A bird that moves at the wrong moment gets part of a dose or none.');
+  deletePara('Injection vaccination is also used in commercial broiler programs for certain diseases');   // unsourced, not Canadian practice
+  rep('A typical pre-transfer layer program may use a product covering three to five diseases in one dose.',
+    'A pre-transfer layer program may use one product that covers several diseases in a single dose.');
+  rep(' carriage and vertical transmission through the egg is a food safety and regulatory priority in Canadian layer and breeder flocks [4].',
+    ' carriage, and its spread through the egg, is a food safety priority in layer and breeder flocks [4].');
+  rep('Killed vaccines, particularly oil emulsion products, must be stored at 2 to 8°C. They must never be frozen. Freezing breaks the oil-in-water emulsion and the product cannot be used. A frozen and thawed oil vaccine looks different: you will see separation, oiliness, or clumping. Discard any vial with these signs [22].',
+    'Killed vaccines, especially oil emulsions, must be stored at 2 to 8°C and never frozen [22]. Freezing can break the emulsion, so throw out any vial that looks separated or lumpy.');
+  rep(/In-ovo vaccination is a hatchery procedure\.[\s\S]*?set for the season\./,
+    'In-ovo is the hatchery’s job: the machines, the needles, the egg trays, and keeping the vaccine cold are all handled there. Your part is knowing what your chicks arrived with, so that any boosters on the farm build on that protection instead of clashing with it. Sort out the timing with your veterinarian before the season’s program is set.');
+  rep(/Finer spray droplets penetrate deeper into the respiratory tract than coarse droplets\.[\s\S]*?the tracheal reaction is harder than expected \[17,23\]\./,
+    'Finer droplets go deeper and cause harder reactions. The droplet sizes are in Section 2 [1]. A worn nozzle or the wrong pressure can turn a coarse spray run into fine spray, and then the reaction is harder than expected [17,23].');
+  rep(' colonizes the respiratory lining and leaves the mucosal surface already inflamed before vaccination day.', ' lives on the airway lining and keeps it inflamed before the vaccine ever arrives.');
+  rep('complication after a live respiratory vaccine reaction is opportunistic ', 'complication after a live respiratory vaccine reaction is ');
+  rep(' invasion of the air sacs [23].', ' getting into the air sacs [23].');
+  rep('Local inflammation from the vaccine opens a window for bacteria already in the litter or drinker lines to reach deeper into the respiratory tract.',
+    'The irritation from the vaccine opens the door for bacteria already in the litter or drinker lines to get deeper into the airways.');
+  rep('Every time an antibiotic is used, it applies selection pressure on the bacteria present. The ones that survive are the ones most likely to carry and spread resistance.',
+    'Every time you use an antibiotic, it kills the easy bacteria and leaves the tough ones. Those survivors carry and spread resistance.');
+
+  rep('This is the most common avoidable failure in water vaccination programs, and it is entirely preventable with a 72-hour shutdown of your disinfection system before vaccination day.',
+    'It is one of the easiest failures to make and one of the easiest to prevent: shut off your disinfection system 72 hours before vaccination day.');
+  rep('Most common preventable failure. The vaccine was inactivated before birds drank it.', 'The vaccine was dead before the birds drank it.');
+  rep('The most common complication after a live', 'A common complication after a live');   // Butcher describes it as common, not the most common
+
+  rep('Water vaccination is the most widely used mass-vaccination method in commercial poultry. Birds drink', 'Birds drink');
+
+  rep('The most common causes are vaccine injected', 'Likely causes include vaccine injected');
 
   // ---------------- References: text edits by OLD number ----------------
   const bibEdits = {
