@@ -252,9 +252,17 @@ async function photo(s, file, x, y, w, h, credit) {
       { x: 0.5, y: 1.2, w: 9.0, colW: [2.4, 6.6], rowH: 0.52, border: { type: 'solid', pt: 0.5, color: 'D5DEEA' }, margin: 0.08, valign: 'middle', fontFace: 'Calibri' });
   }
   {
-    const s = content('Spray and eye drop', 'Spray: one walk covers the barn. Steady 4.5 to 5.0 bar (65 to 75 psi), distilled water, nozzle down 1 m above heads, within 4 m of the wall, fans off during and 20 minutes after, sprayer for vaccine only [6]. Eye drop: one drop of about 0.03 mL on the eye [7]; hold the bird until the drop disappears; blue-dye check on 2% of birds [1].');
-    card(s, 0.5, 1.2, 4.35, 3.7, 'Spray', ['Steady 4.5 to 5.0 bar (65 to 75 psi)', 'Distilled water, never chlorinated', 'Nozzle down, 1 m above the heads', 'Within 4 m of the wall', 'Fans off, and 20 min after', 'Sprayer for vaccine only'], { bodySize: 15 });
+    const s = content('Spray and eye drop', 'Spray: one walk covers the barn. Steady 4.5 to 5.0 bar (65 to 75 psi), commercial distilled water (what CPC uses), nozzle down 1 m above heads, within 4 m of the wall, fans off during and 20 minutes after, sprayer for vaccine only [6]. Eye drop: one drop of about 0.03 mL on the eye [7]; hold the bird until the drop disappears; blue-dye check on 2% of birds [1].');
+    card(s, 0.5, 1.2, 4.35, 3.7, 'Spray', ['Steady 4.5 to 5.0 bar (65 to 75 psi)', 'Commercial distilled water (what CPC uses)', 'Nozzle down, 1 m above the heads', 'Within 4 m of the wall', 'Fans off, and 20 min after', 'Sprayer for vaccine only'], { bodySize: 15 });
     card(s, 5.15, 1.2, 4.35, 3.7, 'Eye drop', ['One drop of about 0.03 mL', 'Head tilted, eye facing up', 'Never touch the dropper to the eye', 'Hold until the drop disappears', 'Blue tongues on 2% of birds'], { bodySize: 15, fill: NAVY, titleColor: GOLD, bodyColor: WHITE });
+  }
+  {
+    const s = content('Boosters at 2 to 3 weeks: now a 7-day withdrawal', 'Depending on the farm, CPC’s veterinary team recommends a second round of live vaccine in week 2 to 3: the Zoetis live Massachusetts and Connecticut type IB vaccine by coarse spray [5], and on some farms a live IBD vaccine, Bursine 2. Until 2026 every vaccine used in a food animal in Canada had a withdrawal period of at least 21 days. Since February 2, 2026, CFIA Memorandum 2026-01 sets 7 days for six live IB and IBD vaccines made in the U.S., so broilers can be boosted closer to slaughter age: CLONEVAC D-78, UNIVAX PLUS, Bursine 2, MILDVAC-Ma5, and the two Zoetis live bronchitis vaccines (Massachusetts type; Massachusetts and Connecticut type) [12]. During the changeover, stock still labeled 21 days may be used with 7 days. Every other vaccine: follow the label [12].');
+    stat(s, 0.5, 1.2, 3.4, '7 days', 'withdrawal before slaughter for six live IB and IBD vaccines since Feb 2, 2026. It used to be 21.', { bigSize: 54, bigH: 1.0, labelH: 1.0 });
+    text(s, 'Both CPC boosters are on the CFIA list.', { x: 0.5, y: 3.3, w: 3.4, h: 0.5, fontSize: 15, italic: true, color: BLUE });
+    card(s, 4.3, 1.2, 5.2, 1.25, 'IB booster, week 2 to 3', 'Zoetis live Massachusetts and Connecticut type vaccine, by coarse spray.', { bullet: false, bodySize: 15 });
+    card(s, 4.3, 2.6, 5.2, 1.25, 'IBD booster, on some farms', 'Bursine 2, week 2 to 3. Your veterinarian decides by farm.', { bullet: false, bodySize: 15 });
+    card(s, 0.5, 4.05, 9.0, 0.85, null, 'Every other vaccine keeps the withdrawal on its label: at least 21 days. Check before you vaccinate.', { bullet: false, bodySize: 15, fill: NAVY, bodyColor: WHITE });
   }
   {
     const s = content('Wing web: the take shows on the bird', 'A two-pronged needle goes through the thin skin of the wing web, mostly for fowl pox [1]. Seven to ten days later, check 2% of the flock [1] and at least 50 to 100 birds at random [7]. Two small bumps is a good take. No bump means the bird was missed and is not protected [7].');
@@ -285,7 +293,7 @@ async function photo(s, file, x, y, w, h, credit) {
 
   section('6. Antibiotics');
   {
-    const s = content('Antibiotics: the rules', 'When bacteria survive an antibiotic and pass on that toughness, the drug stops working: antimicrobial resistance [10]. Find out what you are treating first: send fresh dead birds to your veterinarian or the lab. Since December 1, 2018, antibiotics that matter in human medicine need a veterinary prescription in Canada [11]. Give the full course. Respect the withdrawal time on the label. Record every treatment.');
+    const s = content('Antibiotics: the rules', 'When bacteria survive an antibiotic and pass on that toughness, the drug stops working: antimicrobial resistance [10]. Find out what you are treating first: send fresh dead birds to your veterinarian or the lab. Since December 1, 2018, antibiotics that matter in human medicine need a veterinary prescription in Canada [11]. Give the full course. Respect the withdrawal time on the label; vaccines have one too (7 days for the six live IB and IBD vaccines covered by the CFIA memorandum, at least 21 for the rest) [12]. Record every treatment.');
     stat(s, 0.5, 1.2, 3.6, 'Dec 1, 2018', 'antibiotics that matter in human medicine became prescription-only', { bigSize: 36, bigH: 0.8, labelH: 0.8 });
     text(s, 'Bacteria that survive pass on their toughness. That is how drugs stop working.', { x: 0.5, y: 3.1, w: 3.6, h: 1.4, fontSize: 15, italic: true, color: BLUE });
     const rules = [['Get a diagnosis', 'Fresh dead birds to the lab first'], ['Get a prescription', 'From your veterinarian'], ['Finish the course', 'Full dose, every day'], ['Withdrawal time', 'No shipping until it ends'], ['Write it down', 'Every treatment, every time']];
@@ -323,6 +331,7 @@ async function photo(s, file, x, y, w, h, credit) {
       'Butcher GD, Miles RD, Nilipour AH. ND and IB Vaccine Reactions in Commercial Broilers. UF/IFAS EDIS VM097; 2002, rev. 2017.',
       'World Health Organization. Antimicrobial resistance [Fact sheet].',
       'Health Canada. Responsible use of Medically Important Antimicrobials in animals.',
+      'Canadian Food Inspection Agency. Memorandum 2026-01: Reduction of the withdrawal period for certain chicken vaccines. 2026.',
     ];
     const s = content('Sources', 'Full citations are in the Essentials handbook reference list. Numbers match the bracketed numbers in these speaker notes.');
     [0, 1].forEach(col => {

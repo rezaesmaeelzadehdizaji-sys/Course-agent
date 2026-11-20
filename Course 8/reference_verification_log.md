@@ -310,3 +310,20 @@ Following the same fix already applied to Course 15 (Serology 101), the user fla
 mammoth 0 messages; 0 em/en dashes; 0 w:dirty; 0 unescaped &; British-spelling sweep clean (only the "CPC Learning Centre" proper noun, and "learning-centre" in a URL); every genus name italic; no "vet" short form; TOC page numbers re-mapped from a fresh LibreOffice render (11 rows changed, every row found).
 
 **Follow-up (2026-11-19):** page 18 was blank. Sections 1-7 and the Quick Reference started after a separate paragraph holding only a page break, which landed alone on its own page whenever the page before filled exactly. All eight now use pageBreakBefore on the heading (as Section 8 and the Journals already did). No blank pages remain (52 pages); TOC page numbers re-mapped from a fresh render.
+
+## 2026-11-19 Addendum 2: CFIA 7-day withdrawal, CPC boosters, spray water (29 references)
+
+Added at the user's request (CPC veterinary team).
+
+- **New reference [13]:** Canadian Food Inspection Agency. Memorandum 2026-01: Reduction of the withdrawal period for certain chicken vaccines. Canadian Centre for Veterinary Biologics; 2026 Jan 12. URL: inspection.canada.ca/en/animal-health/veterinary-biologics/memoranda/memorandum-2026-01. Read in full 2026-11-19 (title, date, signatory confirmed). It supports:
+  - the minimum withdrawal period for all vaccines in food-producing animals in Canada was 21 days;
+  - from February 2, 2026, the withdrawal period is 7 days for exactly six live U.S.-made vaccines: CLONEVAC D-78, UNIVAX PLUS (Intervet, IBD), MILDVAC-Ma5 (Intervet, IB Massachusetts), Bursine 2 (Zoetis, IBD), and the Zoetis live bronchitis vaccines, Massachusetts type and Massachusetts and Connecticut type;
+  - the purpose is to allow a booster closer to slaughter age in Canadian broiler production;
+  - during the transition, product labeled 21 days may be used with the 7-day withdrawal;
+  - all other vaccines: follow the label withdrawal period.
+  The memo does not name slaughter versus eggs explicitly. The course describes the withdrawal period as the wait between vaccinating and slaughter, which is the standard meaning for food-animal vaccines and matches the memo's "booster closer to slaughter age" rationale.
+- **CPC recommendation (no numbered citation, attributed to CPC in the text):** revaccination in week 2 to 3, depending on farm conditions, with the Zoetis live Massachusetts and Connecticut type IB vaccine (by coarse spray, consistent with ref [12]) and, on some farms, Bursine 2 for IBD. The user wrote "Bursin 23"; the CFIA product list confirms the Zoetis IBD vaccine is **Bursine 2**.
+- **CPC practice (attributed in the text):** CPC uses commercial distilled water for spray vaccination (Section 2.4).
+- **Placement:** new labeled paragraph "Boosting at 2 to 3 weeks." at the end of Section 1.2; cross-reference added to Section 8.4; Section 2.4 water sentence.
+- **Citation remap:** new [13]; former [13] to [28] are now [14] to [29]. First-appearance order verified 1 to 29; bibliography count asserted.
+- **Checks:** mammoth 0 messages, 0 dashes, 0 w:dirty, no blank pages (53 pages), TOC page numbers re-mapped. The lecture deck's speaker-note citations were shifted to match (78 numbers), and a new slide covers the boosters and the 7-day withdrawal.

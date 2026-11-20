@@ -72,6 +72,20 @@ function findPara(find) {
   return ps[0];
 }
 function deletePara(find) { const p = findPara(find); xml = xml.replace(p, ''); log.push('DELETE ' + find.slice(0, 60)); }
+// Insert a new "Bold label. Body text" paragraph after `anchorFind`, cloned from `templateFind`
+// (a non-list paragraph whose first run is a bold label), so the formatting matches the document.
+function insertLabeledAfter(anchorFind, templateFind, label, bodyText) {
+  const anchor = findPara(anchorFind);
+  let clone = findPara(templateFind).replace(/<w:bookmark(Start|End)[^>]*\/>/g, '').replace(/\sw14:paraId="[^"]*"/, '').replace(/\sw14:textId="[^"]*"/, '');
+  const ns = nodes(clone);
+  for (let k = ns.length - 1; k >= 0; k--) {
+    const n = ns[k];
+    const t = k === 0 ? esc(label) : k === 1 ? ' ' + esc(bodyText) : '';
+    clone = clone.slice(0, n.i) + '<w:t xml:space="preserve">' + t + n.close + clone.slice(n.i + n.len);
+  }
+  xml = xml.replace(anchor, anchor + clone);
+  log.push('INSERT labeled after ' + anchorFind.slice(0, 50));
+}
 function insertAfter(find, text) {
   const p = findPara(find);
   let clone = p.replace(/<w:bookmark(Start|End)[^>]*\/>/g, '').replace(/\sw14:paraId="[^"]*"/, '').replace(/\sw14:textId="[^"]*"/, '');
@@ -112,6 +126,10 @@ function insertAfter(find, text) {
     'for unvaccinated flocks" [11]. The newer CPC Learning Centre Infectious Bronchitis fact sheet explains why even coverage matters so much with this virus: it changes constantly, and a vaccine against one type protects poorly against another. Strong, even flock immunity gives it fewer chances to multiply and change, while patchy immunity lets new types arise [104]. Partial coverage also lets the vaccine virus itself keep passing from bird to bird, where it can grow harsher [104].');
   rep('A live AE vaccine given in the drinking water to breeder and layer pullets, usually somewhere between 10 and 15 weeks of age and well before lay, builds the immunity that protects the next generation through the egg [4,5]. Wing web is the other route used for AE, covered in Section 4.',
     'A live AE vaccine given to breeder and layer pullets, usually around 10 to 12 weeks of age and well before lay, builds the immunity that protects the next generation through the egg [4,5]. It can go in the drinking water, and many programs give it by wing web instead (Section 4) [5].');
+  // CPC week 2-3 boosters + CFIA Memorandum 2026-01 (7-day withdrawal for six live IB/IBD vaccines), added 2026-11-19 at the user's request
+  insertLabeledAfter('A live AE vaccine given to breeder and layer pullets', 'Maternal antibodies and vaccination timing.',
+    'Boosting at 2 to 3 weeks.',
+    'Depending on the farm, CPC’s veterinary team recommends a second round of live vaccine in week 2 to 3: the Zoetis live Massachusetts and Connecticut type IB vaccine, given by coarse spray (Section 2.2), and on some farms a live IBD vaccine, Bursine 2, as well. Until 2026, every vaccine used in a food animal in Canada carried a withdrawal period of at least 21 days, the minimum wait between vaccinating and slaughter [105]. Since February 2, 2026, the CFIA has set a 7-day withdrawal period for six live IB and IBD vaccines made in the U.S., so broilers can be boosted closer to slaughter age [105]. The six are CLONEVAC D-78, UNIVAX PLUS, and Bursine 2 for IBD, and MILDVAC-Ma5 plus the two Zoetis live bronchitis vaccines (Massachusetts type, and Massachusetts and Connecticut type) for IB. During the changeover, stock still labeled with 21 days may be used with the 7-day withdrawal [105]. Every other vaccine keeps the withdrawal period on its label, so check the label before you vaccinate [105].');
   rep('Freezing destroys most live vaccines by rupturing the viral envelope. A vaccine that froze and thawed is useless, even if it still looks fine in the vial.',
     'Live vaccines belong at 2°C to 8°C, not frozen [12,13]. A vial that froze can be damaged even though it still looks fine, so do not use it.');
   rep('This is both a good production practice and a regulatory requirement for traceability in commercial operations.',
@@ -137,6 +155,7 @@ function insertAfter(find, text) {
 
   // ---------------- Section 2 ----------------
   rep('respiratory reaction rather than protection [1,5,17].', 'respiratory reaction rather than protection [1,17].');
+  rep('to maximize vaccine quality and viability [17].', 'to maximize vaccine quality and viability [17]. CPC uses commercial distilled water for spray vaccination.');
   rep('with eye drop or wing web vaccination [1,5].', 'with eye drop or wing web vaccination [1,2].');
   rep('more precise individual dosing [1,11,18].',
     'more precise individual dosing [1,11,18]. For IB in broilers, the CPC Learning Centre Infectious Bronchitis fact sheet recommends a second live dose by coarse spray at 2 to 3 weeks of age, on top of the day-1 hatchery spray [104].');
@@ -286,6 +305,7 @@ function insertAfter(find, text) {
     'Anything in that group that used to sit on the farm store shelf over the counter now needs that prescription [25]. Health Canada ranks antimicrobials in four categories by how much they matter in human medicine. Ionophores, the coccidiosis-control products most poultry farmers know, sit in Category IV, the group not used in human medicine at all [103].');
   rep('Feed medication works well for preventive or control programs written under a specific veterinary prescription for your flock category.',
     'Feed medication suits longer-running programs your veterinarian prescribes for your flock.');
+  rep('or loss of contract.', 'or loss of contract. Vaccines carry a withdrawal period on their labels too (Section 1.2).');
   rep('8.3  Treatment Routes', '8.3  Treatment Route');   // TOC row now matches the heading text
 
   // ---------------- Journals ----------------
@@ -307,6 +327,7 @@ function insertAfter(find, text) {
     102: 'Canadian Academy of Health Sciences. Antimicrobial Resistance / Antimicrobial Use in Food-Producing Animals in Canada: Strategic Interventions to Strengthen Antimicrobial Stewardship. Ottawa: Canadian Academy of Health Sciences; 2025.',
     103: 'Health Canada. Categorization of Antimicrobial Drugs Based on Importance in Human Medicine. Ottawa: Health Canada; 2009 [cited 2026 Nov]. Available from: canada.ca/en/health-canada/services/drugs-health-products/veterinary-drugs/antimicrobial-resistance/categorization-antimicrobial-drugs-based-importance-human-medicine.html',
     104: 'Dizaji R. Infectious Bronchitis in Chickens [Fact Sheet]. CPC Learning Centre; 2026. Available from: canadianpoultry.ca/learning-centre',
+    105: 'Canadian Food Inspection Agency. Memorandum 2026-01: Reduction of the withdrawal period for certain chicken vaccines. Ottawa: Canadian Centre for Veterinary Biologics, CFIA; 2026 Jan 12 [cited 2026 Nov]. Available from: inspection.canada.ca/en/animal-health/veterinary-biologics/memoranda/memorandum-2026-01',
   };
 
   // ---------------- Renumber by first appearance ----------------
@@ -402,7 +423,7 @@ function insertAfter(find, text) {
   // ---------------- Checks ----------------
   const bad = xml.match(/&(?!amp;|lt;|gt;|quot;|apos;|#)/g);
   if (bad) throw new Error('unescaped &');
-  if (/\[10[1-4]\]/.test(xml)) throw new Error('placeholder survived');
+  if (/\[10[1-5]\]/.test(xml)) throw new Error('placeholder survived');
   if ((xml.match(/w:dirty=/g) || []).length) throw new Error('dirty flag');
   const finalParas = xml.match(PARA_RE);
   const fo = [];
