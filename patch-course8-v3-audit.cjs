@@ -508,6 +508,53 @@ function insertAfter(find, text) {
   }
   italicize('Salmonella', 'tracks resistant Salmonella in chickens');
 
+  // ---------------- Spray volume table: drop the redundant per-1,000 column ----------------
+  // The Merial bulletin [18] gives volumes per 10,000 birds; the per-1,000 column just divided by 10.
+  {
+    const i = xml.indexOf('Volume per 10,000 birds');
+    if (xml.indexOf('Volume per 10,000 birds', i + 1) >= 0) throw new Error('more than one per-10,000 table');
+    if (i < 0) throw new Error('spray volume table not found');
+    const s = xml.lastIndexOf('<w:tbl>', i), e = xml.indexOf('</w:tbl>', i) + '</w:tbl>'.length;
+    let tbl = xml.slice(s, e);
+    tbl = tbl.replace(/<w:tblGrid>[\s\S]*?<\/w:tblGrid>/, '<w:tblGrid><w:gridCol w:w="4150"/><w:gridCol w:w="4150"/></w:tblGrid>');
+    let rows = 0;
+    tbl = tbl.replace(/<w:tr\b[\s\S]*?<\/w:tr>/g, tr => {
+      const cells = [...tr.matchAll(/<w:tc>[\s\S]*?<\/w:tc>/g)];
+      if (cells.length !== 3) throw new Error('spray volume row does not have 3 cells');
+      rows++;
+      const last = cells[2];
+      return tr.slice(0, last.index) + tr.slice(last.index + last[0].length);
+    });
+    tbl = tbl.replace(/<w:tcW w:w="2800" w:type="dxa"\/>/g, '<w:tcW w:w="4150" w:type="dxa"/>');
+    if (rows !== 3 || /per 1,000 birds|300 mL|700-800 mL/.test(tbl)) throw new Error('spray volume column not removed cleanly');
+    xml = xml.slice(0, s) + tbl + xml.slice(e);
+    { const lp = findPara('Volume targets [18]:'); if (lp.includes('<w:keepNext/>')) throw new Error('label already keepNext'); xml = xml.replace(lp, lp.replace('<w:pPr>', '<w:pPr><w:keepNext/>')); }   // keep the label on the table's page
+    log.push('SPRAY VOLUME TABLE: per-1,000 column removed');
+  }
+
+  // ---------------- Photo 6.1: real in-ovo photo replaces the suspected AI render ----------------
+  // User supplied Course 8/Inovo.jpg (980x513) on 2026-11-20, credited to poultry.network.
+  let rels = await zip.file('word/_rels/document.xml.rels').async('string');
+  {
+    const i = xml.indexOf('Photo 6.1:');
+    const ps = xml.lastIndexOf('<w:p ', i), ds = xml.lastIndexOf('<w:drawing>', ps), de = xml.indexOf('</w:drawing>', ds) + 12;
+    if (i < 0 || ds < 0 || de > ps) throw new Error('Photo 6.1 drawing not found');
+    let d = xml.slice(ds, de);
+    const rid = d.match(/r:embed="([^"]+)"/)[1];
+    if ((xml.match(new RegExp(`r:embed="${rid}"`, 'g')) || []).length !== 1) throw new Error('Photo 6.1 image rel is shared');
+    const cx = 5305425, cy = Math.round(cx * 513 / 980);
+    d = d.replace(/<wp:extent cx="\d+" cy="\d+"\/>/, `<wp:extent cx="${cx}" cy="${cy}"/>`)
+         .replace(/<a:ext cx="\d+" cy="\d+"\/>/, `<a:ext cx="${cx}" cy="${cy}"/>`);
+    xml = xml.slice(0, ds) + d + xml.slice(de);
+    const relRe = new RegExp(`(<Relationship [^>]*Id="${rid}"[^>]*Target=")[^"]+(")`);
+    if (!relRe.test(rels)) throw new Error('Photo 6.1 rel not found');
+    rels = rels.replace(relRe, '$1media/image_inovo.jpg$2');
+    zip.file('word/media/image_inovo.jpg', fs.readFileSync('Course 8/Inovo.jpg'));
+    rep(/Photo 6\.1: An automated in-ovo vaccination machine[\s\S]*?Source: CPC Short Courses\./,
+      'Photo 6.1: In-ovo injection heads lined up over a tray of eggs at the hatchery, one head for each egg. Source: poultry.network.');
+    log.push('PHOTO 6.1 replaced with Inovo.jpg (poultry.network)');
+  }
+
   // ---------------- Checks ----------------
   const bad = xml.match(/&(?!amp;|lt;|gt;|quot;|apos;|#)/g);
   if (bad) throw new Error('unescaped &');
@@ -526,6 +573,7 @@ function insertAfter(find, text) {
   console.log('Old -> new map:', order.map(o => `${o}->${map[o]}`).join(' '));
 
   zip.file('word/document.xml', xml);
+  zip.file('word/_rels/document.xml.rels', rels);
   zip.file('word/media/image5.png', fs.readFileSync(NEWFIG), { createFolders: false });   // Figure 1.1, corrected timeline
   const buf = await zip.generateAsync({ type: 'nodebuffer', compression: 'DEFLATE' });
   fs.writeFileSync(OUT, buf);

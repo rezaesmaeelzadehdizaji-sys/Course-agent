@@ -363,3 +363,8 @@ Scope: V3, Course 8 Essentials, the summary page, and both decks, against the fu
 - **Checks:** V3 52 pages, Essentials 13 pages, no blank pages; TOC re-mapped; mammoth 0 messages; 0
   dashes, 0 w:dirty, genus names italic, American spelling, no "vet"; cross-references only to Course
   7 (x2) and Course 2 (x1); citation order 1 to 29 asserted; decks parse with 0 malformed parts.
+
+## Addendum 4 (2026-11-20): spray volume table and in-ovo photo
+- **Section 2.4 spray volume table:** the "Volume per 1,000 birds" column was removed because it only divided the other column by 10. The table now gives Age and Volume per 10,000 birds (3 L at day 1 on farm; 7 to 8 L over 7 days), which is how the Merial Coarse Spray bulletin [18] states it. The "Volume targets [18]:" label is now kept on the same page as the table. No reference change.
+- **Photo 6.1:** the suspected AI-rendered in-ovo machine image was replaced with a real photograph supplied by the user (`Course 8/Inovo.jpg`, 980x513), credited "Source: poultry.network." as instructed. The new caption only describes what the photo shows (injection heads over a tray of eggs, one head per egg); the old caption's claims about dosing and throughput were dropped. The reuse license of the poultry.network image was not independently confirmed; the user directed its use.
+- Rebuilt with `patch-course8-v3-audit.cjs` (166 edits, 29 references, unchanged order); TOC refreshed in two passes; 52 pages, no blank pages; mammoth 0 messages, 0 w:dirty, 0 em dashes.
